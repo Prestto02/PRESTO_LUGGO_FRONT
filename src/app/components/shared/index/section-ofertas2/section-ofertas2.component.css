@@ -1,0 +1,44 @@
+.color-card {
+  width: 326px;
+  height: 346px;
+  border-radius: 20px;
+  background: #7549fe;
+}
+#btn-pago {
+  background: #7549fe;
+  border: 2px solid #fff;
+  color: #fff;
+  height: 32px;
+  width: 258px;
+}
+#btn-pago:hover {
+  background: #583baf;
+}
+.texto {
+  font-size: 45px;
+}
+.card-carousel {
+  height: 346px;
+}
+.border {
+  border-radius: 16px 16px 16px 16px;
+  -moz-border-radius: 16px 16px 16px 16px;
+  -webkit-border-radius: 16px 16px 16px 16px;
+  border: 0px solid #000000;
+}
+.btn-carousel-next {
+  width: 40px;
+  height: 40px;
+  color: #000000;
+  top: 67px;
+  right: -24px;
+  background: #302f2f;
+}
+.btn-carousel-previous{
+  width: 40px;
+  height: 40px;
+  color: #000000;
+  top: 67px;
+  left: -24px;
+  background: #302f2f;
+}

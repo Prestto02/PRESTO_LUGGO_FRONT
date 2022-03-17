@@ -1,0 +1,41 @@
+/* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: Cardium A-semiBold;
+  src: url(/src/assets/font/Psdkeys-Cardium/CardiumA-SemiBold.ttf)
+    format("truetype");
+}
+@font-face {
+  font-family: Cardium A-extraBold;
+  src: url(/src/assets/font/Psdkeys-Cardium/CardiumA-ExtraBold.ttf)
+    format("truetype");
+}
+@font-face {
+  font-family: Cardium C-Medium;
+  src: url(/src/assets/font/Psdkeys-Cardium/CardiumC-Medium.ttf)
+    format("truetype");
+}
+@font-face {
+  font-family: Cardium C-Bold;
+  src: url(/src/assets/font/Psdkeys-Cardium/CardiumC-Bold.ttf)
+    format("truetype");
+}
+@font-face {
+  font-family: Cardium B;
+  src: url(/src/assets/font/Psdkeys-Cardium/CardiumB-Bold.ttf)
+    format("truetype");
+}
+@font-face {
+  font-family: Cardium B-Bold;
+  src: url(/src/assets/font/Psdkeys-Cardium/CardiumB-Bold.ttf)
+    format("truetype");
+}
+@font-face {
+  font-family: Cardium B-normal;
+  src: url(/src/assets/font/Psdkeys-Cardium/CardiumB-Medium.ttf)
+    format("truetype");
+}
+@font-face {
+  font-family: Cardium B-semiBold;
+  src: url(/src/assets/font/Psdkeys-Cardium/CardiumB-SemiBold.ttf)
+    format("truetype");
+}

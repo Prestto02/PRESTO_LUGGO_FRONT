@@ -1,0 +1,82 @@
+<div class="py-5 mt-4">
+  <div class="card">
+    <div class="card-header bg-primary text-white text-center">
+      Registro de Usuario
+    </div>
+    <div class="card-body">
+      <form (ngSubmit)="submit();" [formGroup]="formB.formUsers">
+        <div class="col-md-12 input-group">
+          <input type="hidden" formControlName="id_usuario">
+          <!------PRIMER NOMBRE-->
+          <div class="col-md-5">
+            <label for="nombre1" class="form-label">Primer Nombre</label>
+            <input type="text" class="form-control" formControlName="nombre1" id="nombre1" aria-describedby="emailHelp">
+            <div id="emailHelp" class="form-text"></div>
+          </div>
+          <!------SEGUNDO NOMBRE-->
+          <div class="col-md-5 mx-5">
+            <label for="nombre2" class="form-label">Segundo Nombre</label>
+            <input type="text" class="form-control" id="nombre2" formControlName="nombre2">
+          </div>
+        </div>
+        <div class="col-md-12 input-group">
+          <!------PRIMER APElLIDO-->
+          <div class="col-md-5">
+            <label for="apellido1" class="form-label">Primer Apellido</label>
+            <input type="text" class="form-control" id="apellido1" formControlName="apellido1">
+          </div>
+          <!------SEGUNDO APElLIDO-->
+          <div class="col-md-5 mx-5">
+            <label for="apellido2" class="form-label">Segundo Apellido</label>
+            <input type="text" class="form-control" id="apellido2" formControlName="apellido2">
+          </div>
+        </div>
+        <div class="col-md-12 input-group">
+          <!------DIREccion-->
+          <div class="col-md-5 ">
+            <label for="direccion2" class="form-label">Direccion</label>
+            <input type="text" class="form-control" id="direccion2" formControlName="direccion2">
+          </div>
+          <!-------TELEFONO-->
+          <div class="col-md-5 mx-5">
+            <label for="telefono" class="form-label">Teléfono</label>
+            <input type="text" class="form-control" id="telefono" formControlName="telefono">
+          </div>
+        </div>
+        <div class="col-md-12 input-group">
+          <!------SEXO-->
+          <div class="col-md-5 ">
+            <label for="Sexo" class="form-label">Sexo</label>
+            <select class="form-control" id="sexo" formControlName="sexo">
+              <option value="1">Masculino</option>
+              <option value="2">Femenino</option>
+              <option value="3">Otro</option>
+            </select>
+          </div>
+          <!-------CEDULA-->
+          <div class="col-md-5 mx-5">
+            <label for="cedula" class="form-label">Cedula</label>
+            <input type="text" class="form-control" id="cedula" formControlName="cedula">
+          </div>
+        </div>
+        <div class="col-md-12 input-group">
+          <!-------FECHA-->
+          <div class="col-md-5">
+            <label for="FechaNacimiento" class="form-label">Fecha Nacimiento</label>
+            <input type="date" class="form-control" id="FechaNacimiento" formControlName="FechaNacimiento">
+          </div>
+          <!-----CELULAR-->
+          <div class="col-md-5 mx-5">
+            <label for="celular" class="form-label">Celular</label>
+            <input type="text" class="form-control" id="celular" formControlName="celular">
+          </div>
+        </div>
+        <div class="text-center py-3">
+          <button type="submit" class="btn btn-outline-primary" [disabled]="formB.formUsers.invalid">Registrar</button>
+          <button type="button" (click)="limpiar();" class="btn btn-outline-warning mx-5">Limpiar</button>
+          <a (click)="regresar();" class="btn btn-outline-danger">Regresar</a>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
