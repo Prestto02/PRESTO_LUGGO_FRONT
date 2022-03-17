@@ -50,3 +50,6 @@
   src: url(./assets/font/CardiumB-SemiBold.otf)
     format("truetype");
 }
+body{
+  background-color: #F1F3F6;
+}
