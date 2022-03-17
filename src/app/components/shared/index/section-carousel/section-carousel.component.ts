@@ -23,12 +23,26 @@ export class SectionCarouselComponent implements OnInit {
     'http://192.168.1.174/img/banner-principales/LUGGO-Contenido-Febrero-2022-Propuesta-Banner-Categoria-Hogar.jpg';
   banner8 =
     'http://192.168.1.174/img/banner-principales/LUGGO-Contenido-Febrero-2022-Propuesta-Banner-Categoria-Tecnología.jpg';
-  card1 = '../../../../../assets/img/cards/Rectangle 117.png';
-  card2Icon1 = '../../../../../assets/img/cards/Mask Group.png';
-  card2Icon2 = '../../../../../assets/img/cards/Mask Group2.png';
-  card2Icon3 = '../../../../../assets/img/cards/Mask Group3.png';
-  card2Icon4 = '../../../../../assets/img/cards/Mask Group4.png';
-  card4Img = '../../../../../assets/img/cards/Rectangle 129.png';
+  card1 =
+    'http://192.168.1.174/img/IM%C3%81GENES/Cards-section-1/San Valentin.jpg';
+  card2Icon1 =
+    'http://192.168.1.174/img/IM%C3%81GENES/Cards-section-1/RelojFossil.jpg';
+  card2Icon2 =
+    'http://192.168.1.174/img/IM%C3%81GENES/Cards-section-1/RelojCassio.jpg';
+  card2Icon3 =
+    'http://192.168.1.174/img/IM%C3%81GENES/Cards-section-1/SmartBand.jpg';
+  card2Icon4 =
+    'http://192.168.1.174/img/IM%C3%81GENES/Cards-section-1/SmartBandA.jpg';
+  card3Img1 =
+    'http://192.168.1.174/img/IM%C3%81GENES/Cards-section-1/GorraAdidas.jpg';
+  card3Img2 =
+    'http://192.168.1.174/img/IM%C3%81GENES/Cards-section-1/GorraRealMadrid.jpg';
+  card3Img3 =
+    'http://192.168.1.174/img/IM%C3%81GENES/Cards-section-1/GorraSkaters.jpg';
+  card3Img4 =
+    'http://192.168.1.174/img/IM%C3%81GENES/Cards-section-1/GorraUnderArmour.jpg';
+  card4Img1 =
+    'http://192.168.1.174/img/IM%C3%81GENES/Cards-section-1/HechoEcuador.jpg';
   constructor(public menu2: Menu2Component) {}
 
   ngOnInit(): void {}

@@ -1,1 +1,160 @@
-<p>products works!</p>
+<main>
+  <!-- Start Stepper HTML -->
+  <!-----  <div class="container">
+    <div class="accordion" id="accordionExample">
+      <div class="steps">
+        <progress id="progress" value=0 max=100></progress>
+        <div class="step-item">
+          <button class="step-button text-center" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+            aria-expanded="true" aria-controls="collapseOne">
+            1
+          </button>
+          <div class="step-title">
+            Registro de usuarios
+          </div>
+        </div>
+        <div class="step-item">
+          <button class="step-button text-center collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            2
+          </button>
+          <div class="step-title">
+            Datos Personales
+          </div>
+        </div>
+        <div class="step-item">
+          <button class="step-button text-center collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+            3
+          </button>
+          <div class="step-title">
+            Finalización
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div id="headingOne">
+        </div>
+
+        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+          <div class="card-body">
+            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad
+            squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa
+            nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid
+            single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft
+            beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice
+            lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you
+            probably haven't heard of them accusamus labore sustainable VHS.
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div id="headingTwo">
+
+        </div>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+          <div class="card-body">
+            CodeHim is one of the BEST developer websites that provide web designers and developers with
+            a simple way to preview and download a variety of free code & scripts.<br>
+            <p class="text-muted">nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a
+              bird on it squid
+              single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft
+              beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher
+              vice
+              lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you
+              probably haven't heard of them accusamus labore sustainable VHS.</p>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div id="headingThree">
+
+        </div>
+        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+          <div class="card-body">
+            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad
+            squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa
+            nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid
+            single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft
+            beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice
+            lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you
+            probably haven't heard of them accusamus labore sustainable VHS.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>--->
+  <!-- End Start Stepper HTML -->
+</main>
+<!-------<button class="btn btn-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+  aria-expanded="false" aria-controls="collapseTwo">Next</button>
+<button class="btn btn-danger" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+  aria-expanded="false" aria-controls="collapseOne">Previous</button>---->
+<a class="btn btn-primary" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button"
+  aria-controls="offcanvasExample">
+  Link with href
+</a>
+<button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"
+  aria-controls="offcanvasExample">
+  Button with data-bs-target
+</button>
+
+<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+  <div class="offcanvas-header">
+    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <h1>Hola identificate</h1>
+  <div class="offcanvas-body">
+    <ng-container *ngIf="!herramientas && !peliculas">
+      <button class="btn btn-primary" (click)="cosmeticosMenuOpen()" *ngIf="!cosmeticos">Cosmeticos</button>
+      <ng-container *ngIf="cosmeticos">
+        <div>
+          <button (click)="cosmeticosMenuClose();">Regresar al Menu</button>
+        </div>
+        <h4>cosmeticos</h4>
+        <div>
+          Pelucas
+        </div>
+        <div>
+          Cosmeticos
+        </div>
+        <div> Maquillaje</div>
+      </ng-container>
+    </ng-container>
+    <ng-container *ngIf="!cosmeticos && !peliculas">
+      <button class="btn btn-primary" (click)="herramientasMenuOpen()">Herramientas</button>
+      <ng-container *ngIf="herramientas">
+        <div>
+          <button (click)="herramientasMenuClose();">Regresar al Menu</button>
+        </div>
+        <div>
+          Martillos
+        </div>
+        <div>
+          Soldadura
+        </div>
+        <div>
+          Matematicas
+        </div>
+      </ng-container>
+    </ng-container>
+    <ng-container *ngIf="!cosmeticos && !herramientas">
+      <button class="btn btn-primary" (click)="herramientasMenuOpen()">Peliculas</button>
+      <ng-container *ngIf="herramientas">
+        <div>
+          <button (click)="herramientasMenuClose();">Regresar al Menu</button>
+        </div>
+        <div>
+          harry Potter
+        </div>
+        <div>
+          Spiderman
+        </div>
+        <div>
+          Avengers
+        </div>
+      </ng-container>
+    </ng-container>
+  </div>
+</div>

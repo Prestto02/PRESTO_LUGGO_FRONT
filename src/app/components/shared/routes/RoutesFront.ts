@@ -8,7 +8,6 @@ export const UrlFront = {
     login: 'Login',
     iniciarSesion: 'iniciar-sesion',
     postRegister: 'registrar',
-    
     cambiarContrasena: 'cambiar-contrasena',
   },
   Menu: {

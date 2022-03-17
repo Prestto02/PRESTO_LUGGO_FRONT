@@ -20,12 +20,6 @@
 .card-carousel {
   height: 346px;
 }
-.border {
-  border-radius: 16px 16px 16px 16px;
-  -moz-border-radius: 16px 16px 16px 16px;
-  -webkit-border-radius: 16px 16px 16px 16px;
-  border: 0px solid #000000;
-}
 .btn-carousel-next {
   width: 40px;
   height: 40px;
@@ -34,11 +28,20 @@
   right: -24px;
   background: #302f2f;
 }
-.btn-carousel-previous{
+.btn-carousel-previous {
   width: 40px;
   height: 40px;
   color: #000000;
   top: 67px;
   left: -24px;
   background: #302f2f;
+}
+.color-precio {
+  color: #7549fe;
+  font-weight: bold;
+  font-size: 18px;
+}
+.color-badge {
+  background-color: #f62a5b;
+  color: #fff;
 }

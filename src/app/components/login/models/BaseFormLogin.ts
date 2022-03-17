@@ -9,21 +9,11 @@ export class BaseFormLogin {
     email: ['', [Validators.required]],
     contrasena: [
       '',
-      [
-        Validators.required,
-        Validators.minLength(4),
-        Validators.maxLength(30),
-        Validators.pattern(/^[A-Za-z0-9]+$/g),
-      ],
+      [Validators.required, Validators.minLength(4), Validators.maxLength(30)],
     ],
     contrasena_conf: [
       '',
-      [
-        Validators.required,
-        Validators.minLength(4),
-        Validators.maxLength(30),
-        Validators.pattern(/^[A-Za-z0-9]+$/g),
-      ],
+      [Validators.required, Validators.minLength(4), Validators.maxLength(30)],
     ],
   });
   //FORM LOGIN

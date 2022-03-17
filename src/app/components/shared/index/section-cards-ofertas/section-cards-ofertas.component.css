@@ -4,3 +4,12 @@
   -webkit-border-radius: 16px 16px 16px 16px;
   border: 1px solid #d1d1d1;
 }
+.text-titulo{
+  color:#7549FE;
+  font-size: 42px;
+}
+.text-ofertas{
+  font-size: 22px;
+  color:#7549FE;
+}
+

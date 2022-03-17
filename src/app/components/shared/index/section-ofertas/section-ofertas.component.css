@@ -4,3 +4,7 @@
   -webkit-border-radius: 16px 16px 16px 16px;
   border: 0px solid #000000;
 }
+
+.card-color {
+  background-color: #fff3f8;
+}

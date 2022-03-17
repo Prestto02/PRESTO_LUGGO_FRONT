@@ -17,21 +17,16 @@ export class LoginComponent implements OnInit {
     public formB: BaseFormLogin,
     private router: Router,
     private apiLogin: LoginService,
-    private apiToken: TokenService
+    private apiToken: TokenService,
   ) {}
-
+  public longitud: any;
+  public latitude: any;
   ngOnInit(): void {}
 
   submit() {
+    this.router.navigateByUrl(`${UrlFront.Menu.menu}/${UrlFront.Menu.index}`);
     const users = this.formB.getDataFormLogin();
-    this.apiLogin.postUserLogin(users).subscribe(
-      (res) => {
-        console.log(res);
-      },
-      (err) => {
-        this.apiToken.setTokenUsers(err.error.text);
-      }
-    );
+    console.log(users);
   }
   //IR A REGISTRAR CUENTA
   registraCuenta() {

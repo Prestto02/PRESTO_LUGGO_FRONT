@@ -8,10 +8,14 @@ import { HeadersService } from '../../shared/services/headers.service';
   providedIn: 'root',
 })
 export class ProductsService {
-  private url = UrlApi.articulos;
+  private urlApi = UrlApi.ApiUrl;
+  private url = UrlApi.articulos; //ARTICulos
   constructor(private http: HttpClient, private _header: HeadersService) {}
   //TRAER LOS DATOS
   getDataArticulos(): Observable<any> {
-    return this.http.get<any>(this.url, this._header.httpOptions);
+    return this.http.get<any>(
+      `${this.urlApi}${this.url}`,
+      this._header.httpOptions
+    );
   }
 }

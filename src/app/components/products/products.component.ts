@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PosicionService } from '../shared/services/posicion.service';
 import { ProductsService } from './services/products.service';
 
 @Component({
@@ -7,12 +8,39 @@ import { ProductsService } from './services/products.service';
   styleUrls: ['./products.component.css'],
 })
 export class ProductsComponent implements OnInit {
-  constructor(private apiProduct: ProductsService) {}
+  cosmeticos: boolean = false;
+  herramientas: boolean = false;
+  peliculas: boolean=false;
+  constructor(
+    private apiProduct: ProductsService,
+    private location: PosicionService
+  ) {}
 
   ngOnInit(): void {
     this.getAllProducts();
+    this.submit();
   }
-
+  //COSMETICOS MENU
+  cosmeticosMenuOpen() {
+    this.cosmeticos = true;
+  }
+  cosmeticosMenuClose() {
+    this.cosmeticos = false;
+  }
+  //HERRAMIENTAS MENU
+  herramientasMenuOpen() {
+    this.herramientas = true;
+  }
+  herramientasMenuClose() {
+    this.herramientas = false;
+  }
+  //PELICulAs MENU
+  peliculasMenuOpen(){
+    this.peliculas=true;
+  }
+  peliculasMenuClose(){
+    this.peliculas=false;
+  }
   //GET ALL PRODUCTS
   getAllProducts() {
     this.apiProduct.getDataArticulos().subscribe(
@@ -23,5 +51,10 @@ export class ProductsComponent implements OnInit {
         console.log(err);
       }
     );
+  }
+  submit() {
+    this.location.getPosition().then((pos) => {
+      console.log(pos.longitud, pos.lat);
+    });
   }
 }
