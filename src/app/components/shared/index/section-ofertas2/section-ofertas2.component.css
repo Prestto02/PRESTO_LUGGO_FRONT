@@ -1,6 +1,4 @@
 .color-card {
-  width: 326px;
-  height: 346px;
   border-radius: 20px;
   background: #7549fe;
 }
@@ -17,8 +15,8 @@
 .texto {
   font-size: 45px;
 }
-.card-carousel {
-  height: 346px;
+.card-carousel{
+  border-radius: 20px;
 }
 .btn-carousel-next {
   width: 40px;
