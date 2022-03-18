@@ -9,54 +9,97 @@
           <input type="hidden" formControlName="id_usuario">
           <!------PRIMER NOMBRE-->
           <div class="col-md-5">
-            <label for="nombre1" class="form-label">Primer Nombre</label>
-            <input type="text" class="form-control" formControlName="nombre1" id="nombre1" aria-describedby="emailHelp">
-            <div id="emailHelp" class="form-text"></div>
+            <label for="validationServer1" class="form-label">Primer Nombre</label>
+            <input type="text" formControlName="nombre1" class="form-control is-invalid" id="validationServer1"
+              aria-describedby="validationServer1Feedback" [class.is-invalid]="formB.formUsers.get('nombre1')?.touched && formB.formUsers.get('nombre1')?.invalid
+              ">
+            <div id="validationServer1Feedback" class="invalid-feedback">
+              Deben ser solo letras entre 3 a 50 caracteres
+            </div>
           </div>
           <!------SEGUNDO NOMBRE-->
           <div class="col-md-5 mx-5">
-            <label for="nombre2" class="form-label">Segundo Nombre</label>
-            <input type="text" class="form-control" id="nombre2" formControlName="nombre2">
+            <label for="validationServer2" class="form-label">Segundo Nombre</label>
+            <input type="text" formControlName="nombre2" class="form-control is-invalid" id="validationServer2"
+              aria-describedby="validationServer2Feedback" [class.is-invalid]="formB.formUsers.get('nombre2')?.touched && formB.formUsers.get('nombre2')?.invalid
+            ">
+            <div id="validationServer2Feedback" class="invalid-feedback">
+              Deben ser solo letras y entre 3 a 50 caracteres
+            </div>
           </div>
         </div>
         <div class="col-md-12 input-group">
           <!------PRIMER APElLIDO-->
           <div class="col-md-5">
-            <label for="apellido1" class="form-label">Primer Apellido</label>
-            <input type="text" class="form-control" id="apellido1" formControlName="apellido1">
+            <label for="validationserver3" class="form-label">Primer Apellido</label>
+            <input type="text" class="form-control is-invalid" aria-describedby="validationServer3Feedback"
+              id="validationserver3" formControlName="apellido1" [class.is-invalid]="formB.formUsers.get('apellido1')?.touched && formB.formUsers.get('apellido1')?.invalid
+            ">
+            <div id="validationServer3Feedback" class="invalid-feedback">
+              Deben ser solo letras y entre 3 a 50 caracteres
+            </div>
           </div>
           <!------SEGUNDO APElLIDO-->
           <div class="col-md-5 mx-5">
-            <label for="apellido2" class="form-label">Segundo Apellido</label>
-            <input type="text" class="form-control" id="apellido2" formControlName="apellido2">
+            <label for="validationserver4" class="form-label">Segundo Apellido</label>
+            <input type="text" class="form-control is-invalid" aria-describedby="validationServer4Feedback"
+              id="validationserver4" formControlName="apellido2" [class.is-invalid]="formB.formUsers.get('apellido2')?.touched &&
+            formB.formUsers.get('apellido2')?.invalid
+            ">
+            <div id="validationServer4Feedback" class="invalid-feedback">
+              Deben ser solo letras y entre 3 a 50 caracteres
+            </div>
           </div>
         </div>
         <div class="col-md-12 input-group">
           <!------DIREccion-->
           <div class="col-md-5 ">
-            <label for="direccion2" class="form-label">Direccion</label>
-            <input type="text" class="form-control" id="direccion2" formControlName="direccion2">
+            <label for="validationserver5" class="form-label">Direccion</label>
+            <input type="text" class="form-control is-invalid" aria-describedby="validationServer5Feedback"
+              id="validationserver5" formControlName="direccion2" [class.is-invalid]="formB.formUsers.get('direccion2')?.touched &&
+            formB.formUsers.get('direccion2')?.invalid
+            ">
+            <div id="validationServer5Feedback" class="invalid-feedback">
+              Deben ser solo letras y entre 5 a 50 caracteres
+            </div>
           </div>
           <!-------TELEFONO-->
           <div class="col-md-5 mx-5">
-            <label for="telefono" class="form-label">Teléfono</label>
-            <input type="text" class="form-control" id="telefono" formControlName="telefono">
+            <label for="validationserver6" class="form-label">Teléfono</label>
+            <input type="text" class="form-control is-invalid" aria-describedby="validationServer6Feedback"
+              id="validationserver6" formControlName="telefono" [class.is-invalid]="formB.formUsers.get('telefono')?.touched &&
+            formB.formUsers.get('telefono')?.invalid
+            ">
+            <div id="validationServer6Feedback" class="invalid-feedback">
+              Deben tener solo numeros maximo 10 digitos
+            </div>
           </div>
         </div>
         <div class="col-md-12 input-group">
           <!------SEXO-->
           <div class="col-md-5 ">
-            <label for="Sexo" class="form-label">Sexo</label>
-            <select class="form-control" id="sexo" formControlName="sexo">
+            <label for="validationServer7" class="form-label">Sexo</label>
+            <select class="form-control is-invalid" [class.is-invalid]="formB.formUsers.get('sexo')?.touched &&
+            formB.formUsers.get('sexo')?.invalid" id="validationServer7" arial-describedby="validationServer7Feedback"
+              formControlName="sexo">
               <option value="1">Masculino</option>
               <option value="2">Femenino</option>
               <option value="3">Otro</option>
             </select>
+            <div id="validationServer7Feedback" class="invalid-feedback">
+              Seleccione al menos uno
+            </div>
           </div>
           <!-------CEDULA-->
           <div class="col-md-5 mx-5">
-            <label for="cedula" class="form-label">Cedula</label>
-            <input type="text" class="form-control" id="cedula" formControlName="cedula">
+            <label for="validationServer8" class="form-label">Cedula</label>
+            <input type="text" class="form-control" id="validationServer8" formControlName="cedula"
+              arial-describedby="validationServer8Feedback" [class.is-invalid]="formB.formUsers.get('cedula')?.touched &&
+            formB.formUsers.get('cedula')?.invalid
+            ">
+            <div id="validationServer8Feedback" class="invalid-feedback">
+              Deben tener solo numeros maximo 10 digitos
+            </div>
           </div>
         </div>
         <div class="col-md-12 input-group">
@@ -67,8 +110,14 @@
           </div>
           <!-----CELULAR-->
           <div class="col-md-5 mx-5">
-            <label for="celular" class="form-label">Celular</label>
-            <input type="text" class="form-control" id="celular" formControlName="celular">
+            <label for="validationServer9" class="form-label">Celular</label>
+            <input type="text" class="form-control" id="validationServer9" formControlName="celular"
+              arial-describedby="validationServer9Feedback" [class.is-invalid]="formB.formUsers.get('celular')?.touched &&
+            formB.formUsers.get('celular')?.invalid
+            ">
+            <div id="validationServer8Feedback" class="invalid-feedback">
+              Deben tener solo numeros maximo 10 digitos
+            </div>
           </div>
         </div>
         <div class="text-center py-3">

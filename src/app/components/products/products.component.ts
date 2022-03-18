@@ -20,27 +20,6 @@ export class ProductsComponent implements OnInit {
     this.getAllProducts();
     this.submit();
   }
-  //COSMETICOS MENU
-  cosmeticosMenuOpen() {
-    this.cosmeticos = true;
-  }
-  cosmeticosMenuClose() {
-    this.cosmeticos = false;
-  }
-  //HERRAMIENTAS MENU
-  herramientasMenuOpen() {
-    this.herramientas = true;
-  }
-  herramientasMenuClose() {
-    this.herramientas = false;
-  }
-  //PELICulAs MENU
-  peliculasMenuOpen(){
-    this.peliculas=true;
-  }
-  peliculasMenuClose(){
-    this.peliculas=false;
-  }
   //GET ALL PRODUCTS
   getAllProducts() {
     this.apiProduct.getDataArticulos().subscribe(
@@ -53,8 +32,6 @@ export class ProductsComponent implements OnInit {
     );
   }
   submit() {
-    this.location.getPosition().then((pos) => {
-      console.log(pos.longitud, pos.lat);
-    });
+    this.location.getPosition()
   }
 }

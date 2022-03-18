@@ -6,14 +6,14 @@ export class BaseFormLogin {
   constructor(private formB: FormBuilder) {}
   registerUser = this.formB.group({
     id: [''],
-    email: ['', [Validators.required]],
+    email: ['', [Validators.required, Validators.email]],
     contrasena: [
       '',
-      [Validators.required, Validators.minLength(4), Validators.maxLength(30)],
+      [Validators.required, Validators.minLength(8), Validators.maxLength(30)],
     ],
     contrasena_conf: [
       '',
-      [Validators.required, Validators.minLength(4), Validators.maxLength(30)],
+      [Validators.required, Validators.minLength(8), Validators.maxLength(30)],
     ],
   });
   //FORM LOGIN
@@ -29,11 +29,18 @@ export class BaseFormLogin {
     this.loginUser.reset();
   }
   getDataFormCuenta() {
-    const objPerson = {
-      User: this.registerUser.value.email,
-      Pass: this.registerUser.value.contrasena,
-    };
-    return objPerson;
+    if (
+      this.registerUser.value.contrasena ===
+      this.registerUser.value.contrasena_conf
+    ) {
+      const objPerson = {
+        User: this.registerUser.value.email,
+        Pass: this.registerUser.value.contrasena,
+      };
+      return objPerson;
+    } else {
+      return false;
+    }
   }
   //Data form login
   getDataFormLogin() {

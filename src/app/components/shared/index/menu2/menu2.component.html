@@ -72,276 +72,237 @@
       <div class="col-md-7 mt-2 text-center">
         Hola, Carlos Montúfars
       </div>
+      <ng-container *ngIf="!subMenuCosmetico && !subMenuHerramienta &&!subMenuMuebles">
+        <div class="col-md-4 mt-2">
+          <a class="btn-link link-info" style="cursor: pointer;"> Mi cuenta</a>
+        </div>
 
-      <div class="col-md-4 mt-2">
-        <a class="btn-link link-info" style="cursor: pointer;"> Mi cuenta</a>
-      </div>
+        <div class="col-md-12">
+          <hr>
+        </div>
 
-      <div class="col-md-12">
-        <hr>
-      </div>
+        <div class="col-md-12">
+          <h4>Tendencias</h4>
+        </div>
 
-      <div class="col-md-12">
-        <h4>Tendencias</h4>
-      </div>
+        <div class="col-md-12">
+          <p>Lo más vendido</p>
+        </div>
 
-      <div class="col-md-12">
-        <p>Lo más vendido</p>
-      </div>
+        <div class="col-md-12">
+          <p>Lo más nuevo</p>
+        </div>
 
-      <div class="col-md-12">
-        <p>Lo más nuevo</p>
-      </div>
+        <div class="col-md-12">
+          <p>Productos del momento</p>
+        </div>
 
-      <div class="col-md-12">
-        <p>Productos del momento</p>
-      </div>
+        <div class="col-md-12">
+          <hr>
+        </div>
+        <div class="col-md-12">
+          <h4>Busca Por Categorías</h4>
+        </div>
+      </ng-container>
 
-      <div class="col-md-12">
-        <hr>
-      </div>
+      <ng-container *ngIf="!subMenuHerramienta && !subMenuMuebles">
+        <div class="col-md-9">
+          <ng-container *ngIf="!subMenuCosmetico">
+            <p class="text-white" style="cursor: pointer;" (click)="abrirSubMenuCosmetico();">
+              Cosmeticos y Belleza
+            </p>
+          </ng-container>
+          <ng-container *ngIf="subMenuCosmetico">
+            <p class="text-white" style="cursor:pointer" (click)="cerrarSubMenuCosmetico();">Regresar al Menu</p>
+          </ng-container>
+        </div>
+        <div class="col-md-1 mx-4">
+          <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M2.04715 1.15387C1.76386 0.851689 1.28923 0.836378 0.987044 1.11968C0.68486 1.40297 0.66955 1.8776 0.952847 2.17978L2.04715 1.15387ZM6.5 7.00016L7.04715 7.51312C7.31762 7.22462 7.31762 6.7757 7.04715 6.48721L6.5 7.00016ZM0.952848 11.8205C0.66955 12.1227 0.684861 12.5974 0.987045 12.8806C1.28923 13.1639 1.76386 13.1486 2.04715 12.8465L0.952848 11.8205ZM0.952847 2.17978L5.95285 7.51312L7.04715 6.48721L2.04715 1.15387L0.952847 2.17978ZM5.95285 6.48721L0.952848 11.8205L2.04715 12.8465L7.04715 7.51312L5.95285 6.48721Z"
+              fill="#B6B6B6" class="btn" />
+          </svg>
+        </div>
+        <ng-container *ngIf="subMenuCosmetico">
+          <app-sub-menu-cosmeticos></app-sub-menu-cosmeticos>
+        </ng-container>
+      </ng-container>
 
-      <div class="col-md-12">
-        <h4>Busca Por Categorías</h4>
-      </div>
+      <ng-container *ngIf="!subMenuCosmetico && !subMenuMuebles">
+        <div class="col-md-9">
+          <ng-container *ngIf="!subMenuHerramienta">
+            <p class="text-white" style="cursor: pointer;" (click)="abrirSubMenuHerramienta();">
+              Herramientas y Ferreterias
+            </p>
+          </ng-container>
+          <ng-container *ngIf="subMenuHerramienta">
+            <p class="text-white" style="cursor:pointer" (click)="cerrarSubMenuHerramienta();">Regresar al Menu</p>
+          </ng-container>
+        </div>
 
-      <div class="col-md-9">
-        <p class="text-white" style="cursor: pointer;" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample2"
-          aria-controls="offcanvasExample2">
-          Cosmeticos y Belleza
-        </p>
-      </div>
+        <div class="col-md-1 mx-4">
+          <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M2.04715 1.15387C1.76386 0.851689 1.28923 0.836378 0.987044 1.11968C0.68486 1.40297 0.66955 1.8776 0.952847 2.17978L2.04715 1.15387ZM6.5 7.00016L7.04715 7.51312C7.31762 7.22462 7.31762 6.7757 7.04715 6.48721L6.5 7.00016ZM0.952848 11.8205C0.66955 12.1227 0.684861 12.5974 0.987045 12.8806C1.28923 13.1639 1.76386 13.1486 2.04715 12.8465L0.952848 11.8205ZM0.952847 2.17978L5.95285 7.51312L7.04715 6.48721L2.04715 1.15387L0.952847 2.17978ZM5.95285 6.48721L0.952848 11.8205L2.04715 12.8465L7.04715 7.51312L5.95285 6.48721Z"
+              fill="#B6B6B6" />
+          </svg>
+        </div>
+        <ng-container *ngIf="subMenuHerramienta">
+          <app-sub-menu-herramientas></app-sub-menu-herramientas>
+        </ng-container>
+      </ng-container>
 
-      <div class="col-md-1 mx-4">
-        <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path
-            d="M2.04715 1.15387C1.76386 0.851689 1.28923 0.836378 0.987044 1.11968C0.68486 1.40297 0.66955 1.8776 0.952847 2.17978L2.04715 1.15387ZM6.5 7.00016L7.04715 7.51312C7.31762 7.22462 7.31762 6.7757 7.04715 6.48721L6.5 7.00016ZM0.952848 11.8205C0.66955 12.1227 0.684861 12.5974 0.987045 12.8806C1.28923 13.1639 1.76386 13.1486 2.04715 12.8465L0.952848 11.8205ZM0.952847 2.17978L5.95285 7.51312L7.04715 6.48721L2.04715 1.15387L0.952847 2.17978ZM5.95285 6.48721L0.952848 11.8205L2.04715 12.8465L7.04715 7.51312L5.95285 6.48721Z"
-            fill="#B6B6B6" class="btn" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample2"
-            aria-controls="offcanvasExample2" />
-        </svg>
-      </div>
-
-      <div class="col-md-9">
-        <p class="text-white" style="cursor: pointer;" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample3"
-          aria-controls="offcanvasExample3">Herramientas y Ferreterias</p>
-      </div>
-
-      <div class="col-md-1 mx-4">
-        <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path
-            d="M2.04715 1.15387C1.76386 0.851689 1.28923 0.836378 0.987044 1.11968C0.68486 1.40297 0.66955 1.8776 0.952847 2.17978L2.04715 1.15387ZM6.5 7.00016L7.04715 7.51312C7.31762 7.22462 7.31762 6.7757 7.04715 6.48721L6.5 7.00016ZM0.952848 11.8205C0.66955 12.1227 0.684861 12.5974 0.987045 12.8806C1.28923 13.1639 1.76386 13.1486 2.04715 12.8465L0.952848 11.8205ZM0.952847 2.17978L5.95285 7.51312L7.04715 6.48721L2.04715 1.15387L0.952847 2.17978ZM5.95285 6.48721L0.952848 11.8205L2.04715 12.8465L7.04715 7.51312L5.95285 6.48721Z"
-            fill="#B6B6B6" />
-        </svg>
-      </div>
-
-      <div class="col-md-9">
-        <p>Herramientas y ferreterías</p>
-      </div>
-
-      <div class="col-md-1 mx-4">
-        <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path
-            d="M2.04715 1.15387C1.76386 0.851689 1.28923 0.836378 0.987044 1.11968C0.68486 1.40297 0.66955 1.8776 0.952847 2.17978L2.04715 1.15387ZM6.5 7.00016L7.04715 7.51312C7.31762 7.22462 7.31762 6.7757 7.04715 6.48721L6.5 7.00016ZM0.952848 11.8205C0.66955 12.1227 0.684861 12.5974 0.987045 12.8806C1.28923 13.1639 1.76386 13.1486 2.04715 12.8465L0.952848 11.8205ZM0.952847 2.17978L5.95285 7.51312L7.04715 6.48721L2.04715 1.15387L0.952847 2.17978ZM5.95285 6.48721L0.952848 11.8205L2.04715 12.8465L7.04715 7.51312L5.95285 6.48721Z"
-            fill="#B6B6B6" />
-        </svg>
-      </div>
-
-      <div class="col-md-9">
-        <p>Equipos de ciclismos</p>
-      </div>
-
-      <div class="col-md-1 mx-4">
-        <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path
-            d="M2.04715 1.15387C1.76386 0.851689 1.28923 0.836378 0.987044 1.11968C0.68486 1.40297 0.66955 1.8776 0.952847 2.17978L2.04715 1.15387ZM6.5 7.00016L7.04715 7.51312C7.31762 7.22462 7.31762 6.7757 7.04715 6.48721L6.5 7.00016ZM0.952848 11.8205C0.66955 12.1227 0.684861 12.5974 0.987045 12.8806C1.28923 13.1639 1.76386 13.1486 2.04715 12.8465L0.952848 11.8205ZM0.952847 2.17978L5.95285 7.51312L7.04715 6.48721L2.04715 1.15387L0.952847 2.17978ZM5.95285 6.48721L0.952848 11.8205L2.04715 12.8465L7.04715 7.51312L5.95285 6.48721Z"
-            fill="#B6B6B6" />
-        </svg>
-      </div>
-
-      <div class="col-md-9">
-        <p>Muebles de Hogar</p>
-      </div>
-
-      <div class="col-md-1 mx-4">
-        <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path
-            d="M2.04715 1.15387C1.76386 0.851689 1.28923 0.836378 0.987044 1.11968C0.68486 1.40297 0.66955 1.8776 0.952847 2.17978L2.04715 1.15387ZM6.5 7.00016L7.04715 7.51312C7.31762 7.22462 7.31762 6.7757 7.04715 6.48721L6.5 7.00016ZM0.952848 11.8205C0.66955 12.1227 0.684861 12.5974 0.987045 12.8806C1.28923 13.1639 1.76386 13.1486 2.04715 12.8465L0.952848 11.8205ZM0.952847 2.17978L5.95285 7.51312L7.04715 6.48721L2.04715 1.15387L0.952847 2.17978ZM5.95285 6.48721L0.952848 11.8205L2.04715 12.8465L7.04715 7.51312L5.95285 6.48721Z"
-            fill="#B6B6B6" />
-        </svg>
-      </div>
-
-      <div class="col-md-9">
-        <p>Ropa Deportiva</p>
-      </div>
-
-      <div class="col-md-1 mx-4">
-        <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path
-            d="M2.04715 1.15387C1.76386 0.851689 1.28923 0.836378 0.987044 1.11968C0.68486 1.40297 0.66955 1.8776 0.952847 2.17978L2.04715 1.15387ZM6.5 7.00016L7.04715 7.51312C7.31762 7.22462 7.31762 6.7757 7.04715 6.48721L6.5 7.00016ZM0.952848 11.8205C0.66955 12.1227 0.684861 12.5974 0.987045 12.8806C1.28923 13.1639 1.76386 13.1486 2.04715 12.8465L0.952848 11.8205ZM0.952847 2.17978L5.95285 7.51312L7.04715 6.48721L2.04715 1.15387L0.952847 2.17978ZM5.95285 6.48721L0.952848 11.8205L2.04715 12.8465L7.04715 7.51312L5.95285 6.48721Z"
-            fill="#B6B6B6" />
-        </svg>
-      </div>
-
-      <div class="col-md-9">
-        <p>Electrodomésticos</p>
-      </div>
-
-      <div class="col-md-1 mx-4">
-        <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path
-            d="M2.04715 1.15387C1.76386 0.851689 1.28923 0.836378 0.987044 1.11968C0.68486 1.40297 0.66955 1.8776 0.952847 2.17978L2.04715 1.15387ZM6.5 7.00016L7.04715 7.51312C7.31762 7.22462 7.31762 6.7757 7.04715 6.48721L6.5 7.00016ZM0.952848 11.8205C0.66955 12.1227 0.684861 12.5974 0.987045 12.8806C1.28923 13.1639 1.76386 13.1486 2.04715 12.8465L0.952848 11.8205ZM0.952847 2.17978L5.95285 7.51312L7.04715 6.48721L2.04715 1.15387L0.952847 2.17978ZM5.95285 6.48721L0.952848 11.8205L2.04715 12.8465L7.04715 7.51312L5.95285 6.48721Z"
-            fill="#B6B6B6" />
-        </svg>
-      </div>
-
-      <div class="col-md-9">
-        <p>Calzado Deportivo</p>
-      </div>
-
-      <div class="col-md-1 mx-4">
-        <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path
-            d="M2.04715 1.15387C1.76386 0.851689 1.28923 0.836378 0.987044 1.11968C0.68486 1.40297 0.66955 1.8776 0.952847 2.17978L2.04715 1.15387ZM6.5 7.00016L7.04715 7.51312C7.31762 7.22462 7.31762 6.7757 7.04715 6.48721L6.5 7.00016ZM0.952848 11.8205C0.66955 12.1227 0.684861 12.5974 0.987045 12.8806C1.28923 13.1639 1.76386 13.1486 2.04715 12.8465L0.952848 11.8205ZM0.952847 2.17978L5.95285 7.51312L7.04715 6.48721L2.04715 1.15387L0.952847 2.17978ZM5.95285 6.48721L0.952848 11.8205L2.04715 12.8465L7.04715 7.51312L5.95285 6.48721Z"
-            fill="#B6B6B6" />
-        </svg>
-      </div>
-
-      <div class="col-md-9">
-        <p>Equipos de entrenamiento</p>
-      </div>
-
-      <div class="col-md-1 mx-4">
-        <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path
-            d="M2.04715 1.15387C1.76386 0.851689 1.28923 0.836378 0.987044 1.11968C0.68486 1.40297 0.66955 1.8776 0.952847 2.17978L2.04715 1.15387ZM6.5 7.00016L7.04715 7.51312C7.31762 7.22462 7.31762 6.7757 7.04715 6.48721L6.5 7.00016ZM0.952848 11.8205C0.66955 12.1227 0.684861 12.5974 0.987045 12.8806C1.28923 13.1639 1.76386 13.1486 2.04715 12.8465L0.952848 11.8205ZM0.952847 2.17978L5.95285 7.51312L7.04715 6.48721L2.04715 1.15387L0.952847 2.17978ZM5.95285 6.48721L0.952848 11.8205L2.04715 12.8465L7.04715 7.51312L5.95285 6.48721Z"
-            fill="#B6B6B6" />
-        </svg>
-      </div>
-
-      <div class="col-md-9">
-        <p>Maletas y bolsos de viaje</p>
-      </div>
-
-      <div class="col-md-1 mx-4">
-        <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path
-            d="M2.04715 1.15387C1.76386 0.851689 1.28923 0.836378 0.987044 1.11968C0.68486 1.40297 0.66955 1.8776 0.952847 2.17978L2.04715 1.15387ZM6.5 7.00016L7.04715 7.51312C7.31762 7.22462 7.31762 6.7757 7.04715 6.48721L6.5 7.00016ZM0.952848 11.8205C0.66955 12.1227 0.684861 12.5974 0.987045 12.8806C1.28923 13.1639 1.76386 13.1486 2.04715 12.8465L0.952848 11.8205ZM0.952847 2.17978L5.95285 7.51312L7.04715 6.48721L2.04715 1.15387L0.952847 2.17978ZM5.95285 6.48721L0.952848 11.8205L2.04715 12.8465L7.04715 7.51312L5.95285 6.48721Z"
-            fill="#B6B6B6" />
-        </svg>
-      </div>
-
-      <div class="col-md-9">
-        <p>Abrigos y Chalecos</p>
-      </div>
-
-      <div class="col-md-1 mx-4">
-        <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path
-            d="M2.04715 1.15387C1.76386 0.851689 1.28923 0.836378 0.987044 1.11968C0.68486 1.40297 0.66955 1.8776 0.952847 2.17978L2.04715 1.15387ZM6.5 7.00016L7.04715 7.51312C7.31762 7.22462 7.31762 6.7757 7.04715 6.48721L6.5 7.00016ZM0.952848 11.8205C0.66955 12.1227 0.684861 12.5974 0.987045 12.8806C1.28923 13.1639 1.76386 13.1486 2.04715 12.8465L0.952848 11.8205ZM0.952847 2.17978L5.95285 7.51312L7.04715 6.48721L2.04715 1.15387L0.952847 2.17978ZM5.95285 6.48721L0.952848 11.8205L2.04715 12.8465L7.04715 7.51312L5.95285 6.48721Z"
-            fill="#B6B6B6" />
-        </svg>
-      </div>
-
-      <div class="col-md-9">
-        <p>Hecho en Ecuador</p>
-      </div>
-
-      <div class="col-md-1 mx-4">
-        <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path
-            d="M2.04715 1.15387C1.76386 0.851689 1.28923 0.836378 0.987044 1.11968C0.68486 1.40297 0.66955 1.8776 0.952847 2.17978L2.04715 1.15387ZM6.5 7.00016L7.04715 7.51312C7.31762 7.22462 7.31762 6.7757 7.04715 6.48721L6.5 7.00016ZM0.952848 11.8205C0.66955 12.1227 0.684861 12.5974 0.987045 12.8806C1.28923 13.1639 1.76386 13.1486 2.04715 12.8465L0.952848 11.8205ZM0.952847 2.17978L5.95285 7.51312L7.04715 6.48721L2.04715 1.15387L0.952847 2.17978ZM5.95285 6.48721L0.952848 11.8205L2.04715 12.8465L7.04715 7.51312L5.95285 6.48721Z"
-            fill="#B6B6B6" />
-        </svg>
-      </div>
-
-      <div class="col-md-12">
-        <hr>
-      </div>
-
-      <div class="col-md-12">
-        <h4>Ajustes y Soporte</h4>
-      </div>
-
-      <div class="col-md-12">
-        <p>Mi cuenta</p>
-      </div>
-      <div class="col-md-12">
-        <p>Atención al cliente</p>
-      </div>
-      <div class="col-md-12">
-        Cerrar Sesión
-      </div>
-    </div>
-  </div>
-</div>
+      <ng-container *ngIf="!subMenuHerramienta && !subMenuCosmetico">
+        <div class="col-md-9">
+          <ng-container *ngIf="!subMenuMuebles">
+            <p class="text-white" style="cursor: pointer;" (click)="abrirSubMenuMuebles();">
+              Muebles y Hogar
+            </p>
+          </ng-container>
+          <ng-container *ngIf="subMenuMuebles">
+            <p class="text-white" style="cursor:pointer" (click)="cerrarSubMenuMuebles();">Regresar al Menu</p>
+          </ng-container>
+        </div>
+        <div class="col-md-1 mx-4">
+          <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M2.04715 1.15387C1.76386 0.851689 1.28923 0.836378 0.987044 1.11968C0.68486 1.40297 0.66955 1.8776 0.952847 2.17978L2.04715 1.15387ZM6.5 7.00016L7.04715 7.51312C7.31762 7.22462 7.31762 6.7757 7.04715 6.48721L6.5 7.00016ZM0.952848 11.8205C0.66955 12.1227 0.684861 12.5974 0.987045 12.8806C1.28923 13.1639 1.76386 13.1486 2.04715 12.8465L0.952848 11.8205ZM0.952847 2.17978L5.95285 7.51312L7.04715 6.48721L2.04715 1.15387L0.952847 2.17978ZM5.95285 6.48721L0.952848 11.8205L2.04715 12.8465L7.04715 7.51312L5.95285 6.48721Z"
+              fill="#B6B6B6" />
+          </svg>
+        </div>
+        <ng-container *ngIf="subMenuMuebles">
+          <app-sub-menu-muebles></app-sub-menu-muebles>
+        </ng-container>
+      </ng-container>
 
 
+      <ng-container *ngIf="!subMenuCosmetico && !subMenuMuebles && !subMenuHerramienta">
+        <div class="col-md-9">
+          <p>Equipos de ciclismos</p>
+        </div>
 
-<!-----COSMETICOS Y BELLEZA-->
+        <div class="col-md-1 mx-4">
+          <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M2.04715 1.15387C1.76386 0.851689 1.28923 0.836378 0.987044 1.11968C0.68486 1.40297 0.66955 1.8776 0.952847 2.17978L2.04715 1.15387ZM6.5 7.00016L7.04715 7.51312C7.31762 7.22462 7.31762 6.7757 7.04715 6.48721L6.5 7.00016ZM0.952848 11.8205C0.66955 12.1227 0.684861 12.5974 0.987045 12.8806C1.28923 13.1639 1.76386 13.1486 2.04715 12.8465L0.952848 11.8205ZM0.952847 2.17978L5.95285 7.51312L7.04715 6.48721L2.04715 1.15387L0.952847 2.17978ZM5.95285 6.48721L0.952848 11.8205L2.04715 12.8465L7.04715 7.51312L5.95285 6.48721Z"
+              fill="#B6B6B6" />
+          </svg>
+        </div>
 
-<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample2" aria-labelledby="offcanvasExampleLabel2">
-  <div class="offcanvas-body sidenav-card text-white">
-    <div class="row text-white mx-1" id="offcanvasLabel2">
-      <div class="col-md-12">
-        <a class="nav-link abrir" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button"
-          aria-controls="offcanvasExample">Menu Principal</a>
-      </div>
-      <div class="col-md-12 mt-2">
-        <h3>Cosméticos y Maquillaje</h3>
-      </div>
-      <div class="col-md-12">
-        <hr>
-      </div>
-      <div class="col-md-12">
-        <h4>Maquillaje</h4>
-      </div>
+        <div class="col-md-9">
+          <p>Muebles de Hogar</p>
+        </div>
 
-      <div class="col-md-12">
-        <p>SPA</p>
-      </div>
+        <div class="col-md-1 mx-4">
+          <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M2.04715 1.15387C1.76386 0.851689 1.28923 0.836378 0.987044 1.11968C0.68486 1.40297 0.66955 1.8776 0.952847 2.17978L2.04715 1.15387ZM6.5 7.00016L7.04715 7.51312C7.31762 7.22462 7.31762 6.7757 7.04715 6.48721L6.5 7.00016ZM0.952848 11.8205C0.66955 12.1227 0.684861 12.5974 0.987045 12.8806C1.28923 13.1639 1.76386 13.1486 2.04715 12.8465L0.952848 11.8205ZM0.952847 2.17978L5.95285 7.51312L7.04715 6.48721L2.04715 1.15387L0.952847 2.17978ZM5.95285 6.48721L0.952848 11.8205L2.04715 12.8465L7.04715 7.51312L5.95285 6.48721Z"
+              fill="#B6B6B6" />
+          </svg>
+        </div>
 
-      <div class="col-md-12">
-        <p>Catalogos</p>
-      </div>
+        <div class="col-md-9">
+          <p>Ropa Deportiva</p>
+        </div>
 
-      <div class="col-md-12">
-        <p>Productos del momento</p>
-      </div>
+        <div class="col-md-1 mx-4">
+          <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M2.04715 1.15387C1.76386 0.851689 1.28923 0.836378 0.987044 1.11968C0.68486 1.40297 0.66955 1.8776 0.952847 2.17978L2.04715 1.15387ZM6.5 7.00016L7.04715 7.51312C7.31762 7.22462 7.31762 6.7757 7.04715 6.48721L6.5 7.00016ZM0.952848 11.8205C0.66955 12.1227 0.684861 12.5974 0.987045 12.8806C1.28923 13.1639 1.76386 13.1486 2.04715 12.8465L0.952848 11.8205ZM0.952847 2.17978L5.95285 7.51312L7.04715 6.48721L2.04715 1.15387L0.952847 2.17978ZM5.95285 6.48721L0.952848 11.8205L2.04715 12.8465L7.04715 7.51312L5.95285 6.48721Z"
+              fill="#B6B6B6" />
+          </svg>
+        </div>
 
-    </div>
-  </div>
-</div>
+        <div class="col-md-9">
+          <p>Electrodomésticos</p>
+        </div>
 
-<!-----------HErrAMIENTAS Y FERRETERIA----------->
-<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample3" aria-labelledby="offcanvasExampleLabel3">
-  <div class="offcanvas-body sidenav-card text-white">
-    <div class="row text-white mx-1" id="offcanvasExampleLabel3">
-      <div class="col-md-12">
-        <a class="nav-link abrir" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button"
-          aria-controls="offcanvasExample">Menu Principal</a>
-      </div>
-      <div class="col-md-12 mt-2">
-        <h3>Herramientas y Ferreterias</h3>
-      </div>
-      <div class="col-md-12">
-        <hr>
-      </div>
-      <div class="col-md-12">
-        <h4>Soldadura</h4>
-      </div>
+        <div class="col-md-1 mx-4">
+          <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M2.04715 1.15387C1.76386 0.851689 1.28923 0.836378 0.987044 1.11968C0.68486 1.40297 0.66955 1.8776 0.952847 2.17978L2.04715 1.15387ZM6.5 7.00016L7.04715 7.51312C7.31762 7.22462 7.31762 6.7757 7.04715 6.48721L6.5 7.00016ZM0.952848 11.8205C0.66955 12.1227 0.684861 12.5974 0.987045 12.8806C1.28923 13.1639 1.76386 13.1486 2.04715 12.8465L0.952848 11.8205ZM0.952847 2.17978L5.95285 7.51312L7.04715 6.48721L2.04715 1.15387L0.952847 2.17978ZM5.95285 6.48721L0.952848 11.8205L2.04715 12.8465L7.04715 7.51312L5.95285 6.48721Z"
+              fill="#B6B6B6" />
+          </svg>
+        </div>
 
-      <div class="col-md-12">
-        <p>Martillos</p>
-      </div>
+        <div class="col-md-9">
+          <p>Calzado Deportivo</p>
+        </div>
 
-      <div class="col-md-12">
-        <p>Clavos</p>
-      </div>
+        <div class="col-md-1 mx-4">
+          <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M2.04715 1.15387C1.76386 0.851689 1.28923 0.836378 0.987044 1.11968C0.68486 1.40297 0.66955 1.8776 0.952847 2.17978L2.04715 1.15387ZM6.5 7.00016L7.04715 7.51312C7.31762 7.22462 7.31762 6.7757 7.04715 6.48721L6.5 7.00016ZM0.952848 11.8205C0.66955 12.1227 0.684861 12.5974 0.987045 12.8806C1.28923 13.1639 1.76386 13.1486 2.04715 12.8465L0.952848 11.8205ZM0.952847 2.17978L5.95285 7.51312L7.04715 6.48721L2.04715 1.15387L0.952847 2.17978ZM5.95285 6.48721L0.952848 11.8205L2.04715 12.8465L7.04715 7.51312L5.95285 6.48721Z"
+              fill="#B6B6B6" />
+          </svg>
+        </div>
 
-      <div class="col-md-12">
-        <p>Cascos</p>
-      </div>
+        <div class="col-md-9">
+          <p>Equipos de entrenamiento</p>
+        </div>
 
+        <div class="col-md-1 mx-4">
+          <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M2.04715 1.15387C1.76386 0.851689 1.28923 0.836378 0.987044 1.11968C0.68486 1.40297 0.66955 1.8776 0.952847 2.17978L2.04715 1.15387ZM6.5 7.00016L7.04715 7.51312C7.31762 7.22462 7.31762 6.7757 7.04715 6.48721L6.5 7.00016ZM0.952848 11.8205C0.66955 12.1227 0.684861 12.5974 0.987045 12.8806C1.28923 13.1639 1.76386 13.1486 2.04715 12.8465L0.952848 11.8205ZM0.952847 2.17978L5.95285 7.51312L7.04715 6.48721L2.04715 1.15387L0.952847 2.17978ZM5.95285 6.48721L0.952848 11.8205L2.04715 12.8465L7.04715 7.51312L5.95285 6.48721Z"
+              fill="#B6B6B6" />
+          </svg>
+        </div>
+
+        <div class="col-md-9">
+          <p>Maletas y bolsos de viaje</p>
+        </div>
+
+        <div class="col-md-1 mx-4">
+          <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M2.04715 1.15387C1.76386 0.851689 1.28923 0.836378 0.987044 1.11968C0.68486 1.40297 0.66955 1.8776 0.952847 2.17978L2.04715 1.15387ZM6.5 7.00016L7.04715 7.51312C7.31762 7.22462 7.31762 6.7757 7.04715 6.48721L6.5 7.00016ZM0.952848 11.8205C0.66955 12.1227 0.684861 12.5974 0.987045 12.8806C1.28923 13.1639 1.76386 13.1486 2.04715 12.8465L0.952848 11.8205ZM0.952847 2.17978L5.95285 7.51312L7.04715 6.48721L2.04715 1.15387L0.952847 2.17978ZM5.95285 6.48721L0.952848 11.8205L2.04715 12.8465L7.04715 7.51312L5.95285 6.48721Z"
+              fill="#B6B6B6" />
+          </svg>
+        </div>
+
+        <div class="col-md-9">
+          <p>Abrigos y Chalecos</p>
+        </div>
+
+        <div class="col-md-1 mx-4">
+          <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M2.04715 1.15387C1.76386 0.851689 1.28923 0.836378 0.987044 1.11968C0.68486 1.40297 0.66955 1.8776 0.952847 2.17978L2.04715 1.15387ZM6.5 7.00016L7.04715 7.51312C7.31762 7.22462 7.31762 6.7757 7.04715 6.48721L6.5 7.00016ZM0.952848 11.8205C0.66955 12.1227 0.684861 12.5974 0.987045 12.8806C1.28923 13.1639 1.76386 13.1486 2.04715 12.8465L0.952848 11.8205ZM0.952847 2.17978L5.95285 7.51312L7.04715 6.48721L2.04715 1.15387L0.952847 2.17978ZM5.95285 6.48721L0.952848 11.8205L2.04715 12.8465L7.04715 7.51312L5.95285 6.48721Z"
+              fill="#B6B6B6" />
+          </svg>
+        </div>
+
+        <div class="col-md-9">
+          <p>Hecho en Ecuador</p>
+        </div>
+
+        <div class="col-md-1 mx-4">
+          <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M2.04715 1.15387C1.76386 0.851689 1.28923 0.836378 0.987044 1.11968C0.68486 1.40297 0.66955 1.8776 0.952847 2.17978L2.04715 1.15387ZM6.5 7.00016L7.04715 7.51312C7.31762 7.22462 7.31762 6.7757 7.04715 6.48721L6.5 7.00016ZM0.952848 11.8205C0.66955 12.1227 0.684861 12.5974 0.987045 12.8806C1.28923 13.1639 1.76386 13.1486 2.04715 12.8465L0.952848 11.8205ZM0.952847 2.17978L5.95285 7.51312L7.04715 6.48721L2.04715 1.15387L0.952847 2.17978ZM5.95285 6.48721L0.952848 11.8205L2.04715 12.8465L7.04715 7.51312L5.95285 6.48721Z"
+              fill="#B6B6B6" />
+          </svg>
+        </div>
+
+        <div class="col-md-12">
+          <hr>
+        </div>
+
+        <div class="col-md-12">
+          <h4>Ajustes y Soporte</h4>
+        </div>
+
+        <div class="col-md-12">
+          <p>Mi cuenta</p>
+        </div>
+        <div class="col-md-12">
+          <p>Atención al cliente</p>
+        </div>
+        <div class="col-md-12">
+          Cerrar Sesión
+        </div>
+      </ng-container>
     </div>
   </div>
 </div>

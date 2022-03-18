@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { PatterExpresion } from '../../shared/validations/expresionRegular';
 
 @Injectable({ providedIn: 'root' })
 export class BaseUsersForm {
@@ -13,7 +14,7 @@ export class BaseUsersForm {
         Validators.required,
         Validators.minLength(3),
         Validators.maxLength(20),
-        Validators.pattern(/^[A-Za-z\s]+$/i),
+        Validators.pattern(/^[A-Za-z ]+$/),
       ],
     ],
     nombre2: [
@@ -22,7 +23,7 @@ export class BaseUsersForm {
         Validators.required,
         Validators.minLength(3),
         Validators.maxLength(20),
-        Validators.pattern(/^[A-Za-z\s]+$/i),
+        Validators.pattern(/^[A-Za-z ]+$/),
       ],
     ],
     apellido1: [
@@ -31,7 +32,7 @@ export class BaseUsersForm {
         Validators.required,
         Validators.minLength(3),
         Validators.maxLength(30),
-        Validators.pattern(/^[A-Za-z\s]+$/i),
+        Validators.pattern(/^[A-Za-z ]+$/),
       ],
     ],
     apellido2: [
@@ -40,7 +41,7 @@ export class BaseUsersForm {
         Validators.required,
         Validators.minLength(3),
         Validators.maxLength(30),
-        Validators.pattern(/^[A-Za-z\s]+$/i),
+        Validators.pattern(/^[A-Za-z ]+$/),
       ],
     ],
     direccion2: [
@@ -48,24 +49,34 @@ export class BaseUsersForm {
       Validators.required,
       Validators.minLength(5),
       Validators.maxLength(50),
+      Validators.pattern(/^[A-Za-z ]+$/),
     ],
     celular: [
       '',
-      Validators.required,
-      Validators.minLength(10),
-      Validators.maxLength(10),
+      [
+        Validators.required,
+        Validators.maxLength(10),
+        Validators.minLength(10),
+        Validators.pattern(/[0-9]{2}[0-9]{8}/),
+      ],
     ],
     cedula: [
       '',
-      Validators.required,
-      Validators.minLength(10),
-      Validators.maxLength(10),
+      [
+        Validators.required,
+        Validators.maxLength(10),
+        Validators.minLength(10),
+        Validators.pattern(/[0-9]{2}[0-9]{8}/),
+      ],
     ],
     telefono: [
       '',
-      Validators.required,
-      Validators.minLength(10),
-      Validators.maxLength(10),
+      [
+        Validators.required,
+        Validators.maxLength(10),
+        Validators.minLength(10),
+        Validators.pattern(/[0-9]{2}[0-9]{8}/),
+      ],
     ],
     sexo: ['', [Validators.required]],
     FechaNacimiento: ['', Validators.required],

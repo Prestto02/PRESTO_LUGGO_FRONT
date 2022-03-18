@@ -11,22 +11,35 @@ import { TokenService } from './services/token.service';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
-  public mensaje: boolean = false;
+  public errorLogin = false;
   public urlapi = UrlApi; //API
   constructor(
     public formB: BaseFormLogin,
     private router: Router,
     private apiLogin: LoginService,
-    private apiToken: TokenService,
+    private apiToken: TokenService
   ) {}
   public longitud: any;
   public latitude: any;
   ngOnInit(): void {}
 
   submit() {
-    this.router.navigateByUrl(`${UrlFront.Menu.menu}/${UrlFront.Menu.index}`);
     const users = this.formB.getDataFormLogin();
-    console.log(users);
+    this.apiLogin.postUserLogin(users).subscribe(
+      (res) => {
+        console.log(res);
+      },
+      (err) => {
+        if (err.error.text) {
+          this.apiToken.setTokenUsers(err.error.text);
+          this.router.navigateByUrl(
+            `${UrlFront.Menu.menu}/${UrlFront.Menu.index}`
+          );
+        } else {
+          this.errorLogin = true;
+        }
+      }
+    );
   }
   //IR A REGISTRAR CUENTA
   registraCuenta() {

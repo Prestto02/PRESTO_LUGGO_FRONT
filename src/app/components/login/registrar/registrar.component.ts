@@ -10,6 +10,8 @@ import { LoginService } from '../services/login.service';
   styleUrls: ['./registrar.component.css'],
 })
 export class RegistrarComponent implements OnInit {
+  error = false;
+  messageError = '';
   constructor(
     public formB: BaseFormLogin,
     private router: Router,
@@ -20,18 +22,24 @@ export class RegistrarComponent implements OnInit {
   //SUBMIT DATA API
   submit() {
     const users = this.formB.getDataFormCuenta();
-    this.apiService.postUserDataApi(users).subscribe(
-      (res) => {
-        this.formB.limpiarForm();
-        this.router.navigate([
-          `/${UrlFront.Users.users}/${UrlFront.Users.post}`,
-          res,
-        ]);
-      },
-      (err) => {
-        console.log(err);
-      }
-    );
+    if (users) {
+      this.apiService.postUserDataApi(users).subscribe(
+        (res) => {
+          this.formB.limpiarForm();
+          this.router.navigate([
+            `/${UrlFront.Users.users}/${UrlFront.Users.post}`,
+            res,
+          ]);
+        },
+        (err) => {
+          this.error = true;
+          this.messageError = err.error;
+        }
+      );
+    } else {
+      this.error = true;
+      this.messageError = 'La contraseña no coincide';
+    }
   }
   //LIMPIAR FORMULARIO
   limpiar() {

@@ -64,6 +64,9 @@
                   Sesion</button>
               </div>
             </form>
+            <div *ngIf="errorLogin">
+              <p class="text text-center text-danger">Usuario y contraseña incorrectos</p>
+            </div>
             <div class="col-md-12 col-sm-12 mt-3 col-12">
               <div class="row">
                 <div class="col-md-3 col-3 col-sm-3">
@@ -119,9 +122,7 @@
               </div>
             </div>
           </div>
-          <div *ngIf="mensaje">
-            <p class="text text-danger">Usuario y contraseña incorrectos</p>
-          </div>
+
         </div>
       </div>
     </div>

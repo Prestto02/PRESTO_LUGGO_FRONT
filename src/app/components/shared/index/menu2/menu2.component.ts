@@ -5,14 +5,31 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./menu2.component.css'],
 })
 export class Menu2Component implements OnInit {
-  abrirMenu = false;
+  subMenuCosmetico = false;
+  subMenuHerramienta = false;
+  subMenuMuebles = false;
   constructor() {}
 
   ngOnInit(): void {}
-  openNav() {
-    this.abrirMenu = true;
+  //COSmetiCO
+  abrirSubMenuCosmetico() {
+    this.subMenuCosmetico = true;
   }
-  closeNav() {
-    this.abrirMenu = false;
+  cerrarSubMenuCosmetico() {
+    this.subMenuCosmetico = false;
+  }
+  //HERRAMIENTAS
+  abrirSubMenuHerramienta() {
+    this.subMenuHerramienta = true;
+  }
+  cerrarSubMenuHerramienta() {
+    this.subMenuHerramienta = false;
+  }
+  //MUEBLES
+  abrirSubMenuMuebles() {
+    this.subMenuMuebles = true;
+  }
+  cerrarSubMenuMuebles() {
+    this.subMenuMuebles = false;
   }
 }

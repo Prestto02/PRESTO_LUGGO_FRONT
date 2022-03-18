@@ -14,7 +14,9 @@ import { Footer2Component } from '../footer2/footer2.component';
 import { SectionCardsInformationComponent } from '../section-cards-information/section-cards-information.component';
 import { SectionCardsOfertasComponent } from '../section-cards-ofertas/section-cards-ofertas.component';
 import { SectionServiciosComponent } from '../section-servicios/section-servicios.component';
-
+import { SubMenuCosmeticosComponent } from '../menu2/sub-menu-cosmeticos/sub-menu-cosmeticos.component';
+import { SubMenuHerramientasComponent } from '../menu2/sub-menu-herramientas/sub-menu-herramientas.component';
+import { SubMenuMueblesComponent } from '../menu2/sub-menu-muebles/sub-menu-muebles.component';
 @NgModule({
   declarations: [
     IndexComponent,
@@ -28,6 +30,9 @@ import { SectionServiciosComponent } from '../section-servicios/section-servicio
     SectionCardsInformationComponent,
     SectionCardsOfertasComponent,
     SectionServiciosComponent,
+    SubMenuCosmeticosComponent,
+    SubMenuHerramientasComponent,
+    SubMenuMueblesComponent,
     Footer2Component,
     FooterComponent,
   ],

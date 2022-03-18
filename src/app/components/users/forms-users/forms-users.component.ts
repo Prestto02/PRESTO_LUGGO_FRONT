@@ -25,16 +25,12 @@ export class FormsUsersComponent implements OnInit {
   //ENVIAR FORMULARIO POR PUT
   submit() {
     const users = this.formB.getDataForm();
-    console.log(users);
-    /* this.router.navigateByUrl(
-      `${UrlFront.Login.login}/${UrlFront.Login.iniciarSesion}`
-    );*/
-    this.apiService.putDataUser(users).subscribe(
+    this.apiService.postDataUser(users).subscribe(
       (res) => {
-        console.log(res);
         this.router.navigateByUrl(
           `${UrlFront.Login.login}/${UrlFront.Login.iniciarSesion}`
         );
+        console.log(res);
       },
       (err) => {
         console.log(err);
