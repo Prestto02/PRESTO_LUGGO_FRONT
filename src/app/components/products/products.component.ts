@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
 import { PosicionService } from '../shared/services/posicion.service';
+import { BaseFormProducts } from './models/BaseformProduct';
 import { ProductsService } from './services/products.service';
 
 @Component({
@@ -10,10 +12,11 @@ import { ProductsService } from './services/products.service';
 export class ProductsComponent implements OnInit {
   cosmeticos: boolean = false;
   herramientas: boolean = false;
-  peliculas: boolean=false;
+  peliculas: boolean = false;
   constructor(
     private apiProduct: ProductsService,
-    private location: PosicionService
+    private location: PosicionService,
+    public formB: BaseFormProducts
   ) {}
 
   ngOnInit(): void {
@@ -31,7 +34,11 @@ export class ProductsComponent implements OnInit {
       }
     );
   }
+  get id_productControl():FormControl{
+    return this.formB.formProducts.get('id_product')as FormControl;
+  }
   submit() {
-    this.location.getPosition()
+    this.formB.formProducts.value;
+    this.location.getPosition();
   }
 }

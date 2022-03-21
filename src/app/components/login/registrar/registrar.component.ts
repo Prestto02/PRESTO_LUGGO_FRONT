@@ -21,25 +21,20 @@ export class RegistrarComponent implements OnInit {
   ngOnInit(): void {}
   //SUBMIT DATA API
   submit() {
-    const users = this.formB.getDataFormCuenta();
-    if (users) {
-      this.apiService.postUserDataApi(users).subscribe(
-        (res) => {
-          this.formB.limpiarForm();
-          this.router.navigate([
-            `/${UrlFront.Users.users}/${UrlFront.Users.post}`,
-            res,
-          ]);
-        },
-        (err) => {
-          this.error = true;
-          this.messageError = err.error;
-        }
-      );
-    } else {
-      this.error = true;
-      this.messageError = 'La contraseña no coincide';
-    }
+    const users = this.formB.getDataFormLogin();
+    this.apiService.postUserDataApi(users).subscribe(
+      (res) => {
+        this.formB.limpiarForm();
+        this.router.navigate([
+          `/${UrlFront.Users.users}/${UrlFront.Users.post}`,
+          res,
+        ]);
+      },
+      (err) => {
+        this.error = true;
+        this.messageError = err.error;
+      }
+    );
   }
   //LIMPIAR FORMULARIO
   limpiar() {

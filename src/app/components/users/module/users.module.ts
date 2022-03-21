@@ -6,6 +6,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { UsersRoutingModule } from './users-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BaseUsersForm } from '../models/BaseFormUsers';
+import { ErrorsExtensionsModule } from '../../shared/errors/errors-module.module';
 @NgModule({
   declarations: [UsersComponent, FormsUsersComponent],
   imports: [
@@ -13,6 +14,7 @@ import { BaseUsersForm } from '../models/BaseFormUsers';
     ReactiveFormsModule,
     CommonModule,
     HttpClientModule,
+    ErrorsExtensionsModule
   ],
   providers: [BaseUsersForm],
 })

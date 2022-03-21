@@ -10,27 +10,38 @@
           <input type="email" class="form-control is-invalid" id="validationServer1" formControlName="email"
             aria-describedby="validationServer1Feedback" [class.is-invalid]="formB.registerUser.get('email')?.touched && formB.registerUser.get('email')?.invalid
           " placeholder="abc@example.com">
-          <div id="validationServer1Feedback" class="invalid-feedback">
-            Deben ser un email valido
-          </div>
+          <app-form-errors-container [forControl]="formB.registerUser.get('email')">
+            <app-message-error forErrorCode="required"></app-message-error>
+            <app-message-error forErrorCode="email"></app-message-error>
+          </app-form-errors-container>
         </div>
         <div class="mb-4">
           <label for="validationServer2" class="form-label">Contraseña</label>
           <input type="password" id="validationServer2" class="form-control is-invalid" formControlName="contrasena"
             placeholder="********" aria-describedby="validationServer2Feedback" [class.is-invalid]="formB.registerUser.get('contrasena')?.touched && formB.registerUser.get('contrasena')?.invalid
             " autocomplete="off">
-          <div id="validationServer2Feedback" class="invalid-feedback">
-            La contraseña debe tener entre 8 a 50 caracteres
-          </div>
+          <app-form-errors-container [forControl]="formB.registerUser.get('contrasena')">
+            <app-message-error forErrorCode="required"></app-message-error>
+            <app-message-error forErrorCode="minlength"
+              customMsg="Debe tener 8 caracteres minimo">
+            </app-message-error>
+          </app-form-errors-container>
         </div>
         <div class="mb-4">
           <label for="validationServer3" class="form-label">Confirma Contraseña</label>
-          <input type="password" id="validationServer3" aria-describedby="validationServer3Feedback" [class.is-invalid]="formB.registerUser.get('contrasena_conf')?.touched && formB.registerUser.get('contrasena_conf')?.invalid
+          <input type="password" id="validationServer3" aria-describedby="validationServer3Feedback"
+          [class.is-invalid]="formB.registerUser.get('contrasena_conf')?.touched && formB.registerUser.get('contrasena_conf')?.invalid
           " class="form-control is-invalid" formControlName="contrasena_conf" placeholder="********"
             autocomplete="off">
-          <div id="validationServer3Feedback" class="invalid-feedback">
-            La contraseña debe tener entre 8 a 50 caracteres
-          </div>
+          <app-form-errors-container [forControl]="formB.registerUser.get('contrasena_conf')">
+            <app-message-error forErrorCode="required"></app-message-error>
+            <app-message-error forErrorCode="minlength"
+              customMsg="Debe tener 8 caracteres minimo">
+            </app-message-error>
+          </app-form-errors-container>
+          <app-form-errors-container [forControl]="formB.registerUser">
+            <app-message-error forErrorCode="passwordsMustBeEqual"></app-message-error>
+          </app-form-errors-container>
         </div>
         <div class="text-center">
           <button type="submit" [disabled]="formB.registerUser.invalid"
@@ -48,7 +59,7 @@
   <div class="col-md-3 col-3 col-sm-3 col-xl-3 col-xxl-3 ms-auto top-0 end-0 p-3">
     <div class="row">
       <div class="alert alert-danger alert-dismissible fade show" role="alert">
-        <h6 class="text">Mensaje de Error</h6>
+        <h6 class="text">Error</h6>
         <div class="text">{{messageError}}</div>
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
       </div>

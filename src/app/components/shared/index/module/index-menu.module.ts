@@ -17,6 +17,9 @@ import { SectionServiciosComponent } from '../section-servicios/section-servicio
 import { SubMenuCosmeticosComponent } from '../menu2/sub-menu-cosmeticos/sub-menu-cosmeticos.component';
 import { SubMenuHerramientasComponent } from '../menu2/sub-menu-herramientas/sub-menu-herramientas.component';
 import { SubMenuMueblesComponent } from '../menu2/sub-menu-muebles/sub-menu-muebles.component';
+import { IniciarSesionComponent } from '../menu/iniciar-sesion/iniciar-sesion.component';
+import { CarritoItemsComponent } from '../menu/carrito-items/carrito-items.component';
+
 @NgModule({
   declarations: [
     IndexComponent,
@@ -30,7 +33,9 @@ import { SubMenuMueblesComponent } from '../menu2/sub-menu-muebles/sub-menu-mueb
     SectionCardsInformationComponent,
     SectionCardsOfertasComponent,
     SectionServiciosComponent,
+    CarritoItemsComponent,
     SubMenuCosmeticosComponent,
+    IniciarSesionComponent,
     SubMenuHerramientasComponent,
     SubMenuMueblesComponent,
     Footer2Component,

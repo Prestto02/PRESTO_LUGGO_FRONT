@@ -7,7 +7,7 @@ import { LoginRoutingModule } from './login-routing.module';
 import { ResetPasswordComponent } from '../reset-password/reset-password.component';
 import { BaseFormLogin } from '../models/BaseFormLogin';
 import { HttpClientModule } from '@angular/common/http';
-
+import { ErrorsExtensionsModule } from '../../shared/errors/errors-module.module';
 @NgModule({
   declarations: [LoginComponent, RegistrarComponent, ResetPasswordComponent],
   imports: [
@@ -15,6 +15,7 @@ import { HttpClientModule } from '@angular/common/http';
     LoginRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
+    ErrorsExtensionsModule,
   ],
   providers: [BaseFormLogin],
 })

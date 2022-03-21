@@ -6,6 +6,8 @@ export class BaseFormProducts {
   constructor(private formB: FormBuilder) {}
 
   formProducts = this.formB.group({
-    id_product: ['', [Validators.required]],
+    id_product: ['', [Validators.required, Validators.minLength(2)]],
+    password: ['', [Validators.required]],
+    checkPassword: ['', [Validators.required]],
   });
 }

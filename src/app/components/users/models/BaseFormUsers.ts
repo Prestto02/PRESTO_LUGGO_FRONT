@@ -46,10 +46,12 @@ export class BaseUsersForm {
     ],
     direccion2: [
       '',
-      Validators.required,
-      Validators.minLength(5),
-      Validators.maxLength(50),
-      Validators.pattern(/^[A-Za-z ]+$/),
+      [
+        Validators.required,
+        Validators.minLength(8),
+        Validators.maxLength(50),
+        Validators.pattern(/^[A-Za-z ]+$/),
+      ],
     ],
     celular: [
       '',
