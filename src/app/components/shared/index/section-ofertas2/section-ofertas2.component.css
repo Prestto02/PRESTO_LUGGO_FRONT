@@ -5,6 +5,7 @@
 #btn-pago {
   background: #7549fe;
   border: 2px solid #fff;
+  font-family: Cardium B-SemiBold;
   color: #fff;
   height: 32px;
   width: 258px;
@@ -12,10 +13,18 @@
 #btn-pago:hover {
   background: #583baf;
 }
-.texto {
-  font-size: 45px;
+.card-texto {
+  font-family: Cardium A-Medium;
+  font-size: 36px;
 }
-.card-carousel{
+.cardium-A-semibold {
+  font-family: Cardium A-SemiBold;
+}
+.cardium-b-bold{
+  font-family: Cardium B-Bold;
+  font-size: 16px;
+}
+.card-carousel {
   border-radius: 20px;
 }
 .btn-carousel-next {

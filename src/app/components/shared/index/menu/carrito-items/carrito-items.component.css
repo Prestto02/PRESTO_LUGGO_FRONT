@@ -1,6 +1,10 @@
-.btn-increment{
+.btn-increment {
   width: 40px;
   height: 20px;
-  background-color: #7549FE;
-
+  background-color: #7549fe;
 }
+.container-item {
+  overflow: auto;
+  overflow-x: hidden;
+}
+

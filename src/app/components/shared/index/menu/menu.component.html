@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">
+    <a class="navbar-brand cursor-item" (click)="menuIndex()">
       <svg width="104" height="40" viewBox="0 0 104 40" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path
           d="M28.9632 10.0088H26.1357C25.2295 10.0088 24.4682 10.7622 24.4682 11.659V20.3765C24.4682 20.5559 24.5045 20.6994 24.5045 20.8787V20.9146C24.5045 21.9909 24.2508 22.9953 23.7433 23.8922C23.2358 24.7891 22.5108 25.5065 21.6045 26.0447C20.6983 26.5828 19.7196 26.8698 18.6321 26.8698C17.5808 26.8698 16.5658 26.6187 15.6959 26.0805C14.7896 25.5424 14.0646 24.8249 13.5571 23.9281C13.0134 23.0312 12.7596 22.0267 12.7596 20.9146V20.8787C12.7596 20.6635 12.7596 20.4841 12.7959 20.2689C12.7959 20.1613 12.7959 20.0178 12.7959 19.9101V19.8743V10.8698C12.7959 10.4034 12.3971 10.0088 11.9259 10.0088H9.06219C8.15595 10.0088 7.39471 10.7622 7.39471 11.659C7.39471 13.1657 7.39471 14.7083 7.39471 16.2151C7.39471 18.2958 7.17721 20.52 7.4672 22.6007C7.72095 24.3944 8.40969 26.1523 9.49718 27.6231C11.4909 30.3855 14.7534 32.2151 18.1971 32.2151C20.4808 32.2151 23.127 31.5693 24.9757 30.2778C25.302 30.0267 25.7732 30.0626 26.0632 30.3137L28.2745 31.7128C28.8907 32.2151 29.7969 31.7846 29.7969 30.9953C29.7969 26.224 29.7969 14.1702 29.7969 10.8698C29.8332 10.4034 29.4344 10.0088 28.9632 10.0088Z"
@@ -28,15 +28,8 @@
           <div class="input-group opciones">
             <select class="form-select" aria-label="Default select example">
               <option selected class="color-select">Escoja la categoria</option>
-              <option value="1" class="color-select">Cosméticos y bellezas</option>
-              <option value="2" class="color-select">Estilos y moda</option>
-              <option value="3" class="color-select">Deportes y actividades</option>
-              <option value="4" class="color-select">Tecnología e innovación</option>
-              <option value="5" class="color-select">Hogar y decoración</option>
-              <option value="6" class="color-select">Electrodomésticos</option>
-              <option value="7" class="color-select">Juguetería</option>
-              <option value="8" class="color-select">Salud y cuidado personal</option>
-              <option value="9" class="color-select">Joyería y accesorios</option>
+              <option value="{{categoria.id}}" class="color-select" *ngFor="let categoria of categoriaItems">
+                {{categoria.name}}</option>
             </select>
             <input type="text" class="form-control w-50" placeholder="" aria-label="Username"
               aria-describedby="basic-addon1" />
@@ -1435,26 +1428,22 @@
             </div>
           </li>
           <li class="navbar-nav">
-            <a class="nav-link btn-lg opciones btn" data-bs-toggle="offcanvas"
+            <a class="nav-link btn-lg opciones btn position-relative" data-bs-toggle="offcanvas"
               data-bs-target="#offcanvasRightCarrito" aria-controls="offcanvasRightCarrito"><span>
-                <svg data-bs-toggle="offcanvas"
+                <svg data-bs-toggle="offcanvas" ata-bs-toggle="offcanvas" aria-controls="offcanvasRightCarrito"
                   data-bs-target="#offcanvasRightCarrito" aria-controls="offcanvasRightCarrito" width="35" height="40"
                   viewBox="0 0 35 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="26" cy="9" r="9" fill="#6869D7" />
-                  <circle cx="26" cy="9" r="9" fill="#7549FE" />
-                  <path
-                    d="M27.858 12H23.6295V10.8086H25.109V6.42871L23.6295 7.1709V5.84766L25.3922 4.99805H26.3785V10.8086H27.858V12Z"
-                    fill="white" />
-                  <path
-                    d="M27.858 12H23.6295V10.8086H25.109V6.42871L23.6295 7.1709V5.84766L25.3922 4.99805H26.3785V10.8086H27.858V12Z"
-                    fill="white" />
                   <path
                     d="M16.2136 18.3932C16.9531 18.3932 17.5447 18.9402 17.6187 19.5556L19.3935 36.1026C19.4675 36.5812 19.1717 36.9915 19.0238 37.1282C18.8759 37.265 18.5061 37.5385 17.9884 37.5385H4.08544C3.56778 37.5385 3.19801 37.265 3.05011 37.1282C2.90221 36.9915 2.6064 36.6496 2.68035 36.1026L4.38125 19.6239C4.4552 18.9402 5.04682 18.4615 5.78634 18.4615L16.2136 18.3932ZM16.2136 16H5.86029C3.78963 16 2.01478 17.4359 1.86688 19.3504L0.018074 35.8974C-0.203782 38.0855 1.64502 40 4.01149 40H17.9884C20.3549 40 22.2037 38.0855 21.9818 35.8974L20.207 19.3504C19.9851 17.4359 18.2842 16 16.2136 16Z"
                     fill="#353535" />
                   <path
                     d="M14.2919 20.3076C13.8221 20.3076 13.3523 20.6495 13.2181 21.1281C12.8825 22.0854 12.01 22.7692 11.0033 22.7692C9.99663 22.7692 9.12415 22.0854 8.78858 21.1281C8.65436 20.6495 8.18456 20.3076 7.71476 20.3076C6.9094 20.3076 6.30537 21.1281 6.64094 21.9486C7.31208 23.7948 9.05704 25.0939 11.0705 25.0939C13.0839 25.0939 14.8288 23.7948 15.5 21.9486C15.6342 21.1281 15.0973 20.3076 14.2919 20.3076Z"
                     fill="#7549FE" />
+
                 </svg>
+                <span class="position-absolute start-10 mt-3 translate-middle badge rounded-pill color-article">
+                  4
+                </span>
               </span>
             </a>
             <app-carrito-items class="offcanvas offcanvas-end text-white" tabindex="-1" id="offcanvasRightCarrito"

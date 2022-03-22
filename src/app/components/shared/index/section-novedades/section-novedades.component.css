@@ -19,3 +19,10 @@
   width: 250px;
   height: 270px;
 }
+.title{
+  font-family: Cardium B-Medium;
+}
+.text-card-footer{
+  color: #7549FE;
+  font-family: Cardium B-Medium;
+}

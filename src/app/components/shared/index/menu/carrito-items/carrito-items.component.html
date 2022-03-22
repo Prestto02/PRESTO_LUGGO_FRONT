@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="container-fluid container-item" >
   <div class="row">
     <div class="col-md-12 col-xl-12 col-xxl-12 col-sm-12 col-12 text-end mt-3">
       <span class="text text-info">Subtotal</span>
@@ -32,39 +32,45 @@
         </div>
 
         <div class="col-md-4 col-sm-4 col-xxl-4 col-xl-4 col-4">
-          <p class="fs-3">$414,00</p>
+          <p class="fs-3">${{totalAPagar}}</p>
         </div>
       </div>
 
     </div>
     <div class="col-md-12 col-xl-12 col-xxl-12 col-sm-12 col-12 text-end mt-auto">
-      <span class="text text-info">4 Productos</span>
+      <span class="text text-info">{{this.products.length}} Productos</span>
     </div>
     <div class="col-md-12 col-xl-12 col-xxl-12 col-sm-12 col-12 text-end mt-auto">
       <hr>
     </div>
     <div class="container col-md-12 col-xl-12 col-xxl-12 col-sm-12 col-12 mt-auto mx-3">
       <div class="container">
-        <div class="row">
+        <div class="row" *ngFor="let product of products">
           <div class="col-md-5 col-sm-5 col-xl-5 col-xxl-5 col-5">
-            IMAGEN
+            {{product.imagen}}
           </div>
           <div class="col-md-7 col-sm-7 col-xl-7 col-xxl-7 col-7">
             <div class="row">
               <div class="col-xl-12 col-md-12 col-12 col-sm-12 col-xxl-12 col-12">
-                <p class="text text-center"><b>Auriculares Sony</b></p>
+                <p class="text text-center"><b>{{product.name}}</b></p>
               </div>
               <div class="col-xl-12 col-md-12 col-12 col-sm-12 col-xxl-12 col-12">
                 <div class="row">
-                  <p class="col-xl-4 mt-2 text-start" style="font-size: 16px;">$80,00</p>
+                  <p class="col-xl-4 mt-2 text-start" style="font-size: 20px;" *ngIf="product.subtotal>0 else precio">
+                    ${{product.subtotal}}
+                  </p>
+                  <ng-template #precio>
+                    <p class="col-xl-4 mt-2 text-start" style="font-size: 20px;">${{product.precio}}</p>
+                  </ng-template>
                   <div class="col-xl-8 text-end">
                     <div class="btn-group col-md-12" role="group" aria-label="Button group with nested dropdown">
-                      <span class="text text-center col-md-8 border rounded" style="height: 40px;">{{valor}}</span>
+                      <span class="text text-center col-md-8 border rounded"
+                        style="height: 40px; font-size: 20px;">{{product.item}}</span>
                       <div class="btn-group-vertical rounded" aria-label="Vertical radio toggle button group">
-                        <span class="btn-increment text-center" (click)="increment()">
+                        <span class="btn-increment text-center" (click)="increment(product.id)">
                           <img src="../../../../../../assets/img/icons/Chevron_Right.png" alt="">
                         </span>
-                        <span class="btn-increment text-center" (click)="descrement()">
+                        <span class="btn-increment text-center" (click)="descrement(product.id)">
                           <img src="../../../../../../assets/img/icons/Chevron_Left.png" alt="">
                         </span>
                       </div>
@@ -74,42 +80,11 @@
               </div>
             </div>
             <div class="col-md-12 col-sm-12 col-xl-12 col-xxl-12 col-12 mt-3">
-              <p class="text text-info text-end">CD9822</p>
+              <p class="text text-info text-end">{{product.codigo}}</p>
             </div>
           </div>
           <div class="col-md-12 col-sm-12 col-xl-12 col-xxl-12 col-12 mt-3">
             <hr>
-          </div>
-          <div class="col-md-5 col-sm-5 col-xl-5 col-xxl-5 col-5">
-            IMAGEN
-          </div>
-          <div class="col-md-7 col-sm-7 col-xl-7 col-xxl-7 col-7">
-            <div class="row">
-              <div class="col-xl-12 col-md-12 col-12 col-sm-12 col-xxl-12 col-12">
-                <p class="text text-center"><b>Play Station</b></p>
-              </div>
-              <div class="col-xl-12 col-md-12 col-12 col-sm-12 col-xxl-12 col-12">
-                <div class="row">
-                  <p class="col-xl-4 mt-2 text-start" style="font-size: 16px;">$80,00</p>
-                  <div class="col-xl-8 text-end">
-                    <div class="btn-group col-md-12" role="group" aria-label="Button group with nested dropdown">
-                      <span class="text text-center col-md-8 border rounded" style="height: 40px;">{{valor}}</span>
-                      <div class="btn-group-vertical rounded" aria-label="Vertical radio toggle button group">
-                        <span class="btn-increment text-center" (click)="increment()">
-                          <img src="../../../../../../assets/img/icons/Chevron_Right.png" alt="">
-                        </span>
-                        <span class="btn-increment text-center" (click)="descrement()">
-                          <img src="../../../../../../assets/img/icons/Chevron_Left.png" alt="">
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-12 col-sm-12 col-xl-12 col-xxl-12 col-12 mt-3">
-              <p class="text text-info text-end">CD9822</p>
-            </div>
           </div>
         </div>
       </div>

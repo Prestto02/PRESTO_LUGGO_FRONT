@@ -6,5 +6,16 @@
 }
 .btn-color {
   background: #7549fe;
+  font-family: Cardium B-Medium;
   color: #fff;
+  font-size: 14px;
+}
+.tltle-cards{
+  font-family: Cardium B-Bold;
+  font-size: 21px;
+}
+.text-footer{
+  color: #007BFF;
+  font-size: 14px;
+  font-family: Cardium B-Medium;
 }

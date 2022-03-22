@@ -2,7 +2,8 @@
   min-height: 800px;
 }
 .textOferta {
-  font-size: 12.2px;
+  font-family: Cardium B-Medium;
+  font-size: 13px;
 }
 
 .border {
@@ -23,4 +24,9 @@
 .tittle-cards{
   font-family: Cardium B-Bold;
   font-size: 21px;
+}
+.text-footer{
+  color: #007BFF;
+  font-size: 14px;
+  font-family: Cardium B-Medium;
 }

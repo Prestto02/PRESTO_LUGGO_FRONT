@@ -18,6 +18,9 @@ body {
   z-index: 1;
   transition: 0.7s;
 }
+*{
+  font-family: Cardium B-Medium;
+}
 @media screen and (max-height: 450px) {
   .sidenav {
     padding-top: 15px;
