@@ -5,12 +5,13 @@ import { BaseFormLogin } from '../models/BaseFormLogin';
 import { PasswordResetService } from '../services/password-reset.service';
 
 @Component({
-  selector: 'app-reset-password',
-  templateUrl: './reset-password.component.html',
-  styleUrls: ['./reset-password.component.css'],
+  selector: 'app-buscar-usuario',
+  templateUrl: './buscar-usuario.component.html',
+  styleUrls: ['./buscar-usuario.component.css'],
 })
-export class ResetPasswordComponent implements OnInit {
-  public buscarUsuario: boolean = false;
+export class BuscarUsuarioComponent implements OnInit {
+  error = false;
+  success = false;
   constructor(
     public formB: BaseFormLogin,
     private router: Router,
@@ -18,22 +19,21 @@ export class ResetPasswordComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {}
-  //SUBMIT
   submit() {
-    const form = this.formB.getPasswordReset();
-    this.serviPassword.postResetPassword(form).subscribe(
+    const email = this.formB.buscarUser.value;
+    this.serviPassword.postUserEmail(email).subscribe(
       (res) => {
-        this.router.navigateByUrl(
-          `${UrlFront.Login.login}/${UrlFront.Login.iniciarSesion}`
-        );
+        this.error = false;
+        this.success = true;
       },
       (err) => {
         console.log(err);
+        this.error = true;
+        this.success = false;
       }
     );
   }
   regresarLogin() {
-    this.formB.limpiarForm();
     this.router.navigateByUrl(
       `${UrlFront.Login.login}/${UrlFront.Login.iniciarSesion}`
     );

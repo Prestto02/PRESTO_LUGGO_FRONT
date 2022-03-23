@@ -8,8 +8,14 @@ import { ResetPasswordComponent } from '../reset-password/reset-password.compone
 import { BaseFormLogin } from '../models/BaseFormLogin';
 import { HttpClientModule } from '@angular/common/http';
 import { ErrorsExtensionsModule } from '../../shared/errors/errors-module.module';
+import { BuscarUsuarioComponent } from '../buscar-usuario/buscar-usuario.component';
 @NgModule({
-  declarations: [LoginComponent, RegistrarComponent, ResetPasswordComponent],
+  declarations: [
+    LoginComponent,
+    RegistrarComponent,
+    ResetPasswordComponent,
+    BuscarUsuarioComponent,
+  ],
   imports: [
     CommonModule,
     LoginRoutingModule,

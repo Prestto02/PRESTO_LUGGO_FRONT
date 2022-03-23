@@ -36,6 +36,32 @@ export class BaseFormLogin {
       [Validators.required, Validators.minLength(8), Validators.maxLength(30)],
     ],
   });
+  //BUSCaR USUARIO
+  buscarUser = this.formB.group({
+    user: ['', [Validators.required, Validators.email]],
+  });
+  //CAMBIAR CONTRASENA
+  passwordReset = this.formB.group(
+    {
+      contrasena: [
+        '',
+        [
+          Validators.required,
+          Validators.minLength(8),
+          Validators.maxLength(30),
+        ],
+      ],
+      contrasena_conf: [
+        '',
+        [
+          Validators.required,
+          Validators.minLength(8),
+          Validators.maxLength(30),
+        ],
+      ],
+    },
+    { validator: passwordsMustBeEqual }
+  );
   limpiarForm() {
     this.registerUser.reset();
     this.loginUser.reset();
@@ -47,5 +73,12 @@ export class BaseFormLogin {
       pass: this.loginUser.value.contrasena,
     };
     return objPerson;
+  }
+
+  getPasswordReset() {
+    const objPassword = {
+      pass: this.passwordReset.value.contrasena,
+    };
+    return objPassword;
   }
 }

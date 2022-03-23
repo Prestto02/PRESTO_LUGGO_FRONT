@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="row py-5">
+    <div class="col-md-4 mx-auto py-4 mt-4">
+      <div class="text-center">
+        <h2 class="text text-primary">Buscar usuario</h2>
+      </div>
+      <form (ngSubmit)="submit();" [formGroup]="formB.buscarUser">
+        <ng-container *ngIf="error">
+          <div class="col-md-12 col-12 col-sm-12 col-xl-12 col-xxl-12 p-3">
+            <div class="row">
+              <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <span>El correo {{formB.buscarUser.get('user')?.value}} no se encuentra registrado en el sistema</span>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>
+            </div>
+          </div>
+        </ng-container>
+        <ng-container *ngIf="success">
+          <div class="col-md-12 col-12 col-sm-12 col-xl-12 col-xxl-12 p-3">
+            <div class="row">
+            </div>
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+              <span>Se a enviado un correo a {{formB.buscarUser.get('user')?.value}} para el cambio de contraseña</span>
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+          </div>
+        </ng-container>
+        <div class="mb-4">
+          <label for="user" class="form-label">Email</label>
+          <input type="email" id="user" class="form-control" formControlName="user" placeholder="example@example.com"
+            autocomplete="off">
+        </div>
+        <div class="text-center">
+          <button type="submit" [disabled]="formB.buscarUser.invalid" class="btn btn-outline-primary">Confirmar</button>
+          <a (click)="regresarLogin();" class="btn btn-outline-danger mx-3">Regresar</a>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

@@ -50,7 +50,7 @@ export class LoginComponent implements OnInit {
   //CAMBIAR CONTRASEÑA
   cambiarContrasena() {
     this.router.navigateByUrl(
-      `${UrlFront.Login.login}/${UrlFront.Login.cambiarContrasena}`
+      `${UrlFront.Login.login}/${UrlFront.Login.buscarusuario}`
     );
   }
 }
