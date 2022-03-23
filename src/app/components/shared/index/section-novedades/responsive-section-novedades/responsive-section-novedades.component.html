@@ -1,0 +1,44 @@
+<div class="container-fluid col-sm-12 col-12 mx-auto d-sm-block d-block d-xxl-none d-md-none d-xl-none">
+  <div class="row mx-auto">
+    <p class="font-weight-bold title"><b>Ultimas Novedades en</b> <a class="mx-2 btn-link">Ver todo</a></p>
+  </div>
+  <div id="carouselExampleFade3" class="carousel slide carousel-fade" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <div class="row mx-auto">
+          <div class="col-md-4 col-12 col-sm-12 col-xxl-2 col-xl-2 mx-auto">
+            <div class="card border">
+              <img src="{{imagenesApi[0].imgNovedades}}" class="rounded img-fluid mx-4 mt-3"
+                alt="{{imagenesApi[0].descripcion}}}" />
+              <div class="col-md-12 card-body">
+                <p class="text-card-footer text-center">{{imagenesApi[0].descripcion}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item" *ngFor="let image of imagenesApi">
+        <div class="row mx-auto">
+          <div class="col-md-4 col-12 col-sm-12 col-xxl-2 col-xl-2 mx-auto">
+            <div class="card border">
+              <img src="{{image.imgNovedades}}" class="rounded img-fluid mx-4 mt-3" alt="{{image.descripcion}}" />
+              <div class="card-body">
+                <p class="text-card-footer text-center">{{image.descripcion}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev btn-carousel rounded-circle mx-auto" type="button"
+      data-bs-target="#carouselExampleFade3" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next btn-carousel rounded-circle mx-auto" type="button"
+      data-bs-target="#carouselExampleFade3" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+</div>

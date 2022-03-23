@@ -19,6 +19,9 @@ import { SubMenuHerramientasComponent } from '../menu2/sub-menu-herramientas/sub
 import { SubMenuMueblesComponent } from '../menu2/sub-menu-muebles/sub-menu-muebles.component';
 import { IniciarSesionComponent } from '../menu/iniciar-sesion/iniciar-sesion.component';
 import { CarritoItemsComponent } from '../menu/carrito-items/carrito-items.component';
+import { ResponsiveSectionCarouselComponent } from '../section-carousel/responsive-section-carousel/responsive-section-carousel.component';
+import { ResponsiveSectionNovedadesComponent } from '../section-novedades/responsive-section-novedades/responsive-section-novedades.component';
+import { ResponsiveSectionOfertas2Component } from '../section-ofertas2/responsive-section-ofertas2/responsive-section-ofertas2.component';
 
 @NgModule({
   declarations: [
@@ -26,10 +29,13 @@ import { CarritoItemsComponent } from '../menu/carrito-items/carrito-items.compo
     MenuComponent,
     Menu2Component,
     SectionCarouselComponent,
+    ResponsiveSectionCarouselComponent, //CAROUSEL SECTION
     SectionNoticiasComponent,
     SectionNovedadesComponent,
+    ResponsiveSectionNovedadesComponent, //RESPONSIVE SECTION NOVEDadeS
     SectionOfertasComponent,
     SectionOfertas2Component,
+    ResponsiveSectionOfertas2Component, //RESPONSIVE SECTION OFERTAS 2
     SectionCardsInformationComponent,
     SectionCardsOfertasComponent,
     SectionServiciosComponent,
