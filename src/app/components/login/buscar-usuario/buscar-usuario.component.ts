@@ -19,6 +19,7 @@ export class BuscarUsuarioComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {}
+  //BUSCAR USUARIO
   submit() {
     const email = this.formB.buscarUser.value;
     this.serviPassword.postUserEmail(email).subscribe(
@@ -33,6 +34,7 @@ export class BuscarUsuarioComponent implements OnInit {
       }
     );
   }
+  //REGRESAR LOGIn
   regresarLogin() {
     this.router.navigateByUrl(
       `${UrlFront.Login.login}/${UrlFront.Login.iniciarSesion}`

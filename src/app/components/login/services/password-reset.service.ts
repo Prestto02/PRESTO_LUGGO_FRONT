@@ -11,9 +11,15 @@ export class PasswordResetService {
 
   //BUSCAR USUARIO
   postUserEmail(form: any): Observable<any> {
-    return this.http.post<any>(`${UrlApi.ApiUrl}${UrlApi.cambiarClave}`, form);
+    return this.http.post<any>(`${UrlApi.ApiUrl}${UrlApi.buscarUsuario}`, form);
   }
   postResetPassword(form: any): Observable<any> {
-    return this.http.post<any>(`${UrlApi.ApiUrl}${UrlApi.cambiarClave}`, form);
+    return this.http.post<any>(`${UrlApi.ApiUrl}${UrlApi.passwordReset}`, form);
+  }
+  postCodigoRecuperacion(codigo: any): Observable<any> {
+    return this.http.post<any>(
+      `${UrlApi.ApiUrl}${UrlApi.codigoRecuperacion}`,
+      codigo
+    );
   }
 }

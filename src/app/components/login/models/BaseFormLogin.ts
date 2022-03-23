@@ -75,8 +75,9 @@ export class BaseFormLogin {
     return objPerson;
   }
 
-  getPasswordReset() {
+  getPasswordReset(codigo: any) {
     const objPassword = {
+      codigo_recuperacion: codigo,
       pass: this.passwordReset.value.contrasena,
     };
     return objPassword;
