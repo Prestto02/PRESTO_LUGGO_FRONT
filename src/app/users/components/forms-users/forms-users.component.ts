@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { PositionUser } from 'src/app/shared/class/PositionUser';
 import { UrlFront } from 'src/app/shared/routes/RoutesFront';
-import { PosicionService } from 'src/app/shared/services/posicion.service';
 import { BaseUsersForm } from '../../models/BaseFormUsers';
 import { UsersService } from '../../services/users.service';
 @Component({

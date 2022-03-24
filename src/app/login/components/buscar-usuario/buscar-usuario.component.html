@@ -1,36 +1,45 @@
-<div class="container">
+<div class="container mt-5">
   <div class="row py-5">
-    <div class="col-md-4 mx-auto py-4 mt-4">
-      <div class="text-center">
-        <h2 class="text text-primary">Buscar usuario</h2>
+    <div class="col-md-8 col-xxl-4 col-xl-4 col-12 col-sm-12 mx-auto mt-4 card">
+      <div class="card-body">
+        <h2 class="text title text-center">Recuperar contraseña</h2>
+        <hr>
+        <div class="card-text">
+          <span class="subtitle">Por favor para recibir el codigo de acceso para el cambio de contraseña, introduce el
+            correo electrónico que proporcionastes durante el proceso de registro.</span>
+        </div>
       </div>
-      <form (ngSubmit)="submit();" [formGroup]="formB.buscarUser">
+      <form (ngSubmit)="submit();" [formGroup]="formB.buscarUser" class="card-body">
         <app-errors-server [errors]="error"
           message="El correo{{formB.buscarUser.get('user')?.value}} no se encuentra registrado en el sistema">
-          <div class="col-md-12 col-12 col-sm-12 col-xl-12 col-xxl-12 p-3">
+          <div class="col-md-12 col-12 col-sm-12 col-xl-12 col-xxl-12">
             <div class="row">
               <ng-content></ng-content>
             </div>
           </div>
         </app-errors-server>
-        <ng-container *ngIf="success">
-          <div class="col-md-12 col-12 col-sm-12 col-xl-12 col-xxl-12 p-3">
+        <app-success-server [success]="success"
+          message="Se a enviado un correo al siguiente email {{formB.buscarUser.get('user')?.value}} para el cambio de contraseña">
+          <div class="col-md-12 col-12 col-sm-12 col-xl-12 col-xxl-12">
             <div class="row">
-            </div>
-            <div class="alert alert-success alert-dismissible fade show" role="alert">
-              <span>Se a enviado un correo a {{formB.buscarUser.get('user')?.value}} para el cambio de contraseña</span>
-              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              <ng-content></ng-content>
             </div>
           </div>
-        </ng-container>
-        <div class="mb-4">
-          <label for="user" class="form-label">Email</label>
-          <input type="email" id="user" class="form-control" formControlName="user" placeholder="example@example.com"
-            autocomplete="off">
+        </app-success-server>
+        <div class="form-floating mb-3">
+          <input type="email" class="form-control" id="floatingInput" formControlName="user"
+            placeholder="name@example.com" autocomplete="off">
+          <label for="floatingInput">Correo electrónico</label>
         </div>
-        <div class="text-center">
-          <button type="submit" [disabled]="formB.buscarUser.invalid" class="btn btn-outline-primary">Confirmar</button>
-          <a (click)="regresarLogin();" class="btn btn-outline-danger mx-3">Regresar</a>
+        <div class="text-center col-xl-12 col-xxl-12 col-sm-12 col-md-12 col-12">
+          <div class="row">
+            <div class="col-xl-7 col-sm-7 col-xxl-7 col-md-7 col-7">
+              <a (click)="regresarLogin();" class="btn btn-regresar mx-auto">Regresar al login</a>
+            </div>
+            <div class="col-xl-3 col-sm-3 col-xxl-3 col-md-3 col-3 mx-auto">
+              <button type="submit" [disabled]="formB.buscarUser.invalid" class="btn btn-enviar">Enviar</button>
+            </div>
+          </div>
         </div>
       </form>
     </div>
