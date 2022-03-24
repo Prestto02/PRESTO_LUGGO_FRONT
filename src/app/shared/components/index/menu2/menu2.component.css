@@ -1,16 +1,12 @@
 body {
   transition: background-color 0.5s;
 }
-.abrir{
+.abrir {
   cursor: pointer;
-}
-.sidenav{
-  background-color: rgba(43, 44, 68, 0.94);
 }
 .sidenav-card {
   width: 400px;
   height: 100%;
-  background-color: rgba(43, 44, 68, 0.94);
   top: 0;
   left: 0px;
   position: fixed;
@@ -18,7 +14,7 @@ body {
   z-index: 1;
   transition: 0.7s;
 }
-*{
+* {
   font-family: Cardium B-Medium;
 }
 @media screen and (max-height: 450px) {
