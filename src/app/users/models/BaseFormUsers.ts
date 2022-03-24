@@ -49,7 +49,7 @@ export class BaseUsersForm {
         Validators.required,
         Validators.minLength(8),
         Validators.maxLength(50),
-        Validators.pattern(/^[A-Za-z ]+$/),
+        Validators.pattern(/^[A-Za-z0-9 ]+$/),
       ],
     ],
     celular: [
@@ -80,7 +80,7 @@ export class BaseUsersForm {
       ],
     ],
     sexo: ['', [Validators.required]],
-    FechaNacimiento: ['', Validators.required],
+    FechaNacimiento: [''],
   });
   //LIMPIAR FORM
   limpiarForm() {
