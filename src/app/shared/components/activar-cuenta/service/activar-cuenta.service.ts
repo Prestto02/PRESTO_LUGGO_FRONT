@@ -10,6 +10,9 @@ export class ActivarCuentaService {
   constructor(private http: HttpClient) {}
 
   postCheckRegister(check: any): Observable<any> {
-    return this.http.post<any>(`${UrlApi.revisarCodigoActivacion}`, check);
+    return this.http.post<any>(
+      `${UrlApi.ApiUrl}${UrlApi.revisarCodigoActivacion}`,
+      check
+    );
   }
 }
