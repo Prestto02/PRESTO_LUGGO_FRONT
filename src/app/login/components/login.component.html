@@ -27,7 +27,7 @@
               <h4>Iniciar Sesión</h4>
             </div>
             <form (ngSubmit)="submit();" [formGroup]="formB.loginUser">
-              <label for="email" class="form-label">Usuario o correo</label>
+              <label for="email" class="form-label">Correo</label>
               <div class="input-group mb-4">
                 <span class="input-group-text" id="basic-email">
                   <svg width="21" height="22" viewBox="0 0 21 22" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -64,9 +64,8 @@
                   Sesión</button>
               </div>
             </form>
-            <div *ngIf="errorLogin">
-              <p class="text text-center text-danger">Usuario y contraseña incorrectos</p>
-            </div>
+            <app-errors-server [errors]="errorLogin" message="Usuario y contraseña incorrectos">
+            </app-errors-server>
             <div class="col-md-12 col-sm-12 mt-3 col-12">
               <div class="row">
                 <div class="col-md-3 col-3 col-sm-3">

@@ -5,16 +5,14 @@
         <h2 class="text text-primary">Buscar usuario</h2>
       </div>
       <form (ngSubmit)="submit();" [formGroup]="formB.buscarUser">
-        <ng-container *ngIf="error">
+        <app-errors-server [errors]="error"
+          message="El correo{{formB.buscarUser.get('user')?.value}} no se encuentra registrado en el sistema">
           <div class="col-md-12 col-12 col-sm-12 col-xl-12 col-xxl-12 p-3">
             <div class="row">
-              <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                <span>El correo {{formB.buscarUser.get('user')?.value}} no se encuentra registrado en el sistema</span>
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-              </div>
+              <ng-content></ng-content>
             </div>
           </div>
-        </ng-container>
+        </app-errors-server>
         <ng-container *ngIf="success">
           <div class="col-md-12 col-12 col-sm-12 col-xl-12 col-xxl-12 p-3">
             <div class="row">

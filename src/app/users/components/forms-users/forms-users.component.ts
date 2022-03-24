@@ -13,6 +13,7 @@ import { UsersService } from '../../services/users.service';
 export class FormsUsersComponent implements OnInit {
   public idUsers: any;
   public emailUsers: any;
+  error = false;
   constructor(
     public formB: BaseUsersForm,
     private router: Router,
@@ -30,6 +31,7 @@ export class FormsUsersComponent implements OnInit {
   }
   //ENVIAR FORMULARIO POR PUT
   submit() {
+    this.error = false;
     const users = this.formB.getDataForm(
       this.position.latitud,
       this.position.longitud
@@ -43,6 +45,7 @@ export class FormsUsersComponent implements OnInit {
         console.log(res);
       },
       (err) => {
+        this.error = true;
         console.log(err);
       }
     );
