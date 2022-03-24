@@ -3,7 +3,7 @@ export const UrlApi = {
   usuario: 'USUARIO',
   persona: 'persona',
   login: 'login',
-  revisarCodigo:'',
+  revisarCodigoActivacion:'usuario/activacion',
   loginFacebook: 'Singin',
   articulos: 'articulo',
   buscarUsuario: 'usuario/cambiar',

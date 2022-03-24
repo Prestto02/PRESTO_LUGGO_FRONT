@@ -66,8 +66,17 @@ export class BaseFormLogin {
     this.registerUser.reset();
     this.loginUser.reset();
   }
+  //FORM LOGIN UsER
+  getFormLogin(latitud?: any, longitud?: any) {
+    return {
+      user: this.loginUser.value.email,
+      pass: this.loginUser.value.contrasena,
+      latitud,
+      longitud,
+    };
+  }
   //Data form login
-  getDataFormLogin(latitud?: any, longitud?: any) {
+  getDataRegisterUser(latitud?: any, longitud?: any) {
     return {
       user: this.registerUser.value.email,
       pass: this.registerUser.value.contrasena,

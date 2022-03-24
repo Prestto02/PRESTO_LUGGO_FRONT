@@ -21,7 +21,10 @@ export class BienvenidoUserComponent implements OnInit {
   }
   //REVISAR EL CODIGO DE VALIDACIoN Del USUARIO
   enviarCodigo() {
-    this.apiCheck.postCheckRegister(this.codigoCheck).subscribe(
+    const codigo = {
+      codigo_activacion: this.codigoCheck,
+    };
+    this.apiCheck.postCheckRegister(codigo).subscribe(
       (res) => {
         console.log('success', res);
       },

@@ -4,6 +4,7 @@
 .subtitle{
   font-family: Cardium B-Medium;
   font-size: 15px;
+  text-align: justify;
 }
 .btn-enviar {
   background: #7549fe;

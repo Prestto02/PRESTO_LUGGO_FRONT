@@ -18,8 +18,8 @@ export class LoginComponent implements OnInit {
   constructor(
     public formB: BaseFormLogin,
     private router: Router,
-    private apiLogin: LoginService,
     private apiToken: TokenService,
+    private apiLogin: LoginService,
     private position: PositionUser
   ) {}
 
@@ -29,7 +29,7 @@ export class LoginComponent implements OnInit {
   //SUBMIT LOGIN
   submit() {
     this.errorLogin = false;
-    const users = this.formB.getDataFormLogin(
+    const users = this.formB.getFormLogin(
       this.position.latitud,
       this.position.longitud
     );
@@ -38,6 +38,7 @@ export class LoginComponent implements OnInit {
         console.log(res);
       },
       (err) => {
+        console.log(err);
         if (err.error.text) {
           this.apiToken.setTokenUsers(err.error.text);
           this.router.navigateByUrl(
