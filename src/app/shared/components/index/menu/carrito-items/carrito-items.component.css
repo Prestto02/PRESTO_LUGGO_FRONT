@@ -8,3 +8,6 @@
   overflow-x: hidden;
 }
 
+.btn-increment:hover{
+  background-color: #5d38ca;
+}

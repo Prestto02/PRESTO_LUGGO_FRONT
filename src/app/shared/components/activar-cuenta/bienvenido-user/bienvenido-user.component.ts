@@ -30,6 +30,9 @@ export class BienvenidoUserComponent implements OnInit {
       },
       (err) => {
         console.log(err);
+        this.route.navigateByUrl(
+          `${UrlFront.Login.login}/${UrlFront.Login.iniciarSesion}`
+        );
       }
     );
   }
