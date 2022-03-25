@@ -24,8 +24,8 @@
     </button>
     <div class="collapse navbar-collapse container-fluid" id="navbarSupportedContent1">
       <ul class="navbar-nav me-auto mb-3 mb-lg-0" style="width: 80%">
-        <li class="container-fluid mx-3 col-md-12 col-sm-12 col-xl-12">
-          <div class="input-group opciones">
+        <li class="container-fluid col-md-12 col-sm-12 col-xl-12">
+          <div class="input-group">
             <select class="form-select" aria-label="Default select example">
               <option selected class="color-select">Escoja la categoria</option>
               <option value="{{categoria.id}}" class="color-select" *ngFor="let categoria of categoriaItems">
@@ -49,7 +49,7 @@
       <div class="d-flex">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a href="" class="btn btn-lg btn-link nav-link mx-3 opciones">
+            <a href="" class="btn-link nav-link mx-auto">
               <svg width="32" height="21" viewBox="0 0 32 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g clip-path="url(#clip0_917_5649)">
                   <path fill-rule="evenodd" clip-rule="evenodd" d="M0 21H32.0001V0H0V21Z" fill="#B5202E" />
@@ -1404,12 +1404,12 @@
           </li>
           <li class="navbar-nav">
             <div class="row">
-              <div class="col-md-7 text-center">
-                <a class="nav-link opciones" type="button" data-bs-toggle="offcanvas"
+              <div class="col-md-7 col-sm-7 col-7 col-xl-7 col-xxl-7 text-center d-none d-sm-none d-xxl-block d-xl-block d-md-block">
+                <a class="nav-link cursor-item" data-bs-toggle="offcanvas"
                   data-bs-target="#offcanvasRightLogin" aria-controls="offcanvasRight">Hola, Ingresa <b>Mi
                     cuenta</b></a>
               </div>
-              <div class="col-md-2">
+              <div class="col-md-2 col-sm-2 col-xl-2 col-xxl-2 col-2">
                 <svg type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRightLogin"
                   aria-controls="offcanvasRightLogin" width="28" height="70" viewBox="0 0 21 22" fill="none"
                   xmlns="http://www.w3.org/2000/svg">
@@ -1428,7 +1428,7 @@
             </div>
           </li>
           <li class="navbar-nav">
-            <a class="nav-link btn-lg opciones btn position-relative" data-bs-toggle="offcanvas"
+            <a class="nav-link cursor-item" data-bs-toggle="offcanvas"
               data-bs-target="#offcanvasRightCarrito" aria-controls="offcanvasRightCarrito"><span>
                 <svg data-bs-toggle="offcanvas" ata-bs-toggle="offcanvas" aria-controls="offcanvasRightCarrito"
                   data-bs-target="#offcanvasRightCarrito" aria-controls="offcanvasRightCarrito" width="35" height="40"

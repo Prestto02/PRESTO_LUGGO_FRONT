@@ -33,21 +33,9 @@ export class LoginComponent implements OnInit {
       this.position.latitud,
       this.position.longitud
     );
-    this.apiLogin.postUserLogin(users).subscribe(
-      (res) => {
-        console.log(res);
-      },
-      (err) => {
-        if (err.error.text) {
-          this.apiToken.setTokenUsers(err.error.text);
-          this.router.navigateByUrl(
-            `${UrlFront.Menu.menu}/${UrlFront.Menu.index}`
-          );
-        } else {
-          // this.errorLogin = true;
-        }
-      }
-    );
+    this.apiLogin.postUserLogin(users).subscribe((res) => {
+      this.router.navigateByUrl(`${UrlFront.Menu.menu}/${UrlFront.Menu.index}`);
+    });
   }
   //IR A REGISTRAR CUENTA
   registraCuenta() {

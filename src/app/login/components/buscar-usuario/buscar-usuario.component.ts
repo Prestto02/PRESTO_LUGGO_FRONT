@@ -11,7 +11,6 @@ import { PasswordResetService } from '../../services/password-reset.service';
   styleUrls: ['./buscar-usuario.component.css'],
 })
 export class BuscarUsuarioComponent implements OnInit {
-  error = false;
   success = false;
   constructor(
     public formB: BaseFormLogin,
@@ -31,12 +30,9 @@ export class BuscarUsuarioComponent implements OnInit {
     );
     this.serviPassword.postUserEmail(email).subscribe(
       (res) => {
-        this.error = false;
         this.success = true;
       },
       (err) => {
-        console.log(err);
-        this.error = true;
         this.success = false;
       }
     );
