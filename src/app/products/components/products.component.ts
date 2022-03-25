@@ -18,7 +18,7 @@ export class ProductsComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    //this.getAllProducts();
+    this.getAllProducts();
     this.submit();
   }
   //GET ALL PRODUCTS
@@ -26,9 +26,6 @@ export class ProductsComponent implements OnInit {
     this.apiProduct.getDataArticulos().subscribe(
       (res) => {
         console.log(res);
-      },
-      (err) => {
-        console.log(err);
       }
     );
   }

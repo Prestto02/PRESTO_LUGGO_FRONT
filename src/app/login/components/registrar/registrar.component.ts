@@ -14,6 +14,7 @@ export class RegistrarComponent implements OnInit {
   public urlapi = UrlApi.loginFacebook;
   error = false;
   messageError = '';
+  load = false;
   constructor(
     public formB: BaseFormLogin,
     private router: Router,
@@ -27,12 +28,14 @@ export class RegistrarComponent implements OnInit {
 
   //SUBMIT DATA API
   submit() {
+    this.load = true;
     const users = this.formB.getDataRegisterUser(
       this.position.latitud,
       this.position.longitud
     );
     this.apiService.postUserDataApi(users).subscribe(
       (res) => {
+        console.log(res);
         this.formB.limpiarForm();
         this.router.navigate([
           `/${UrlFront.ActivarCuenta.cuenta}/${UrlFront.ActivarCuenta.mensajeAlCorreo}`,
@@ -40,8 +43,8 @@ export class RegistrarComponent implements OnInit {
         ]);
       },
       (err) => {
-        this.error = true;
-        this.messageError = err.error;
+        this.load = false;
+        console.log(err);
       }
     );
   }

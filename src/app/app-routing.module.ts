@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { NotFund404Component } from './shared/components/not-fund404/not-fund404.component';
 import { UrlFront } from './shared/routes/RoutesFront';
 
 const routes: Routes = [
@@ -43,7 +44,14 @@ const routes: Routes = [
   },
 
   //REDIRECCIONAR EN LOGIN DIRECTO
-  { path: '', redirectTo: UrlFront.Login.login, pathMatch: 'full' },
+  {
+    path: '',
+    redirectTo: UrlFront.Menu.menu,
+    pathMatch: 'full',
+  },
+  //SI NO ENCUENTRA NINGUNA PAGINA
+  //Wild Card Route for 404 request
+  { path: '**', pathMatch: 'full', component: NotFund404Component },
 ];
 
 @NgModule({

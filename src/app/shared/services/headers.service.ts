@@ -6,10 +6,5 @@ import { Injectable } from '@angular/core';
 })
 export class HeadersService {
   constructor() {}
-  httpOptions = {
-    headers: new HttpHeaders({
-      'Content-Type': 'application/json',
-      'Authorization': `bearer ${localStorage.getItem('token')}`,
-    }),
-  };
+
 }

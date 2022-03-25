@@ -96,7 +96,7 @@
                 <app-message-error forErrorCode="passwordsMustBeEqual"></app-message-error>
               </app-form-errors-container>
               <div class="input-group mt-4">
-                <button type="submit" [disabled]="formB.registerUser.invalid"
+                <button type="submit" [disabled]="formB.registerUser.invalid || load"
                   class="form-control btn btn-iniciar-sesion">Registrarse</button>
               </div>
             </form>
@@ -160,12 +160,5 @@
         </div>
       </div>
     </div>
-  </div>
-</div>
-<div class="col-md-3 col-3 col-sm-3 col-xl-3 col-xxl-3 ms-auto">
-  <div class="row">
-    <app-errors-server [errors]="error" [message]="messageError">
-      <ng-content></ng-content>
-    </app-errors-server>
   </div>
 </div>

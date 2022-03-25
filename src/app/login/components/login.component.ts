@@ -38,14 +38,13 @@ export class LoginComponent implements OnInit {
         console.log(res);
       },
       (err) => {
-        console.log(err);
         if (err.error.text) {
           this.apiToken.setTokenUsers(err.error.text);
           this.router.navigateByUrl(
             `${UrlFront.Menu.menu}/${UrlFront.Menu.index}`
           );
         } else {
-          this.errorLogin = true;
+          // this.errorLogin = true;
         }
       }
     );

@@ -5,6 +5,7 @@ import { passwordsMustBeEqual } from './passwordMustEquals';
 @Injectable({ providedIn: 'root' })
 export class BaseFormLogin {
   constructor(private formB: FormBuilder) {}
+  //REGISTRAR USUARIO
   registerUser = this.formB.group(
     {
       id: [''],
