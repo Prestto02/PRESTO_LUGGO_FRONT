@@ -1,0 +1,26 @@
+.border {
+  border-radius: 16px 16px 16px 16px;
+  -moz-border-radius: 16px 16px 16px 16px;
+  -webkit-border-radius: 16px 16px 16px 16px;
+  border: 0px solid #000000;
+}
+
+.card-color {
+  background-color: #fff3f8;
+}
+
+.boton {
+  background-color: #7549fe;
+  font-family: Cardium B-Bold;
+  color: #fff;
+  font-size: 15px;
+}
+
+.title{
+  font-family: Cardium B-Bold;
+  font-size: 15px;
+}
+.subtitle{
+  font-family: Cardium B-Medium;
+  font-size: 13px;
+}

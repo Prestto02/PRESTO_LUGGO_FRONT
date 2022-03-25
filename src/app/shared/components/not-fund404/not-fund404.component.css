@@ -1,0 +1,19 @@
+.btn-regresar{
+    background: #7549fe;
+    color: #fff;
+    font-family: Cardium A-Bold;
+    font-size: 18px;
+    padding: 9px;
+}
+.btn-regresar:hover{
+  background: #5534b8;
+  color: #fff;
+  font-family: Cardium A-Bold;
+  font-size: 18px;
+  padding: 9px;
+}
+.subtitle{
+  font-family: Cardium B-Medium;
+  font-size: 30px;
+  text-align: justify;
+}

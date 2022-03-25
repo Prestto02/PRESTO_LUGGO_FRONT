@@ -1,0 +1,13 @@
+.btn-increment {
+  width: 40px;
+  height: 20px;
+  background-color: #7549fe;
+}
+.container-item {
+  overflow: auto;
+  overflow-x: hidden;
+}
+
+.btn-increment:hover{
+  background-color: #5d38ca;
+}

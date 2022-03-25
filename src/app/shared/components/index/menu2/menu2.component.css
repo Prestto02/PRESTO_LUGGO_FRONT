@@ -1,0 +1,27 @@
+body {
+  transition: background-color 0.5s;
+}
+.abrir {
+  cursor: pointer;
+}
+.sidenav-card {
+  width: 400px;
+  height: 100%;
+  top: 0;
+  left: 0px;
+  position: fixed;
+  overflow: auto;
+  z-index: 1;
+  transition: 0.7s;
+}
+* {
+  font-family: Cardium B-Medium;
+}
+@media screen and (max-height: 450px) {
+  .sidenav {
+    padding-top: 15px;
+  }
+  .sidenav a {
+    font-size: 18px;
+  }
+}

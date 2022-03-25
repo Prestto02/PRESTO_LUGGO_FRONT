@@ -1,0 +1,16 @@
+.card-border {
+  border-radius: 16px 16px 16px 16px;
+  -moz-border-radius: 16px 16px 16px 16px;
+  -webkit-border-radius: 16px 16px 16px 16px;
+  border: 1px solid #d1d1d1;
+}
+.text-titulo {
+  color: #7549fe;
+  font-family: Cardium A-Bold;
+  font-size: 42px;
+}
+.text-ofertas {
+  font-size: 22px;
+  font-family: Cardium B-SemiBold;
+  color: #7549fe;
+}

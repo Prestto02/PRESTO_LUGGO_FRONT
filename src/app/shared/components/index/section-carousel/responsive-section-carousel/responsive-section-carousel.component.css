@@ -1,0 +1,32 @@
+.carousel-item {
+  min-height: 800px;
+}
+.textOferta {
+  font-family: Cardium B-Medium;
+  font-size: 13px;
+}
+
+.border {
+  border-radius: 16px 16px 16px 16px;
+  -moz-border-radius: 16px 16px 16px 16px;
+  -webkit-border-radius: 16px 16px 16px 16px;
+  border: 0px solid #000000;
+  width: 19rem;
+  height: 26rem;
+}
+.btn-carousel {
+  width: 40px;
+  height: 40px;
+  color: #000000;
+  background: #302f2f;
+  top: 100px;
+}
+.tittle-cards{
+  font-family: Cardium B-Bold;
+  font-size: 21px;
+}
+.text-footer{
+  color: #007BFF;
+  font-size: 14px;
+  font-family: Cardium B-Medium;
+}

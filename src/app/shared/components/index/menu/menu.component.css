@@ -1,0 +1,15 @@
+
+.color-select{
+  background-color: rgba(43, 44, 68, 0.925);
+  color: #fff;
+}
+*{
+  font-family: Cardium B-Medium;
+}
+.color-article {
+  background-color: #7549fe;
+  color: #fff;
+}
+.cursor-item{
+  cursor: pointer;
+}

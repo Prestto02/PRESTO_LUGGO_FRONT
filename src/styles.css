@@ -1,0 +1,53 @@
+/* You can add global styles to this file, and also import other style files */
+/*CARDIUM A*/
+@font-face {
+  font-family: Cardium A-Medium;
+  src: url(./assets/font/CardiumA-Medium.otf) format("truetype");
+}
+@font-face {
+  font-family: Cardium A-Bold;
+  src: url(./assets/font/CardiumA-Bold.otf)
+    format("truetype");
+}
+@font-face {
+  font-family: Cardium A-Light;
+  src: url(./assets/font/CardiumA-Light.otf)
+    format("truetype");
+}
+@font-face {
+  font-family: Cardium A-Regular;
+  src: url(./assets/font/CardiumA-Regular.otf)
+    format("truetype");
+}
+@font-face {
+  font-family: Cardium A-SemiBold;
+  src: url(./assets/font/CardiumA-SemiBold.otf)
+    format("truetype");
+}
+/*CARDIUM B*/
+@font-face {
+  font-family: Cardium B-Bold;
+  src: url(./assets/font/CardiumB-Bold.otf)
+    format("truetype");
+}
+@font-face {
+  font-family: Cardium B-Light;
+  src: url(./assets/font/CardiumB-Light.otf)
+    format("truetype");
+}
+@font-face {
+  font-family: Cardium B-Medium;
+  src: url(./assets/font/CardiumB-Medium.otf)
+    format("truetype");
+}
+@font-face {
+  font-family: Cardium B-Regular;
+  src: url(./assets/font/CardiumB-Regular.otf)
+    format("truetype");
+}
+@font-face {
+  font-family: Cardium B-SemiBold;
+  src: url(./assets/font/CardiumB-SemiBold.otf)
+    format("truetype");
+}
+

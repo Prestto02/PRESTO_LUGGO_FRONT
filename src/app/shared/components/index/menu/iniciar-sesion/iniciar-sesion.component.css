@@ -1,0 +1,12 @@
+.link-luggo {
+  color: #9193f8;
+  cursor: pointer;
+}
+.btn-sesion {
+  background-color: #7549fe;
+  color: #fff;
+}
+*{
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
