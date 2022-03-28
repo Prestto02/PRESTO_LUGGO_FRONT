@@ -8,7 +8,7 @@ export const UrlApi = {
   articulos: 'articulo',
   buscarUsuario: 'usuario/cambiar',
   passwordReset: 'usuario/cambiar_contraseña',
-  traerProductosCarrito: 'ArticuloP',
+  traerProductosCarrito: 'ArticuloP/listado',
   codigoRecuperacion: 'usuario/comprobar',
   productos: '',
   carrito: '',

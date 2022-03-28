@@ -12,14 +12,16 @@ export const UrlFront = {
     cambiarContrasena: 'cambiar-contrasena',
   },
   ActivarCuenta: {
-    cuenta:'cuenta',
-    mensajeAlCorreo:'mensaje-correo',
-    enviarAlCorreo:'mensaje-correo/:user',
+    cuenta: 'cuenta',
+    mensajeAlCorreo: 'mensaje-correo',
+    enviarAlCorreo: 'mensaje-correo/:user',
     activar: 'activar-cuenta',
   },
   Menu: {
     menu: 'Menu',
     index: 'index',
+    buscarGet:'buscar-productos',
+    buscar: 'buscar-productos/:name/:categoria',
   },
   Products: {
     products: 'products',

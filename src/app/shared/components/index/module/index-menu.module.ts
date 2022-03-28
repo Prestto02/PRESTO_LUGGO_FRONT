@@ -1,5 +1,10 @@
+//ANGULAR
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
+
+//COMPONENTS
 import { IndexComponent } from '../index.component';
 import { MenuComponent } from '../menu/menu.component';
 import { FooterComponent } from '../footer/footer.component';
@@ -22,7 +27,9 @@ import { CarritoItemsComponent } from '../menu/carrito-items/carrito-items.compo
 import { ResponsiveSectionCarouselComponent } from '../section-carousel/responsive-section-carousel/responsive-section-carousel.component';
 import { ResponsiveSectionNovedadesComponent } from '../section-novedades/responsive-section-novedades/responsive-section-novedades.component';
 import { ResponsiveSectionOfertas2Component } from '../section-ofertas2/responsive-section-ofertas2/responsive-section-ofertas2.component';
-import { HttpClientModule } from '@angular/common/http';
+import { SharedProductsComponent } from '../../shared-products/shared-products.component';
+import { BaseFormProducts } from 'src/app/products/models/BaseformProduct';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 
 @NgModule({
   declarations: [
@@ -39,6 +46,7 @@ import { HttpClientModule } from '@angular/common/http';
     ResponsiveSectionOfertas2Component, //RESPONSIVE SECTION OFERTAS 2
     SectionCardsInformationComponent,
     SectionCardsOfertasComponent,
+    SharedProductsComponent, //SHARED PRODUCTS
     SectionServiciosComponent,
     CarritoItemsComponent,
     SubMenuCosmeticosComponent,
@@ -48,7 +56,13 @@ import { HttpClientModule } from '@angular/common/http';
     Footer2Component,
     FooterComponent,
   ],
-  imports: [CommonModule, IndexRoutingModule, HttpClientModule],
-  providers: [Menu2Component],
+  imports: [
+    CommonModule,
+    IndexRoutingModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    InfiniteScrollModule,
+  ],
+  providers: [Menu2Component, BaseFormProducts, CarritoItemsComponent],
 })
 export class IndexMenuModule {}

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { BaseFormProducts } from 'src/app/products/models/BaseformProduct';
 import { UrlFront } from 'src/app/shared/routes/RoutesFront';
 
 @Component({
@@ -50,10 +51,19 @@ export class MenuComponent implements OnInit {
       name: 'Joyería y accesorios',
     },
   ];
-  constructor(private router: Router) {}
+  constructor(private router: Router, public formB: BaseFormProducts) {}
 
   ngOnInit(): void {}
   menuIndex() {
     this.router.navigateByUrl(`${UrlFront.Menu}/${UrlFront.Menu.index}`);
+  }
+  buscarProducto() {
+    const searchProducts = this.formB.formSearchProducts.get('nombre')?.value;
+    const categoria = this.formB.formSearchProducts.get('categoria')?.value;
+    this.router.navigate([
+      `${UrlFront.Menu.menu}/${UrlFront.Menu.buscarGet}`,
+      searchProducts,
+      categoria,
+    ]);
   }
 }

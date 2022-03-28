@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { UrlFront } from '../../../routes/RoutesFront';
+import { SharedProductsComponent } from '../../shared-products/shared-products.component';
 import { IndexComponent } from '../index.component';
 
 const routes: Routes = [
@@ -10,6 +11,10 @@ const routes: Routes = [
       {
         path: UrlFront.Menu.index,
         component: IndexComponent,
+      },
+      {
+        path: UrlFront.Menu.buscar,
+        component: SharedProductsComponent,
       },
       {
         path: '**',

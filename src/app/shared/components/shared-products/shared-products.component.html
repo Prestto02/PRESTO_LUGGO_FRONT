@@ -1,0 +1,21 @@
+<header>
+  <app-menu></app-menu>
+  <app-menu2></app-menu2>
+</header>
+<div class="container-fluid">
+  <div class="row" infiniteScroll (scrolled)="onScrollDown();">
+    <div class="col-xxl-4 col-sm-6 col-6 col-xl-4 col-md-4 mt-3" *ngFor="let products of productsArray">
+      <div class="card border rounded">
+        <img src="" class="card-img-top" alt="IMAGEN Del PRODUCTO">
+        <div class="card-body">
+          <h5 class="card-title">Nombre</h5>
+          <p class="card-text">DETALLE</p>
+          <p class="card-text">PRECIO</p>
+          <button class="btn btn-primary" (click)="agregarAlCarrito(products._id);">Agregar al carrito</button>
+        </div>
+      </div>
+    </div>
+    <button *ngIf="showButton" (click)="onScrollTop()" type="button" class="buttonRegresar" data-bs-toggle="tooltip"
+      data-bs-placement="top" title="Subir al inicio">⬆</button>
+  </div>
+</div>

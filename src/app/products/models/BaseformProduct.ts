@@ -16,7 +16,12 @@ export class BaseFormProducts {
       ],
     ],
   });
-
+  //BUSCAR PRODUCTOS
+  formSearchProducts = this.formB.group({
+    id_product: [''],
+    categoria: [''],
+    nombre: [''],
+  });
   getDataForm(latitud?: any, longitud?: any) {
     const dataForm = {
       id_product: this.formProducts.value.id_product,

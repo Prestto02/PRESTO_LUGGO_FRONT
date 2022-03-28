@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CarritoItemsService } from '../services/carrito-items.service';
 
 @Component({
   selector: 'app-carrito-items',
@@ -46,14 +47,25 @@ export class CarritoItemsComponent implements OnInit {
       item: 1,
     },
   ];
-
-  constructor() {}
+  productoItems: any;
+  constructor(private apiServi: CarritoItemsService) {}
 
   ngOnInit(): void {
     this.totalPago();
+    this.getItemCarrito();
   }
-  //TRAER AL CARRITO
-
+  //OBTENER EL ID DEl PRODUCTO
+  getListItemCarrito(id?: any) {
+    this.apiServi.getDataProducts(id).subscribe((res) => {
+      this.apiServi.addProductPagination(res.airline); //GUARDO ESE PRODUCTO EN UN ARREGLO BEHAVIOR
+    });
+  }
+  getItemCarrito() {
+    this.apiServi.productCarrito.subscribe((res) => {
+      //ME SUSCRIBO AL RXJS DEl SERVICIO
+      this.productoItems = res;
+    });
+  }
   //TOTAL AL OBTENER LOS PRODUCTOS EN EL CARRITO
   totalPago() {
     this.products.map((res) => {
