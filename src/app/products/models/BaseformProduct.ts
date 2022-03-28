@@ -6,7 +6,15 @@ export class BaseFormProducts {
   constructor(private formB: FormBuilder) {}
 
   formProducts = this.formB.group({
-    id_product: ['', [Validators.required, Validators.minLength(2)]],
+    id_product: [
+      '',
+      [
+        Validators.required,
+        Validators.minLength(8),
+        Validators.maxLength(20),
+        Validators.pattern(/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,})/),
+      ],
+    ],
   });
 
   getDataForm(latitud?: any, longitud?: any) {

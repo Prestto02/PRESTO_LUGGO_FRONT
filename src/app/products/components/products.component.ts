@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
 import { PositionUser } from 'src/app/shared/class/PositionUser';
-import { PosicionService } from 'src/app/shared/services/posicion.service';
 import { BaseFormProducts } from '../models/BaseformProduct';
 import { ProductsService } from '../services/products.service';
 
@@ -23,11 +21,9 @@ export class ProductsComponent implements OnInit {
   }
   //GET ALL PRODUCTS
   getAllProducts() {
-    this.apiProduct.getDataArticulos().subscribe(
-      (res) => {
-        console.log(res);
-      }
-    );
+    this.apiProduct.getDataArticulos().subscribe((res) => {
+      console.log(res);
+    });
   }
   submit() {
     this.positionUser.getPositionUser();

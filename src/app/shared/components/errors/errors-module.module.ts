@@ -4,6 +4,7 @@ import { FormErrorsContainerComponent } from './form-errors-container/form-error
 import { MessageErrorComponent } from './message-error/message-error.component';
 import { ErrorsServerComponent } from './errors-server/errors-server.component';
 import { SuccessServerComponent } from './success-server/success-server.component';
+import { ProgressPasswordComponent } from './progress-password/progress-password.component';
 
 @NgModule({
   declarations: [
@@ -11,6 +12,7 @@ import { SuccessServerComponent } from './success-server/success-server.componen
     MessageErrorComponent,
     ErrorsServerComponent,
     SuccessServerComponent,
+    ProgressPasswordComponent,
   ],
   imports: [CommonModule],
   exports: [
@@ -18,6 +20,7 @@ import { SuccessServerComponent } from './success-server/success-server.componen
     MessageErrorComponent,
     ErrorsServerComponent,
     SuccessServerComponent,
+    ProgressPasswordComponent,
   ],
 })
 export class ErrorsExtensionsModule {}

@@ -15,7 +15,8 @@ export class BaseFormLogin {
         [
           Validators.required,
           Validators.minLength(8),
-          Validators.maxLength(30),
+          Validators.maxLength(20),
+          Validators.pattern(/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,})/),
         ],
       ],
       contrasena_conf: [

@@ -15,6 +15,7 @@ export class RegistrarComponent implements OnInit {
   error = false;
   messageError = '';
   load = false;
+  sugerencias = false;
   constructor(
     public formB: BaseFormLogin,
     private router: Router,
@@ -25,7 +26,15 @@ export class RegistrarComponent implements OnInit {
   ngOnInit(): void {
     this.position.getPositionUser();
   }
-
+  mouseEnter() {
+    this.sugerencias = true;
+  }
+  mouseExit() {
+    this.sugerencias = false;
+  }
+  mouseClickEvent() {
+    this.sugerencias = false;
+  }
   //SUBMIT DATA API
   submit() {
     this.load = true;

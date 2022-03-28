@@ -27,6 +27,7 @@
               <h4 class="title">Crear cuenta</h4>
             </div>
             <form (ngSubmit)="submit();" [formGroup]="formB.registerUser">
+              <!------CORREO------>
               <label for="email" class="form-label label-text">Correo electrónico</label>
               <div class="input-group mb-3">
                 <span class="input-group-text group-border" id="basic-email">
@@ -47,8 +48,9 @@
                 <app-message-error forErrorCode="required"></app-message-error>
                 <app-message-error forErrorCode="email"></app-message-error>
               </app-form-errors-container>
+              <!------CONTRASEÑA------>
               <label for="contrasena" class="form-label label-text">Contraseña</label>
-              <div class="input-group mb-3">
+              <div class="input-group">
                 <span class="input-group-text group-border" id="basic-password">
                   <svg width="18" height="20" viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
@@ -61,15 +63,25 @@
                 </span>
                 <input type="password" id="validationServer2" class="form-control is-invalid input-border"
                   formControlName="contrasena" placeholder="********" aria-describedby="validationServer2Feedback"
-                  [class.is-invalid]="formB.registerUser.get('contrasena')?.touched && formB.registerUser.get('contrasena')?.invalid
-                " autocomplete="off">
+                  [class.is-invalid]="formB.registerUser.get('contrasena')?.touched && formB.registerUser.get('contrasena')?.invalid"
+                  (mouseenter)="mouseEnter()" (mouseout)="mouseExit()" (click)="mouseClickEvent()">
               </div>
+              <div *ngIf="sugerencias" class="shadow bg-body rounded label-text">
+                Sugerencias:
+                <ul>
+                  <li>Al menos una mayúscula</li>
+                  <li>Al menos una minúscula</li>
+                  <li>Al menos un número y punto</li>
+                </ul>
+              </div>
+              <app-progress-password [forErrorCode]="formB.registerUser.get('contrasena')">
+              </app-progress-password>
               <app-form-errors-container [forControl]="formB.registerUser.get('contrasena')">
                 <app-message-error forErrorCode="required"></app-message-error>
                 <app-message-error forErrorCode="minlength" customMsg="Debe tener 8 caracteres minimo">
                 </app-message-error>
               </app-form-errors-container>
-
+              <!------REPETIR CONTRASEÑA------>
               <label for="contrasena" class="form-label label-text">Repetir Contraseña</label>
               <div class="input-group">
                 <span class="input-group-text group-border" id="basic-password">
