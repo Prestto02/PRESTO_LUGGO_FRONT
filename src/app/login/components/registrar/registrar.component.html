@@ -63,10 +63,14 @@
                 </span>
                 <input type="password" id="validationServer2" class="form-control is-invalid input-border"
                   formControlName="contrasena" placeholder="********" aria-describedby="validationServer2Feedback"
+                  autocomplete="off"
                   [class.is-invalid]="formB.registerUser.get('contrasena')?.touched && formB.registerUser.get('contrasena')?.invalid"
-                  (mouseenter)="mouseEnter()" (mouseout)="mouseExit()" (click)="mouseClickEvent()">
+                  (click)="mouseClickEvent()" (blur)="perdioElFocus()">
               </div>
               <div *ngIf="sugerencias" class="shadow bg-body rounded label-text">
+                Nivel de contraseña:
+                <app-progress-password [forErrorCode]="formB.registerUser.get('contrasena')">
+                </app-progress-password>
                 Sugerencias:
                 <ul>
                   <li>Al menos una mayúscula</li>
@@ -75,8 +79,7 @@
                   <li>Al menos un caracter especial</li>
                 </ul>
               </div>
-              <app-progress-password [forErrorCode]="formB.registerUser.get('contrasena')">
-              </app-progress-password>
+
               <app-form-errors-container [forControl]="formB.registerUser.get('contrasena')">
                 <app-message-error forErrorCode="required"></app-message-error>
                 <app-message-error forErrorCode="minlength" customMsg="Debe tener 8 caracteres minimo">

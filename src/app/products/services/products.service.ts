@@ -20,7 +20,7 @@ export class ProductsService {
   getDataArticulos(): Observable<any> {
     return this.http.get<any>(`${this.urlApi}${this.url}`);
   }
-  //${this.urlApi}${this.urlCarrito}?desde=${page}&hasta=${size}
+  //${this.urlApi}${this.urlCarrito}?pagina=${page}&size=${size}
   //PAGINACION DE LA API
   getCharacterByPage(page: number, size: number): Observable<any> {
     return this.http.get<any>(

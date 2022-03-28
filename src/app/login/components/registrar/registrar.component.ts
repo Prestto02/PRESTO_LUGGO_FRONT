@@ -26,13 +26,11 @@ export class RegistrarComponent implements OnInit {
   ngOnInit(): void {
     this.position.getPositionUser();
   }
-  mouseEnter() {
+  //MOUSE CLICK EVENT
+  mouseClickEvent() {
     this.sugerencias = true;
   }
-  mouseExit() {
-    this.sugerencias = false;
-  }
-  mouseClickEvent() {
+  perdioElFocus() {
     this.sugerencias = false;
   }
   //SUBMIT DATA API

@@ -45,7 +45,6 @@ export class SharedProductsComponent implements OnInit {
   onScrollDown(): void {
     this.pageNum++;
     this.apiServi.getCharacterByPage(this.pageNum, 10).subscribe((res) => {
-      console.log(res);
       this.apiServi.addProductPagination(res.data);
       this.apiServi.productDataPagination.subscribe((res) => {
         this.productsArray = res;

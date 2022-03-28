@@ -55,9 +55,9 @@ export class CarritoItemsComponent implements OnInit {
     this.getItemCarrito();
   }
   //OBTENER EL ID DEl PRODUCTO
-  getListItemCarrito(id?: any) {
+  getListItemCarrito(id: any) {
     this.apiServi.getDataProducts(id).subscribe((res) => {
-      this.apiServi.addProductPagination(res.airline); //GUARDO ESE PRODUCTO EN UN ARREGLO BEHAVIOR
+      this.apiServi.addProductCarrito(res.airline); //GUARDO ESE PRODUCTO EN UN ARREGLO BEHAVIOR
     });
   }
   getItemCarrito() {

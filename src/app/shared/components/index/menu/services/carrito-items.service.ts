@@ -25,8 +25,18 @@ export class CarritoItemsService {
     );
   }
   //AGREGAR LOS PRODUCTOS SCROLL INFINITO
-  addProductPagination(dataObj: any) {
+  addProductCarrito(dataObj: any) {
+    console.log(this.adddCarritoProduct);
+    console.log(dataObj);
+    this.verifyCarrito(dataObj[0].id);
     this.adddCarritoProduct.push(...dataObj);
     this.productCarritoItem.next(this.adddCarritoProduct);
+  }
+
+  verifyCarrito(idProduct: any) {
+    console.log(idProduct);
+    this.productCarrito.subscribe((res) => {
+      console.log(res);
+    });
   }
 }
