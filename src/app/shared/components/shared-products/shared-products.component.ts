@@ -2,6 +2,7 @@ import { DOCUMENT } from '@angular/common';
 import { Component, HostListener, Inject, OnInit } from '@angular/core';
 import { ProductsService } from 'src/app/products/services/products.service';
 import { CarritoItemsComponent } from '../index/menu/carrito-items/carrito-items.component';
+import { CarritoItemsService } from '../index/menu/services/carrito-items.service';
 
 @Component({
   selector: 'app-shared-products',
@@ -13,21 +14,22 @@ export class SharedProductsComponent implements OnInit {
   private scrollHeigth = 100;
   private pageNum = 1;
   public productsArray: any;
+  productsLength = 0;
   constructor(
     @Inject(DOCUMENT) private document: Document,
     private apiServi: ProductsService,
-    private carritoItmes: CarritoItemsComponent
+    private carritoItmes: CarritoItemsComponent,
+    private apiCarrito: CarritoItemsService
   ) {}
 
   ngOnInit(): void {
     this.obtenerProductos();
-    // this.obtenerDataApi();
   }
   //OBTENER LOS PRODUCTOS
   obtenerProductos() {
     this.apiServi.getCharacterByPage(this.pageNum, 10).subscribe((res) => {
-      this.productsArray = res.data;
-      this.apiServi.addProductPagination(res.data);
+      this.productsArray = res;
+      this.apiServi.addProductPagination(res);
     });
   }
   //HOSTLISTENER SCROLL
@@ -45,7 +47,7 @@ export class SharedProductsComponent implements OnInit {
   onScrollDown(): void {
     this.pageNum++;
     this.apiServi.getCharacterByPage(this.pageNum, 10).subscribe((res) => {
-      this.apiServi.addProductPagination(res.data);
+      this.apiServi.addProductPagination(res);
       this.apiServi.productDataPagination.subscribe((res) => {
         this.productsArray = res;
       });
@@ -54,5 +56,9 @@ export class SharedProductsComponent implements OnInit {
   //AGRGAR AL CARRITO
   agregarAlCarrito(id: any) {
     this.carritoItmes.getListItemCarrito(id);
+    //PARa subiR EL ITEMS DEL CARRITO
+    setTimeout(() => {
+      this.productsLength = this.apiCarrito.obtenerTamañoDelCarrito();
+    }, 100);
   }
 }

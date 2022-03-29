@@ -1,14 +1,12 @@
 import {
-  HttpErrorResponse,
   HttpEvent,
   HttpHandler,
   HttpInterceptor,
   HttpRequest,
-  HttpResponse,
 } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
-import { HandleErrorServices } from './HandleErrorServices.service';
+import { HandleErrorServices } from './HandleErrorServicesApi.service';
 import { catchError } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root',

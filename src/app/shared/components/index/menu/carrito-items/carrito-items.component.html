@@ -32,13 +32,13 @@
         </div>
 
         <div class="col-md-4 col-sm-4 col-xxl-4 col-xl-4 col-4">
-          <p class="fs-3">${{totalAPagar}}</p>
+          <p class="fs-3">{{totalAPagar | currency: 'USD'}}</p>
         </div>
       </div>
 
     </div>
     <div class="col-md-12 col-xl-12 col-xxl-12 col-sm-12 col-12 text-end mt-auto">
-      <span class="text text-info">{{this.products.length}} Productos</span>
+      <span class="text text-info">{{totalProducts}} Productos</span>
     </div>
     <div class="col-md-12 col-xl-12 col-xxl-12 col-sm-12 col-12 text-end mt-auto">
       <hr>
@@ -57,20 +57,21 @@
               <div class="col-xl-12 col-md-12 col-12 col-sm-12 col-xxl-12 col-12">
                 <div class="row">
                   <p class="col-xl-4 mt-2 text-start" style="font-size: 20px;" *ngIf="product.subtotal>0 else precio">
-                    ${{product.subtotal}}
+                    {{product.subtotal | currency: 'USD'}}
                   </p>
                   <ng-template #precio>
-                    <p class="col-xl-4 mt-2 text-start" style="font-size: 20px;">${{product.precio}}</p>
+                    <p class="col-xl-4 mt-2 text-start" style="font-size: 20px;">{{product.precio | currency: 'USD'}}
+                    </p>
                   </ng-template>
                   <div class="col-xl-8 text-end">
                     <div class="btn-group col-md-12" role="group" aria-label="Button group with nested dropdown">
                       <span class="text text-center col-md-8 border rounded"
                         style="height: 40px; font-size: 20px;">{{product.item}}</span>
                       <div class="btn-group-vertical rounded" aria-label="Vertical radio toggle button group">
-                        <span class="btn-increment text-center" (click)="increment(product.id)">
+                        <span class="btn-increment text-center" (click)="increment(product.id_artic)">
                           <img src="../../../../../../assets/img/icons/Chevron_Right.png" alt="">
                         </span>
-                        <span class="btn-increment text-center" (click)="descrement(product.id)">
+                        <span class="btn-increment text-center" (click)="descrement(product.id_artic)">
                           <img src="../../../../../../assets/img/icons/Chevron_Left.png" alt="">
                         </span>
                       </div>

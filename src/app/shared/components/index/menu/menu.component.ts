@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { BaseFormProducts } from 'src/app/products/models/BaseformProduct';
 import { UrlFront } from 'src/app/shared/routes/RoutesFront';
+import { CarritoItemsService } from './services/carrito-items.service';
 
 @Component({
   selector: 'app-menu',
@@ -9,7 +10,9 @@ import { UrlFront } from 'src/app/shared/routes/RoutesFront';
   styleUrls: ['./menu.component.css'],
 })
 export class MenuComponent implements OnInit {
-  ///CATEGORIAs ITEmS
+  @Input('totalProductos') totalProductos: any | null = 0;
+  totalCarrito = 0;
+  //CATEGORIAs ITEmS
   categoriaItems: any[] = [
     {
       id: 1,
@@ -51,11 +54,17 @@ export class MenuComponent implements OnInit {
       name: 'Joyería y accesorios',
     },
   ];
-  constructor(private router: Router, public formB: BaseFormProducts) {}
+  constructor(
+    private router: Router,
+    public formB: BaseFormProducts,
+    private apiForm: CarritoItemsService
+  ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.totalCarrito = this.apiForm.obtenerTamañoDelCarrito();
+  }
   menuIndex() {
-    this.router.navigateByUrl(`${UrlFront.Menu}/${UrlFront.Menu.index}`);
+    this.router.navigateByUrl(`${UrlFront.Menu.menu}/${UrlFront.Menu.index}`);
   }
   buscarProducto() {
     const searchProducts = this.formB.formSearchProducts.get('nombre')?.value;

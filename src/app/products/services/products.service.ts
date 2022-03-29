@@ -24,7 +24,7 @@ export class ProductsService {
   //PAGINACION DE LA API
   getCharacterByPage(page: number, size: number): Observable<any> {
     return this.http.get<any>(
-      `https://api.instantwebtools.net/v1/passenger?page=${page}&size=${size}`
+      `${this.urlApi}${this.urlCarrito}?pagina=${page}&size=${size}`
     );
   }
   //AGREGAR LOS PRODUCTOS SCROLL INFINITO
