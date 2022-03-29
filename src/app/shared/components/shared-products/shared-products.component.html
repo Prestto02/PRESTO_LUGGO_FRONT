@@ -6,10 +6,10 @@
   <div class="row" infiniteScroll (scrolled)="onScrollDown();">
     <div class="col-xxl-4 col-sm-6 col-6 col-xl-4 col-md-4 mt-3" *ngFor="let products of productsArray">
       <div class="card border rounded">
-        <img src="" class="card-img-top" alt="IMAGEN Del PRODUCTO">
+        <img src="" class="card-img-top" alt="{{products.id}}">
         <div class="card-body">
           <p class="card-title">Nombre: {{products.name}}</p>
-          <p class="card-text">PRECIO:{{products.precio}}</p>
+          <p class="card-text">PRECIO: <b>{{products.precio | currency: 'USD'}}</b></p>
           <button class="btn btn-primary" (click)="agregarAlCarrito(products.id);">Agregar al
             carrito</button>
         </div>

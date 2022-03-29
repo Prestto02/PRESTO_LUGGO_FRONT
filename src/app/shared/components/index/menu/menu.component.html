@@ -28,7 +28,7 @@
           <form (submit)="buscarProducto()" [formGroup]="formB.formSearchProducts">
             <div class="input-group">
               <select class="form-select" formControlName="categoria" aria-label="Default select example">
-                <option class="color-select" selected>Escoja la categoria</option>
+                <option class="color-select" value="" selected>Escoja la categoria</option>
                 <option value="{{categoria.id}}" class="color-select" *ngFor="let categoria of categoriaItems">
                   {{categoria.name}}</option>
               </select>

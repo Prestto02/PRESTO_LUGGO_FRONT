@@ -27,6 +27,7 @@ export class CarritoItemsComponent implements OnInit {
       //ME SUSCRIBO AL RXJS DEl SERVICIO
       this.productoItems = res;
       this.totalProducts = this.apiServi.obtenerTamañoDelCarrito(); //GUARDO El TOTAl DE PRODUCTOS
+      this.totalPago(); //CALCULO EL TOTAL A PAGAR
     });
   }
   //TOTAL AL OBTENER LOS PRODUCTOS EN EL CARRITO
