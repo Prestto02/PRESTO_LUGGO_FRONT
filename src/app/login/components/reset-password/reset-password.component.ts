@@ -28,7 +28,7 @@ export class ResetPasswordComponent implements OnInit {
 
   ngOnInit(): void {
     this.position.getPositionUser(); //POSICION DEL USUARIO
-    //this.comprobarCodigo();
+    this.comprobarCodigo();
   }
   //COMPROBAR CODIGo
   comprobarCodigo() {
