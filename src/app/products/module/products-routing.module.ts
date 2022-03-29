@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { UrlFront } from '../../shared/routes/RoutesFront';
+import { CreateProductsComponent } from '../components/create-products/create-products.component';
 import { ProductsComponent } from '../components/products.component';
 
 const routes: Routes = [
@@ -9,7 +10,7 @@ const routes: Routes = [
     children: [
       {
         path: UrlFront.Products.create,
-        component: ProductsComponent,
+        component: CreateProductsComponent,
       },
       {
         path: '**',
