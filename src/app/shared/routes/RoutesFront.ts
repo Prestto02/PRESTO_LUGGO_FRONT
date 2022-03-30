@@ -20,11 +20,11 @@ export const UrlFront = {
   Menu: {
     menu: 'Menu',
     index: 'index',
-    buscarGet:'buscar-productos',
+    buscarGet: 'buscar-productos',
     buscar: 'buscar-productos/:name/:categoria',
   },
   Products: {
     products: 'producto',
-    create: 'create',
+    create: 'crear',
   },
 };

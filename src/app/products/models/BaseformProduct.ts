@@ -11,7 +11,7 @@ export class BaseFormProducts {
       '',
       [
         Validators.required,
-        Validators.minLength(5),
+        Validators.minLength(10),
         Validators.maxLength(50),
         Validators.pattern(/^[A-Za-z ]+$/),
       ],
@@ -30,18 +30,18 @@ export class BaseFormProducts {
       '',
       [
         Validators.required,
-        Validators.min(1),
+        Validators.minLength(1),
         Validators.maxLength(50),
-        Validators.pattern(/[1-9]{50}/),
+        Validators.pattern(/^[1-9$]*$/),
       ],
     ],
     valor_unitario: [
       '',
       [
         Validators.required,
-        Validators.min(1),
+        Validators.minLength(2),
         Validators.maxLength(50),
-        Validators.pattern(/[1-9]{50}/),
+        Validators.pattern(/^[0-9]+([,][0-9]{2})?$/),
       ],
     ],
     //caracteristica_Articulo{}
