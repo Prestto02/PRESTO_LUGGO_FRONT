@@ -6,8 +6,8 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./errors-server.component.css'],
 })
 export class ErrorsServerComponent implements OnInit {
-  @Input('message') message: string | null = null;
-  @Input('errors') errors: boolean | null = null;
+  @Input('message') message: string | null = null; //OBTENGO EL MENSAJE
+  @Input('errors') errors: boolean | null = null; //OBTENGO EL ERROR
   constructor() {}
 
   ngOnInit(): void {}

@@ -12,10 +12,10 @@ import { LoginService } from '../../services/login.service';
 })
 export class RegistrarComponent implements OnInit {
   public urlapi = UrlApi.loginFacebook;
-  error = false;
-  messageError = '';
-  load = false;
-  sugerencias = false;
+  error = false; //ERORES
+  messageError = ''; //MENSAJEDEERRORES
+  load = false; //LOAD
+  sugerencias = false; //SUGERENCIAS
   constructor(
     public formB: BaseFormLogin,
     private router: Router,
@@ -24,14 +24,14 @@ export class RegistrarComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.position.getPositionUser();
+    this.position.getPositionUser(); //POSICION DEL USUARIO
   }
   //MOUSE CLICK EVENT
   mouseClickEvent() {
-    this.sugerencias = true;
+    this.sugerencias = true; //PARA PRESENTAR LAS SUGERENCIAS
   }
   perdioElFocus() {
-    this.sugerencias = false;
+    this.sugerencias = false; //PARA OCULTAR LAS SUGERENCIAS
   }
   //SUBMIT DATA API
   submit() {
@@ -39,18 +39,17 @@ export class RegistrarComponent implements OnInit {
     const users = this.formB.getDataRegisterUser(
       this.position.latitud,
       this.position.longitud
-    );
+    ); //TRANSFORMAR A UN JSON ESTANDAR
     this.apiService.postUserDataApi(users).subscribe(
       (res) => {
-        console.log(res);
-        this.formB.limpiarForm();
+        this.formB.limpiarForm(); //LIMPIO FORMULARIO
         this.router.navigate([
           `/${UrlFront.ActivarCuenta.cuenta}/${UrlFront.ActivarCuenta.mensajeAlCorreo}`,
           users.user,
-        ]);
+        ]); //ENVIO EL USUARIO A LA ACTIVACION DEL CORREO
       },
       (err) => {
-        this.load = false;
+        this.load = false; //SI HAY ERROR MUESTRO MENSAJE
         console.log(err);
       }
     );

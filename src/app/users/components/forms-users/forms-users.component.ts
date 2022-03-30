@@ -26,7 +26,7 @@ export class FormsUsersComponent implements OnInit {
 
   ngOnInit(): void {
     this.position.getPositionUser(); //POSiCION Dle USUARIO
-    this.formB.formUsers.patchValue({ id_usuario: this.idUsers });
+    this.formB.formUsers.patchValue({ id_usuario: this.idUsers }); //OBTENGO EL ID DEL USUARIO
   }
   //ENVIAR FORMULARIO POR PUT
   submit() {

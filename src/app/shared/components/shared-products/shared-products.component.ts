@@ -10,44 +10,45 @@ import { CarritoItemsService } from '../index/menu/services/carrito-items.servic
   styleUrls: ['./shared-products.component.css'],
 })
 export class SharedProductsComponent implements OnInit {
-  showButton = false;
-  private scrollHeigth = 100;
-  private pageNum = 1;
-  public productsArray: any;
-  productsLength = 0;
+  showButton = false; // PARA HABiLiTAR EL BOTON PARA SUBIR A LA PAGINA PRINCIPAL
+  private scrollHeigth = 100; //HASTA DE 100PX
+  private pageNum = 1; //PAGINA NUMERO 1 DE LA PAGINACION
+  public productsArray: any; //AGREGO EL ARRAY
+  productsLength = 0; //CUANTOS PRODUCTOS EXiSTE ENVIADO A LA LENGTH
   constructor(
-    @Inject(DOCUMENT) private document: Document,
-    private apiServi: ProductsService,
-    private carritoItmes: CarritoItemsComponent,
-    private apiCarrito: CarritoItemsService
+    @Inject(DOCUMENT) private document: Document, //DOCUMENT
+    private apiServi: ProductsService, //API PRODUCTOS
+    private carritoItmes: CarritoItemsComponent, //CARRITO ITEMS
+    private apiCarrito: CarritoItemsService //APICARRITO
   ) {}
 
   ngOnInit(): void {
-    this.obtenerProductos();
+    this.obtenerProductos(); //OBTENER LOS PRODUCTOS
   }
   //OBTENER LOS PRODUCTOS
   obtenerProductos() {
     this.apiServi.getCharacterByPage(this.pageNum, 10).subscribe((res) => {
-      this.productsArray = res;
-      this.apiServi.addProductPagination(res);
+      this.productsArray = res; //GUARDO EN UN ARRAY LOS PRODUCTOS
+      this.apiServi.addProductPagination(res); //AGREGAR AL CARRITO LA PAGINACION
     });
   }
   //HOSTLISTENER SCROLL
   @HostListener('window:scroll')
   onWindowScroll(): void {
-    const yOffset = window.pageYOffset;
-    const scrollTop = this.document.documentElement.scrollTop;
-    this.showButton = (yOffset || scrollTop) > this.scrollHeigth;
+    const yOffset = window.pageYOffset; //GUARDO EL SCROLL DEL USUARIO
+    const scrollTop = this.document.documentElement.scrollTop; //SCROLLTOP DEL USUARIO
+    this.showButton = (yOffset || scrollTop) > this.scrollHeigth; //SI ES MAYOR A 100PX HAGO EL SCROLL INFINITO
   }
+  //DETECTAR EL SCROLL DEL HTML
   onScrollTop(): void {
     this.document.documentElement.scrollTop = 0;
   }
 
-  //ON SCROLL DOWn
+  //ON SCROLL DOWN
   onScrollDown(): void {
-    this.pageNum++;
+    this.pageNum++; //Si BAJA SUMO PARA PEDIR LA SIGUIENTE PAGINACION
     this.apiServi.getCharacterByPage(this.pageNum, 10).subscribe((res) => {
-      this.apiServi.addProductPagination(res);
+      this.apiServi.addProductPagination(res); //GUARDO LO QUE VIENE DE LA PAGINACION
       this.apiServi.productDataPagination.subscribe((res) => {
         this.productsArray = res;
       });
@@ -56,7 +57,7 @@ export class SharedProductsComponent implements OnInit {
   //AGRGAR AL CARRITO
   agregarAlCarrito(id: any) {
     this.carritoItmes.getListItemCarrito(id);
-    //PARa subiR EL ITEMS DEL CARRITO
+    //PARA SUBIR EL ITEMS DEL CARRITO
     setTimeout(() => {
       this.productsLength = this.apiCarrito.obtenerTamañoDelCarrito();
     }, 100);

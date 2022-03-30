@@ -1,27 +1,48 @@
-<div class="container-fluid mx-auto">
-  <div class="row">
-    <div class="form-floating mb-3">
-      <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-      <label for="floatingInput">Nombre</label>
+<div class="container-fluid justify-content-around align-items-center col-xl-6 col-xxl-6 col-md-6">
+  <div class="row col-auto p-5">
+    <div class="col-xxl-12 col-xl-12">
+      <h5 class="text-center">Registrar de articulos</h5>
     </div>
-    <div class="form-floating mb-3">
-      <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-      <label for="floatingPassword">Detalle</label>
+    <div class="col-xxl-12 col-xl-12">
+      <div class="card mb-3">
+        <div class="row g-0">
+          <div class="col-md-5 col-xxl-5 col-xl-5 col-5 col-sm-5 mx-auto mt-4 py-4">
+            <img *ngIf="imgProducts!=''" [src]="imgProducts" class="img-fluid rounded-start" alt="Imágen del producto">
+          </div>
+          <div class="col-md-7 col-xxl-7 col-xl-7 col-7 col-sm-7">
+            <div class="card-body">
+              <form (submit)="submit()" [formGroup]="formB.formProducts">
+                <div class="form-floating mb-3">
+                  <input type="text" class="form-control" formControlName="nombre_articulo" id="floatingNombre"
+                    placeholder="Nombre del producto">
+                  <label for="floatingNombre">Nombre</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input type="text" class="form-control" id="floatingDetalle" formControlName="descripcion_articulo"
+                    placeholder="Detalle del producto">
+                  <label for="floatingDetalle">Descripcion</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input type="text" class="form-control" formControlName="cantidad" id="floatingCantidad"
+                    placeholder="Cantidad del producto">
+                  <label for="floatingCantidad">Cantidad</label>
+                </div>
+                <div class="input-group mb-3">
+                  <span class="input-group-text">$</span>
+                  <input type="text" class="form-control" id="floatingPrecio" formControlName="valor_unitario"
+                    placeholder="Precio">
+                </div>
+                <div class="mb-3">
+                  <label for="formFile" class="form-label">Seleccione una imagen</label>
+                  <input class="form-control" type="file" id="formFile" alife-file-to-base64
+                    (onFileChanged)="getArchive($event)">
+                </div>
+                <button type="submit" class="btn btn-primary">Guardar</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="form-floating mb-3">
-      <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-      <label for="floatingPassword">Precio</label>
-    </div>
-    <div class="mb-3">
-      <label for="formFile" class="form-label">Default file input example</label>
-      <input class="form-control" type="file" id="formFile">
-    </div>
-    <div class="form-check form-switch">
-      <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>
-      <label class="form-check-label" for="flexSwitchCheckChecked">Activar promocion?</label>
-    </div>
-    <label for="exampleColorInput" class="form-label">Color del producto</label>
-    <input type="color" class="form-control form-control-color" id="exampleColorInput" value="#000"
-      title="Choose your color">
   </div>
 </div>

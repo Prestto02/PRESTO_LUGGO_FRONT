@@ -20,20 +20,20 @@ export class BuscarUsuarioComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.position.getPositionUser();
+    this.position.getPositionUser(); //POSICION DEL USUARIO
   }
   //BUSCAR USUARIO
   submit() {
     const email = this.formB.getSearchUser(
       this.position.latitud,
       this.position.longitud
-    );
+    ); //EMAIL DEL USUARIO
     this.serviPassword.postUserEmail(email).subscribe(
       (res) => {
-        this.success = true;
+        this.success = true; //SI LO ENCUENTRO
       },
       (err) => {
-        this.success = false;
+        this.success = false; //SI NO LO ENCUENTRO
       }
     );
   }

@@ -11,6 +11,7 @@ export class NotFund404Component implements OnInit {
   constructor(private router: Router) {}
 
   ngOnInit(): void {}
+  //REGRESAR AL INDEX
   regresar() {
     this.router.navigateByUrl(`${UrlFront.Menu.menu}/${UrlFront.Menu.index}`);
   }

@@ -6,6 +6,8 @@ import { BaseFormProducts } from '../models/BaseformProduct';
 import { ProductsComponent } from '../components/products.component';
 import { ErrorsExtensionsModule } from 'src/app/shared/components/errors/errors-module.module';
 import { CreateProductsComponent } from '../components/create-products/create-products.component';
+import { AlifeFileToBase64Module } from 'alife-file-to-base64';
+
 @NgModule({
   declarations: [ProductsComponent, CreateProductsComponent],
   imports: [
@@ -13,6 +15,7 @@ import { CreateProductsComponent } from '../components/create-products/create-pr
     ProductsRoutingModule,
     ReactiveFormsModule,
     ErrorsExtensionsModule,
+    AlifeFileToBase64Module,
   ],
   providers: [BaseFormProducts],
 })

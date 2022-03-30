@@ -28,7 +28,7 @@ export class ResetPasswordComponent implements OnInit {
 
   ngOnInit(): void {
     this.position.getPositionUser(); //POSICION DEL USUARIO
-    this.comprobarCodigo();
+    this.comprobarCodigo(); //COMPRUEBO EL CODIGO DEL USUARIO
   }
   //COMPROBAR CODIGo
   comprobarCodigo() {
@@ -37,12 +37,12 @@ export class ResetPasswordComponent implements OnInit {
     };
     this.serviPassword.postCodigoRecuperacion(check).subscribe(
       (res) => {
-        console.log('success');
+        console.log('success'); //CONTINUARA CON EL REINICIO DE CONTRASEÑA
       },
       (err) => {
         this.router.navigateByUrl(
           `${UrlFront.Login.login}/${UrlFront.Login.iniciarSesion}`
-        );
+        ); //INVALID IRA AL LOGIN
       }
     );
   }

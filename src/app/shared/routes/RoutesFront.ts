@@ -24,7 +24,7 @@ export const UrlFront = {
     buscar: 'buscar-productos/:name/:categoria',
   },
   Products: {
-    products: 'products',
+    products: 'producto',
     create: 'create',
   },
 };

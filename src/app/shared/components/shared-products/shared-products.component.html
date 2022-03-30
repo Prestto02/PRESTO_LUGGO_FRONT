@@ -6,7 +6,7 @@
   <div class="row" infiniteScroll (scrolled)="onScrollDown();">
     <div class="col-xxl-4 col-sm-6 col-6 col-xl-4 col-md-4 mt-3" *ngFor="let products of productsArray">
       <div class="card border rounded">
-        <img src="" class="card-img-top" alt="{{products.id}}">
+        <img src="http://192.168.1.174:9595{{products.imagen}}" class="card-img-top" alt="{{products.id}}">
         <div class="card-body">
           <p class="card-title">Nombre: {{products.name}}</p>
           <p class="card-text">PRECIO: <b>{{products.precio | currency: 'USD'}}</b></p>

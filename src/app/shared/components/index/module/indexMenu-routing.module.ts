@@ -9,16 +9,16 @@ const routes: Routes = [
     path: '',
     children: [
       {
-        path: UrlFront.Menu.index,
+        path: UrlFront.Menu.index, //RUTA INDEX
         component: IndexComponent,
       },
       {
-        path: UrlFront.Menu.buscar,
+        path: UrlFront.Menu.buscar, //RUTA BUSCAR PRODUCTOS
         component: SharedProductsComponent,
       },
       {
         path: '**',
-        redirectTo: UrlFront.Menu.index,
+        redirectTo: UrlFront.Menu.index, //SI NO ENCUENTRA NADA REGRESAR AL INDEX
         pathMatch: 'full',
       },
     ],

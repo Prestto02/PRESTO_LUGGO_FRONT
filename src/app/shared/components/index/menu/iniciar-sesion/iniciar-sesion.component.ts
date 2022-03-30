@@ -11,11 +11,13 @@ export class IniciarSesionComponent implements OnInit {
   constructor(private router: Router) {}
 
   ngOnInit(): void {}
+  //REGRESAR AL LOGIN
   irLogin() {
     this.router.navigateByUrl(
       `${UrlFront.Login.login}/${UrlFront.Login.iniciarSesion}`
     );
   }
+  //IR A REGISTRARSE
   irRegistrarUser() {
     this.router.navigateByUrl(
       `${UrlFront.Login.login}/${UrlFront.Login.postRegister}`

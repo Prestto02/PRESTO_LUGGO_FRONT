@@ -7,11 +7,11 @@ export class HandleErrorServices {
   constructor(private toaster: ToastrService) {}
 
   public handleError(err: HttpErrorResponse) {
-    let errorMessage: string;
+    let errorMessage: string; //ENVIAR EL MENSAJE AL TOAST
     if (err.error instanceof ErrorEvent) {
       errorMessage = `Ocurrio un error: ${err.error.message}`;
     } else {
-      switch (err.status) {
+      switch (err.status) {//RECUPERO EL ESTADO DEL ERROR
         case 401:
           errorMessage = `${err.status}: ${err.error}`;
           break;

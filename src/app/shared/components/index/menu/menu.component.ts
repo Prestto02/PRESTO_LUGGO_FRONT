@@ -12,7 +12,7 @@ import { CarritoItemsService } from './services/carrito-items.service';
 export class MenuComponent implements OnInit {
   @Input('totalProductos') totalProductos: any | null = 0;
   totalCarrito = 0;
-  //CATEGORIAs ITEmS
+  //CATEGORIAs ITEMS
   categoriaItems: any[] = [
     {
       id: 1,
@@ -61,18 +61,19 @@ export class MenuComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.totalCarrito = this.apiForm.obtenerTamañoDelCarrito();
+    this.totalCarrito = this.apiForm.obtenerTamañoDelCarrito();//OBTENER EL TAMAÑO TOTAL DEL ARREGLO DE CARRITO
   }
   menuIndex() {
     this.router.navigateByUrl(`${UrlFront.Menu.menu}/${UrlFront.Menu.index}`);
   }
+  //BUSCAR PRODUCTO
   buscarProducto() {
-    const searchProducts = this.formB.formSearchProducts.get('nombre')?.value;
-    const categoria = this.formB.formSearchProducts.get('categoria')?.value;
+    const searchProducts = this.formB.formSearchProducts.get('nombre')?.value; //GUARDO LO QUE TENGO EN EL INPUT
+    const categoria = this.formB.formSearchProducts.get('categoria')?.value; //GUARDO LO QUE TENGO EN EL INPUT
     this.router.navigate([
       `${UrlFront.Menu.menu}/${UrlFront.Menu.buscarGet}`,
       searchProducts,
       categoria,
-    ]);
+    ]); //ENVIO POR URL LO QUE TENGO DEL INPUT
   }
 }

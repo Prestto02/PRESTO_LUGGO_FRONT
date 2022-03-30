@@ -7,9 +7,6 @@ import { UrlApi } from '../../shared/routes/RoutesApi';
   providedIn: 'root',
 })
 export class ProductsService {
-  private urlApi = UrlApi.ApiUrl;
-  private url = UrlApi.articulos; //ARTICulos
-  private urlCarrito = UrlApi.traerProductosCarrito;
   private productDataSource = new BehaviorSubject<Array<any>>([]); //CREO El behaviorSUBJECT
   productDataPagination = this.productDataSource.asObservable(); //OBTENGO EL BEHAVIORSUBJECT
   //CONSTRUCTOR
@@ -18,14 +15,17 @@ export class ProductsService {
   constructor(private http: HttpClient) {}
   //TRAER LOS DATOS
   getDataArticulos(): Observable<any> {
-    return this.http.get<any>(`${this.urlApi}${this.url}`);
+    return this.http.get<any>(`${UrlApi.ApiUrl}${UrlApi.articulos}`);
   }
   //${this.urlApi}${this.urlCarrito}?pagina=${page}&size=${size}
   //PAGINACION DE LA API
   getCharacterByPage(page: number, size: number): Observable<any> {
     return this.http.get<any>(
-      `${this.urlApi}${this.urlCarrito}?pagina=${page}&size=${size}`
+      `${UrlApi.ApiUrl}${UrlApi.traerProductosCarrito}?pagina=${page}&size=${size}`
     );
+  }
+  postDataArticulo(form: any): Observable<any> {
+    return this.http.post<any>(`${UrlApi.ApiUrl}${UrlApi.articulos}`, form);
   }
   //AGREGAR LOS PRODUCTOS SCROLL INFINITO
   addProductPagination(dataObj: any) {
