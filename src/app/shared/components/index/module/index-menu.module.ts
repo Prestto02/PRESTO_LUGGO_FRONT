@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
-
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 //COMPONENTS
 import { IndexComponent } from '../index.component';
 import { MenuComponent } from '../menu/menu.component';
@@ -29,7 +29,7 @@ import { ResponsiveSectionNovedadesComponent } from '../section-novedades/respon
 import { ResponsiveSectionOfertas2Component } from '../section-ofertas2/responsive-section-ofertas2/responsive-section-ofertas2.component';
 import { SharedProductsComponent } from '../../shared-products/shared-products.component';
 import { BaseFormProducts } from 'src/app/products/models/BaseformProduct';
-import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+import { ListaDeseosComponent } from '../../lista-deseos/lista-deseos.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +47,7 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
     SectionCardsInformationComponent,
     SectionCardsOfertasComponent,
     SharedProductsComponent, //SHARED PRODUCTS
+    ListaDeseosComponent, //LISTA DE DESEOS
     SectionServiciosComponent,
     CarritoItemsComponent,
     SubMenuCosmeticosComponent,

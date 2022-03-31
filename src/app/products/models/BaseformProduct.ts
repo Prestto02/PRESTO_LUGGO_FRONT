@@ -47,7 +47,7 @@ export class BaseFormProducts {
     //caracteristica_Articulo{}
     idtamaño_alto: [1],
     //ArticuloTieneCategoria[{}]
-    idcategoria_articulo: [4],
+    idcategoria_articulo: [4, [Validators.required]],
     //multimedia[{}]
     archivo: [''],
   });

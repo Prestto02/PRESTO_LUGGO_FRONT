@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { UrlFront } from '../../../routes/RoutesFront';
+import { ListaDeseosComponent } from '../../lista-deseos/lista-deseos.component';
 import { SharedProductsComponent } from '../../shared-products/shared-products.component';
 import { IndexComponent } from '../index.component';
 
@@ -15,6 +16,10 @@ const routes: Routes = [
       {
         path: UrlFront.Menu.buscar, //RUTA BUSCAR PRODUCTOS
         component: SharedProductsComponent,
+      },
+      {
+        path: UrlFront.ListaDeseos.listaDeseos, //RUTA LISTA DE DESEOS
+        component: ListaDeseosComponent,
       },
       {
         path: '**',

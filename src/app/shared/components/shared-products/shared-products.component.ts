@@ -1,8 +1,9 @@
 import { DOCUMENT } from '@angular/common';
-import { Component, HostListener, Inject, OnInit } from '@angular/core';
+import { Component, HostListener, Inject, Input, OnInit } from '@angular/core';
 import { ProductsService } from 'src/app/products/services/products.service';
 import { CarritoItemsComponent } from '../index/menu/carrito-items/carrito-items.component';
 import { CarritoItemsService } from '../index/menu/services/carrito-items.service';
+import { ListaDeseosService } from '../lista-deseos/services/lista-deseos.service';
 
 @Component({
   selector: 'app-shared-products',
@@ -10,6 +11,7 @@ import { CarritoItemsService } from '../index/menu/services/carrito-items.servic
   styleUrls: ['./shared-products.component.css'],
 })
 export class SharedProductsComponent implements OnInit {
+  @Input('closeNavBar') closeNavBar: boolean | null = false;
   showButton = false; // PARA HABiLiTAR EL BOTON PARA SUBIR A LA PAGINA PRINCIPAL
   private scrollHeigth = 100; //HASTA DE 100PX
   private pageNum = 1; //PAGINA NUMERO 1 DE LA PAGINACION
@@ -17,9 +19,10 @@ export class SharedProductsComponent implements OnInit {
   productsLength = 0; //CUANTOS PRODUCTOS EXiSTE ENVIADO A LA LENGTH
   constructor(
     @Inject(DOCUMENT) private document: Document, //DOCUMENT
-    private apiServi: ProductsService, //API PRODUCTOS
+    private apiServi: ProductsService, //API PRODUCTOS SERVICES
     private carritoItmes: CarritoItemsComponent, //CARRITO ITEMS
-    private apiCarrito: CarritoItemsService //APICARRITO
+    private apiCarrito: CarritoItemsService, //APICARRITO SERVICES
+    private apiListDeseo: ListaDeseosService //LISTA DE DESEOS SERVICES
   ) {}
 
   ngOnInit(): void {
@@ -61,5 +64,10 @@ export class SharedProductsComponent implements OnInit {
     setTimeout(() => {
       this.productsLength = this.apiCarrito.obtenerTamañoDelCarrito();
     }, 100);
+  }
+
+  //AGREGAR LISTA DE DESEOS
+  agregarAlDeseo(products: any) {
+    this.apiListDeseo.addListaDeseos(products);
   }
 }

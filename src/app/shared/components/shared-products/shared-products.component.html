@@ -1,17 +1,25 @@
-<header>
+<header [hidden]="closeNavBar">
   <app-menu [totalProductos]="productsLength"></app-menu>
   <app-menu2></app-menu2>
 </header>
 <div class="container-fluid">
   <div class="row" infiniteScroll (scrolled)="onScrollDown();">
-    <div class="col-xxl-4 col-sm-6 col-6 col-xl-4 col-md-4 mt-3" *ngFor="let products of productsArray">
+    <div class="col-xxl-2 col-sm-6 col-6 col-xl-2 col-md-4 mt-3" *ngFor="let products of productsArray">
       <div class="card border rounded">
-        <img src="http://192.168.1.174:9595{{products.imagen}}" class="card-img-top" alt="{{products.id}}">
+        <img src="http://192.168.1.174:9595{{products.imagen}}" class="card-img-top" alt="{{products.id}}" width="200px"
+          height="200px">
         <div class="card-body">
-          <p class="card-title">Nombre: {{products.name}}</p>
+          <p class="card-title col-xl-12 text-truncate-text">Nombre: {{products.name}} </p><a class="btn-link">Ver
+            más</a>
           <p class="card-text">PRECIO: <b>{{products.precio | currency: 'USD'}}</b></p>
-          <button class="btn btn-primary" (click)="agregarAlCarrito(products.id);">Agregar al
-            carrito</button>
+          <button class="btn btn-primary mx-auto" (click)="agregarAlCarrito(products.id);" title="Agregar al carrito">
+            <img class="img-fluid" src="https://svgsilh.com/svg/371979.svg" alt="Carrito de compras" width="24px">
+          </button>
+          <button class="btn btn-success mx-2" (click)="agregarAlDeseo(products)" title="Lista de deseos">
+            <img
+              src="https://img.icons8.com/external-anggara-flat-anggara-putra/344/external-wishlist-ecommerce-anggara-flat-anggara-putra-3.png"
+              alt="Lista de deseos" class="img-fluid" width="24px">
+          </button>
         </div>
       </div>
     </div>

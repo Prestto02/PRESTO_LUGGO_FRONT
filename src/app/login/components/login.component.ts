@@ -15,6 +15,8 @@ export class LoginComponent implements OnInit {
   public errorLogin = false;
   public urlapi = UrlApi; //API
   public urlFacebook = `${UrlApi.ApiUrl}${UrlApi.loginFacebook}`;
+  public urlGoogle = `${UrlApi.ApiUrl}${UrlApi.loginGoogle}`;
+  public urlMicrosoft = `${UrlApi.ApiUrl}${UrlApi.loginMicrosoft}`;
   constructor(
     public formB: BaseFormLogin, //fORM REACTIVE
     private router: Router, //ROUTES

@@ -27,4 +27,7 @@ export const UrlFront = {
     products: 'producto',
     create: 'crear',
   },
+  ListaDeseos: {
+    listaDeseos: 'lista-de-deseos',
+  },
 };
