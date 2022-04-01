@@ -15,7 +15,6 @@ export class ListaDeseosService {
   addListaDeseos(dataObj: any) {
     if (this.verifyCarrito(dataObj).length > 0) {
       //SI EXISTE EN EL ARREGLO EL MISMO PRODUCTO NO AGREGARLO
-      this.addListaDeseosProdut.length;
       this.messageFront.getInfoMessage(
         message.Info.title,
         message.Info.dobleProducto
@@ -27,7 +26,6 @@ export class ListaDeseosService {
         message.Success.title,
         message.Success.productoAgregado
       ); //OK SE AGREGO EL PRODUCTO
-      console.log(this.addListaDeseosProdut);
     }
   }
 

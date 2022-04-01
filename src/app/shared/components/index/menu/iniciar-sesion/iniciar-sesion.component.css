@@ -5,6 +5,7 @@
 .btn-sesion {
   background-color: #7549fe;
   color: #fff;
+  width: 170px;
 }
 *{
   overflow-y: hidden;

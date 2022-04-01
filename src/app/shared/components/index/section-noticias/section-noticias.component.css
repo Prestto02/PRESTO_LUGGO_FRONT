@@ -10,12 +10,17 @@
   color: #fff;
   font-size: 14px;
 }
-.tltle-cards{
+.tltle-cards {
   font-family: Cardium B-Bold;
   font-size: 21px;
 }
-.text-footer{
-  color: #007BFF;
+.text-footer {
+  color: #007bff;
   font-size: 14px;
   font-family: Cardium B-Medium;
+}
+.text-categorias {
+  font-family: Cardium B-Medium;
+  font-size: 14px;
+  color: #000;
 }

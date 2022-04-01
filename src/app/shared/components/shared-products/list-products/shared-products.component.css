@@ -4,19 +4,20 @@
   right: 30px;
   z-index: 3;
   padding: 1rem;
-  color: rgb(27, 27, 27);
+  color: #fff;
   cursor: pointer;
   font-size: 1.5rem;
   width: 45px;
   height: 45px;
+  background-color: #7549fe;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-*{
+* {
   font-family: Cardium A-Light;
 }
-.text-truncate-text{
+.text-truncate-text {
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;

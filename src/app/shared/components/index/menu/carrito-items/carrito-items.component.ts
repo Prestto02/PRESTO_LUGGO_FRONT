@@ -8,12 +8,10 @@ import { CarritoItemsService } from '../services/carrito-items.service';
 })
 export class CarritoItemsComponent implements OnInit {
   totalAPagar = 0;
-  totalProducts = 0;
   productoItems: any;
   constructor(private apiServi: CarritoItemsService) {}
 
   ngOnInit(): void {
-    //this.totalPago();
     this.getItemCarrito();
   }
   //OBTENER EL ID DEl PRODUCTO
@@ -22,19 +20,20 @@ export class CarritoItemsComponent implements OnInit {
       this.apiServi.addProductCarrito(res); //GUARDO ESE PRODUCTO EN UN ARREGLO BEHAVIOR
     });
   }
+  //ME SUSCRIBO PARA GUARDAR LA LISTA DE PRODUCTOS QUE TENGO
   getItemCarrito() {
     this.apiServi.productCarrito.subscribe((res) => {
       //ME SUSCRIBO AL RXJS DEl SERVICIO
       this.productoItems = res;
-      this.totalProducts = this.apiServi.obtenerTamañoDelCarrito(); //GUARDO El TOTAl DE PRODUCTOS
       this.totalPago(); //CALCULO EL TOTAL A PAGAR
     });
   }
   //TOTAL AL OBTENER LOS PRODUCTOS EN EL CARRITO
   totalPago() {
+    this.totalAPagar = 0; //ASIGNO A 0 PARA HACER LA NUEVA MULTIPLICACION
     this.productoItems.map((res: any) => {
       if (res.subtotal === 0) {
-        this.totalAPagar = this.totalAPagar + res.precio;
+        this.totalAPagar = this.totalAPagar + res.precio; //SUMO EL TOTAL A PAGAR CON EL PRECIO
       }
     });
   }

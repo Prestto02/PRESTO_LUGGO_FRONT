@@ -1,7 +1,4 @@
-<header [hidden]="closeNavBar">
-  <app-menu [totalProductos]="productsLength"></app-menu>
-  <app-menu2></app-menu2>
-</header>
+<!----------CONTENEDOR PARA EL LISTADO DE PRODUCTOS----------->
 <div class="container-fluid">
   <div class="row" infiniteScroll (scrolled)="onScrollDown();">
     <div class="col-xxl-2 col-sm-6 col-6 col-xl-2 col-md-4 mt-3" *ngFor="let products of productsArray">
@@ -23,7 +20,7 @@
         </div>
       </div>
     </div>
-    <button *ngIf="showButton" (click)="onScrollTop()" type="button" class="buttonRegresar" data-bs-toggle="tooltip"
-      data-bs-placement="top" title="Subir al inicio">⬆</button>
+    <button *ngIf="showButton" (click)="onScrollTop()" type="button" class=" btn rounded-circle buttonRegresar"
+      data-bs-toggle="tooltip" data-bs-placement="top" title="Subir al inicio">⬆</button>
   </div>
 </div>

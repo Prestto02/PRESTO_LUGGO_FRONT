@@ -10,12 +10,10 @@ import { ListaDeseosService } from './services/lista-deseos.service';
 })
 export class ListaDeseosComponent implements OnInit {
   dataListDeseos: any; //OBTENER LA LISTA DE DESEOS
-  productsLength: any; //PARA SUBIR LOS NMEROS DEL CARRITO
   filterPost = '';
   constructor(
     private apiListDeseos: ListaDeseosService,
-    private carritoItmes: CarritoItemsComponent, //CARRITO ITEMS COMPONENTS
-    private apiCarrito: CarritoItemsService //CARRITO SERVICE
+    private carritoItmes: CarritoItemsComponent //CARRITO ITEMS COMPONENTS
   ) {}
 
   ngOnInit(): void {
@@ -25,9 +23,6 @@ export class ListaDeseosComponent implements OnInit {
   agregarAlCarrito(id: any) {
     this.carritoItmes.getListItemCarrito(id);
     //PARA SUBIR EL ITEMS DEL CARRITO
-    setTimeout(() => {
-      this.productsLength = this.apiCarrito.obtenerTamañoDelCarrito();
-    }, 100);
   }
   //TRAER TODO LO QUE SE OBTUVO DE LA LISTA DE DESEOS
   getDataListDeseos() {

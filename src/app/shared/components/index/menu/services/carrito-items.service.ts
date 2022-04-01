@@ -9,16 +9,17 @@ import { UrlApi } from '../../../../routes/RoutesApi';
   providedIn: 'root',
 })
 export class CarritoItemsService {
-  private productCarritoItem = new BehaviorSubject<Array<any>>([]); //CREO El behaviorSUBJECT
-  productCarrito = this.productCarritoItem.asObservable(); //OBTENGO EL BEHAVIORSUBJECT
+  private productCarritoItem = new BehaviorSubject<Array<any>>([]); //BEHAVIOR PARA LA LISTA DE PRODUCTOS
+  productCarrito = this.productCarritoItem.asObservable(); //OBTENGO EL SUSCRIBE PARA LA LISTA DE PRODUCTO
   addCarritoProduct: Array<any> = []; //ARREGLO DE CARRITO DE PRODUCTOS
-  productsLength = 0; //PARA GUARDAR EL TOTAL DEL ARREGLO
+  private productsLength = new BehaviorSubject<Number>(0); //BEHAVIOR PARA EL TOTAL DE PRODUCTOS
+  productsLengthtotal = this.productsLength.asObservable(); //OBTENGO EL SUSCRIBE PARA EL TOTAL DE PRODUCTOS
   //CONSTRUCTOR
   constructor(
     private http: HttpClient,
     private messageFront: MessageFrontEndService
   ) {}
-
+  //PEDIR LOS PRODUCTOS
   getProducts(): Observable<any> {
     return this.http.get<any>(
       `${UrlApi.ApiUrl}${UrlApi.traerProductosCarrito}` //PEDIR TODOS LOS PRODUCTOS
@@ -32,7 +33,6 @@ export class CarritoItemsService {
   addProductCarrito(dataObj: any) {
     if (this.verifyCarrito(dataObj).length > 0) {
       //SI EXISTE EN EL ARREGLO EL MISMO PRODUCTO NO AGREGARLO
-      this.addCarritoProduct.length;
       this.messageFront.getInfoMessage(
         message.Info.title,
         message.Info.dobleProducto
@@ -40,7 +40,7 @@ export class CarritoItemsService {
     } else {
       this.addCarritoProduct.push({ ...dataObj }); //GUARDO EL OBJETO EN EN ARREGLO
       this.productCarritoItem.next(this.addCarritoProduct); //GUARDO EN EL OBSERVABLE EL ARREGLO ASIGNADO
-      this.obtenerTamañoDelCarrito();
+      this.obtenerTamañoDelCarrito(); //OBTENGO EL TAMAÑO DEL ARREGLO addCarritoProduct LENGTH
       this.messageFront.getSuccessMessage(
         message.Success.title,
         message.Success.productoAgregado
@@ -49,7 +49,8 @@ export class CarritoItemsService {
   }
   //OBTENER EL TAMAÑOO TOTAL DEL CARRITO
   obtenerTamañoDelCarrito() {
-    return this.addCarritoProduct.length;
+    const total = this.addCarritoProduct.length;
+    this.productsLength.next(total);
   }
 
   //VERIFICAR SI EXISTE EN LA LISTA DEL CARRITO

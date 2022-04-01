@@ -27,10 +27,11 @@ import { CarritoItemsComponent } from '../menu/carrito-items/carrito-items.compo
 import { ResponsiveSectionCarouselComponent } from '../section-carousel/responsive-section-carousel/responsive-section-carousel.component';
 import { ResponsiveSectionNovedadesComponent } from '../section-novedades/responsive-section-novedades/responsive-section-novedades.component';
 import { ResponsiveSectionOfertas2Component } from '../section-ofertas2/responsive-section-ofertas2/responsive-section-ofertas2.component';
-import { SharedProductsComponent } from '../../shared-products/shared-products.component';
+import { SharedProductsComponent } from '../../shared-products/list-products/shared-products.component';
 import { BaseFormProducts } from 'src/app/products/models/BaseformProduct';
 import { ListaDeseosComponent } from '../../lista-deseos/lista-deseos.component';
 import { FilterPipe } from 'src/app/shared/pipes/filter.pipe';
+import { IndexProductsComponent } from '../../shared-products/index-products.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +49,7 @@ import { FilterPipe } from 'src/app/shared/pipes/filter.pipe';
     SectionCardsInformationComponent,
     SectionCardsOfertasComponent,
     SharedProductsComponent, //SHARED PRODUCTS
+    IndexProductsComponent, //INDEX PRODUCTS SHARED
     ListaDeseosComponent, //LISTA DE DESEOS
     SectionServiciosComponent,
     CarritoItemsComponent,

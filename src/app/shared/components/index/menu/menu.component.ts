@@ -10,8 +10,7 @@ import { CarritoItemsService } from './services/carrito-items.service';
   styleUrls: ['./menu.component.css'],
 })
 export class MenuComponent implements OnInit {
-  @Input('totalProductos') totalProductos: any | null = 0;
-  totalCarrito = 0;
+  totalCarrito: any;
   //CATEGORIAs ITEMS
   categoriaItems: any[] = [
     {
@@ -61,7 +60,12 @@ export class MenuComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.totalCarrito = this.apiForm.obtenerTamañoDelCarrito(); //OBTENER EL TAMAÑO TOTAL DEL ARREGLO DE CARRITO
+    this.totalItemsCarrito(); //TOTAL DE ITEMS DEL CARRITO
+  }
+  totalItemsCarrito() {
+    this.apiForm.productsLengthtotal.subscribe((res) => {
+      this.totalCarrito = res;
+    });
   }
   menuIndex() {
     this.router.navigateByUrl(`${UrlFront.Menu.menu}/${UrlFront.Menu.index}`);
@@ -75,5 +79,11 @@ export class MenuComponent implements OnInit {
       searchProducts,
       categoria,
     ]); //ENVIO POR URL LO QUE TENGO DEL INPUT
+  }
+  //LISTA DE DESEO
+  irListaDeseos() {
+    this.router.navigateByUrl(
+      `${UrlFront.Menu.menu}/${UrlFront.ListaDeseos.listaDeseos}`
+    );
   }
 }
