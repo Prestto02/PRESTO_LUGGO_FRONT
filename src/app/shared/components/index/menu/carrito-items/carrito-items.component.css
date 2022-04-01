@@ -15,3 +15,11 @@
 .color-cabecera {
   background-color: rgba(32, 32, 57, 0.94);
 }
+
+.text-color{
+  color: #56ffc2;
+}
+
+.cabecera-tamano{
+  height: 40px;
+}

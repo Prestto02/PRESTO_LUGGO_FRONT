@@ -68,13 +68,13 @@
                   <span class="input-group-text">$</span>
                   <input type="text" class="form-control" id="floatingPrecio" formControlName="valor_unitario"
                     [class.is-invalid]="formB.formProducts.get('valor_unitario')?.touched && formB.formProducts.get('valor_unitario')?.invalid"
-                    placeholder="Precio">
+                    placeholder="12,00">
                 </div>
                 <app-form-errors-container [forControl]="formB.formProducts.get('valor_unitario')">
                   <app-message-error forErrorCode="required"></app-message-error>
-                  <app-message-error forErrorCode="minlength" customMsg="Debe tener una cantidad">
+                  <app-message-error forErrorCode="minlength" customMsg="Debe tener una cantidad valida ej:12,00">
                   </app-message-error>
-                  <app-message-error forErrorCode="pattern" customMsg="Solo acepta numeros con dos decimales ej:12,22">
+                  <app-message-error forErrorCode="pattern" customMsg="Solo acepta cantidades con centavos ej:12,00">
                   </app-message-error>
                 </app-form-errors-container>
 

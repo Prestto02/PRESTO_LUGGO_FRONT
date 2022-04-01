@@ -8,6 +8,7 @@ export const errorFront = {
   },
   Warning: {
     title: 'Advertencia',
+    imagenes:'La imagen debe ser en formato jpg, jpeg, png'
   },
   Info: {
     title: 'Información',
