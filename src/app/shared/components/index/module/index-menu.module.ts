@@ -2,7 +2,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 //COMPONENTS
 import { IndexComponent } from '../index.component';
@@ -30,6 +30,7 @@ import { ResponsiveSectionOfertas2Component } from '../section-ofertas2/responsi
 import { SharedProductsComponent } from '../../shared-products/shared-products.component';
 import { BaseFormProducts } from 'src/app/products/models/BaseformProduct';
 import { ListaDeseosComponent } from '../../lista-deseos/lista-deseos.component';
+import { FilterPipe } from 'src/app/shared/pipes/filter.pipe';
 
 @NgModule({
   declarations: [
@@ -52,6 +53,7 @@ import { ListaDeseosComponent } from '../../lista-deseos/lista-deseos.component'
     CarritoItemsComponent,
     SubMenuCosmeticosComponent,
     IniciarSesionComponent,
+    FilterPipe, //FILTRAR POR PIPE
     SubMenuHerramientasComponent,
     SubMenuMueblesComponent,
     Footer2Component,
@@ -61,6 +63,7 @@ import { ListaDeseosComponent } from '../../lista-deseos/lista-deseos.component'
     CommonModule,
     IndexRoutingModule,
     ReactiveFormsModule,
+    FormsModule,
     HttpClientModule,
     InfiniteScrollModule,
   ],

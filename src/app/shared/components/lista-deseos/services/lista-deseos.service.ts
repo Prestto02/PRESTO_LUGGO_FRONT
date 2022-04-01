@@ -33,7 +33,7 @@ export class ListaDeseosService {
 
   eliminarListaDeseos(id: any) {
     const data = this.addListaDeseosProdut.findIndex((res) => res.id === id);
-    this.addListaDeseosProdut.splice(data); //ELIMINO LA COINCIDENCIA QUE ENCONTRO
+    this.addListaDeseosProdut.splice(data, 1); //ELIMINO LA COINCIDENCIA QUE ENCONTRO
   }
 
   //VERIFICAR SI EXISTE EN LA LISTA DEL CARRITO

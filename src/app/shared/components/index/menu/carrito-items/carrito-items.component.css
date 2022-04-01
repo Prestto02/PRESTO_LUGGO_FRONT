@@ -8,6 +8,10 @@
   overflow-x: hidden;
 }
 
-.btn-increment:hover{
+.btn-increment:hover {
   background-color: #5d38ca;
+}
+
+.color-cabecera {
+  background-color: rgba(32, 32, 57, 0.94);
 }

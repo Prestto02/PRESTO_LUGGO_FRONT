@@ -61,7 +61,7 @@ export class MenuComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.totalCarrito = this.apiForm.obtenerTamañoDelCarrito();//OBTENER EL TAMAÑO TOTAL DEL ARREGLO DE CARRITO
+    this.totalCarrito = this.apiForm.obtenerTamañoDelCarrito(); //OBTENER EL TAMAÑO TOTAL DEL ARREGLO DE CARRITO
   }
   menuIndex() {
     this.router.navigateByUrl(`${UrlFront.Menu.menu}/${UrlFront.Menu.index}`);
