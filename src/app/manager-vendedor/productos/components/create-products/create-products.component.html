@@ -91,6 +91,16 @@
                         </app-message-error>
                       </app-form-errors-container>
                       <!-----CATEGORIA---->
+                      <div formArrayName="idcategoria_articulo">
+                        <div class="input-group mb-3">
+                          <button class="btn btn-outline-secondary" (click)="onAddHoby()" type="button"
+                            id="button-addon2">+</button>
+                          <ng-container *ngFor="let categorias of arrayCategoria.controls;let i=index">
+                            <input type="text" class="form-control" [formControlName]="i" placeholder="Categoria"
+                              aria-label="Recipient's username" aria-describedby="button-addon2">
+                          </ng-container>
+                        </div>
+                      </div>
                       <!----INPUT DE IMAGENES---->
                       <div class="mb-3">
                         <label for="formFile" class="form-label">Seleccione una imagen</label>

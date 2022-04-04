@@ -21,6 +21,31 @@
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
-  -webkit-line-clamp: 3;
+  -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
+}
+.text-precio {
+  color: #7549fe;
+  font-size: 22px;
+  font-family: Cardium A-Bold;
+}
+.text-iva {
+  font-family: Cardium A-Medium;
+  font-size: 13px;
+}
+.title-h1 {
+  font-family: Cardium A-Bold;
+  font-size: 42px;
+}
+.border-title {
+  border: 10px solid #7549fe;
+  height: 0px;
+}
+.pointer {
+  cursor: pointer;
+}
+path:hover {
+  background-color: #7549fe;
+  cursor: pointer;
+  fill: #7549fe !important;
 }

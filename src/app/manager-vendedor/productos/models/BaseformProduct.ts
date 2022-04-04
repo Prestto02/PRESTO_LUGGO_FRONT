@@ -59,6 +59,17 @@ export class BaseFormProducts {
     categoria: [''],
     nombre: [''],
   });
+
+  //TOMAR EL FORMARRAY
+  get arrayCategoria(): FormArray {
+    return this.formProducts.get('idcategoria_articulo') as FormArray; //OBTENGO EL FORMULARIO CON EL ARRAY
+  }
+  //ADD NEW CATEGORI IN THE ARRAY
+  addCategoria() {
+    this.arrayCategoria.push(
+      this.formB.control('', [Validators.required, Validators.minLength(10)])
+    );
+  }
   //ENVIAR FORMULARIO DE PRODUCTOS
   getDataForm(latitud?: any, longitud?: any) {
     return {

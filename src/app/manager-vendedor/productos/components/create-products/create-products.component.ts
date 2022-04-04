@@ -76,13 +76,9 @@ export class CreateProductsComponent implements OnInit {
   get arrayCategoria(): FormArray {
     return this.formB.formProducts.get('idcategoria_articulo') as FormArray; //OBTENGO EL FORMULARIO CON EL ARRAY
   }
-  //ADD NEW CATEGORI IN THE ARRAY
-  addCategoria() {
+  onAddHoby() {
     this.arrayCategoria.push(
-      this.formBuilder.control('', [
-        Validators.required,
-        Validators.minLength(10),
-      ])
+      this.formBuilder.control('', [Validators.required, Validators.minLength(10)])
     );
   }
 
