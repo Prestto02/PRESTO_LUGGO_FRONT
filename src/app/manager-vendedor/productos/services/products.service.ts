@@ -1,7 +1,7 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { UrlApi } from '../../shared/routes/RoutesApi';
+import { UrlApi } from '../../../shared/routes/RoutesApi';
 
 @Injectable({
   providedIn: 'root',
@@ -11,14 +11,19 @@ export class ProductsService {
   productDataPagination = this.productDataSource.asObservable(); //OBTENGO EL BEHAVIORSUBJECT
   //CONSTRUCTOR
   dataScrollProduct: Array<any> = []; //PARA GUARDAR EN UN ARRAY LO QUE PIDA DE LA PAGINACION DE LA API
-
   constructor(private http: HttpClient) {}
   //TRAER LOS DATOS
   getDataArticulos(): Observable<any> {
     return this.http.get<any>(`${UrlApi.ApiUrl}${UrlApi.articulos}`);
   }
-  //${this.urlApi}${this.urlCarrito}?pagina=${page}&size=${size}
-  //PAGINACION DE LA API
+  //VERIFICAR ARCHIVO
+  postVerifyImg(archivo: any): Observable<any> {
+    return this.http.post<any>(
+      `${UrlApi.ApiUrl}${UrlApi.verificarImg}`,
+      archivo
+    );
+  }
+  //PAGINACION DE LA API PARA SCROLL INFINITO
   getCharacterByPage(page: number, size: number): Observable<any> {
     return this.http.get<any>(
       `${UrlApi.ApiUrl}${UrlApi.traerProductosCarrito}?pagina=${page}&size=${size}`

@@ -26,14 +26,6 @@ const routes: Routes = [
         (m) => m.IndexMenuModule
       ),
   },
-
-  //PRODUCTS
-  {
-    path: UrlFront.Products.products,
-    loadChildren: () =>
-      import('./products/module/products.module').then((m) => m.ProductsModule),
-  },
-
   //ACTIVAR CUENTA
   {
     path: UrlFront.ActivarCuenta.cuenta,
@@ -42,7 +34,14 @@ const routes: Routes = [
         './shared/components/activar-cuenta/module/activar-cuenta.module'
       ).then((m) => m.ActivarCuentaModule),
   },
-
+  //MANAGER VENDEDOR
+  {
+    path: UrlFront.Manager.managerVendedor,
+    loadChildren: () =>
+      import('./manager-vendedor/module/manager-vendedor.module').then(
+        (m) => m.ManagerVendedorModule
+      ),
+  },
   //REDIRECCIONAR EN LOGIN DIRECTO
   {
     path: '',

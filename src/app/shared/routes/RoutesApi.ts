@@ -15,6 +15,7 @@ export const UrlApi = {
   //CATEGORIAS Y ARTICULOS
   categorias: 'ApiPrueba/API/categoria/listado',
   articulos: 'ApiPrueba/API/articulo',
+  verificarImg:'ApiPrueba/api/multimedia/subiendo',
   //CARRITO, BUSCAR PRODUCTO,
   traerProductosCarrito: 'ApiPrueba/API/Articulo/listado',
   buscarProductos: 'ApiPrueba/API/Articulo/producto/',

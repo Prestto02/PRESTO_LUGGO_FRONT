@@ -1,6 +1,6 @@
 import { DOCUMENT } from '@angular/common';
 import { Component, HostListener, Inject, OnInit } from '@angular/core';
-import { ProductsService } from 'src/app/products/services/products.service';
+import { ProductsService } from 'src/app/manager-vendedor/productos/services/products.service';
 import { CarritoItemsComponent } from '../../index/menu/carrito-items/carrito-items.component';
 import { ListaDeseosService } from '../../lista-deseos/services/lista-deseos.service';
 @Component({

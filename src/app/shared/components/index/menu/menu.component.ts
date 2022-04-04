@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { BaseFormProducts } from 'src/app/products/models/BaseformProduct';
+import { BaseFormProducts } from 'src/app/manager-vendedor/productos/models/BaseformProduct';
 import { UrlFront } from 'src/app/shared/routes/RoutesFront';
 import { CarritoItemsService } from './services/carrito-items.service';
 

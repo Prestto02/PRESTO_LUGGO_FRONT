@@ -12,10 +12,10 @@ import { BuscarUsuarioComponent } from '../components/buscar-usuario/buscar-usua
 
 @NgModule({
   declarations: [
-    LoginComponent,
-    RegistrarComponent,
-    ResetPasswordComponent,
-    BuscarUsuarioComponent,
+    LoginComponent, //LOGIN COMPONENTS
+    RegistrarComponent, //REGISTRAR COMPONENTS
+    ResetPasswordComponent, //RESET-PASSWORD COMPONENTS
+    BuscarUsuarioComponent, //BUSCAR-USUARIO COMPONENTS
   ],
   imports: [
     CommonModule,

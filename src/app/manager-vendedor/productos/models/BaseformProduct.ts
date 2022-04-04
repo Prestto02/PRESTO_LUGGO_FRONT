@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { FormArray, FormBuilder, Validators } from '@angular/forms';
 
 @Injectable({ providedIn: 'root' })
 export class BaseFormProducts {
@@ -47,7 +47,9 @@ export class BaseFormProducts {
     //caracteristica_Articulo{}
     idtamaño_alto: [1],
     //ArticuloTieneCategoria[{}]
-    idcategoria_articulo: [4, [Validators.required]],
+    idcategoria_articulo: this.formB.array([
+      this.formB.control('', [Validators.required, Validators.minLength(5)]),
+    ]),
     //multimedia[{}]
     archivo: [''],
   });

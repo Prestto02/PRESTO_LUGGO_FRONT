@@ -17,6 +17,7 @@ export class CarritoItemsComponent implements OnInit {
   //OBTENER EL ID DEl PRODUCTO
   getListItemCarrito(id: any) {
     this.apiServi.getDataProducts(id).subscribe((res) => {
+
       this.apiServi.addProductCarrito(res); //GUARDO ESE PRODUCTO EN UN ARREGLO BEHAVIOR
     });
   }

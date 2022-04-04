@@ -53,18 +53,10 @@ export class ResetPasswordComponent implements OnInit {
       this.position.latitud,
       this.position.longitud
     ); //PARA TRANSFORMAR EL JSON
-    this.serviPassword.postResetPassword(form).subscribe(
-      (res) => {
-        this.error = false;
-        this.success = true;
-      },
-      (err) => {
-        //SI ES ERROR PRESENTARLO
-        this.error = true;
-        this.success = false;
-        console.log(err);
-      }
-    );
+    this.serviPassword.postResetPassword(form).subscribe((res) => {
+      this.error = false;
+      this.success = true;
+    });
   }
   regresarLogin() {
     this.formB.limpiarForm();

@@ -28,7 +28,7 @@ import { ResponsiveSectionCarouselComponent } from '../section-carousel/responsi
 import { ResponsiveSectionNovedadesComponent } from '../section-novedades/responsive-section-novedades/responsive-section-novedades.component';
 import { ResponsiveSectionOfertas2Component } from '../section-ofertas2/responsive-section-ofertas2/responsive-section-ofertas2.component';
 import { SharedProductsComponent } from '../../shared-products/list-products/shared-products.component';
-import { BaseFormProducts } from 'src/app/products/models/BaseformProduct';
+import { BaseFormProducts } from 'src/app/manager-vendedor/productos/models/BaseformProduct';
 import { ListaDeseosComponent } from '../../lista-deseos/lista-deseos.component';
 import { FilterPipe } from 'src/app/shared/pipes/filter.pipe';
 import { IndexProductsComponent } from '../../shared-products/index-products.component';

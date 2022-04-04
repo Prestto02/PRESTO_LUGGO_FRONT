@@ -1,33 +1,40 @@
 export const UrlFront = {
+  //USUARIOS
   Users: {
     users: 'Usuarios',
     put: 'registrar/:id/:users',
     post: 'registrar',
   },
+  //LOGIN
   Login: {
     login: 'Login',
     iniciarSesion: 'iniciar-sesion',
     postRegister: 'registrar',
     buscarusuario: 'buscar-usuario',
-    cambiarContrasena: 'cambiar-contrasena',
+    cambiarContrasena: 'cambiar/contrasena',
   },
+  //ACTIVAR CUENTA
   ActivarCuenta: {
     cuenta: 'cuenta',
     mensajeAlCorreo: 'mensaje-correo',
     enviarAlCorreo: 'mensaje-correo/:user',
     activar: 'activar-cuenta',
   },
+  //MENU
   Menu: {
     menu: 'Menu',
     index: 'index',
     buscarGet: 'buscar-productos',
     buscar: 'buscar-productos/:name/:categoria',
   },
-  Products: {
-    products: 'producto',
-    create: 'crear',
-  },
+  //LISTA DE DESEOS
   ListaDeseos: {
     listaDeseos: 'lista-de-deseos',
+  },
+  //MANAGER VENDEDOR
+  Manager: {
+    managerVendedor: 'manager',
+    vendedor: 'vendedor',
+    listadoProductos: 'productos/listado',
   },
 };

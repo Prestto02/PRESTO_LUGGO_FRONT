@@ -16,8 +16,8 @@ export class ProductsComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.getAllProducts();
-    this.submit();
+    //this.getAllProducts();
+    //this.submit();
   }
   //GET ALL PRODUCTS
   getAllProducts() {
