@@ -46,61 +46,56 @@
                           </app-message-error>
                         </app-form-errors-container>
                       </div>
-                      <!-------DESCRIPCION--------->
-                      <div class="form-floating mb-3">
-                        <input type="text" class="form-control is-invalid" id="floatingDetalle"
-                          formControlName="descripcion_articulo"
-                          [class.is-invalid]="formB.formProducts.get('descripcion_articulo')?.touched && formB.formProducts.get('descripcion_articulo')?.invalid"
-                          placeholder="Detalle del producto">
-                        <label for="floatingDetalle">Descripcion</label>
-                        <app-form-errors-container [forControl]="formB.formProducts.get('descripcion_articulo')">
-                          <app-message-error forErrorCode="required"></app-message-error>
-                          <app-message-error forErrorCode="minlength" customMsg="Debe tener al menos 5 caracteres">
-                          </app-message-error>
-                          <app-message-error forErrorCode="pattern" customMsg="No se admiten caracteres especiales">
-                          </app-message-error>
-                        </app-form-errors-container>
-                      </div>
-                      <!--------CANTIDAD---------->
-                      <div class="form-floating mb-3">
-                        <input type="text" class="form-control" formControlName="cantidad" id="floatingCantidad"
-                          [class.is-invalid]="formB.formProducts.get('cantidad')?.touched && formB.formProducts.get('cantidad')?.invalid"
-                          placeholder="Cantidad del producto">
-                        <label for="floatingCantidad">Cantidad</label>
-                        <app-form-errors-container [forControl]="formB.formProducts.get('cantidad')">
-                          <app-message-error forErrorCode="required"></app-message-error>
-                          <app-message-error forErrorCode="minlength" customMsg="Debe tener una cantidad">
-                          </app-message-error>
-                          <app-message-error forErrorCode="pattern" customMsg="Solo acepta numeros sin decimales">
-                          </app-message-error>
-                        </app-form-errors-container>
-                      </div>
-                      <!------PRECIO------>
-                      <div class="input-group mb-3">
-                        <span class="input-group-text">$</span>
-                        <input type="text" class="form-control" id="floatingPrecio" formControlName="valor_unitario"
-                          [class.is-invalid]="formB.formProducts.get('valor_unitario')?.touched && formB.formProducts.get('valor_unitario')?.invalid"
-                          placeholder="12,00">
-                      </div>
-                      <app-form-errors-container [forControl]="formB.formProducts.get('valor_unitario')">
-                        <app-message-error forErrorCode="required"></app-message-error>
-                        <app-message-error forErrorCode="minlength" customMsg="Debe tener una cantidad valida ej:12,00">
-                        </app-message-error>
-                        <app-message-error forErrorCode="pattern"
-                          customMsg="Solo acepta cantidades con centavos ej:12,00">
-                        </app-message-error>
-                      </app-form-errors-container>
-                      <!-----CATEGORIA---->
-                      <div formArrayName="idcategoria_articulo">
-                        <div class="input-group mb-3">
-                          <button class="btn btn-outline-secondary" (click)="onAddHoby()" type="button"
-                            id="button-addon2">+</button>
-                          <ng-container *ngFor="let categorias of arrayCategoria.controls;let i=index">
-                            <input type="text" class="form-control" [formControlName]="i" placeholder="Categoria"
-                              aria-label="Recipient's username" aria-describedby="button-addon2">
-                          </ng-container>
+                      <!----Detalle del articulo------->
+                      <ng-container formGroupName="detalleArticulo">
+                        <!-------DESCRIPCION--------->
+                        <div class="form-floating mb-3">
+                          <input type="text" class="form-control is-invalid" id="floatingDetalle"
+                            formControlName="descripcion_articulo"
+                            [class.is-invalid]="formB.formProducts.get('descripcion_articulo')?.touched && formB.formProducts.get('descripcion_articulo')?.invalid"
+                            placeholder="Detalle del producto">
+                          <label for="floatingDetalle">Descripcion</label>
+                          <app-form-errors-container [forControl]="formB.formProducts.get('descripcion_articulo')">
+                            <app-message-error forErrorCode="required"></app-message-error>
+                            <app-message-error forErrorCode="minlength" customMsg="Debe tener al menos 5 caracteres">
+                            </app-message-error>
+                            <app-message-error forErrorCode="pattern" customMsg="No se admiten caracteres especiales">
+                            </app-message-error>
+                          </app-form-errors-container>
                         </div>
-                      </div>
+                        <!--------CANTIDAD---------->
+                        <div class="form-floating mb-3">
+                          <input type="text" class="form-control" formControlName="cantidad" id="floatingCantidad"
+                            [class.is-invalid]="formB.formProducts.get('cantidad')?.touched && formB.formProducts.get('cantidad')?.invalid"
+                            placeholder="Cantidad del producto">
+                          <label for="floatingCantidad">Cantidad</label>
+                          <app-form-errors-container [forControl]="formB.formProducts.get('cantidad')">
+                            <app-message-error forErrorCode="required"></app-message-error>
+                            <app-message-error forErrorCode="minlength" customMsg="Debe tener una cantidad">
+                            </app-message-error>
+                            <app-message-error forErrorCode="pattern" customMsg="Solo acepta numeros sin decimales">
+                            </app-message-error>
+                          </app-form-errors-container>
+                        </div>
+                        <!------PRECIO------>
+                        <div class="input-group mb-3">
+                          <span class="input-group-text">$</span>
+                          <input type="text" class="form-control" id="floatingPrecio" formControlName="valor_unitario"
+                            [class.is-invalid]="formB.formProducts.get('valor_unitario')?.touched && formB.formProducts.get('valor_unitario')?.invalid"
+                            placeholder="12,00">
+                        </div>
+                        <app-form-errors-container [forControl]="formB.formProducts.get('valor_unitario')">
+                          <app-message-error forErrorCode="required"></app-message-error>
+                          <app-message-error forErrorCode="minlength"
+                            customMsg="Debe tener una cantidad valida ej:12,00">
+                          </app-message-error>
+                          <app-message-error forErrorCode="pattern"
+                            customMsg="Solo acepta cantidades con centavos ej:12,00">
+                          </app-message-error>
+                        </app-form-errors-container>
+                      </ng-container>
+                      <!-----CATEGORIAS---->
+                      <app-categorias></app-categorias>
                       <!----INPUT DE IMAGENES---->
                       <div class="mb-3">
                         <label for="formFile" class="form-label">Seleccione una imagen</label>
@@ -122,4 +117,3 @@
     </div>
   </div>
 </div>
-{{formB.formProducts.value | json}}

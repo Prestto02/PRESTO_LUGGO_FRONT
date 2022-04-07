@@ -1,0 +1,31 @@
+<!-----CATEGORIA---->
+<ng-container [formGroup]="formB.formCategorias">
+  <ng-container formArrayName="ArticuloTieneCategoria">
+    <ng-container *ngFor="let lessonCategoria of formB.arrayCategoria.controls; let index=index"
+      [formGroupName]="index">
+      <div class="input-group">
+        <input type="text" class="form-control" formControlName="idcategoria_articulo" placeholder="Categorias"
+          aria-label="Recipient's username" (focus)="checkFocus=true"
+          [class.is-invalid]="lessonCategoria.get('idcategoria_articulo')?.touched && lessonCategoria.get('idcategoria_articulo')?.invalid"
+          aria-describedby="button-addon2">
+      </div>
+      <!------------- <ng-container *ngIf="checkFocus">
+        <div (click)="checkFocus=false"
+          *ngFor="let categorias of data | FilterCategorias:lessonCategoria.value.idcategoria_articulo"
+          class="list-group">
+          <button type="button" class="list-group-item list-group-item-action"
+            (click)="addCategorias(categorias)">{{categorias.nombre}}</button>
+        </div>
+      </ng-container>
+      <ng-container *ngFor="let selectCate of categoriasSelect; let index=index">
+        <span class="mb-3 badge bg-primary">{{selectCate.nombre}}<button type="button" class="btn-close"
+            aria-label="Close" (click)="remove(index);"></button></span>
+      </ng-container>---->
+      <app-form-errors-container [forControl]="lessonCategoria.get('idcategoria_articulo')">
+        <app-message-error forErrorCode="required"></app-message-error>
+        <app-message-error forErrorCode="minlength" customMsg="Debe tener al menos 3 caracteres">
+        </app-message-error>
+      </app-form-errors-container>
+    </ng-container>
+  </ng-container>
+</ng-container>

@@ -7,9 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SectionOfertasComponent implements OnInit {
   card1Img1 =
-    'http://192.168.1.174/img/IM%C3%81GENES/Cards-section-1/San Valentin.jpg';
+    'http://192.168.100.15/img/IM%C3%81GENES/Cards-section-1/San Valentin.jpg';
   card2Img1 =
-    'http://192.168.1.174/img/IM%C3%81GENES/Cards-section-2/Audifonos.png';
+    'http://192.168.100.15/img/IM%C3%81GENES/Cards-section-2/Audifonos.png';
   card3Img1 = '../../../../../assets/img/cards/image 15.png';
   card4Img1 = '../../../../../assets/img/cards/image 9.png';
   card5Img1 = '../../../../../assets/img/cards/image 14.png';

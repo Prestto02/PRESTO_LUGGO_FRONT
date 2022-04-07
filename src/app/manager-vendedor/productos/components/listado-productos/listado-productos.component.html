@@ -16,13 +16,14 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <th scope="row"><img src="" alt=""></th>
-        <td>Mark</td>
-        <td>22.52</td>
+      <tr *ngFor="let product of dataProducts">
+        <th class="mx-auto"><img src="http://192.168.100.15{{product.imagen}}" alt="product" width="177px"
+            height="151px" class="img-fluid"></th>
+        <td>{{product.name}}</td>
+        <td>{{product.precio}}</td>
         <td>12</td>
-        <td><a class="btn btn-warning"></a>
-          <a class="btn btn-danger"></a>
+        <td><a class="btn btn-warning" (click)="editarProduct(product);">Editar</a>
+          <a class="btn btn-danger" (click)="eliminarProduct(product.id)">Eliminar</a>
         </td>
       </tr>
     </tbody>
@@ -43,4 +44,3 @@
     </nav>
   </table>
 </div>
-

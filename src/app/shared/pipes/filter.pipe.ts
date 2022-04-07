@@ -11,8 +11,6 @@ export class FilterPipe implements PipeTransform {
       //RECORRO EL ARRAY Y BUSCO
       if (post.name.toLowerCase().indexOf(arg.toLowerCase()) > -1) {
         resultPost.push(post);
-      } else {
-        return resultPost;
       }
     }
     return resultPost;

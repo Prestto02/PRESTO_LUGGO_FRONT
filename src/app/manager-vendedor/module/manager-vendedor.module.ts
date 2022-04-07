@@ -11,6 +11,9 @@ import { BaseFormProducts } from '../productos/models/BaseformProduct';
 import { CreateProductsComponent } from '../productos/components/create-products/create-products.component';
 import { ListadoProductosComponent } from '../productos/components/listado-productos/listado-productos.component';
 import { AlifeFileToBase64Module } from 'alife-file-to-base64';
+import { CategoriasComponent } from '../categorias/categorias.component';
+import { BaseFormCategorias } from '../categorias/models/categorias.models';
+import { FilterCategorias } from '../categorias/pipes/FilterCategorias.pipe';
 
 @NgModule({
   declarations: [
@@ -19,6 +22,8 @@ import { AlifeFileToBase64Module } from 'alife-file-to-base64';
     ProductsComponent, //INDEX PRODUCTOS
     CreateProductsComponent, //CREAR PRODUCTOS
     ListadoProductosComponent, // LISTADO DE PRODUCTOS
+    CategoriasComponent, //CATEGORIAS
+    FilterCategorias, //PIPES CATEGORIAS
   ],
   imports: [
     ManagerVendedorRoutingModule, //MANAGER ROUTING
@@ -28,6 +33,6 @@ import { AlifeFileToBase64Module } from 'alife-file-to-base64';
     ReactiveFormsModule, //FORMULARIO REACTIVO
     ErrorsExtensionsModule, //ERRORES
   ],
-  providers: [BaseFormProducts],
+  providers: [BaseFormProducts, BaseFormCategorias],
 })
 export class ManagerVendedorModule {}

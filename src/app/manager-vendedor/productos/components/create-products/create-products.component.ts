@@ -3,9 +3,8 @@ import { PositionUser } from 'src/app/shared/class/PositionUser';
 import { MessageFrontEndService } from 'src/app/shared/services/message-front-end.service';
 import { errorFront as message } from 'src/app/shared/dictonary/MessageErrorFront';
 import { BaseFormProducts } from '../../models/BaseformProduct';
-import { CategoriasService } from '../../services/categorias.service';
 import { ProductsService } from '../../services/products.service';
-import { FormArray, FormBuilder, Validators } from '@angular/forms';
+import { BaseFormCategorias } from 'src/app/manager-vendedor/categorias/models/categorias.models';
 
 @Component({
   selector: 'app-create-products',
@@ -16,6 +15,7 @@ export class CreateProductsComponent implements OnInit {
   imgProducts = '';
   imagenTransformada = '';
   error = '';
+  filterPost = '';
   activar = false;
   categoriasItems: any;
   listaEscodiga: any;
@@ -23,16 +23,14 @@ export class CreateProductsComponent implements OnInit {
     private position: PositionUser, //POSICION DEl USUARIO
     public formB: BaseFormProducts, //FORM PRODUCTS
     private apiProducts: ProductsService, //SERVICES PRODUCTOS
-    private apiCategoria: CategoriasService, //SERVICES CATEGORIAS
-    private messageFront: MessageFrontEndService, //MENSAJES DE ERRORES
-    private formBuilder: FormBuilder
+    private formCategoria: BaseFormCategorias, //FORM CATEGORIAS
+    private messageFront: MessageFrontEndService //MENSAJES DE ERRORES
   ) {}
 
   ngOnInit(): void {
     this.position.getPositionUser(); //OBTENGO LA POSICION DEL USUARIO
-    this.getCategorias();
   }
-
+  //VERIFICADOR DE ARCHIVOS
   getArchive(e: any) {
     const buscar = ',';
     if (
@@ -66,28 +64,14 @@ export class CreateProductsComponent implements OnInit {
       }
     );
   }
-  //TRAIGO LAS CATEGORIAS
-  getCategorias() {
-    this.apiCategoria.getAllCategorias().subscribe((res) => {
-      this.categoriasItems = res;
-    });
-  }
-  //TOMAR EL FORMARRAY
-  get arrayCategoria(): FormArray {
-    return this.formB.formProducts.get('idcategoria_articulo') as FormArray; //OBTENGO EL FORMULARIO CON EL ARRAY
-  }
-  onAddHoby() {
-    this.arrayCategoria.push(
-      this.formBuilder.control('', [Validators.required, Validators.minLength(10)])
-    );
-  }
 
   //ENVIAR FORMULARIO
   submit() {
     this.formB.formProducts.patchValue({ archivo: this.imagenTransformada });
     const dataForm = this.formB.getDataForm(
       this.position.latitud,
-      this.position.longitud
+      this.position.longitud,
+      this.formCategoria.getDataFormCateogoria()
     );
     this.apiProducts.postDataArticulo(dataForm).subscribe((res) => {
       console.log(res);

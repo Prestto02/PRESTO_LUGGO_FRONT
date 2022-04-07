@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { FormArray, FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 
 @Injectable({ providedIn: 'root' })
 export class BaseFormProducts {
@@ -17,39 +17,39 @@ export class BaseFormProducts {
       ],
     ],
     //detalleArticulo{}
-    descripcion_articulo: [
-      '',
-      [
-        Validators.required,
-        Validators.minLength(5),
-        Validators.maxLength(50),
-        Validators.pattern(/^[A-Za-z ]+$/),
+    detalleArticulo: this.formB.group({
+      descripcion_articulo: [
+        '',
+        [
+          Validators.required,
+          Validators.minLength(5),
+          Validators.maxLength(50),
+          Validators.pattern(/^[A-Za-z ]+$/),
+        ],
       ],
-    ],
-    cantidad: [
-      '',
-      [
-        Validators.required,
-        Validators.minLength(1),
-        Validators.maxLength(50),
-        Validators.pattern(/^[1-9$]*$/),
+      cantidad: [
+        '',
+        [
+          Validators.required,
+          Validators.minLength(1),
+          Validators.maxLength(50),
+          Validators.pattern(/^[1-9$]*$/),
+        ],
       ],
-    ],
-    valor_unitario: [
-      '',
-      [
-        Validators.required,
-        Validators.minLength(2),
-        Validators.maxLength(50),
-        Validators.pattern(/^[0-9]+([,][0-9]{2})?$/),
+      valor_unitario: [
+        '',
+        [
+          Validators.required,
+          Validators.minLength(2),
+          Validators.maxLength(50),
+          Validators.pattern(/^[0-9]+([,][0-9]{2})?$/),
+        ],
       ],
-    ],
+    }),
     //caracteristica_Articulo{}
-    idtamaño_alto: [1],
-    //ArticuloTieneCategoria[{}]
-    idcategoria_articulo: this.formB.array([
-      this.formB.control('', [Validators.required, Validators.minLength(5)]),
-    ]),
+    caracteristica_Articulo: this.formB.group({
+      idtamaño_alto: [1],
+    }),
     //multimedia[{}]
     archivo: [''],
   });
@@ -60,33 +60,13 @@ export class BaseFormProducts {
     nombre: [''],
   });
 
-  //TOMAR EL FORMARRAY
-  get arrayCategoria(): FormArray {
-    return this.formProducts.get('idcategoria_articulo') as FormArray; //OBTENGO EL FORMULARIO CON EL ARRAY
-  }
-  //ADD NEW CATEGORI IN THE ARRAY
-  addCategoria() {
-    this.arrayCategoria.push(
-      this.formB.control('', [Validators.required, Validators.minLength(10)])
-    );
-  }
   //ENVIAR FORMULARIO DE PRODUCTOS
-  getDataForm(latitud?: any, longitud?: any) {
+  getDataForm(latitud?: any, longitud?: any, ArticuloTieneCategoria?: any) {
     return {
       nombre_articulo: this.formProducts.value.nombre_articulo,
-      detalleArticulo: {
-        descripcion_articulo: this.formProducts.value.descripcion_articulo,
-        cantidad: this.formProducts.value.cantidad,
-        valor_unitario: this.formProducts.value.valor_unitario,
-      },
-      caracteristica_Articulo: {
-        idtamaño_alto: this.formProducts.value.idtamaño_alto,
-      },
-      ArticuloTieneCategoria: [
-        {
-          idcategoria_articulo: this.formProducts.value.idcategoria_articulo,
-        },
-      ],
+      detalleArticulo: this.formProducts.value.detalleArticulo,
+      caracteristica_Articulo: this.formProducts.value.caracteristica_Articulo,
+      ArticuloTieneCategoria,
       multimedia: [
         {
           archivo: this.formProducts.value.archivo,

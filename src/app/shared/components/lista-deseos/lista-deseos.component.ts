@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { CarritoItemsComponent } from '../index/menu/carrito-items/carrito-items.component';
-import { CarritoItemsService } from '../index/menu/services/carrito-items.service';
 import { ListaDeseosService } from './services/lista-deseos.service';
 
 @Component({
@@ -12,7 +11,7 @@ export class ListaDeseosComponent implements OnInit {
   dataListDeseos: any; //OBTENER LA LISTA DE DESEOS
   filterPost = '';
   constructor(
-    private apiListDeseos: ListaDeseosService,
+    private apiListDeseos: ListaDeseosService, //LISTADO DESEOS SERVICES
     private carritoItmes: CarritoItemsComponent //CARRITO ITEMS COMPONENTS
   ) {}
 

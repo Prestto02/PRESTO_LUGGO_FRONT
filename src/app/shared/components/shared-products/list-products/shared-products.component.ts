@@ -11,7 +11,7 @@ import { ListaDeseosService } from '../../lista-deseos/services/lista-deseos.ser
 export class SharedProductsComponent implements OnInit {
   showButton = false; // PARA HABiLiTAR EL BOTON PARA SUBIR A LA PAGINA PRINCIPAL
   private scrollHeigth = 100; //HASTA DE 100PX
-  private pageNum = 1; //PAGINA NUMERO 1 DE LA PAGINACION
+  private pageNum = 0; //PAGINA NUMERO 1 DE LA PAGINACION
   public productsArray: any; //AGREGO EL ARRAY
   productsLength = 0; //CUANTOS PRODUCTOS EXiSTE ENVIADO A LA LENGTH
   constructor(

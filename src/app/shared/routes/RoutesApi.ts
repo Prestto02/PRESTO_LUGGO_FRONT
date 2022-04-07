@@ -1,5 +1,5 @@
 export const UrlApi = {
-  ApiUrl: 'http://192.168.1.174:9595/',
+  ApiUrl: 'https://192.168.100.15/',
   persona: 'ApiPrueba/API/persona',
   //LOGIN, BUSCAR PERSONA, RESTABLECER CONTRASEÑA, CODIGO De ACTIVACION
   buscarUsuario: 'ApiPrueba/API/usuario/cambiar',
