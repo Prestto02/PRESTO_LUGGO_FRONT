@@ -10,6 +10,7 @@ import { ListaDeseosService } from './services/lista-deseos.service';
 export class ListaDeseosComponent implements OnInit {
   dataListDeseos: any; //OBTENER LA LISTA DE DESEOS
   filterPost = '';
+  filasDeDos = false;
   constructor(
     private apiListDeseos: ListaDeseosService, //LISTADO DESEOS SERVICES
     private carritoItmes: CarritoItemsComponent //CARRITO ITEMS COMPONENTS

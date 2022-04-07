@@ -74,3 +74,10 @@
   font-size: 24px;
   color: #272727;
 }
+
+.pointer {
+  cursor: pointer;
+}
+.transicion {
+  transition-duration: 3s;
+}
