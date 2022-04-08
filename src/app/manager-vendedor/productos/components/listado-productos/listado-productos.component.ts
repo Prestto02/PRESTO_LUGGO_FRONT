@@ -25,8 +25,9 @@ export class ListadoProductosComponent implements OnInit {
   }
   //ALL PRODUCTS
   getAllDataProducts() {
-    this.apiProducts.getDataArticulos().subscribe((res) => {
+    this.apiProducts.getDataProductos().subscribe((res) => {
       this.dataProducts = res;
+      console.log(this.dataProducts);
     });
   }
   //EDIT PRODUCTS
@@ -38,7 +39,10 @@ export class ListadoProductosComponent implements OnInit {
     this.modalServi.registerModal(); //CAMBIO EL ESTADO DEL MODAL
   }
   //PARA ELIMINAR EL PRODUCTO
-  eliminarProduct(id: any) {}
+  eliminarProduct(id: any) {
+    if (confirm(`Se eliminara el producto con id: ${id}`))
+      console.log('eliminado');
+  }
   //BUSCAR PRODUCTOS
   onSearchProduct(search: any) {
     this.searchProducts = search;

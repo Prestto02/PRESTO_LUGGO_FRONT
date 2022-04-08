@@ -16,9 +16,9 @@ export class ProductsService {
   getDataArticulos(): Observable<any> {
     return this.http.get<any>(`${UrlApi.ApiUrl}${UrlApi.articulos}`);
   }
-  getDataProductos(pagina: any, size: any): Observable<any> {
+  getDataProductos(): Observable<any> {
     return this.http.get<any>(
-      `${UrlApi.ApiUrl}${UrlApi.paginacion}?pagina=${pagina}&size=${size}`
+      `${UrlApi.ApiUrl}${UrlApi.paginacion}`
     );
   }
   //VERIFICAR ARCHIVO

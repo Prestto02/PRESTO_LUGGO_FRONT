@@ -6,7 +6,7 @@ import { EditRegisterModalService } from './services/edit-register-modal.service
   styleUrls: ['./modals.component.css'],
 })
 export class ModalsComponent implements OnInit {
-  // @Input('titleRegisterOrEdit') titleRegisterOrEdit: string | null = null;
+  @Input('id') id: string | null = null;
   titleRegisterOrEdit = false;
   constructor(private serviModal: EditRegisterModalService) {}
 
@@ -17,7 +17,6 @@ export class ModalsComponent implements OnInit {
   getMOdalService() {
     this.serviModal.registerOrEditBandera.subscribe((res) => {
       this.titleRegisterOrEdit = res;
-      console.log(this.titleRegisterOrEdit);
     });
   }
 }

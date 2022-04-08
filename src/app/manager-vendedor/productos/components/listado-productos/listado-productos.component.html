@@ -18,7 +18,8 @@
       </div>
     </div>
     <div class="col-xl-8 col-xxl-8 col-sm-8 col-8 col-md-8 text-end">
-      <button type="button" (click)="registerProduct();" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+      <button type="button" (click)="registerProduct();" class="btn btn-outline-primary" data-bs-toggle="modal"
+        data-bs-target="#exampleModal">
         Crear
       </button>
     </div>
@@ -26,27 +27,33 @@
       <thead>
         <tr>
           <th scope="col">Imágen</th>
+          <th scope="col" class="puntero" (click)="sort('codigo')">Codigo &nbsp;<img
+              src="../../../../../assets/img/icons/sort.png" alt="icon-sort" class="puntero" /></th>
           <th scope="col" class="puntero" (click)="sort('id')">Nombre &nbsp; <img
               src="../../../../../assets/img/icons/sort.png" alt="icon-sort" class="puntero" /></th>
           <th scope="col" class="puntero" (click)="sort('precio')">Precio &nbsp; <img
               src="../../../../../assets/img/icons/sort.png" alt="icon-sort" class="puntero" /></th>
           <th scope="col" class="puntero" (click)="sort('stock')">Stock &nbsp; <img
               src="../../../../../assets/img/icons/sort.png" alt="icon-sort" class="puntero" /></th>
+          <th scope="col">Categorias</th>
+          <th scope="col">Caracteristicas</th>
           <th scope="col">Acciónes</th>
         </tr>
       </thead>
       <tbody>
         <tr
           *ngFor="let product of dataProducts | orderBy:key:reverse | filtroPaginacion:searchProducts | paginate: {itemsPerPage:4,currentPage:p};">
-          <th class="mx-auto"><img src="http://192.168.100.15{{product.imagen}}" alt="product" width="177px"
-              height="151px" class="img-fluid"></th>
+          <td class="mx-auto"><img src="http://192.168.100.15{{product.imagen}}" alt="product" width="177px"
+              height="151px" class="img-fluid"></td>
+          <td>{{product.codigo}}</td>
           <td>{{product.name}}</td>
           <td>{{product.precio}}</td>
           <td>12</td>
+          <td *ngFor="let categorias of product.categoria_articulo">{{categorias.nombre_categoria}}</td>
+          <td>{{product.caracteristicas.color_nombre}} </td>
           <td><a class="btn btn-warning" (click)="editarProduct(product);" data-bs-toggle="modal"
               data-bs-target="#exampleModal">Editar</a>
-            <a class="btn btn-danger" (click)="eliminarProduct(product.id)" data-bs-toggle="modal"
-              data-bs-target="#exampleModalEliminar">Eliminar</a>
+            <a class="btn btn-danger" (click)="eliminarProduct(product.id)">Eliminar</a>
           </td>
         </tr>
       </tbody>
