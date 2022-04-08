@@ -9,10 +9,13 @@ import { ProductsService } from '../../services/products.service';
 export class ListadoProductosComponent implements OnInit {
   constructor(private apiProducts: ProductsService) {}
   dataProducts: any;
+  key: string = 'id'; //ORRDER BY
+  reverse: boolean = false; //ORDER BY
+  p: number = 1;
+  searchProducts = '';
   ngOnInit(): void {
     this.getAllDataProducts();
   }
-
   getAllDataProducts() {
     this.apiProducts.getDataArticulos().subscribe((res) => {
       this.dataProducts = res;
@@ -24,5 +27,14 @@ export class ListadoProductosComponent implements OnInit {
   }
   eliminarProduct(id: any) {
     console.log(id);
+  }
+  //BUSCAR PRODUCTOS
+  onSearchProduct(search: any) {
+    this.searchProducts = search;
+  }
+  //SORT ORDER BY
+  sort(key: any) {
+    this.key = key;
+    this.reverse = !this.reverse;
   }
 }

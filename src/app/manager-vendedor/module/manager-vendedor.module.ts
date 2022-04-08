@@ -14,6 +14,9 @@ import { AlifeFileToBase64Module } from 'alife-file-to-base64';
 import { CategoriasComponent } from '../categorias/categorias.component';
 import { BaseFormCategorias } from '../categorias/models/categorias.models';
 import { FilterCategorias } from '../categorias/pipes/FilterCategorias.pipe';
+import { FiltroPaginacionPipe } from '../productos/components/listado-productos/pipe/filtro-paginacion.pipe';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { OrderModule } from 'ngx-order-pipe';
 
 @NgModule({
   declarations: [
@@ -24,6 +27,7 @@ import { FilterCategorias } from '../categorias/pipes/FilterCategorias.pipe';
     ListadoProductosComponent, // LISTADO DE PRODUCTOS
     CategoriasComponent, //CATEGORIAS
     FilterCategorias, //PIPES CATEGORIAS
+    FiltroPaginacionPipe, //FILTRO PAGINACION PIPE
   ],
   imports: [
     ManagerVendedorRoutingModule, //MANAGER ROUTING
@@ -32,6 +36,8 @@ import { FilterCategorias } from '../categorias/pipes/FilterCategorias.pipe';
     AlifeFileToBase64Module, //MODULO PARA TRANSFORMAR LA IMAGEN A BASE 64
     ReactiveFormsModule, //FORMULARIO REACTIVO
     ErrorsExtensionsModule, //ERRORES
+    NgxPaginationModule, //PAGINATIONS
+    OrderModule, //ORDER MODULE
   ],
   providers: [BaseFormProducts, BaseFormCategorias],
 })

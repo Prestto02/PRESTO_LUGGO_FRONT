@@ -1,46 +1,58 @@
 <div class="container-fluid">
-  <h5 class="text-center"> Modulo de Articulos</h5>
-  <div class="d-flex">
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-      Crear
-    </button>
+  <div class="row">
+    <h5 class="text-center"> Modulo de Articulos</h5>
+    <div class="col-xl-4 col-xxl-4 col-4 col-sm-4 col-md-4">
+      <div class="input-group mb-3">
+        <input type="text" class="form-control input-border" placeholder="Buscar..." #txtSearch
+          (keyup)="onSearchProduct(txtSearch.value)" aria-label="Username" aria-describedby="basic-addon1">
+        <span class="input-group-text border-bottom" id="basic-addon1"> <svg width="20" height="20" viewBox="0 0 20 20"
+            fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd"
+              d="M0 8.60081C0 3.85071 3.85071 0 8.6008 0C13.3509 0 17.2016 3.85071 17.2016 8.60081C17.2016 13.3509 13.3509 17.2016 8.6008 17.2016C3.85071 17.2016 0 13.3509 0 8.60081ZM8.6008 1.91129C4.90628 1.91129 1.91129 4.90629 1.91129 8.60081C1.91129 12.2953 4.90628 15.2903 8.6008 15.2903C12.2953 15.2903 15.2903 12.2953 15.2903 8.60081C15.2903 4.90628 12.2953 1.91129 8.6008 1.91129Z"
+              fill="#353535" />
+            <path fill-rule="evenodd" clip-rule="evenodd"
+              d="M13.6975 13.6975C14.0707 13.3243 15.2744 13.9227 15.6476 14.2959L19.4701 18.1185C19.8433 18.4917 19.8433 19.0968 19.4701 19.47C19.0969 19.8432 18.4918 19.8432 18.1186 19.47L14.2961 15.6474C13.9229 15.2742 13.3243 14.0707 13.6975 13.6975Z"
+              fill="#353535" />
+          </svg>
+        </span>
+      </div>
+    </div>
+    <div class="col-xl-8 col-xxl-8 col-sm-8 col-8 col-md-8 text-end">
+      <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        Crear
+      </button>
+    </div>
+    <table class="table table-striped table-hover">
+      <thead>
+        <tr>
+          <th scope="col">Imágen</th>
+          <th scope="col" class="puntero" (click)="sort('id')">Nombre &nbsp; <img
+              src="../../../../../assets/img/icons/sort.png" alt="icon-sort" class="puntero" /></th>
+          <th scope="col" class="puntero" (click)="sort('precio')">Precio &nbsp; <img
+              src="../../../../../assets/img/icons/sort.png" alt="icon-sort" class="puntero" /></th>
+          <th scope="col" class="puntero" (click)="sort('stock')">Stock &nbsp; <img
+              src="../../../../../assets/img/icons/sort.png" alt="icon-sort" class="puntero" /></th>
+          <th scope="col">Acciónes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          *ngFor="let product of dataProducts | orderBy:key:reverse | filtroPaginacion:searchProducts | paginate: {itemsPerPage:4,currentPage:p};">
+          <th class="mx-auto"><img src="http://192.168.100.15{{product.imagen}}" alt="product" width="177px"
+              height="151px" class="img-fluid"></th>
+          <td>{{product.name}}</td>
+          <td>{{product.precio}}</td>
+          <td>12</td>
+          <td><a class="btn btn-warning" (click)="editarProduct(product);">Editar</a>
+            <a class="btn btn-danger" (click)="eliminarProduct(product.id)">Eliminar</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="d-flex flex-row-reverse bd-highlight">
+      <pagination-controls (pageChange)="p=$event" previousLabel="Atras" nextLabel="Siguiente" [autoHide]="true"
+        [responsive]="true" screenReaderPaginationLabel="Pagination">
+      </pagination-controls>
+    </div>
   </div>
-  <table class="table table-striped table-hover">
-    <thead>
-      <tr>
-        <th scope="col">Imágen</th>
-        <th scope="col">Nombre</th>
-        <th scope="col">Precio</th>
-        <th scope="col">Stock</th>
-        <th scope="col">Acciónes</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let product of dataProducts">
-        <th class="mx-auto"><img src="http://192.168.100.15{{product.imagen}}" alt="product" width="177px"
-            height="151px" class="img-fluid"></th>
-        <td>{{product.name}}</td>
-        <td>{{product.precio}}</td>
-        <td>12</td>
-        <td><a class="btn btn-warning" (click)="editarProduct(product);">Editar</a>
-          <a class="btn btn-danger" (click)="eliminarProduct(product.id)">Eliminar</a>
-        </td>
-      </tr>
-    </tbody>
-    <nav aria-label="Page navigation example">
-      <ul class="pagination">
-        <li class="page-item disabled">
-          <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Atras</a>
-        </li>
-        <li class="page-item"><a class="page-link" href="#">1</a></li>
-        <li class="page-item" aria-current="page">
-          <a class="page-link" href="#">2</a>
-        </li>
-        <li class="page-item"><a class="page-link" href="#">3</a></li>
-        <li class="page-item">
-          <a class="page-link" href="#">Siguiente</a>
-        </li>
-      </ul>
-    </nav>
-  </table>
 </div>

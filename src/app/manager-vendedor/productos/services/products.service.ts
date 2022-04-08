@@ -16,6 +16,11 @@ export class ProductsService {
   getDataArticulos(): Observable<any> {
     return this.http.get<any>(`${UrlApi.ApiUrl}${UrlApi.articulos}`);
   }
+  getDataProductos(pagina: any, size: any): Observable<any> {
+    return this.http.get<any>(
+      `${UrlApi.ApiUrl}${UrlApi.paginacion}?pagina=${pagina}&size=${size}`
+    );
+  }
   //VERIFICAR ARCHIVO
   postVerifyImg(archivo: any): Observable<any> {
     return this.http.post<any>(
