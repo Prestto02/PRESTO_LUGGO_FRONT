@@ -18,7 +18,7 @@
       </div>
     </div>
     <div class="col-xl-8 col-xxl-8 col-sm-8 col-8 col-md-8 text-end">
-      <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+      <button type="button" (click)="registerProduct();" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
         Crear
       </button>
     </div>
@@ -43,8 +43,10 @@
           <td>{{product.name}}</td>
           <td>{{product.precio}}</td>
           <td>12</td>
-          <td><a class="btn btn-warning" (click)="editarProduct(product);">Editar</a>
-            <a class="btn btn-danger" (click)="eliminarProduct(product.id)">Eliminar</a>
+          <td><a class="btn btn-warning" (click)="editarProduct(product);" data-bs-toggle="modal"
+              data-bs-target="#exampleModal">Editar</a>
+            <a class="btn btn-danger" (click)="eliminarProduct(product.id)" data-bs-toggle="modal"
+              data-bs-target="#exampleModalEliminar">Eliminar</a>
           </td>
         </tr>
       </tbody>

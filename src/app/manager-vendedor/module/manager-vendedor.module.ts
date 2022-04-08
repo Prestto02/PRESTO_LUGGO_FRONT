@@ -39,6 +39,6 @@ import { OrderModule } from 'ngx-order-pipe';
     NgxPaginationModule, //PAGINATIONS
     OrderModule, //ORDER MODULE
   ],
-  providers: [BaseFormProducts, BaseFormCategorias],
+  providers: [BaseFormProducts, BaseFormCategorias, CreateProductsComponent],
 })
 export class ManagerVendedorModule {}

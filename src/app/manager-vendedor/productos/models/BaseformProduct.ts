@@ -76,4 +76,8 @@ export class BaseFormProducts {
       longitud,
     };
   }
+  limpiarForm() {
+    this.formProducts.reset();
+    this.formSearchProducts.reset();
+  }
 }

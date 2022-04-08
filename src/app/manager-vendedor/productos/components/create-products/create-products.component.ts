@@ -5,6 +5,7 @@ import { errorFront as message } from 'src/app/shared/dictonary/MessageErrorFron
 import { BaseFormProducts } from '../../models/BaseformProduct';
 import { ProductsService } from '../../services/products.service';
 import { BaseFormCategorias } from 'src/app/manager-vendedor/categorias/models/categorias.models';
+import { EditRegisterModalService } from 'src/app/shared/components/modals/services/edit-register-modal.service';
 
 @Component({
   selector: 'app-create-products',
@@ -24,12 +25,14 @@ export class CreateProductsComponent implements OnInit {
     public formB: BaseFormProducts, //FORM PRODUCTS
     private apiProducts: ProductsService, //SERVICES PRODUCTOS
     private formCategoria: BaseFormCategorias, //FORM CATEGORIAS
-    private messageFront: MessageFrontEndService //MENSAJES DE ERRORES
+    private messageFront: MessageFrontEndService, //MENSAJES DE ERRORES
+    private modalServi: EditRegisterModalService //MODAL SERVICE
   ) {}
 
   ngOnInit(): void {
     this.position.getPositionUser(); //OBTENGO LA POSICION DEL USUARIO
   }
+
   //VERIFICADOR DE ARCHIVOS
   getArchive(e: any) {
     const buscar = ',';
@@ -64,7 +67,6 @@ export class CreateProductsComponent implements OnInit {
       }
     );
   }
-
   //ENVIAR FORMULARIO
   submit() {
     this.formB.formProducts.patchValue({ archivo: this.imagenTransformada });
@@ -75,7 +77,7 @@ export class CreateProductsComponent implements OnInit {
     );
     this.apiProducts.postDataArticulo(dataForm).subscribe((res) => {
       console.log(res);
+      this.formB.limpiarForm();
     });
-    console.log(dataForm);
   }
 }

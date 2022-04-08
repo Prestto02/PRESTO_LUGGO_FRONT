@@ -5,6 +5,7 @@ import { MessageErrorComponent } from './message-error/message-error.component';
 import { ErrorsServerComponent } from './errors-server/errors-server.component';
 import { SuccessServerComponent } from './success-server/success-server.component';
 import { ProgressPasswordComponent } from './progress-password/progress-password.component';
+import { ModalsComponent } from '../modals/modals.component';
 
 @NgModule({
   declarations: [
@@ -13,6 +14,7 @@ import { ProgressPasswordComponent } from './progress-password/progress-password
     ErrorsServerComponent,
     SuccessServerComponent,
     ProgressPasswordComponent,
+    ModalsComponent, //MODALS COMPONENTS
   ],
   imports: [CommonModule],
   exports: [
@@ -21,6 +23,7 @@ import { ProgressPasswordComponent } from './progress-password/progress-password
     ErrorsServerComponent,
     SuccessServerComponent,
     ProgressPasswordComponent,
+    ModalsComponent,
   ],
 })
 export class ErrorsExtensionsModule {}
