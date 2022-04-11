@@ -13,6 +13,7 @@ import { LoginService } from '../services/login.service';
 })
 export class LoginComponent implements OnInit {
   public errorLogin = false;
+  load = false;
   public urlapi = UrlApi; //API
   public urlFacebook = `${UrlApi.ApiUrl}${UrlApi.loginFacebook}`;
   public urlGoogle = `${UrlApi.ApiUrl}${UrlApi.loginGoogle}`;
@@ -30,11 +31,13 @@ export class LoginComponent implements OnInit {
   //SUBMIT LOGIN
   submit() {
     this.errorLogin = false; //SETEO EN FALSO
+    this.load = false;
     const users = this.formB.getFormLogin(
       this.position.latitud,
       this.position.longitud
     ); //ENVIO LOS DATOS PARA FORMATEAR A UN JSON ESTANDAR
     this.apiLogin.postUserLogin(users).subscribe((res) => {
+      this.load = true;
       this.router.navigateByUrl(`${UrlFront.Menu.menu}/${UrlFront.Menu.index}`); //SI ES OK IRE AL LOGIN
     });
   }

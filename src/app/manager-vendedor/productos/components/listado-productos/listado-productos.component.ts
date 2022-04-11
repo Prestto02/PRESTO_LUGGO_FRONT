@@ -23,16 +23,17 @@ export class ListadoProductosComponent implements OnInit {
   ngOnInit(): void {
     this.getAllDataProducts();
   }
-  //ALL PRODUCTS
+  //OBTENER TODOS LOS PRODUCTOS
   getAllDataProducts() {
     this.apiProducts.getDataProductos().subscribe((res) => {
       this.dataProducts = res;
-      console.log(this.dataProducts);
     });
   }
   //EDIT PRODUCTS
   editarProduct(product: any) {
-    //this.formB.formProducts.setValue({...product});
+    console.log(product);
+    //this.formB.formProducts.setValue({ ...product });
+    this.formB.getPatchValueForm(product);
     this.modalServi.editModal(); //CAMBIO EL ESTADO DEL MODAL
   }
   registerProduct() {

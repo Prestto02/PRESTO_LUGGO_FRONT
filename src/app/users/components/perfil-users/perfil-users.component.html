@@ -1,0 +1,56 @@
+<header>
+  <app-menu></app-menu>
+</header>
+<section class="container-fluid color-section mx-auto">
+  <div class="row">
+    <div class="col-xl-4 col-xxl-4 col-md-4 col-sm-12 col-12 mt-5 mx-auto">
+      <div class="row">
+        <div class="col-xl-12 col-xxl-12 col-12 col-md-12 col-sm-12 mx-auto">
+          <img src="../../../../assets/img/empty-wishlist.png" alt="imagen" />
+        </div>
+        <input type="file">
+      </div>
+    </div>
+    <div class="col-xl-7 col-xxl-7 col-md-7 col-sm-12 col-12 mt-5">
+      <form>
+        <div class="row">
+          <div class="col-xl-5 mb-3">
+            <label for="primerNombre" class="form-label">Primer nombre</label>
+            <input type="text" class="form-control" id="primerNombre" aria-describedby="primerNombre">
+          </div>
+          <div class="col-xl-5 mb-3">
+            <label for="segundoNombre" class="form-label">Segundo nombre</label>
+            <input type="text" class="form-control" id="segundoNombre" aria-describedby="segundoNombre">
+          </div>
+          <div class="col-xl-5 mb-3">
+            <label for="primerApellido" class="form-label">Primer apellido</label>
+            <input type="text" class="form-control" id="primerApellido" aria-describedby="primerApellido">
+          </div>
+          <div class="col-xl-5 mb-3">
+            <label for="segundoApellido" class="form-label">Segundo apellido</label>
+            <input type="text" class="form-control" id="segundoApellido">
+          </div>
+          <div class="col-xl-5 mb-3">
+            <label for="celulaIdentidad" class="form-label">Celula</label>
+            <input type="text" class="form-control" id="celulaIdentidad">
+          </div>
+          <div class="col-xl-5 mb-3">
+            <label for="cedula" class="form-label">Cedula</label>
+            <input type="text" class="form-control" id="cedula">
+          </div>
+          <div class="col-xl-5 mb-3">
+            <label for="direccion" class="form-label">Direccion</label>
+            <input type="text" class="form-control" id="direccion">
+          </div>
+          <div class="col-xl-5 mb-3">
+            <label for="fechaNacimiento" class="form-label">Fecha de nacimiento</label>
+            <input type="date" class="form-control" id="fechaNacimiento">
+          </div>
+          <div class="col-xl-5 mx-auto">
+            <app-buttons-load [valueButton]="'Guardar'" [formB]="true" [load]="false"></app-buttons-load>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>

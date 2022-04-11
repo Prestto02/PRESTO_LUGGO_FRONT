@@ -17,7 +17,6 @@ export class CarritoItemsComponent implements OnInit {
   //OBTENER EL ID DEl PRODUCTO
   getListItemCarrito(id: any) {
     this.apiServi.getDataProducts(id).subscribe((res) => {
-
       this.apiServi.addProductCarrito(res); //GUARDO ESE PRODUCTO EN UN ARREGLO BEHAVIOR
     });
   }
@@ -26,16 +25,8 @@ export class CarritoItemsComponent implements OnInit {
     this.apiServi.productCarrito.subscribe((res) => {
       //ME SUSCRIBO AL RXJS DEl SERVICIO
       this.productoItems = res;
-      this.totalPago(); //CALCULO EL TOTAL A PAGAR
-    });
-  }
-  //TOTAL AL OBTENER LOS PRODUCTOS EN EL CARRITO
-  totalPago() {
-    this.totalAPagar = 0; //ASIGNO A 0 PARA HACER LA NUEVA MULTIPLICACION
-    this.productoItems.map((res: any) => {
-      if (res.subtotal === 0) {
-        this.totalAPagar = this.totalAPagar + res.precio; //SUMO EL TOTAL A PAGAR CON EL PRECIO
-      }
+      //this.totalPago(); //CALCULO EL TOTAL A PAGAR
+      this.carritoTotal();
     });
   }
   //CALCULAR EL TOTAL DEl CARRITO CUANDO SE LE CAMBIE EL ITEMS
@@ -44,6 +35,7 @@ export class CarritoItemsComponent implements OnInit {
     this.productoItems.map((res: any) => {
       const subtotal = res.precio * res.item;
       this.totalAPagar = this.totalAPagar + subtotal;
+      console.log(this.totalAPagar);
     });
   }
 

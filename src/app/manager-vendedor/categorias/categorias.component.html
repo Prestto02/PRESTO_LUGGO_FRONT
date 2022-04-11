@@ -9,18 +9,18 @@
           [class.is-invalid]="lessonCategoria.get('idcategoria_articulo')?.touched && lessonCategoria.get('idcategoria_articulo')?.invalid"
           aria-describedby="button-addon2">
       </div>
-      <!------------- <ng-container *ngIf="checkFocus">
+       <ng-container *ngIf="checkFocus">
         <div (click)="checkFocus=false"
-          *ngFor="let categorias of data | FilterCategorias:lessonCategoria.value.idcategoria_articulo"
+          *ngFor="let categorias of categoriasItems | FilterCategorias:lessonCategoria.value.idcategoria_articulo"
           class="list-group">
           <button type="button" class="list-group-item list-group-item-action"
-            (click)="addCategorias(categorias)">{{categorias.nombre}}</button>
+            (click)="addCategorias(categorias)">{{categorias.name}}</button>
         </div>
       </ng-container>
       <ng-container *ngFor="let selectCate of categoriasSelect; let index=index">
-        <span class="mb-3 badge bg-primary">{{selectCate.nombre}}<button type="button" class="btn-close"
+        <span class="mb-3 badge bg-primary">{{selectCate.name}}<button type="button" class="btn-close"
             aria-label="Close" (click)="remove(index);"></button></span>
-      </ng-container>---->
+      </ng-container>
       <app-form-errors-container [forControl]="lessonCategoria.get('idcategoria_articulo')">
         <app-message-error forErrorCode="required"></app-message-error>
         <app-message-error forErrorCode="minlength" customMsg="Debe tener al menos 3 caracteres">

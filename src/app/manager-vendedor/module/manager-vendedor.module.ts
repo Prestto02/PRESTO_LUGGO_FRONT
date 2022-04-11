@@ -21,12 +21,12 @@ import { OrderModule } from 'ngx-order-pipe';
 @NgModule({
   declarations: [
     ManagerVendedorComponent, //INDEX MANAGER
-    MenuVendedorComponent, //MENU VENDEDOR
     ProductsComponent, //INDEX PRODUCTOS
     CreateProductsComponent, //CREAR PRODUCTOS
     ListadoProductosComponent, // LISTADO DE PRODUCTOS
     CategoriasComponent, //CATEGORIAS
     FilterCategorias, //PIPES CATEGORIAS
+    MenuVendedorComponent,
     FiltroPaginacionPipe, //FILTRO PAGINACION PIPE
   ],
   imports: [

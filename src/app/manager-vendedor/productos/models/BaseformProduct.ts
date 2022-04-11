@@ -12,7 +12,7 @@ export class BaseFormProducts {
       [
         Validators.required,
         Validators.minLength(10),
-        Validators.maxLength(50),
+        Validators.maxLength(200),
         Validators.pattern(/^[A-Za-z ]+$/),
       ],
     ],
@@ -23,7 +23,7 @@ export class BaseFormProducts {
         [
           Validators.required,
           Validators.minLength(5),
-          Validators.maxLength(50),
+          Validators.maxLength(200),
           Validators.pattern(/^[A-Za-z ]+$/),
         ],
       ],
@@ -75,6 +75,16 @@ export class BaseFormProducts {
       latitud,
       longitud,
     };
+  }
+  getPatchValueForm(products: any) {
+    this.formProducts.patchValue({
+      id_product: products.id,
+      nombre_articulo: products.name,
+      detalleArticulo: {
+        valor_unitario: products.precio,
+      },
+      archivo: products.imagen,
+    });
   }
   limpiarForm() {
     this.formProducts.reset();

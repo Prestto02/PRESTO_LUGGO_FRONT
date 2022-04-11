@@ -67,8 +67,10 @@ import { IndexProductsComponent } from '../../shared-products/index-products.com
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
+
     InfiniteScrollModule,
   ],
   providers: [Menu2Component, BaseFormProducts, CarritoItemsComponent],
+  exports: [MenuComponent],
 })
 export class IndexMenuModule {}

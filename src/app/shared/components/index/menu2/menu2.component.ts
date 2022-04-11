@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { UrlFront } from 'src/app/shared/routes/RoutesFront';
 @Component({
   selector: 'app-menu2',
   templateUrl: './menu2.component.html',
@@ -8,7 +10,7 @@ export class Menu2Component implements OnInit {
   subMenuCosmetico = false;
   subMenuHerramienta = false;
   subMenuMuebles = false;
-  constructor() {}
+  constructor(private router: Router) {}
 
   ngOnInit(): void {}
   //COSmetiCO
@@ -31,5 +33,11 @@ export class Menu2Component implements OnInit {
   }
   cerrarSubMenuMuebles() {
     this.subMenuMuebles = false;
+  }
+  //IR A MI PERFIL
+  irAMiPerfil() {
+    this.router.navigateByUrl(
+      `${UrlFront.Users.users}/${UrlFront.Users.perfilUsuario}`
+    );
   }
 }

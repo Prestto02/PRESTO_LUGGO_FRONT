@@ -10,30 +10,12 @@ import { BaseFormCategorias } from './models/categorias.models';
 export class CategoriasComponent implements OnInit {
   //VARIABLES
   categoriasItems: any;
-  //categoriasSelect: any = [];
+  categoriasSelect: any = [];
   checkFocus = false;
   constructor(
     public formB: BaseFormCategorias,
     private apiCategoria: CategoriasService
   ) {}
-  data = [
-    {
-      id: '1',
-      nombre: 'programacion',
-    },
-    {
-      id: '2',
-      nombre: 'ecuacion',
-    },
-    {
-      id: '3',
-      nombre: 'lavadora',
-    },
-    {
-      id: '4',
-      nombre: 'mouse',
-    },
-  ];
   ngOnInit(): void {
     this.getCategorias();
   }
@@ -43,12 +25,12 @@ export class CategoriasComponent implements OnInit {
       this.categoriasItems = res;
     });
   }
-  /*addCategorias(id: any) {
+  addCategorias(id: any) {
     this.categoriasSelect.push(id);
     this.formB.onAddCategorias(this.categoriasSelect);
-  }*/
-  /*remove(i: any) {
+  }
+  remove(i: any) {
     console.log(i);
     this.categoriasSelect.splice(i, 1);
-  }*/
+  }
 }

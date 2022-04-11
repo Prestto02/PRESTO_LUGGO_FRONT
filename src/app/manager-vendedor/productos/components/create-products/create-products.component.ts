@@ -16,23 +16,27 @@ export class CreateProductsComponent implements OnInit {
   imgProducts = '';
   imagenTransformada = '';
   error = '';
-  filterPost = '';
   activar = false;
   categoriasItems: any;
-  listaEscodiga: any;
   constructor(
     private position: PositionUser, //POSICION DEl USUARIO
     public formB: BaseFormProducts, //FORM PRODUCTS
     private apiProducts: ProductsService, //SERVICES PRODUCTOS
     private formCategoria: BaseFormCategorias, //FORM CATEGORIAS
     private messageFront: MessageFrontEndService, //MENSAJES DE ERRORES
-    private modalServi: EditRegisterModalService //MODAL SERVICE
+    private serviModal: EditRegisterModalService //SERVICES MODAL
   ) {}
 
   ngOnInit(): void {
     this.position.getPositionUser(); //OBTENGO LA POSICION DEL USUARIO
+    this.getEditOrRegister(); //CAMBIAR ESTADO DEL BOTON DE REGISTRO O EDITAR
   }
-
+  //SERVICES MODALS
+  getEditOrRegister() {
+    this.serviModal.registerOrEditBandera.subscribe((res) => {
+      this.activar = res; //OBTENGO SI ES VERDADERO O FALSO PARA CAMBIAR EL ESTADO DEL BOTON
+    });
+  }
   //VERIFICADOR DE ARCHIVOS
   getArchive(e: any) {
     const buscar = ',';
@@ -41,7 +45,8 @@ export class CreateProductsComponent implements OnInit {
       e[0].type === 'image/jpg' ||
       e[0].type === 'image/jpeg'
     ) {
-      this.imgProducts = e[0].base64;
+      //VALIDO SI LA IMAGEN ES DE ESE FORMATO
+      this.imgProducts = e[0].base64; //OBTENGO DEL ARRAY LA BASE 64
       const index = this.imgProducts.indexOf(buscar); //BUSCO LA , DEL BASE 64
       this.imagenTransformada = this.imgProducts.slice(index + 1); //ENCONTRADO LA POSICION DE LA , ENViARLA A LA API
       // this.verifiarImgFormat(e);
@@ -49,7 +54,7 @@ export class CreateProductsComponent implements OnInit {
       this.messageFront.getWarningMessage(
         message.Warning.title,
         message.Warning.imagenes
-      );
+      ); //MENSAJE TOAST
     }
   }
   //OBTENGO LA IMAGEN PARA ENVIARLO POR EL FORM-DATA

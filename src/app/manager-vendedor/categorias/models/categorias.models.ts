@@ -19,7 +19,7 @@ export class BaseFormCategorias {
     return this.formCategorias.controls['ArticuloTieneCategoria'] as FormArray; //OBTENGO EL FORMULARIO CON EL ARRAY
   }
   //AGREGAR CATEGORIAS
-  onAddCategorias() {
+  onAddCategorias(categoriaSelect: any) {
     const lessonCategoria = this.formB.group({
       idcategoria_articulo: [
         '',
@@ -36,5 +36,4 @@ export class BaseFormCategorias {
   getDataFormCateogoria() {
     return this.formCategorias.value.ArticuloTieneCategoria;
   }
-
 }
