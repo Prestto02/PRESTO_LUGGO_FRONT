@@ -1,20 +1,19 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SubMenuCosmeticosComponent } from './sub-menu-cosmeticos.component';
+import { SubMenuCategoriasComponent } from './sub-menu-cosmeticos.component';
 
 describe('SubMenuCosmeticosComponent', () => {
-  let component: SubMenuCosmeticosComponent;
-  let fixture: ComponentFixture<SubMenuCosmeticosComponent>;
+  let component: SubMenuCategoriasComponent;
+  let fixture: ComponentFixture<SubMenuCategoriasComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SubMenuCosmeticosComponent ]
-    })
-    .compileComponents();
+      declarations: [SubMenuCategoriasComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SubMenuCosmeticosComponent);
+    fixture = TestBed.createComponent(SubMenuCategoriasComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

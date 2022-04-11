@@ -1,7 +1,7 @@
 export const UrlFront = {
   //USUARIOS
   Users: {
-    users: 'Usuarios',
+    users: 'usuarios',
     put: 'registrar/:id/:users',
     post: 'registrar',
     perfilUsuario:'perfil-usuario'

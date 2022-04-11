@@ -19,9 +19,7 @@ import { Footer2Component } from '../footer2/footer2.component';
 import { SectionCardsInformationComponent } from '../section-cards-information/section-cards-information.component';
 import { SectionCardsOfertasComponent } from '../section-cards-ofertas/section-cards-ofertas.component';
 import { SectionServiciosComponent } from '../section-servicios/section-servicios.component';
-import { SubMenuCosmeticosComponent } from '../menu2/sub-menu-cosmeticos/sub-menu-cosmeticos.component';
-import { SubMenuHerramientasComponent } from '../menu2/sub-menu-herramientas/sub-menu-herramientas.component';
-import { SubMenuMueblesComponent } from '../menu2/sub-menu-muebles/sub-menu-muebles.component';
+import { SubMenuCategoriasComponent } from '../menu2/sub-menu-categorias/sub-menu-cosmeticos.component';
 import { IniciarSesionComponent } from '../menu/iniciar-sesion/iniciar-sesion.component';
 import { CarritoItemsComponent } from '../menu/carrito-items/carrito-items.component';
 import { ResponsiveSectionCarouselComponent } from '../section-carousel/responsive-section-carousel/responsive-section-carousel.component';
@@ -53,11 +51,9 @@ import { IndexProductsComponent } from '../../shared-products/index-products.com
     ListaDeseosComponent, //LISTA DE DESEOS
     SectionServiciosComponent,
     CarritoItemsComponent,
-    SubMenuCosmeticosComponent,
+    SubMenuCategoriasComponent,
     IniciarSesionComponent,
     FilterPipe, //FILTRAR POR PIPE
-    SubMenuHerramientasComponent,
-    SubMenuMueblesComponent,
     Footer2Component,
     FooterComponent,
   ],

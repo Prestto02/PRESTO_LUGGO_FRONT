@@ -16,6 +16,9 @@
   background: white;
   border-left: 1px;
 }
-.input-border{
+.input-border {
   border-right: 0px;
+}
+.color-canvas {
+  background-color: rgba(32, 32, 57, 0.94);
 }

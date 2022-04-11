@@ -53,14 +53,13 @@
     </div>
   </div>
 </nav>
-
-
-
-<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel"
-  style="background-color: rgba(32, 32, 57, 0.94);">
+<!-------OFF CANVAS------>
+<div class="offcanvas offcanvas-start color-canvas" tabindex="-1" id="offcanvasExample"
+  aria-labelledby="offcanvasExampleLabel">
   <div class="offcanvas-body sidenav-card">
-    <div class="row text-white mx-1" id="offcanvasLabel">
-      <div class="col-md-1 mt-2">
+    <div class="row text-white " id="offcanvasLabel">
+      <!-----CABEZERA---->
+      <div class="col-md-1 col-xl-1 col-xxl-1 col-1 col-sm-1 mt-2 ">
         <svg width="27" height="30" viewBox="0 0 27 30" fill="none" xmlns="http://www.w3.org/2000/svg">
           <circle cx="13.375" cy="10.625" r="4.125" fill="white" />
           <circle cx="13.375" cy="13.375" r="12.375" stroke="white" stroke-width="2" />
@@ -70,240 +69,91 @@
         </svg>
       </div>
 
-      <div class="col-md-7 mt-2 text-center">
+      <div class="col-md-7 col-xl-7 col-xxl-7 col-7 col-sm-7 mt-2 text-center">
         Hola, Carlos Montúfars
       </div>
 
-      <div class="col-md-4 mt-2">
-        <a class="btn-link link-info" (click)="irAMiPerfil()" style="cursor: pointer;"> Mi cuenta</a>
+      <div class="col-md-4 mt-2 col-xl-4 col-xxl-4 col-sm-4 col-4">
+        <a class="btn-link link-info cursor-item" (click)="irAMiPerfil()">Mi cuenta</a>
       </div>
 
       <div class="col-md-12">
         <hr>
       </div>
-      <ng-container *ngIf="!subMenuCosmetico && !subMenuHerramienta &&!subMenuMuebles">
+      <!----SECCION 1---->
+      <ng-container *ngIf="!ocultarMenu">
         <div class="col-md-12">
           <h4>Tendencias</h4>
         </div>
 
-        <div class="col-md-12">
+        <div class="col-md-12 cursor-item">
           <p>Lo más vendido</p>
         </div>
 
-        <div class="col-md-12">
+        <div class="col-md-12 cursor-item">
           <p>Lo más nuevo</p>
         </div>
 
-        <div class="col-md-12">
+        <div class="col-md-12 cursor-item">
           <p>Productos del momento</p>
         </div>
 
         <div class="col-md-12">
           <hr>
         </div>
+        <!----SECCION 2---->
         <div class="col-md-12">
           <h4>Busca Por Categorías</h4>
         </div>
       </ng-container>
-
-      <ng-container *ngIf="!subMenuHerramienta && !subMenuMuebles">
-        <div class="col-md-9 col-xl-9 col-xxl-9 col-10 col-sm-10">
-          <ng-container *ngIf="!subMenuCosmetico">
-            <p class="text-white" style="cursor: pointer;" (click)="abrirSubMenuCosmetico();">
-              Cosmeticos y Belleza
-            </p>
-          </ng-container>
-          <ng-container *ngIf="subMenuCosmetico">
-            <p class="text-white" style="cursor:pointer" (click)="cerrarSubMenuCosmetico();">Regresar al Menu</p>
-          </ng-container>
-        </div>
-        <div class="col-md-1 col-xl-1 col-xxl-1 col-1 col-sm-1 mx-auto" style="cursor: pointer;">
-          <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M2.04715 1.15387C1.76386 0.851689 1.28923 0.836378 0.987044 1.11968C0.68486 1.40297 0.66955 1.8776 0.952847 2.17978L2.04715 1.15387ZM6.5 7.00016L7.04715 7.51312C7.31762 7.22462 7.31762 6.7757 7.04715 6.48721L6.5 7.00016ZM0.952848 11.8205C0.66955 12.1227 0.684861 12.5974 0.987045 12.8806C1.28923 13.1639 1.76386 13.1486 2.04715 12.8465L0.952848 11.8205ZM0.952847 2.17978L5.95285 7.51312L7.04715 6.48721L2.04715 1.15387L0.952847 2.17978ZM5.95285 6.48721L0.952848 11.8205L2.04715 12.8465L7.04715 7.51312L5.95285 6.48721Z"
-              fill="#B6B6B6" class="btn" />
-          </svg>
-        </div>
-        <ng-container *ngIf="subMenuCosmetico">
-          <app-sub-menu-cosmeticos></app-sub-menu-cosmeticos>
+      <!-----SECCION 2------>
+      <ng-container *ngIf="!ocultarMenu">
+        <ng-container *ngFor="let categorias of categoriasItems; let  index=index">
+          <div class="col-md-9 col-xl-9 col-xxl-9 col-10 col-sm-10 cursor-item" (click)="AbrirSubMenu(categorias);">
+            <p>{{categorias.name}}</p>
+          </div>
+          <div class="col-md-1 col-xl-1 col-xxl-1 col-1 col-sm-1 mx-auto cursor-item"
+            (click)="AbrirSubMenu(categorias);">
+            <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M2.04715 1.15387C1.76386 0.851689 1.28923 0.836378 0.987044 1.11968C0.68486 1.40297 0.66955 1.8776 0.952847 2.17978L2.04715 1.15387ZM6.5 7.00016L7.04715 7.51312C7.31762 7.22462 7.31762 6.7757 7.04715 6.48721L6.5 7.00016ZM0.952848 11.8205C0.66955 12.1227 0.684861 12.5974 0.987045 12.8806C1.28923 13.1639 1.76386 13.1486 2.04715 12.8465L0.952848 11.8205ZM0.952847 2.17978L5.95285 7.51312L7.04715 6.48721L2.04715 1.15387L0.952847 2.17978ZM5.95285 6.48721L0.952848 11.8205L2.04715 12.8465L7.04715 7.51312L5.95285 6.48721Z"
+                fill="#B6B6B6" />
+            </svg>
+          </div>
         </ng-container>
       </ng-container>
-
-      <ng-container *ngIf="!subMenuCosmetico && !subMenuMuebles">
-        <div class="col-md-9 col-xl-9 col-xxl-9 col-10 col-sm-10">
-          <ng-container *ngIf="!subMenuHerramienta">
-            <p class="text-white" style="cursor: pointer;" (click)="abrirSubMenuHerramienta();">
-              Herramientas y Ferreterias
-            </p>
-          </ng-container>
-          <ng-container *ngIf="subMenuHerramienta">
-            <p class="text-white" style="cursor:pointer" (click)="cerrarSubMenuHerramienta();">Regresar al Menu</p>
-          </ng-container>
+      <!---------MUESTRO LA SUBCATEGORIA-------->
+      <ng-container *ngIf="subCategorias && ocultarMenu">
+        <div class="col-md-9 col-xl-9 col-xxl-9 col-10 col-sm-10 cursor-item" (click)="cerrarSubMenu();">
+          <p>Regresar al menú</p>
         </div>
-
-        <div class="col-md-1 col-xl-1 col-xxl-1 col-1 col-sm-1 mx-auto" style="cursor: pointer;">
+        <div class="col-md-1 col-xl-1 col-xxl-1 col-1 col-sm-1 mx-auto cursor-item" (click)="cerrarSubMenu();">
           <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
               d="M2.04715 1.15387C1.76386 0.851689 1.28923 0.836378 0.987044 1.11968C0.68486 1.40297 0.66955 1.8776 0.952847 2.17978L2.04715 1.15387ZM6.5 7.00016L7.04715 7.51312C7.31762 7.22462 7.31762 6.7757 7.04715 6.48721L6.5 7.00016ZM0.952848 11.8205C0.66955 12.1227 0.684861 12.5974 0.987045 12.8806C1.28923 13.1639 1.76386 13.1486 2.04715 12.8465L0.952848 11.8205ZM0.952847 2.17978L5.95285 7.51312L7.04715 6.48721L2.04715 1.15387L0.952847 2.17978ZM5.95285 6.48721L0.952848 11.8205L2.04715 12.8465L7.04715 7.51312L5.95285 6.48721Z"
               fill="#B6B6B6" />
           </svg>
         </div>
-        <ng-container *ngIf="subMenuHerramienta">
-          <app-sub-menu-herramientas></app-sub-menu-herramientas>
-        </ng-container>
+        <app-sub-menu-categorias class="row" [ItemsSubCategoria]="subCategorias"></app-sub-menu-categorias>
       </ng-container>
+      <div class="col-md-12">
+        <hr>
+      </div>
+      <!----SECCION 3---->
+      <div class="col-md-12">
+        <h4>Ajustes y Soporte</h4>
+      </div>
 
-      <ng-container *ngIf="!subMenuHerramienta && !subMenuCosmetico">
-        <div class="col-md-9 col-xl-9 col-xxl-9 col-10 col-sm-10">
-          <ng-container *ngIf="!subMenuMuebles">
-            <p class="text-white" style="cursor: pointer;" (click)="abrirSubMenuMuebles();">
-              Muebles y Hogar
-            </p>
-          </ng-container>
-          <ng-container *ngIf="subMenuMuebles">
-            <p class="text-white" style="cursor:pointer" (click)="cerrarSubMenuMuebles();">Regresar al Menu</p>
-          </ng-container>
-        </div>
-        <div class="col-md-1 col-xl-1 col-xxl-1 col-1 col-sm-1 mx-auto" style="cursor: pointer;">
-          <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M2.04715 1.15387C1.76386 0.851689 1.28923 0.836378 0.987044 1.11968C0.68486 1.40297 0.66955 1.8776 0.952847 2.17978L2.04715 1.15387ZM6.5 7.00016L7.04715 7.51312C7.31762 7.22462 7.31762 6.7757 7.04715 6.48721L6.5 7.00016ZM0.952848 11.8205C0.66955 12.1227 0.684861 12.5974 0.987045 12.8806C1.28923 13.1639 1.76386 13.1486 2.04715 12.8465L0.952848 11.8205ZM0.952847 2.17978L5.95285 7.51312L7.04715 6.48721L2.04715 1.15387L0.952847 2.17978ZM5.95285 6.48721L0.952848 11.8205L2.04715 12.8465L7.04715 7.51312L5.95285 6.48721Z"
-              fill="#B6B6B6" />
-          </svg>
-        </div>
-        <ng-container *ngIf="subMenuMuebles">
-          <app-sub-menu-muebles></app-sub-menu-muebles>
-        </ng-container>
-      </ng-container>
+      <div class="col-md-12 cursor-item">
+        <p>Mi cuenta</p>
+      </div>
+      <div class="col-md-12 cursor-item">
+        <p>Atención al cliente</p>
+      </div>
+      <div class="col-md-12 cursor-item">
+        Cerrar Sesión
+      </div>
 
-
-      <ng-container *ngIf="!subMenuCosmetico && !subMenuMuebles && !subMenuHerramienta">
-        <div class="col-md-9 col-xl-9 col-xxl-9 col-10 col-sm-10">
-          <p>Equipos de ciclismos</p>
-        </div>
-
-        <div class="col-md-1 col-xl-1 col-xxl-1 col-1 col-sm-1 mx-auto" style="cursor: pointer;">
-          <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M2.04715 1.15387C1.76386 0.851689 1.28923 0.836378 0.987044 1.11968C0.68486 1.40297 0.66955 1.8776 0.952847 2.17978L2.04715 1.15387ZM6.5 7.00016L7.04715 7.51312C7.31762 7.22462 7.31762 6.7757 7.04715 6.48721L6.5 7.00016ZM0.952848 11.8205C0.66955 12.1227 0.684861 12.5974 0.987045 12.8806C1.28923 13.1639 1.76386 13.1486 2.04715 12.8465L0.952848 11.8205ZM0.952847 2.17978L5.95285 7.51312L7.04715 6.48721L2.04715 1.15387L0.952847 2.17978ZM5.95285 6.48721L0.952848 11.8205L2.04715 12.8465L7.04715 7.51312L5.95285 6.48721Z"
-              fill="#B6B6B6" />
-          </svg>
-        </div>
-
-        <div class="col-md-9 col-xl-9 col-xxl-9 col-10 col-sm-10">
-          <p>Muebles de Hogar</p>
-        </div>
-
-        <div class="col-md-1 col-xl-1 col-xxl-1 col-1 col-sm-1 mx-auto" style="cursor: pointer;">
-          <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M2.04715 1.15387C1.76386 0.851689 1.28923 0.836378 0.987044 1.11968C0.68486 1.40297 0.66955 1.8776 0.952847 2.17978L2.04715 1.15387ZM6.5 7.00016L7.04715 7.51312C7.31762 7.22462 7.31762 6.7757 7.04715 6.48721L6.5 7.00016ZM0.952848 11.8205C0.66955 12.1227 0.684861 12.5974 0.987045 12.8806C1.28923 13.1639 1.76386 13.1486 2.04715 12.8465L0.952848 11.8205ZM0.952847 2.17978L5.95285 7.51312L7.04715 6.48721L2.04715 1.15387L0.952847 2.17978ZM5.95285 6.48721L0.952848 11.8205L2.04715 12.8465L7.04715 7.51312L5.95285 6.48721Z"
-              fill="#B6B6B6" />
-          </svg>
-        </div>
-
-        <div class="col-md-9 col-xl-9 col-xxl-9 col-10 col-sm-10">
-          <p>Ropa Deportiva</p>
-        </div>
-
-        <div class="col-md-1 col-xl-1 col-xxl-1 col-1 col-sm-1 mx-auto" style="cursor: pointer;">
-          <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M2.04715 1.15387C1.76386 0.851689 1.28923 0.836378 0.987044 1.11968C0.68486 1.40297 0.66955 1.8776 0.952847 2.17978L2.04715 1.15387ZM6.5 7.00016L7.04715 7.51312C7.31762 7.22462 7.31762 6.7757 7.04715 6.48721L6.5 7.00016ZM0.952848 11.8205C0.66955 12.1227 0.684861 12.5974 0.987045 12.8806C1.28923 13.1639 1.76386 13.1486 2.04715 12.8465L0.952848 11.8205ZM0.952847 2.17978L5.95285 7.51312L7.04715 6.48721L2.04715 1.15387L0.952847 2.17978ZM5.95285 6.48721L0.952848 11.8205L2.04715 12.8465L7.04715 7.51312L5.95285 6.48721Z"
-              fill="#B6B6B6" />
-          </svg>
-        </div>
-
-        <div class="col-md-9 col-xl-9 col-xxl-9 col-10 col-sm-10">
-          <p>Electrodomésticos</p>
-        </div>
-
-        <div class="col-md-1 col-xl-1 col-xxl-1 col-1 col-sm-1 mx-auto" style="cursor: pointer;">
-          <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M2.04715 1.15387C1.76386 0.851689 1.28923 0.836378 0.987044 1.11968C0.68486 1.40297 0.66955 1.8776 0.952847 2.17978L2.04715 1.15387ZM6.5 7.00016L7.04715 7.51312C7.31762 7.22462 7.31762 6.7757 7.04715 6.48721L6.5 7.00016ZM0.952848 11.8205C0.66955 12.1227 0.684861 12.5974 0.987045 12.8806C1.28923 13.1639 1.76386 13.1486 2.04715 12.8465L0.952848 11.8205ZM0.952847 2.17978L5.95285 7.51312L7.04715 6.48721L2.04715 1.15387L0.952847 2.17978ZM5.95285 6.48721L0.952848 11.8205L2.04715 12.8465L7.04715 7.51312L5.95285 6.48721Z"
-              fill="#B6B6B6" />
-          </svg>
-        </div>
-
-        <div class="col-md-9 col-xl-9 col-xxl-9 col-10 col-sm-10">
-          <p>Calzado Deportivo</p>
-        </div>
-
-        <div class="col-md-1 col-xl-1 col-xxl-1 col-1 col-sm-1 mx-auto" style="cursor: pointer;">
-          <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M2.04715 1.15387C1.76386 0.851689 1.28923 0.836378 0.987044 1.11968C0.68486 1.40297 0.66955 1.8776 0.952847 2.17978L2.04715 1.15387ZM6.5 7.00016L7.04715 7.51312C7.31762 7.22462 7.31762 6.7757 7.04715 6.48721L6.5 7.00016ZM0.952848 11.8205C0.66955 12.1227 0.684861 12.5974 0.987045 12.8806C1.28923 13.1639 1.76386 13.1486 2.04715 12.8465L0.952848 11.8205ZM0.952847 2.17978L5.95285 7.51312L7.04715 6.48721L2.04715 1.15387L0.952847 2.17978ZM5.95285 6.48721L0.952848 11.8205L2.04715 12.8465L7.04715 7.51312L5.95285 6.48721Z"
-              fill="#B6B6B6" />
-          </svg>
-        </div>
-
-        <div class="col-md-9 col-xl-9 col-xxl-9 col-10 col-sm-10">
-          <p>Equipos de entrenamiento</p>
-        </div>
-
-        <div class="col-md-1 col-xl-1 col-xxl-1 col-1 col-sm-1 mx-auto" style="cursor: pointer;">
-          <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M2.04715 1.15387C1.76386 0.851689 1.28923 0.836378 0.987044 1.11968C0.68486 1.40297 0.66955 1.8776 0.952847 2.17978L2.04715 1.15387ZM6.5 7.00016L7.04715 7.51312C7.31762 7.22462 7.31762 6.7757 7.04715 6.48721L6.5 7.00016ZM0.952848 11.8205C0.66955 12.1227 0.684861 12.5974 0.987045 12.8806C1.28923 13.1639 1.76386 13.1486 2.04715 12.8465L0.952848 11.8205ZM0.952847 2.17978L5.95285 7.51312L7.04715 6.48721L2.04715 1.15387L0.952847 2.17978ZM5.95285 6.48721L0.952848 11.8205L2.04715 12.8465L7.04715 7.51312L5.95285 6.48721Z"
-              fill="#B6B6B6" />
-          </svg>
-        </div>
-
-        <div class="col-md-9 col-xl-9 col-xxl-9 col-10 col-sm-10">
-          <p>Maletas y bolsos de viaje</p>
-        </div>
-
-        <div class="col-md-1 col-xl-1 col-xxl-1 col-1 col-sm-1 mx-auto" style="cursor: pointer;">
-          <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M2.04715 1.15387C1.76386 0.851689 1.28923 0.836378 0.987044 1.11968C0.68486 1.40297 0.66955 1.8776 0.952847 2.17978L2.04715 1.15387ZM6.5 7.00016L7.04715 7.51312C7.31762 7.22462 7.31762 6.7757 7.04715 6.48721L6.5 7.00016ZM0.952848 11.8205C0.66955 12.1227 0.684861 12.5974 0.987045 12.8806C1.28923 13.1639 1.76386 13.1486 2.04715 12.8465L0.952848 11.8205ZM0.952847 2.17978L5.95285 7.51312L7.04715 6.48721L2.04715 1.15387L0.952847 2.17978ZM5.95285 6.48721L0.952848 11.8205L2.04715 12.8465L7.04715 7.51312L5.95285 6.48721Z"
-              fill="#B6B6B6" />
-          </svg>
-        </div>
-
-        <div class="col-md-9 col-xl-9 col-xxl-9 col-10 col-sm-10">
-          <p>Abrigos y Chalecos</p>
-        </div>
-
-        <div class="col-md-1 col-xl-1 col-xxl-1 col-1 col-sm-1 mx-auto" style="cursor: pointer;">
-          <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M2.04715 1.15387C1.76386 0.851689 1.28923 0.836378 0.987044 1.11968C0.68486 1.40297 0.66955 1.8776 0.952847 2.17978L2.04715 1.15387ZM6.5 7.00016L7.04715 7.51312C7.31762 7.22462 7.31762 6.7757 7.04715 6.48721L6.5 7.00016ZM0.952848 11.8205C0.66955 12.1227 0.684861 12.5974 0.987045 12.8806C1.28923 13.1639 1.76386 13.1486 2.04715 12.8465L0.952848 11.8205ZM0.952847 2.17978L5.95285 7.51312L7.04715 6.48721L2.04715 1.15387L0.952847 2.17978ZM5.95285 6.48721L0.952848 11.8205L2.04715 12.8465L7.04715 7.51312L5.95285 6.48721Z"
-              fill="#B6B6B6" />
-          </svg>
-        </div>
-
-        <div class="col-md-9 col-xl-9 col-xxl-9 col-10 col-sm-10">
-          <p>Hecho en Ecuador</p>
-        </div>
-
-        <div class="col-md-1 col-xl-1 col-xxl-1 col-1 col-sm-1 mx-auto" style="cursor: pointer;">
-          <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M2.04715 1.15387C1.76386 0.851689 1.28923 0.836378 0.987044 1.11968C0.68486 1.40297 0.66955 1.8776 0.952847 2.17978L2.04715 1.15387ZM6.5 7.00016L7.04715 7.51312C7.31762 7.22462 7.31762 6.7757 7.04715 6.48721L6.5 7.00016ZM0.952848 11.8205C0.66955 12.1227 0.684861 12.5974 0.987045 12.8806C1.28923 13.1639 1.76386 13.1486 2.04715 12.8465L0.952848 11.8205ZM0.952847 2.17978L5.95285 7.51312L7.04715 6.48721L2.04715 1.15387L0.952847 2.17978ZM5.95285 6.48721L0.952848 11.8205L2.04715 12.8465L7.04715 7.51312L5.95285 6.48721Z"
-              fill="#B6B6B6" />
-          </svg>
-        </div>
-
-        <div class="col-md-12">
-          <hr>
-        </div>
-
-        <div class="col-md-12">
-          <h4>Ajustes y Soporte</h4>
-        </div>
-
-        <div class="col-md-12">
-          <p>Mi cuenta</p>
-        </div>
-        <div class="col-md-12">
-          <p>Atención al cliente</p>
-        </div>
-        <div class="col-md-12">
-          Cerrar Sesión
-        </div>
-      </ng-container>
     </div>
   </div>
 </div>

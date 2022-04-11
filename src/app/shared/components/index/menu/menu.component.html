@@ -59,7 +59,8 @@
                   aria-controls="offcanvasRight">Hola, Ingresa <b>Mi
                     cuenta</b></a>
               </div>
-              <div class="col-md-2 col-sm-2 col-xl-1 col-xxl-1 col-2">
+              <div
+                class="col-md-2 col-sm-2 col-xl-1 col-xxl-1 col-2 d-md-none d-xl-block d-xxl-block d-block d-sm-block">
                 <svg type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRightLogin"
                   aria-controls="offcanvasRightLogin" width="28" height="70" viewBox="0 0 21 22" fill="none"
                   xmlns="http://www.w3.org/2000/svg">
@@ -71,8 +72,8 @@
                     fill="#000" />
                 </svg>
               </div>
-              <app-iniciar-sesion class="offcanvas offcanvas-end text-white" tabindex="-1" id="offcanvasRightLogin"
-                aria-labelledby="offcanvasRightLoginLabel" style="background-color: rgba(32, 32, 57, 0.94);">
+              <app-iniciar-sesion class="offcanvas offcanvas-end color-canvas text-white" tabindex="-1"
+                id="offcanvasRightLogin" aria-labelledby="offcanvasRightLoginLabel">
                 <ng-content class="text-center"></ng-content>
               </app-iniciar-sesion>
             </div>
@@ -83,7 +84,8 @@
                 class="col-md-9 col-sm-8 col-8 col-xl-8 col-xxl-8 text-center d-none d-sm-none d-xxl-block d-xl-block d-md-block">
                 <a class="nav-link cursor-item" (click)="irListaDeseos();">Lista de <b>Deseos</b></a>
               </div>
-              <div class="col-md-2 col-sm-2 col-xl-1 col-xxl-1 col-2 mt-3">
+              <div
+                class="col-md-2 col-sm-2 col-xl-1 col-xxl-1 col-2 mt-3 d-md-none d-xl-block d-xxl-block d-block d-sm-block">
                 <svg type="button" (click)="irListaDeseos()" width="29" height="29" viewBox="0 0 29 29" fill="none"
                   xmlns="http://www.w3.org/2000/svg">
                   <path
@@ -112,8 +114,8 @@
                 </span>
               </span>
             </a>
-            <app-carrito-items class="offcanvas offcanvas-end text-white" tabindex="-1" id="offcanvasRightCarrito"
-              aria-labelledby="offcanvasRightCarritoLabel" style="background-color: rgba(32, 32, 57, 0.94);">
+            <app-carrito-items class="offcanvas offcanvas-end text-white color-canvas " tabindex="-1"
+              id="offcanvasRightCarrito" aria-labelledby="offcanvasRightCarritoLabel">
               <ng-content class="text-center"> </ng-content>
             </app-carrito-items>
           </li>

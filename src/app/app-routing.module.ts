@@ -42,7 +42,7 @@ const routes: Routes = [
         (m) => m.ManagerVendedorModule
       ),
   },
-  //REDIRECCIONAR EN LOGIN DIRECTO
+  //REDIRECCIONAR EN MENU DIRECTO
   {
     path: '',
     redirectTo: UrlFront.Menu.menu,

@@ -4,6 +4,9 @@ body {
 .abrir {
   cursor: pointer;
 }
+.color-canvas {
+  background-color: rgba(32, 32, 57, 0.94);
+}
 .sidenav-card {
   width: 400px;
   height: 100%;
@@ -16,6 +19,9 @@ body {
 }
 * {
   font-family: Cardium B-Medium;
+}
+.cursor-item {
+  cursor: pointer;
 }
 @media screen and (max-height: 450px) {
   .sidenav {

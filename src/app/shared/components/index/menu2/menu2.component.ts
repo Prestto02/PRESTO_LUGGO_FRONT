@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { CategoriasService } from 'src/app/manager-vendedor/productos/services/categorias.service';
 import { UrlFront } from 'src/app/shared/routes/RoutesFront';
 @Component({
   selector: 'app-menu2',
@@ -7,32 +8,36 @@ import { UrlFront } from 'src/app/shared/routes/RoutesFront';
   styleUrls: ['./menu2.component.css'],
 })
 export class Menu2Component implements OnInit {
-  subMenuCosmetico = false;
-  subMenuHerramienta = false;
-  subMenuMuebles = false;
-  constructor(private router: Router) {}
+  categoriasItems: any = [];
+  ocultarMenu: boolean = false;
+  subCategorias: any = [];
+  constructor(
+    private router: Router,
+    private apiCategoria: CategoriasService
+  ) {}
 
-  ngOnInit(): void {}
-  //COSmetiCO
-  abrirSubMenuCosmetico() {
-    this.subMenuCosmetico = true;
+  ngOnInit(): void {
+    this.getAllCategorias(); //TRAIGO TODAS LAS CATEGORIAS
   }
-  cerrarSubMenuCosmetico() {
-    this.subMenuCosmetico = false;
+  //TODAS LAS CATEGORIAS
+  getAllCategorias() {
+    this.apiCategoria.getAllCategorias().subscribe((res) => {
+      this.categoriasItems = res;
+    });
   }
-  //HERRAMIENTAS
-  abrirSubMenuHerramienta() {
-    this.subMenuHerramienta = true;
+  //ABRIR SUBMENU
+  AbrirSubMenu(index: any) {
+    this.ocultarMenu = true;
+    this.obtenerIndexMenu(index);
   }
-  cerrarSubMenuHerramienta() {
-    this.subMenuHerramienta = false;
+  cerrarSubMenu() {
+    this.ocultarMenu = false;
+    this.subCategorias = [];
   }
-  //MUEBLES
-  abrirSubMenuMuebles() {
-    this.subMenuMuebles = true;
-  }
-  cerrarSubMenuMuebles() {
-    this.subMenuMuebles = false;
+  //OBTENGO POSICION DEL ARRAY
+  obtenerIndexMenu(index: any) {
+    this.subCategorias.push(index);
+    console.log(this.subCategorias);
   }
   //IR A MI PERFIL
   irAMiPerfil() {
