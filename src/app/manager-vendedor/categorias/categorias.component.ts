@@ -25,10 +25,12 @@ export class CategoriasComponent implements OnInit {
       this.categoriasItems = res;
     });
   }
+  //AGREGO LA CATEGORIA SELECCIONADA
   addCategorias(id: any) {
-    this.categoriasSelect.push(id);
-    this.formB.onAddCategorias(this.categoriasSelect);
+    this.categoriasSelect.push(id); //AGREGO AL ARREGLO
+    this.formB.onAddCategorias(this.categoriasSelect); //AGREGO AL SUBJECT
   }
+  //ELIMINO DE LA LISTA LA CATEGORIA QUE NO NECESITA
   remove(i: any) {
     console.log(i);
     this.categoriasSelect.splice(i, 1);

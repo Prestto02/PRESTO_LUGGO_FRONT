@@ -9,6 +9,7 @@ import { UrlApi } from 'src/app/shared/routes/RoutesApi';
 export class ActivarCuentaService {
   constructor(private http: HttpClient) {}
 
+  //VERIFICO EL CODIGO CON EL CODIGO QUE TIENE LA API
   postCheckRegister(check: any): Observable<any> {
     return this.http.post<any>(
       `${UrlApi.ApiUrl}${UrlApi.revisarCodigoActivacion}`,

@@ -12,18 +12,18 @@ export class BienvenidoUserComponent implements OnInit {
   public urlCheck: any;
   public codigoCheck: any;
   constructor(private route: Router, private apiCheck: ActivarCuentaService) {
-    this.urlCheck = this.route.parseUrl(this.route.url);
-    this.codigoCheck = this.urlCheck.queryParams['c'];
+    this.urlCheck = this.route.parseUrl(this.route.url); //OBTENGO LO QUE VIENE DE LA URL
+    this.codigoCheck = this.urlCheck.queryParams['c']; //PARSEO LA C PARA OBTENER EL CODIGO
   }
 
   ngOnInit(): void {
-    this.enviarCodigo();
+    this.enviarCodigo(); //ENVIO EL CODIGO AL SERVIDOR PARA VERIFICAR
   }
   //REVISAR EL CODIGO DE VALIDACIoN Del USUARIO
   enviarCodigo() {
     const codigo = {
       codigo_activacion: this.codigoCheck,
-    };
+    }; //HAGO EL JSON PARA EL CODIGO
     this.apiCheck.postCheckRegister(codigo).subscribe(
       (res) => {
         console.log('success', res);

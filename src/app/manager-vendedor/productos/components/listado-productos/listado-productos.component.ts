@@ -36,6 +36,7 @@ export class ListadoProductosComponent implements OnInit {
     this.formB.getPatchValueForm(product);
     this.modalServi.editModal(); //CAMBIO EL ESTADO DEL MODAL
   }
+  //CAMBIO EL ESTADO DEL MODAL
   registerProduct() {
     this.modalServi.registerModal(); //CAMBIO EL ESTADO DEL MODAL
   }
