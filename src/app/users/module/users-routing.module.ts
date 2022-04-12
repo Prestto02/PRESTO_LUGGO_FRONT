@@ -13,6 +13,10 @@ const routes: Routes = [
         component: UsersComponent,
       },
       {
+        path: UrlFront.Users.perfilRegistrar,
+        component: PerfilUsersComponent,
+      },
+      {
         path: UrlFront.Users.perfilUsuario,
         component: PerfilUsersComponent,
       },

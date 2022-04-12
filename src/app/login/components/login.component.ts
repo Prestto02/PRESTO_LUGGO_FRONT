@@ -5,6 +5,7 @@ import { UrlApi } from 'src/app/shared/routes/RoutesApi';
 import { UrlFront } from 'src/app/shared/routes/RoutesFront';
 import { BaseFormLogin } from '../models/BaseFormLogin';
 import { LoginService } from '../services/login.service';
+import { TokenService } from '../services/token.service';
 
 @Component({
   selector: 'app-login',
@@ -22,6 +23,7 @@ export class LoginComponent implements OnInit {
     public formB: BaseFormLogin, //fORM REACTIVE
     private router: Router, //ROUTES
     private apiLogin: LoginService, //SERVICELOGIN
+    private tokenUser: TokenService, //TOKEN SERVICES
     private position: PositionUser //POSITION USER
   ) {}
 
@@ -38,6 +40,7 @@ export class LoginComponent implements OnInit {
     ); //ENVIO LOS DATOS PARA FORMATEAR A UN JSON ESTANDAR
     this.apiLogin.postUserLogin(users).subscribe((res) => {
       this.load = true;
+      this.tokenUser.setTokenUsers(res);
       this.router.navigateByUrl(`${UrlFront.Menu.menu}/${UrlFront.Menu.index}`); //SI ES OK IRE AL LOGIN
     });
   }

@@ -4,12 +4,15 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class TokenService {
-
   constructor() {}
   setTokenUsers(token: any) {
-    localStorage.setItem('token', token);
+    localStorage.setItem('idUsuario', token.id_usuario);
+    localStorage.setItem('correoUsuario', token.email);
   }
-  getTokenUsers() {
-    return localStorage.getItem('token');
+  getTokenId() {
+    return localStorage.getItem('idUsuario');
+  }
+  getTokenEmail() {
+    return localStorage.getItem('correoUsuario');
   }
 }

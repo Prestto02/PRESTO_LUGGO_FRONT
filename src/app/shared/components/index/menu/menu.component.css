@@ -22,3 +22,13 @@
 .color-canvas {
   background-color: rgba(32, 32, 57, 0.94);
 }
+.mover-icono-user {
+  padding: 0px;
+  position: relative;
+  right: 21px;
+}
+.mover-icono-deseos {
+  padding: 0px;
+  position: relative;
+  right: 15px;
+}

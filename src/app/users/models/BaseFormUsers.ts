@@ -106,4 +106,21 @@ export class BaseUsersForm {
       longitud,
     };
   }
+  //SET DATA FORM
+  setDatForm(respuesta: any) {
+    console.log(respuesta);
+    this.formUsers.patchValue({
+      id_usuario: respuesta.id_usuario,
+      nombre1: respuesta.nombre1,
+      nombre2: respuesta.nombre2,
+      apellido1: respuesta.apellido1,
+      apellido2: respuesta.apellido2,
+      cedula: respuesta.cedula,
+      direccion2: respuesta.datopersona.direccion2,
+      telefono: respuesta.datopersona.telefono,
+      celular: respuesta.datopersona.celular,
+      sexo: respuesta.sexo,
+      FechaNacimiento: respuesta.datopersona.fechanacimiento,
+    }); //GUARDO EN EL FORM LO QUE TENGO DEL USUARIO
+  }
 }

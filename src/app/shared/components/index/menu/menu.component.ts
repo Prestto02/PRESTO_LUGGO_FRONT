@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { TokenService } from 'src/app/login/services/token.service';
 import { BaseFormProducts } from 'src/app/manager-vendedor/productos/models/BaseformProduct';
 import { CategoriasService } from 'src/app/manager-vendedor/productos/services/categorias.service';
 import { UrlFront } from 'src/app/shared/routes/RoutesFront';
@@ -14,22 +15,34 @@ export class MenuComponent implements OnInit {
   totalCarrito: any;
   //CATEGORIAs ITEMS
   categoriaItems: any[] = [];
+  idUsuario: any;
+  emailUsuario: any;
   constructor(
     private router: Router,
-    public formB: BaseFormProducts,
-    private apiForm: CarritoItemsService,
-    private apiCategoria: CategoriasService
+    public formB: BaseFormProducts, //FORMULARIO PRODUCTOS
+    private apiForm: CarritoItemsService, //FORMULARIO CATEGORIAS
+    private apiCategoria: CategoriasService, //SERVICES CATEGORIA
+    private tokenUser: TokenService //TOKEN SERVICES
   ) {}
 
   ngOnInit(): void {
     this.totalItemsCarrito(); //TOTAL DE ITEMS DEL CARRITO
     this.getAllCategorias(); //TODAS LAS CATEGORIAS
+    this.idUsuario = this.tokenUser.getTokenId();
+    this.emailUsuario = this.tokenUser.getTokenEmail();
   }
   //TODAS LAS CATEGORIAS
   getAllCategorias() {
     this.apiCategoria.getAllCategorias().subscribe((res: any) => {
       this.categoriaItems = res;
     });
+  }
+  //IR AL PERFIL DE USUARIO
+  irAlPerfilUsuario() {
+    this.router.navigate([
+      `${UrlFront.Users.users}/${UrlFront.Users.perfilRegistrar}/`,
+      this.idUsuario,
+    ]);
   }
   //TOTAL ITEMS CARRITO
   totalItemsCarrito() {
@@ -56,5 +69,4 @@ export class MenuComponent implements OnInit {
       `${UrlFront.Menu.menu}/${UrlFront.ListaDeseos.listaDeseos}`
     );
   }
-
 }

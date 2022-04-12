@@ -6,9 +6,17 @@
     <div class="col-xl-4 col-xxl-4 col-md-4 col-sm-12 col-12 mt-5 mx-auto">
       <div class="row">
         <div class="col-xl-12 col-xxl-12 col-12 col-md-12 col-sm-12 mx-auto">
-          <img src="../../../../assets/img/empty-wishlist.png" alt="imagen" />
+          <img *ngIf="imgProducts!=''" [src]="imgProducts" class="img-fluid rounded-start" alt="Imágen del producto">
+          <svg *ngIf="imgProducts==''" class="bd-placeholder-img rounded mx-5" width="200" height="200"
+            xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 200x200"
+            preserveAspectRatio="xMidYMid slice" focusable="false">
+            <title>Tamaño de la imagen</title>
+            <rect width="100%" height="100%" fill="#868e96"></rect><text x="38%" y="50%" fill="#dee2e6"
+              dy=".3em">200x200</text>
+          </svg>
         </div>
-        <input type="file">
+        <input type="file" class="form-control" id="formFile" alife-file-to-base64 (onFileChanged)="getArchive($event)"
+          (change)="getImage($event);" required>
       </div>
     </div>
     <div class="col-xl-7 col-xxl-7 col-md-7 col-sm-12 col-12 mt-5">
@@ -109,7 +117,7 @@
             <label for="validationServer7" class="form-label">Sexo</label>
             <select class="form-control is-invalid" [class.is-invalid]="formB.formUsers.get('sexo')?.touched &&
             formB.formUsers.get('sexo')?.invalid" id="validationServer7" arial-describedby="validationServer7Feedback"
-              formControlName="sexo">
+              formControlName="sexo" aria-label="Default select example">
               <option value="" selected>Escoja una opcion</option>
               <option value="1">Masculino</option>
               <option value="2">Femenino</option>

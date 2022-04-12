@@ -22,7 +22,7 @@ export class UsersService {
     return this.http.get<any>(`${this.urlApi}${this.url}/${id}`);
   }
   getDataPerson(id: any): Observable<any> {
-    return this.http.get<any>(`${this.urlApi}${this.urlPersona}/${id}`);
+    return this.http.get<any>(`${this.urlApi}${this.urlPersonaOne}/${id}`);
   }
   //GUARDAR USUSARIO
   /*postDataUSer(form: any): Observable<any> {
