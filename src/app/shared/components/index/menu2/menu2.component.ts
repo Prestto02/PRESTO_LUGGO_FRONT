@@ -42,8 +42,10 @@ export class Menu2Component implements OnInit {
   }
   //OBTENGO POSICION DEL ARRAY
   obtenerIndexMenu(index: any) {
-    this.subCategorias.push(index);
-    console.log(this.subCategorias);
+    this.apiCategoria.getIdCategoriaHijo(index).subscribe((res) => {
+      this.subCategorias = res;
+      console.log(this.subCategorias);
+    });
   }
   //IR A MI PERFIL
   irAMiPerfil() {

@@ -12,4 +12,9 @@ export class CategoriasService {
   getAllCategorias(): Observable<any> {
     return this.http.get<any>(`${UrlApi.ApiUrl}${UrlApi.categorias}`);
   }
+  getIdCategoriaHijo(id: any): Observable<any> {
+    return this.http.get<any>(
+      `${UrlApi.ApiUrl}${UrlApi.categoriasrHijos}${id}`
+    );
+  }
 }

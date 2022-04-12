@@ -18,6 +18,7 @@ export const UrlApi = {
   categorias: 'ApiPrueba/API/categoria/listado',
   articulos: 'ApiPrueba/API/articulo',
   verificarImg: 'ApiPrueba/api/multimedia/subiendo',
+  categoriasrHijos:'ApiPrueba/API/categoria/categoria/hijos/',
   //PAGINACION
   paginacion: 'ApiPrueba/API/articulo/listado/productos',
 
