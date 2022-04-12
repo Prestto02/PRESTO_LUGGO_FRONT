@@ -28,8 +28,8 @@ export class MenuComponent implements OnInit {
   ngOnInit(): void {
     this.totalItemsCarrito(); //TOTAL DE ITEMS DEL CARRITO
     this.getAllCategorias(); //TODAS LAS CATEGORIAS
-    this.idUsuario = this.tokenUser.getTokenId();
-    this.emailUsuario = this.tokenUser.getTokenEmail();
+    this.idUsuario = this.tokenUser.getTokenId(); //OBTENGO EL ID DEL USUARIO
+    this.emailUsuario = this.tokenUser.getTokenEmail(); //OBTENGO EL EMAIL DEL USUARIO
   }
   //TODAS LAS CATEGORIAS
   getAllCategorias() {

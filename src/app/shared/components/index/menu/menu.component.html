@@ -53,6 +53,7 @@
         <ul class="navbar-nav">
           <li class="navbar-nav">
             <div class="row">
+              <!--------VERIFICO SI EL USUARIO ESTA LOGEADO------->
               <ng-container *ngIf="emailUsuario; else noIdentificado">
                 <div
                   class="col-md-9 col-sm-8 col-7 col-xl-9 col-xxl-9 text-center d-none d-sm-none d-xxl-block d-xl-block d-md-block">
@@ -96,6 +97,7 @@
                   </svg>
                 </div>
               </ng-template>
+              <!--------VERIFICO SI EL USUARIO ESTA LOGEADO FIN------->
             </div>
             <app-iniciar-sesion class="offcanvas offcanvas-end color-canvas text-white" tabindex="-1"
               id="offcanvasRightLogin" aria-labelledby="offcanvasRightLoginLabel">
