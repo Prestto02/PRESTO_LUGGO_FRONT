@@ -157,20 +157,37 @@
         <hr>
       </div>
       <!----SECCION 3---->
+
       <div class="col-md-12">
         <h4>Ajustes y Soporte</h4>
       </div>
-
-      <div class="col-md-12 cursor-item">
-        <p>Mi cuenta</p>
-      </div>
-      <div class="col-md-12 cursor-item">
-        <p>Atención al cliente</p>
-      </div>
-      <div class="col-md-12 cursor-item">
-        Cerrar Sesión
-      </div>
-
+      <!--------USUARIO IDENTIFICADO------>
+      <ng-container *ngIf="correoUsuario; else notIdentifyUser">
+        <div class="col-md-12 cursor-item">
+          <p>Mi cuenta</p>
+        </div>
+        <div class="col-md-12 cursor-item">
+          <p>Atención al cliente</p>
+        </div>
+        <div class="col-md-12 cursor-item" (click)="logoutUser();">
+          Cerrar Sesión
+        </div>
+      </ng-container>
+      <ng-template #notIdentifyUser>
+        <div class="col-md-12 cursor-item" (click)="inciarSesion()">
+          <p>Iniciar Sesión</p>
+        </div>
+        <div class="col-md-12 cursor-item" (click)="registrarme()">
+          <p>Registrarse</p>
+        </div>
+        <div class="col-md-12 cursor-item">
+          <p>Vender con Luggo</p>
+        </div>
+        <div class="col-md-12 cursor-item">
+          <p>Atención al cliente</p>
+        </div>
+      </ng-template>
+      <!--------USUARIO IDENTIFICADO FIN------>
     </div>
   </div>
 </div>

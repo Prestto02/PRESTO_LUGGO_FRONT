@@ -15,4 +15,8 @@ export class TokenService {
   getTokenEmail() {
     return localStorage.getItem('correoUsuario');
   }
+  removeToken() {
+    localStorage.removeItem('idUsuario');
+    localStorage.removeItem('correoUsuario');
+  }
 }
