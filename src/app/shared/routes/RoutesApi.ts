@@ -1,5 +1,7 @@
 export const UrlApi = {
   ApiUrl: 'https://192.168.100.15/',
+  //PERSONAS
+  getPersonaId: 'ApiPrueba/API/persona',
   persona: 'ApiPrueba/API/persona',
   //LOGIN, BUSCAR PERSONA, RESTABLECER CONTRASEÑA, CODIGO De ACTIVACION
   buscarUsuario: 'ApiPrueba/API/usuario/cambiar',
@@ -15,9 +17,9 @@ export const UrlApi = {
   //CATEGORIAS Y ARTICULOS
   categorias: 'ApiPrueba/API/categoria/listado',
   articulos: 'ApiPrueba/API/articulo',
-  verificarImg:'ApiPrueba/api/multimedia/subiendo',
-    //PAGINACION
-  paginacion:'ApiPrueba/API/articulo/listado/productos',
+  verificarImg: 'ApiPrueba/api/multimedia/subiendo',
+  //PAGINACION
+  paginacion: 'ApiPrueba/API/articulo/listado/productos',
 
   //CARRITO, BUSCAR PRODUCTO,
   traerProductosCarrito: 'ApiPrueba/API/Articulo/listado',

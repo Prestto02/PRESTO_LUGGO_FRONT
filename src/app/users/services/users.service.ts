@@ -10,6 +10,7 @@ export class UsersService {
   private urlApi = UrlApi.ApiUrl;
   private url = UrlApi.usuario; //URL API USuARIOS
   private urlPersona = UrlApi.persona; //URL API PERSONA
+  private urlPersonaOne = UrlApi.getPersonaId; //TRAER PERSONA POR ID
   constructor(private http: HttpClient) {}
 
   //METODO PARA TRAER USUARIOS
@@ -19,6 +20,9 @@ export class UsersService {
   //TRAER UN USUARIO
   getDataUserId(id: any): Observable<any> {
     return this.http.get<any>(`${this.urlApi}${this.url}/${id}`);
+  }
+  getDataPerson(id: any): Observable<any> {
+    return this.http.get<any>(`${this.urlApi}${this.urlPersona}/${id}`);
   }
   //GUARDAR USUSARIO
   /*postDataUSer(form: any): Observable<any> {

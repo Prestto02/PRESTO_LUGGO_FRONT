@@ -4,7 +4,7 @@ export const UrlFront = {
     users: 'usuarios',
     put: 'registrar/:id/:users',
     post: 'registrar',
-    perfilUsuario:'perfil-usuario'
+    perfilUsuario: 'perfil-usuario/:id',
   },
   //LOGIN
   Login: {
