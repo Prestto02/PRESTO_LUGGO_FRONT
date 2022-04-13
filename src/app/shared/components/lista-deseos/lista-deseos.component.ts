@@ -31,9 +31,10 @@ export class ListaDeseosComponent implements OnInit {
   //OBTENER LAS COLECCION DEL USUARIO
   getColeccionUser() {
     const id = this.tokenServi.getTokenId();
-    this.apiListDeseos.getAllColeccion(id).subscribe((res) => {
-      this.coleccionUsuario = res;
-    });
+    if (id)
+      this.apiListDeseos.getAllColeccion(id).subscribe((res) => {
+        this.coleccionUsuario = res;
+      });
   }
   //AGREGAR AL CARRITO
   agregarAlCarrito(id: any) {

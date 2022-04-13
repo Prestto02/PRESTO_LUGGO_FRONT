@@ -4,7 +4,6 @@ import { PositionUser } from 'src/app/shared/class/PositionUser';
 import { errorFront as message } from 'src/app/shared/dictonary/MessageErrorFront';
 import { MessageFrontEndService } from 'src/app/shared/Toasts/services/message-front-end.service';
 import { ListaDeseosComponent } from '../lista-deseos.component';
-
 import { BaseFormListaDeseos } from '../model/BaseFormListaDeseos.model';
 import { ListaDeseosService } from '../services/lista-deseos.service';
 
@@ -23,7 +22,7 @@ export class AgregarColeccionComponent implements OnInit {
     private tokenUser: TokenService, //OBTENER EL ID DEL USUARIO
     private serviListaDeseos: ListaDeseosService, //LISTA DE DESEOS
     private listaDeseosComponent: ListaDeseosComponent, //LISTA DE DESEO COMPONENTE
-    private serviMessage: MessageFrontEndService
+    private serviMessage: MessageFrontEndService //MENSAJE MESSAGE FRONTEND
   ) {}
 
   ngOnInit(): void {
