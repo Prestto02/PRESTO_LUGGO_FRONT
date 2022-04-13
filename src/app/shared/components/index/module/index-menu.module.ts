@@ -30,6 +30,9 @@ import { BaseFormProducts } from 'src/app/manager-vendedor/productos/models/Base
 import { ListaDeseosComponent } from '../../lista-deseos/lista-deseos.component';
 import { FilterPipe } from 'src/app/shared/pipes/filter.pipe';
 import { IndexProductsComponent } from '../../shared-products/index-products.component';
+import { AgregarColeccionComponent } from '../../lista-deseos/agregar-coleccion/agregar-coleccion.component';
+import { ErrorsExtensionsModule } from '../../errors/errors-module.module';
+import { BaseFormListaDeseos } from '../../lista-deseos/model/BaseFormListaDeseos.model';
 
 @NgModule({
   declarations: [
@@ -49,6 +52,7 @@ import { IndexProductsComponent } from '../../shared-products/index-products.com
     SharedProductsComponent, //SHARED PRODUCTS
     IndexProductsComponent, //INDEX PRODUCTS SHARED
     ListaDeseosComponent, //LISTA DE DESEOS
+    AgregarColeccionComponent, //AGREGAR COLECCION DE LA LISTA DE DESEOS
     SectionServiciosComponent,
     CarritoItemsComponent,
     SubMenuCategoriasComponent,
@@ -62,11 +66,17 @@ import { IndexProductsComponent } from '../../shared-products/index-products.com
     IndexRoutingModule,
     ReactiveFormsModule,
     FormsModule,
+    ErrorsExtensionsModule, //ERRORES MODULE
     HttpClientModule,
 
     InfiniteScrollModule,
   ],
-  providers: [Menu2Component, BaseFormProducts, CarritoItemsComponent],
+  providers: [
+    Menu2Component,
+    BaseFormProducts,
+    CarritoItemsComponent,
+    BaseFormListaDeseos,
+  ],
   exports: [MenuComponent],
 })
 export class IndexMenuModule {}

@@ -1,7 +1,10 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
-import { MessageFrontEndService } from 'src/app/shared/services/message-front-end.service';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { MessageFrontEndService } from 'src/app/shared/Toasts/services/message-front-end.service';
 import { errorFront as message } from 'src/app/shared/dictonary/MessageErrorFront';
+import { HttpClient } from '@angular/common/http';
+import { UrlApi } from 'src/app/shared/routes/RoutesApi';
+
 @Injectable({
   providedIn: 'root',
 })
@@ -9,7 +12,10 @@ export class ListaDeseosService {
   private ListaDeseosItem = new BehaviorSubject<Array<any>>([]); //CREO El behaviorSUBJECT
   listaDeseos = this.ListaDeseosItem.asObservable(); //OBTENGO EL BEHAVIORSUBJECT
   addListaDeseosProdut: Array<any> = []; //ARREGLO DE CARRITO DE PRODUCTOS
-  constructor(private messageFront: MessageFrontEndService) {}
+  constructor(
+    private messageFront: MessageFrontEndService,
+    private http: HttpClient
+  ) {}
 
   //AGREGAR LOS PRODUCTOS SCROLL INFINITO
   addListaDeseos(dataObj: any) {
@@ -27,6 +33,23 @@ export class ListaDeseosService {
         message.Success.productoAgregado
       ); //OK SE AGREGO EL PRODUCTO
     }
+  }
+  getAllColeccion(id: any): Observable<any> {
+    return this.http.get<any>(`${UrlApi.ApiUrl}${UrlApi.traerColeccion}${id}`);
+  }
+  //AGREGAR NUEVA COLECCION
+  postListaColeccion(form: any): Observable<any> {
+    return this.http.post<any>(
+      `${UrlApi.ApiUrl}${UrlApi.coleccionListaDeseos}`,
+      form
+    );
+  }
+  //EDITAR COLECCION
+  putListaColeccion(form: any): Observable<any> {
+    return this.http.post<any>(
+      `${UrlApi.ApiUrl}${UrlApi.putColeccionListaDeseos}`,
+      form
+    );
   }
 
   eliminarListaDeseos(id: any) {

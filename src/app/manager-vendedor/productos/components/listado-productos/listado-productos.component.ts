@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { EditRegisterModalService } from 'src/app/shared/components/modals/services/edit-register-modal.service';
 import { BaseFormProducts } from '../../models/BaseformProduct';
 import { ProductsService } from '../../services/products.service';
-import { CreateProductsComponent } from '../create-products/create-products.component';
 
 @Component({
   selector: 'app-listado-productos',

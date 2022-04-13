@@ -13,6 +13,7 @@ export class Menu2Component implements OnInit {
   ocultarMenu: boolean = false;
   subCategorias: any = [];
   idUsuario: any;
+  nombreCategoria = '';
   correoUsuario: any;
   constructor(
     private router: Router,
@@ -42,9 +43,9 @@ export class Menu2Component implements OnInit {
   }
   //OBTENGO POSICION DEL ARRAY
   obtenerIndexMenu(index: any) {
-    this.apiCategoria.getIdCategoriaHijo(index).subscribe((res) => {
+    this.nombreCategoria = index.name; //ASIGNO EL NOMBRE PADRE DE LA CATEGORIA
+    this.apiCategoria.getIdCategoriaHijo(index.id).subscribe((res) => {
       this.subCategorias = res;
-      console.log(this.subCategorias);
     });
   }
   //IR A MI PERFIL

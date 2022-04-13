@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { ProductsService } from 'src/app/manager-vendedor/productos/services/products.service';
 import { errorFront as message } from 'src/app/shared/dictonary/MessageErrorFront';
-import { MessageFrontEndService } from '../services/message-front-end.service';
+import { MessageFrontEndService } from '../Toasts/services/message-front-end.service';
 
 @Injectable({ providedIn: 'root' })
 export class ValidarYTransformarImagen {

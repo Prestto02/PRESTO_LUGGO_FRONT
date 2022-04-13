@@ -18,7 +18,11 @@ export const UrlApi = {
   categorias: 'ApiPrueba/API/categoria/listado',
   articulos: 'ApiPrueba/API/articulo',
   verificarImg: 'ApiPrueba/api/multimedia/subiendo',
-  categoriasrHijos:'ApiPrueba/API/categoria/categoria/hijos/',
+  categoriasrHijos: 'ApiPrueba/API/categoria/categoria/hijos/',
+  //COLECCION PARA LA LISTA DE DESEOS
+  coleccionListaDeseos: 'ApiPrueba/api/ListaDeseos',
+  traerColeccion: 'ApiPrueba/api/ListaDeseos/',
+  putColeccionListaDeseos: 'ApiPrueba/api/detalle_lista',
   //PAGINACION
   paginacion: 'ApiPrueba/API/articulo/listado/productos',
 
