@@ -43,9 +43,12 @@ export class PerfilUsersComponent implements OnInit {
   }
   //TRAER LA PERSONA
   getOneIdPersona() {
-    this.serviUser.getDataPerson(this.id).subscribe((res) => {
-      this.formB.setDatForm(res);
-    });
+    if (this.id)
+      this.serviUser.getDataPerson(this.id).subscribe((res) => {
+        this.formB.setDatForm(res);
+      });
+    else
+      this.route.navigateByUrl(`${UrlFront.Menu.menu}/${UrlFront.Menu.index}`);
   }
   //VERIFICAR SI EXISTE EL ID
   verifcarId() {

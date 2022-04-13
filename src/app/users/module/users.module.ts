@@ -21,6 +21,6 @@ import { AlifeFileToBase64Module } from 'alife-file-to-base64';
     ErrorsExtensionsModule, //ERRORES DE FORMULARIO REACTIVO
     AlifeFileToBase64Module, //BASE 64 IMG
   ],
-  providers: [BaseUsersForm],
+  providers: [BaseUsersForm, PerfilUsersComponent],
 })
 export class UsersModule {}
