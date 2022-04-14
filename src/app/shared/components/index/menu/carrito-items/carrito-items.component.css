@@ -28,6 +28,9 @@
 .text-color {
   color: #56ffc2;
 }
+.text-color-header {
+  color: #a3e9ff;
+}
 
 .cabecera-tamano {
   height: 40px;
@@ -45,7 +48,7 @@
   color: white;
 }
 
-input[type="number"]::-webkit-inner-spin-button
+input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;

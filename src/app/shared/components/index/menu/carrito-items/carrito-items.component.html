@@ -6,7 +6,7 @@
       </div>
       <div class="col-md-12 col-xl-12 col-xxl-12 col-sm-12 col-12 cabecera-tamano">
         <div class="row">
-          <div class="col-md-4 col-sm-4 col-xxl-4 col-xl-4 col-4">
+          <div class="col-md-4 col-sm-4 col-xxl-4 col-xl-4 col-4 text-color-header">
             <svg width="40" height="40" viewBox="0 0 27 22" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path
                 d="M13.3179 2C13.9179 2 14.4179 2.5 14.4179 3L15.9179 16.8C16.0179 17.2 15.7179 17.5 15.6179 17.7C15.5179 17.8 15.2179 18 14.8179 18H3.31788C2.91788 18 2.61788 17.8 2.51788 17.7C2.41788 17.6 2.11788 17.3 2.21788 16.8L3.61788 3C3.71788 2.4 4.11788 2 4.71788 2H13.3179Z"
@@ -21,7 +21,7 @@
             Carrito
           </div>
 
-          <div class="col-md-4 col-sm-4 col-xxl-4 col-xl-4 col-4 ">
+          <div class="col-md-4 col-sm-4 col-xxl-4 col-xl-4 col-4 text-color-header">
             <svg width="50" height="44" viewBox="0 0 35 33" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path
                 d="M4 8H26V20C26 21.8856 26 22.8284 25.4142 23.4142C24.8284 24 23.8856 24 22 24H8C6.11438 24 5.17157 24 4.58579 23.4142C4 22.8284 4 21.8856 4 20V8Z"
@@ -45,7 +45,7 @@
     <div class="col-md-12 col-xl-12 col-xxl-12 col-sm-12 col-12 text-end mt-auto">
       <hr>
     </div>
-    <div class="container col-md-12 col-xl-12 col-xxl-12 col-sm-12 col-12 mt-auto mx-3">
+    <div class="container col-md-12 col-xl-12 col-xxl-12 col-sm-12 col-12 mt-auto">
       <div class="container">
         <div class="row" *ngFor="let product of productoItems">
           <div class="col-md-4 col-sm-4 col-xl-4 col-xxl-4 col-4">
@@ -67,7 +67,7 @@
                     </p>
                   </ng-template>
                   <div class="col-xl-7 text-end">
-                    <div class="btn-group col-md-12" role="group" aria-label="Button group with nested dropdown">
+                    <div class="btn-group col-xl-11" role="group" aria-label="Button group with nested dropdown">
                       <input type="number" max=9 min=1 id="items" (change)="verifyChange($event,product.id_artic)"
                         class="text text-center col-md-8 border rounded diseno-input"
                         style="height: 40px; font-size: 18px;" [value]="product.item" />
@@ -80,6 +80,7 @@
                         </span>
                       </div>
                     </div>
+                    <!------------<button (click)="removeItemCarrito(product.id_artic)">x</button> ------>
                   </div>
                 </div>
               </div>
@@ -88,7 +89,7 @@
               <p class="text text-info text-end">{{product.codigo}}</p>
             </div>
           </div>
-          <div class="col-md-12 col-sm-12 col-xl-12 col-xxl-12 col-12 mt-3">
+          <div class="col-md-12 col-sm-12 col-xl-12 col-xxl-12 col-12">
             <hr>
           </div>
         </div>

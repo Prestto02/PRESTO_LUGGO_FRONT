@@ -75,4 +75,9 @@ export class CarritoItemsComponent implements OnInit {
         return res;
       });
   }
+  //ELIMINAR DE LA LISTA DEL CARRITO
+  removeItemCarrito(id: any) {
+    this.apiServi.eliminarListaDeseos(id);
+    this.carritoTotal(); //TOTAL DE PRODUCTOS
+  }
 }

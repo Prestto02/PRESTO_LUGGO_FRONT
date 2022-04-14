@@ -59,4 +59,9 @@ export class CarritoItemsService {
       (res) => res.id_artic === idProduct.id_artic
     );
   }
+  //ELIMINAR DE LA LISTA DEL CARRITO
+  eliminarListaDeseos(id: any) {
+    const data = this.addCarritoProduct.findIndex((res) => res.id_artic === id);
+    this.addCarritoProduct.splice(data, 1); //ELIMINO LA COINCIDENCIA QUE ENCONTRO
+  }
 }
