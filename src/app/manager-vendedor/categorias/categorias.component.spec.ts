@@ -1,6 +1,8 @@
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { ReactiveFormsModule } from '@angular/forms';
 import { CategoriasComponent } from './categorias.component';
+import { FilterCategorias } from './pipes/FilterCategorias.pipe';
 
 describe('CategoriasComponent', () => {
   let component: CategoriasComponent;
@@ -8,9 +10,9 @@ describe('CategoriasComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CategoriasComponent ]
-    })
-    .compileComponents();
+      imports: [HttpClientTestingModule, ReactiveFormsModule],
+      declarations: [CategoriasComponent, FilterCategorias],
+    }).compileComponents();
   });
 
   beforeEach(() => {

@@ -1,4 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastConfig } from '../../Toasts/ToastsConfig';
 
 import { CompararProductosComponent } from './comparar-productos.component';
 
@@ -8,9 +10,9 @@ describe('CompararProductosComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CompararProductosComponent ]
-    })
-    .compileComponents();
+      imports: [BrowserAnimationsModule, ToastConfig],
+      declarations: [CompararProductosComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

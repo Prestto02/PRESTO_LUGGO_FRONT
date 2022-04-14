@@ -8,7 +8,7 @@ import { UrlFront } from '../../routes/RoutesFront';
   styleUrls: ['./activar-cuenta.component.css'],
 })
 export class ActivarCuentaComponent implements OnInit {
-  public emailUser: any;
+  public emailUser?: any;
   constructor(private route: Router, private _route: ActivatedRoute) {
     this.emailUser = this._route.snapshot.paramMap.get('user'); //OBTENGO EL USUARIO PARA LA ACTIVACION
   }

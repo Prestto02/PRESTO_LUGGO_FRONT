@@ -1,5 +1,5 @@
 <div class="input-group mt-4">
-  <button type="submit" [disabled]="formB.invalid || load" class="form-control btn btn-iniciar-sesion">
+  <button type="submit" [disabled]="formB?.invalid || load" class="form-control btn btn-iniciar-sesion">
     <ng-container *ngIf="load; else mensaje">
       <div class="spinner-border text-secondary" role="status">
         <span class="visually-hidden">Loading...</span>

@@ -1,4 +1,4 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { UrlApi } from '../../../shared/routes/RoutesApi';
@@ -17,9 +17,7 @@ export class ProductsService {
     return this.http.get<any>(`${UrlApi.ApiUrl}${UrlApi.articulos}`);
   }
   getDataProductos(): Observable<any> {
-    return this.http.get<any>(
-      `${UrlApi.ApiUrl}${UrlApi.paginacion}`
-    );
+    return this.http.get<any>(`${UrlApi.ApiUrl}${UrlApi.paginacion}`);
   }
   //VERIFICAR ARCHIVO
   postVerifyImg(archivo: any): Observable<any> {

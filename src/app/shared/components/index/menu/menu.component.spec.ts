@@ -1,4 +1,8 @@
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ReactiveFormsModule } from '@angular/forms';
+import { RouterTestingModule } from '@angular/router/testing';
+import { ToastConfig } from 'src/app/shared/Toasts/ToastsConfig';
 
 import { MenuComponent } from './menu.component';
 
@@ -8,9 +12,14 @@ describe('MenuComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ MenuComponent ]
-    })
-    .compileComponents();
+      imports: [
+        RouterTestingModule,
+        ReactiveFormsModule,
+        HttpClientTestingModule,
+        ToastConfig,
+      ],
+      declarations: [MenuComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

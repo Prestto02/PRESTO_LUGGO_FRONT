@@ -1,4 +1,7 @@
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
+import { Menu2Component } from '../menu2/menu2.component';
 
 import { SectionCarouselComponent } from './section-carousel.component';
 
@@ -8,9 +11,10 @@ describe('SectionCarouselComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SectionCarouselComponent ]
-    })
-    .compileComponents();
+      imports: [RouterTestingModule,HttpClientTestingModule],
+      declarations: [SectionCarouselComponent, Menu2Component],
+      providers: [Menu2Component],
+    }).compileComponents();
   });
 
   beforeEach(() => {

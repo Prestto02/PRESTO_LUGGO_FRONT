@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
 
 import { IniciarSesionComponent } from './iniciar-sesion.component';
 
@@ -8,9 +9,9 @@ describe('IniciarSesionComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ IniciarSesionComponent ]
-    })
-    .compileComponents();
+      imports: [RouterTestingModule],
+      declarations: [IniciarSesionComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

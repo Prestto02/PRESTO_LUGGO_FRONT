@@ -67,10 +67,9 @@ import { CompararProductosComponent } from '../../comparar-productos/comparar-pr
     CommonModule,
     IndexRoutingModule,
     ReactiveFormsModule,
+    HttpClientModule,
     FormsModule,
     ErrorsExtensionsModule, //ERRORES MODULE
-    HttpClientModule,
-
     InfiniteScrollModule,
   ],
   providers: [

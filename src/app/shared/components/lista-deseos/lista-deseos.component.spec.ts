@@ -1,4 +1,7 @@
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ToastConfig } from '../../Toasts/ToastsConfig';
+import { CarritoItemsComponent } from '../index/menu/carrito-items/carrito-items.component';
 
 import { ListaDeseosComponent } from './lista-deseos.component';
 
@@ -8,9 +11,10 @@ describe('ListaDeseosComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ListaDeseosComponent ]
-    })
-    .compileComponents();
+      imports: [ToastConfig, HttpClientTestingModule],
+      declarations: [ListaDeseosComponent, CarritoItemsComponent],
+      providers: [CarritoItemsComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {
