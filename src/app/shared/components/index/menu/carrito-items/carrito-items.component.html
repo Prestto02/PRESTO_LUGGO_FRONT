@@ -73,8 +73,9 @@
                   </ng-template>
                   <div class="col-xl-7 text-end">
                     <div class="btn-group col-md-12" role="group" aria-label="Button group with nested dropdown">
-                      <span class="text text-center col-md-8 border rounded"
-                        style="height: 40px; font-size: 18px;">{{product.item}}</span>
+                      <input type="number" max=9 min=1 id="items" (change)="verifyChange($event,product.id_artic)"
+                        class="text text-center col-md-8 border rounded diseno-input"
+                        style="height: 40px; font-size: 18px;" [value]="product.item" />
                       <div class="btn-group-vertical rounded" aria-label="Vertical radio toggle button group">
                         <span class="btn-increment text-center" (click)="increment(product.id_artic)">
                           <img src="../../../../../../assets/img/icons/Chevron_Right.png" alt="">

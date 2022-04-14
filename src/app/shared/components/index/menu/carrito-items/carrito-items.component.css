@@ -16,11 +16,11 @@
   background-color: rgba(32, 32, 57, 0.94);
 }
 
-.text-color{
+.text-color {
   color: #56ffc2;
 }
 
-.cabecera-tamano{
+.cabecera-tamano {
   height: 40px;
 }
 .text-truncate-text {
@@ -29,4 +29,17 @@
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
+}
+
+.diseno-input {
+  background-color: #ffffff00;
+  color: white;
+}
+input[type="number"]::-webkit-inner-spin-button
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
 }

@@ -20,6 +20,17 @@ export class CarritoItemsComponent implements OnInit {
       this.apiServi.addProductCarrito(res); //GUARDO ESE PRODUCTO EN UN ARREGLO BEHAVIOR
     });
   }
+  //OBTENER LOS ITEMS DEL INPUT
+  verifyChange(e: any, id: any) {
+    if (e.target.value <= 0) {
+      e.target.value = 1;
+    }
+    const res = this.buscarProductoId(id); //OBTENGO EL ID DEL PRODUCTO
+    res[0].item = e.target.value;
+    res[0].subtotal = res[0].precio * res[0].item; //MULTIPLICO CON El ITEM Y EL PRECIO
+    this.carritoTotal();
+  }
+
   //ME SUSCRIBO PARA GUARDAR LA LISTA DE PRODUCTOS QUE TENGO
   getItemCarrito() {
     this.apiServi.productCarrito.subscribe((res) => {
@@ -35,32 +46,33 @@ export class CarritoItemsComponent implements OnInit {
     this.productoItems.map((res: any) => {
       const subtotal = res.precio * res.item;
       this.totalAPagar = this.totalAPagar + subtotal;
-      console.log(this.totalAPagar);
     });
   }
 
   //INCREMENTAR ITEMS
   increment(id: any) {
-    this.productoItems
-      .filter((elements: any) => elements.id_artic === id) //BUSCO EL ELEMENTO
-      .map((res: any) => {
-        //RECORRO EL ElEMENTO Y LE SUMO 1 AL CARRITO
-        res.item = res.item + 1;
-        res.subtotal = res.precio * res.item; //MULTIPLICO CON El ITEM Y EL PRECIO
-        this.carritoTotal();
-      });
+    const res = this.buscarProductoId(id); //BUSCO EL PRODUCTO ID
+    res[0].item++; //HAGO LA SUMA
+    res[0].subtotal = res[0].precio * res[0].item; //MULTIPLICO CON El ITEM Y EL PRECIO
+    this.carritoTotal();
   }
   //DISMINUIR ITEMS
   descrement(id: any) {
-    this.productoItems
-      .filter((elements: any) => elements.id_artic === id) //BUSCO EL ELEMENTO
+    const res = this.buscarProductoId(id);
+    //SI ES MAYOR A 0 LE RESTO CASO CONTRARIO NO HAGO NADA
+    if (res[0].item > 1) {
+      res[0].item = res[0].item - 1;
+      res[0].subtotal = res[0].precio * res[0].item;
+      this.carritoTotal();
+    }
+  }
+
+  //BUSCAR EL ID DEL PRODUCTO DEL ARREGLO ASIGNADO DEL CARRITO
+  buscarProductoId(id: any) {
+    return this.productoItems
+      .filter((elements: any) => elements.id_artic === id)
       .map((res: any) => {
-        //SI ES MAYOR A 0 LE RESTO CASO CONTRARIO NO HAGO NADA
-        if (res.item > 1) {
-          res.item = res.item - 1;
-          res.subtotal = res.precio * res.item;
-          this.carritoTotal();
-        }
+        return res;
       });
   }
 }
