@@ -3,9 +3,8 @@ import { ToastrModule, ToastContainerModule } from 'ngx-toastr';
 export const ToastConfig = [
   BrowserAnimationsModule,
   ToastrModule.forRoot({
-    timeOut: 5000,
+    timeOut: 3000,
     positionClass: 'toast-bottom-right',
-    preventDuplicates: true,
     progressBar: true,
     progressAnimation: 'increasing',
     closeButton: true,

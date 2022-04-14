@@ -33,8 +33,15 @@ export class ListaDeseosComponent implements OnInit {
     const id = this.tokenServi.getTokenId();
     if (id)
       this.apiListDeseos.getAllColeccion(id).subscribe((res) => {
+        console.log(res);
         this.coleccionUsuario = res;
       });
+  }
+  //OBTENER LA COLECCION DEL USUARIO POR ID
+  obtenerColeccionId(id: any) {
+    this.apiListDeseos.getColeccionId(id).subscribe((res) => {
+      this.dataListDeseos = res;
+    });
   }
   //AGREGAR AL CARRITO
   agregarAlCarrito(id: any) {
@@ -44,7 +51,7 @@ export class ListaDeseosComponent implements OnInit {
   //TRAER TODO LO QUE SE OBTUVO DE LA LISTA DE DESEOS
   getDataListDeseos() {
     this.apiListDeseos.listaDeseos.subscribe((res) => {
-      this.dataListDeseos = res;
+      this.dataListDeseos = res; //ASIGNO LO DATOS A MI DATA LISTDESEOS
     });
   }
   //ELIMINAR DE LA LISTA DE DESEOS

@@ -51,7 +51,12 @@ export class ListaDeseosService {
       form
     );
   }
-
+  //TRAER COLECCION POR ID
+  getColeccionId(id: any): Observable<any> {
+    return this.http.get<any>(
+      `${UrlApi.ApiUrl}${UrlApi.traerColeccionPorId}${id}`
+    );
+  }
   eliminarListaDeseos(id: any) {
     const data = this.addListaDeseosProdut.findIndex((res) => res.id === id);
     this.addListaDeseosProdut.splice(data, 1); //ELIMINO LA COINCIDENCIA QUE ENCONTRO

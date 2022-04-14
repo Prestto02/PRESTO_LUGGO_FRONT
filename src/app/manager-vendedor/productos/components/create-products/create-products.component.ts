@@ -61,4 +61,8 @@ export class CreateProductsComponent implements OnInit {
       this.formB.limpiarForm();
     });
   }
+  //OBTENER EL COLOR DEL INPUT
+  evento(e: any) {
+    console.log(e.target.value);
+  }
 }

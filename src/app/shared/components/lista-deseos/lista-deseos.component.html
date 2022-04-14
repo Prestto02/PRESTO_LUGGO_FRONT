@@ -41,12 +41,12 @@
             </div>
           </div>
         </div>
-        <!--------BOTONES DE PRODUCTOS--------->
+        <!--------BOTONES DE COLECCION DE USUARIOS--------->
         <ng-container *ngIf="emailUsuario">
           <div class="col-xl-6 col-xxl-6 col-12 col-sm-6 col-md-6">
             <div class="row">
               <div class="col-xl-3 col-xxl-3 col-sm-6 col-6 col-md-6 mt-3" *ngFor="let coleccion of coleccionUsuario">
-                <button class="button-categorias">
+                <button class="button-categorias" (click)="obtenerColeccionId(coleccion.id_lista)">
                   {{coleccion.nombre}}
                 </button>
               </div>
@@ -152,7 +152,7 @@
                   <div class="row">
                     <div
                       [class]="filasDeDos?'text-end col-xl-9 col-xl-9 col-9 col-sm-9':'col-xl-7 col-12 col-sm-12 col-xxl-7 col-md-7 text-center'">
-                      <p class="precio"> <b>${{listaDeseos.precio}}</b> + IVA</p>
+                      <p class="precio"> <b>${{listaDeseos.precio}}</b></p>
                     </div>
                     <div
                       [class]="filasDeDos?'col-xl-10 col-10 col-sm-10 col-xxl-10 text-end':'col-10 col-md-7 col-sm-10 col-xl-7 col-xxl-7 text-end'">
@@ -200,7 +200,7 @@
 <!------------MODAL PARA AGREGAR COLECCION------------->
 <app-agregar-coleccion></app-agregar-coleccion>
 <!--------SECCION DE SERVICIOS---------->
-<section >
+<section>
   <app-section-servicios></app-section-servicios>
 </section>
 <!-------SECCION DE FOOTER--------->

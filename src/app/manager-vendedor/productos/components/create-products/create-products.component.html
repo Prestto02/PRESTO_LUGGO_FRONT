@@ -86,6 +86,8 @@
                 <!-----CATEGORIAS---->
                 <app-categorias></app-categorias>
                 <!----INPUT DE IMAGENES---->
+                <!------COLOR------->
+                <input type="color" (change)="evento($event)" />
                 <div class="mb-3">
                   <label for="formFile" class="form-label">Seleccione una imagen</label>
                   <input class="form-control" type="file" id="formFile" alife-file-to-base64
