@@ -48,5 +48,13 @@ html {
 }
 
 .modificColor.toast-success {
-  background-color: #1a3f75;
+  background-color: #12963a;
 }
+
+/* .modificColor.toast-success .toast-title {
+  color: black;
+}
+.modificColor.toast-success .toast-message {
+  color: black;
+}
+ */
