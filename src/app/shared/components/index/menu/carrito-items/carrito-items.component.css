@@ -2,6 +2,13 @@
   width: 40px;
   height: 20px;
   background-color: #7549fe;
+  border-radius: 0px 5px 0px 0px;
+}
+.btn-descrement {
+  width: 40px;
+  height: 20px;
+  background-color: #7549fe;
+  border-radius: 0px 0px 5px 0px;
 }
 .container-item {
   overflow: auto;
@@ -11,7 +18,9 @@
 .btn-increment:hover {
   background-color: #5d38ca;
 }
-
+.btn-descrement:hover {
+  background-color: #5d38ca;
+}
 .color-cabecera {
   background-color: rgba(32, 32, 57, 0.94);
 }
@@ -35,6 +44,7 @@
   background-color: #ffffff00;
   color: white;
 }
+
 input[type="number"]::-webkit-inner-spin-button
 input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;
