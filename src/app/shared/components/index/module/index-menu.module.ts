@@ -33,6 +33,7 @@ import { IndexProductsComponent } from '../../shared-products/index-products.com
 import { AgregarColeccionComponent } from '../../lista-deseos/agregar-coleccion/agregar-coleccion.component';
 import { ErrorsExtensionsModule } from '../../errors/errors-module.module';
 import { BaseFormListaDeseos } from '../../lista-deseos/model/BaseFormListaDeseos.model';
+import { CompararProductosComponent } from '../../comparar-productos/comparar-productos.component';
 
 @NgModule({
   declarations: [
@@ -53,6 +54,7 @@ import { BaseFormListaDeseos } from '../../lista-deseos/model/BaseFormListaDeseo
     IndexProductsComponent, //INDEX PRODUCTS SHARED
     ListaDeseosComponent, //LISTA DE DESEOS
     AgregarColeccionComponent, //AGREGAR COLECCION DE LA LISTA DE DESEOS
+    CompararProductosComponent,
     SectionServiciosComponent,
     CarritoItemsComponent,
     SubMenuCategoriasComponent,

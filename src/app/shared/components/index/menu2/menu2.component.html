@@ -59,8 +59,9 @@
   <div class="offcanvas-body sidenav-card">
     <div class="row text-white " id="offcanvasLabel">
       <!-----CABEZERA Y VERIFICO SI EL USUARIO ESTA LOGGEADO---->
+
       <ng-container *ngIf="correoUsuario; else notIdentify">
-        <div class="col-md-1 col-xl-1 col-xxl-1 col-1 col-sm-1 mt-2 ">
+        <div class="col-md-1 col-xl-1 col-xxl-1 col-1 col-sm-1 mt-2">
           <svg width="27" height="30" viewBox="0 0 27 30" fill="none" xmlns="http://www.w3.org/2000/svg">
             <circle cx="13.375" cy="10.625" r="4.125" fill="white" />
             <circle cx="13.375" cy="13.375" r="12.375" stroke="white" stroke-width="2" />

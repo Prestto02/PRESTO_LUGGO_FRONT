@@ -33,6 +33,10 @@ export const UrlFront = {
   ListaDeseos: {
     listaDeseos: 'lista-de-deseos',
   },
+  //COMPARAR PRODUCTOS
+  CompararProductos: {
+    compararProducto: 'comparar-productos',
+  },
   //MANAGER VENDEDOR
   Manager: {
     managerVendedor: 'manager',

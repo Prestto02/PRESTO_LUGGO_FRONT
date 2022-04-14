@@ -1,9 +1,11 @@
 body {
   transition: background-color 0.5s;
 }
+
 .abrir {
   cursor: pointer;
 }
+
 .color-canvas {
   background-color: rgba(32, 32, 57, 0.94);
 }
@@ -17,12 +19,15 @@ body {
   z-index: 1;
   transition: 0.7s;
 }
+
 * {
   font-family: Cardium B-Medium;
 }
+
 .cursor-item {
   cursor: pointer;
 }
+
 @media screen and (max-height: 450px) {
   .sidenav {
     padding-top: 15px;
