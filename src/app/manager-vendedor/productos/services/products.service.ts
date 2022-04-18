@@ -16,6 +16,7 @@ export class ProductsService {
   getDataArticulos(): Observable<any> {
     return this.http.get<any>(`${UrlApi.ApiUrl}${UrlApi.articulos}`);
   }
+  //TRAER TODOS LOS PRODUCTOS POR PAGINACION
   getDataProductos(): Observable<any> {
     return this.http.get<any>(`${UrlApi.ApiUrl}${UrlApi.paginacion}`);
   }

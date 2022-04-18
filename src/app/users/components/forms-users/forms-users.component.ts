@@ -12,7 +12,7 @@ import { UsersService } from '../../services/users.service';
 export class FormsUsersComponent implements OnInit {
   public idUsers: any;
   public emailUsers: any;
-  error = false;
+  load = false;
   constructor(
     public formB: BaseUsersForm,
     private router: Router,
@@ -30,24 +30,18 @@ export class FormsUsersComponent implements OnInit {
   }
   //ENVIAR FORMULARIO POR PUT
   submit() {
-    this.error = false;
+    this.load = false;
     const users = this.formB.getDataForm(
       this.position.latitud,
       this.position.longitud
     );
-    this.apiService.postDataUser(users).subscribe(
-      (res) => {
-        this.router.navigate([
-          `/${UrlFront.ActivarCuenta.cuenta}/${UrlFront.ActivarCuenta.mensajeAlCorreo}`,
-          this.emailUsers,
-        ]); //enviaR A lA ruTA DE MEnsajE DE CORREO Y EL EMAIL
-        console.log(res);
-      },
-      (err) => {
-        this.error = true;
-        console.log(err);
-      }
-    );
+    this.apiService.postDataUser(users).subscribe((res) => {
+      this.load = true;
+      this.router.navigate([
+        `/${UrlFront.ActivarCuenta.cuenta}/${UrlFront.ActivarCuenta.mensajeAlCorreo}`,
+        this.emailUsers,
+      ]); //ENVIAR A LA RUTA DE MENSAJE DE CORREO Y EL EMAIL
+    });
   }
   //LIMPIAR FORMULARIO
   limpiar() {

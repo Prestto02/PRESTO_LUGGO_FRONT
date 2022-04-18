@@ -4,6 +4,7 @@ import { Pipe, PipeTransform } from '@angular/core';
   name: 'filter',
 })
 export class FilterPipe implements PipeTransform {
+  //FILTRO PARA LA LISTA DE DESEOS
   transform(value: any, arg: any): any {
     if (arg === '' || arg.length < 2) return value; //PREGUNTO SI ES VACIO O TIENE MENOS 2 CARACTERES NO HACER NADA
     const resultPost = [];

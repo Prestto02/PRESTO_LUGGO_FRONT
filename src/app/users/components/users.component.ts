@@ -14,13 +14,8 @@ export class UsersComponent implements OnInit {
   }
   //TRAER A TODOS LOS USUARIOS
   getDataUsers() {
-    this.apiServices.getDataUser().subscribe(
-      (res: any) => {
-        console.log(res.value);
-      },
-      (err) => {
-        console.log(err);
-      }
-    );
+    this.apiServices.getDataUser().subscribe((res: any) => {
+      console.log(res.value);
+    });
   }
 }

@@ -154,7 +154,7 @@
           </div>
         </div>
         <div class="text-center py-3">
-          <button type="submit" class="btn btn-outline-primary" [disabled]="formB.formUsers.invalid">Registrar</button>
+          <app-buttons-load [formB]="formB.formUsers" [valueButton]="'Registrar'" [load]="load"></app-buttons-load>
           <button type="button" (click)="limpiar();" class="btn btn-outline-warning mx-5">Limpiar</button>
           <a (click)="regresar();" class="btn btn-outline-danger">Regresar</a>
         </div>
@@ -162,11 +162,11 @@
     </div>
   </div>
 </div>
-<div class="col-md-3 col-3 col-sm-3 col-xl-3 col-xxl-3 ms-auto top-0 end-0 p-3">
+<!-- <div class="col-md-3 col-3 col-sm-3 col-xl-3 col-xxl-3 ms-auto top-0 end-0 p-3">
   <div class="row">
     <app-errors-server [errors]="error" message="Hubo un error en el servidor intentelo mas tarde">
       <br><br>
       <ng-content></ng-content>
     </app-errors-server>
   </div>
-</div>
+</div> -->

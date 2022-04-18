@@ -13,7 +13,6 @@ import { LoginService } from '../../services/login.service';
 export class RegistrarComponent implements OnInit {
   public urlapi = UrlApi.loginFacebook;
   error = false; //ERORES
-  messageError = ''; //MENSAJEDEERRORES
   load = false; //LOAD
   sugerencias = false; //SUGERENCIAS
   constructor(
