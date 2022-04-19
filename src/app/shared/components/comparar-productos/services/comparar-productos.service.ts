@@ -28,7 +28,9 @@ export class CompararProductosService {
       ); //OK SE AGREGO EL PRODUCTO
     }
   }
-  eliminarListaDeseos(id: any) {
+
+  //ELIMINAR LISTA DE COMPARAR PRODUCTOS
+  eliminarListaProducto(id: any) {
     const data = this.addListProduct.findIndex((res) => res.id === id);
     this.addListProduct.splice(data, 1); //ELIMINO LA COINCIDENCIA QUE ENCONTRO
   }

@@ -18,10 +18,10 @@ export const UrlApi = {
   loginMicrosoft: '',
 
   //CATEGORIAS Y ARTICULOS
-  categorias: 'ApiPrueba/API/categoria/listado',
+  categorias: 'ApiPrueba/api/Familia/padres',
   articulos: 'ApiPrueba/API/articulo',
   verificarImg: 'ApiPrueba/api/multimedia/subiendo',
-  categoriasrHijos: 'ApiPrueba/API/categoria/categoria/hijos/',
+  categoriasrHijos: 'ApiPrueba/api/Familia/hijos/',
 
   //COLECCION PARA LA LISTA DE DESEOS
   coleccionListaDeseos: 'ApiPrueba/api/ListaDeseos',

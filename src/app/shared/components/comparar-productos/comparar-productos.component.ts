@@ -13,7 +13,7 @@ export class CompararProductosComponent implements OnInit {
   ngOnInit(): void {
     this.getDataCompararProduct();
   }
-
+  //TRAER LOS PRODUCTOS COMPARADOS
   getDataCompararProduct() {
     this.serviComparar.listProductC.subscribe((res) => {
       console.log(res);
