@@ -8,15 +8,14 @@ import { CategoriasService } from 'src/app/manager-vendedor/productos/services/c
 })
 export class SubMenuCategoriasComponent implements OnInit {
   @Input('ItemsSubCategoria') subCategoriaItems: any | null = null;
-  categoriasHijosItems: any[] = [];
   constructor(private apiCategorias: CategoriasService) {}
 
   ngOnInit(): void {}
 
   getHijosCategorias(id: any) {
     this.apiCategorias.getIdCategoriaHijo(id).subscribe((res) => {
-      this.subCategoriaItems = null;
-      this.categoriasHijosItems = res;
+      //this.subCategoriaItems = null;
+      this.subCategoriaItems = res;
     });
   }
 }
