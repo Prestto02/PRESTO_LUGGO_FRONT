@@ -42,5 +42,6 @@ export const UrlFront = {
     managerVendedor: 'manager',
     vendedor: 'vendedor',
     listadoProductos: 'productos/listado',
+    dashborad: 'dashboard',
   },
 };

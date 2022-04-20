@@ -5,6 +5,9 @@
   background: white;
   border-left: 1px;
 }
-.input-border{
+.input-border {
   border-right: 0px;
+}
+* {
+  font-family: Cardium B-Medium;
 }

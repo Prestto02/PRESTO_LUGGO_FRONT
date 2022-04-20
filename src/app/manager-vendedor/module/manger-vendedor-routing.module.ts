@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { UrlFront } from 'src/app/shared/routes/RoutesFront';
+import { DashboardComponent } from '../dashboard/dashboard.component';
 import { ManagerVendedorComponent } from '../manager-vendedor.component';
 import { ProductsComponent } from '../productos/components/products.component';
 
@@ -15,6 +16,10 @@ const routes: Routes = [
       {
         path: `${UrlFront.Manager.vendedor}/${UrlFront.Manager.listadoProductos}`,
         component: ProductsComponent,
+      },
+      {
+        path: `${UrlFront.Manager.vendedor}/${UrlFront.Manager.dashborad}`,
+        component: DashboardComponent,
       },
       {
         path: '**',

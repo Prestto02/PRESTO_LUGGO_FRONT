@@ -12,6 +12,7 @@ export class CategoriasComponent implements OnInit {
   categoriasItems: any;
   categoriasSelect: any = [];
   checkFocus = false;
+  valor = '';
   constructor(
     public formB: BaseFormCategorias,
     private apiCategoria: CategoriasService
@@ -34,5 +35,9 @@ export class CategoriasComponent implements OnInit {
   remove(i: any) {
     console.log(i);
     this.categoriasSelect.splice(i, 1);
+  }
+
+  valueChange(e: any) {
+    //this.valor += e.target.value + ', ';
   }
 }

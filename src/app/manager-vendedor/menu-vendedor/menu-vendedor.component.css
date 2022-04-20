@@ -1,0 +1,13 @@
+.cursor {
+  cursor: pointer;
+}
+* {
+  font-family: Cardium B-Medium;
+}
+.input-border {
+  border-right: 0px;
+}
+.border-bottom {
+  background: white;
+  border-left: 1px;
+}

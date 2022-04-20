@@ -1,0 +1,14 @@
+.hover-products:hover {
+  color: #7549FE;
+  cursor: pointer;
+}
+.hover-products {
+  cursor: pointer;
+}
+
+.color-canvas {
+  background-color: rgba(32, 32, 57, 0.94);
+}
+* {
+  font-family: Cardium B-Medium;
+}
