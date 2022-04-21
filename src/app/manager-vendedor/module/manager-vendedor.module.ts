@@ -26,6 +26,9 @@ import { BaseFormProducts } from '../productos/models/BaseformProduct';
 import { BaseFormCategorias } from '../categorias/models/categorias.models';
 import { FilterCategorias } from '../categorias/pipes/FilterCategorias.pipe';
 import { FiltroPaginacionPipe } from '../productos/components/listado-productos/pipe/filtro-paginacion.pipe';
+import { Footer2Component } from 'src/app/shared/components/index/footer2/footer2.component';
+import { IndexMenuModule } from 'src/app/shared/components/index/module/index-menu.module';
+import { LinealGraficoComponent } from '../dashboard/lineal-grafico/lineal-grafico.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +44,8 @@ import { FiltroPaginacionPipe } from '../productos/components/listado-productos/
     DashboardComponent, //DASHBOARDCOMPONENTS
     CardPrincipalComponent, //CARD PRINCIPAL COMPONENTE
     GraficoBarrasComponent, //GRAFICO BARRAS COMPONENTS
-    CardSecundarioComponent, //CARD SECUNDARIO
+    CardSecundarioComponent, // DASHBOARD CARD SECUNDARIO
+    LinealGraficoComponent, //LINEAL GRAFICO DASHBOARD
   ],
   imports: [
     ManagerVendedorRoutingModule, //MANAGER ROUTING

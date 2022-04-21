@@ -1,0 +1,11 @@
+<section class="container-fluid">
+  <div class="row mt-4">
+    <div class="col-xl-12 col-xxl-12 col-12 col-sm-12 col-md-12">
+      <ngx-charts-line-chart [view]="view" [scheme]="colorScheme" [legend]="legend" [showXAxisLabel]="showXAxisLabel"
+        [showYAxisLabel]="showYAxisLabel" [xAxis]="xAxis" [yAxis]="yAxis" [xAxisLabel]="xAxisLabel"
+        [yAxisLabel]="yAxisLabel" [timeline]="timeline" [results]="multi" (select)="onSelect($event)"
+        (activate)="onActivate($event)" (deactivate)="onDeactivate($event)">
+      </ngx-charts-line-chart>
+    </div>
+  </div>
+</section>
