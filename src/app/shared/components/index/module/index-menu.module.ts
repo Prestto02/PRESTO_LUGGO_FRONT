@@ -78,6 +78,6 @@ import { CompararProductosComponent } from '../../comparar-productos/comparar-pr
     CarritoItemsComponent,
     BaseFormListaDeseos,
   ],
-  exports: [MenuComponent],
+  exports: [MenuComponent, Footer2Component],
 })
 export class IndexMenuModule {}

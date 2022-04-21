@@ -26,9 +26,9 @@ import { BaseFormProducts } from '../productos/models/BaseformProduct';
 import { BaseFormCategorias } from '../categorias/models/categorias.models';
 import { FilterCategorias } from '../categorias/pipes/FilterCategorias.pipe';
 import { FiltroPaginacionPipe } from '../productos/components/listado-productos/pipe/filtro-paginacion.pipe';
-import { Footer2Component } from 'src/app/shared/components/index/footer2/footer2.component';
 import { IndexMenuModule } from 'src/app/shared/components/index/module/index-menu.module';
 import { LinealGraficoComponent } from '../dashboard/lineal-grafico/lineal-grafico.component';
+import { PastelGraficoComponent } from '../dashboard/pastel-grafico/pastel-grafico.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +46,7 @@ import { LinealGraficoComponent } from '../dashboard/lineal-grafico/lineal-grafi
     GraficoBarrasComponent, //GRAFICO BARRAS COMPONENTS
     CardSecundarioComponent, // DASHBOARD CARD SECUNDARIO
     LinealGraficoComponent, //LINEAL GRAFICO DASHBOARD
+    PastelGraficoComponent, //GRAFICO PASTEL DASHBOARD
   ],
   imports: [
     ManagerVendedorRoutingModule, //MANAGER ROUTING
@@ -55,6 +56,7 @@ import { LinealGraficoComponent } from '../dashboard/lineal-grafico/lineal-grafi
     ReactiveFormsModule, //FORMULARIO REACTIVO
     NgxChartsModule, //NGX CHARTS MODULE
     ErrorsExtensionsModule, //ERRORES
+    IndexMenuModule, //FOOTER
     NgxPaginationModule, //PAGINATIONS
     OrderModule, //ORDER MODULE
   ],
