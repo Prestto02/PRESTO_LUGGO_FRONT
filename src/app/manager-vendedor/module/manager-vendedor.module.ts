@@ -29,6 +29,7 @@ import { FiltroPaginacionPipe } from '../productos/components/listado-productos/
 import { IndexMenuModule } from 'src/app/shared/components/index/module/index-menu.module';
 import { LinealGraficoComponent } from '../dashboard/lineal-grafico/lineal-grafico.component';
 import { PastelGraficoComponent } from '../dashboard/pastel-grafico/pastel-grafico.component';
+import { SparklinesLinealComponent } from 'src/app/manager-vendedor/dashboard/card-secundario/sparklines-lineal/sparklines-lineal.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import { PastelGraficoComponent } from '../dashboard/pastel-grafico/pastel-grafi
     CardSecundarioComponent, // DASHBOARD CARD SECUNDARIO
     LinealGraficoComponent, //LINEAL GRAFICO DASHBOARD
     PastelGraficoComponent, //GRAFICO PASTEL DASHBOARD
+    SparklinesLinealComponent, //LINEAL SKELETON
   ],
   imports: [
     ManagerVendedorRoutingModule, //MANAGER ROUTING
