@@ -1,0 +1,22 @@
+.text-tamano {
+  font-size: 48px;
+}
+.color-texto {
+  font-size: 48px;
+  color: #c08eff;
+}
+.border-botton {
+  border: 6px solid #7549fe;
+  box-sizing: border-box;
+  border-radius: 6px;
+  font-size: 34px;
+}
+
+.border-botton:hover {
+  color: #fff;
+  background-color: #7549fe;
+}
+
+* {
+  font-family: Cardium B-Medium;
+}

@@ -28,6 +28,7 @@ export const UrlFront = {
     index: 'index',
     buscarGet: 'buscar-productos',
     buscar: 'buscar-productos/:name/:categoria',
+    quienesSomos: 'quienes-somos',
   },
   //LISTA DE DESEOS
   ListaDeseos: {

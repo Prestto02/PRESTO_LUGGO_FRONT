@@ -1,0 +1,15 @@
+.btn-white {
+  background-color: white;
+  color: #7549fe;
+  font-size: 67px;
+}
+.btn-white:hover {
+  background-color: #5432b9;
+  color: white;
+}
+.text-tamano {
+  font-size: 48px;
+}
+* {
+  font-family: Cardium A-Medium;
+}

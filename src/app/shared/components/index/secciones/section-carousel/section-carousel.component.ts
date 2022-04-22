@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Menu2Component } from '../menu2/menu2.component';
 
 @Component({
   selector: 'app-section-carousel',
@@ -43,7 +42,7 @@ export class SectionCarouselComponent implements OnInit {
     'http://192.168.100.15/img/IM%C3%81GENES/Cards-section-1/GorraUnderArmour.jpg';
   card4Img1 =
     'http://192.168.100.15/img/IM%C3%81GENES/Cards-section-1/HechoEcuador.jpg';
-  constructor(public menu2: Menu2Component) {}
+  constructor() {}
 
   ngOnInit(): void {}
 }

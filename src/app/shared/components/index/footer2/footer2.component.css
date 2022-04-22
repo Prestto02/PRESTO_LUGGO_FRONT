@@ -1,3 +1,6 @@
-.text-reset{
+.text-reset {
   text-decoration: none;
+}
+.cursor {
+  cursor: pointer;
 }

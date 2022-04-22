@@ -1,0 +1,27 @@
+.hover-button:hover {
+  cursor: pointer;
+  border-bottom: 5px solid #7549fe;
+  transition: 0.2s;
+}
+.activate {
+  cursor: pointer;
+  border-bottom: 5px solid #7549fe;
+  transition: 0.2s;
+}
+.color-texto {
+  color: #7549fe;
+}
+.text-titulo {
+  font-size: 64px;
+  text-align: justify;
+}
+.text-tamano {
+  width: 90%;
+  font-size: 40px;
+  text-align: justify;
+}
+* {
+  font-family: Cardium B-Medium;
+
+}
+

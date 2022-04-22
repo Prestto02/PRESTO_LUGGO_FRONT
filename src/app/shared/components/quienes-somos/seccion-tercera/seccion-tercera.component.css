@@ -1,0 +1,15 @@
+.color-texto {
+  color: #c08eff;
+  font-size: 48px;
+}
+.tamano-texto {
+  font-size: 48px;
+  color: #fff;
+}
+.seccion-tamano{
+  background-color: #fff;
+}
+
+* {
+  font-family: Cardium B-Medium;
+}

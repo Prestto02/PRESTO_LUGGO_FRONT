@@ -26,6 +26,14 @@ const routes: Routes = [
         (m) => m.IndexMenuModule
       ),
   },
+  //QUIENES SOMOS
+  {
+    path: UrlFront.Menu.menu,
+    loadChildren: () =>
+      import(
+        './shared/components/quienes-somos/module/quienes-somos.module'
+      ).then((m) => m.QuienesSomosModule),
+  },
   //ACTIVAR CUENTA
   {
     path: UrlFront.ActivarCuenta.cuenta,
