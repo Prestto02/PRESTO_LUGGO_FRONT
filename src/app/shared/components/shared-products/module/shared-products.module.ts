@@ -40,6 +40,6 @@ import { SharedProductsRoutingModule } from './shared-products-routing.module';
     MenuIndexModule,
   ],
   providers: [BaseFormListaDeseos],
-  exports: [IndexProductsComponent, SharedProductsComponent],
+  exports: [SharedProductsComponent],
 })
 export class SharedProductosModule {}

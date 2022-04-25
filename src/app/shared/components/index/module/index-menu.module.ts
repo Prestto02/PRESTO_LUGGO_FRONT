@@ -6,11 +6,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { MenuIndexModule } from '../menu-index/module/menu-index.module';
 import { IndexRoutingModule } from './indexMenu-routing.module';
 import { FooterIndexModule } from '../footer-index/module/footer-index.module';
+import { SharedProductosModule } from '../../shared-products/module/shared-products.module';
 //COMPONENTS
 import { IndexComponent } from '../index.component';
 import { ErrorsExtensionsModule } from '../../errors/errors-module.module';
 import { SeccionesModule } from '../secciones/module/secciones.module';
-import { SharedProductosModule } from '../../shared-products/module/shared-products.module';
 
 @NgModule({
   declarations: [IndexComponent],

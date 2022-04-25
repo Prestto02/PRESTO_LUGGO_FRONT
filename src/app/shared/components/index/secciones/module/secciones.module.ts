@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+//MODULOS
+import { SharedProductosModule } from '../../../shared-products/module/shared-products.module';
 //COMPONENTES
 import { SectionCarouselComponent } from '../section-carousel/section-carousel.component';
 import { ResponsiveSectionCarouselComponent } from '../section-carousel/responsive-section-carousel/responsive-section-carousel.component';
@@ -13,7 +15,6 @@ import { SectionCardsInformationComponent } from '../section-cards-information/s
 import { SectionCardsOfertasComponent } from '../section-cards-ofertas/section-cards-ofertas.component';
 import { SectionServiciosComponent } from '../section-servicios/section-servicios.component';
 import { SeccionesComponent } from '../secciones.component';
-import { SharedProductosModule } from '../../../shared-products/module/shared-products.module';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,7 @@ import { SharedProductosModule } from '../../../shared-products/module/shared-pr
     SectionCardsOfertasComponent,
     SectionServiciosComponent,
   ],
-  imports: [CommonModule, SharedProductosModule],
+  imports: [CommonModule],
   exports: [
     SeccionesComponent, //SECCION INDEX
     SectionServiciosComponent,
