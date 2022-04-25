@@ -2,7 +2,7 @@ import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { BrowserDynamicTestingModule } from '@angular/platform-browser-dynamic/testing';
 import { ToastConfig } from 'src/app/shared/Toasts/ToastsConfig';
-import { CarritoItemsComponent } from '../../index/menu/carrito-items/carrito-items.component';
+import { CarritoItemsComponent } from '../../index/menu-index/menu/carrito-items/carrito-items.component';
 
 import { SharedProductsComponent } from './shared-products.component';
 

@@ -6,6 +6,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { OrderModule } from 'ngx-order-pipe';
 import { AlifeFileToBase64Module } from 'alife-file-to-base64';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
+/*************MODULE*********** */
+import { FooterIndexModule } from 'src/app/shared/components/index/footer-index/module/footer-index.module';
 /**********        COMPONENTES      ********** */
 import { ManagerVendedorRoutingModule } from './manger-vendedor-routing.module';
 import { MenuVendedorComponent } from '../menu-vendedor/menu-vendedor.component';
@@ -58,6 +60,7 @@ import { SparklinesLinealComponent } from 'src/app/manager-vendedor/dashboard/ca
     ReactiveFormsModule, //FORMULARIO REACTIVO
     NgxChartsModule, //NGX CHARTS MODULE
     ErrorsExtensionsModule, //ERRORES
+    FooterIndexModule, //MODULE FOOTER INDEX
     IndexMenuModule, //FOOTER
     NgxPaginationModule, //PAGINATIONS
     OrderModule, //ORDER MODULE

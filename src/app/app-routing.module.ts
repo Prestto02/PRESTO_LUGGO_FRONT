@@ -34,6 +34,14 @@ const routes: Routes = [
         './shared/components/quienes-somos/module/quienes-somos.module'
       ).then((m) => m.QuienesSomosModule),
   },
+  //PRODUCTO COMPARTIDO, LISTA DE DESEO, LISTA DE SCROLL INFINITO
+  {
+    path: UrlFront.Menu.menu,
+    loadChildren: () =>
+      import(
+        './shared/components/shared-products/module/shared-products.module'
+      ).then((m) => m.SharedProductosModule),
+  },
   //ACTIVAR CUENTA
   {
     path: UrlFront.ActivarCuenta.cuenta,

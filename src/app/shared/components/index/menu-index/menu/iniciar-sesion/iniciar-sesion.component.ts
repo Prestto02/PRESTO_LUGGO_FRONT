@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { UrlFront } from '../../../../routes/RoutesFront';
+import { UrlFront } from '../../../../../routes/RoutesFront';
 
 @Component({
   selector: 'app-iniciar-sesion',

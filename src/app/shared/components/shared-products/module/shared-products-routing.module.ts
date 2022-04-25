@@ -4,16 +4,11 @@ import { UrlFront } from '../../../routes/RoutesFront';
 import { CompararProductosComponent } from '../../shared-products/comparar-productos/comparar-productos.component';
 import { IndexProductsComponent } from '../../shared-products/index-products.component';
 import { ListaDeseosComponent } from '../../shared-products/lista-deseos/lista-deseos.component';
-import { IndexComponent } from '../index.component';
 
 const routes: Routes = [
   {
     path: '',
     children: [
-      {
-        path: UrlFront.Menu.index, //RUTA INDEX
-        component: IndexComponent,
-      },
       {
         path: UrlFront.Menu.buscar, //RUTA BUSCAR PRODUCTOS
         component: IndexProductsComponent,
@@ -39,4 +34,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class IndexRoutingModule {}
+export class SharedProductsRoutingModule {}

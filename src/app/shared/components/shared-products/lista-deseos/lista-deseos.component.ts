@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { TokenService } from 'src/app/login/services/token.service';
-import { CarritoItemsComponent } from '../index/menu/carrito-items/carrito-items.component';
-import { errorFront as message } from '../../dictonary/MessageErrorFront';
+import { MessageFrontEndService } from 'src/app/shared/Toasts/services/message-front-end.service';
+import { errorFront as message } from '../../../dictonary/MessageErrorFront';
+import { CarritoItemsComponent } from '../../index/menu-index/menu/carrito-items/carrito-items.component';
 import { ListaDeseosService } from './services/lista-deseos.service';
-import { MessageFrontEndService } from '../../Toasts/services/message-front-end.service';
 
 @Component({
   selector: 'app-lista-deseos',

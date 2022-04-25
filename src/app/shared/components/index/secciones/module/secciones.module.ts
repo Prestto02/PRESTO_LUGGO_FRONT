@@ -13,7 +13,6 @@ import { SectionCardsInformationComponent } from '../section-cards-information/s
 import { SectionCardsOfertasComponent } from '../section-cards-ofertas/section-cards-ofertas.component';
 import { SectionServiciosComponent } from '../section-servicios/section-servicios.component';
 import { SeccionesComponent } from '../secciones.component';
-import { SharedProductsComponent } from '../../../shared-products/list-products/shared-products.component';
 import { SharedProductosModule } from '../../../shared-products/module/shared-products.module';
 
 @NgModule({
@@ -35,7 +34,6 @@ import { SharedProductosModule } from '../../../shared-products/module/shared-pr
   exports: [
     SeccionesComponent, //SECCION INDEX
     SectionServiciosComponent,
-    SharedProductsComponent,
   ],
 })
 export class SeccionesModule {}
