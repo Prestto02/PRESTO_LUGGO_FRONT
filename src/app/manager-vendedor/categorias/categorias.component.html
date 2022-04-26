@@ -1,8 +1,14 @@
 <!-----CATEGORIA---->
 <ng-container [formGroup]="formB.formCategorias">
   <div class="input-group">
-    <input type="text" class="form-control" formControlName="nameCategoria" placeholder="Buscar categorias"
-      aria-label="Recipient's username" aria-describedby="button-addon2" (focus)="checkFocus=true"
+    <ng-container *ngIf="formB.categoriaSeleccionadas">
+      <ng-container *ngFor="let categoriasSelect of formB.categoriaSeleccionadas">
+        <span class="input-group-text border-badge" id="basic-addon1"><span
+            class="badge bg-primary border-badge-1">{{categoriasSelect}}</span></span>
+      </ng-container>
+    </ng-container>
+    <input type="text" class="form-control border-input" formControlName="nameCategoria" placeholder="Buscar categorias"
+      aria-label="Recipient's username" aria-describedby="button-addon1" (focus)="checkFocus=true"
       [class.is-invalid]="formB.formCategorias.get('ArticuloTieneCategoria')?.touched && formB.formCategorias.get('ArticuloTieneCategoria')?.invalid">
   </div>
   <app-form-errors-container [forControl]="formB.formCategorias.get('ArticuloTieneCategoria')">
@@ -10,9 +16,10 @@
   </app-form-errors-container>
   <ng-container *ngIf="checkFocus">
     <div class="form-check" (click)="checkFocus=true"
-      *ngFor=" let categorias of categoriasItems | FilterCategorias:formB.formCategorias.get('nameCategoria')?.value">
+      *ngFor=" let categorias of categoriasItems | FilterCategorias:formB.formCategorias.get('nameCategoria')?.value"
+      class="position-relative">
       <input class="form-check-input" type="checkbox" [id]="categorias.id"
-        (change)="onChangeCheckBox(categorias.id,$event)">
+        (change)="onChangeCheckBox(categorias.id,$event)" [value]="categorias.name">
       <label class="form-check-label" [for]="categorias.id">
         {{categorias.name}}
       </label>

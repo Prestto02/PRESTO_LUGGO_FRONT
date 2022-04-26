@@ -10,9 +10,8 @@ export class FilterCategorias implements PipeTransform {
     }
     return categoriasItems.filter(
       (categoria: any) =>
-        categoria.name
-          .toLowerCase()
-          .indexOf(searchCategoria.toLowerCase()) !== -1
+        categoria.name.toLowerCase().indexOf(searchCategoria.toLowerCase()) !==
+        -1
     );
   }
 }

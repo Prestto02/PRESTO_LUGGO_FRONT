@@ -7,11 +7,12 @@ import {
 } from '@angular/forms';
 @Injectable({ providedIn: 'root' })
 export class BaseFormCategorias {
+  categoriaSeleccionadas: any = [];
   constructor(private formB: FormBuilder) {}
 
   //FORMULARIO
   formCategorias = this.formB.group({
-    nameCategoria:[''],
+    nameCategoria: [''],
     ArticuloTieneCategoria: this.formB.array([], [Validators.required]),
   });
   //OBTENER EL ARRAY DE LA CATEGORIAS
@@ -23,10 +24,17 @@ export class BaseFormCategorias {
     if (e.target.checked) {
       //PREGUNTO SI EXISTE EL EVENTO CHECK: TRUE
       this.getCategorias.push(new FormControl({ id_categoria: id }));
+      this.categoriaSeleccionadas.push(e.target.value);
     } else {
-      //SI ES CHECK:FALSE
-      let index = this.getCategorias.controls.findIndex((x) => x.value === id);
-      this.getCategorias.removeAt(index);
+      this.eliminarItems(id);
     }
+  }
+  //ELIMINAR ITEMS DE LA CATEGORIA
+  eliminarItems(id: any) {
+    let index = this.getCategorias.controls.findIndex(
+      (x) => x.value.id_categoria === id
+    );
+    this.getCategorias.removeAt(index);
+    this.categoriaSeleccionadas.splice(index, 1);
   }
 }

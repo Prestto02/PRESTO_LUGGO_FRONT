@@ -11,7 +11,7 @@ export class CategoriasComponent implements OnInit {
   //VARIABLES
   categoriasItems: any;
   checkFocus = false;
-  value = '';
+  categoriaSeleccionadas: any = [];
   constructor(
     public formB: BaseFormCategorias,
     private apiCategoria: CategoriasService
