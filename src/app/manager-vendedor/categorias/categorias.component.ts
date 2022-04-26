@@ -10,34 +10,23 @@ import { BaseFormCategorias } from './models/categorias.models';
 export class CategoriasComponent implements OnInit {
   //VARIABLES
   categoriasItems: any;
-  categoriasSelect: any = [];
   checkFocus = false;
-  valor = '';
+  value = '';
   constructor(
     public formB: BaseFormCategorias,
     private apiCategoria: CategoriasService
   ) {}
   ngOnInit(): void {
-    this.getCategorias();
+    this.getAllCategorias();
   }
-  //TRAIGO LAS CATEGORIAS
-  getCategorias() {
+  //OBTENER TODAS LAS CATEGORIAS
+  getAllCategorias() {
     this.apiCategoria.getAllCategorias().subscribe((res) => {
       this.categoriasItems = res;
     });
   }
-  //AGREGO LA CATEGORIA SELECCIONADA
-  addCategorias(id: any) {
-    this.categoriasSelect.push(id); //AGREGO AL ARREGLO
-    this.formB.onAddCategorias(this.categoriasSelect); //AGREGO AL SUBJECT
-  }
-  //ELIMINO DE LA LISTA LA CATEGORIA QUE NO NECESITA
-  remove(i: any) {
-    console.log(i);
-    this.categoriasSelect.splice(i, 1);
-  }
-
-  valueChange(e: any) {
-    //this.valor += e.target.value + ', ';
+  //SETEAR EL NUEVO ELEMENTO EN EL ARRAY
+  onChangeCheckBox(id: any, e: any) {
+    this.formB.addCategoriaItems(id, e);
   }
 }

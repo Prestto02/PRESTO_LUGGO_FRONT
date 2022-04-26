@@ -6,7 +6,6 @@ import { QuienesSomosRoutingModule } from './quienes-somos-routing.module';
 import { FooterIndexModule } from '../../index/footer-index/module/footer-index.module';
 //COMPONENTS
 import { SeccionPrincpialComponent } from '../seccion-princpial/seccion-princpial.component';
-import { SeccionesModule } from '../../index/secciones/module/secciones.module';
 import { SeccionSecundariaComponent } from '../seccion-secundaria/seccion-secundaria.component';
 import { SeccionTerceraComponent } from '../seccion-tercera/seccion-tercera.component';
 import { SeccionCuartaComponent } from '../seccion-cuarta/seccion-cuarta.component';
@@ -27,7 +26,6 @@ import { QuienesSomosComponent } from '../quienes-somos.component';
     MenuIndexModule, //MENU MODULE INDEX
     FooterIndexModule, //FOOTER INDEX MODULE
     QuienesSomosRoutingModule,
-    SeccionesModule,
   ],
 })
 export class QuienesSomosModule {}

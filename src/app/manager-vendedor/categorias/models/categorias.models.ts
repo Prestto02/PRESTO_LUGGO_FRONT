@@ -1,39 +1,32 @@
 import { Injectable } from '@angular/core';
-import { FormArray, FormBuilder, Validators } from '@angular/forms';
+import {
+  FormArray,
+  FormBuilder,
+  FormControl,
+  Validators,
+} from '@angular/forms';
 @Injectable({ providedIn: 'root' })
 export class BaseFormCategorias {
   constructor(private formB: FormBuilder) {}
-  //ArticuloTieneCategoria[{}]
+
+  //FORMULARIO
   formCategorias = this.formB.group({
-    ArticuloTieneCategoria: this.formB.array([
-      this.formB.group({
-        idcategoria_articulo: [
-          '',
-          [Validators.required, Validators.minLength(3)],
-        ],
-      }),
-    ]),
+    nameCategoria:[''],
+    ArticuloTieneCategoria: this.formB.array([], [Validators.required]),
   });
-  //TOMAR EL FORMARRAY
-  get arrayCategoria() {
-    return this.formCategorias.controls['ArticuloTieneCategoria'] as FormArray; //OBTENGO EL FORMULARIO CON EL ARRAY
+  //OBTENER EL ARRAY DE LA CATEGORIAS
+  get getCategorias() {
+    return <FormArray>this.formCategorias.controls.ArticuloTieneCategoria;
   }
-  //AGREGAR CATEGORIAS
-  onAddCategorias(categoriaSelect: any) {
-    const lessonCategoria = this.formB.group({
-      idcategoria_articulo: [
-        '',
-        [Validators.required, Validators.minLength(3)],
-      ],
-    });
-    this.arrayCategoria.push(lessonCategoria);
-  }
-  //ELIMINAR CATEGORIAS
-  remove(i: any) {
-    this.arrayCategoria.removeAt(i);
-  }
-  //TRAER TODAS LAS CATEGORIAS
-  getDataFormCateogoria() {
-    return this.formCategorias.value.ArticuloTieneCategoria;
+  //AGREGAR AL ARRAY PARA LA NUEVA CATEGORIA
+  addCategoriaItems(id: any, e: any) {
+    if (e.target.checked) {
+      //PREGUNTO SI EXISTE EL EVENTO CHECK: TRUE
+      this.getCategorias.push(new FormControl({ id_categoria: id }));
+    } else {
+      //SI ES CHECK:FALSE
+      let index = this.getCategorias.controls.findIndex((x) => x.value === id);
+      this.getCategorias.removeAt(index);
+    }
   }
 }

@@ -53,7 +53,7 @@ export class CreateProductsComponent implements OnInit {
     const dataForm = this.formB.getDataForm(
       this.position.latitud,
       this.position.longitud,
-      this.formCategoria.getDataFormCateogoria()
+      //this.formCategoria.getDataFormCateogoria()
     );
     console.log(dataForm);
     this.apiProducts.postDataArticulo(dataForm).subscribe((res) => {

@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { UrlFront } from '../../../routes/RoutesFront';
+/****************COMPONENTES***************** */
+import { QuienesSomosComponent } from '../../quienes-somos/quienes-somos.component';
 import { CompararProductosComponent } from '../../shared-products/comparar-productos/comparar-productos.component';
 import { IndexProductsComponent } from '../../shared-products/index-products.component';
 import { ListaDeseosComponent } from '../../shared-products/lista-deseos/lista-deseos.component';
@@ -25,6 +27,10 @@ const routes: Routes = [
       {
         path: UrlFront.CompararProductos.compararProducto, //COMPARAR PRODUCTOS
         component: CompararProductosComponent,
+      },
+      {
+        path: UrlFront.Menu.quienesSomos,
+        component: QuienesSomosComponent,
       },
       {
         path: '**',

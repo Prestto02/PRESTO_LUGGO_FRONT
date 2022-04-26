@@ -16,7 +16,7 @@
   </div>
   <div class="row" infiniteScroll (scrolled)="onScrollDown();">
     <div class="col-xxl-2 col-sm-6 col-6 col-xl-2 col-md-4 mt-3" *ngFor="let products of productsArray">
-      <div class="card border rounded">
+      <div class="card rounded-cards">
         <img src="https://192.168.100.15{{products.imagen}}" class="card-img-top" alt="{{products.id}}" width="200px"
           height="200px">
         <div class="card-body">
