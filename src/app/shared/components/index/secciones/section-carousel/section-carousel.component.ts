@@ -45,4 +45,5 @@ export class SectionCarouselComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
+
 }

@@ -92,8 +92,9 @@
               </span>
             </a>
             <!--------MENSAJE-------->
+            <!---------CLIENTE------------->
           </li>
-          <li class="nav-item mx-2 cursor">
+          <li class="nav-item mx-2 cursor" (mouseenter)="container=true">
             <img src="https://i.pinimg.com/originals/89/90/48/899048ab0cc455154006fdb9676964b3.jpg" alt="img-client"
               width="50" height="50" class="img-fluid rounded-circle">
           </li>
@@ -102,5 +103,18 @@
     </div>
   </div>
 </nav>
-
+<div *ngIf="container" class="position-absolute container-fluid">
+  <div class="d-flex justify-content-end alignt-items-end" (mousedown)="container=false">
+    <div class="row">
+      <div class="col-xl-12">
+        <ul class="list-group">
+          <li class="list-group-item">Perfil</li>
+          <li class="list-group-item">Inbox</li>
+          <li class="list-group-item">Ajustes</li>
+          <li class="list-group-item" (click)="mouseChange()">Cerrar sesión</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
 <app-side-bar-izquierda></app-side-bar-izquierda>

@@ -99,10 +99,7 @@
               </ng-template>
               <!--------VERIFICO SI EL USUARIO ESTA LOGEADO FIN------->
             </div>
-            <app-iniciar-sesion class="offcanvas offcanvas-end color-canvas text-white" tabindex="-1"
-              id="offcanvasRightLogin" aria-labelledby="offcanvasRightLoginLabel">
-              <ng-content class="text-center"></ng-content>
-            </app-iniciar-sesion>
+
           </li>
           <li class="navbar-nav">
             <div class="row">
@@ -140,13 +137,19 @@
                 </span>
               </span>
             </a>
-            <app-carrito-items class="offcanvas offcanvas-end text-white color-canvas " tabindex="-1"
-              id="offcanvasRightCarrito" aria-labelledby="offcanvasRightCarritoLabel">
-              <ng-content class="text-center"> </ng-content>
-            </app-carrito-items>
           </li>
         </ul>
       </div>
     </div>
   </div>
 </nav>
+<!--------OFFCANVAS DE INICIAR SESION---------->
+<app-iniciar-sesion class="offcanvas offcanvas-end color-canvas text-white" tabindex="-1" id="offcanvasRightLogin"
+  aria-labelledby="offcanvasRightLoginLabel">
+  <ng-content class="text-center"></ng-content>
+</app-iniciar-sesion>
+<!-----------OFF CANVAS DE CARRITO------------->
+<app-carrito-items class="offcanvas offcanvas-end text-white color-canvas " tabindex="-1" id="offcanvasRightCarrito"
+  aria-labelledby="offcanvasRightCarritoLabel">
+  <ng-content class="text-center"> </ng-content>
+</app-carrito-items>

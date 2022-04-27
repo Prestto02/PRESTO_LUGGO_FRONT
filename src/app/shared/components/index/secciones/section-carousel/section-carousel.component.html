@@ -1,4 +1,4 @@
-<div id="carouselExampleControls"
+<div id="carouselExampleControlsPrimario"
   class="carousel slide card border-0 col-md-12 col-xl-12 d-sm-none d-none d-xl-block d-xxl-block d-md-block"
   data-bs-ride="carousel">
   <div class="carousel-inner">
@@ -28,14 +28,14 @@
     </div>
   </div>
   <button class="carousel-control-prev btn-carousel rounded-circle mx-5 mt-5" type="button"
-    data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+    data-bs-target="#carouselExampleControlsPrimario" data-bs-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
+    <span class="visually-hidden">Atras</span>
   </button>
   <button class="carousel-control-next btn-carousel rounded-circle mx-5 mt-5" type="button"
-    data-bs-target="#carouselExampleControls" data-bs-slide="next">
+    data-bs-target="#carouselExampleControlsPrimario" data-bs-slide="next">
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
+    <span class="visually-hidden">Siguiente</span>
   </button>
   <!-- SECCION CARDS -->
   <div
@@ -139,6 +139,6 @@
     </div>
   </div>
 </div>
-
+<!-- [ngClass]="{'active': i === 1}" -->
 <!-----RESPONSIVE-->
 <app-responsive-section-carousel></app-responsive-section-carousel>
