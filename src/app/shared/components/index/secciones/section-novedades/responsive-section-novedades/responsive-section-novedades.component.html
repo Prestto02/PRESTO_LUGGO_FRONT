@@ -8,7 +8,7 @@
         <div class="row mx-auto">
           <div class="col-md-4 col-12 col-sm-12 col-xxl-2 col-xl-2 mx-auto">
             <div class="card border">
-              <img src="{{imagenesApi[0].imgNovedades}}" class="rounded img-fluid mx-4 mt-3"
+              <img loading="lazy" src="{{imagenesApi[0].imgNovedades}}" class="rounded img-fluid mx-4 mt-3"
                 alt="{{imagenesApi[0].descripcion}}}" />
               <div class="col-md-12 card-body">
                 <p class="text-card-footer text-center">{{imagenesApi[0].descripcion}}</p>
@@ -21,7 +21,8 @@
         <div class="row mx-auto">
           <div class="col-md-4 col-12 col-sm-12 col-xxl-2 col-xl-2 mx-auto">
             <div class="card border">
-              <img src="{{image.imgNovedades}}" class="rounded img-fluid mx-4 mt-3" alt="{{image.descripcion}}" />
+              <img loading="lazy" src="{{image.imgNovedades}}" class="rounded img-fluid mx-4 mt-3"
+                alt="{{image.descripcion}}" />
               <div class="card-body">
                 <p class="text-card-footer text-center">{{image.descripcion}}</p>
               </div>

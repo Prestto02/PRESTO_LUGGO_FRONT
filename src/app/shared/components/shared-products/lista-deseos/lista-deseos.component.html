@@ -83,7 +83,7 @@
                   [class]="filasDeDos?'col-xl-6 col-xxl-6 col-sm-12 col-md-6 col-12':'col-xl-4 col-xl-4 col-sm-12 col-md-12 col-12'">
                   <div class="row">
                     <div class="col-xl-7 col-xxl-7 col-7 col-sm-7 col-md-7 mx-auto">
-                      <img src="https://192.168.100.15{{listaDeseos.imagen}}" alt="Imagen del producto"
+                      <img loading="lazy" src="https://192.168.100.15{{listaDeseos.imagen}}" alt="Imagen del producto"
                         class="img-fluid" width="177px" height="151px">
                     </div>
                   </div>
@@ -190,7 +190,8 @@
       </div>
       <ng-template #notData>
         <div class="text-center mt-4">
-          <img src="../../../../assets/img/empty-wishlist.png" alt="No hay productos en la lista de deseos">
+          <img loading="lazy" src="../../../../assets/img/empty-wishlist.png"
+            alt="No hay productos en la lista de deseos">
           <h4 class="text text-center mt-4"> Aún no hay productos elegidos en la lista de deseos</h4>
         </div>
       </ng-template>
