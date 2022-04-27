@@ -37,4 +37,11 @@ export class BaseFormCategorias {
     this.getCategorias.removeAt(index);
     this.categoriaSeleccionadas.splice(index, 1);
   }
+  //RETORNAMOS EL VALOR DEL FORM CATEGORIA
+  getErrorsForm() {
+    return this.formCategorias.get('ArticuloTieneCategoria')?.errors;
+  }
+  getFormData() {
+    return this.formCategorias.get('ArticuloTieneCategoria')?.value;
+  }
 }

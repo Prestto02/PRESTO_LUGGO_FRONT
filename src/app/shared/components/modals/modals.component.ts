@@ -7,6 +7,7 @@ import { EditRegisterModalService } from './services/edit-register-modal.service
 })
 export class ModalsComponent implements OnInit {
   @Input('id') id: string | null = null;
+  @Input('modaltamano') modaltamano: string | null = null;
   titleRegisterOrEdit = false;
   constructor(private serviModal: EditRegisterModalService) {}
 

@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PositionUser } from 'src/app/shared/class/PositionUser';
 import { BaseFormProducts } from '../../models/BaseformProduct';
-import { ProductsService } from '../../services/products.service';
 import { BaseFormCategorias } from 'src/app/manager-vendedor/categorias/models/categorias.models';
 import { EditRegisterModalService } from 'src/app/shared/components/modals/services/edit-register-modal.service';
 import { ValidarYTransformarImagen } from 'src/app/shared/validations/ValidarYTransformarImagen';
@@ -17,10 +16,10 @@ export class CreateProductsComponent implements OnInit {
   error: any;
   activar = false;
   categoriasItems: any;
+  load: boolean = false;
   constructor(
     private position: PositionUser, //POSICION DEl USUARIO
     public formB: BaseFormProducts, //FORM PRODUCTS
-    private apiProducts: ProductsService, //SERVICES PRODUCTOS
     private validateImg: ValidarYTransformarImagen, //VALIDAR IMAGENES
     private formCategoria: BaseFormCategorias, //FORM CATEGORIAS
     private serviModal: EditRegisterModalService //SERVICES MODAL
@@ -49,20 +48,18 @@ export class CreateProductsComponent implements OnInit {
   }
   //ENVIAR FORMULARIO
   submit() {
+    this.load = true;
     this.formB.formProducts.patchValue({ archivo: this.imagenTransformada });
     const dataForm = this.formB.getDataForm(
       this.position.latitud,
       this.position.longitud,
-      //this.formCategoria.getDataFormCateogoria()
+      this.formCategoria.getFormData() //OBTENGO LOS ID DE LAS CATEGORIAS
     );
     console.log(dataForm);
-    this.apiProducts.postDataArticulo(dataForm).subscribe((res) => {
+    /* this.apiProducts.postDataArticulo(dataForm).subscribe((res) => {
       console.log(res);
       this.formB.limpiarForm();
-    });
-  }
-  //OBTENER EL COLOR DEL INPUT
-  evento(e: any) {
-    console.log(e.target.value);
+      this.load=false;
+    }); */
   }
 }

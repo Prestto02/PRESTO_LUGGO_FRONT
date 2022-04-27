@@ -51,7 +51,7 @@ export class BaseFormProducts {
       idtamaño_alto: [1],
     }),
     //multimedia[{}]
-    archivo: [''],
+    archivo: ['', [Validators.required]],
   });
   //BUSCAR PRODUCTOS
   formSearchProducts = this.formB.group({
