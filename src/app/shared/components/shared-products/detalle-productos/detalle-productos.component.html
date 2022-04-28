@@ -1,0 +1,48 @@
+<header>
+  <app-menu></app-menu>
+  <app-menu2></app-menu2>
+</header>
+<section class="container-fluid">
+  <div class="row" *ngFor="let product of productoArray">
+    <div class="col-xl-4">
+      <app-imagen-products [imagenArray]="product.imagenes"></app-imagen-products>
+    </div>
+    <div class="col-xl-5">
+      <h4>{{product.title}}</h4>
+      <div class="row">
+        <div class="col-xl-4">
+          <svg width="95" height="16" viewBox="0 0 95 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M7.5 1L9.8175 5.60778L15 6.35121L11.25 9.93586L12.135 15L7.5 12.6078L2.865 15L3.75 9.93586L0 6.35121L5.1825 5.60778L7.5 1Z"
+              fill="#F8B407" />
+            <path
+              d="M28 1L30.163 5.60778L35 6.35121L31.5 9.93586L32.326 15L28 12.6078L23.674 15L24.5 9.93586L21 6.35121L25.837 5.60778L28 1Z"
+              fill="#F8B407" />
+            <path
+              d="M48.5 1L50.8175 5.60778L56 6.35121L52.25 9.93586L53.135 15L48.5 12.6078L43.865 15L44.75 9.93586L41 6.35121L46.1825 5.60778L48.5 1Z"
+              fill="#F8B407" />
+            <path
+              d="M86.5 1L88.8175 5.60778L94 6.35121L90.25 9.93586L91.135 15L86.5 12.6078L81.865 15L82.75 9.93586L79 6.35121L84.1825 5.60778L86.5 1Z"
+              fill="white" stroke="#F8B407" stroke-linecap="round" stroke-linejoin="round" />
+            <path
+              d="M67.5 1L69.8175 5.60778L75 6.35121L71.25 9.93586L72.135 15L67.5 12.6078L62.865 15L63.75 9.93586L60 6.35121L65.1825 5.60778L67.5 1Z"
+              fill="white" stroke="#F8B407" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M67.5 1V5.5V8V9.5V11V12.6078L62.865 15L63.75 9.93586L60 6.35121L65.1825 5.60778L67.5 1Z"
+              fill="#F8B407" />
+          </svg>
+        </div>
+        <div class="col-xl-8"> <a class="btn-link">{{product.calificaciones}}</a> &nbsp;| &nbsp; <a
+            class="btn-link">{{product.preguntas}}</a>
+        </div>
+      </div>
+      <p class="text-info">Precio: <span class="text-danger">${{product.precio}}</span></p>
+      <ul>
+        <li *ngFor="let productList of product.lista">{{productList}}</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <app-footer-index></app-footer-index>
+</footer>

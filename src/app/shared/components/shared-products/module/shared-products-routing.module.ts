@@ -4,6 +4,7 @@ import { UrlFront } from '../../../routes/RoutesFront';
 import { CompararProductosComponent } from '../../shared-products/comparar-productos/comparar-productos.component';
 import { IndexProductsComponent } from '../../shared-products/index-products.component';
 import { ListaDeseosComponent } from '../../shared-products/lista-deseos/lista-deseos.component';
+import { DetalleProductosComponent } from '../detalle-productos/detalle-productos.component';
 
 const routes: Routes = [
   {
@@ -20,6 +21,10 @@ const routes: Routes = [
       {
         path: UrlFront.CompararProductos.compararProducto, //COMPARAR PRODUCTOS
         component: CompararProductosComponent,
+      },
+      {
+        path: UrlFront.Productos.detalleProducto,
+        component: DetalleProductosComponent,
       },
       {
         path: '**',

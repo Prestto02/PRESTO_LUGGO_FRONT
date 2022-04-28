@@ -30,6 +30,9 @@ export const UrlFront = {
     buscar: 'buscar-productos/:name/:categoria',
     quienesSomos: 'quienes-somos',
   },
+  Productos:{
+    detalleProducto:'detalle-producto',
+  },
   //LISTA DE DESEOS
   ListaDeseos: {
     listaDeseos: 'lista-de-deseos',

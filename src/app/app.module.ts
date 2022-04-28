@@ -10,7 +10,12 @@ import { NotFund404Component } from './shared/components/not-fund404/not-fund404
 import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [AppComponent, NotFund404Component],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule, ToastConfig],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    ToastConfig,
+  ],
   providers: [
     InterceptorsProviders,
     { provide: LocationStrategy, useClass: HashLocationStrategy },

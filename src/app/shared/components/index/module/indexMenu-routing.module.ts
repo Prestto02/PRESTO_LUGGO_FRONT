@@ -4,6 +4,7 @@ import { UrlFront } from '../../../routes/RoutesFront';
 /****************COMPONENTES***************** */
 import { QuienesSomosComponent } from '../../quienes-somos/quienes-somos.component';
 import { CompararProductosComponent } from '../../shared-products/comparar-productos/comparar-productos.component';
+import { DetalleProductosComponent } from '../../shared-products/detalle-productos/detalle-productos.component';
 import { IndexProductsComponent } from '../../shared-products/index-products.component';
 import { ListaDeseosComponent } from '../../shared-products/lista-deseos/lista-deseos.component';
 import { IndexComponent } from '../index.component';
@@ -31,6 +32,10 @@ const routes: Routes = [
       {
         path: UrlFront.Menu.quienesSomos,
         component: QuienesSomosComponent,
+      },
+      {
+        path: UrlFront.Productos.detalleProducto,
+        component: DetalleProductosComponent,
       },
       {
         path: '**',
