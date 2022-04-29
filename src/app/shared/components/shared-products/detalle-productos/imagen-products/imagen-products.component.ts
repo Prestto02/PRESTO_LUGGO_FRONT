@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { NgxImgZoomService } from 'ngx-img-zoom';
 
 @Component({
   selector: 'app-imagen-products',
@@ -9,8 +10,17 @@ export class ImagenProductsComponent implements OnInit {
   @Input('imagenArray') imagenArray: any = [];
   imageRaton: string = '';
   imgGrande: string = '';
+  enableZoom: boolean = true;
 
-  constructor() {}
+  constructor(private ngxImgZoom: NgxImgZoomService) {
+    this.ngxImgZoom.setZoomBreakPoints([
+      { w: 100, h: 100 },
+      { w: 150, h: 150 },
+      { w: 200, h: 200 },
+      { w: 250, h: 250 },
+      { w: 300, h: 300 },
+    ]);
+  }
 
   ngOnInit(): void {
     this.obtenerElarrayDeimagenes();
@@ -44,5 +54,4 @@ export class ImagenProductsComponent implements OnInit {
       this.buscarImagenZoomdelArray(res.zoom, i); //MANDO A BUSCAR
     });
   }
-
 }
