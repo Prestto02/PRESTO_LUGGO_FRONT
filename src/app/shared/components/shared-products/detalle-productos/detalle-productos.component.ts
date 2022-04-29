@@ -38,7 +38,7 @@ export class DetalleProductosComponent implements OnInit {
           zoom: [
             'https://m.media-amazon.com/images/I/81Bj52Rn5eS._AC_UL1500_.jpg',
 
-            'https://m.media-amazon.com/images/I/71sPCLiQ2OS._AC_UY550_.jpg',
+            'https://m.media-amazon.com/images/I/71sPCLiQ2OS._AC_UL1500_.jpg',
 
             'https://m.media-amazon.com/images/I/81gXCXqhvyS._AC_UL1500_.jpg',
           ],
