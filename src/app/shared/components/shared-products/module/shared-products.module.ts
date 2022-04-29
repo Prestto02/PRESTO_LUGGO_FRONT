@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
-import { NgxImgZoomModule } from 'ngx-img-zoom';
 //MODULE
 import { MenuIndexModule } from '../../index/menu-index/module/menu-index.module';
 import { SeccionesModule } from '../../index/secciones/module/secciones.module';
@@ -20,7 +19,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { SharedProductsRoutingModule } from './shared-products-routing.module';
 import { DetalleProductosComponent } from '../detalle-productos/detalle-productos.component';
 import { ImagenProductsComponent } from '../detalle-productos/imagen-products/imagen-products.component';
-
 
 @NgModule({
   declarations: [
@@ -40,7 +38,6 @@ import { ImagenProductsComponent } from '../detalle-productos/imagen-products/im
     HttpClientModule,
     ErrorsExtensionsModule, //ERRORES MODULE
     InfiniteScrollModule,
-    NgxImgZoomModule, //IMAGENES ZOOM
     SharedProductsRoutingModule,
     SeccionesModule,
     FooterIndexModule,

@@ -12,12 +12,13 @@
   color: #7549fe;
 }
 .text-titulo {
-  font-size: 64px;
+  font-size: 54px;
+  text-align: center;
   text-align: justify;
 }
 .text-tamano {
   width: 90%;
-  font-size: 40px;
+  font-size: 30px;
   text-align: justify;
 }
 * {

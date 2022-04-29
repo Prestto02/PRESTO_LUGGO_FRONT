@@ -3,16 +3,12 @@
     <div class="col-xl-2 mt-3">
       <ul class="list-group" *ngFor="let imgProduct of imagenArray;">
         <li class="list-group-item mb-3 mx-auto puntero" *ngFor="let imgPequena of imgProduct.pequena;let i=index"><img
-            (mouseover)="mouseCambioImg(i)" [src]="imgPequena" alt="" class="mb-2 mx-auto">
+            loading="lazy" (mouseover)="mouseCambioImg(i)" [src]="imgPequena" alt="" class="mb-2 mx-auto">
         </li>
       </ul>
     </div>
     <div class="col-xl-8 mx-auto mb-3">
-      <ngx-img-zoom [zoomImageSrc]="imgGrande" [previewImageSrc]="imageRaton"
-        [imgStyle]="'bottom:0;  left:0;  right:0;  top:0;  margin:0 auto; border:1px solid #dcdcdc;'"
-        [resultStyle]="'background-color:#fff;width:1080px; height:450px; background-repeat: no-repeat; z-index: 2; position:absolute;-webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); top: 0;left: 100%;'"
-        [enableZoom]="enableZoom" [containerStyle]="'position:relative'">
-      </ngx-img-zoom>
+      <img id="zoom_01" src="{{imageRaton}}" />
       <p class="text-diseno">Pasa el mouse encima de la imagen para aplicar zoom</p>
     </div>
   </div>
