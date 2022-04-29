@@ -30,6 +30,7 @@ export class ImagenProductsComponent implements OnInit {
     this.imagenArray.map((res: any) => {
       this.imageRaton = res.mediana[0];
       this.imgGrande = res.zoom[0];
+      console.log(this.imageRaton);
     });
   } //BUSCAR QUE IMAGEN DEL ZOOM SE APARECE DEPENDE DEL INDICE
   buscarImagenZoomdelArray(array: any, i: any) {

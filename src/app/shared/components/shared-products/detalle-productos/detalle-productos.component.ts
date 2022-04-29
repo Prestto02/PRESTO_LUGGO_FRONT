@@ -22,21 +22,21 @@ export class DetalleProductosComponent implements OnInit {
       imagenes: [
         {
           pequena: [
-            'https://m.media-amazon.com/images/I/31jq3wqMa1S._AC_SR38,50_.jpg',
+            'https://m.media-amazon.com/images/I/41ynYz11egL._AC_US40_.jpg',
 
             'https://m.media-amazon.com/images/I/31AHB7giEqS._AC_SR38,50_.jpg',
 
             'https://m.media-amazon.com/images/I/31AtmuwFqzS._AC_SR38,50_.jpg',
           ],
           mediana: [
-            'https://m.media-amazon.com/images/I/81Bj52Rn5eS._AC_UY550_.jpg',
+            'https://m.media-amazon.com/images/I/71Wuv0p6UfL._AC_SX679_.jpg',
 
             'https://m.media-amazon.com/images/I/71sPCLiQ2OS._AC_UY550_.jpg',
 
             'https://m.media-amazon.com/images/I/81gXCXqhvyS._AC_UY550_.jpg',
           ],
           zoom: [
-            'https://m.media-amazon.com/images/I/81Bj52Rn5eS._AC_UL1500_.jpg',
+            'https://m.media-amazon.com/images/I/71Wuv0p6UfL._AC_SL1500_.jpg',
 
             'https://m.media-amazon.com/images/I/71sPCLiQ2OS._AC_UL1500_.jpg',
 
