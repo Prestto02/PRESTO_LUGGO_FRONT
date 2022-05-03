@@ -26,6 +26,71 @@ const routes: Routes = [
         (m) => m.IndexMenuModule
       ),
   },
+  //ATENCION AL CLIENTE
+  {
+    path: UrlFront.AtencionCliente.atencion,
+    loadChildren: () =>
+      import(
+        './shared/components/atencion-cliente/module/atencionCliente.module'
+      ).then((m) => m.AtencionClienteModule),
+  },
+  //CARRITO LIST
+  {
+    path: UrlFront.CarritoList.carrito,
+    loadChildren: () =>
+      import(
+        './shared/components/carrito-list/module/carrito-list.module'
+      ).then((m) => m.CarritoListModule),
+  },
+  //PAGAR EL CARRITO
+  {
+    path: UrlFront.Pagar.pagar,
+    loadChildren: () =>
+      import('./shared/components/pagar/module/pagar.module').then(
+        (m) => m.PagarModule
+      ),
+  },
+  //TIENDAS
+  {
+    path: UrlFront.Tiendas.tiendas,
+    loadChildren: () =>
+      import('./shared/components/tiendas/module/tiendas.module').then(
+        (m) => m.TiendasModule
+      ),
+  },
+  //DEVOLUCIONES
+  {
+    path: UrlFront.Devoluciones.devolucion,
+    loadChildren: () =>
+      import(
+        './shared/components/devoluciones/module/devoluciones.module'
+      ).then((m) => m.DevolucionesModule),
+  },
+  //NOTICIAS
+  {
+    path: UrlFront.Noticias.noticias,
+    loadChildren: () =>
+      import('./shared/components/noticias/module/noticias.module').then(
+        (m) => m.NoticiasModule
+      ),
+  },
+  //POLITICAS
+  {
+    path: UrlFront.Politicas.politicas,
+    loadChildren: () =>
+      import('./shared/components/politicas/module/politicas.module').then(
+        (m) => m.PoliticasModule
+      ),
+  },
+  //COMUNIDAD
+  {
+    path: UrlFront.Comunidad.comunidad,
+    loadChildren: () =>
+      import('./shared/components/comunidad/module/comunidad.module').then(
+        (m) => m.ComunidadModule
+      ),
+  },
+
   //QUIENES SOMOS
   {
     path: UrlFront.Menu.menu,
