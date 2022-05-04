@@ -25,7 +25,7 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarToggleExternalContent">
       <ul class="navbar-nav me-auto mb-3 mb-lg-0 col-xl-9 col-xxl-9 col-md-9 col-12 col-sm-12">
-        <li class="container-fluid col-md-12 col-sm-12 col-xl-12">
+        <li class="container-fluid col-md-12 col-sm-12 col-xl-12 col-12 col-xxl-12">
           <form (submit)="buscarProducto()" [formGroup]="formB.formSearchProducts">
             <div class="input-group">
               <select class="form-select" formControlName="categoria" aria-label="Default select example">
@@ -34,7 +34,18 @@
                   {{categoria.name}}</option>
               </select>
               <input type="text" class="form-control w-50 input-border" formControlName="nombre" placeholder=""
-                aria-label="Username" aria-describedby="basic-addon1" />
+                aria-label="Username" aria-describedby="basic-addon1" list="datalistOptions" id="exampleDataList"
+                autocomplete="off"/>
+                <datalist id="datalistOptions">
+                  <option value="San Francisco" label="Verde1">
+                  <option value="New York" label="verde2">
+                  <option value="Seattle">
+                  <option value="Los Angeles">
+                  <option value="Peluche para mujeres grande color verde y claro">
+                  <option value="Telefono samsung galaxy S10A 32 GB">
+                  <option value="Gafas para sol y para reflectores">
+                  <option value="Cargador para laptop hp de 18V y 32 Amperios">
+                </datalist>
               <button class="input-group-text border-bottom" id="basic-addon1" type="submit">
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path fill-rule="evenodd" clip-rule="evenodd"
@@ -46,6 +57,13 @@
                 </svg>
               </button>
             </div>
+           <!--  <div class="d-flex justify-content-end">
+              <div class="position-absolute bg-white w-50">
+                <h4>hola</h4>
+                <h4>hola</h4>
+                <h4>hola</h4>
+              </div>
+            </div> -->
           </form>
         </li>
       </ul>
