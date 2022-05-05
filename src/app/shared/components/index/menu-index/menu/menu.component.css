@@ -1,9 +1,9 @@
+* {
+  font-family: Cardium B-Medium;
+}
 .color-select {
   background-color: rgba(43, 44, 68, 0.925);
   color: #fff;
-}
-* {
-  font-family: Cardium B-Medium;
 }
 .color-article {
   background-color: #7549fe;
@@ -15,9 +15,6 @@
 .border-bottom {
   background: white;
   border-left: 1px;
-}
-.input-border {
-  border-right: 0px;
 }
 .color-canvas {
   background-color: rgba(32, 32, 57, 0.94);

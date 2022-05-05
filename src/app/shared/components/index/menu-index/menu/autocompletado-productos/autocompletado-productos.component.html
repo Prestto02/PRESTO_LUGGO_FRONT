@@ -1,0 +1,10 @@
+<div class="position-relative" [formGroup]="formGroup">
+  <input type="text" class="form-control input-border" formControlName="nombre" placeholder="" aria-label="Username"
+    aria-describedby="basic-addon1" list="datalistOptions" id="exampleDataList" autocomplete="off" />
+  <div class="position-absolute bg-white w-100">
+    <option value="1" (click)="consultar($event)" class="cursor">Open this select menu</option>
+    <option value="1">Cama</option>
+    <option value="2">Cepillo</option>
+    <option value="3">Vestidos grandes para mujeres mayores</option>
+  </div>
+</div>

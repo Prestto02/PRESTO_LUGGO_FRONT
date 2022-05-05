@@ -33,19 +33,8 @@
                 <option value="{{categoria.id}}" class="color-select" *ngFor="let categoria of categoriaItems">
                   {{categoria.name}}</option>
               </select>
-              <input type="text" class="form-control w-50 input-border" formControlName="nombre" placeholder=""
-                aria-label="Username" aria-describedby="basic-addon1" list="datalistOptions" id="exampleDataList"
-                autocomplete="off"/>
-                <datalist id="datalistOptions">
-                  <option value="San Francisco" label="Verde1">
-                  <option value="New York" label="verde2">
-                  <option value="Seattle">
-                  <option value="Los Angeles">
-                  <option value="Peluche para mujeres grande color verde y claro">
-                  <option value="Telefono samsung galaxy S10A 32 GB">
-                  <option value="Gafas para sol y para reflectores">
-                  <option value="Cargador para laptop hp de 18V y 32 Amperios">
-                </datalist>
+              <app-autocompletado-productos class="w-75" [formGroup]="formB.formSearchProducts">
+              </app-autocompletado-productos>
               <button class="input-group-text border-bottom" id="basic-addon1" type="submit">
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path fill-rule="evenodd" clip-rule="evenodd"
@@ -57,13 +46,6 @@
                 </svg>
               </button>
             </div>
-           <!--  <div class="d-flex justify-content-end">
-              <div class="position-absolute bg-white w-50">
-                <h4>hola</h4>
-                <h4>hola</h4>
-                <h4>hola</h4>
-              </div>
-            </div> -->
           </form>
         </li>
       </ul>

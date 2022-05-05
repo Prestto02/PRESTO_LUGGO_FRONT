@@ -8,7 +8,6 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { InterceptorsProviders } from './shared/services/module/module-interceptors.module';
 import { ToastConfig } from './shared/Toasts/ToastsConfig';
 import { NotFund404Component } from './shared/components/not-fund404/not-fund404.component';
-
 @NgModule({
   declarations: [AppComponent, NotFund404Component],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, ToastConfig],
