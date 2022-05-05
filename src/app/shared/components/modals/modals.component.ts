@@ -8,6 +8,10 @@ import { EditRegisterModalService } from './services/edit-register-modal.service
 export class ModalsComponent implements OnInit {
   @Input('id') id: string | null = null;
   @Input('modaltamano') modaltamano: string | null = null;
+  @Input('modal-header-primary') modalheaderPrimary: string | null = null;
+  @Input('modal-header-secondary') modalheaderSecondary: string | null = null;
+  @Input('title-primary') titlePrimary: string | null = null;
+  @Input('title-secondary') titleSecondary: string | null = null;
   titleRegisterOrEdit = false;
   constructor(private serviModal: EditRegisterModalService) {}
 

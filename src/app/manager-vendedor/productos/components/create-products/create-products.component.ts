@@ -17,6 +17,7 @@ export class CreateProductsComponent implements OnInit {
   activar = false;
   categoriasItems: any;
   load: boolean = false;
+  progressBar: boolean = false;
   constructor(
     private position: PositionUser, //POSICION DEl USUARIO
     public formB: BaseFormProducts, //FORM PRODUCTS
@@ -61,5 +62,8 @@ export class CreateProductsComponent implements OnInit {
       this.formB.limpiarForm();
       this.load=false;
     }); */
+  }
+  subirProgress() {
+    this.progressBar = !this.progressBar;
   }
 }

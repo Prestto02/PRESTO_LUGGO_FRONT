@@ -2,9 +2,9 @@
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog {{modaltamano}}">
     <div class="modal-content">
-      <div [class]="titleRegisterOrEdit?'modal-header bg-primary text-white':'modal-header bg-warning text-white'">
-        <h5 class="modal-title" id="exampleModalLabel">{{titleRegisterOrEdit?'Registrar':'Editar'}}</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      <div [class]="titleRegisterOrEdit ? modalheaderPrimary:modalheaderSecondary">
+        <h5 class="modal-title" id="exampleModalLabel">{{titleRegisterOrEdit?titlePrimary:titleSecondary}}</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
         <ng-content></ng-content>

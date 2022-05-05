@@ -1,0 +1,118 @@
+<app-progress-stepper>
+</app-progress-stepper>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xl-12 col-xxl-12 col-sm-12 col-md-12">
+      <form action="">
+        <div class="row mb-3">
+          <div class="col-xl-3 col-sm-12 col-md-3 col-xxl-3 col-12">
+            <div class="row">
+              <div class="col-xl-12">
+                <label for="addon-wrapping" class="form-label">Precio Estándar</label>
+              </div>
+              <div class="col-xl-12">
+                <div class="input-group flex-nowrap">
+                  <span class="input-group-text" id="addon-wrapping">$</span>
+                  <input type="text" class="form-control" placeholder="12,00" aria-label="Username"
+                    aria-describedby="addon-wrapping">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-3 col-sm-12 col-md-3 col-xxl-3 col-12">
+            <div class="row">
+              <div class="col-xl-12">
+                <label for="addon-wrapping" class="form-label">Stock Global</label>
+              </div>
+              <div class="col-xl-12">
+                <div class="input-group flex-nowrap">
+                  <span class="input-group-text" id="addon-wrapping">Und</span>
+                  <input type="text" class="form-control" placeholder="0" aria-label="Username"
+                    aria-describedby="addon-wrapping">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-3 col-sm-12 col-md-3 col-xxl-3 col-12">
+            <div class="row">
+              <div class="col-xl-12">
+                <label for="addon-wrapping" class="form-label">Stock Mínimo</label>
+              </div>
+              <div class="col-xl-12">
+                <div class="input-group flex-nowrap">
+                  <span class="input-group-text" id="addon-wrapping">Und</span>
+                  <input type="text" class="form-control" placeholder="0" aria-label="Username"
+                    aria-describedby="addon-wrapping">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-3 col-sm-12 col-md-3 col-xxl-3 col-12">
+            <div class="row">
+              <div class="col-xl-12">
+                <label for="addon-wrapping" class="form-label">Código Único</label>
+              </div>
+              <div class="col-xl-12">
+                <div class="input-group flex-nowrap">
+                  <span class="input-group-text" id="addon-wrapping">SKU</span>
+                  <input type="text" class="form-control" placeholder="WWQAS" aria-label="Username"
+                    aria-describedby="addon-wrapping">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row mb-3">
+          <div class="col-xl-3 col-sm-12 col-md-3 col-xxl-3 col-12">
+            <select class="form-select" aria-label="Default select example">
+              <option selected>Atributos</option>
+              <option value="1">One</option>
+              <option value="2">Two</option>
+              <option value="3">Three</option>
+            </select>
+          </div>
+        </div>
+        <div class="row mb-3">
+          <div class="card">
+            <div class="accordion" id="accordionExampleConfiguracion">
+              <div class="row mt-3">
+                <div class="col-xl-1 accordion-item">
+                  <button class="btn collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseColor"
+                    aria-expanded="true" aria-controls="collapseColor">
+                    Color
+                  </button>
+                </div>
+                <div class="col-xl-1 acordion-item">
+                  <button class="btn collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTamano"
+                    aria-expanded="false" aria-controls="collapseTamano">
+                    Tamaño
+                  </button>
+                </div>
+                <div class="col-xl-1 acordion-item">
+                  <button class="btn collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseCapacidad" aria-expanded="false" aria-controls="collapseCapacidad">
+                    Capacidad
+                  </button>
+                </div>
+              </div>
+              <div class="card-body">
+                <div id="collapseColor" class="accordion-collapse collapse show" aria-labelledby="headingFour"
+                  data-bs-parent="#accordionExampleConfiguracion">
+                  <app-configuracion-color></app-configuracion-color>
+                </div>
+                <div id="collapseTamano" class="accordion-collapse collapse" aria-labelledby="headingFive"
+                  data-bs-parent="#accordionExampleConfiguracion">
+                  <app-configuracion-tamano></app-configuracion-tamano>
+                </div>
+                <div id="collapseCapacidad" class="accordion-collapse collapse" aria-labelledby="headingSix"
+                  data-bs-parent="#accordionExampleConfiguracion">
+                  <app-configuracion-capacidad></app-configuracion-capacidad>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

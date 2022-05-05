@@ -17,6 +17,8 @@ export const UrlApi = {
   loginGoogle: 'ApiPrueba/Auth/Google',
   loginMicrosoft: '',
 
+  //COLORES
+  codigoColores: 'ApiPrueba/api/color',
   //CATEGORIAS Y ARTICULOS
   categorias: 'ApiPrueba/api/Familia/padres',
   articulos: 'ApiPrueba/API/articulo',

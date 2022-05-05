@@ -17,41 +17,27 @@ export class BaseFormProducts {
       ],
     ],
     //detalleArticulo{}
-    detalleArticulo: this.formB.group({
-      descripcion_articulo: [
-        '',
-        [
-          Validators.required,
-          Validators.minLength(5),
-          Validators.maxLength(200),
-          Validators.pattern(/^[A-Za-z ]+$/),
-        ],
+    descripcion_articulo: [
+      '',
+      [
+        Validators.required,
+        Validators.minLength(5),
+        Validators.maxLength(200),
+        Validators.pattern(/^[A-Za-z ]+$/),
       ],
-      cantidad: [
-        '',
-        [
-          Validators.required,
-          Validators.minLength(1),
-          Validators.maxLength(50),
-          Validators.pattern(/^[1-9$]*$/),
-        ],
+    ],
+    caracteristicas: [
+      '',
+      [
+        Validators.required,
+        Validators.minLength(1),
+        Validators.maxLength(50),
+        Validators.pattern(/^[A-Za-z ]+$/),
       ],
-      valor_unitario: [
-        '',
-        [
-          Validators.required,
-          Validators.minLength(2),
-          Validators.maxLength(50),
-          Validators.pattern(/^[0-9]+([,][0-9]{2})?$/),
-        ],
-      ],
-    }),
-    //caracteristica_Articulo{}
-    caracteristica_Articulo: this.formB.group({
-      idtamaño_alto: [1],
-    }),
-    //multimedia[{}]
-    archivo: ['', [Validators.required]],
+    ],
+    marca: ['', [Validators.required, Validators.requiredTrue]],
+    tipo_producto: ['', [Validators.required, Validators.requiredTrue]],
+    etiquetas: [''],
   });
   //BUSCAR PRODUCTOS
   formSearchProducts = this.formB.group({
@@ -76,7 +62,7 @@ export class BaseFormProducts {
       longitud,
     };
   }
-  getPatchValueForm(products: any) {
+/*   getPatchValueForm(products: any) {
     this.formProducts.patchValue({
       id_product: products.id,
       nombre_articulo: products.name,
@@ -85,7 +71,7 @@ export class BaseFormProducts {
       },
       archivo: products.imagen,
     });
-  }
+  } */
   limpiarForm() {
     this.formProducts.reset();
     this.formSearchProducts.reset();

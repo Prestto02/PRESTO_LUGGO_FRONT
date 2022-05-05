@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xl-3">
+      <div class="row">
+        <p>Predeterminados</p>
+        <div class="col-xl-9">
+          <div class="row">
+            <div class="col-xl-1" *ngFor="let colores of arrayColores">
+              <div class="form-check">
+                <input class="form-check-input" [style]="colores.codigoHexagedecima" type="checkbox" value=""
+                  [id]="'checkbox'+colores.id" >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-2">
+      <p>Seleccionados</p>
+    </div>
+    <div class="col-xl-3">
+      <p>Precio por variación</p>
+    </div>
+    <div class="col-xl-2">
+      <p>Stock por ítem</p>
+    </div>
+    <div class="col-xl-2">
+      <p>Stock mínimo</p>
+    </div>
+  </div>
+</div>

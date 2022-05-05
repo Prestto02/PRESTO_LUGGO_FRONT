@@ -1,126 +1,120 @@
-<app-modals [modaltamano]="'modal-xl'">
-  <div class="position-relative m-4">
-    <div class="progress" style="height: 1px;">
-      <div class="progress-bar" role="progressbar" style="width: 50%;" aria-valuenow="50" aria-valuemin="0"
-        aria-valuemax="100"></div>
-    </div>
-    <div class="row">
-      <div class="col-xl-3">
-        <button type="button" class="position-absolute top-0 translate-middle btn btn-sm btn-primary rounded-pill"
-          style="width: 2rem; height:2rem;">1</button>
-      </div>
-
-      <div class="col-xl-3">
-        <button type="button" class="position-absolute top-0 translate-middle btn btn-sm btn-primary rounded-pill"
-          style="width: 2rem; height:2rem;">2</button>
-      </div>
-      <div class="col-xl-3">
-        <button type="button" class="position-absolute translate-middle btn btn-sm btn-secondary rounded-pill"
-          style="width: 2rem; height:2rem;">3</button>
-      </div>
-      <div class="col-xl-3">
-        <button type="button" class="position-absolute translate-middle btn btn-sm btn-secondary rounded-pill"
-          style="width: 2rem; height:2rem;">4</button>
-      </div>
-    </div>
-  </div>
-  <div class="container-fluid col-xl-12 col-xxl-12 col-md-12">
-    <div class="row">
-      <div class="col-xxl-12 col-xl-12 col-sm-12 col-12 col-md-12">
-        <div class="row g-0">
-          <div class="col-md-5 col-xxl-5 col-xl-5 col-5 col-sm-5 mx-auto mt-4 py-4">
-            <img *ngIf="imgProducts!=''" [src]="imgProducts" class="img-fluid rounded-start" alt="Imágen del producto">
-            <svg *ngIf="imgProducts==''" class="bd-placeholder-img rounded mx-5" width="200" height="200"
-              xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 200x200"
-              preserveAspectRatio="xMidYMid slice" focusable="false">
-              <title>Tamaño de la imagen</title>
-              <rect width="100%" height="100%" fill="#868e96"></rect><text x="38%" y="50%" fill="#dee2e6"
-                dy=".3em">200x200</text>
-            </svg>
-            <div *ngIf="error===''; else mostrarMensaje">
-            </div>
-            <ng-template #mostrarMensaje>
-              <p class="text-danger">{{error}}</p>
-            </ng-template>
-          </div>
-          <div class="col-md-7 col-xxl-7 col-xl-7 col-7 col-sm-7">
-            <div class="card-body">
+<app-modals [modaltamano]="'modal-xl'" [modal-header-primary]="'modal-header bg-dark text-white'"
+  [modal-header-secondary]="'modal-header bg-warning text-white'" [title-primary]="'Crear Producto'"
+  [title-secondary]="'Editar Producto'">
+  <div class="accordion" id="accordionExample">
+    <div class="accordion-item border-0">
+      <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+        data-bs-parent="#accordionExample">
+        <app-progress-stepper [width]="progressBar"></app-progress-stepper>
+        <div class="container-fluid col-xl-12 col-xxl-12 col-md-12">
+          <div class="row">
+            <div class="col-md-12 col-xxl-12 col-xl-12 col-12 col-sm-12">
               <form (submit)="submit()" [formGroup]="formB.formProducts">
                 <input type="hidden" formControlName="id_product">
-                <!------NOMBRE----->
-                <div class="form-floating mb-3">
-                  <input type="text" class="form-control is-invalid" formControlName="nombre_articulo"
-                    id="floatingNombre"
-                    [class.is-invalid]="formB.formProducts.get('nombre_articulo')?.touched && formB.formProducts.get('nombre_articulo')?.invalid"
-                    placeholder="Nombre del producto">
-                  <label for="floatingNombre">Nombre</label>
-                  <app-form-errors-container [forControl]="formB.formProducts.get('nombre_articulo')">
-                    <app-message-error forErrorCode="required"></app-message-error>
-                    <app-message-error forErrorCode="minlength" customMsg="Debe tener al menos 10 caracteres">
-                    </app-message-error>
-                    <app-message-error forErrorCode="pattern" customMsg="No se admiten caracteres especiales">
-                    </app-message-error>
-                  </app-form-errors-container>
+                <div class="row">
+                  <!------NOMBRE, MARCA, TIPO PRODUCTO----->
+                  <div class="col-xl-6">
+                    <div class="form-floating mb-3">
+                      <input type="text" class="form-control is-invalid" formControlName="nombre_articulo"
+                        id="floatingNombre"
+                        [class.is-invalid]="formB.formProducts.get('nombre_articulo')?.touched && formB.formProducts.get('nombre_articulo')?.invalid"
+                        placeholder="Nombre del producto">
+                      <label for="floatingNombre">Nombre
+                      </label>
+                      <app-form-errors-container [forControl]="formB.formProducts.get('nombre_articulo')">
+                        <app-message-error forErrorCode="required"></app-message-error>
+                        <app-message-error forErrorCode="minlength" customMsg="Debe tener al menos 10 caracteres">
+                        </app-message-error>
+                        <app-message-error forErrorCode="pattern" customMsg="No se admiten caracteres especiales">
+                        </app-message-error>
+                      </app-form-errors-container>
+                    </div>
+                  </div>
+                  <div class="col-xl-3">
+                    <div class="form-floating">
+                      <select class="form-select is-invalid" id="floatingSelect" formControlName="marca"
+                        [class.is-invalid]="formB.formProducts.get('marca')?.touched && formB.formProducts.get('marca')?.invalid"
+                        aria-label="Floating label select example">
+                        <option selected>Sony</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                      </select>
+                      <label for="floatingSelect">Marca</label>
+                    </div>
+                    <app-form-errors-container [forControl]="formB.formProducts.get('marca')">
+                      <app-message-error forErrorCode="required"></app-message-error>
+                    </app-form-errors-container>
+                  </div>
+                  <div class="col-xl-3">
+                    <div class="form-floating">
+                      <select class="form-select is-invalid" id="floatingSelect" formControlName="tipo_producto"
+                        [class.is-invalid]="formB.formProducts.get('tipo_producto')?.touched && formB.formProducts.get('tipo_producto')?.invalid"
+                        aria-label="Floating label select example">
+                        <option selected>Variable</option>
+                        <option value="1">Variable</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                      </select>
+                      <label for="floatingSelect">Tipo de producto</label>
+                    </div>
+                    <app-form-errors-container [forControl]="formB.formProducts.get('tipo_producto')">
+                      <app-message-error forErrorCode="required"></app-message-error>
+                    </app-form-errors-container>
+                  </div>
                 </div>
                 <!----Detalle del articulo------->
-                <ng-container formGroupName="detalleArticulo">
+                <div class="row">
                   <!-------DESCRIPCION--------->
-                  <div class="form-floating mb-3">
-                    <input type="text" class="form-control is-invalid" id="floatingDetalle"
-                      formControlName="descripcion_articulo"
-                      [class.is-invalid]="formB.formProducts.get('descripcion_articulo')?.touched && formB.formProducts.get('descripcion_articulo')?.invalid"
-                      placeholder="Detalle del producto">
-                    <label for="floatingDetalle">Descripcion</label>
-                    <app-form-errors-container [forControl]="formB.formProducts.get('descripcion_articulo')">
-                      <app-message-error forErrorCode="required"></app-message-error>
-                      <app-message-error forErrorCode="minlength" customMsg="Debe tener al menos 5 caracteres">
-                      </app-message-error>
-                      <app-message-error forErrorCode="pattern" customMsg="No se admiten caracteres especiales">
-                      </app-message-error>
-                    </app-form-errors-container>
+                  <div class="col-xl-12 col-sm-12 col-12 col-md-12 col-xxl-12">
+                    <div class="form-floating mb-3">
+                      <textarea class="form-control is-invalid" id="floatingDetalle"
+                        formControlName="descripcion_articulo"
+                        [class.is-invalid]="formB.formProducts.get('descripcion_articulo')?.touched && formB.formProducts.get('descripcion_articulo')?.invalid"
+                        placeholder="Detalle del producto" style="height: 100px"></textarea>
+                      <label for="floatingDetalle">Descripcion</label>
+                      <app-form-errors-container [forControl]="formB.formProducts.get('descripcion_articulo')">
+                        <app-message-error forErrorCode="required"></app-message-error>
+                        <app-message-error forErrorCode="minlength" customMsg="Debe tener al menos 5 caracteres">
+                        </app-message-error>
+                        <app-message-error forErrorCode="pattern" customMsg="No se admiten caracteres especiales">
+                        </app-message-error>
+                      </app-form-errors-container>
+                    </div>
                   </div>
-                  <!--------CANTIDAD---------->
-                  <div class="form-floating mb-3">
-                    <input type="text" class="form-control" formControlName="cantidad" id="floatingCantidad"
-                      [class.is-invalid]="formB.formProducts.get('cantidad')?.touched && formB.formProducts.get('cantidad')?.invalid"
-                      placeholder="Cantidad del producto">
-                    <label for="floatingCantidad">Cantidad</label>
-                    <app-form-errors-container [forControl]="formB.formProducts.get('cantidad')">
-                      <app-message-error forErrorCode="required"></app-message-error>
-                      <app-message-error forErrorCode="minlength" customMsg="Debe tener una cantidad">
-                      </app-message-error>
-                      <app-message-error forErrorCode="pattern" customMsg="Solo acepta numeros sin decimales">
-                      </app-message-error>
-                    </app-form-errors-container>
+                  <div class="col-xl-12 col-sm-12 col-12 col-md-12 col-xxl-12">
+                    <!--------CARACTERISTICAS---------->
+                    <div class="form-floating mb-3">
+                      <textarea type="text" class="form-control" formControlName="caracteristicas" id="floatingCantidad"
+                        [class.is-invalid]="formB.formProducts.get('caracteristicas')?.touched && formB.formProducts.get('caracteristicas')?.invalid"
+                        placeholder="Cantidad del producto" style="height: 100px;"></textarea>
+                      <label for="floatingCantidad">Cantidad</label>
+                      <app-form-errors-container [forControl]="formB.formProducts.get('caracteristicas')">
+                        <app-message-error forErrorCode="required"></app-message-error>
+                        <app-message-error forErrorCode="minlength" customMsg="Debe tener una caracteristicas">
+                        </app-message-error>
+                        <app-message-error forErrorCode="pattern" customMsg="Solo letras">
+                        </app-message-error>
+                      </app-form-errors-container>
+                    </div>
                   </div>
-                  <!------PRECIO------>
-                  <div class="input-group mb-3">
-                    <span class="input-group-text">$</span>
-                    <input type="text" class="form-control" id="floatingPrecio" formControlName="valor_unitario"
-                      [class.is-invalid]="formB.formProducts.get('valor_unitario')?.touched && formB.formProducts.get('valor_unitario')?.invalid"
-                      placeholder="12,00">
+                </div>
+                <div class="row">
+                  <div class="col-xl-6 col-sm-6 col-md-6 col-xxl-6 col-6">
+                    <app-categorias></app-categorias>
                   </div>
-                  <app-form-errors-container [forControl]="formB.formProducts.get('valor_unitario')">
-                    <app-message-error forErrorCode="required"></app-message-error>
-                    <app-message-error forErrorCode="minlength" customMsg="Debe tener una cantidad valida ej:12,00">
-                    </app-message-error>
-                    <app-message-error forErrorCode="pattern" customMsg="Solo acepta cantidades con centavos ej:12,00">
-                    </app-message-error>
-                  </app-form-errors-container>
-                </ng-container>
-                <!-----CATEGORIAS---->
-                <!-------<app-categorias></app-categorias>---->
-                <!----INPUT DE IMAGENES---->
-
-                <div class="mb-3">
-                  <label for="formFile" class="form-label">Seleccione una imagen</label>
-                  <input class="form-control" type="file" id="formFile" alife-file-to-base64
-                    (onFileChanged)="getArchive($event)" (change)="getImage($event);" required>
+                  <div class="col-xl-6 col-sm-6 col-md-6 col-xxl-6 col-6">
+                    <div class="form-floating mb-3">
+                      <input type="text" class="form-control" formControlName="etiquetas" id="floatingInputEtiqueta"
+                        placeholder="Etiquetas">
+                      <label for="floatingInputEtiqueta">Etiquetas</label>
+                    </div>
+                  </div>
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                  <app-buttons-load [load]="load" [formB]="formB.formProducts"
-                    [valueButton]="activar?'Guardar':'Editar'">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                  <app-buttons-load [modal]="true" [load]="load" [formB]="formB.formProducts"
+                    [valueButton]="activar?'Siguiente':'Editar'">
                   </app-buttons-load>
                 </div>
               </form>
@@ -129,5 +123,48 @@
         </div>
       </div>
     </div>
+    <div class="acordion-item border-0">
+      <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+        data-bs-parent="#accordionExample">
+        <app-configuracion-producto></app-configuracion-producto>
+      </div>
+    </div>
+    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+      data-bs-parent="#accordionExample">
+      <app-imagen-productos></app-imagen-productos>
+    </div>
+    <button class="btn btn-primary collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+      aria-expanded="true" aria-controls="collapseOne">
+      Accordion Item #1
+    </button>
+    <button class="btn btn-primary collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+      aria-expanded="true" aria-controls="collapseTwo">
+      Accordion Item #2
+    </button>
+    <button class="btn btn-primary collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree"
+      aria-expanded="false" aria-controls="collapseThree">
+      Accordion Item #3
+    </button>
   </div>
 </app-modals>
+
+
+<!-- <div class="col-xxl-12 col-xl-12 col-sm-12 col-12 col-md-12">
+  <div class="row g-0">
+    <div class="col-md-5 col-xxl-5 col-xl-5 col-5 col-sm-5 mx-auto mt-4 py-4">
+    <img *ngIf="imgProducts!=''" [src]="imgProducts" class="img-fluid rounded-start" alt="Imágen del producto">
+    <svg *ngIf="imgProducts==''" class="bd-placeholder-img rounded mx-5" width="200" height="200"
+      xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 200x200"
+      preserveAspectRatio="xMidYMid slice" focusable="false">
+      <title>Tamaño de la imagen</title>
+      <rect width="100%" height="100%" fill="#868e96"></rect><text x="38%" y="50%" fill="#dee2e6"
+        dy=".3em">200x200</text>
+    </svg>
+    <div *ngIf="error===''; else mostrarMensaje">
+    </div>
+    <ng-template #mostrarMensaje>
+      <p class="text-danger">{{error}}</p>
+    </ng-template>
+  </div>
+  </div>
+</div> -->

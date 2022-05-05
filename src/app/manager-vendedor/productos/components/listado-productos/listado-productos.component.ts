@@ -32,7 +32,7 @@ export class ListadoProductosComponent implements OnInit {
   editarProduct(product: any) {
     console.log(product);
     //this.formB.formProducts.setValue({ ...product });
-    this.formB.getPatchValueForm(product);
+    //this.formB.getPatchValueForm(product);
     this.modalServi.editModal(); //CAMBIO EL ESTADO DEL MODAL
   }
   //CAMBIO EL ESTADO DEL MODAL

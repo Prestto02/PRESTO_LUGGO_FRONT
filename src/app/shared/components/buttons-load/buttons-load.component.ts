@@ -7,8 +7,9 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class ButtonsLoadComponent implements OnInit {
   @Input('load') load: boolean | null = null;
-  @Input('formB') formB: any ;
+  @Input('formB') formB: any;
   @Input('valueButton') valueButton: string | null = null;
+  @Input('modal') modal: boolean | null = null;
   constructor() {}
 
   ngOnInit(): void {}

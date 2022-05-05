@@ -32,6 +32,12 @@ import { IndexMenuModule } from 'src/app/shared/components/index/module/index-me
 import { LinealGraficoComponent } from '../dashboard/lineal-grafico/lineal-grafico.component';
 import { PastelGraficoComponent } from '../dashboard/pastel-grafico/pastel-grafico.component';
 import { SparklinesLinealComponent } from 'src/app/manager-vendedor/dashboard/card-secundario/sparklines-lineal/sparklines-lineal.component';
+import { ProgressStepperComponent } from '../productos/components/progress-stepper/progress-stepper.component';
+import { ConfiguracionProductoComponent } from '../productos/components/configuracion-producto/configuracion-producto.component';
+import { ConfiguracionCapacidadComponent } from '../productos/components/configuracion-producto/configuracion-capacidad/configuracion-capacidad.component';
+import { ConfiguracionColorComponent } from '../productos/components/configuracion-producto/configuracion-color/configuracion-color.component';
+import { ConfiguracionTamanoComponent } from '../productos/components/configuracion-producto/configuracion-tamano/configuracion-tamano.component';
+import { ImagenProductosComponent } from '../productos/components/imagen-productos/imagen-productos.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +57,12 @@ import { SparklinesLinealComponent } from 'src/app/manager-vendedor/dashboard/ca
     LinealGraficoComponent, //LINEAL GRAFICO DASHBOARD
     PastelGraficoComponent, //GRAFICO PASTEL DASHBOARD
     SparklinesLinealComponent, //LINEAL SKELETON
+    ProgressStepperComponent, //PROGRESS STEPPER HORIZONTAL
+    ConfiguracionProductoComponent, //CONFIGURACION DEL PRODUCTO
+    ConfiguracionCapacidadComponent, //CONFIGURACION CAPACIDAD
+    ConfiguracionColorComponent, //CONFIGURACION DEL COLOR
+    ConfiguracionTamanoComponent, //CONFIGURACION DEL TAMANO
+    ImagenProductosComponent, //IMAGEN DEL PRODUCTO
   ],
   imports: [
     ManagerVendedorRoutingModule, //MANAGER ROUTING

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { CategoriasService } from '../productos/services/categorias.service';
 import { BaseFormCategorias } from './models/categorias.models';
 
@@ -10,7 +10,7 @@ import { BaseFormCategorias } from './models/categorias.models';
 export class CategoriasComponent implements OnInit {
   //VARIABLES
   categoriasItems: any;
-  checkFocus = false;
+  categoriaFocus: boolean = false;
   categoriaSeleccionadas: any = [];
   constructor(
     public formB: BaseFormCategorias,
@@ -28,5 +28,8 @@ export class CategoriasComponent implements OnInit {
   //SETEAR EL NUEVO ELEMENTO EN EL ARRAY
   onChangeCheckBox(id: any, e: any) {
     this.formB.addCategoriaItems(id, e);
+  }
+  @HostListener('document:click') clickout() {
+    this.categoriaFocus = this.categoriaFocus;
   }
 }
