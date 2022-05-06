@@ -4,21 +4,67 @@
 </app-progress-stepper>
 <div class="container-fluid">
   <div class="row mx-3 mb-3">
-    <div class="col-xl-3">
-      <img loading="lazy"
-        src="https://thumbs.dreamstime.com/b/bal%C3%B3n-de-f%C3%BAtbol-aislado-en-el-fondo-blanco-bola-negra-y-plata-del-130934781.jpg"
-        width="183px" height="183px" class="img-fluid">
+    <div class="col-xl-6">
+      <div class="row">
+        <div class="col-xl-2">
+          <img loading="lazy"
+            src="https://thumbs.dreamstime.com/b/bal%C3%B3n-de-f%C3%BAtbol-aislado-en-el-fondo-blanco-bola-negra-y-plata-del-130934781.jpg"
+            width="55px" height="55px" />
+          <img loading="lazy"
+            src="https://thumbs.dreamstime.com/b/bal%C3%B3n-de-f%C3%BAtbol-aislado-en-el-fondo-blanco-bola-negra-y-plata-del-130934781.jpg"
+            width="55px" height="55px" />
+          <img loading="lazy"
+            src="https://thumbs.dreamstime.com/b/bal%C3%B3n-de-f%C3%BAtbol-aislado-en-el-fondo-blanco-bola-negra-y-plata-del-130934781.jpg"
+            width="55px" height="55px" />
+        </div>
+        <div class="col-xl-7">
+          <img loading="lazy"
+            src="https://thumbs.dreamstime.com/b/bal%C3%B3n-de-f%C3%BAtbol-aislado-en-el-fondo-blanco-bola-negra-y-plata-del-130934781.jpg"
+            width="300px" height="183px" class="img-fluid">
+          <p class="text-center">Imágen destacada</p>
+        </div>
+      </div>
     </div>
-    <div class="col-xl-1">
-      <img loading="lazy"
-        src="https://thumbs.dreamstime.com/b/bal%C3%B3n-de-f%C3%BAtbol-aislado-en-el-fondo-blanco-bola-negra-y-plata-del-130934781.jpg"
-        width="55px" height="55px" />
-      <img loading="lazy"
-        src="https://thumbs.dreamstime.com/b/bal%C3%B3n-de-f%C3%BAtbol-aislado-en-el-fondo-blanco-bola-negra-y-plata-del-130934781.jpg"
-        width="55px" height="55px" />
-      <img loading="lazy"
-        src="https://thumbs.dreamstime.com/b/bal%C3%B3n-de-f%C3%BAtbol-aislado-en-el-fondo-blanco-bola-negra-y-plata-del-130934781.jpg"
-        width="55px" height="55px" />
+    <div class="col-xl-6">
+      <div class="row">
+        <div class="col-xl-12">
+          <h4>Sección Adicional</h4>
+        </div>
+        <div class="col-xl-12">
+          <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="floatingInputTitulo" placeholder="Título">
+            <label for="floatingInputTitulo">Título</label>
+          </div>
+        </div>
+        <div class="col-xl-12">
+          <div class="form-floating mb-3">
+            <textarea class="form-control" id="floatingInputDescripcion" placeholder="Descripción"
+              style="height: 200px;"></textarea>
+            <label for="floatingInputDescripcion">Descripción</label>
+          </div>
+        </div>
+        <div class="col-xl-12">
+          <div class="row">
+            <div class="col-xl-3"><img width="70px"
+                src="https://thumbs.dreamstime.com/b/bal%C3%B3n-de-f%C3%BAtbol-aislado-en-el-fondo-blanco-bola-negra-y-plata-del-130934781.jpg">
+            </div>
+            <div class="col-xl-3"><img width="70px"
+                src="https://thumbs.dreamstime.com/b/bal%C3%B3n-de-f%C3%BAtbol-aislado-en-el-fondo-blanco-bola-negra-y-plata-del-130934781.jpg">
+            </div>
+            <div class="col-xl-3"><img width="70px"
+                src="https://thumbs.dreamstime.com/b/bal%C3%B3n-de-f%C3%BAtbol-aislado-en-el-fondo-blanco-bola-negra-y-plata-del-130934781.jpg">
+            </div>
+            <div class="col-xl-3"><img width="70px"
+                src="https://thumbs.dreamstime.com/b/bal%C3%B3n-de-f%C3%BAtbol-aislado-en-el-fondo-blanco-bola-negra-y-plata-del-130934781.jpg">
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Atras</button>
+    <app-buttons-load [modal]="true" [valueButton]="'Finalizar'">
+    </app-buttons-load>
   </div>
 </div>
