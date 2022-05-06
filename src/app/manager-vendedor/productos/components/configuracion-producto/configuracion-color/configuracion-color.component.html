@@ -33,6 +33,7 @@
                 </div>
               </div>
             </div>
+            <!-------AGREGAR NUEVO COLOR-------->
             <div class="col-xl-12">
               <button class="btn btn-add-colors"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"
                   xmlns="http://www.w3.org/2000/svg">
@@ -49,6 +50,7 @@
           <ng-container *ngFor="let coloresForm of formColor.colores.controls; let i=index;">
             <ng-container [formGroupName]="i">
               <div *ngIf="i>=1" class="col-xl-3"></div>
+              <!------COLOR Y NOMBRE DEL COLOR-------->
               <div class="col-xl-2">
                 <div class="row">
                   <div class="col-xl-1">

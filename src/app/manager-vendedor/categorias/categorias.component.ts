@@ -1,4 +1,4 @@
-import { Component, HostListener, OnInit } from '@angular/core';
+import { Component, ElementRef, HostListener, OnInit } from '@angular/core';
 import { CategoriasService } from '../productos/services/categorias.service';
 import { BaseFormCategorias } from './models/categorias.models';
 
@@ -14,7 +14,8 @@ export class CategoriasComponent implements OnInit {
   categoriaSeleccionadas: any = [];
   constructor(
     public formB: BaseFormCategorias,
-    private apiCategoria: CategoriasService
+    private apiCategoria: CategoriasService,
+    private eRef: ElementRef
   ) {}
   ngOnInit(): void {
     this.getAllCategorias();
@@ -29,7 +30,12 @@ export class CategoriasComponent implements OnInit {
   onChangeCheckBox(id: any, e: any) {
     this.formB.addCategoriaItems(id, e);
   }
-  @HostListener('document:click') clickout() {
-    this.categoriaFocus = this.categoriaFocus;
+  //DETECTAR CLICK FUERA DEL COMPONENTE
+  @HostListener('document:click', ['$event']) clickout(event: any) {
+    if (this.eRef.nativeElement.contains(event.target)) {
+      this.categoriaFocus = true; //SI ESTA DENTRO
+    } else {
+      this.categoriaFocus = false; //SI ESTA AFUERA
+    }
   }
 }
