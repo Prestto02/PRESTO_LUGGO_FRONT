@@ -3,9 +3,9 @@
   <div>
     <div class="input-group mb-3">
       <ng-container *ngIf="formB.categoriaSeleccionadas">
-        <ng-container *ngFor="let categoriasSelect of formB.categoriaSeleccionadas">
+        <ng-container *ngFor="let categoriasSelect of formB.categoriaSeleccionadas; let i=index;">
           <span class="input-group-text border-badge" id="basic-addon1"><span
-              class="badge bg-primary">{{categoriasSelect}}</span></span>
+              class="badge bg-color-badge">{{categoriasSelect}}</span></span>
         </ng-container>
       </ng-container>
       <input type="text" class="form-control border-input" formControlName="nameCategoria"

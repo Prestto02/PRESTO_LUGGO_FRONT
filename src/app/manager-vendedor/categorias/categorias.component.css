@@ -1,12 +1,19 @@
-.border-input {
-  border-left: 0px;
-}
 .border-badge {
   background-color: #fff;
   border-right: 0px;
 }
-
+.border-input {
+  height: 58px;
+}
+.border-badge:nth-of-type(n + 2) {
+  background-color: #fff;
+  border-left: 0px;
+}
 .border-listado {
   border: 1px solid #000;
   border-radius: 6px;
+}
+.bg-color-badge {
+  background-color: #dbf6ff;
+  color: #000;
 }

@@ -38,6 +38,7 @@ import { ConfiguracionCapacidadComponent } from '../productos/components/configu
 import { ConfiguracionColorComponent } from '../productos/components/configuracion-producto/configuracion-color/configuracion-color.component';
 import { ConfiguracionTamanoComponent } from '../productos/components/configuracion-producto/configuracion-tamano/configuracion-tamano.component';
 import { ImagenProductosComponent } from '../productos/components/imagen-productos/imagen-productos.component';
+import { BaseFormColors } from '../productos/components/configuracion-producto/configuracion-color/models/BaseFormColors';
 
 @NgModule({
   declarations: [
@@ -77,6 +78,11 @@ import { ImagenProductosComponent } from '../productos/components/imagen-product
     NgxPaginationModule, //PAGINATIONS
     OrderModule, //ORDER MODULE
   ],
-  providers: [BaseFormProducts, BaseFormCategorias, CreateProductsComponent],
+  providers: [
+    BaseFormProducts,
+    BaseFormCategorias,
+    BaseFormColors,
+    CreateProductsComponent,
+  ],
 })
 export class ManagerVendedorModule {}
