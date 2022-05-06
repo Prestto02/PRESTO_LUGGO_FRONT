@@ -50,8 +50,8 @@
               <div class="col-xl-2">
                 <div class="row">
                   <div class="col-xl-1">
-                    <input class="form-check-input" [style]="coloresForm.get('coloresEscogido')?.value"
-                      formControlName="coloresEscogido" type="checkbox" value="" disable>
+                    <input type="checkbox" class="form-check-input" [style]="coloresForm.get('coloresEscogido')?.value"
+                      disabled readonly value="">
                   </div>
                   <div class="col-xl-10">
                     <p>{{coloresForm.get('nameColor')?.value}}</p>
