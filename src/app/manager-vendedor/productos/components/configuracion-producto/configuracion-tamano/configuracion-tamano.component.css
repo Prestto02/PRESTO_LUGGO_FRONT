@@ -1,0 +1,12 @@
+.cursor {
+  cursor: pointer;
+}
+
+.btn-check {
+  width: 43.89px;
+  font-size: 12px;
+  height: 28px;
+}
+.btn-check:checked {
+  background-color: #dbf6ff;
+}

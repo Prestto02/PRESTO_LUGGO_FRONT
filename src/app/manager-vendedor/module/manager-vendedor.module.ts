@@ -39,6 +39,7 @@ import { ConfiguracionColorComponent } from '../productos/components/configuraci
 import { ConfiguracionTamanoComponent } from '../productos/components/configuracion-producto/configuracion-tamano/configuracion-tamano.component';
 import { ImagenProductosComponent } from '../productos/components/imagen-productos/imagen-productos.component';
 import { BaseFormColors } from '../productos/components/configuracion-producto/configuracion-color/models/BaseFormColors';
+import { BaseFormTamano } from '../productos/components/configuracion-producto/configuracion-tamano/models/BaseFormTamano';
 
 @NgModule({
   declarations: [
@@ -82,6 +83,7 @@ import { BaseFormColors } from '../productos/components/configuracion-producto/c
     BaseFormProducts,
     BaseFormCategorias,
     BaseFormColors,
+    BaseFormTamano,
     CreateProductsComponent,
   ],
 })
