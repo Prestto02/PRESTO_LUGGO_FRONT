@@ -35,7 +35,6 @@ export class PerfilUsersComponent implements OnInit {
       this.imgValidar.getArchiveImagen(e); //OBTENGO LO QUE ME ENVIA EL ARREGLO DE LA IMAGEN
     this.imgProducts = imgProducts; //ASIGNO
     this.imagenTransformada = imagenTransformada; //ASIGNO
-    console.log(this.imagenTransformada, this, imgProducts);
   }
   //OBTENER IMAGEN PARA VERIFICAR EN EL SERVER
   getImage(e: any) {

@@ -1,5 +1,5 @@
 export const UrlApi = {
-  ApiUrl: 'https://192.168.100.15/',
+  ApiUrl: 'https://192.168.20.104/',
   //PERSONAS
   getPersonaId: 'ApiPrueba/API/usuario',
   persona: 'ApiPrueba/API/persona',
