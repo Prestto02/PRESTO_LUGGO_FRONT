@@ -52,7 +52,7 @@
           <ng-container *ngIf="dataProducts && dataProducts.length>0; else notData">
             <tr
               *ngFor="let product of dataProducts | orderBy:key:reverse | filtroPaginacion:searchProducts | paginate: {itemsPerPage:6,currentPage:p};">
-              <td class="mx-auto"><img loading="lazy" src="http://192.168.100.15{{product.imagen}}" alt="product"
+              <td class="mx-auto"><img loading="lazy" src="http://192.168.20.104:9595/{{product.imagen}}" alt="product"
                   width="77px" height="66px" class="img-fluid"></td>
               <td>{{product.codigo}}</td>
               <td>{{product.name}}</td>

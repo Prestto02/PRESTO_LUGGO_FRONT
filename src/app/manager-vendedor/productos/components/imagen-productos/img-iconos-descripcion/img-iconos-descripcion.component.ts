@@ -8,6 +8,7 @@ import { ValidarYTransformarImagen } from 'src/app/shared/validations/ValidarYTr
   styleUrls: ['./img-iconos-descripcion.component.css'],
 })
 export class ImgIconosDescripcionComponent implements OnInit {
+  //ARRAY DE OBJETOS DE FUNCIONES
   imgListDescripcionArray: any = [
     {
       id: 1,

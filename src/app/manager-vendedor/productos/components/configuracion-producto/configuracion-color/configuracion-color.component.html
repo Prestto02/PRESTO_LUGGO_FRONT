@@ -1,29 +1,29 @@
 <div class="container">
   <div class="row">
     <!---------PESTAÑAS DE MENU--------->
-    <div class="col-xl-3">
+    <div class="col-xl-3 col-xxl-3 col-sm-6 col-6 col-md-4">
       <p>Predeterminados</p>
     </div>
-    <div class="col-xl-2">
+    <div class="col-xl-2 col-xxl-2 col-sm-6 col-6 col-md-4">
       <p>Seleccionados</p>
     </div>
-    <div class="col-xl-3">
+    <div class="col-xl-3 col-xxl-3 col-sm-6 col-6 col-md-4">
       <p>Precios por variación</p>
     </div>
-    <div class="col-xl-2">
+    <div class="col-xl-2 col-xxl-2 col-sm-6 col-6 col-md-4">
       <p>Stock por ítems</p>
     </div>
-    <div class="col-xl-2">
+    <div class="col-xl-2 col-xxl-2 col-sm-6 col-6 col-md-4">
       <p>Stock mínimo</p>
     </div>
     <!---------FORM COLORES----------->
     <form [formGroup]="formColor.formColors">
       <div class="row">
-        <div class="col-xl-3">
+        <div class="col-xl-3 col-xxl-3 col-sm-6 col-6 col-md-4">
           <div class="row">
             <div class="col-xl-8">
               <div class="row">
-                <div class="col-xl-1" *ngFor="let colores of arrayColores">
+                <div class="col-xl-1 col-xxl-1 col-sm-1 col-md-1 col-1" *ngFor="let colores of arrayColores">
                   <div class="form-check">
                     <!----PARA SUBIR LOS COLORES DE LOS ITEMS--->
                     <input class="form-check-input" [style]="colores.codigoHexagedecima" type="checkbox"

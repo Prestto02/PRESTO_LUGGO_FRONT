@@ -1,39 +1,39 @@
 <div class="container">
   <div class="row">
     <!---------PESTAÑAS DE MENU--------->
-    <div class="col-xl-3">
+    <div class="col-xl-3 col-xxl-2 col-sm-3 col-3 col-md-3">
       <p>Predeterminados</p>
     </div>
-    <div class="col-xl-2">
+    <div class="col-xl-2 col-xxl-2 col-sm-2 col-2 col-md-2">
       <p>Seleccionados</p>
     </div>
-    <div class="col-xl-3">
+    <div class="col-xl-3 col-xxl-3 col-sm-3 col-3 col-md-3">
       <p>Precios por variación</p>
     </div>
-    <div class="col-xl-2">
+    <div class="col-xl-2 col-xxl-2 col-sm-2 col-2 col-md-2">
       <p>Stock por ítems</p>
     </div>
-    <div class="col-xl-2">
+    <div class="col-xl-2 col-xxl-2 col-sm-2 col-2 col-md-2">
       <p>Stock mínimo</p>
     </div>
     <!---------FORM COLORES----------->
     <form [formGroup]="formB.formTamano">
       <div class="row">
-        <div class="col-xl-3">
+        <div class="col-xl-3 col-xxl-3 col-sm-3 col-3 col-md-3">
           <div class="row">
-            <div class="col-xl-12">
+            <div class="col-xl-12 col-xxl-12 col-md-12 col-sm-12 col-12">
               <div class="row">
-                <div class="col-xl-3" *ngFor="let tamano of arrayTamano">
+                <div class="col-xl-3 col-xxl-3 col-md-6 col-sm-6 col-6 mb-2" *ngFor="let tamano of arrayTamano">
                   <!----PARA SUBIR LAS TALLAS DE LOS ITEMS--->
                   <input type="checkbox" class="btn-check" [id]="'checkbox-'+tamano.id" autocomplete="off"
                     (click)="addTamanoItems(tamano.nombre_tamano,tamano.id,$event)" />
-                  <label class="btn btn-ligth border border-1 rounded text-black"
-                    for="checkbox-{{tamano.id}}" [id]="'color-check-'+tamano.id">{{tamano.nombre_tamano}}</label>
+                  <label class="btn btn-ligth btn-sm border border-1 rounded text-black" for="checkbox-{{tamano.id}}"
+                    [id]="'color-check-'+tamano.id">{{tamano.nombre_tamano}}</label>
                 </div>
               </div>
             </div>
             <!-------AGREGAR NUEVO COLOR-------->
-            <div class="col-xl-12">
+            <div class="col-xl-12 col-xxl-12 col-sm-12 col-12 col-md-12">
               <button class="btn btn-add-colors"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"
                   xmlns="http://www.w3.org/2000/svg">
                   <path
@@ -47,42 +47,45 @@
         <ng-container formArrayName="tamano">
           <ng-container *ngFor="let tamanoForm of formB.tamano.controls; let i=index;">
             <ng-container [formGroupName]="i">
-              <div *ngIf="i>=1" class="col-xl-3"></div>
+              <div *ngIf="i>=1" class="col-xl-3 col-xxl-3 col-sm-3 col-3 col-md-3 mb-2"></div>
               <!------COLOR Y NOMBRE DEL COLOR-------->
-              <div class="col-xl-2">
+              <div class="col-xl-2 col-xxl-2 col-sm-2 col-2 col-md-2">
                 <div class="row">
-                  <div class="col-xl-12">
+                  <div class="col-xl-12 col-sm-12 col-12 col-md-12 col-xxl-12 text-center">
                     <p>{{tamanoForm.get('nameTamano')?.value}}</p>
                   </div>
                 </div>
               </div>
               <!-------PRECIO POR VARIACION--------->
-              <div class="col-xl-3">
+              <div class="col-xl-3 col-xxl-3 col-sm-3 col-3 col-md-3">
                 <div class="input-group mb-3">
-                  <span class="input-group-text" id="basic-precio-variacion">$</span>
+                  <span class="input-group-text d-sm-none d-none d-xxl-block d-xl-block d-md-none"
+                    id="basic-precio-variacion">$</span>
                   <input type="text" class="form-control" formControlName="PrecioPorVariacion" placeholder="40"
                     aria-label="precio-variacion" aria-describedby="basic-precio-variacion">
                 </div>
               </div>
               <!-------STOCK POR ITEMS--------->
-              <div class="col-xl-2">
+              <div class="col-xl-2 col-xxl-2 col-sm-2 col-2 col-md-2">
                 <div class="input-group mb-3">
-                  <span class="input-group-text" id="basic-precio-variacion">Und</span>
+                  <span class="input-group-text d-sm-none d-none d-xxl-block d-xl-block d-md-none"
+                    id="basic-precio-variacion">Und</span>
                   <input type="text" class="form-control" formControlName="StockItems" placeholder="40"
                     aria-label="precio-variacion" aria-describedby="basic-precio-variacion">
                 </div>
               </div>
               <!-------STOCK MINIMO--------->
-              <div class="col-xl-2">
+              <div class="col-xl-2 col-xxl-2 col-sm-2 col-2 col-md-2">
                 <div class="row">
-                  <div class="col-xl-10">
+                  <div class="col-xl-10 col-sm-12 col-md-12 col-xxl-10 col-md-9">
                     <div class="input-group mb-3">
-                      <span class="input-group-text" id="basic-precio-variacion">Und</span>
+                      <span class="input-group-text d-sm-none d-none d-xxl-block d-xl-block d-md-none"
+                        id="basic-precio-variacion">Und</span>
                       <input type="text" class="form-control" formControlName="StockMinimo" placeholder="10"
                         aria-label="precio-variacion" aria-describedby="basic-precio-variacion">
                     </div>
                   </div>
-                  <div class="col-xl-2">
+                  <div class="col-xl-2 col-xxl-2 col-md-2 d-sm-none d-none d-xxl-block d-xl-block d-md-none">
                     <span (click)="removeItemsChecked(i)" class="cursor"><svg width="24" height="24" viewBox="0 0 24 24"
                         fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
