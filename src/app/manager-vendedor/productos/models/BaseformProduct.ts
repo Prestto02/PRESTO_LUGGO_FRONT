@@ -1,5 +1,10 @@
 import { Injectable } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import {
+  FormArray,
+  FormBuilder,
+  FormControl,
+  Validators,
+} from '@angular/forms';
 
 @Injectable({ providedIn: 'root' })
 export class BaseFormProducts {
@@ -35,9 +40,9 @@ export class BaseFormProducts {
         Validators.pattern(/^[A-Za-z ]+$/),
       ],
     ],
-    marca: ['', [Validators.required, Validators.requiredTrue]],
-    tipo_producto: ['', [Validators.required, Validators.requiredTrue]],
-    etiquetas: [''],
+    marca: ['', [Validators.required]],
+    tipo_producto: ['', [Validators.required]],
+    etiquetas: ['', [Validators.required]],
   });
   //BUSCAR PRODUCTOS
   formSearchProducts = this.formB.group({
@@ -45,7 +50,6 @@ export class BaseFormProducts {
     categoria: [''],
     nombre: [''],
   });
-
   //ENVIAR FORMULARIO DE PRODUCTOS
   getDataForm(latitud?: any, longitud?: any, ArticuloTieneCategoria?: any) {
     return {
@@ -62,7 +66,7 @@ export class BaseFormProducts {
       longitud,
     };
   }
-/*   getPatchValueForm(products: any) {
+  /*   getPatchValueForm(products: any) {
     this.formProducts.patchValue({
       id_product: products.id,
       nombre_articulo: products.name,

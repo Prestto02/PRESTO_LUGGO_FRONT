@@ -11,10 +11,10 @@
       <input type="text" class="form-control border-input" formControlName="nameCategoria"
         placeholder="Buscar categorias" aria-label="Recipient's username" id="floatingCategorias"
         aria-describedby="button-addon1" (focus)="categoriaFocus=true">
+      <app-form-errors-container [forControl]="formB.formCategorias.get('ArticuloTieneCategoria')">
+        <app-message-error forErrorCode="required" customMsg="Al menos escoja una categoría"></app-message-error>
+      </app-form-errors-container>
     </div>
-    <app-form-errors-container [forControl]="formB.formCategorias.get('ArticuloTieneCategoria')">
-      <app-message-error forErrorCode="required" customMsg="Al menos escoja una categoría"></app-message-error>
-    </app-form-errors-container>
     <ng-container *ngIf="categoriaFocus">
       <div class="border bg-white w-100">
         <div class="form-check border-bottom"

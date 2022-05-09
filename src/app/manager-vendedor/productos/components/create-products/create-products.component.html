@@ -105,11 +105,23 @@
                   <div class="col-xl-6 col-sm-6 col-md-6 col-xxl-6 col-6">
                     <app-categorias></app-categorias>
                   </div>
-                  <div class="col-xl-6 col-sm-6 col-md-6 col-xxl-6 col-6">
-                    <div class="form-floating mb-3">
-                      <input type="text" class="form-control" formControlName="etiquetas" id="floatingInputEtiqueta"
-                        placeholder="Etiquetas">
-                      <label for="floatingInputEtiqueta">Etiquetas</label>
+                  <div class="col-xl-6 col-sm-6 col-md-6 col-xxl-6 col-6 position-relative">
+                    <div class="input-group mb-3">
+                      <span class="input-group-text color-input-group" *ngFor="let etiqueta of etiquetaArray">
+                        <span class="badge border-badge-color">{{etiqueta}}
+                          <span class="btn-close mx-2"></span>
+                        </span>
+                      </span>
+                      <div class="form-floating form-floating-group flex-grow-1">
+                        <input type="text" class="form-control" formControlName="etiquetas" id="floatingInputEtiqueta"
+                          [class.is-invalid]="formB.formProducts.get('etiquetas')?.touched && formB.formProducts.get('etiquetas')?.invalid"
+                          placeholder="Etiquetas" (keypress)="onKeyEnter($event);"
+                          [style]="!etiquetaArray?'border-left: 0px':''" (blur)="setValueTags($event)" value="" />
+                        <label for="floatingInputEtiqueta">Etiquetas</label>
+                        <app-form-errors-container [forControl]="formB.formProducts.get('etiquetas')">
+                          <app-message-error forErrorCode="required"></app-message-error>
+                        </app-form-errors-container>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -149,24 +161,3 @@
     </button>
   </div>
 </app-modals>
-
-
-<!-- <div class="col-xxl-12 col-xl-12 col-sm-12 col-12 col-md-12">
-  <div class="row g-0">
-    <div class="col-md-5 col-xxl-5 col-xl-5 col-5 col-sm-5 mx-auto mt-4 py-4">
-    <img *ngIf="imgProducts!=''" [src]="imgProducts" class="img-fluid rounded-start" alt="Imágen del producto">
-    <svg *ngIf="imgProducts==''" class="bd-placeholder-img rounded mx-5" width="200" height="200"
-      xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 200x200"
-      preserveAspectRatio="xMidYMid slice" focusable="false">
-      <title>Tamaño de la imagen</title>
-      <rect width="100%" height="100%" fill="#868e96"></rect><text x="38%" y="50%" fill="#dee2e6"
-        dy=".3em">200x200</text>
-    </svg>
-    <div *ngIf="error===''; else mostrarMensaje">
-    </div>
-    <ng-template #mostrarMensaje>
-      <p class="text-danger">{{error}}</p>
-    </ng-template>
-  </div>
-  </div>
-</div> -->

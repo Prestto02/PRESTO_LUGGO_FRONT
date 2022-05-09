@@ -27,8 +27,8 @@
                   <!----PARA SUBIR LAS TALLAS DE LOS ITEMS--->
                   <input type="checkbox" class="btn-check" [id]="'checkbox-'+tamano.id" autocomplete="off"
                     (click)="addTamanoItems(tamano.nombre_tamano,tamano.id,$event)" />
-                  <label class="btn btn-light border border-1 rounded text-black"
-                    for="checkbox-{{tamano.id}}">{{tamano.nombre_tamano}}</label>
+                  <label class="btn btn-ligth border border-1 rounded text-black"
+                    for="checkbox-{{tamano.id}}" [id]="'color-check-'+tamano.id">{{tamano.nombre_tamano}}</label>
                 </div>
               </div>
             </div>

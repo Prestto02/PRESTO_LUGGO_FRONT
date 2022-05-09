@@ -1,3 +1,4 @@
+import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 import { Component, OnInit } from '@angular/core';
 import { ValidarYTransformarImagen } from 'src/app/shared/validations/ValidarYTransformarImagen';
 
@@ -7,39 +8,47 @@ import { ValidarYTransformarImagen } from 'src/app/shared/validations/ValidarYTr
   styleUrls: ['./img-iconos-descripcion.component.css'],
 })
 export class ImgIconosDescripcionComponent implements OnInit {
-  imgProductsDescripcion1 = '';
-  imgProductsDescripcion2 = '';
-  imgProductsDescripcion3 = '';
-
+  imgListDescripcionArray: any = [
+    {
+      id: 1,
+      imgProductsIcons: '',
+      fn: function (e: any) {
+        this.imgProductsIcons = e[0].base64;
+        console.log(this.imgProductsIcons);
+      },
+    },
+    {
+      id: 2,
+      imgProductsIcons: '',
+      fn: function (e: any) {
+        this.imgProductsIcons = e[0].base64;
+        console.log(this.imgProductsIcons);
+      },
+    },
+    {
+      id: 3,
+      imgProductsIcons: '',
+      fn: function (e: any) {
+        this.imgProductsIcons = e[0].base64;
+        console.log(this.imgProductsIcons);
+      },
+    },
+  ];
   imagenTransformada = '';
   constructor(
     private imgValidar: ValidarYTransformarImagen //VALIDAR IMAGENES Y TRANSFORMAR
   ) {}
 
   ngOnInit(): void {}
-  //OBTENER LA IMAGEN PARA TRANSFORMARLA
-  getArchiveDescripcion1(e: any) {
-    const { imgProducts, imagenTransformada } =
-      this.imgValidar.getArchiveImagen(e); //OBTENGO LO QUE ME ENVIA EL ARREGLO DE LA IMAGEN
-    this.imgProductsDescripcion1 = imgProducts; //ASIGNO
-    this.imagenTransformada = imagenTransformada; //ASIGNO
-  }
-  //GET ARCHIVE 2
-  getArchiveDescripcion2(e: any) {
-    const { imgProducts, imagenTransformada } =
-      this.imgValidar.getArchiveImagen(e); //OBTENGO LO QUE ME ENVIA EL ARREGLO DE LA IMAGEN
-    this.imgProductsDescripcion2 = imgProducts; //ASIGNO
-    this.imagenTransformada = imagenTransformada; //ASIGNO
-  }
-  //GET ARCHIVE 3
-  getArchiveDescripcion3(e: any) {
-    const { imgProducts, imagenTransformada } =
-      this.imgValidar.getArchiveImagen(e); //OBTENGO LO QUE ME ENVIA EL ARREGLO DE LA IMAGEN
-    this.imgProductsDescripcion3 = imgProducts; //ASIGNO
-    this.imagenTransformada = imagenTransformada; //ASIGNO
-  }
   //OBTENER IMAGEN PARA VERIFICAR EN EL SERVER
   getImage(e: any) {
     this.imgValidar.getImageVerifyServer(e); //VERIFICO EN EL SERVER LA IMAGEN
+  }
+  //DRAG AND DROP IMG LIST
+  onDropped(e: CdkDragDrop<any>) {
+    console.log(this.imgListDescripcionArray);
+    const anterior = e.previousIndex;
+    const actual = e.currentIndex;
+    moveItemInArray(this.imgListDescripcionArray, anterior, actual);
   }
 }

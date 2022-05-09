@@ -50,10 +50,15 @@ export class ConfiguracionTamanoComponent implements OnInit {
   ngOnInit(): void {}
   //AGREGAR TAMANO
   addTamanoItems(name: any, id: any, e: any) {
+    const checked: any = <HTMLElement>(
+      document.getElementById('color-check-' + id)
+    ); //CONSULTO QUE CHECK FUE ACTIVADO
     if (e.target.checked) {
       this.formB.addTamanoVariacion(name, id); //AGREGO LOS COLORES
+      checked.style.backgroundColor = '#DBF6FF'; //CAMBIO EL COLOR DEL CHECKED
     } else {
       this.formB.removeItemsChecked(name); //SI DESACTIVA LOS COLORES LO ELIMINO
+      checked.style.backgroundColor = '#f8f9fa'; //CAMBIO EL COLOR DEL CHECKED
     }
   }
   //ELIMINAR ITEMS CHECKED
@@ -62,7 +67,11 @@ export class ConfiguracionTamanoComponent implements OnInit {
     const checke: any = <HTMLElement>(
       document.getElementById('checkbox-' + datos.value.id)
     ); //OBTENGO EL ELEMENTO CHECBOX PARA CAMBIARLE EL ESTADO DEL DOM
+    const checked: any = <HTMLElement>(
+      document.getElementById('color-check-' + datos.value.id)
+    ); //CONSULTO QUE CHECK FUE ACTIVADO
     checke.checked = false; //SETEO A FALSO
+    checked.style.backgroundColor = '#f8f9fa'; //CAMBIO EL COLOR DEL CHECKED
     this.formB.removeItems(i); //ELIMINO DEL TODO DEL ARREGLO
   }
 }
