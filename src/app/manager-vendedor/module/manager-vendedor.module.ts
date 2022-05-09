@@ -6,6 +6,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { OrderModule } from 'ngx-order-pipe';
 import { AlifeFileToBase64Module } from 'alife-file-to-base64';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 /*************MODULE*********** */
 import { FooterIndexModule } from 'src/app/shared/components/index/footer-index/module/footer-index.module';
 import {
@@ -44,6 +45,7 @@ import { IndexMenuModule } from 'src/app/shared/components/index/module/index-me
     ReactiveFormsModule, //FORMULARIO REACTIVO
     NgxChartsModule, //NGX CHARTS MODULE
     ErrorsExtensionsModule, //ERRORES
+    DragDropModule, //DRAG AND DROP IMAGENES
     FooterIndexModule, //MODULE FOOTER INDEX
     IndexMenuModule, //FOOTER
     NgxPaginationModule, //PAGINATIONS

@@ -1,52 +1,59 @@
 import { Component, OnInit } from '@angular/core';
 import { ValidarYTransformarImagen } from 'src/app/shared/validations/ValidarYTransformarImagen';
-
+import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 @Component({
   selector: 'app-img-iconos',
   templateUrl: './img-iconos.component.html',
   styleUrls: ['./img-iconos.component.css'],
 })
 export class ImgIconosComponent implements OnInit {
-  imgProductsIcons1 = '';
-  imgProductsIcons2 = '';
-  imgProductsIcons3 = '';
-  imgProductsIcons4 = '';
-  imagenTransformada = '';
+  imgListArray: any = [
+    {
+      id: 1,
+      imgProductsIcons: '',
+      fn: function (e: any) {
+        this.imgProductsIcons = e[0].base64;
+        console.log(this.imgProductsIcons);
+      },
+    },
+    {
+      id: 2,
+      imgProductsIcons: '',
+      fn: function (e: any) {
+        this.imgProductsIcons = e[0].base64;
+        console.log(this.imgProductsIcons);
+      },
+    },
+    {
+      id: 3,
+      imgProductsIcons: '',
+      fn: function (e: any) {
+        this.imgProductsIcons = e[0].base64;
+        console.log(this.imgProductsIcons);
+      },
+    },
+    {
+      id: 4,
+      imgProductsIcons: '',
+      fn: function (e: any) {
+        this.imgProductsIcons = e[0].base64;
+        console.log(this.imgProductsIcons);
+      },
+    },
+  ];
   constructor(
     private imgValidar: ValidarYTransformarImagen //VALIDAR IMAGENES Y TRANSFORMAR
   ) {}
-
   ngOnInit(): void {}
-  //OBTENER LA IMAGEN PARA TRANSFORMARLA
-  getArchive1(e: any) {
-    const { imgProducts, imagenTransformada } =
-      this.imgValidar.getArchiveImagen(e); //OBTENGO LO QUE ME ENVIA EL ARREGLO DE LA IMAGEN
-    this.imgProductsIcons1 = imgProducts; //ASIGNO
-    this.imagenTransformada = imagenTransformada; //ASIGNO
-  }
-  //IMG 2
-  getArchive2(e: any) {
-    const { imgProducts, imagenTransformada } =
-      this.imgValidar.getArchiveImagen(e); //OBTENGO LO QUE ME ENVIA EL ARREGLO DE LA IMAGEN
-    this.imgProductsIcons2 = imgProducts; //ASIGNO
-    this.imagenTransformada = imagenTransformada; //ASIGNO
-  }
-  //IMG 3
-  getArchive3(e: any) {
-    const { imgProducts, imagenTransformada } =
-      this.imgValidar.getArchiveImagen(e); //OBTENGO LO QUE ME ENVIA EL ARREGLO DE LA IMAGEN
-    this.imgProductsIcons3 = imgProducts; //ASIGNO
-    this.imagenTransformada = imagenTransformada; //ASIGNO
-  }
-  //IMG 4
-  getArchive4(e: any) {
-    const { imgProducts, imagenTransformada } =
-      this.imgValidar.getArchiveImagen(e); //OBTENGO LO QUE ME ENVIA EL ARREGLO DE LA IMAGEN
-    this.imgProductsIcons4 = imgProducts; //ASIGNO
-    this.imagenTransformada = imagenTransformada; //ASIGNO
-  }
   //OBTENER IMAGEN PARA VERIFICAR EN EL SERVER
   getImage(e: any) {
     this.imgValidar.getImageVerifyServer(e); //VERIFICO EN EL SERVER LA IMAGEN
+  }
+  //DRAG AND DROP IMG LIST
+  onDropped(e: CdkDragDrop<any>) {
+    console.log(this.imgListArray);
+    const anterior = e.previousIndex;
+    const actual = e.currentIndex;
+    moveItemInArray(this.imgListArray, anterior, actual);
   }
 }
