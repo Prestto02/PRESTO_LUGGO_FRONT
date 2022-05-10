@@ -63,28 +63,40 @@
                 <div class="input-group mb-3">
                   <span class="input-group-text" id="basic-precio-variacion">$</span>
                   <input type="text" class="form-control" formControlName="PrecioPorVariacion" placeholder="40"
+                    [class.is-invalid]="coloresForm.get('PrecioPorVariacion')?.touched && coloresForm.get('PrecioPorVariacion')?.invalid"
                     aria-label="precio-variacion" aria-describedby="basic-precio-variacion">
                 </div>
+                <app-form-errors-container [forControl]="coloresForm.get('PrecioPorVariacion')">
+                  <app-message-error forErrorCode="required"></app-message-error>
+                </app-form-errors-container>
               </div>
               <!-------STOCK POR ITEMS--------->
               <div class="col-xl-2">
                 <div class="input-group mb-3">
                   <span class="input-group-text" id="basic-precio-variacion">Und</span>
                   <input type="text" class="form-control" formControlName="StockItems" placeholder="40"
+                    [class.is-invalid]="coloresForm.get('StockItems')?.touched && coloresForm.get('StockItems')?.invalid"
                     aria-label="precio-variacion" aria-describedby="basic-precio-variacion">
                 </div>
+                <app-form-errors-container [forControl]="coloresForm.get('StockItems')">
+                  <app-message-error forErrorCode="required"></app-message-error>
+                </app-form-errors-container>
               </div>
               <!-------STOCK MINIMO--------->
               <div class="col-xl-2">
                 <div class="row">
-                  <div class="col-xl-10">
+                  <div class="col-xl-11">
                     <div class="input-group mb-3">
                       <span class="input-group-text" id="basic-precio-variacion">Und</span>
                       <input type="text" class="form-control" formControlName="StockMinimo" placeholder="10"
-                        aria-label="precio-variacion" aria-describedby="basic-precio-variacion">
+                        aria-label="precio-variacion" aria-describedby="basic-precio-variacion"
+                        [class.is-invalid]="coloresForm.get('StockMinimo')?.touched && coloresForm.get('StockMinimo')?.invalid">
                     </div>
+                    <app-form-errors-container [forControl]="coloresForm.get('StockMinimo')">
+                      <app-message-error forErrorCode="required"></app-message-error>
+                    </app-form-errors-container>
                   </div>
-                  <div class="col-xl-2">
+                  <div class="col-xl-1">
                     <span (click)="removeItemsChecked(i)" class="cursor"><svg width="24" height="24" viewBox="0 0 24 24"
                         fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
