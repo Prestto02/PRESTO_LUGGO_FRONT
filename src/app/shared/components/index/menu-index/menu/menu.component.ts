@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { TokenService } from 'src/app/login/services/token.service';
-import { BaseFormProducts } from 'src/app/manager-vendedor/productos/models/BaseformProduct';
 import { CategoriasService } from 'src/app/manager-vendedor/productos/services/categorias.service';
 import { UrlFront } from 'src/app/shared/routes/RoutesFront';
+import { BaseFormSearchProducts } from './models/BaseFormSearchProduct';
 import { CarritoItemsService } from './services/carrito-items.service';
 
 @Component({
@@ -19,7 +19,7 @@ export class MenuComponent implements OnInit {
   emailUsuario: any;
   constructor(
     private router: Router,
-    public formB: BaseFormProducts, //FORMULARIO PRODUCTOS
+    public formB: BaseFormSearchProducts, //FORMULARIO PRODUCTOS
     private apiForm: CarritoItemsService, //FORMULARIO CATEGORIAS
     private apiCategoria: CategoriasService, //SERVICES CATEGORIA
     private tokenUser: TokenService //TOKEN SERVICES
@@ -53,16 +53,7 @@ export class MenuComponent implements OnInit {
   menuIndex() {
     this.router.navigateByUrl(`${UrlFront.Menu.menu}/${UrlFront.Menu.index}`);
   }
-  //BUSCAR PRODUCTO
-  buscarProducto() {
-    const searchProducts = this.formB.formSearchProducts.get('nombre')?.value; //GUARDO LO QUE TENGO EN EL INPUT
-    const categoria = this.formB.formSearchProducts.get('categoria')?.value; //GUARDO LO QUE TENGO EN EL INPUT
-    this.router.navigate([
-      `${UrlFront.Menu.menu}/${UrlFront.Menu.buscarGet}`,
-      searchProducts,
-      categoria,
-    ]); //ENVIO POR URL LO QUE TENGO DEL INPUT
-  }
+
   //LISTA DE DESEO
   irListaDeseos() {
     this.router.navigateByUrl(

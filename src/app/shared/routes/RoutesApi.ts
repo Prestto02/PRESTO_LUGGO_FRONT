@@ -35,6 +35,7 @@ export const UrlApi = {
   //CARRITO, BUSCAR PRODUCTO,
   traerProductosCarrito: 'api/Articulo/listado',
   buscarProductos: 'api/Articulo/producto/',
+  buscarProductoIndex: 'api/Buscador/palabras',
   productos: '',
   carrito: '',
 };

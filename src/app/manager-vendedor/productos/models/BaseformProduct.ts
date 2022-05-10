@@ -2,58 +2,46 @@ import { Injectable } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 @Injectable({ providedIn: 'root' })
 export class BaseFormProducts {
-  constructor(
-    private formB: FormBuilder,
-  ) {}
+  constructor(private formB: FormBuilder) {}
   //FORM PRODUCTOS
-  formProducts = this.formB.group(
-    {
-      id_product: [''],
-      nombre_articulo: [
-        '',
-        [
-          Validators.required,
-          Validators.minLength(12),
-          Validators.maxLength(200),
-          Validators.pattern(/^[A-Za-z ]+$/),
-        ],
-      ],
-      //detalleArticulo{}
-      descripcion_articulo: [
-        '',
-        [
-          Validators.required,
-          Validators.minLength(12),
-          Validators.maxLength(200),
-          Validators.pattern(/^[A-Za-z ]+$/),
-        ],
-      ],
-      caracteristicas: [
-        '',
-        [
-          Validators.required,
-          Validators.minLength(12),
-          Validators.maxLength(200),
-          Validators.pattern(/^[A-Za-z ]+$/),
-        ],
-      ],
-      marca: ['', [Validators.required]],
-      tipo_producto: ['', [Validators.required]],
-    },
-  );
-  //BUSCAR PRODUCTOS
-  formSearchProducts = this.formB.group({
+  formProducts = this.formB.group({
     id_product: [''],
-    categoria: [''],
-    nombre: [''],
+    nombre_articulo: [
+      '',
+      [
+        Validators.required,
+        Validators.minLength(12),
+        Validators.maxLength(200),
+        Validators.pattern(/^[A-Za-z ]+$/),
+      ],
+    ],
+    //detalleArticulo{}
+    descripcion_articulo: [
+      '',
+      [
+        Validators.required,
+        Validators.minLength(12),
+        Validators.maxLength(200),
+        Validators.pattern(/^[A-Za-z ]+$/),
+      ],
+    ],
+    caracteristicas: [
+      '',
+      [
+        Validators.required,
+        Validators.minLength(12),
+        Validators.maxLength(200),
+        Validators.pattern(/^[A-Za-z ]+$/),
+      ],
+    ],
+    marca: ['', [Validators.required]],
+    tipo_producto: ['', [Validators.required]],
   });
-
   limpiarForm() {
     this.formProducts.reset();
-    this.formSearchProducts.reset();
   }
 }
-  //ENVIAR FORMULARIO DE PRODUCTOS
+//ENVIAR FORMULARIO DE PRODUCTOS
 /*   getDataForm(latitud?: any, longitud?: any, ArticuloTieneCategoria?: any) {
     return {
       nombre_articulo: this.formProducts.value.nombre_articulo,

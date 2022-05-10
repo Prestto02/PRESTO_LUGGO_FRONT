@@ -33,7 +33,6 @@ export class ListaDeseosComponent implements OnInit {
     const id = this.tokenServi.getTokenId();
     if (id)
       this.apiListDeseos.getAllColeccion(id).subscribe((res) => {
-        console.log(res);
         this.coleccionUsuario = res;
       });
   }
