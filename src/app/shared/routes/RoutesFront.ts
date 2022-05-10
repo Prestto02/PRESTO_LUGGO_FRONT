@@ -27,7 +27,7 @@ export const UrlFront = {
     menu: 'Menu',
     index: 'index',
     buscarGet: 'buscar-productos',
-    buscar: 'buscar-productos/:name/:categoria',
+    buscar: 'buscar-productos/:nombre',
     quienesSomos: 'quienes-somos',
   },
   //ATENCION AL CLIENTE

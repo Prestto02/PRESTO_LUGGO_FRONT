@@ -33,7 +33,7 @@ export class BaseFormCategorias {
   eliminarItems(id: any) {
     let index = this.getCategorias.controls.findIndex(
       (x) => x.value.id_categoria === id
-    );
+    ); //BUSCO COINCIDENCIA Y LUEGO ENVIO LA POSICION
     this.getCategorias.removeAt(index);
     this.categoriaSeleccionadas.splice(index, 1);
   }

@@ -1,5 +1,6 @@
 import { DOCUMENT } from '@angular/common';
 import { Component, HostListener, Inject, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { ProductsService } from 'src/app/manager-vendedor/productos/services/products.service';
 import { CarritoItemsComponent } from '../../index/menu-index/menu/carrito-items/carrito-items.component';
 import { ListaDeseosService } from '../lista-deseos/services/lista-deseos.service';
@@ -14,22 +15,39 @@ export class SharedProductsComponent implements OnInit {
   private pageNum = 0; //PAGINA NUMERO 1 DE LA PAGINACION
   public productsArray: any; //AGREGO EL ARRAY
   productsLength = 0; //CUANTOS PRODUCTOS EXiSTE ENVIADO A LA LENGTH
+  nombreProduct: any;
   constructor(
     @Inject(DOCUMENT) private document: Document, //DOCUMENT
     private apiServi: ProductsService, //API PRODUCTOS SERVICES
     private carritoItmes: CarritoItemsComponent, //CARRITO ITEMS
-    private apiListDeseo: ListaDeseosService //LISTA DE DESEOS SERVICES
-  ) {}
+    private apiListDeseo: ListaDeseosService, //LISTA DE DESEOS SERVICES
+    private _route: ActivatedRoute
+  ) {
+    this.nombreProduct = this._route.snapshot.params['nombre'];
+  }
 
   ngOnInit(): void {
     this.obtenerProductos(); //OBTENER LOS PRODUCTOS
   }
+  ngOnDestroy() {
+    this.apiServi.unSuscribeObservable();
+  }
   //OBTENER LOS PRODUCTOS
   obtenerProductos() {
-    this.apiServi.getCharacterByPage(this.pageNum, 10).subscribe((res) => {
-      this.productsArray = res; //GUARDO EN UN ARRAY LOS PRODUCTOS
-      this.apiServi.addProductPagination(res); //AGREGAR AL CARRITO LA PAGINACION
-    });
+    if (!this.nombreProduct) {
+      this.apiServi.getCharacterByPage(this.pageNum, 10).subscribe((res) => {
+        this.productsArray = res; //GUARDO EN UN ARRAY LOS PRODUCTOS
+        this.apiServi.addProductPagination(res); //AGREGAR AL CARRITO LA PAGINACION
+      });
+    } else {
+      this.apiServi
+        .getCharacterSearchByPage(this.nombreProduct)
+        .subscribe((res) => {
+          console.log(res);
+          this.productsArray = res; //GUARDO EN UN ARRAY LOS PRODUCTOS
+          this.apiServi.addProductPagination(res); //AGREGAR AL CARRITO LA PAGINACION
+        });
+    }
   }
   //HOSTLISTENER SCROLL
   @HostListener('window:scroll')

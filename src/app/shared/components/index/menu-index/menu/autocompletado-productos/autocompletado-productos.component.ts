@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { UrlFront } from 'src/app/shared/routes/RoutesFront';
 import { BaseFormSearchProducts } from '../models/BaseFormSearchProduct';
 import { BuscadorProductosService } from '../services/buscador-productos.service';
 
@@ -14,21 +15,24 @@ export class AutocompletadoProductosComponent implements OnInit {
   constructor(
     private _route: Router,
     private apiAsyncProduct: BuscadorProductosService,
-    private formB:BaseFormSearchProducts
+    private formB: BaseFormSearchProducts
   ) {}
   ngOnInit(): void {
     this.getProductsList();
   }
   //PARA HACER LA PETICION A LA API
   consultar(e: any) {
-     this.formB.formSearchProducts.patchValue({
+    this.formB.formSearchProducts.patchValue({
       nombre: e.target.value,
     });
-    //this._route.navigateByUrl('success');
+    const nombre = this.formB.formSearchProducts.get('nombre')?.value;
+    this._route.navigate([
+      `/${UrlFront.Menu.menu}/${UrlFront.Menu.buscarGet}`,
+      nombre,
+    ]);
   }
   getProductsList() {
     this.apiAsyncProduct.listProduct.subscribe((res) => {
-      console.log(res);
       this.listSearchProduct = res;
     });
   }

@@ -33,12 +33,25 @@ export class ProductsService {
       `${UrlApi.ApiUrl}${UrlApi.traerProductosCarrito}?pagina=${page}&size=${size}`
     );
   }
+  //PAGINACION PRA LA CONSULTA DE UN ARITCULO CON SCROLL INFINITO
+  getCharacterSearchByPage(nombre: any): Observable<any> {
+    //`${UrlApi.ApiUrl}${UrlApi.traerProductosCarrito}?pagina=${page}&size=${size}`
+    return this.http.get<any>(
+      `${UrlApi.ApiUrl}${UrlApi.traerProductosIndex}${nombre}`
+    );
+  }
+  //POST DATA ARTICULOS
   postDataArticulo(form: any): Observable<any> {
     return this.http.post<any>(`${UrlApi.ApiUrl}${UrlApi.articulos}`, form);
   }
   //AGREGAR LOS PRODUCTOS SCROLL INFINITO
   addProductPagination(dataObj: any) {
     this.dataScrollProduct.push(...dataObj);
+    this.productDataSource.next(this.dataScrollProduct);
+  }
+
+  unSuscribeObservable() {
+    this.dataScrollProduct = [];
     this.productDataSource.next(this.dataScrollProduct);
   }
 }
