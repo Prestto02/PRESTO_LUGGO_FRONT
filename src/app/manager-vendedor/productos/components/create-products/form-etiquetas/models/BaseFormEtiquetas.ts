@@ -6,7 +6,7 @@ export class BaseFormEtiquetas {
   constructor(private formB: FormBuilder) {}
   formEtiquetas = this.formB.group({
     etiquetaForm: [''],
-    etiqueta: this.formB.array([]),
+    etiqueta: this.formB.array([], [Validators.required]),
   });
   //TRANSFORMAR EN UN ARRAY LOS TAMANO
   get etiquetas() {
@@ -22,5 +22,9 @@ export class BaseFormEtiquetas {
   //REMOVE ITEMS ETIQUETAS
   removeItemsEtiqueta(i: any) {
     this.etiquetas.removeAt(i);
+  }
+  //GET ERRORES FORM
+  getErrorsForm() {
+    return this.formEtiquetas.get('etiqueta')?.errors;
   }
 }

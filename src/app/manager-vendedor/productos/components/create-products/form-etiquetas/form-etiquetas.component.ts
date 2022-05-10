@@ -13,6 +13,7 @@ export class FormEtiquetasComponent implements OnInit {
   setEtiquetas(e: any) {
     const valor = this.formB.formEtiquetas.get('etiquetaForm')?.value;
     if (e.key === 'Enter') {
+      e.preventDefault();
       this.formB.addEtiquetas(valor);
       this.formB.formEtiquetas.patchValue({
         etiquetaForm: '',

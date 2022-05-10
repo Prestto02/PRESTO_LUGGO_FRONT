@@ -27,11 +27,11 @@ export class ProductsComponent implements OnInit {
   }
   submit() {
     this.positionUser.getPositionUser();
-    console.log(
+    /* console.log(
       this.formB.getDataForm(
         this.positionUser.latitud,
         this.positionUser.longitud
       )
-    );
+    ); */
   }
 }
