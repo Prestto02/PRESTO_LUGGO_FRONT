@@ -26,7 +26,7 @@
     <div class="collapse navbar-collapse" id="navbarToggleExternalContent">
       <ul class="navbar-nav me-auto mb-3 mb-lg-0 col-xl-9 col-xxl-9 col-md-9 col-12 col-sm-12">
         <li class="container-fluid col-md-12 col-sm-12 col-xl-12 col-12 col-xxl-12">
-          <form [formGroup]="formB.formSearchProducts">
+          <form [formGroup]="formB.formSearchProducts" (ngSubmit)="buscarProducts();">
             <div class="input-group">
               <select class="form-select" formControlName="categoria" aria-label="Default select example">
                 <option class="color-select" value="" selected>Todas las categorías</option>

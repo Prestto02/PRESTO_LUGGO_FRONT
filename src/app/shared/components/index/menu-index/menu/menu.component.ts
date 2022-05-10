@@ -22,7 +22,8 @@ export class MenuComponent implements OnInit {
     public formB: BaseFormSearchProducts, //FORMULARIO PRODUCTOS
     private apiForm: CarritoItemsService, //FORMULARIO CATEGORIAS
     private apiCategoria: CategoriasService, //SERVICES CATEGORIA
-    private tokenUser: TokenService //TOKEN SERVICES
+    private tokenUser: TokenService, //TOKEN SERVICES
+    private _route: Router
   ) {}
 
   ngOnInit(): void {
@@ -53,7 +54,13 @@ export class MenuComponent implements OnInit {
   menuIndex() {
     this.router.navigateByUrl(`${UrlFront.Menu.menu}/${UrlFront.Menu.index}`);
   }
-
+  buscarProducts() {
+    const nombre = this.formB.formSearchProducts.get('nombre')?.value;
+    this._route.navigate([
+      `/${UrlFront.Menu.menu}/${UrlFront.Menu.buscarGet}`,
+      nombre,
+    ]);
+  }
   //LISTA DE DESEO
   irListaDeseos() {
     this.router.navigateByUrl(
