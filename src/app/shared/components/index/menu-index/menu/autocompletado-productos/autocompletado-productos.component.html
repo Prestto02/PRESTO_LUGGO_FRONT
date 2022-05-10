@@ -1,7 +1,7 @@
 <div class="position-relative" [formGroup]="formGroup">
   <input type="text" class="form-control input-border" formControlName="nombre" placeholder="" aria-label="Username"
     aria-describedby="basic-addon1" list="datalistOptions" id="exampleDataList" autocomplete="off" />
-  <div class="position-absolute bg-white w-100 border">
+  <div class="position-absolute bg-white w-100">
     <option *ngFor="let product of listSearchProduct" [value]="product" (click)="consultar($event)"
       class="border-bttom cursor">{{product}}</option>
   </div>
