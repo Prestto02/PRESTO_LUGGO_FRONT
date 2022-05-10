@@ -1,6 +1,7 @@
 .border-badge {
   background-color: #fff;
   border-right: 0px;
+  padding: 0px;
 }
 .border-input {
   height: 58px;
@@ -8,6 +9,7 @@
 .border-badge:nth-of-type(n + 2) {
   background-color: #fff;
   border-left: 0px;
+  padding: 0px;
 }
 .border-listado {
   border: 1px solid #000;

@@ -13,7 +13,6 @@ export class CreateProductsComponent implements OnInit {
   activar = false;
   categoriasItems: any;
   load: boolean = false;
-  etiquetaArray: any = [];
   constructor(
     private position: PositionUser, //POSICION DEl USUARIO
     public formB: BaseFormProducts, //FORM PRODUCTS
@@ -45,18 +44,5 @@ export class CreateProductsComponent implements OnInit {
       this.formB.limpiarForm();
       this.load=false;
     }); */
-  }
-  onKeyEnter(e: any) {
-    if (e.key === 'Enter') {
-      this.etiquetaArray.push(e.target.value);
-      this.formB.formProducts.patchValue({
-        etiquetas: '',
-      });
-    }
-  }
-  setValueTags(e: any) {
-    this.formB.formProducts.patchValue({
-      etiquetas: this.etiquetaArray,
-    });
   }
 }

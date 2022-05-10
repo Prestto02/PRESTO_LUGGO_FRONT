@@ -1,10 +1,5 @@
 import { Injectable } from '@angular/core';
-import {
-  FormArray,
-  FormBuilder,
-  FormControl,
-  Validators,
-} from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 
 @Injectable({ providedIn: 'root' })
 export class BaseFormProducts {
@@ -42,7 +37,6 @@ export class BaseFormProducts {
     ],
     marca: ['', [Validators.required]],
     tipo_producto: ['', [Validators.required]],
-    etiquetas: ['', [Validators.required]],
   });
   //BUSCAR PRODUCTOS
   formSearchProducts = this.formB.group({

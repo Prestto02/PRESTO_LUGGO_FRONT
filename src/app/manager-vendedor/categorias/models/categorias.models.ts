@@ -13,7 +13,7 @@ export class BaseFormCategorias {
   //FORMULARIO
   formCategorias = this.formB.group({
     nameCategoria: [''],
-    ArticuloTieneCategoria: this.formB.array([], [Validators.required]),
+    ArticuloTieneCategoria: this.formB.array([]),
   });
   //OBTENER EL ARRAY DE LA CATEGORIAS
   get getCategorias() {

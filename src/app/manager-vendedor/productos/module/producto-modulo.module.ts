@@ -5,6 +5,8 @@ import { ConfiguracionProductoComponent } from '../components/configuracion-prod
 import { ConfiguracionTamanoComponent } from '../components/configuracion-producto/configuracion-tamano/configuracion-tamano.component';
 import { BaseFormTamano } from '../components/configuracion-producto/configuracion-tamano/models/BaseFormTamano';
 import { CreateProductsComponent } from '../components/create-products/create-products.component';
+import { FormEtiquetasComponent } from '../components/create-products/form-etiquetas/form-etiquetas.component';
+import { BaseFormEtiquetas } from '../components/create-products/form-etiquetas/models/BaseFormEtiquetas';
 import { ImagenProductosComponent } from '../components/imagen-productos/imagen-productos.component';
 import { ImgIconosDescripcionComponent } from '../components/imagen-productos/img-iconos-descripcion/img-iconos-descripcion.component';
 import { ImgIconosComponent } from '../components/imagen-productos/img-iconos/img-iconos.component';
@@ -25,11 +27,13 @@ export const ProductoModuleDeclarations = [
   ImagenProductosComponent, //IMAGEN DEL PRODUCTO
   ImgIconosComponent, //IMAGENES PEQUEÑAS COMPONENTS
   ImgIconosDescripcionComponent,
+  FormEtiquetasComponent, //FORM ETIQUETAS
 ];
 
 export const ProductoModuleProviders = [
   BaseFormProducts,
   BaseFormColors,
   BaseFormTamano,
+  BaseFormEtiquetas,
   CreateProductsComponent,
 ];

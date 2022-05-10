@@ -105,24 +105,9 @@
                   <div class="col-xl-6 col-sm-6 col-md-6 col-xxl-6 col-6">
                     <app-categorias></app-categorias>
                   </div>
+                  <!----------FORM ETIQUETAS----------->
                   <div class="col-xl-6 col-sm-6 col-md-6 col-xxl-6 col-6 position-relative">
-                    <div class="input-group mb-3">
-                      <span class="input-group-text color-input-group" *ngFor="let etiqueta of etiquetaArray">
-                        <span class="badge border-badge-color">{{etiqueta}}
-                          <span class="btn-close mx-2"></span>
-                        </span>
-                      </span>
-                      <div class="form-floating form-floating-group flex-grow-1">
-                        <input type="text" class="form-control" formControlName="etiquetas" id="floatingInputEtiqueta"
-                          [class.is-invalid]="formB.formProducts.get('etiquetas')?.touched && formB.formProducts.get('etiquetas')?.invalid"
-                          placeholder="Etiquetas" (keypress)="onKeyEnter($event);"
-                          [style]="!etiquetaArray?'border-left: 0px':''" (blur)="setValueTags($event)" value="" />
-                        <label for="floatingInputEtiqueta">Etiquetas</label>
-                        <app-form-errors-container [forControl]="formB.formProducts.get('etiquetas')">
-                          <app-message-error forErrorCode="required"></app-message-error>
-                        </app-form-errors-container>
-                      </div>
-                    </div>
+                    <app-form-etiquetas></app-form-etiquetas>
                   </div>
                 </div>
                 <div class="modal-footer">

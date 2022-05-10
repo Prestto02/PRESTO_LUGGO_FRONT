@@ -1,15 +1,4 @@
 * {
   font-family: Cardium B-Medium;
 }
-.border-badge-color {
-  background-color: #f9f2ff;
-  color: #000;
-}
-.color-input-group:nth-of-type(n + 2) {
-  background-color: #fff;
-  border-left: 0px;
-}
-.color-input-group {
-  background: #fff;
-  border-right: 0px;
-}
+
