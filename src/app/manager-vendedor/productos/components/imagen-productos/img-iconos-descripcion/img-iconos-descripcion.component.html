@@ -1,5 +1,5 @@
 <div class="row" cdkDropList cdkDropListOrientation="horizontal" (cdkDropListDropped)="onDropped($event)">
-  <div cdkDrag class="col-xl-3 position-relative" *ngFor="let arrayImg of imgListDescripcionArray">
+  <div cdkDrag class="col-xl-3 col-xxl-3 col-sm-3 col-md-3 col-3 position-relative" *ngFor="let arrayImg of imgListDescripcionArray">
     <img loading="lazy" *ngIf="arrayImg.imgProductsIcons!=''" [src]="arrayImg.imgProductsIcons"
       class="img-fluid rounded-start mb-3" alt="Imágen del producto" width="70px" height="70px">
     <svg *ngIf="arrayImg.imgProductsIcons==''" class="mb-3" width="55" height="55" viewBox="0 0 55 55" fill="none"

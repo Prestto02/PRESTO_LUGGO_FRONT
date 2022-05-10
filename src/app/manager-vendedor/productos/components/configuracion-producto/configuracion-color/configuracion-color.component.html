@@ -1,25 +1,25 @@
 <div class="container">
   <div class="row">
     <!---------PESTAÑAS DE MENU--------->
-    <div class="col-xl-3 col-xxl-3 col-sm-6 col-6 col-md-4">
+    <div class="col-xl-3 col-xxl-3 col-sm-3 col-3 col-md-3">
       <p>Predeterminados</p>
     </div>
-    <div class="col-xl-2 col-xxl-2 col-sm-6 col-6 col-md-4">
+    <div class="col-xl-2 col-xxl-2 col-sm-2 col-2 col-md-2">
       <p>Seleccionados</p>
     </div>
-    <div class="col-xl-3 col-xxl-3 col-sm-6 col-6 col-md-4">
+    <div class="col-xl-3 col-xxl-3 col-sm-3 col-3 col-md-3">
       <p>Precios por variación</p>
     </div>
-    <div class="col-xl-2 col-xxl-2 col-sm-6 col-6 col-md-4">
+    <div class="col-xl-2 col-xxl-2 col-sm-2 col-2 col-md-2">
       <p>Stock por ítems</p>
     </div>
-    <div class="col-xl-2 col-xxl-2 col-sm-6 col-6 col-md-4">
+    <div class="col-xl-2 col-xxl-2 col-sm-2 col-2 col-md-2">
       <p>Stock mínimo</p>
     </div>
     <!---------FORM COLORES----------->
     <form [formGroup]="formColor.formColors">
       <div class="row">
-        <div class="col-xl-3 col-xxl-3 col-sm-6 col-6 col-md-4">
+        <div class="col-xl-3 col-xxl-3 col-sm-3 col-3 col-md-3">
           <div class="row">
             <div class="col-xl-8">
               <div class="row">
@@ -45,23 +45,23 @@
         <ng-container formArrayName="colores">
           <ng-container *ngFor="let coloresForm of formColor.colores.controls; let i=index;">
             <ng-container [formGroupName]="i">
-              <div *ngIf="i>=1" class="col-xl-3"></div>
+              <div *ngIf="i>=1" class="col-xl-3 col-xxl-3 col-sm-3 col-3 col-md-3 mb-2"></div>
               <!------COLOR Y NOMBRE DEL COLOR-------->
-              <div class="col-xl-2">
+              <div class="col-xl-2 col-xxl-2 col-sm-2 col-2 col-md-2">
                 <div class="row">
-                  <div class="col-xl-1">
+                  <div class="col-xl-1 col-xxl-1 col-sm-1 col-md-1 col-1">
                     <input type="checkbox" class="form-check-input" [style]="coloresForm.get('coloresEscogido')?.value"
                       disabled readonly value="">
                   </div>
-                  <div class="col-xl-10">
+                  <div class="col-xl-10 col-sm-10 col-xl-10 col-10 col-md-10">
                     <p>{{coloresForm.get('nameColor')?.value}}</p>
                   </div>
                 </div>
               </div>
               <!-------PRECIO POR VARIACION--------->
-              <div class="col-xl-3">
+              <div class="col-xl-3 col-xxl-3 col-sm-3 col-3 col-md-3">
                 <div class="input-group mb-3">
-                  <span class="input-group-text" id="basic-precio-variacion">$</span>
+                  <span class="input-group-text d-sm-none d-none d-xxl-block d-xl-block d-md-none" id="basic-precio-variacion">$</span>
                   <input type="text" class="form-control" formControlName="PrecioPorVariacion" placeholder="40"
                     [class.is-invalid]="coloresForm.get('PrecioPorVariacion')?.touched && coloresForm.get('PrecioPorVariacion')?.invalid"
                     aria-label="precio-variacion" aria-describedby="basic-precio-variacion">
@@ -71,9 +71,9 @@
                 </app-form-errors-container>
               </div>
               <!-------STOCK POR ITEMS--------->
-              <div class="col-xl-2">
+              <div class="col-xl-2 col-xxl-2 col-sm-2 col-2 col-md-2">
                 <div class="input-group mb-3">
-                  <span class="input-group-text" id="basic-precio-variacion">Und</span>
+                  <span class="input-group-text d-sm-none d-none d-xxl-block d-xl-block d-md-none" id="basic-precio-variacion">Und</span>
                   <input type="text" class="form-control" formControlName="StockItems" placeholder="40"
                     [class.is-invalid]="coloresForm.get('StockItems')?.touched && coloresForm.get('StockItems')?.invalid"
                     aria-label="precio-variacion" aria-describedby="basic-precio-variacion">
@@ -83,11 +83,11 @@
                 </app-form-errors-container>
               </div>
               <!-------STOCK MINIMO--------->
-              <div class="col-xl-2">
+              <div class="col-xl-2 col-xxl-2 col-sm-2 col-2 col-md-2">
                 <div class="row">
-                  <div class="col-xl-11">
+                  <div class="col-xl-10 col-sm-12 col-md-12 col-xxl-10 col-md-9">
                     <div class="input-group mb-3">
-                      <span class="input-group-text" id="basic-precio-variacion">Und</span>
+                      <span class="input-group-text d-sm-none d-none d-xxl-block d-xl-block d-md-none" id="basic-precio-variacion">Und</span>
                       <input type="text" class="form-control" formControlName="StockMinimo" placeholder="10"
                         aria-label="precio-variacion" aria-describedby="basic-precio-variacion"
                         [class.is-invalid]="coloresForm.get('StockMinimo')?.touched && coloresForm.get('StockMinimo')?.invalid">
@@ -96,7 +96,7 @@
                       <app-message-error forErrorCode="required"></app-message-error>
                     </app-form-errors-container>
                   </div>
-                  <div class="col-xl-1">
+                  <div class="col-xl-2 col-xxl-2 col-md-2 d-sm-none d-none d-xxl-block d-xl-block d-md-none">
                     <span (click)="removeItemsChecked(i)" class="cursor"><svg width="24" height="24" viewBox="0 0 24 24"
                         fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path

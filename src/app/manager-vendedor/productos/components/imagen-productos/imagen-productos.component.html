@@ -3,13 +3,13 @@
   [btnTerceary]="'position-absolute top-0 start-75 translate-middle btn btn-sm btn-primary rounded-pill'">
 </app-progress-stepper>
 <div class="container-fluid">
-  <div class="row mx-3 mb-3">
-    <div class="col-xl-6">
+  <div class="row mx-auto mb-3">
+    <div class="col-xl-6 col-xxl-6 co-md-6 col-sm-12 col-12">
       <div class="row">
-        <div class="col-xl-2">
+        <div class="col-xl-2 col-xxl-2 col-sm-2 col-md-2 col-2">
           <app-img-iconos></app-img-iconos>
         </div>
-        <div class="col-xl-7 mx-auto position-relative">
+        <div class="col-xl-7 col-xxl-7 col-sm-7 col-md-7 col-7 mx-auto position-relative">
           <img loading="lazy" *ngIf="imgProducts!=''" [src]="imgProducts" class="img-fluid rounded-start"
             alt="Imágen del producto" width="250px" height="250px">
           <svg *ngIf="imgProducts==''" width="250" height="250" viewBox="0 0 250 250" fill="none"
@@ -25,25 +25,25 @@
         </div>
       </div>
     </div>
-    <div class="col-xl-6">
+    <div class="col-xl-6 col-xxl-6 col-md-6 col-sm-12 col-12">
       <div class="row">
-        <div class="col-xl-12">
+        <div class="col-xl-12 col-xxl-12 col-12 col-sm-12 col-md-12">
           <h4>Sección adicional</h4>
         </div>
-        <div class="col-xl-12">
+        <div class="col-xl-12 col-xxl-12 col-12 col-sm-12 col-md-12">
           <div class="form-floating mb-3">
             <input type="text" class="form-control" id="floatingInputTitulo" placeholder="Título">
             <label for="floatingInputTitulo">Título</label>
           </div>
         </div>
-        <div class="col-xl-12">
+        <div class="col-xl-12 col-xxl-12 col-12 col-sm-12 col-md-12">
           <div class="form-floating mb-3">
             <textarea class="form-control" id="floatingInputDescripcion" placeholder="Descripción"
               style="height: 200px;"></textarea>
             <label for="floatingInputDescripcion">Descripción</label>
           </div>
         </div>
-        <div class="col-xl-12">
+        <div class="col-xl-12 col-xxl-12 col-12 col-sm-12 col-md-12">
           <app-img-iconos-descripcion></app-img-iconos-descripcion>
         </div>
       </div>
