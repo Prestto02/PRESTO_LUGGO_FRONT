@@ -25,12 +25,15 @@ export class UsersService {
     return this.http.get<any>(`${this.urlApi}${this.urlPersonaOne}/${id}`);
   }
   //GUARDAR USUSARIO
-  /*postDataUSer(form: any): Observable<any> {
+  /*  postDataUSer(form: any): Observable<any> {
     return this.http.post<any>(`${this.urlApi}${this.url}`, form);
-  }*/
-  //PUT
-  postDataUser(form: any): Observable<any> {
-    return this.http.post<any>(`${this.urlApi}${this.urlPersona}`, form);
+  } */
+  //PUT DATA PERSONA
+  putDataPersona(form: any): Observable<any> {
+    return this.http.put<any>(
+      `${this.urlApi}${this.urlPersona}/${form.id_usuario}`,
+      form
+    );
   }
   //DELETE
   deleteDataUser(id: any): Observable<any> {

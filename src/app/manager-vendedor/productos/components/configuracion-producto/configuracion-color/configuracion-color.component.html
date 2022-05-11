@@ -61,7 +61,8 @@
               <!-------PRECIO POR VARIACION--------->
               <div class="col-xl-3 col-xxl-3 col-sm-3 col-3 col-md-3">
                 <div class="input-group mb-3">
-                  <span class="input-group-text d-sm-none d-none d-xxl-block d-xl-block d-md-none" id="basic-precio-variacion">$</span>
+                  <span class="input-group-text d-sm-none d-none d-xxl-block d-xl-block d-md-none"
+                    id="basic-precio-variacion">$</span>
                   <input type="text" class="form-control" formControlName="PrecioPorVariacion" placeholder="40"
                     [class.is-invalid]="coloresForm.get('PrecioPorVariacion')?.touched && coloresForm.get('PrecioPorVariacion')?.invalid"
                     aria-label="precio-variacion" aria-describedby="basic-precio-variacion">
@@ -73,7 +74,8 @@
               <!-------STOCK POR ITEMS--------->
               <div class="col-xl-2 col-xxl-2 col-sm-2 col-2 col-md-2">
                 <div class="input-group mb-3">
-                  <span class="input-group-text d-sm-none d-none d-xxl-block d-xl-block d-md-none" id="basic-precio-variacion">Und</span>
+                  <span class="input-group-text d-sm-none d-none d-xxl-block d-xl-block d-md-none"
+                    id="basic-precio-variacion">Und</span>
                   <input type="text" class="form-control" formControlName="StockItems" placeholder="40"
                     [class.is-invalid]="coloresForm.get('StockItems')?.touched && coloresForm.get('StockItems')?.invalid"
                     aria-label="precio-variacion" aria-describedby="basic-precio-variacion">
@@ -87,7 +89,8 @@
                 <div class="row">
                   <div class="col-xl-10 col-sm-12 col-md-12 col-xxl-10 col-md-9">
                     <div class="input-group mb-3">
-                      <span class="input-group-text d-sm-none d-none d-xxl-block d-xl-block d-md-none" id="basic-precio-variacion">Und</span>
+                      <span class="input-group-text d-sm-none d-none d-xxl-block d-xl-block d-md-none"
+                        id="basic-precio-variacion">Und</span>
                       <input type="text" class="form-control" formControlName="StockMinimo" placeholder="10"
                         aria-label="precio-variacion" aria-describedby="basic-precio-variacion"
                         [class.is-invalid]="coloresForm.get('StockMinimo')?.touched && coloresForm.get('StockMinimo')?.invalid">
@@ -97,6 +100,8 @@
                     </app-form-errors-container>
                   </div>
                   <div class="col-xl-2 col-xxl-2 col-md-2 d-sm-none d-none d-xxl-block d-xl-block d-md-none">
+                    <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal"
+                      data-bs-dismiss="modal">Open First</button>
                     <span (click)="removeItemsChecked(i)" class="cursor"><svg width="24" height="24" viewBox="0 0 24 24"
                         fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path

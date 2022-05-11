@@ -41,6 +41,7 @@ export class ImgIconosComponent implements OnInit {
       },
     },
   ];
+  imgArrayTotal:any=[];
   constructor(
     private imgValidar: ValidarYTransformarImagen //VALIDAR IMAGENES Y TRANSFORMAR
   ) {}

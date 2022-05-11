@@ -37,10 +37,8 @@
                       <select class="form-select is-invalid" id="floatingSelect" formControlName="marca"
                         [class.is-invalid]="formB.formProducts.get('marca')?.touched && formB.formProducts.get('marca')?.invalid"
                         aria-label="Floating label select example">
-                        <option selected>Sony</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
+                        <option *ngFor="let marca of marcaItems" [value]="marca.id_marca" selected>
+                          {{marca.nombre_marca}}</option>
                       </select>
                       <label for="floatingSelect">Marca</label>
                     </div>
@@ -143,9 +141,18 @@
       aria-expanded="true" aria-controls="collapseTwo">
       Accordion Item #2
     </button>
-    <button class="btn btn-primary collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree"
+    <!--     <button class="btn btn-primary collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree"
       aria-expanded="false" aria-controls="collapseThree">
       Accordion Item #3
-    </button>
+    </button> -->
   </div>
 </app-modals>
+
+<div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel"
+  tabindex="-1">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <app-imagen-productos></app-imagen-productos>
+    </div>
+  </div>
+</div>

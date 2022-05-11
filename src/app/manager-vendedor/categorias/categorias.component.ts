@@ -22,7 +22,8 @@ export class CategoriasComponent implements OnInit {
   }
   //OBTENER TODAS LAS CATEGORIAS
   getAllCategorias() {
-    this.apiCategoria.getAllCategorias().subscribe((res) => {
+    this.apiCategoria.getAllCategoriasPadres().subscribe((res) => {
+      console.log(res);
       this.categoriasItems = res;
     });
   }

@@ -57,13 +57,12 @@
               <td>{{product.codigo}}</td>
               <td>{{product.name}}</td>
               <td>{{product.precio}}</td>
-              <td>12</td>
-              <td>Teconologia</td>
+              <td>{{product.stock}}</td>
+              <td>{{product.nombre_categoria}}</td>
               <td>
                 <li>Carga Rapida</li>
                 <li>5G</li>
               </td>
-              <td *ngFor="let categorias of product.categoria_articulo">{{categorias.nombre_categoria}}</td>
               <td><a class="puntero" (click)="editarProduct(product);" data-bs-toggle="modal"
                   data-bs-target="#exampleModal"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                     xmlns="http://www.w3.org/2000/svg">

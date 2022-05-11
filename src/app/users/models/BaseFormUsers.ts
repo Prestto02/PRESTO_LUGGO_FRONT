@@ -108,7 +108,6 @@ export class BaseUsersForm {
   }
   //SET DATA FORM
   setDatForm(respuesta: any) {
-    console.log(respuesta);
     this.formUsers.patchValue({
       id_usuario: respuesta.id_usuario,
       nombre1: respuesta.nombre1,

@@ -19,4 +19,8 @@ export class CategoriasService {
       `${UrlApi.ApiUrl}${UrlApi.categoriasrHijos}${id}`
     );
   }
+  //TRAER TODAS LAS CATEGORIAS PADRES
+  getAllCategoriasPadres():Observable<any>{
+    return this.http.get<any>(`${UrlApi.ApiUrl}${UrlApi.categoriasPadres}`);
+  }
 }

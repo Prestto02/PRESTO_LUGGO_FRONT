@@ -30,7 +30,7 @@ export class FormsUsersComponent implements OnInit {
   }
   //ENVIAR FORMULARIO POR PUT
   submit() {
-    this.load = false;
+/*     this.load = false;
     const users = this.formB.getDataForm(
       this.position.latitud,
       this.position.longitud
@@ -41,7 +41,7 @@ export class FormsUsersComponent implements OnInit {
         `/${UrlFront.ActivarCuenta.cuenta}/${UrlFront.ActivarCuenta.mensajeAlCorreo}`,
         this.emailUsers,
       ]); //ENVIAR A LA RUTA DE MENSAJE DE CORREO Y EL EMAIL
-    });
+    }); */
   }
   //LIMPIAR FORMULARIO
   limpiar() {

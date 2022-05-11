@@ -24,14 +24,16 @@ export const UrlApi = {
   articulos: 'api/articulo',
   verificarImg: 'api/multimedia/subiendo',
   categoriasrHijos: 'api/Familia/hijos/',
-
+  categoriasPadres:'api/categoria/padres',
+  //MARCAS
+  marcas:'api/marca',
   //COLECCION PARA LA LISTA DE DESEOS
   coleccionListaDeseos: 'api/ListaDeseos',
   traerColeccion: 'api/ListaDeseos/',
   putColeccionListaDeseos: 'api/detalle_lista',
   traerColeccionPorId: 'api/detalle_lista/',
-  //PAGINACION
-  paginacion: 'api/articulo/listado/productos',
+  //LISTADOS DE PRODUCTOS
+  listProductsUsers: 'api/articulo/listado/productos',
   //CARRITO, BUSCAR PRODUCTO,
   traerProductosCarrito: 'api/Articulo/listado',
   buscarProductos: 'api/Articulo/producto/',

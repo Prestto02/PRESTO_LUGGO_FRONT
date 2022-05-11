@@ -18,7 +18,7 @@ export class ProductsService {
   }
   //TRAER TODOS LOS PRODUCTOS POR PAGINACION
   getDataProductos(): Observable<any> {
-    return this.http.get<any>(`${UrlApi.ApiUrl}${UrlApi.paginacion}`);
+    return this.http.get<any>(`${UrlApi.ApiUrl}${UrlApi.listProductsUsers}`);
   }
   //VERIFICAR ARCHIVO
   postVerifyImg(archivo: any): Observable<any> {
