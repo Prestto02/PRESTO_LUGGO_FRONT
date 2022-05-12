@@ -2,15 +2,13 @@
   border-radius: 20px;
   background: #7549fe;
 }
-#btn-pago {
+.btn-pago {
   background: #7549fe;
   border: 2px solid #fff;
   font-family: Cardium B-SemiBold;
   color: #fff;
-  height: 32px;
-  width: 258px;
 }
-#btn-pago:hover {
+.btn-pago:hover {
   background: #583baf;
 }
 .card-texto {
