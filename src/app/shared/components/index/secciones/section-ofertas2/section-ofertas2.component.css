@@ -18,7 +18,7 @@
 .cardium-A-semibold {
   font-family: Cardium A-SemiBold;
 }
-.cardium-b-bold{
+.cardium-b-bold {
   font-family: Cardium B-Bold;
   font-size: 16px;
 }
@@ -49,4 +49,11 @@
 .color-badge {
   background-color: #f62a5b;
   color: #fff;
+}
+/* If the screen size is 601px wide or more, set the font-size of <div> to 80px */
+@media screen and (min-width: 766px) and (max-width: 1020px) {
+  .card-texto {
+    font-family: Cardium A-Medium;
+    font-size: 18px;
+  }
 }
