@@ -13,7 +13,6 @@ export class ImgIconosComponent implements OnInit {
       imgProductsIcons: '',
       fn: function (e: any) {
         this.imgProductsIcons = e[0].base64;
-        console.log(this.imgProductsIcons);
       },
     },
     {
@@ -21,7 +20,6 @@ export class ImgIconosComponent implements OnInit {
       imgProductsIcons: '',
       fn: function (e: any) {
         this.imgProductsIcons = e[0].base64;
-        console.log(this.imgProductsIcons);
       },
     },
     {
@@ -29,7 +27,6 @@ export class ImgIconosComponent implements OnInit {
       imgProductsIcons: '',
       fn: function (e: any) {
         this.imgProductsIcons = e[0].base64;
-        console.log(this.imgProductsIcons);
       },
     },
     {
@@ -37,11 +34,10 @@ export class ImgIconosComponent implements OnInit {
       imgProductsIcons: '',
       fn: function (e: any) {
         this.imgProductsIcons = e[0].base64;
-        console.log(this.imgProductsIcons);
       },
     },
   ];
-  imgArrayTotal:any=[];
+  imgArrayTotal: any = [];
   constructor(
     private imgValidar: ValidarYTransformarImagen //VALIDAR IMAGENES Y TRANSFORMAR
   ) {}
@@ -52,7 +48,6 @@ export class ImgIconosComponent implements OnInit {
   }
   //DRAG AND DROP IMG LIST
   onDropped(e: CdkDragDrop<any>) {
-    console.log(this.imgListArray);
     const anterior = e.previousIndex;
     const actual = e.currentIndex;
     moveItemInArray(this.imgListArray, anterior, actual);

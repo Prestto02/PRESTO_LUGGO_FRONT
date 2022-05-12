@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { EditRegisterModalService } from 'src/app/shared/components/modals/services/edit-register-modal.service';
-import { BaseFormProducts } from '../../models/BaseformProduct';
+import { Router } from '@angular/router';
+import { UrlFront } from 'src/app/shared/routes/RoutesFront';
 import { ProductsService } from '../../services/products.service';
 
 @Component({
@@ -11,8 +11,7 @@ import { ProductsService } from '../../services/products.service';
 export class ListadoProductosComponent implements OnInit {
   constructor(
     private apiProducts: ProductsService, //PRODUCTS SERVIES
-    private formB: BaseFormProducts, //BASE FORM PRODUCTS
-    private modalServi: EditRegisterModalService //MODAL SERVICE
+    private _router: Router
   ) {}
   dataProducts: any;
   key: string = 'id'; //ORRDER BY
@@ -28,21 +27,13 @@ export class ListadoProductosComponent implements OnInit {
       this.dataProducts = res;
     });
   }
-  //EDIT PRODUCTS
-  editarProduct(product: any) {
-    console.log(product);
-    //this.formB.formProducts.setValue({ ...product });
-    //this.formB.getPatchValueForm(product);
-    this.modalServi.editModal(); //CAMBIO EL ESTADO DEL MODAL
-  }
-  //CAMBIO EL ESTADO DEL MODAL
-  registerProduct() {
-    this.modalServi.registerModal(); //CAMBIO EL ESTADO DEL MODAL
-  }
   //PARA ELIMINAR EL PRODUCTO
   eliminarProduct(id: any) {
     if (confirm(`Se eliminara el producto con id: ${id}`))
       console.log('eliminado');
+  }
+  editarProduct(product: any) {
+    console.log(product);
   }
   //BUSCAR PRODUCTOS
   onSearchProduct(search: any) {
@@ -52,5 +43,10 @@ export class ListadoProductosComponent implements OnInit {
   sort(key: any) {
     this.key = key;
     this.reverse = !this.reverse;
+  }
+  irCrearProducto() {
+    this._router.navigateByUrl(
+      `${UrlFront.Manager.managerVendedor}/${UrlFront.Manager.vendedor}/${UrlFront.Manager.crearProducto}`
+    );
   }
 }

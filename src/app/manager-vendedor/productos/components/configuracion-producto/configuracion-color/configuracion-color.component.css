@@ -10,3 +10,9 @@
 .btn-add-colors {
   background-color: #f2f2f2;
 }
+
+.selected-color {
+  width: 15px;
+  height: 15px;
+  border-radius: 4px;
+}

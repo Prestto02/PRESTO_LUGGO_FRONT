@@ -61,15 +61,15 @@ export const UrlFront = {
     noticiasBlog: 'noticias-productos',
   },
   //POLITICAS
-  Politicas:{
-    politicas:'politicas',
-    politicasLuggo:'politicas-general',
+  Politicas: {
+    politicas: 'politicas',
+    politicasLuggo: 'politicas-general',
   },
   //COMUNIDAD
-  Comunidad:{
-    comunidad:'comunidad',
-    comunidadGeneral:'comunidad-general',
-    chatOnline:'chat-online',
+  Comunidad: {
+    comunidad: 'comunidad',
+    comunidadGeneral: 'comunidad-general',
+    chatOnline: 'chat-online',
   },
   //PRODUCTOS
   Productos: {
@@ -88,6 +88,7 @@ export const UrlFront = {
     managerVendedor: 'manager',
     vendedor: 'vendedor',
     listadoProductos: 'productos/listado',
+    crearProducto: 'productos/crear',
     dashborad: 'dashboard',
   },
 };

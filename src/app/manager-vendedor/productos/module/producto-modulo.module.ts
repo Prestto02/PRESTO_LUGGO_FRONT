@@ -4,7 +4,6 @@ import { BaseFormColors } from '../components/configuracion-producto/configuraci
 import { ConfiguracionProductoComponent } from '../components/configuracion-producto/configuracion-producto.component';
 import { ConfiguracionTamanoComponent } from '../components/configuracion-producto/configuracion-tamano/configuracion-tamano.component';
 import { BaseFormTamano } from '../components/configuracion-producto/configuracion-tamano/models/BaseFormTamano';
-import { BaseFormConfigProducto } from '../components/configuracion-producto/models/BaseFormConfiProducto';
 import { CreateProductsComponent } from '../components/create-products/create-products.component';
 import { FormEtiquetasComponent } from '../components/create-products/form-etiquetas/form-etiquetas.component';
 import { BaseFormEtiquetas } from '../components/create-products/form-etiquetas/models/BaseFormEtiquetas';
@@ -36,6 +35,5 @@ export const ProductoModuleProviders = [
   BaseFormColors,
   BaseFormTamano,
   BaseFormEtiquetas,
-  BaseFormConfigProducto,
   CreateProductsComponent,
 ];

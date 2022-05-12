@@ -38,7 +38,7 @@ export class CreateProductsComponent implements OnInit {
   //GET ALL MARCAS
   getAllMarcas() {
     this.apiMarca.getAllMarca().subscribe((res) => {
-      console.log(res);
+
       this.marcaItems = res;
     });
   }

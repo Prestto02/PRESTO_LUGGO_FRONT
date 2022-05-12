@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BaseFormColors } from './configuracion-color/models/BaseFormColors';
 import { BaseFormTamano } from './configuracion-tamano/models/BaseFormTamano';
-import { BaseFormConfigProducto } from './models/BaseFormConfiProducto';
 
 @Component({
   selector: 'app-configuracion-producto',
@@ -10,7 +9,6 @@ import { BaseFormConfigProducto } from './models/BaseFormConfiProducto';
 })
 export class ConfiguracionProductoComponent implements OnInit {
   constructor(
-    public formB: BaseFormConfigProducto,
     public formColor: BaseFormColors,
     public formTamano: BaseFormTamano
   ) {}

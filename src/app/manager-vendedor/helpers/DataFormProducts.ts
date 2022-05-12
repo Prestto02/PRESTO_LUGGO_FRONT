@@ -10,9 +10,8 @@ export class DataFormProducts {
       descripcion_articulo: '',
       Longitud: '',
       Latitud: '',
-      ArticuloTieneCategoria: [
-
-      ],
+      id_marca: 6,
+      ArticuloTieneCategoria: [{ id_categoria: [] }],
       detalleArticulo: [
         {
           multimedia: [
@@ -23,7 +22,7 @@ export class DataFormProducts {
           atributes: {
             id_Color: 1,
             id_compontente: 1,
-            id_marca: 6,
+
             id_material: 7,
             id_peso: 1,
             id_potencia: 19,
@@ -32,7 +31,7 @@ export class DataFormProducts {
           cantidad: 1,
           valor_unitario: 25.0,
           valortotal: 25.0,
-/*           precioVariados: [
+          /*           precioVariados: [
             {
               precio: 25.15,
               cantidad: 1,
@@ -44,7 +43,5 @@ export class DataFormProducts {
       ],
     };
   }
-  getDataFormProducts(){
-
-  }
+  getDataFormProducts() {}
 }
