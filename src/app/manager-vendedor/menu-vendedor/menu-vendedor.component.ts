@@ -8,13 +8,10 @@ import { UrlFront } from 'src/app/shared/routes/RoutesFront';
   styleUrls: ['./menu-vendedor.component.css'],
 })
 export class MenuVendedorComponent implements OnInit {
-  container: boolean = false;
   constructor(private route: Router) {}
 
   ngOnInit(): void {}
-  mouseChange() {
-    console.log('entre');
-  }
+
   irAlIndex() {
     this.route.navigateByUrl(`${UrlFront.Menu.menu}/${UrlFront.Menu.index}`);
   }
