@@ -26,7 +26,7 @@ const routes: Routes = [
         (m) => m.IndexMenuModule
       ),
   },
-  //ATENCION AL CLIENTE
+  //ATENCION AL CLIENTE LAZY LOADING
   {
     path: UrlFront.AtencionCliente.atencion,
     loadChildren: () =>
@@ -34,7 +34,7 @@ const routes: Routes = [
         './shared/components/atencion-cliente/module/atencionCliente.module'
       ).then((m) => m.AtencionClienteModule),
   },
-  //CARRITO LIST
+  //CARRITO LIST LAZY LOADING
   {
     path: UrlFront.CarritoList.carrito,
     loadChildren: () =>
@@ -42,7 +42,7 @@ const routes: Routes = [
         './shared/components/carrito-list/module/carrito-list.module'
       ).then((m) => m.CarritoListModule),
   },
-  //PAGAR EL CARRITO
+  //PAGAR EL CARRITO LAZY LOADING
   {
     path: UrlFront.Pagar.pagar,
     loadChildren: () =>
@@ -50,7 +50,7 @@ const routes: Routes = [
         (m) => m.PagarModule
       ),
   },
-  //TIENDAS
+  //TIENDAS LAZY LOADING
   {
     path: UrlFront.Tiendas.tiendas,
     loadChildren: () =>
@@ -58,7 +58,7 @@ const routes: Routes = [
         (m) => m.TiendasModule
       ),
   },
-  //DEVOLUCIONES
+  //DEVOLUCIONES LAZY LOADING
   {
     path: UrlFront.Devoluciones.devolucion,
     loadChildren: () =>
@@ -66,7 +66,7 @@ const routes: Routes = [
         './shared/components/devoluciones/module/devoluciones.module'
       ).then((m) => m.DevolucionesModule),
   },
-  //NOTICIAS
+  //NOTICIAS LAZY LOADING
   {
     path: UrlFront.Noticias.noticias,
     loadChildren: () =>
@@ -74,7 +74,7 @@ const routes: Routes = [
         (m) => m.NoticiasModule
       ),
   },
-  //POLITICAS
+  //POLITICAS LAZY LOADING
   {
     path: UrlFront.Politicas.politicas,
     loadChildren: () =>
@@ -82,7 +82,7 @@ const routes: Routes = [
         (m) => m.PoliticasModule
       ),
   },
-  //COMUNIDAD
+  //COMUNIDAD LAZY LOADING
   {
     path: UrlFront.Comunidad.comunidad,
     loadChildren: () =>
@@ -91,7 +91,7 @@ const routes: Routes = [
       ),
   },
 
-  //QUIENES SOMOS
+  //QUIENES SOMOS LAZY LOADING
   {
     path: UrlFront.Menu.menu,
     loadChildren: () =>
@@ -107,7 +107,7 @@ const routes: Routes = [
         './shared/components/shared-products/module/shared-products.module'
       ).then((m) => m.SharedProductosModule),
   },
-  //ACTIVAR CUENTA
+  //ACTIVAR CUENTA LAZY LOADING
   {
     path: UrlFront.ActivarCuenta.cuenta,
     loadChildren: () =>
@@ -115,7 +115,7 @@ const routes: Routes = [
         './shared/components/activar-cuenta/module/activar-cuenta.module'
       ).then((m) => m.ActivarCuentaModule),
   },
-  //MANAGER VENDEDOR
+  //MANAGER VENDEDOR LAZY LOADING
   {
     path: UrlFront.Manager.managerVendedor,
     loadChildren: () =>
