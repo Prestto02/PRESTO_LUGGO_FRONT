@@ -7,7 +7,7 @@ import { RepositorioImg } from 'src/app/shared/helpers/RepositorioImg';
   styleUrls: ['./seccion-princpial.component.css'],
 })
 export class SeccionPrincpialComponent implements OnInit {
-  imgTop1 = `${RepositorioImg.urlRepositorio}/img/IMÁGENES/quienes-somos/LuggoNegocio 1.png`;
+  imgTop1 = `${RepositorioImg.urlRepositorio}img/IMÁGENES/quienes-somos/LuggoNegocio 1.png`;
   constructor() {}
 
   ngOnInit(): void {}

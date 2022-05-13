@@ -7,7 +7,7 @@ import { RepositorioImg } from 'src/app/shared/helpers/RepositorioImg';
   styleUrls: ['./seccion-tercera.component.css'],
 })
 export class SeccionTerceraComponent implements OnInit {
-  img1 = `${RepositorioImg.urlRepositorio}/img/IMÁGENES/quienes-somos/Rectangle-3.png`;
+  img1 = `${RepositorioImg.urlRepositorio}img/IMÁGENES/quienes-somos/Rectangle-3.png`;
   constructor() {}
 
   ngOnInit(): void {}

@@ -7,7 +7,7 @@ import { RepositorioImg } from 'src/app/shared/helpers/RepositorioImg';
   styleUrls: ['./seccion-cuarta.component.css'],
 })
 export class SeccionCuartaComponent implements OnInit {
-  img1 = `${RepositorioImg.urlRepositorio}/img/IMÁGENES/quienes-somos/Rectangle-4.png`;
+  img1 = `${RepositorioImg.urlRepositorio}img/IMÁGENES/quienes-somos/Rectangle-4.png`;
 
   constructor() {}
 
