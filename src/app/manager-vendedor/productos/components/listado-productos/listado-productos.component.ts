@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { RepositorioImg } from 'src/app/shared/helpers/RepositorioImg';
 import { UrlFront } from 'src/app/shared/routes/RoutesFront';
 import { ProductsService } from '../../services/products.service';
 
@@ -9,6 +10,7 @@ import { ProductsService } from '../../services/products.service';
   styleUrls: ['./listado-productos.component.css'],
 })
 export class ListadoProductosComponent implements OnInit {
+  public urlImg = RepositorioImg.urlRepositorio;
   constructor(
     private apiProducts: ProductsService, //PRODUCTS SERVIES
     private _router: Router

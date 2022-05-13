@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TokenService } from 'src/app/login/services/token.service';
+import { RepositorioImg } from 'src/app/shared/helpers/RepositorioImg';
 import { MessageFrontEndService } from 'src/app/shared/Toasts/services/message-front-end.service';
 import { errorFront as message } from '../../../dictonary/MessageErrorFront';
 import { CarritoItemsComponent } from '../../index/menu-index/menu/carrito-items/carrito-items.component';
@@ -11,6 +12,7 @@ import { ListaDeseosService } from './services/lista-deseos.service';
   styleUrls: ['./lista-deseos.component.css'],
 })
 export class ListaDeseosComponent implements OnInit {
+  public urlImg = RepositorioImg.urlRepositorio;
   dataListDeseos: any; //OBTENER LA LISTA DE DESEOS
   filterPost = '';
   filasDeDos = false;

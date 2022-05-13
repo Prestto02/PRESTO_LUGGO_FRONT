@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RepositorioImg } from 'src/app/shared/helpers/RepositorioImg';
 import { CarritoItemsService } from '../services/carrito-items.service';
 
 @Component({
@@ -9,6 +10,7 @@ import { CarritoItemsService } from '../services/carrito-items.service';
 export class CarritoItemsComponent implements OnInit {
   totalAPagar = 0;
   productoItems: any;
+  public urlImg = RepositorioImg.urlRepositorio;
   constructor(private apiServi: CarritoItemsService) {}
 
   ngOnInit(): void {

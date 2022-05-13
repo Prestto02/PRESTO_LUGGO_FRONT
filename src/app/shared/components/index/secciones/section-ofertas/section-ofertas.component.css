@@ -14,13 +14,31 @@
   font-family: Cardium B-Bold;
   color: #fff;
   font-size: 15px;
+  border-radius: 0px;
 }
 
-.title{
+.title {
   font-family: Cardium B-Bold;
   font-size: 15px;
 }
-.subtitle{
+.subtitle {
   font-family: Cardium B-Medium;
   font-size: 13px;
+}
+
+@media screen and (min-width: 1180px) and (max-width: 1375px) {
+  .subtitle {
+    font-family: Cardium B-Medium;
+    font-size: 13px;
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1170px) {
+  .subtitle {
+    font-family: Cardium B-Medium;
+    font-size: 13px;
+  }
+  .card-responsive {
+    margin: 0px 0px 15px;
+  }
 }

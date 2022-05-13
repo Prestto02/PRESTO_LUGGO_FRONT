@@ -2,6 +2,7 @@ import { DOCUMENT } from '@angular/common';
 import { Component, HostListener, Inject, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ProductsService } from 'src/app/manager-vendedor/productos/services/products.service';
+import { RepositorioImg } from 'src/app/shared/helpers/RepositorioImg';
 import { CarritoItemsComponent } from '../../index/menu-index/menu/carrito-items/carrito-items.component';
 import { ListaDeseosService } from '../lista-deseos/services/lista-deseos.service';
 @Component({
@@ -10,6 +11,7 @@ import { ListaDeseosService } from '../lista-deseos/services/lista-deseos.servic
   styleUrls: ['./shared-products.component.css'],
 })
 export class SharedProductsComponent implements OnInit {
+  public urlImg = RepositorioImg.urlRepositorio;
   showButton = false; // PARA HABiLiTAR EL BOTON PARA SUBIR A LA PAGINA PRINCIPAL
   private scrollHeigth = 100; //HASTA DE 100PX
   private pageNum = 0; //PAGINA NUMERO 1 DE LA PAGINACION
