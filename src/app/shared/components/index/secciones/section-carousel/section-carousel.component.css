@@ -3,7 +3,7 @@
   font-size: 13px;
 }
 .carousel-tamano {
-  height: 800px;
+  height: 840px;
 }
 .border {
   border-radius: 16px 16px 16px 16px;
@@ -12,7 +12,7 @@
   border: 0px solid #000000;
 }
 .top-img {
-  top: 610px;
+  top: 650px;
   z-index: 1;
 }
 .btn-carousel {
@@ -34,17 +34,27 @@
 /* If the screen size is 601px wide or more, set the font-size of <div> to 80px */
 @media screen and (min-width: 1400px) and (max-width: 1500px) {
   .top-img {
-    top: 610px;
+    top: 650px;
   }
   .carousel-tamano {
-    height: 800px;
+    height: 840px;
   }
 }
 
 /*RESPONSIVE*/
 @media screen and (min-width: 1350px) and (max-width: 1399px) {
   .top-img {
-    top: 550px;
+    top: 590px;
+    z-index: 1;
+  }
+  .carousel-tamano {
+    height: 780px;
+  }
+}
+
+@media screen and (min-width: 1300px) and (max-width: 1349px) {
+  .top-img {
+    top: 540px;
     z-index: 1;
   }
   .carousel-tamano {
@@ -52,9 +62,19 @@
   }
 }
 
-@media screen and (min-width: 1300px) and (max-width: 1349px) {
+@media screen and (min-width: 1200px) and (max-width: 1299px) {
   .top-img {
-    top: 500px;
+    top: 490px;
+    z-index: 1;
+  }
+  .carousel-tamano {
+    height: 720px;
+  }
+}
+
+@media screen and (min-width: 1100px) and (max-width: 1199px) {
+  .top-img {
+    top: 495px;
     z-index: 1;
   }
   .carousel-tamano {
@@ -62,9 +82,9 @@
   }
 }
 
-@media screen and (min-width: 1200px) and (max-width: 1299px) {
+@media screen and (min-width: 1000px) and (max-width: 1099px) {
   .top-img {
-    top: 480px;
+    top: 475px;
     z-index: 1;
   }
   .carousel-tamano {
@@ -72,32 +92,3 @@
   }
 }
 
-@media screen and (min-width: 1100px) and (max-width: 1199px) {
-  .top-img {
-    top: 455px;
-    z-index: 1;
-  }
-  .carousel-tamano {
-    height: 660px;
-  }
-}
-
-@media screen and (min-width: 1000px) and (max-width: 1099px) {
-  .top-img {
-    top: 435px;
-    z-index: 1;
-  }
-  .carousel-tamano {
-    height: 650px;
-  }
-}
-
-@media screen and (min-width: 766px) and (max-width: 999px) {
-  .top-img {
-    top: 405px;
-    z-index: 1;
-  }
-  .carousel-tamano {
-    height: 610px;
-  }
-}
