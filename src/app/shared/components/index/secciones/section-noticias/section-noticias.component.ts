@@ -23,10 +23,18 @@ export class SectionNoticiasComponent implements OnInit {
   card4Img4 =
     'http://192.168.20.104:9595/img/IM%C3%81GENES/Cards-section-2/Patinetas.png';
 
-  cardIcons1='http://192.168.20.104:9595/img/IM%C3%81GENES/Cards-section-2/tecnologia.png';
-  cardIcons2='http://192.168.20.104:9595/img/IM%C3%81GENES/Cards-section-2/linea blanca.png';
-  cardIcons3='http://192.168.20.104:9595/img/IM%C3%81GENES/Cards-section-2/taladro.png';
-
+  cardIcons1 =
+    'http://192.168.20.104:9595/img/IM%C3%81GENES/Cards-section-2/tecnologia.png';
+  cardIcons2 =
+    'http://192.168.20.104:9595/img/IM%C3%81GENES/Cards-section-2/linea blanca.png';
+  cardIcons3 =
+    'http://192.168.20.104:9595/img/IM%C3%81GENES/Cards-section-2/taladro.png';
+  cardIconsFacebook =
+    'http://192.168.20.104:9595/img/IM%C3%81GENES/Cards-section-2/Facebook - Original.png';
+  cardIconsGoogle =
+    'http://192.168.20.104:9595/img/IM%C3%81GENES/Cards-section-2/Google - Original.png';
+  cardIconsMicrosoft =
+    'http://192.168.20.104:9595/img/IM%C3%81GENES/Cards-section-2/Microsoft.png';
   constructor() {}
 
   ngOnInit(): void {}
