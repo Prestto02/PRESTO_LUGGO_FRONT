@@ -45,7 +45,6 @@ export class SharedProductsComponent implements OnInit {
       this.apiServi
         .getCharacterSearchByPage(this.nombreProduct)
         .subscribe((res) => {
-          console.log(res);
           this.productsArray = res; //GUARDO EN UN ARRAY LOS PRODUCTOS
           this.apiServi.addProductPagination(res); //AGREGAR AL CARRITO LA PAGINACION
         });
@@ -75,6 +74,7 @@ export class SharedProductsComponent implements OnInit {
   }
   //AGRGAR AL CARRITO
   agregarAlCarrito(id: any) {
+    console.log(id);
     this.carritoItmes.getListItemCarrito(id);
     //PARA SUBIR EL ITEMS DEL CARRITO
   }

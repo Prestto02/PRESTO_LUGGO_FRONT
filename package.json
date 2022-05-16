@@ -5,7 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "build : dev":  "ng build --calidad --base-href /Puertto/Calidad/Site/",
+    "build : devCalidad": "ng build --prod --base-href /Puertto/Calidad/Site/",
     "build : prod": "ng build --prod --base-href /Puertto/Site/",
     "watch": "ng build --watch --deploy-url / --base-href / --configuration=development",
     "test": "ng test",
