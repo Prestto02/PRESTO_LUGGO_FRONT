@@ -13,19 +13,28 @@ import { FormsUsersComponent } from '../components/forms-users/forms-users.compo
 import { ErrorsExtensionsModule } from 'src/app/shared/components/errors/errors-module.module';
 import { PerfilUsersComponent } from '../components/perfil-users/perfil-users.component';
 import { IndexMenuModule } from 'src/app/shared/components/index/module/index-menu.module';
+import { RegistrarAdnComponent } from '../components/registrar-adn/registrar-adn.component';
+import { BaseFormAdnUsers } from '../components/registrar-adn/models/BaseFormAdnUser';
+import { FooterIndexModule } from 'src/app/shared/components/index/footer-index/module/footer-index.module';
 
 @NgModule({
-  declarations: [UsersComponent, FormsUsersComponent, PerfilUsersComponent],
+  declarations: [
+    UsersComponent,
+    FormsUsersComponent,
+    PerfilUsersComponent,
+    RegistrarAdnComponent,
+  ],
   imports: [
     UsersRoutingModule,
     ReactiveFormsModule, //FORMULARIO REACTIVO
     CommonModule,
     MenuIndexModule, //MENU INDEX MODULE
+    FooterIndexModule, //FOOTER MODULE
     HttpClientModule,
     IndexMenuModule,
     ErrorsExtensionsModule, //ERRORES DE FORMULARIO REACTIVO
     AlifeFileToBase64Module, //BASE 64 IMG
   ],
-  providers: [BaseUsersForm, PerfilUsersComponent],
+  providers: [BaseUsersForm, PerfilUsersComponent, BaseFormAdnUsers],
 })
 export class UsersModule {}

@@ -6,6 +6,7 @@ export const UrlFront = {
     post: 'registrar',
     perfilRegistrar: 'perfil-usuario',
     perfilUsuario: 'perfil-usuario/:id',
+    adnRegistrar: 'adn-registrar',
   },
   //LOGIN
   Login: {
