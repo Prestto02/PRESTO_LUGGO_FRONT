@@ -1,9 +1,9 @@
-import { ConfiguracionCapacidadComponent } from '../components/configuracion-producto/configuracion-capacidad/configuracion-capacidad.component';
+import { ConfiguracionAtributosComponent } from '../components/configuracion-producto/configuracion-atributos/configuracion-atributos.component';
+import { BaseFormConfigAtributos } from '../components/configuracion-producto/configuracion-atributos/models/BaseFormConfigAtributos';
 import { ConfiguracionColorComponent } from '../components/configuracion-producto/configuracion-color/configuracion-color.component';
 import { BaseFormColors } from '../components/configuracion-producto/configuracion-color/models/BaseFormColors';
 import { ConfiguracionProductoComponent } from '../components/configuracion-producto/configuracion-producto.component';
-import { ConfiguracionTamanoComponent } from '../components/configuracion-producto/configuracion-tamano/configuracion-tamano.component';
-import { BaseFormTamano } from '../components/configuracion-producto/configuracion-tamano/models/BaseFormTamano';
+import { BaseFormConfigProducts } from '../components/configuracion-producto/models/BaseFormCongifProduct';
 import { CreateProductsComponent } from '../components/create-products/create-products.component';
 import { FormEtiquetasComponent } from '../components/create-products/form-etiquetas/form-etiquetas.component';
 import { BaseFormEtiquetas } from '../components/create-products/form-etiquetas/models/BaseFormEtiquetas';
@@ -21,9 +21,8 @@ export const ProductoModuleDeclarations = [
   ListadoProductosComponent, // LISTADO DE PRODUCTOS
   ProgressStepperComponent,
   ConfiguracionProductoComponent, //CONFIGURACION DEL PRODUCTO
-  ConfiguracionCapacidadComponent, //CONFIGURACION CAPACIDAD
+  ConfiguracionAtributosComponent, //CONFIGURACION DE LOS PRODUCTOS
   ConfiguracionColorComponent, //CONFIGURACION DEL COLOR
-  ConfiguracionTamanoComponent, //CONFIGURACION DEL TAMANO
   ImagenProductosComponent, //IMAGEN DEL PRODUCTO
   ImgIconosComponent, //IMAGENES PEQUEÑAS COMPONENTS
   ImgIconosDescripcionComponent,
@@ -33,7 +32,8 @@ export const ProductoModuleDeclarations = [
 export const ProductoModuleProviders = [
   BaseFormProducts,
   BaseFormColors,
-  BaseFormTamano,
+  BaseFormConfigAtributos,
   BaseFormEtiquetas,
+  BaseFormConfigProducts,
   CreateProductsComponent,
 ];

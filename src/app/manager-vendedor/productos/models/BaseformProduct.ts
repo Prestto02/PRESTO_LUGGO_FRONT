@@ -6,6 +6,7 @@ export class BaseFormProducts {
   //FORM PRODUCTOS
   formProducts = this.formB.group({
     id_product: [''],
+    sku: ['', [Validators.pattern(/^[A-Za-z0-9_-]+$ /)]], //EXPRESION REGULAR PARA NUMEROS LETRAS CON RAYAS SIN ESPACIOS
     nombre_articulo: [
       '',
       [
@@ -35,7 +36,6 @@ export class BaseFormProducts {
       ],
     ],
     marca: ['', [Validators.required]],
-    tipo_producto: ['', [Validators.required]],
   });
   limpiarForm() {
     this.formProducts.reset();

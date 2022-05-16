@@ -1,67 +1,81 @@
 <div class="container rounded mt-3 bg-white">
-  <div class="accordion" id="accordionExampleConfiguracion">
-    <div class="row">
-      <div class="col-xl-12 col-xxl-12 col-sm-12 col-md-12 mb-3 mt-3">
-        <app-progress-stepper [width]="'width:68%'"
-          [btn-secondary]="'position-relative top-0 start-25 translate-middle btn btn-sm btn-primary rounded-pill'">
-        </app-progress-stepper>
-      </div>
-      <div class="col-xl-12 col-sm-12 col-md-12 col-xxl-12 col-12 mb-5">
+  <div class="row">
+    <div class="col-xl-12 col-xxl-12 col-sm-12 col-md-12 mb-3 mt-3">
+      <app-progress-stepper [width]="'width:68%'"
+        [btn-secondary]="'position-relative top-0 start-25 translate-middle btn btn-sm btn-primary rounded-pill'">
+      </app-progress-stepper>
+    </div>
+    <div class="col-xl-12 col-sm-12 col-md-12 col-xxl-12 col-12 mb-5">
+      <!-------FORMULARIO DE ATRIBUTOS------>
+      <form [formGroup]="formAtributo.formConfigProduct">
         <div class="row">
-          <div class="col-xl-4 col-xxl-4 col-sm-12 col-md-4 col-12">
-            <div class="btn-group col-xl-4 col-xxl-4 col-sm-12 col-12 col-md-4">
-              <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton"
+          <div class="col-xl-2 col-xxl-2 col-sm-12 col-md-2 col-12">
+            <div class="dropdown">
+              <button class="btn btn-white dropdown-toggle" type="button" id="dropdownMenuButton2"
                 data-bs-toggle="dropdown" aria-expanded="false">
                 Atributos
               </button>
-              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <li class="list-group-item border-top-0 border-start-0 border-end-0" *ngFor="let atributos of arrayAtributos; let i = index">
-                  <input type="checkbox" class="form-check-input me-1"
-                    (click)="meDistesClick(atributos.nombre)">{{atributos.nombre}}
-                </li>
+              <ul class="dropdown-menu dropdown-menu-white" aria-labelledby="dropdownMenuButton2">
+                <li *ngFor="let atributos of arrayAtributos; let i = index"><input class="form-check-input me-1"
+                    type="checkbox" [id]="atributos.id" [value]="atributos.nombre"
+                    (click)="addColoresItems($event, atributos.nombre, atributos.id)" />
+                  {{atributos.nombre}}</li>
               </ul>
             </div>
+            <app-form-errors-container [forControl]="formAtributo.formConfigProduct.get('nombreVariacion')">
+              <app-message-error forErrorCode="required"></app-message-error>
+            </app-form-errors-container>
+          </div>
+          <!----------ARRAY DE ATRIBUTOS----------->
+          <ng-container formArrayName="Atributos">
+            <ng-container *ngFor="let atributosForm of formAtributo.atributos.controls; let i=index;">
+              <ng-container [formGroupName]="i">
+                <div class="col-xl-2 col-xxl-2 col-sm-12 col-12 col-md-2 mx-1">
+                  <div class="row">
+                    <label for="floatingVariante" class="form-label">{{atributosForm.get('nombre')?.value}}</label>
+                    <input type="text" class="form-control" formControlName="escoger" id="floatingEscoger"
+                      placeholder="Amarillo-Precio" aria-describedby="floatingEscoger"
+                      [class.is-invalid]="formAtributo.formConfigProduct.get('escoger')?.touched && formAtributo.formConfigProduct.get('escoger')?.invalid">
+                    <app-form-errors-container [forControl]="formAtributo.formConfigProduct.get('escoger')">
+                      <app-message-error forErrorCode="required"></app-message-error>
+                    </app-form-errors-container>
+                    <label for="floatingVariante" class="form-label">Descripcion del
+                      {{atributosForm.get('nombre')?.value}}</label>
+                    <input type="text" class="form-control" formControlName="descripcion" id="floatingEscoger"
+                      placeholder="Amarillo-Precio" aria-describedby="floatingEscoger"
+                      [class.is-invalid]="formAtributo.formConfigProduct.get('descripcion')?.touched && formAtributo.formConfigProduct.get('descripcion')?.invalid">
+                    <div id="floatingEscoger" class="form-text">Ejemplo: Blanco, Amarillo, Negro</div>
+                    <app-form-errors-container [forControl]="formAtributo.formConfigProduct.get('descripcion')">
+                      <app-message-error forErrorCode="required"></app-message-error>
+                    </app-form-errors-container>
+                  </div>
+                </div>
+              </ng-container>
+            </ng-container>
+          </ng-container>
+          <div *ngIf="formAtributo.atributos.length>0;"
+            class="col-xl-12 col-xxl-12 col-sm-12 col-md-12 col-12 text-center">
+            <button class="btn btn-primary" (click)="agregarVariaciones();">Añadir variación</button>
           </div>
         </div>
-      </div>
-      <div class="col-xl-1 col-xxl-1 col-md-3 col-sm-4 col-4 mt-1 accordion-item">
-        <button class="btn collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseColor"
-          aria-expanded="true" aria-controls="collapseColor">
-          Color
-        </button>
-      </div>
-      <div class="col-xl-1 col-xxl-1 col-md-3 col-sm-4 col-4 acordion-item">
-        <button class="btn collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTamano"
-          aria-expanded="false" aria-controls="collapseTamano">
-          Tamaño
-        </button>
-      </div>
-      <div class="col-xl-1 col-xxl-1 col-md-3 col-sm-4 col-4 acordion-item">
-        <button class="btn collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCapacidad"
-          aria-expanded="false" aria-controls="collapseCapacidad">
-          Capacidad
-        </button>
-      </div>
-    </div>
-    <div class="contianer-fluid mt-3">
-      <div id="collapseColor" class="accordion-collapse collapse show" aria-labelledby="headingFour"
-        data-bs-parent="#accordionExampleConfiguracion">
-        <app-configuracion-color></app-configuracion-color>
-      </div>
-      <div id="collapseTamano" class="accordion-collapse collapse" aria-labelledby="headingFive"
-        data-bs-parent="#accordionExampleConfiguracion">
-        <app-configuracion-tamano></app-configuracion-tamano>
-      </div>
-      <div id="collapseCapacidad" class="accordion-collapse collapse" aria-labelledby="headingSix"
-        data-bs-parent="#accordionExampleConfiguracion">
-        <app-configuracion-capacidad></app-configuracion-capacidad>
-      </div>
+      </form>
     </div>
   </div>
+  <!--------COMPONENTES COLORES, TAMAÑO, CAPACIDAD---------->
+  <div class="contianer-fluid mt-3">
+    <app-configuracion-atributos></app-configuracion-atributos>
+  </div>
+  <!-------CONTINUAR--------->
   <div class="modal-footer">
     <button type="button" class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#collapseOne"
       aria-expanded="true" aria-controls="collapseOne">Atras</button>
     <button type="button" class="btn btn-modal"
-      [disabled]="formColor.formColors.invalid || formTamano.formTamano.invalid">Siguiente</button>
+      [disabled]="formAtributo.formConfigProduct.invalid || formAtributos.formConfigAtributos.invalid">Continuar
+      &nbsp;<svg width="7" height="20" viewBox="0 0 7 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M6.25627 5.40406L1.91551 1.26667C1.82034 1.17521 1.70711 1.10261 1.58235 1.05307C1.4576 1.00353 1.32379 0.978027 1.18864 0.978027C1.05349 0.978027 0.919677 1.00353 0.794922 1.05307C0.670167 1.10261 0.556938 1.17521 0.461765 1.26667C0.271088 1.4495 0.164062 1.69681 0.164062 1.95461C0.164062 2.2124 0.271088 2.45972 0.461765 2.64255L4.08589 6.09688L0.461765 9.55121C0.271088 9.73404 0.164062 9.98136 0.164062 10.2392C0.164063 10.4969 0.271088 10.7443 0.461765 10.9271C0.557426 11.0175 0.670876 11.0891 0.795609 11.1376C0.920341 11.1862 1.0539 11.2108 1.18864 11.2101C1.32337 11.2108 1.45694 11.1862 1.58167 11.1376C1.7064 11.0891 1.81985 11.0175 1.91551 10.9271L6.25627 6.7897C6.35223 6.69898 6.42839 6.59106 6.48036 6.47215C6.53234 6.35324 6.5591 6.22569 6.5591 6.09688C6.5591 5.96806 6.53234 5.84052 6.48036 5.72161C6.42839 5.6027 6.35223 5.49477 6.25627 5.40406Z"
+          fill="white" />
+      </svg></button>
   </div>
 </div>
+{{formAtributo.formConfigProduct.value | json}}
