@@ -1,0 +1,106 @@
+<div class="container rounded mt-3 bg-white">
+  <div class="row">
+    <div class="col-xl-12 col-xxl-12 col-sm-12 col-md-12 mb-3 mt-3">
+      <app-progress-stepper [width]="'width:68%'"
+        [btn-secondary]="'position-relative top-0 start-25 translate-middle btn btn-sm btn-primary rounded-pill'">
+      </app-progress-stepper>
+    </div>
+    <!------DIMENSIONES DEL PAQUETE HORA Y ENVIOS---------->
+    <div class="col-xl-6 col-xxl-6 col-sm-12 col-12 col-md-6 mb-5">
+      <app-gestion-dimension></app-gestion-dimension>
+    </div>
+    <!-----------UBICACION DEL MAPA--------------->
+    <div class="col-xl-6 col-xxl-6 col-sm-12 col-12 col-md-6 mb-5">
+      <div class="row">
+        <div class="col-xl-12 col-sm-12 col-md-12 col-xxl-12">
+          <h5>Ubicación del mapa</h5>
+        </div>
+        <!-------GOOGLE MAP  y EL FORM----->
+        <form [formGroup]="formUbicacion.formLogistica">
+          <div class="col-xl-12 col-sm-12 col-md-12 col-xxl-12">
+            <div class="row">
+              <div class="col-xl-12 col-sm-12 col-md-12 col-xxl-12 mb-3">
+                <!------GOOGLE MAP SITIE------->
+                <p-gmap #gmap [style]="{'width':'100%','height':'320px', 'margin-bottom': '1em'}" [options]="options"
+                  [overlays]="overlays" (onMapClick)="handleMapClick($event)"
+                  (onOverlayClick)="handleOverlayClick($event)" (onOverlayDragEnd)="handleDragEnd($event)"></p-gmap>
+                <button type="button" pButton label="Clear" icon="pi pi-times" (click)="clear()"
+                  style="margin-right:.25em"></button>
+                <button type="button" pButton label="Zoom In" icon="pi pi-plus" (click)="zoomIn(gmap.getMap())"
+                  style="margin-right:.25em"></button>
+                <button type="button" pButton label="Zoom Out" icon="pi pi-minus"
+                  (click)="zoomOut(gmap.getMap())"></button>
+              </div>
+              <!--------MODAL PARA AGREGAR LA NUEVA UBICACION------------->
+              <p-dialog showEffect="fade" [(visible)]="dialogVisible" header="Nueva ubicación"
+                [style]="{width: '300px'}">
+                <div class="grid p-fluid" *ngIf="selectedPosition">
+                  <div class="mb-3">
+                    <label for="Descripcion" class="form-label">Descripcion</label>
+                    <input type="email" class="form-control" id="Descripcion" formControlName="descripcion">
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="Latitud" class="form-label">Latitud</label>
+                    <input type="email" class="form-control" id="Latitud" [value]="selectedPosition.lat()" disabled>
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="Longitud" class="form-label">Longitud</label>
+                    <input type="email" class="form-control" id="Longitud" [value]="selectedPosition.lng()" disabled>
+                  </div>
+                </div>
+                <ng-template pTemplate="footer">
+                  <div>
+                    <button type="button" pButton label="Agregar Ubicación" (click)="addMarker()"></button>
+                  </div>
+                </ng-template>
+              </p-dialog>
+              <!---------ARRAY DE UBICACION DE PRODUCTO--------->
+              <ng-container formArrayName="ubicacionProducto">
+                <ng-container *ngFor="let ubicacion of formUbicacion.ubicacionProducto.controls; let i = index;">
+                  <ng-container [formGroupName]="i">
+                    <div class="col-xl-12 col-sm-12 col-xxl-12 col-12">
+                      <div class="row">
+                        <!------DECRICIPCION---------->
+                        <div class="col-xl-4 col-xxl-4 col-sm-12 col-12 col-md-4">
+                          <div class="form-floating mb-3">
+                            <input type="email" class="form-control" id="descripcionArray" placeholder="Descripcion"
+                              formControlName="descripcion" [attr.disabled]="true">
+                            <label for="descripcionArray">Descripcion</label>
+                          </div>
+                        </div>
+                        <!------LONGITUD---------->
+                        <div class="col-xl-4 col-xxl-4 col-sm-12 col-12 col-md-4">
+                          <div class="form-floating mb-3">
+                            <input type="email" class="form-control" id="longitudArray" placeholder="Longitud"
+                              formControlName="longitud" [attr.disabled]="true">
+                            <label for="longitudArray">Longitud</label>
+                          </div>
+                        </div>
+                        <!------LATITUD---------->
+                        <div class="col-xl-4 col-xxl-4 col-sm-12 col-12 col-md-4">
+                          <div class="form-floating mb-3">
+                            <input type="email" class="form-control" id="latitudArray" placeholder="Laittud"
+                              formControlName="latitud" [attr.disabled]="true">
+                            <label for="latitudArray">Latitud</label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </ng-container>
+                </ng-container>
+              </ng-container>
+
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <!------FINALIZAR ATRAS--------->
+    <div class="modal-footer">
+      <button class="btn btn-secondary">Atras</button>
+      <button class="btn btn-primary">Finalizar</button>
+    </div>
+  </div>
+</div>

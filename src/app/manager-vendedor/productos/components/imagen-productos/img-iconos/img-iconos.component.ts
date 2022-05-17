@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ValidarYTransformarImagen } from 'src/app/shared/validations/ValidarYTransformarImagen';
 import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
+import { BaseFormConfigAtributos } from '../../configuracion-producto/configuracion-atributos/models/BaseFormConfigAtributos';
 @Component({
   selector: 'app-img-iconos',
   templateUrl: './img-iconos.component.html',
@@ -11,45 +12,58 @@ export class ImgIconosComponent implements OnInit {
     {
       id: 1,
       imgProductsIcons: '',
-      fn: function (e: any) {
-        this.imgProductsIcons = e[0].base64;
-      },
+      imgProductTransform: '',
     },
     {
       id: 2,
       imgProductsIcons: '',
-      fn: function (e: any) {
-        this.imgProductsIcons = e[0].base64;
-      },
+      imgProductTransform: '',
     },
     {
       id: 3,
       imgProductsIcons: '',
-      fn: function (e: any) {
-        this.imgProductsIcons = e[0].base64;
-      },
+      imgProductTransform: '',
     },
     {
       id: 4,
       imgProductsIcons: '',
-      fn: function (e: any) {
-        this.imgProductsIcons = e[0].base64;
-      },
+      imgProductTransform: '',
     },
   ];
-  imgArrayTotal: any = [];
   constructor(
-    private imgValidar: ValidarYTransformarImagen //VALIDAR IMAGENES Y TRANSFORMAR
+    private imgValidar: ValidarYTransformarImagen, //VALIDAR IMAGENES Y TRANSFORMAR
+    private imgForm: BaseFormConfigAtributos //FORM CONFIG ATRIBUTOS
   ) {}
   ngOnInit(): void {}
   //OBTENER IMAGEN PARA VERIFICAR EN EL SERVER
   getImage(e: any) {
     this.imgValidar.getImageVerifyServer(e); //VERIFICO EN EL SERVER LA IMAGEN
   }
+  //OBTENR EL ARCHIVO PARA TRANSFORMARLO
+  dataField(e: any, id: any) {
+    const { imgProducts, imagenTransformada } =
+      this.imgValidar.getArchiveImagen(e);
+    const data = this.buscarImagenId(id);
+    data[0].imgProductsIcons = imgProducts;
+    data[0].imgProductTransform = imagenTransformada;
+  }
   //DRAG AND DROP IMG LIST
   onDropped(e: CdkDragDrop<any>) {
     const anterior = e.previousIndex;
     const actual = e.currentIndex;
     moveItemInArray(this.imgListArray, anterior, actual);
+  }
+  //AGREGAR ICONO AL PATCH VALUE
+  addImgIcons(id: any) {
+    const data = this.imgForm.atributosVariacion.controls[id];
+    this.imgListArray.map((res: any) => {});
+  }
+  //BUSCAR IMAGEN POR ID
+  buscarImagenId(id: any) {
+    return this.imgListArray
+      .filter((elements: any) => elements.id === id)
+      .map((res: any) => {
+        return res;
+      });
   }
 }

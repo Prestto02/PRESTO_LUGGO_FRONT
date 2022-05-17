@@ -1,5 +1,5 @@
 <div class="row" cdkDropList (cdkDropListDropped)="onDropped($event)">
-  <div cdkDrag class="col-xl-12 position-relative" *ngFor="let arrayImg of imgListArray">
+  <div cdkDrag class="col-xl-12 position-relative" *ngFor="let arrayImg of imgListArray let i = index;">
     <img loading="lazy" *ngIf="arrayImg.imgProductsIcons!=''" [src]="arrayImg.imgProductsIcons"
       class="img-fluid rounded-start mb-3" alt="Imágen del producto" width="55px" height="55px">
     <svg *ngIf="arrayImg.imgProductsIcons==''" class="mb-3" width="55" height="55" viewBox="0 0 55 55" fill="none"
@@ -10,6 +10,6 @@
         fill="#AAAAAA" />
     </svg>
     <input type="file" class="form-control position-absolute top-0 h-100 w-100" id="formFile" alife-file-to-base64
-      (onFileChanged)="arrayImg.fn($event)" (change)="getImage($event);" required>
+      (onFileChanged)="dataField($event,arrayImg.id)" (change)="getImage($event);" required>
   </div>
 </div>

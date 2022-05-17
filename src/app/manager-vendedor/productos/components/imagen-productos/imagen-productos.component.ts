@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ValidarYTransformarImagen } from 'src/app/shared/validations/ValidarYTransformarImagen';
+import { ImgIconosComponent } from './img-iconos/img-iconos.component';
 
 @Component({
   selector: 'app-imagen-productos',
@@ -7,22 +8,27 @@ import { ValidarYTransformarImagen } from 'src/app/shared/validations/ValidarYTr
   styleUrls: ['./imagen-productos.component.css'],
 })
 export class ImagenProductosComponent implements OnInit {
+  @Input('id') id: number | null = null;
   imgProducts = '';
   imagenTransformada = '';
   constructor(
-    private imgValidar: ValidarYTransformarImagen //VALIDAR IMAGENES Y TRANSFORMAR
+    private imgValidar: ValidarYTransformarImagen, //VALIDAR IMAGENES Y TRANSFORMAR
+    private imgIconComponent: ImgIconosComponent
   ) {}
 
   ngOnInit(): void {}
   //OBTENER LA IMAGEN PARA TRANSFORMARLA
   getArchive(e: any) {
     const { imgProducts, imagenTransformada } =
-      this.imgValidar.getArchiveImagen(e); //OBTENGO LO QUE ME ENVIA EL ARREGLO DE LA IMAGEN
+    this.imgValidar.getArchiveImagen(e); //OBTENGO LO QUE ME ENVIA EL ARREGLO DE LA IMAGEN
     this.imgProducts = imgProducts; //ASIGNO
     this.imagenTransformada = imagenTransformada; //ASIGNO
   }
   //OBTENER IMAGEN PARA VERIFICAR EN EL SERVER
   getImage(e: any) {
     this.imgValidar.getImageVerifyServer(e); //VERIFICO EN EL SERVER LA IMAGEN
+  }
+  addImg() {
+    this.imgIconComponent.addImgIcons(this.id);
   }
 }

@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
-import { FormArray, FormBuilder, Validators } from '@angular/forms';
+import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 @Injectable({ providedIn: 'root' })
 export class BaseFormConfigAtributos {
   constructor(private formB: FormBuilder) {}
-
+  //FORM CONFIG ATRIBUTOS
   formConfigAtributos = this.formB.group({
     atributosVariacion: this.formB.array([], [Validators.required]),
   });
@@ -11,8 +11,7 @@ export class BaseFormConfigAtributos {
   get atributosVariacion() {
     return this.formConfigAtributos.controls['atributosVariacion'] as FormArray;
   }
-
-  //AÑADIR MAS COLORES
+  //AÑADIR MAS ATRIBUTOS DE VARIACIONES
   addAtributosVariacion(nombre: any, descripcion: any) {
     let atributosForm = this.formB.group({
       NombreAtributos: [nombre, [Validators.required]],
@@ -22,15 +21,9 @@ export class BaseFormConfigAtributos {
       PrecioPorVariacion: ['', [Validators.required]],
       StockItems: ['', [Validators.required]],
       StockMinimo: ['', [Validators.required]],
+      imagenes: this.formB.array([]),
     });
     this.atributosVariacion.push(atributosForm);
-  }
-  //ELIMINAR ITEMS POR CHECKED
-  removeItemsChecked(nameColor: any) {
-    const valor = this.atributosVariacion.controls.findIndex((res) => {
-      return res.value.nombreAtributos === nameColor; //OBTENGO LA POSICION DEL ARREGLO PARA ELIMINARLO
-    });
-    this.removeItems(valor); //ELIMINO LA POSICION ENCONTRADA
   }
   //ELIMINAR ITEMS
   removeItems(i: any) {

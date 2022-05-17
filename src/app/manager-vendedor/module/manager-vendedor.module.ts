@@ -10,6 +10,7 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
 /*************MODULE*********** */
 import { FooterIndexModule } from 'src/app/shared/components/index/footer-index/module/footer-index.module';
 import {
+  ProductModuleImport,
   ProductoModuleDeclarations,
   ProductoModuleProviders,
 } from '../productos/module/producto-modulo.module';
@@ -47,6 +48,7 @@ import { IndexMenuModule } from 'src/app/shared/components/index/module/index-me
     ErrorsExtensionsModule, //ERRORES
     DragDropModule, //DRAG AND DROP IMAGENES
     FooterIndexModule, //MODULE FOOTER INDEX
+    ProductModuleImport,//PRODUCTS MODULE IMPORTS
     IndexMenuModule, //FOOTER
     NgxPaginationModule, //PAGINATIONS
     OrderModule, //ORDER MODULE

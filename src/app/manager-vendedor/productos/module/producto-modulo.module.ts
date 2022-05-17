@@ -1,3 +1,7 @@
+import { GMapModule } from 'primeng/gmap';
+import { DialogModule } from 'primeng/dialog';
+import { ToastModule } from 'primeng/toast';
+import { ButtonModule } from 'primeng/button';
 import { ConfiguracionAtributosComponent } from '../components/configuracion-producto/configuracion-atributos/configuracion-atributos.component';
 import { BaseFormConfigAtributos } from '../components/configuracion-producto/configuracion-atributos/models/BaseFormConfigAtributos';
 import { ConfiguracionColorComponent } from '../components/configuracion-producto/configuracion-color/configuracion-color.component';
@@ -11,9 +15,12 @@ import { ImagenProductosComponent } from '../components/imagen-productos/imagen-
 import { ImgIconosDescripcionComponent } from '../components/imagen-productos/img-iconos-descripcion/img-iconos-descripcion.component';
 import { ImgIconosComponent } from '../components/imagen-productos/img-iconos/img-iconos.component';
 import { ListadoProductosComponent } from '../components/listado-productos/listado-productos.component';
+import { LogisticaProductoComponent } from '../components/logistica-producto/logistica-producto.component';
 import { ProductsComponent } from '../components/products.component';
 import { ProgressStepperComponent } from '../components/progress-stepper/progress-stepper.component';
 import { BaseFormProducts } from '../models/BaseformProduct';
+import { BaseFormLogisticaProducto } from '../components/logistica-producto/models/BaseFormubicacion';
+import { GestionDimensionComponent } from '../components/logistica-producto/gestion-dimension/gestion-dimension.component';
 
 export const ProductoModuleDeclarations = [
   ProductsComponent, //INDEX PRODUCTOS
@@ -24,16 +31,25 @@ export const ProductoModuleDeclarations = [
   ConfiguracionAtributosComponent, //CONFIGURACION DE LOS PRODUCTOS
   ConfiguracionColorComponent, //CONFIGURACION DEL COLOR
   ImagenProductosComponent, //IMAGEN DEL PRODUCTO
+  LogisticaProductoComponent, //LOGITICA DE PRODUCTO
   ImgIconosComponent, //IMAGENES PEQUEÑAS COMPONENTS
   ImgIconosDescripcionComponent,
   FormEtiquetasComponent, //FORM ETIQUETAS
+  GestionDimensionComponent, //GESTION COMPONENTS
 ];
-
+export const ProductModuleImport = [
+  GMapModule, //MODULE MAP
+  DialogModule, //DIALOG MODULE
+  ToastModule, //TOAST MODULE
+  ButtonModule, //BUTTON MODULE
+];
 export const ProductoModuleProviders = [
   BaseFormProducts,
   BaseFormColors,
   BaseFormConfigAtributos,
   BaseFormEtiquetas,
   BaseFormConfigProducts,
+  ImgIconosComponent,
   CreateProductsComponent,
+  BaseFormLogisticaProducto,
 ];

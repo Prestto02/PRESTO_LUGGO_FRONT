@@ -1,4 +1,5 @@
-<div class="modal fade" id="exampleModalGaleria" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="exampleModalGaleria-{{id}}" tabindex="-1" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
   <div class="modal-dialog modal-xl">
     <div class="modal-content">
       <div class="modal-header bg-dark mb-4">
@@ -54,7 +55,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Atras</button>
-          <button type="button" class="btn btn-modal" data-bs-dismiss="modal">Ok</button>
+          <button type="button" class="btn btn-modal" data-bs-dismiss="modal" (click)="addImg();">Ok</button>
         </div>
       </div>
     </div>
