@@ -26,8 +26,8 @@ export class ConfiguracionProductoComponent implements OnInit {
       url: 'api/talla',
     },
   ];
-  nombre: any = '';
-  atributo: any = '';
+  nombreAtributo: any = '';
+  descripcionAtributo: any = '';
   constructor(
     public formAtributos: BaseFormConfigAtributos, //CONFIG BASE FORM ATRIBUTOS
     public formAtributo: BaseFormConfigProducts //BASE FORM CONFIG PRODUCTS
@@ -45,11 +45,16 @@ export class ConfiguracionProductoComponent implements OnInit {
   //AGREGAR VARIACIONES
   agregarVariaciones() {
     this.formAtributo.atributos.controls.map((res) => {
-      console.log(res.value.nombre, res.value.descripcion);
-      this.nombre += res.value.nombre + ',';
-      this.atributo += res.value.descripcion + ','; //OBTENGO LA POSICION DEL ARREGLO PARA ELIMINARLO
+      this.nombreAtributo += res.value.nombre + ', ';
+      this.descripcionAtributo += res.value.descripcion + ', '; //OBTENGO LA POSICION DEL ARREGLO PARA ELIMINARLO
     });
-    this.formAtributos.addAtributosVariacion(this.nombre, this.atributo, 1); //SEA AGREGA A LA NUEVA LISTA
+    this.nombreAtributo = this.nombreAtributo.slice(0, -2); //QUITAR LA ULTIMA ,
+    this.descripcionAtributo = this.descripcionAtributo.slice(0, -2); //QUITAR LA ULTIMA ,
+    //SETEO EN MI NUEVO ADD ATIRBUTOS VARIACIOn
+    this.formAtributos.addAtributosVariacion(
+      this.nombreAtributo,
+      this.descripcionAtributo
+    ); //SEA AGREGA A LA NUEVA LISTA
   }
   //ELIMINAR LOS ITEMS DEL ARRAY FORM
   removeItemsChecked(i: any) {

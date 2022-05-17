@@ -55,7 +55,8 @@
           </ng-container>
           <div *ngIf="formAtributo.atributos.length>0;"
             class="col-xl-12 col-xxl-12 col-sm-12 col-md-12 col-12 text-center">
-            <button class="btn btn-primary" (click)="agregarVariaciones();">Añadir variación</button>
+            <button class="btn btn-primary" [disabled]="formAtributo.formConfigProduct.invalid"
+              (click)="agregarVariaciones();">Añadir variación</button>
           </div>
         </div>
       </form>

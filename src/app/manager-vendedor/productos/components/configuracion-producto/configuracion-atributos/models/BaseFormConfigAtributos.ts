@@ -5,7 +5,7 @@ export class BaseFormConfigAtributos {
   constructor(private formB: FormBuilder) {}
 
   formConfigAtributos = this.formB.group({
-    atributosVariacion: this.formB.array([]),
+    atributosVariacion: this.formB.array([], [Validators.required]),
   });
   //TRANSFORMAR EN UN ARRAY LOS COLORES
   get atributosVariacion() {
@@ -13,14 +13,15 @@ export class BaseFormConfigAtributos {
   }
 
   //AÑADIR MAS COLORES
-  addAtributosVariacion(colorHexadecimal: any, descripcion: any, id: any) {
+  addAtributosVariacion(nombre: any, descripcion: any) {
     let atributosForm = this.formB.group({
-      id: [id],
-      nombreAtributos: [colorHexadecimal],
-      descripcion: [descripcion],
-      PrecioPorVariacion: ['', Validators.required],
-      StockItems: ['', Validators.required],
-      StockMinimo: ['', Validators.required],
+      NombreAtributos: [nombre, [Validators.required]],
+      Descripcion: [descripcion, [Validators.required]],
+      Sku: [''],
+      Estado: ['', [Validators.required]],
+      PrecioPorVariacion: ['', [Validators.required]],
+      StockItems: ['', [Validators.required]],
+      StockMinimo: ['', [Validators.required]],
     });
     this.atributosVariacion.push(atributosForm);
   }

@@ -5,7 +5,7 @@ export class BaseFormConfigProducts {
   constructor(private formB: FormBuilder) {}
   formConfigProduct = this.formB.group({
     nombreVariacion: [''],
-    Atributos: this.formB.array([], [Validators.required]),
+    Atributos: this.formB.array([],),
   });
   //TRANSFORMAR EN UN ARRAY LOS ATRIBUTOS
   get atributos() {
