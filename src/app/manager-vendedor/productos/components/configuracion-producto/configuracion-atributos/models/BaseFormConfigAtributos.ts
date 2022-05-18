@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormArray, FormBuilder, Validators } from '@angular/forms';
 @Injectable({ providedIn: 'root' })
 export class BaseFormConfigAtributos {
   constructor(private formB: FormBuilder) {}
@@ -24,6 +24,10 @@ export class BaseFormConfigAtributos {
       imagenes: this.formB.array([]),
     });
     this.atributosVariacion.push(atributosForm);
+  }
+  //IMAGEN ARRAY
+  get imgArray() {
+    return this.atributosVariacion.get('imagenes') as FormArray;
   }
   //ELIMINAR ITEMS
   removeItems(i: any) {

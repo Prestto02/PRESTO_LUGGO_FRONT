@@ -55,6 +55,9 @@ export class ConfiguracionProductoComponent implements OnInit {
       this.nombreAtributo,
       this.descripcionAtributo
     ); //SEA AGREGA A LA NUEVA LISTA
+    //LIMPIAR LAS VARIABLES
+    this.nombreAtributo = '';
+    this.descripcionAtributo = '';
   }
   //ELIMINAR LOS ITEMS DEL ARRAY FORM
   removeItemsChecked(i: any) {

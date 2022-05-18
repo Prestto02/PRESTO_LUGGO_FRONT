@@ -24,9 +24,11 @@ export const UrlApi = {
   articulos: 'api/articulo',
   verificarImg: 'api/multimedia/subiendo',
   categoriasrHijos: 'api/Familia/hijos/',
-  categoriasPadres:'api/categoria/padres',
+  categoriasPadres: 'api/categoria/padres',
+  //Banco
+  banco: 'api/NombreBanco',
   //MARCAS
-  marcas:'api/marca',
+  marcas: 'api/marca',
   //COLECCION PARA LA LISTA DE DESEOS
   coleccionListaDeseos: 'api/ListaDeseos',
   traerColeccion: 'api/ListaDeseos/',

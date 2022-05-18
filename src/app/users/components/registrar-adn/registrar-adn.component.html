@@ -2,10 +2,117 @@
   <app-menu></app-menu>
 </header>
 
-<section>
-  <p>Registrar - works - ADN</p>
+<section class="container">
+  <form>
+    <div class="row">
+      <div class="col-xl-4 col-xxl-4 col-sm-12 col-12 col-md-4">
+        <div class="mb-3">
+          <label for="exampleFormControlInput1" class="form-label">Correo electrónico</label>
+          <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+        </div>
+      </div>
+      <div class="col-xl-4 col-xxl-4 col-sm-12 col-12 col-md-4">
+        <div class="mb-3">
+          <label for="exampleFormControlInput1" class="form-label">Contraseña</label>
+          <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+        </div>
+      </div>
+      <div class="col-xl-4 col-xxl-4 col-sm-12 col-12 col-md-4">
+        <div class="mb-3">
+          <label for="exampleFormControlInput1" class="form-label">Ruc</label>
+          <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+        </div>
+      </div>
+      <div class="col-xl-4 col-xxl-4 col-sm-12 col-12 col-md-4">
+        <div class="mb-3">
+          <label for="exampleFormControlInput1" class="form-label">Banco</label>
+          <select class="form-select" aria-label="Default select example">
+            <option value="" selected>Seleccione</option>
+            <option *ngFor="let banco of arrayBanco" [value]="banco.id_banco">{{banco.nombre_banco}}</option>
+          </select>
+        </div>
+      </div>
+      <div class="col-xl-4 col-xxl-4 col-sm-12 col-12 col-md-4">
+        <div class="mb-3">
+          <label for="exampleFormControlInput1" class="form-label">Número de cuenta</label>
+          <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+        </div>
+      </div>
+      <div class="col-xl-4 col-xxl-4 col-sm-12 col-12 col-md-4">
+        <div class="mb-3">
+          <label for="exampleFormControlInput1" class="form-label">Razon social</label>
+          <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+        </div>
+      </div>
+      <div class="col-xl-4 col-xxl-4 col-sm-12 col-12 col-md-4">
+        <div class="mb-3">
+          <label for="exampleFormControlInput1" class="form-label">Nombre Tienda</label>
+          <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+        </div>
+      </div>
+      <div class="col-xl-4 col-xxl-4 col-sm-12 col-12 col-md-4">
+        <div class="mb-3">
+          <label for="exampleFormControlInput1" class="form-label">Tributario</label>
+          <select class="form-select" aria-label="Default select example">
+            <option value="" selected>Seleccionar</option>
+            <option value="1">One</option>
+          </select>
+        </div>
+      </div>
+      <div class="col-xl-4 col-xxl-4 col-sm-12 col-12 col-md-4">
+        <div class="mb-3">
+          <label for="exampleFormControlInput1" class="form-label">Direccion</label>
+          <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+        </div>
+      </div>
+      <div class="col-xl-4 col-xxl-4 col-sm-12 col-12 col-md-4">
+        <div class="mb-3">
+          <label for="exampleFormControlInput1" class="form-label">Ciudad</label>
+          <select class="form-select" aria-label="Default select example">
+            <option value="" selected>Seleccionar</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+          </select>
+        </div>
+      </div>
+      <div class="col-xl-4 col-xxl-4 col-sm-12 col-12 col-md-4">
+        <div class="mb-3">
+          <label for="exampleFormControlInput1" class="form-label">Pais</label>
+          <select class="form-select" aria-label="Default select example">
+            <option value="" selected>Seleccionar</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+          </select>
+        </div>
+      </div>
+      <div class="col-xl-4 col-xxl-4 col-sm-12 col-12 col-md-4">
+        <div class="mb-3">
+          <label for="exampleFormControlInput1" class="form-label">Sucursales</label>
+          <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+        </div>
+      </div>
+      <div class="col-xl-4 col-xxl-4 col-sm-12 col-12 col-md-4">
+        <div class="mb-3">
+          <label for="exampleFormControlInput1" class="form-label">Telefono</label>
+          <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+        </div>
+      </div>
+      <div class="col-xl-4 col-xxl-4 col-sm-12 col-12 col-md-4">
+        <div class="mb-3">
+          <label for="exampleFormControlInput1" class="form-label">Descripcion</label>
+          <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+        </div>
+      </div>
+      <div class="col-xl-4 col-xxl-4 col-sm-12 col-12 col-md-4">
+      </div>
+      <div class="col-xxl-3 col-xl-3 mx-auto mb-3">
+        <app-buttons-load [valueButton]="'Registrar'" [load]="false"></app-buttons-load>
+      </div>
+    </div>
+  </form>
 </section>
-
 
 <footer>
   <app-footer2></app-footer2>
