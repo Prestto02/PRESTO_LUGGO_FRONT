@@ -25,7 +25,7 @@
                         [class.is-invalid]="formB.formProducts.get('sku')?.invalid" placeholder="Nombre del producto">
                       <label for="floatingSku">SKU</label>
                       <app-form-errors-container [forControl]="formB.formProducts.get('sku')">
-                        <app-message-error forErrorCode="pattern" customMsg="No se admiten caracteres especiales">
+                        <app-message-error forErrorCode="pattern" customMsg="No se admiten caracteres especiales: </>||¿¿''">
                         </app-message-error>
                       </app-form-errors-container>
                     </div>
@@ -146,3 +146,8 @@
     </div>
   </div>
 </section>
+
+<button class="btn btn-primary collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+  aria-expanded="true" aria-controls="collapseTwo">TWO</button>
+  <button class="btn btn-primary collapsed" data-bs-toggle="collapse" data-bs-target="#collapseFour"
+  aria-expanded="false" aria-controls="collapseFour">THREE</button>

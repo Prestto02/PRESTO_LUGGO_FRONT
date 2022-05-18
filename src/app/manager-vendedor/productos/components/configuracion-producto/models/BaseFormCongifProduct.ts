@@ -16,8 +16,20 @@ export class BaseFormConfigProducts {
     let atributosForm = this.formB.group({
       id: [id, [Validators.required]],
       nombre: [nombre, [Validators.required]],
-      escoger: ['', [Validators.required]],
-      descripcion: ['', [Validators.required]],
+      escoger: [
+        '',
+        [
+          Validators.required,
+          Validators.pattern(/^[A-Za-z0-9Á-ÿ\u00E0-\u00FC\-_ ]+$/),
+        ],
+      ],
+      descripcion: [
+        '',
+        [
+          Validators.required,
+          Validators.pattern(/^[A-Za-z0-9Á-ÿ\u00E0-\u00FC\-_ ]+$/),
+        ],
+      ],
     });
     this.atributos.push(atributosForm);
   }

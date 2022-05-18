@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { PositionUser } from 'src/app/shared/class/PositionUser';
 import { UrlFront } from 'src/app/shared/routes/RoutesFront';
 import { BaseFormLogisticaProducto } from './models/BaseFormubicacion';
 
@@ -26,12 +27,15 @@ export class LogisticaProductoComponent implements OnInit {
 
   constructor(
     public formUbicacion: BaseFormLogisticaProducto,
-    private route: Router
-  ) {}
+    private route: Router,
+    private position: PositionUser //POSITION USUARIO
+  ) {
+  }
 
   ngOnInit() {
+    this.position.getPositionUser();
     this.options = {
-      center: { lat: 36.890257, lng: 30.707417 },
+      center: { lat: -2.1604033, lng: -79.9304523 },
       zoom: 12,
     };
     //this.initOverlays();

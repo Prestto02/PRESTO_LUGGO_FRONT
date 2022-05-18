@@ -45,7 +45,7 @@
                 aria-label="Sku" aria-describedby="basic-Sku">
             </div>
             <app-form-errors-container [forControl]="atributosForm.get('Sku')">
-              <app-message-error forErrorCode="pattern"></app-message-error>
+              <app-message-error forErrorCode="pattern" customMsg="Solo números, letras y - _"></app-message-error>
             </app-form-errors-container>
           </div>
           <!----------Estado------------>
@@ -64,12 +64,13 @@
             <div class="input-group mb-3">
               <span class="input-group-text d-sm-none d-none d-xxl-block d-xl-block d-md-none"
                 id="basic-precio-variacion">$</span>
-              <input type="text" class="form-control" formControlName="PrecioPorVariacion" placeholder="40"
+              <input type="text" class="form-control" formControlName="PrecioPorVariacion" placeholder="40,00"
                 [class.is-invalid]="atributosForm.get('PrecioPorVariacion')?.touched && atributosForm.get('PrecioPorVariacion')?.invalid"
                 aria-label="precio-variacion" aria-describedby="basic-precio-variacion">
             </div>
             <app-form-errors-container [forControl]="atributosForm.get('PrecioPorVariacion')">
               <app-message-error forErrorCode="required"></app-message-error>
+              <app-message-error forErrorCode="pattern" customMsg="Solo acepta numeros ej:44,54"></app-message-error>
             </app-form-errors-container>
           </div>
           <!-------STOCK POR ITEMS--------->
@@ -83,6 +84,7 @@
             </div>
             <app-form-errors-container [forControl]="atributosForm.get('StockItems')">
               <app-message-error forErrorCode="required"></app-message-error>
+              <app-message-error forErrorCode="pattern" customMsg="Solo acepta numeros"></app-message-error>
             </app-form-errors-container>
           </div>
           <!-------STOCK MINIMO--------->
@@ -98,6 +100,7 @@
                 </div>
                 <app-form-errors-container [forControl]="atributosForm.get('StockMinimo')">
                   <app-message-error forErrorCode="required"></app-message-error>
+                  <app-message-error forErrorCode="pattern" customMsg="Solo acepta numeros"></app-message-error>
                 </app-form-errors-container>
               </div>
               <div

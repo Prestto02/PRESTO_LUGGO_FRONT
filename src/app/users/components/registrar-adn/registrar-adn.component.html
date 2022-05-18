@@ -6,10 +6,10 @@
 <section class="container">
   <form [formGroup]="formB.formAdn" (ngSubmit)="guardarAdn();">
     <div class="row">
-      <h5 class="font-bold">Crear Cuenta</h5>
+      <h4 class="mb-5 fw-bolder"><b>Crear Cuenta</b></h4>
       <!------CORREO------>
       <div class="col-xl-4 col-xxl-4 col-sm-12 col-12 col-md-4">
-        <label for="email" class="form-label label-text">Correo electrónico</label>
+        <label for="email" class="form-label fw-bolder label-text">Correo electrónico</label>
         <div class="input-group mb-3">
           <span class="input-group-text group-border" id="basic-email">
             <svg width="21" height="22" viewBox="0 0 21 22" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -33,7 +33,7 @@
 
       <!------CONTRASEÑA------>
       <div class="col-xl-4 col-xxl-4 col-sm-12 col-12 col-md-4">
-        <label for="contrasena" class="form-label label-text">Contraseña</label>
+        <label for="contrasena" class="form-label label-text fw-bolder">Contraseña</label>
         <div class="input-group mb-3">
           <span class="input-group-text group-border" id="basic-password">
             <svg width="18" height="20" viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -72,7 +72,7 @@
       <!------RUC------>
       <div class="col-xl-4 col-xxl-4 col-sm-12 col-12 col-md-4">
         <div class="mb-3">
-          <label for="formRuc" class="form-label">Ruc</label>
+          <label for="formRuc" class="form-label fw-bolder">Ruc</label>
           <input type="text" class="form-control" id="formRuc"
             [class.is-invalid]="formB.formAdn.get('Ruc')?.touched && formB.formAdn.get('Ruc')?.invalid"
             formControlName="Ruc" placeholder="Ruc">
@@ -86,7 +86,7 @@
       <!------BANCO------>
       <div class="col-xl-4 col-xxl-4 col-sm-12 col-12 col-md-4">
         <div class="mb-3">
-          <label for="exampleFormControlInput1" class="form-label">Banco</label>
+          <label for="exampleFormControlInput1" class="form-label fw-bolder">Banco</label>
           <select class="form-select" aria-label="Default select example" formControlName="Id_banco"
             [class.is-invalid]="formB.formAdn.get('Id_banco')?.touched && formB.formAdn.get('Id_banco')?.invalid">
             <option value="" selected>Seleccione</option>
@@ -100,7 +100,7 @@
       <!------NUMERO DE CUENTA------->
       <div class="col-xl-4 col-xxl-4 col-sm-12 col-12 col-md-4">
         <div class="mb-3">
-          <label for="formCuenta-Numero" class="form-label">Número de cuenta</label>
+          <label for="formCuenta-Numero" class="form-label fw-bolder">Número de cuenta</label>
           <input type="text" formControlName="Numero_cuenta" class="form-control" id="formCuenta-Numero"
             placeholder="10059999999"
             [class.is-invalid]="formB.formAdn.get('Numero_cuenta')?.touched && formB.formAdn.get('Numero_cuenta')?.invalid">
@@ -114,7 +114,7 @@
 
       <div class="col-xl-4 col-xxl-4 col-sm-12 col-12 col-md-4">
         <div class="mb-3">
-          <label for="formRazon_Social" class="form-label">Razon social</label>
+          <label for="formRazon_Social" class="form-label fw-bolder">Razon social</label>
           <input type="text" class="form-control" id="formRazon_Social" formControlName="Razon_Social"
             placeholder="Razon social"
             [class.is-invalid]="formB.formAdn.get('Razon_Social')?.touched && formB.formAdn.get('Razon_Social')?.invalid">
@@ -128,7 +128,7 @@
 
       <div class="col-xl-4 col-xxl-4 col-sm-12 col-12 col-md-4">
         <div class="mb-3">
-          <label for="formNombre_Tienda" class="form-label">Nombre Tienda</label>
+          <label for="formNombre_Tienda" class="form-label fw-bolder">Nombre Tienda</label>
           <input type="text" class="form-control" id="formNombre_Tienda" formControlName="Nombre_Tienda"
             [class.is-invalid]="formB.formAdn.get('Nombre_Tienda')?.touched && formB.formAdn.get('Nombre_Tienda')?.invalid"
             placeholder="Nombre de la tienda">
@@ -142,7 +142,7 @@
 
       <div class="col-xl-4 col-xxl-4 col-sm-12 col-12 col-md-4">
         <div class="mb-3">
-          <label for="tributario" class="form-label">Tributario</label>
+          <label for="tributario" class="form-label fw-bolder">Tributario</label>
           <select class="form-select" aria-label="Default select example" formControlName="IdTributario"
             [class.is-invalid]="formB.formAdn.get('IdTributario')?.touched && formB.formAdn.get('IdTributario')?.invalid">
             <option value="" selected>Seleccionar</option>
@@ -157,7 +157,7 @@
       <!-----DIRECION----->
       <div class="col-xl-4 col-xxl-4 col-sm-12 col-12 col-md-4">
         <div class="mb-3">
-          <label for="formDirecicon" class="form-label">Direccion</label>
+          <label for="formDirecicon" class="form-label fw-bolder">Direccion</label>
           <input type="text" class="form-control" id="formDirecicon" formControlName="Direccion" placeholder="Direccion"
             [class.is-invalid]="formB.formAdn.get('Direccion')?.touched && formB.formAdn.get('Direccion')?.invalid">
         </div>
@@ -170,7 +170,7 @@
 
       <div class="col-xl-4 col-xxl-4 col-sm-12 col-12 col-md-4">
         <div class="mb-3">
-          <label for="ciudad" class="form-label">Ciudad</label>
+          <label for="ciudad" class="form-label fw-bolder">Ciudad</label>
           <select class="form-select" aria-label="Default select example" formControlName="Ciudad"
             [class.is-invalid]="formB.formAdn.get('Ciudad')?.touched && formB.formAdn.get('Ciudad')?.invalid">
             <option value="" selected>Seleccionar</option>
@@ -187,7 +187,7 @@
 
       <div class="col-xl-4 col-xxl-4 col-sm-12 col-12 col-md-4">
         <div class="mb-3">
-          <label for="formPais" class="form-label">Pais</label>
+          <label for="formPais" class="form-label fw-bolder">Pais</label>
           <select class="form-select" aria-label="Default select example" formControlName="Pais"
             [class.is-invalid]="formB.formAdn.get('Pais')?.touched && formB.formAdn.get('Pais')?.invalid">
             <option value="" selected>Seleccionar</option>
@@ -204,7 +204,7 @@
 
       <div class="col-xl-4 col-xxl-4 col-sm-12 col-12 col-md-4">
         <div class="mb-3">
-          <label for="formSurcursales" class="form-label">Sucursales</label>
+          <label for="formSurcursales" class="form-label fw-bolder">Sucursales</label>
           <select class="form-select" aria-label="Default select example" id="formSurcursales" placeholder="Sucursales"
             formControlName="Sucursales"
             [class.is-invalid]="formB.formAdn.get('Sucursales')?.touched && formB.formAdn.get('Sucursales')?.invalid">
@@ -221,7 +221,7 @@
 
       <div class="col-xl-4 col-xxl-4 col-sm-12 col-12 col-md-4">
         <div class="mb-3">
-          <label for="formTelefono" class="form-label">Telefono</label>
+          <label for="formTelefono" class="form-label fw-bolder">Telefono</label>
           <input type="text" class="form-control" id="formTelefono" formControlName="Telefono_contacto"
             placeholder="Telefono"
             [class.is-invalid]="formB.formAdn.get('Telefono_contacto')?.touched && formB.formAdn.get('Telefono_contacto')?.invalid">
@@ -235,7 +235,7 @@
 
       <div class="col-xl-4 col-xxl-4 col-sm-12 col-12 col-md-4">
         <div class="mb-3">
-          <label for="formDescripcionAdn" class="form-label">Descripcion</label>
+          <label for="formDescripcionAdn" class="form-label fw-bolder">Descripcion</label>
           <input type="text" class="form-control" id="formDescripcionAdn" formControlName="Descripcion_Adn"
             [class.is-invalid]="formB.formAdn.get('Descripcion_Adn')?.touched && formB.formAdn.get('Descripcion_Adn')?.invalid"
             placeholder="Descripcion Adn">
@@ -249,7 +249,7 @@
 
       <div class="col-xl-4 col-xxl-4 col-sm-12 col-12 col-md-4">
         <div class="mb-3">
-          <label for="formDescripcion-Outline" class="form-label">Descripcion Outline</label>
+          <label for="formDescripcion-Outline" class="form-label fw-bolder">Descripcion Outline</label>
           <input type="text" class="form-control" id="formDescripcion-Outline" formControlName="descripcion_outline"
             placeholder="Descripcion outline"
             [class.is-invalid]="formB.formAdn.get('descripcion_outline')?.touched && formB.formAdn.get('descripcion_outline')?.invalid">

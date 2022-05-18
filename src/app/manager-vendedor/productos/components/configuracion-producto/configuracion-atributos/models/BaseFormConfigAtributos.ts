@@ -16,11 +16,14 @@ export class BaseFormConfigAtributos {
     let atributosForm = this.formB.group({
       NombreAtributos: [nombre, [Validators.required]],
       Descripcion: [descripcion, [Validators.required]],
-      Sku: [''],
+      Sku: ['', [, Validators.pattern(/^[A-Za-z0-9-_ ]+$/)]],
       Estado: ['', [Validators.required]],
-      PrecioPorVariacion: ['', [Validators.required]],
-      StockItems: ['', [Validators.required]],
-      StockMinimo: ['', [Validators.required]],
+      PrecioPorVariacion: [
+        '',
+        [Validators.required, Validators.pattern(/^[0-9]+([,][0-9]+)?$/)],
+      ],
+      StockItems: ['', [Validators.required, Validators.pattern(/^[0-9]+$/)]],
+      StockMinimo: ['', [Validators.required, Validators.pattern(/^[0-9]+$/)]],
       imagenes: this.formB.array([]),
     });
     this.atributosVariacion.push(atributosForm);
