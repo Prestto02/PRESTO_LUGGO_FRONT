@@ -25,8 +25,9 @@ export const UrlApi = {
   verificarImg: 'api/multimedia/subiendo',
   categoriasrHijos: 'api/Familia/hijos/',
   categoriasPadres: 'api/categoria/padres',
-  //Banco
+  //Banco Y ADN
   banco: 'api/NombreBanco',
+  registrarAdn: 'api/ADN',
   //MARCAS
   marcas: 'api/marca',
   //COLECCION PARA LA LISTA DE DESEOS

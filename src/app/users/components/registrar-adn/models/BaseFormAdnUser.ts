@@ -1,10 +1,5 @@
 import { Injectable } from '@angular/core';
-import {
-  FormArray,
-  FormBuilder,
-  FormControl,
-  Validators,
-} from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 @Injectable({ providedIn: 'root' })
 export class BaseFormAdnUsers {
   constructor(private formB: FormBuilder) {}
@@ -27,29 +22,29 @@ export class BaseFormAdnUsers {
     Descripcion_Adn: ['', [Validators.required]],
   });
 
-  getFormData() {
+  getFormData(latitud: any, longitud: any) {
     return {
       user: this.formAdn.get('user')?.value,
       pass: this.formAdn.get('pass')?.value,
       Datos_Pagos: {
-        Id_banco: [''],
+        Id_banco: this.formAdn.get('Id_banco')?.value,
         Numero_cuenta: this.formAdn.get('Numero_cuenta')?.value,
       },
       DatosAdn: {
         Ruc: this.formAdn.get('Ruc')?.value,
         Razon_Social: this.formAdn.get('Razon_Social')?.value,
         Nombre_Tienda: this.formAdn.get('Nombre_Tienda')?.value,
-        IdTributario: [true],
-        descripcion_outline: [''],
+        IdTributario: 1,
+        descripcion_outline: this.formAdn.get('descripcion_outline')?.value,
         Direccion: this.formAdn.get('Direccion')?.value,
         Ciudad: this.formAdn.get('Ciudad')?.value,
         Pais: this.formAdn.get('Pais')?.value,
-        Sucursales: this.formAdn.get('Sucursales')?.value,
+        Sucursales: 1,
         Telefono_contacto: this.formAdn.get('Telefono_contacto')?.value,
         Descripcion_Adn: this.formAdn.get('Descripcion_Adn')?.value,
       },
-      Longitud: '',
-      Latitud: '',
+      Longitud: longitud,
+      Latitud: latitud,
     };
   }
 }
