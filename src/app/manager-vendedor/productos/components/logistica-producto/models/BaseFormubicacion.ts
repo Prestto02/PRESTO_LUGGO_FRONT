@@ -16,9 +16,9 @@ export class BaseFormLogisticaProducto {
 
   addUbicacionProducto(descripcion: any, lt: any, lg: any) {
     let formUbicacion = this.formB.group({
-      descripcion: [descripcion, [Validators.required]],
-      longitud: [lg, [Validators.required]],
-      latitud: [lt, [Validators.required]],
+      DescripcionUbicacion: [descripcion, [Validators.required]],
+      LongitudArticulo: [lg, [Validators.required]],
+      LatitudArticulo: [lt, [Validators.required]],
     });
     this.ubicacionProducto.push(formUbicacion);
   }

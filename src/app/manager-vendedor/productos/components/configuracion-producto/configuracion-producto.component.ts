@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { BaseFormConfigAtributos } from './configuracion-atributos/models/BaseFormConfigAtributos';
-import { BaseFormColors } from './configuracion-color/models/BaseFormColors';
 import { BaseFormConfigProducts } from './models/BaseFormCongifProduct';
 
 @Component({

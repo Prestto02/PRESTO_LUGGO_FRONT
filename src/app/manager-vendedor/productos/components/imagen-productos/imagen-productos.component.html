@@ -11,7 +11,7 @@
           <div class="col-xl-6 col-xxl-6 co-md-6 col-sm-12 col-12">
             <div class="row">
               <div class="col-xl-2 col-xxl-2 col-sm-2 col-md-2 col-2">
-                <app-img-iconos></app-img-iconos>
+                <app-img-iconos [position]="id"></app-img-iconos>
               </div>
               <div class="col-xl-7 col-xxl-7 col-sm-7 col-md-7 col-7 mx-auto position-relative">
                 <img loading="lazy" *ngIf="imgProducts!=''" [src]="imgProducts" class="img-fluid rounded-start"
@@ -55,7 +55,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Atras</button>
-          <button type="button" class="btn btn-modal" data-bs-dismiss="modal" (click)="addImg();">Ok</button>
+          <button type="button" class="btn btn-modal" data-bs-dismiss="modal">Ok</button>
         </div>
       </div>
     </div>

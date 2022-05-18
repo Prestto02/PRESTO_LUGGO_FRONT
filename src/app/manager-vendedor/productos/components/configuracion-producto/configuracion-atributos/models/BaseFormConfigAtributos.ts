@@ -16,21 +16,30 @@ export class BaseFormConfigAtributos {
     let atributosForm = this.formB.group({
       NombreAtributos: [nombre, [Validators.required]],
       Descripcion: [descripcion, [Validators.required]],
-      Sku: ['', [, Validators.pattern(/^[A-Za-z0-9-_ ]+$/)]],
+      Sku: ['', [, Validators.pattern(/^[A-Za-z0-9-_ ]+$/)]], //VALIDACIONES
       Estado: ['', [Validators.required]],
       PrecioPorVariacion: [
         '',
         [Validators.required, Validators.pattern(/^[0-9]+([,][0-9]+)?$/)],
       ],
       StockItems: ['', [Validators.required, Validators.pattern(/^[0-9]+$/)]],
-      StockMinimo: ['', [Validators.required, Validators.pattern(/^[0-9]+$/)]],
-      imagenes: this.formB.array([]),
+      StockMinimo: ['', [Validators.required, Validators.pattern(/^[0-9]+$/)]], //VALIDACIONES
+      archivo: this.formB.array([], Validators.required),
     });
     this.atributosVariacion.push(atributosForm);
   }
   //IMAGEN ARRAY
-  get imgArray() {
+  /*   get imgArray() {
     return this.atributosVariacion.get('imagenes') as FormArray;
+  } */
+  //AGREGAR IMAGENES EN EL ARRAY
+  addImagenes(id: any, imgProduct: any, imgTransfor: any, i: any) {
+    let imgArray = this.formB.group({
+      id: [id, [Validators.required]],
+      imgProductsIcons: [imgProduct, [Validators.required]],
+      imgProductTransform: [imgTransfor, [Validators.required]],
+    });
+    (this.atributosVariacion.at(i).get('imagenes') as FormArray).push(imgArray);
   }
   //ELIMINAR ITEMS
   removeItems(i: any) {

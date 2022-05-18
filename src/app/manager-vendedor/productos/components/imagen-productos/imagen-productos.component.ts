@@ -20,15 +20,12 @@ export class ImagenProductosComponent implements OnInit {
   //OBTENER LA IMAGEN PARA TRANSFORMARLA
   getArchive(e: any) {
     const { imgProducts, imagenTransformada } =
-    this.imgValidar.getArchiveImagen(e); //OBTENGO LO QUE ME ENVIA EL ARREGLO DE LA IMAGEN
+      this.imgValidar.getArchiveImagen(e); //OBTENGO LO QUE ME ENVIA EL ARREGLO DE LA IMAGEN
     this.imgProducts = imgProducts; //ASIGNO
     this.imagenTransformada = imagenTransformada; //ASIGNO
   }
   //OBTENER IMAGEN PARA VERIFICAR EN EL SERVER
   getImage(e: any) {
     this.imgValidar.getImageVerifyServer(e); //VERIFICO EN EL SERVER LA IMAGEN
-  }
-  addImg() {
-    this.imgIconComponent.addImgIcons(this.id);
   }
 }
