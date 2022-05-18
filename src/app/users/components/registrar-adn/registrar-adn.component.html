@@ -25,6 +25,10 @@
             aria-describedby="validationServer1Feedback" [class.is-invalid]="formB.formAdn.get('user')?.touched && formB.formAdn.get('user')?.invalid
             " placeholder="abc@example.com">
         </div>
+        <app-form-errors-container [forControl]="formB.formAdn.get('user')">
+          <app-message-error forErrorCode="required"></app-message-error>
+          <app-message-error forErrorCode="email"></app-message-error>
+        </app-form-errors-container>
       </div>
 
       <!------CONTRASEÑA------>
@@ -49,7 +53,7 @@
         </div>
         <div *ngIf="sugerencias" class="shadow bg-body rounded label-text position-absolute mx-5">
           Nivel de contraseña:
-          <app-progress-password [forErrorCode]="formB.formAdn.get('contrasena')">
+          <app-progress-password [forErrorCode]="formB.formAdn.get('pass')">
           </app-progress-password>
           Sugerencias:
           <ul>
@@ -59,112 +63,201 @@
             <li>Al menos un caracter especial</li>
           </ul>
         </div>
+        <app-form-errors-container [forControl]="formB.formAdn.get('pass')">
+          <app-message-error forErrorCode="required"></app-message-error>
+          <app-message-error forErrorCode="minlength" customMsg="Debe tener 8 caracteres minimo">
+          </app-message-error>
+        </app-form-errors-container>
       </div>
       <!------RUC------>
       <div class="col-xl-4 col-xxl-4 col-sm-12 col-12 col-md-4">
         <div class="mb-3">
           <label for="formRuc" class="form-label">Ruc</label>
-          <input type="text" class="form-control" id="formRuc" formControlName="Ruc" placeholder="name@example.com">
+          <input type="text" class="form-control" id="formRuc"
+            [class.is-invalid]="formB.formAdn.get('Ruc')?.touched && formB.formAdn.get('Ruc')?.invalid"
+            formControlName="Ruc" placeholder="Ruc">
         </div>
+        <app-form-errors-container [forControl]="formB.formAdn.get('Ruc')">
+          <app-message-error forErrorCode="required"></app-message-error>
+          <app-message-error forErrorCode="pattern" customMsg="Debe ser solo numeros">
+          </app-message-error>
+        </app-form-errors-container>
       </div>
       <!------BANCO------>
       <div class="col-xl-4 col-xxl-4 col-sm-12 col-12 col-md-4">
         <div class="mb-3">
           <label for="exampleFormControlInput1" class="form-label">Banco</label>
-          <select class="form-select" aria-label="Default select example" formControlName="Id_banco">
+          <select class="form-select" aria-label="Default select example" formControlName="Id_banco"
+            [class.is-invalid]="formB.formAdn.get('Id_banco')?.touched && formB.formAdn.get('Id_banco')?.invalid">
             <option value="" selected>Seleccione</option>
             <option *ngFor="let banco of arrayBanco" [value]="banco.id_banco">{{banco.nombre_banco}}</option>
           </select>
         </div>
+        <app-form-errors-container [forControl]="formB.formAdn.get('Id_banco')">
+          <app-message-error forErrorCode="required"></app-message-error>
+        </app-form-errors-container>
       </div>
       <!------NUMERO DE CUENTA------->
       <div class="col-xl-4 col-xxl-4 col-sm-12 col-12 col-md-4">
         <div class="mb-3">
           <label for="formCuenta-Numero" class="form-label">Número de cuenta</label>
           <input type="text" formControlName="Numero_cuenta" class="form-control" id="formCuenta-Numero"
-            placeholder="name@example.com">
+            placeholder="10059999999"
+            [class.is-invalid]="formB.formAdn.get('Numero_cuenta')?.touched && formB.formAdn.get('Numero_cuenta')?.invalid">
         </div>
+        <app-form-errors-container [forControl]="formB.formAdn.get('Numero_cuenta')">
+          <app-message-error forErrorCode="required"></app-message-error>
+          <app-message-error forErrorCode="pattern" customMsg="Solo debe ser numeros"></app-message-error>
+        </app-form-errors-container>
       </div>
+      <!-----RAZON SOCIAL----->
+
       <div class="col-xl-4 col-xxl-4 col-sm-12 col-12 col-md-4">
         <div class="mb-3">
           <label for="formRazon_Social" class="form-label">Razon social</label>
           <input type="text" class="form-control" id="formRazon_Social" formControlName="Razon_Social"
-            placeholder="Razon social">
+            placeholder="Razon social"
+            [class.is-invalid]="formB.formAdn.get('Razon_Social')?.touched && formB.formAdn.get('Razon_Social')?.invalid">
         </div>
+        <app-form-errors-container [forControl]="formB.formAdn.get('Razon_Social')">
+          <app-message-error forErrorCode="required"></app-message-error>
+          <app-message-error forErrorCode="pattern" customMsg="Solo debe ser numeros"></app-message-error>
+        </app-form-errors-container>
       </div>
+      <!-----NOMBRE TIENDA----->
+
       <div class="col-xl-4 col-xxl-4 col-sm-12 col-12 col-md-4">
         <div class="mb-3">
           <label for="formNombre_Tienda" class="form-label">Nombre Tienda</label>
           <input type="text" class="form-control" id="formNombre_Tienda" formControlName="Nombre_Tienda"
+            [class.is-invalid]="formB.formAdn.get('Nombre_Tienda')?.touched && formB.formAdn.get('Nombre_Tienda')?.invalid"
             placeholder="Nombre de la tienda">
         </div>
+        <app-form-errors-container [forControl]="formB.formAdn.get('Nombre_Tienda')">
+          <app-message-error forErrorCode="required"></app-message-error>
+          <app-message-error forErrorCode="pattern" customMsg="No se admite caracteres especiales"></app-message-error>
+        </app-form-errors-container>
       </div>
+      <!-----TRIBUTARIO----->
+
       <div class="col-xl-4 col-xxl-4 col-sm-12 col-12 col-md-4">
         <div class="mb-3">
           <label for="tributario" class="form-label">Tributario</label>
-          <select class="form-select" aria-label="Default select example" formControlName="IdTributario">
+          <select class="form-select" aria-label="Default select example" formControlName="IdTributario"
+            [class.is-invalid]="formB.formAdn.get('IdTributario')?.touched && formB.formAdn.get('IdTributario')?.invalid">
             <option value="" selected>Seleccionar</option>
-            <option value="Si">Si</option>
-            <option value="No">No</option>
+            <option value="true">Si</option>
+            <option value="false">No</option>
           </select>
         </div>
+        <app-form-errors-container [forControl]="formB.formAdn.get('IdTributario')">
+          <app-message-error forErrorCode="required"></app-message-error>
+        </app-form-errors-container>
       </div>
+      <!-----DIRECION----->
       <div class="col-xl-4 col-xxl-4 col-sm-12 col-12 col-md-4">
         <div class="mb-3">
           <label for="formDirecicon" class="form-label">Direccion</label>
-          <input type="text" class="form-control" id="formDirecicon" formControlName="Direccion"
-            placeholder="Direccion">
+          <input type="text" class="form-control" id="formDirecicon" formControlName="Direccion" placeholder="Direccion"
+            [class.is-invalid]="formB.formAdn.get('Direccion')?.touched && formB.formAdn.get('Direccion')?.invalid">
         </div>
+        <app-form-errors-container [forControl]="formB.formAdn.get('Direccion')">
+          <app-message-error forErrorCode="required"></app-message-error>
+          <app-message-error forErrorCode="pattern" customMsg="No se admite caracteres especiales"></app-message-error>
+        </app-form-errors-container>
       </div>
+      <!-----CIUDAD----->
+
       <div class="col-xl-4 col-xxl-4 col-sm-12 col-12 col-md-4">
         <div class="mb-3">
           <label for="ciudad" class="form-label">Ciudad</label>
-          <select class="form-select" aria-label="Default select example" formControlName="Ciudad">
+          <select class="form-select" aria-label="Default select example" formControlName="Ciudad"
+            [class.is-invalid]="formB.formAdn.get('Ciudad')?.touched && formB.formAdn.get('Ciudad')?.invalid">
             <option value="" selected>Seleccionar</option>
             <option value="Guayaquil">Guayquil</option>
             <option value="Ambato">Ambato</option>
             <option value="Puerto Lopez">Puerto Lopez</option>
           </select>
         </div>
+        <app-form-errors-container [forControl]="formB.formAdn.get('Ciudad')">
+          <app-message-error forErrorCode="required"></app-message-error>
+        </app-form-errors-container>
       </div>
+      <!-----PAIS----->
+
       <div class="col-xl-4 col-xxl-4 col-sm-12 col-12 col-md-4">
         <div class="mb-3">
           <label for="formPais" class="form-label">Pais</label>
-          <select class="form-select" aria-label="Default select example" formControlName="Pais">
+          <select class="form-select" aria-label="Default select example" formControlName="Pais"
+            [class.is-invalid]="formB.formAdn.get('Pais')?.touched && formB.formAdn.get('Pais')?.invalid">
             <option value="" selected>Seleccionar</option>
             <option value="Ecuador">Ecuador</option>
             <option value="Estados Unidos">Estados unidos</option>
             <option value="Mexico">Mexico</option>
           </select>
         </div>
+        <app-form-errors-container [forControl]="formB.formAdn.get('Pais')">
+          <app-message-error forErrorCode="required"></app-message-error>
+        </app-form-errors-container>
       </div>
+      <!-----SUCURSALES----->
+
       <div class="col-xl-4 col-xxl-4 col-sm-12 col-12 col-md-4">
         <div class="mb-3">
           <label for="formSurcursales" class="form-label">Sucursales</label>
-          <input type="text" class="form-control" id="formSurcursales" placeholder="Sucursales"
-            formControlName="Sucursales">
+          <select class="form-select" aria-label="Default select example" id="formSurcursales" placeholder="Sucursales"
+            formControlName="Sucursales"
+            [class.is-invalid]="formB.formAdn.get('Sucursales')?.touched && formB.formAdn.get('Sucursales')?.invalid">
+            <option value="" selected>Seleccionar</option>
+            <option value="true">Si</option>
+            <option value="false">No</option>
+          </select>
         </div>
+        <app-form-errors-container [forControl]="formB.formAdn.get('Sucursales')">
+          <app-message-error forErrorCode="required"></app-message-error>
+        </app-form-errors-container>
       </div>
+      <!-----TELEFONO----->
+
       <div class="col-xl-4 col-xxl-4 col-sm-12 col-12 col-md-4">
         <div class="mb-3">
           <label for="formTelefono" class="form-label">Telefono</label>
           <input type="text" class="form-control" id="formTelefono" formControlName="Telefono_contacto"
-            placeholder="Telefono ">
+            placeholder="Telefono"
+            [class.is-invalid]="formB.formAdn.get('Telefono_contacto')?.touched && formB.formAdn.get('Telefono_contacto')?.invalid">
         </div>
+        <app-form-errors-container [forControl]="formB.formAdn.get('Telefono_contacto')">
+          <app-message-error forErrorCode="required"></app-message-error>
+          <app-message-error forErrorCode="pattern" customMsg="Solo numeros"></app-message-error>
+        </app-form-errors-container>
       </div>
+      <!-----DESCRIPCION ADN----->
+
       <div class="col-xl-4 col-xxl-4 col-sm-12 col-12 col-md-4">
         <div class="mb-3">
           <label for="formDescripcionAdn" class="form-label">Descripcion</label>
           <input type="text" class="form-control" id="formDescripcionAdn" formControlName="Descripcion_Adn"
+            [class.is-invalid]="formB.formAdn.get('Descripcion_Adn')?.touched && formB.formAdn.get('Descripcion_Adn')?.invalid"
             placeholder="Descripcion Adn">
         </div>
+        <app-form-errors-container [forControl]="formB.formAdn.get('Descripcion_Adn')">
+          <app-message-error forErrorCode="required"></app-message-error>
+          <app-message-error forErrorCode="pattern" customMsg="No se admite caracteres especiales"></app-message-error>
+        </app-form-errors-container>
       </div>
+      <!-----DESCRIPCION OUTLINE----->
+
       <div class="col-xl-4 col-xxl-4 col-sm-12 col-12 col-md-4">
         <div class="mb-3">
           <label for="formDescripcion-Outline" class="form-label">Descripcion Outline</label>
           <input type="text" class="form-control" id="formDescripcion-Outline" formControlName="descripcion_outline"
-            placeholder="Descripcion outline">
+            placeholder="Descripcion outline"
+            [class.is-invalid]="formB.formAdn.get('descripcion_outline')?.touched && formB.formAdn.get('descripcion_outline')?.invalid">
         </div>
+        <app-form-errors-container [forControl]="formB.formAdn.get('descripcion_outline')">
+          <app-message-error forErrorCode="required"></app-message-error>
+          <app-message-error forErrorCode="pattern" customMsg="No se admite caracteres especiales"></app-message-error>
+        </app-form-errors-container>
       </div>
       <div class="col-xxl-3 col-xl-3 mx-auto mb-3">
         <app-buttons-load [valueButton]="'Registrar'" [formB]="formB.formAdn" [load]="false"></app-buttons-load>
@@ -172,4 +265,3 @@
     </div>
   </form>
 </section>
-{{formB.formAdn.value | json}}
