@@ -17,34 +17,53 @@ export class BaseFormAdnUsers {
     ],
     Id_banco: ['', [Validators.required]],
     Numero_cuenta: ['', [Validators.required, Validators.pattern(/^[0-9]+$/)]],
-    Ruc: ['', [Validators.required, Validators.pattern(/^[0-9]+$/)]],
+    Ruc: ['', [Validators.required, Validators.pattern(/^[A-Za-z0-9]+$/)]],
     Razon_Social: [
       '',
-      [Validators.required, Validators.pattern(/^[a-zA-Z0-9 ]+$/)],
+      [
+        Validators.required,
+        Validators.pattern(/^[A-Za-z0-9Á-ÿ\u00E0-\u00FC\-_ ]+$/),
+      ],
     ],
     Nombre_Tienda: [
       '',
-      [Validators.required, Validators.pattern(/^[a-zA-Z0-9 ]+$/)],
+      [
+        Validators.required,
+        Validators.pattern(/^[A-Za-z0-9Á-ÿ\u00E0-\u00FC\-_ ]+$/),
+      ],
     ],
     IdTributario: [false, [Validators.required]],
     descripcion_outline: [
       '',
-      [Validators.required, Validators.pattern(/^[a-zA-Z0-9 ]+$/)],
+      [
+        Validators.required,
+        Validators.pattern(/^[A-Za-z0-9Á-ÿ\u00E0-\u00FC\-_ ]+$/),
+      ],
     ],
     Direccion: [
       '',
-      [Validators.required, Validators.pattern(/^[a-zA-Z0-9 ]+$/)],
+      [
+        Validators.required,
+        Validators.pattern(/^[A-Za-z0-9Á-ÿ\u00E0-\u00FC\-_ ]+$/),
+      ],
     ],
     Ciudad: ['', [Validators.required]],
     Pais: ['', [Validators.required]],
     Sucursales: [false, [Validators.required]],
     Telefono_contacto: [
       '',
-      [Validators.required, Validators.max(10), Validators.pattern(/^[0-9]+$/)],
+      [
+        Validators.required,
+        Validators.max(10),
+        Validators.pattern(/[0-9]{2}[0-9]{8}/),
+      ],
     ],
     Descripcion_Adn: [
       '',
-      [Validators.required, Validators.pattern(/^[A-Za-z0-9 ]+$/)],
+      [
+        Validators.required,
+        Validators.pattern(/^[A-Za-z0-9Á-ÿ\u00E0-\u00FC\-_ ]+$/),
+      ],
     ],
   });
 
