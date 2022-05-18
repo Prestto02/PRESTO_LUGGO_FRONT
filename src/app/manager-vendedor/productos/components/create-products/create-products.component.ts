@@ -5,6 +5,8 @@ import { BaseFormCategorias } from 'src/app/manager-vendedor/categorias/models/c
 import { EditRegisterModalService } from 'src/app/shared/components/modals/services/edit-register-modal.service';
 import { BaseFormEtiquetas } from './form-etiquetas/models/BaseFormEtiquetas';
 import { MarcaService } from '../../services/marca.service';
+import { Router } from '@angular/router';
+import { UrlFront } from 'src/app/shared/routes/RoutesFront';
 
 @Component({
   selector: 'app-create-products',
@@ -21,7 +23,8 @@ export class CreateProductsComponent implements OnInit {
     public formCategoria: BaseFormCategorias, //FORM CATEGORIAS
     private serviModal: EditRegisterModalService, //SERVICES MODAL
     public formEtiqueta: BaseFormEtiquetas, //BASE FORM ETIQUETAS
-    private apiMarca: MarcaService //API MARCA
+    private apiMarca: MarcaService, //API MARCA
+    private router: Router //ROUTER
   ) {}
 
   ngOnInit(): void {
@@ -38,7 +41,6 @@ export class CreateProductsComponent implements OnInit {
   //GET ALL MARCAS
   getAllMarcas() {
     this.apiMarca.getAllMarca().subscribe((res) => {
-
       this.marcaItems = res;
     });
   }
@@ -56,5 +58,10 @@ export class CreateProductsComponent implements OnInit {
       this.formB.limpiarForm();
       this.load=false;
     }); */
+  }
+  irProducto() {
+    this.router.navigateByUrl(
+      `${UrlFront.Manager.managerVendedor}/${UrlFront.Manager.vendedor}/${UrlFront.Manager.listadoProductos}`
+    );
   }
 }

@@ -21,6 +21,7 @@ import { ProgressStepperComponent } from '../components/progress-stepper/progres
 import { BaseFormProducts } from '../models/BaseformProduct';
 import { BaseFormLogisticaProducto } from '../components/logistica-producto/models/BaseFormubicacion';
 import { GestionDimensionComponent } from '../components/logistica-producto/gestion-dimension/gestion-dimension.component';
+import { BaseFormTamanoProducto } from '../components/logistica-producto/models/BaseFormTamano';
 
 export const ProductoModuleDeclarations = [
   ProductsComponent, //INDEX PRODUCTOS
@@ -49,6 +50,7 @@ export const ProductoModuleProviders = [
   BaseFormConfigAtributos,
   BaseFormEtiquetas,
   BaseFormConfigProducts,
+  BaseFormTamanoProducto,
   ImgIconosComponent,
   CreateProductsComponent,
   BaseFormLogisticaProducto,

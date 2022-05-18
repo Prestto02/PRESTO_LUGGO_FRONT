@@ -110,8 +110,8 @@
                   </div>
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                  <button class="btn btn-modal collapsed" type="button" data-bs-toggle="collapse"
+                  <button type="button" class="btn btn-secondary" (click)="irProducto();">Cancelar</button>
+                  <button class="btn btn-primary collapsed" type="button" data-bs-toggle="collapse"
                     data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo"
                     [disabled]="formB.formProducts.invalid || formEtiqueta.formEtiquetas.invalid || formCategoria.formCategorias.invalid">Continuar
                     &nbsp;<svg width="7" height="20" viewBox="0 0 7 17" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -141,20 +141,8 @@
       <app-imagen-productos></app-imagen-productos>
     </div>
     <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingThree"
-    data-bs-parent="#accordionExample">
-    <app-logistica-producto></app-logistica-producto>
-  </div>
-    <button class="btn btn-primary collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
-      aria-expanded="true" aria-controls="collapseOne">
-      Accordion Item #1
-    </button>
-    <button class="btn btn-primary collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo"
-      aria-expanded="true" aria-controls="collapseTwo">
-      Accordion Item #2
-    </button>
-    <button class="btn btn-primary collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour"
-      aria-expanded="false" aria-controls="collapseFour">
-      Accordion Item #3
-    </button>
+      data-bs-parent="#accordionExample">
+      <app-logistica-producto></app-logistica-producto>
+    </div>
   </div>
 </section>

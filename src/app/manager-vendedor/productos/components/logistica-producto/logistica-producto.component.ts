@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { UrlFront } from 'src/app/shared/routes/RoutesFront';
 import { BaseFormLogisticaProducto } from './models/BaseFormubicacion';
-
 
 declare var google: any;
 @Component({
@@ -23,7 +24,10 @@ export class LogisticaProductoComponent implements OnInit {
 
   draggable: boolean = false;
 
-  constructor(public formUbicacion: BaseFormLogisticaProducto) {}
+  constructor(
+    public formUbicacion: BaseFormLogisticaProducto,
+    private route: Router
+  ) {}
 
   ngOnInit() {
     this.options = {
@@ -153,5 +157,11 @@ export class LogisticaProductoComponent implements OnInit {
 
   clear() {
     this.overlays = [];
+  }
+
+  guardarProduct() {
+    this.route.navigateByUrl(
+      `${UrlFront.Manager.managerVendedor}/${UrlFront.Manager.vendedor}/${UrlFront.Manager.listadoProductos}`
+    );
   }
 }

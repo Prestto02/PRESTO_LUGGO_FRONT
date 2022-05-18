@@ -1,80 +1,112 @@
-<div class="row mx-auto">
-  <!--------DIMENSIONES DEL PAQUETE Y HORA-------->
-  <div class="col-xl-3 col-xxl-3 col-sm-12 col-12 col-md-3 mb-3">
-    <!----LARGO----->
-    <label class="form-label" for="largo">Largo</label>
-    <div class="input-group mb-3">
-      <input type="text" class="form-control input-estilo" id="largo" placeholder="largo" aria-label="largo"
-        aria-describedby="basic-largo">
-      <span class="input-group-text span-estilo" id="basic-largo">cm</span>
+<form [formGroup]="formTamano.formTamanoProducto">
+  <div class="row mx-auto">
+    <!--------DIMENSIONES DEL PAQUETE Y HORA-------->
+    <div class="col-xl-3 col-xxl-3 col-sm-12 col-12 col-md-3 mb-3">
+      <!----LARGO----->
+      <label class="form-label" for="largo">Largo</label>
+      <div class="input-group mb-3">
+        <input type="text" class="form-control input-estilo" id="largo" placeholder="largo" aria-label="largo"
+          [class.is-invalid]="formTamano.formTamanoProducto.get('Longitud_x')?.touched && formTamano.formTamanoProducto.get('Longitud_x')?.invalid"
+          aria-describedby="basic-largo" formControlName="Longitud_x">
+        <span class="input-group-text span-estilo" id="basic-largo">cm</span>
+      </div>
+      <app-form-errors-container [forControl]="formTamano.formTamanoProducto.get('Longitud_x')">
+        <app-message-error forErrorCode="required"></app-message-error>
+        <app-message-error forErrorCode="pattern" customMsg="Solo numeros">
+        </app-message-error>
+      </app-form-errors-container>
     </div>
-  </div>
-  <!----AMCHO----->
-  <div class="col-xl-3 col-xxl-3 col-sm-12 col-12 col-md-3 mb-3">
-    <label class="form-label" for="Ancho">Ancho</label>
-    <div class="input-group mb-3">
-      <input type="text" class="form-control input-estilo" id="Ancho" placeholder="Ancho" aria-label="Ancho"
-        aria-describedby="basic-Ancho">
-      <span class="input-group-text span-estilo" id="basic-Ancho">cm</span>
+    <!----ANCHO----->
+    <div class="col-xl-3 col-xxl-3 col-sm-12 col-12 col-md-3 mb-3">
+      <label class="form-label" for="Ancho">Ancho</label>
+      <div class="input-group mb-3">
+        <input type="text" class="form-control input-estilo" id="Ancho" placeholder="Ancho" aria-label="Ancho"
+          [class.is-invalid]="formTamano.formTamanoProducto.get('Longitud_y')?.touched && formTamano.formTamanoProducto.get('Longitud_y')?.invalid"
+          aria-describedby="basic-Ancho" formControlName="Longitud_y">
+        <span class="input-group-text span-estilo" id="basic-Ancho">cm</span>
+      </div>
+      <app-form-errors-container [forControl]="formTamano.formTamanoProducto.get('Longitud_y')">
+        <app-message-error forErrorCode="required"></app-message-error>
+        <app-message-error forErrorCode="pattern" customMsg="Solo numeros">
+        </app-message-error>
+      </app-form-errors-container>
     </div>
-  </div>
-  <!----ALTO----->
-  <div class="col-xl-3 col-xxl-3 col-sm-12 col-12 col-md-3 mb-3">
-    <label class="form-label" for="Alto">Alto</label>
-    <div class="input-group mb-3">
-      <input type="text" class="form-control input-estilo" id="Alto" placeholder="Alto" aria-label="Alto"
-        aria-describedby="basic-Alto">
-      <span class="input-group-text span-estilo" id="basic-Alto">cm</span>
+    <!----ALTO----->
+    <div class="col-xl-3 col-xxl-3 col-sm-12 col-12 col-md-3 mb-3">
+      <label class="form-label" for="Alto">Alto</label>
+      <div class="input-group mb-3">
+        <input type="text" class="form-control input-estilo" id="Alto" placeholder="Alto" aria-label="Alto"
+          [class.is-invalid]="formTamano.formTamanoProducto.get('Longitud_z')?.touched && formTamano.formTamanoProducto.get('Longitud_z')?.invalid"
+          aria-describedby="basic-Alto" formControlName="Longitud_z">
+        <span class="input-group-text span-estilo" id="basic-Alto">cm</span>
+      </div>
+      <app-form-errors-container [forControl]="formTamano.formTamanoProducto.get('Longitud_z')">
+        <app-message-error forErrorCode="required"></app-message-error>
+        <app-message-error forErrorCode="pattern" customMsg="Solo numeros">
+        </app-message-error>
+      </app-form-errors-container>
     </div>
-  </div>
-  <div class="col-xl-3 col-xxl-3 col-sm-12 col-12 col-md-3 mb-3">
-  </div>
-  <!----PESO----->
-  <div class="col-xl-3 col-xxl-3 col-sm-12 col-12 col-md-3 mb-3">
-    <label class="form-label" for="Peso ">Peso</label>
-    <div class="input-group mb-3">
-      <input type="text" class="form-control input-estilo" id="Peso" placeholder="Peso" aria-label="Peso"
-        aria-describedby="basic-Peso">
-      <span class="input-group-text span-estilo" id="basic-Peso">lb</span>
+    <div class="col-xl-3 col-xxl-3 col-sm-12 col-12 col-md-3 mb-3">
     </div>
-  </div>
-  <!----TIEMPO DESPACHO----->
-  <div class="col-xl-6 col-xxl-6 col-sm-12 col-12 col-md-6 mb-3">
-    <label class="form-label" for="tiempo">Tiempo de Despacho</label>
-    <div class="row">
-      <div class="col-xl-6 col-xxl-6 col-sm-12 col-12 col-md-6">
-        <div class="input-group mb-3">
-          <input type="text" class="form-control" id="tiempo" placeholder="tiempo" aria-label="tiempo"
-            aria-describedby="basic-tiempo">
+    <!----PESO----->
+    <div class="col-xl-3 col-xxl-3 col-sm-12 col-12 col-md-3 mb-3">
+      <label class="form-label" for="Peso ">Peso</label>
+      <div class="input-group mb-3">
+        <input type="text" class="form-control input-estilo" id="Peso" placeholder="Peso" aria-label="Peso"
+          [class.is-invalid]="formTamano.formTamanoProducto.get('Peso')?.touched && formTamano.formTamanoProducto.get('Peso')?.invalid"
+          aria-describedby="basic-Peso" formControlName="Peso">
+        <span class="input-group-text span-estilo" id="basic-Peso">lb</span>
+      </div>
+      <app-form-errors-container [forControl]="formTamano.formTamanoProducto.get('Peso')">
+        <app-message-error forErrorCode="required"></app-message-error>
+        <app-message-error forErrorCode="pattern" customMsg="Solo numeros">
+        </app-message-error>
+      </app-form-errors-container>
+    </div>
+    <!----TIEMPO DESPACHO----->
+    <div class="col-xl-6 col-xxl-6 col-sm-12 col-12 col-md-6 mb-3">
+      <label class="form-label" for="tiempo">Tiempo de Despacho</label>
+      <div class="row">
+        <div class="col-xl-6 col-xxl-6 col-sm-12 col-12 col-md-6">
+          <div class="input-group mb-3">
+            <input type="text" class="form-control" id="tiempo" placeholder="tiempo" aria-label="tiempo"
+              [class.is-invalid]="formTamano.formTamanoProducto.get('TiempoDespacho')?.touched && formTamano.formTamanoProducto.get('TiempoDespacho')?.invalid"
+              aria-describedby="basic-tiempo" formControlName="TiempoDespacho">
+          </div>
+        </div>
+        <div class="col-xl-6 col-xxl-6">
+          <span class="" id="basic-tiempo">horas</span>
         </div>
       </div>
-      <div class="col-xl-6 col-xxl-6">
-        <span class="" id="basic-tiempo">horas</span>
+      <app-form-errors-container [forControl]="formTamano.formTamanoProducto.get('TiempoDespacho')">
+        <app-message-error forErrorCode="required"></app-message-error>
+        <app-message-error forErrorCode="pattern" customMsg="Solo numeros">
+        </app-message-error>
+      </app-form-errors-container>
+    </div>
+    <!--------GESTION DE ENVIOS-------->
+    <div class="col-xl-12 col-xxl-12 col-sm-12 col-12 col-md-12 mb-3">
+      <h5>Gestión de envio</h5>
+    </div>
+    <div class="col-xl-7 col-xxl-7 col-sm-12 col-12 col-md-8 mb-3">
+      <div class="row">
+        <div class="col-xl-12 col-xxl-12 col-sm-12 col-md-12">
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="envioAdn" id="envioAdn">
+            <label class="form-check-label" for="envioAdn">
+              Yo mismo voy a enviar este artículo (Envío gestionado por ADN)
+            </label>
+          </div>
+        </div>
+        <div class="col-xl-12 col-xxl-12 col-sm-12 col-md-12">
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="puertoEnvia" id="puertoEnvia1">
+            <label class="form-check-label" for="puertoEnvia1">
+              Puertto va a enviar este artículo (Envío gestionado por Puertto)
+            </label>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-  <!--------GESTION DE ENVIOS-------->
-  <div class="col-xl-12 col-xxl-12 col-sm-12 col-12 col-md-12 mb-3">
-    <h5>Gestión de envio</h5>
-  </div>
-  <div class="col-xl-7 col-xxl-7 col-sm-12 col-12 col-md-8 mb-3">
-    <div class="row">
-      <div class="col-xl-12 col-xxl-12 col-sm-12 col-md-12">
-        <div class="form-check">
-          <input class="form-check-input" type="radio" name="envioAdn" id="envioAdn">
-          <label class="form-check-label" for="envioAdn">
-            Yo mismo voy a enviar este artículo (Envío gestionado por ADN)
-          </label>
-        </div>
-      </div>
-      <div class="col-xl-12 col-xxl-12 col-sm-12 col-md-12">
-        <div class="form-check">
-          <input class="form-check-input" type="radio" name="puertoEnvia" id="puertoEnvia1">
-          <label class="form-check-label" for="puertoEnvia1">
-            Puertto va a enviar este artículo (Envío gestionado por Puertto)
-          </label>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+</form>

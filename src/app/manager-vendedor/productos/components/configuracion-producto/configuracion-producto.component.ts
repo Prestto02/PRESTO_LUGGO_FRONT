@@ -56,9 +56,20 @@ export class ConfiguracionProductoComponent implements OnInit {
       this.descripcionAtributo
     ); //SEA AGREGA A LA NUEVA LISTA
     //LIMPIAR LAS VARIABLES
+    this.formAtributo.removeAllArrayAtributos(); //DEJAR EN BLANCO EL ARRAY DE ATRIBUTOS
+    this.checkFalse(); //SETEAR A FALSO TODOS LOS CHECK
     this.nombreAtributo = '';
     this.descripcionAtributo = '';
   }
+
+  //PONER TODOS LOS CHECK EN BLANCO
+  checkFalse() {
+    this.arrayAtributos.map((res: any) => {
+      const checke: any = <HTMLElement>document.getElementById(res.id); //OBTENGO EL ELEMENTO CHECBOX PARA CAMBIARLE EL ESTADO DEL DOM
+      checke.checked = false; //SETEO A FALSO
+    });
+  }
+
   //ELIMINAR LOS ITEMS DEL ARRAY FORM
   removeItemsChecked(i: any) {
     const datos = this.formAtributo.atributos.controls[i]; //OBTENGO LA POSICION DEL ARREGLO

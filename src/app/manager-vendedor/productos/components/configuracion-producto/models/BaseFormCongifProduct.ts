@@ -5,7 +5,7 @@ export class BaseFormConfigProducts {
   constructor(private formB: FormBuilder) {}
   formConfigProduct = this.formB.group({
     nombreVariacion: [''],
-    Atributos: this.formB.array([],),
+    Atributos: this.formB.array([]),
   });
   //TRANSFORMAR EN UN ARRAY LOS ATRIBUTOS
   get atributos() {
@@ -36,5 +36,8 @@ export class BaseFormConfigProducts {
   //ELIMINAR ITEMS
   removeItems(i: any) {
     this.atributos.removeAt(i);
+  }
+  removeAllArrayAtributos() {
+    this.atributos.clear();
   }
 }
