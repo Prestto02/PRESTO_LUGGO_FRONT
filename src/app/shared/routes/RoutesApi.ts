@@ -28,6 +28,8 @@ export const UrlApi = {
   //Banco Y ADN
   banco: 'api/NombreBanco',
   registrarAdn: 'api/ADN',
+  paises: 'api/paises',
+  ciudad: 'api/ciudad/',
   //MARCAS
   marcas: 'api/marca',
   //COLECCION PARA LA LISTA DE DESEOS

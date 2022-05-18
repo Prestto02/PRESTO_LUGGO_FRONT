@@ -166,37 +166,34 @@
           <app-message-error forErrorCode="pattern" customMsg="No se admite caracteres especiales"></app-message-error>
         </app-form-errors-container>
       </div>
-      <!-----CIUDAD----->
-
-      <div class="col-xl-4 col-xxl-4 col-sm-12 col-12 col-md-4">
-        <div class="mb-3">
-          <label for="ciudad" class="form-label fw-bolder">Ciudad</label>
-          <select class="form-select" aria-label="Default select example" formControlName="Ciudad"
-            [class.is-invalid]="formB.formAdn.get('Ciudad')?.touched && formB.formAdn.get('Ciudad')?.invalid">
-            <option value="" selected>Seleccionar</option>
-            <option value="Guayaquil">Guayquil</option>
-            <option value="Ambato">Ambato</option>
-            <option value="Puerto Lopez">Puerto Lopez</option>
-          </select>
-        </div>
-        <app-form-errors-container [forControl]="formB.formAdn.get('Ciudad')">
-          <app-message-error forErrorCode="required"></app-message-error>
-        </app-form-errors-container>
-      </div>
       <!-----PAIS----->
 
       <div class="col-xl-4 col-xxl-4 col-sm-12 col-12 col-md-4">
         <div class="mb-3">
           <label for="formPais" class="form-label fw-bolder">Pais</label>
           <select class="form-select" aria-label="Default select example" formControlName="Pais"
-            [class.is-invalid]="formB.formAdn.get('Pais')?.touched && formB.formAdn.get('Pais')?.invalid">
+            [class.is-invalid]="formB.formAdn.get('Pais')?.touched && formB.formAdn.get('Pais')?.invalid"
+            (change)="buscarCiudad($event);">
             <option value="" selected>Seleccionar</option>
-            <option value="Ecuador">Ecuador</option>
-            <option value="Estados Unidos">Estados unidos</option>
-            <option value="Mexico">Mexico</option>
+            <option *ngFor="let pais of arrayPais" [value]="pais.codigo">{{pais.pais}}</option>
           </select>
         </div>
         <app-form-errors-container [forControl]="formB.formAdn.get('Pais')">
+          <app-message-error forErrorCode="required"></app-message-error>
+        </app-form-errors-container>
+      </div>
+
+      <!-----CIUDAD----->
+      <div class="col-xl-4 col-xxl-4 col-sm-12 col-12 col-md-4">
+        <div class="mb-3">
+          <label for="ciudad" class="form-label fw-bolder">Ciudad</label>
+          <select class="form-select" aria-label="Default select example" formControlName="Ciudad"
+            [class.is-invalid]="formB.formAdn.get('Ciudad')?.touched && formB.formAdn.get('Ciudad')?.invalid">
+            <option value="" selected>Seleccionar</option>
+            <option *ngFor="let ciudad of arrayCiudad" [value]="ciudad.ciudad">{{ciudad.ciudad}}</option>
+          </select>
+        </div>
+        <app-form-errors-container [forControl]="formB.formAdn.get('Ciudad')">
           <app-message-error forErrorCode="required"></app-message-error>
         </app-form-errors-container>
       </div>
@@ -265,3 +262,5 @@
     </div>
   </form>
 </section>
+
+{{formB.formAdn.value | json}}

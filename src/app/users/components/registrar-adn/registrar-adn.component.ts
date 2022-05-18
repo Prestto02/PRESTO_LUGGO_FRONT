@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { PositionUser } from 'src/app/shared/class/PositionUser';
 import { BaseFormAdnUsers } from './models/BaseFormAdnUser';
 import { BancoService } from './services/banco.service';
+import { CiudadPaisService } from './services/ciudad-pais.service';
 import { UserAdnService } from './services/user-adn.service';
 
 @Component({
@@ -11,17 +12,21 @@ import { UserAdnService } from './services/user-adn.service';
 })
 export class RegistrarAdnComponent implements OnInit {
   arrayBanco: any = [];
+  arrayPais: any = [];
+  arrayCiudad: any = [];
   sugerencias: boolean = false;
   constructor(
-    private apiBanco: BancoService,
-    public formB: BaseFormAdnUsers,
-    private position: PositionUser,
-    private apiAdn: UserAdnService
+    private apiBanco: BancoService, //SERVICES BANCO
+    public formB: BaseFormAdnUsers, //FORM ADN USERS
+    private position: PositionUser, //CLASS POSITION USERS
+    private apiAdn: UserAdnService, //SERVICES ADN
+    private apiCiudadPais: CiudadPaisService //SERVICES CIUDAD PAISES
   ) {}
 
   ngOnInit(): void {
     this.getAllBancos();
     this.position.getPositionUser();
+    this.getAllPaises();
   }
   //TRAER TODOS LOS BANCOS
   getAllBancos() {
@@ -29,7 +34,19 @@ export class RegistrarAdnComponent implements OnInit {
       this.arrayBanco = res;
     });
   }
-
+  //TRAER TODOS LOS PAISES
+  getAllPaises() {
+    this.apiCiudadPais.getPaises().subscribe((res) => {
+      this.arrayPais = res;
+    });
+  }
+  //TRAER TODAS LAS CIUDADES
+  buscarCiudad(e: any) {
+    const codigo = e.target.value;
+    this.apiCiudadPais.getCiudades(codigo).subscribe((res) => {
+      this.arrayCiudad = res;
+    });
+  }
   //MOUSE CLICK EVENT
   mouseClickEvent() {
     this.sugerencias = true; //PARA PRESENTAR LAS SUGERENCIAS
@@ -37,6 +54,7 @@ export class RegistrarAdnComponent implements OnInit {
   perdioElFocus() {
     this.sugerencias = false; //PARA OCULTAR LAS SUGERENCIAS
   }
+
   //GUARDAR ADN
   guardarAdn() {
     const form = this.formB.getFormData(
