@@ -28,10 +28,6 @@ export class BaseFormConfigAtributos {
     });
     this.atributosVariacion.push(atributosForm);
   }
-  //IMAGEN ARRAY
-  /*   get imgArray() {
-    return this.atributosVariacion.get('imagenes') as FormArray;
-  } */
   //AGREGAR IMAGENES EN EL ARRAY
   addImagenes(id: any, imgProduct: any, imgTransfor: any, i: any) {
     let imgArray = this.formB.group({
@@ -39,7 +35,7 @@ export class BaseFormConfigAtributos {
       imgProductsIcons: [imgProduct, [Validators.required]],
       imgProductTransform: [imgTransfor, [Validators.required]],
     });
-    (this.atributosVariacion.at(i).get('imagenes') as FormArray).push(imgArray);
+    (this.atributosVariacion.at(i).get('archivo') as FormArray).push(imgArray); //OBTENGO LA POSICION DEL ARRAY Y LE HAGO EL PUSH
   }
   //ELIMINAR ITEMS
   removeItems(i: any) {

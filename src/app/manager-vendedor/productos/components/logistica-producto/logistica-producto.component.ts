@@ -29,19 +29,18 @@ export class LogisticaProductoComponent implements OnInit {
     public formUbicacion: BaseFormLogisticaProducto,
     private route: Router,
     private position: PositionUser //POSITION USUARIO
-  ) {
-  }
+  ) {}
 
   ngOnInit() {
     this.position.getPositionUser();
     this.options = {
-      center: { lat: -2.1604033, lng: -79.9304523 },
+      center: { lat: -2.1604033, lng: -79.9304523 }, //LATITUD Y LONGITUD PARA QUE SALGA EN EL MAPA
       zoom: 12,
     };
     //this.initOverlays();
     this.infoWindow = new google.maps.InfoWindow();
   }
-
+  //AGREGAR EL NUEVA UBICACION Y ABRIR EL MODAL
   handleMapClick(event: any) {
     this.dialogVisible = true;
     this.selectedPosition = event.latLng;
@@ -81,18 +80,22 @@ export class LogisticaProductoComponent implements OnInit {
         draggable: this.draggable,
       })
     );
+    this.addUbicacionProducto(); //AGREGAR NUEVA UBICACION DEL PRODUCTOS
+    this.markerTitle = null;
+    this.dialogVisible = false;
+  }
+  //AGREGAR UBICACION DE PRODUCTOS
+  addUbicacionProducto() {
     const descripcion =
-      this.formUbicacion.formLogistica.get('descripcion')?.value;
+      this.formUbicacion.formLogistica.get('descripcion')?.value; //OBTENGO LA DESCRIPCION
     this.formUbicacion.addUbicacionProducto(
       descripcion,
       this.selectedPosition.lat(),
       this.selectedPosition.lng()
-    );
+    ); //LO GUARDO EN EL ARRAY UNA VEZ ACEPTADO
     this.formUbicacion.formLogistica.patchValue({
       descripcion: '',
-    });
-    this.markerTitle = null;
-    this.dialogVisible = false;
+    }); //LIMPIO EL PATCH VALUE
   }
 
   handleDragEnd(event: any) {

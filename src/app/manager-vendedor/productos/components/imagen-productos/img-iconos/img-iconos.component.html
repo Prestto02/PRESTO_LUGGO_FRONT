@@ -1,5 +1,7 @@
+<!-------CDK DROP LIST DOPPED----------->
 <div class="row" cdkDropList (cdkDropListDropped)="onDropped($event)">
   <div cdkDrag class="col-xl-12 position-relative" *ngFor="let arrayImg of imgListArray let i = index;">
+    <!-------RECORRO LA IMAGENES----------->
     <img loading="lazy" *ngIf="arrayImg.imgProductsIcons!=''" [src]="arrayImg.imgProductsIcons"
       class="img-fluid rounded-start mb-3" alt="Imágen del producto" width="55px" height="55px">
     <svg *ngIf="arrayImg.imgProductsIcons==''" class="mb-3" width="55" height="55" viewBox="0 0 55 55" fill="none"

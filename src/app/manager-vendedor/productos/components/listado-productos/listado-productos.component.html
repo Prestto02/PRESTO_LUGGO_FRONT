@@ -3,6 +3,7 @@
     <div class="col-xl-5 col-xxl-5 col-md-3 col-sm-12 col-12 mt-3">
       <h5>Listado de productos</h5>
     </div>
+    <!-------BUSCAR PRODUCTOS------------->
     <div class="col-xl-4 col-xxl-4 col-6 col-sm-6 col-md-4 mt-3">
       <div class="input-group mb-3">
         <input type="text" class="form-control input-border" placeholder="Buscar..." #txtSearch
@@ -30,6 +31,7 @@
         </svg> Añadir Producto
       </button>
     </div>
+    <!-------TABLE De LOS REGISTROS DE PRODUCTOS---------->
     <div class="table-responsive mt-3 mb-3">
       <table class="table table-hover">
         <thead>
@@ -52,8 +54,8 @@
           <ng-container *ngIf="dataProducts && dataProducts.length>0; else notData">
             <tr
               *ngFor="let product of dataProducts | orderBy:key:reverse | filtroPaginacion:searchProducts | paginate: {itemsPerPage:6,currentPage:p};">
-              <td class="mx-auto"><img loading="lazy" src="{{urlImg}}{{product.imagen}}" alt="product"
-                  width="77px" height="66px" class="img-fluid"></td>
+              <td class="mx-auto"><img loading="lazy" src="{{urlImg}}{{product.imagen}}" alt="product" width="77px"
+                  height="66px" class="img-fluid"></td>
               <td>{{product.codigo}}</td>
               <td>{{product.name}}</td>
               <td>{{product.precio}}</td>
@@ -91,6 +93,7 @@
         </tbody>
       </table>
     </div>
+    <!--------PAGINACION---------->
     <div class="d-flex flex-row-reverse bd-highlight">
       <pagination-controls (pageChange)="p=$event" previousLabel="Atras" nextLabel="Siguiente" [autoHide]="true"
         [responsive]="true" screenReaderPaginationLabel="Pagination">

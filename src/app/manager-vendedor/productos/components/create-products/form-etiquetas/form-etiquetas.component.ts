@@ -10,6 +10,7 @@ export class FormEtiquetasComponent implements OnInit {
   constructor(public formB: BaseFormEtiquetas) {}
 
   ngOnInit(): void {}
+  //AGREGAR ETIQUETAS CON LA TECLA ENTER
   setEtiquetas(e: any) {
     const valor = this.formB.formEtiquetas.get('etiquetaForm')?.value;
     if (e.key === 'Enter') {

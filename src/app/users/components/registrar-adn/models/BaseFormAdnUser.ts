@@ -66,7 +66,7 @@ export class BaseFormAdnUsers {
       ],
     ],
   });
-
+  //OBTENGO TODOS LOS DATOS DEL FORM PARA ENVIARLO POR LA API
   getFormData(latitud: any, longitud: any) {
     this.tranformBoolean();
     return {

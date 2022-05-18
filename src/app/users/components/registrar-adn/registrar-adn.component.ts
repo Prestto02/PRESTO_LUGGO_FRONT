@@ -43,7 +43,6 @@ export class RegistrarAdnComponent implements OnInit {
       this.position.latitud,
       this.position.longitud
     );
-    console.log(form);
     this.apiAdn.postUserAdn(form).subscribe((res) => {
       console.log(res);
     });

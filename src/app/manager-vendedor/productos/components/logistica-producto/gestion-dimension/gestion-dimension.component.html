@@ -80,7 +80,9 @@
       </div>
       <app-form-errors-container [forControl]="formTamano.formTamanoProducto.get('TiempoDespacho')">
         <app-message-error forErrorCode="required"></app-message-error>
-        <app-message-error forErrorCode="pattern" customMsg="Solo numeros">
+        <app-message-error forErrorCode="pattern" customMsg="Solo numeros del 1 al 9">
+        </app-message-error>
+        <app-message-error forErrorCode="maxlength" customMsg="Solo 2 digitos">
         </app-message-error>
       </app-form-errors-container>
     </div>

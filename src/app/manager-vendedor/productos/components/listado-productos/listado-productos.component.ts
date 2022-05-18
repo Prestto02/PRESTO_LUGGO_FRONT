@@ -15,7 +15,7 @@ export class ListadoProductosComponent implements OnInit {
     private apiProducts: ProductsService, //PRODUCTS SERVIES
     private _router: Router
   ) {}
-  dataProducts: any;
+  dataProducts: any; //ARRAY DE LOS PRODUCTOS
   key: string = 'id'; //ORRDER BY
   reverse: boolean = false; //ORDER BY
   p: number = 1; //PAGINACION EN 1
@@ -34,6 +34,7 @@ export class ListadoProductosComponent implements OnInit {
     if (confirm(`Se eliminara el producto con id: ${id}`))
       console.log('eliminado');
   }
+  //EDITAR PRODUCTOS
   editarProduct(product: any) {
     console.log(product);
   }

@@ -1,6 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ValidarYTransformarImagen } from 'src/app/shared/validations/ValidarYTransformarImagen';
-import { ImgIconosComponent } from './img-iconos/img-iconos.component';
 
 @Component({
   selector: 'app-imagen-productos',
@@ -12,8 +11,7 @@ export class ImagenProductosComponent implements OnInit {
   imgProducts = '';
   imagenTransformada = '';
   constructor(
-    private imgValidar: ValidarYTransformarImagen, //VALIDAR IMAGENES Y TRANSFORMAR
-    private imgIconComponent: ImgIconosComponent
+    private imgValidar: ValidarYTransformarImagen //VALIDAR IMAGENES Y TRANSFORMAR
   ) {}
 
   ngOnInit(): void {}

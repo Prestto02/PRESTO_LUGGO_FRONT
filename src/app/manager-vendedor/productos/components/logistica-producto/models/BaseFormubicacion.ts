@@ -3,7 +3,6 @@ import { FormArray, FormBuilder, Validators } from '@angular/forms';
 
 @Injectable({ providedIn: 'root' })
 export class BaseFormLogisticaProducto {
-
   constructor(private formB: FormBuilder) {}
   formLogistica = this.formB.group({
     descripcion: ['', [Validators.required]],
@@ -13,7 +12,7 @@ export class BaseFormLogisticaProducto {
   get ubicacionProducto() {
     return this.formLogistica.controls['ubicacionProducto'] as FormArray;
   }
-
+  //AGREGAR NUEVA UBICACION DEL PRODUCTO
   addUbicacionProducto(descripcion: any, lt: any, lg: any) {
     let formUbicacion = this.formB.group({
       DescripcionUbicacion: [descripcion, [Validators.required]],
