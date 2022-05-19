@@ -13,7 +13,7 @@ export class BaseFormCategorias {
   //FORMULARIO
   formCategorias = this.formB.group({
     nameCategoria: [''],
-    ArticuloTieneCategoria: this.formB.array([],[Validators.required]),
+    ArticuloTieneCategoria: this.formB.array([], [Validators.required]),
   });
   //OBTENER EL ARRAY DE LA CATEGORIAS
   get getCategorias() {
@@ -41,7 +41,13 @@ export class BaseFormCategorias {
   getErrorsForm() {
     return this.formCategorias.get('ArticuloTieneCategoria')?.errors;
   }
+  //RETORNO EL ARTICULO FORM CATEGORIA
   getFormData() {
     return this.formCategorias.get('ArticuloTieneCategoria')?.value;
+  }
+  limpiarForm() {
+    this.formCategorias.reset();
+    this.getCategorias.clear();
+    this.categoriaSeleccionadas = null;
   }
 }

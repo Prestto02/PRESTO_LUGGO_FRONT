@@ -31,14 +31,21 @@ export class BaseFormConfigAtributos {
   //AGREGAR IMAGENES EN EL ARRAY
   addImagenes(id: any, imgProduct: any, imgTransfor: any, i: any) {
     let imgArray = this.formB.group({
-/*       id: [id, [Validators.required]],
+      /*       id: [id, [Validators.required]],
       imgProductsIcons: [imgProduct, [Validators.required]], */
       archivo: [imgTransfor, [Validators.required]],
     });
-    (this.atributosVariacion.at(i).get('multimedia') as FormArray).push(imgArray); //OBTENGO LA POSICION DEL ARRAY Y LE HAGO EL PUSH
+    (this.atributosVariacion.at(i).get('multimedia') as FormArray).push(
+      imgArray
+    ); //OBTENGO LA POSICION DEL ARRAY Y LE HAGO EL PUSH
   }
   //ELIMINAR ITEMS
   removeItems(i: any) {
     this.atributosVariacion.removeAt(i);
+  }
+  //LIMPIAR FORMULARIO
+  limpiarForm() {
+    this.formConfigAtributos.reset();
+    this.atributosVariacion.clear();
   }
 }

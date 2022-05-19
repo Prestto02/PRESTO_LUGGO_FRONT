@@ -32,4 +32,8 @@ export class BaseFormTamanoProducto {
     ],
     GestionEnvio: [''],
   });
+
+  limpiarForm() {
+    this.formTamanoProducto.reset();
+  }
 }

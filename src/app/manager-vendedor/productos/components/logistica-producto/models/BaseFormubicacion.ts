@@ -21,4 +21,9 @@ export class BaseFormLogisticaProducto {
     });
     this.ubicacionProducto.push(formUbicacion);
   }
+  //LIMPIAR FORMULARIO
+  limpiarForm() {
+    this.formLogistica.reset();
+    this.ubicacionProducto.clear();
+  }
 }

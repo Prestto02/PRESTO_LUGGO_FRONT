@@ -177,6 +177,13 @@ export class LogisticaProductoComponent implements OnInit {
         this.position.latitud
       )
     );
+    this.dataForm.limpiarTodoForm();
+    console.log(
+      this.dataForm.getDataFormProducts(
+        this.position.longitud,
+        this.position.latitud
+      )
+    );
     this.route.navigateByUrl(
       `${UrlFront.Manager.managerVendedor}/${UrlFront.Manager.vendedor}/${UrlFront.Manager.listadoProductos}`
     );

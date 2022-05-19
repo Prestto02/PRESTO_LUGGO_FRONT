@@ -27,4 +27,9 @@ export class BaseFormEtiquetas {
   getErrorsForm() {
     return this.formEtiquetas.get('etiqueta')?.errors;
   }
+  //LIMPIAR FORMULARIO
+  limpiarForm() {
+    this.formEtiquetas.reset();
+    this.etiquetas.clear();
+  }
 }

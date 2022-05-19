@@ -89,9 +89,22 @@ export class DataFormProducts {
       etiquetas: this.arrayEtiquetas,
       ArticuloTieneCategoria: this.arrayCategorias,
       detalleArticulo: this.arrayAtributos,
-      logistica: {dimensiones, ubicacion: this.arrayUbicacion },
+      logistica: { dimensiones, ubicacion: this.arrayUbicacion },
       longitud: longitud,
       latitud: latitud,
     };
+  }
+
+  limpiarTodoForm() {
+    this.arrayAtributos = null;
+    this.arrayCategorias = null;
+    this.arrayEtiquetas = null;
+    this.arrayUbicacion = null;
+    this.formProduct.limpiarForm();
+    this.formAtributo.limpiarForm();
+    this.formEtiquetas.limpiarForm();
+    this.formCategoria.limpiarForm();
+    this.formTamano.limpiarForm();
+    this.formUbicacion.limpiarForm();
   }
 }
