@@ -1,23 +1,48 @@
 <!---------FORM COLORES----------->
-<div class="col-xl-3 col-xxl-3 col-sm-3 col-3 col-md-3">
-  <div class="row">
-    <div class="col-xl-8">
-      <div class="row">
-        <!----PARA SUBIR LOS COLORES DE LOS ITEMS--->
-        <div class="col-xl-1 col-xxl-1 col-sm-1 col-md-1 col-1" *ngFor="let colores of arrayColores">
-          <div class="form-check">
-            <input class="form-check-input" [style]="colores.codigoHexagedecima" type="checkbox"
-              [id]="'checkbox'+colores.id"
-              (click)="addColoresItems(colores.codigoHexagedecima,colores.nombre_color,$event,colores.id)">
+<div class="btn-group dropend">
+  <button type="button" class="btn btn-outline-secondary dropdown-toggle" data-bs-toggle="dropdown"
+    aria-expanded="false" (click)="buscarAtributos(url);">
+  </button>
+  <div class="col-xl-12 col-xxl-12 col-sm-12 col-12 col-md-12 dropdown-menu" *ngIf="nombre==='Color'">
+    <div class="row">
+      <div class="col-xl-9">
+        <div class="row">
+          <!----PARA SUBIR LOS COLORES DE LOS ITEMS--->
+          <div class="col-xl-1 col-xxl-1 col-sm-1 col-md-1 col-1" *ngFor="let colores of arrayColores">
+            <div class="form-check">
+              <input class="form-check-input" [style]="colores.codigoHexagedecima" type="checkbox"
+                [id]="'checkbox'+colores.id"
+                (click)="addColoresItems(colores.codigoHexagedecima,colores.nombre_color,$event,colores.id)">
+            </div>
           </div>
         </div>
       </div>
+      <!-------AGREGAR NUEVO COLOR-------->
+      <div class="col-xl-12 col-xxl-12 col-md-12 col-sm-12 col-12">
+        <input type="color" class="btn btn-add-colors" title="Agregar otro color" />
+        <button class="btn btn-primary" (click)="agregarColor();">Agregar</button>
+      </div>
     </div>
-    <!-------AGREGAR NUEVO COLOR-------->
-    <div class="col-xl-12">
-      <label for="color" class="btn btn-add-colors cursor">
-        <input type="color" class="btn btn-add-colors" id="color" />
-        Agregar otro color</label>
+  </div>
+  <!--------FORM OTROS ATRIBUTOS------->
+  <div class="col-xl-12 col-xxl-12 col-sm-12 col-12 col-md-12 dropdown-menu">
+    <div class="row">
+      <div class="col-xl-11 col-xxl-11 col-sm-12 col-12 col-md-12">
+        <div class="row">
+          <!----PARA SUBIR LOS COLORES DE LOS ITEMS--->
+          <div class="col-xl-4 col-xxl-4 col-sm-6 col-md-4 col-6"
+            *ngFor="let atributos of arrayAtributosAny; let i= index;">
+            <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
+              <input type="checkbox" class="btn-check" id="btncheck-{{i}}" autocomplete="off"
+                (click)="clickCheckedColor(i);" />{{atributos.nombre_talla}}
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-------AGREGAR NUEVO ATRIBUTO-------->
+      <div class="col-xl-12 col-xxl-12 col-md-12 col-sm-12 col-12">
+        <button class="btn btn-primary" (click)="agregarColor();">+</button>
+      </div>
     </div>
   </div>
 </div>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PositionUser } from 'src/app/shared/class/PositionUser';
+import { MessageFrontEndService } from 'src/app/shared/Toasts/services/message-front-end.service';
 import { BaseFormAdnUsers } from './models/BaseFormAdnUser';
 import { BancoService } from './services/banco.service';
 import { CiudadPaisService } from './services/ciudad-pais.service';
@@ -15,12 +16,14 @@ export class RegistrarAdnComponent implements OnInit {
   arrayPais: any = [];
   arrayCiudad: any = [];
   sugerencias: boolean = false;
+  load: boolean = false;
   constructor(
     private apiBanco: BancoService, //SERVICES BANCO
     public formB: BaseFormAdnUsers, //FORM ADN USERS
     private position: PositionUser, //CLASS POSITION USERS
     private apiAdn: UserAdnService, //SERVICES ADN
-    private apiCiudadPais: CiudadPaisService //SERVICES CIUDAD PAISES
+    private apiCiudadPais: CiudadPaisService, //SERVICES CIUDAD PAISES
+    private toatsMessage: MessageFrontEndService
   ) {}
 
   ngOnInit(): void {
@@ -57,12 +60,18 @@ export class RegistrarAdnComponent implements OnInit {
 
   //GUARDAR ADN
   guardarAdn() {
+    this.load = false;
     const form = this.formB.getFormData(
       this.position.latitud,
       this.position.longitud
     );
     this.apiAdn.postUserAdn(form).subscribe((res) => {
-      console.log(res);
+      this.load = true;
+      this.toatsMessage.getSuccessMessage(
+        'Exito',
+        'Se agrego con exito al usuario'
+      );
+      this.load = false;
     });
   }
 }

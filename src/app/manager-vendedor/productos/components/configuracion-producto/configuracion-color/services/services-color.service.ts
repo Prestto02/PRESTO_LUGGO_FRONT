@@ -13,4 +13,8 @@ export class ServicesColorService {
   getAllColors(): Observable<any> {
     return this.http.get<any>(`${UrlApi.ApiUrl}${UrlApi.codigoColores}`);
   }
+  //TRAIGO TODAS LOS ATRIBUTOS DEPENDE LO QUE ESCOJA EL USUARIO
+  getAllAtributos(url: any): Observable<any> {
+    return this.http.get<any>(`${UrlApi.ApiUrl}${url}`);
+  }
 }

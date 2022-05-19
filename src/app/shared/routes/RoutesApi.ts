@@ -17,8 +17,10 @@ export const UrlApi = {
   loginGoogle: 'Auth/Google',
   loginMicrosoft: '',
 
-  //COLORES
+  //COLORES TALLAS ATRIBUTOS
   codigoColores: 'api/color',
+  codigoTallas: 'api/Talla',
+
   //CATEGORIAS Y ARTICULOS
   categorias: 'api/Familia/padres',
   articulos: 'api/articulo',

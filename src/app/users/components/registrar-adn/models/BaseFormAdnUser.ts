@@ -54,7 +54,8 @@ export class BaseFormAdnUsers {
       '',
       [
         Validators.required,
-        Validators.max(10),
+        Validators.maxLength(10),
+        Validators.minLength(10),
         Validators.pattern(/[0-9]{2}[0-9]{8}/),
       ],
     ],

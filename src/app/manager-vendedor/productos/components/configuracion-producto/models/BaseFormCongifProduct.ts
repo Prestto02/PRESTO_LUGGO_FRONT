@@ -12,9 +12,10 @@ export class BaseFormConfigProducts {
     return this.formConfigProduct.controls['Atributos'] as FormArray;
   }
   //AGREGO EL NUEVO ATRBUTO
-  addAtributos(nombre: any, id: any) {
+  addAtributos(nombre: any, id: any, url: any) {
     let atributosForm = this.formB.group({
       id: [id, [Validators.required]],
+      url: [url, [Validators.required]],
       nombre: [nombre, [Validators.required]],
       escoger: [
         '',

@@ -9,8 +9,13 @@
 }
 .btn-add-colors {
   background-color: #f2f2f2;
+  font-size: 14.4px;
 }
-
+.position-index {
+  z-index: 100;
+  background: #fff;
+  border-radius: 6px;
+}
 .selected-color {
   width: 15px;
   height: 15px;

@@ -16,13 +16,13 @@ export class ConfiguracionProductoComponent implements OnInit {
     },
     {
       id: 2,
-      nombre: 'Tamaño',
-      url: 'api/tamano',
+      nombre: 'Talla',
+      url: 'api/talla',
     },
     {
       id: 3,
-      nombre: 'Talla',
-      url: 'api/talla',
+      nombre: 'Tamaño',
+      url: 'api/tamano',
     },
   ];
   nombreAtributo: any = '';
@@ -34,9 +34,9 @@ export class ConfiguracionProductoComponent implements OnInit {
 
   ngOnInit(): void {}
   //AGREGAR COLORS DE ITEMS
-  addColoresItems(e: any, nombre: any, id: any) {
+  addAtributosItems(e: any, nombre: any, id: any, url:any) {
     if (e.target.checked) {
-      this.formAtributo.addAtributos(nombre, id); //AGREGO LOS COLORES
+      this.formAtributo.addAtributos(nombre, id, url); //AGREGO LOS COLORES
     } else {
       this.formAtributo.removeItemsChecked(nombre); //SI DESACTIVA LOS COLORES LO ELIMINO
     }
@@ -68,7 +68,6 @@ export class ConfiguracionProductoComponent implements OnInit {
       checke.checked = false; //SETEO A FALSO
     });
   }
-
   //ELIMINAR LOS ITEMS DEL ARRAY FORM
   removeItemsChecked(i: any) {
     const datos = this.formAtributo.atributos.controls[i]; //OBTENGO LA POSICION DEL ARREGLO

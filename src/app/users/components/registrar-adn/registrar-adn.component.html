@@ -1,5 +1,5 @@
 <section class="container">
-  <div class="row text-center">
+  <div class="row text-center mb-4 mt-4">
     <app-logo-luggo></app-logo-luggo>
   </div>
 </section>
@@ -225,6 +225,7 @@
         </div>
         <app-form-errors-container [forControl]="formB.formAdn.get('Telefono_contacto')">
           <app-message-error forErrorCode="required"></app-message-error>
+          <app-message-error forErrorCode="minlength" customMsg="Máximo 10 digitos"></app-message-error>
           <app-message-error forErrorCode="pattern" customMsg="Solo numeros"></app-message-error>
         </app-form-errors-container>
       </div>
@@ -257,7 +258,7 @@
         </app-form-errors-container>
       </div>
       <div class="col-xxl-3 col-xl-3 mx-auto mb-3">
-        <app-buttons-load [valueButton]="'Registrar'" [formB]="formB.formAdn" [load]="false"></app-buttons-load>
+        <app-buttons-load [valueButton]="'Registrar'" [formB]="formB.formAdn" [load]="load"></app-buttons-load>
       </div>
     </div>
   </form>
