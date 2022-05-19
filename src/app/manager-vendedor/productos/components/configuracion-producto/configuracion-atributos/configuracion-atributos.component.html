@@ -50,12 +50,12 @@
           </div>
           <!----------Estado------------>
           <div class="col-xl-2 col-xxl-2 col-sm-12 col-12 col-md-2">
-            <select class="form-select" aria-label="select-estado" formControlName="Estado">
+            <select class="form-select" aria-label="select-estado" formControlName="Estado_Producto">
               <option value="" selected>Seleccione</option>
               <option value="Nuevo">Nuevo</option>
               <option value="Usado">Usado</option>
             </select>
-            <app-form-errors-container [forControl]="atributosForm.get('Estado')">
+            <app-form-errors-container [forControl]="atributosForm.get('Estado_Producto')">
               <app-message-error forErrorCode="required"></app-message-error>
             </app-form-errors-container>
           </div>

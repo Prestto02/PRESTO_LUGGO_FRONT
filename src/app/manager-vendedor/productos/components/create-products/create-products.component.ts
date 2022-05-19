@@ -7,6 +7,7 @@ import { BaseFormEtiquetas } from './form-etiquetas/models/BaseFormEtiquetas';
 import { MarcaService } from '../../services/marca.service';
 import { Router } from '@angular/router';
 import { UrlFront } from 'src/app/shared/routes/RoutesFront';
+import { DataFormProducts } from '../../helpers/DataFormProducts';
 
 @Component({
   selector: 'app-create-products',
@@ -24,7 +25,8 @@ export class CreateProductsComponent implements OnInit {
     private serviModal: EditRegisterModalService, //SERVICES MODAL
     public formEtiqueta: BaseFormEtiquetas, //BASE FORM ETIQUETAS
     private apiMarca: MarcaService, //API MARCA
-    private router: Router //ROUTER
+    private router: Router, //ROUTER
+    private dateApi:DataFormProducts
   ) {}
 
   ngOnInit(): void {
@@ -44,24 +46,12 @@ export class CreateProductsComponent implements OnInit {
       this.marcaItems = res;
     });
   }
-  //ENVIAR FORMULARIO
-  submit() {
-    /*     this.load = true;
-   const dataForm = this.formB.getDataForm(
-      this.position.latitud,
-      this.position.longitud,
-      this.formCategoria.getFormData() //OBTENGO LOS ID DE LAS CATEGORIAS
-    );
-    console.log(dataForm); */
-    /* this.apiProducts.postDataArticulo(dataForm).subscribe((res) => {
-      console.log(res);
-      this.formB.limpiarForm();
-      this.load=false;
-    }); */
-  }
   irProducto() {
     this.router.navigateByUrl(
       `${UrlFront.Manager.managerVendedor}/${UrlFront.Manager.vendedor}/${UrlFront.Manager.listadoProductos}`
     );
   }
+/*   addAtributos(){
+    this.dateApi.getUbicacion();
+  } */
 }

@@ -23,4 +23,9 @@ export class IniciarSesionComponent implements OnInit {
       `${UrlFront.Login.login}/${UrlFront.Login.postRegister}`
     );
   }
+  registrarAdn() {
+    this.router.navigateByUrl(
+      `${UrlFront.Users.users}/${UrlFront.Users.adnRegistrar}`
+    );
+  }
 }

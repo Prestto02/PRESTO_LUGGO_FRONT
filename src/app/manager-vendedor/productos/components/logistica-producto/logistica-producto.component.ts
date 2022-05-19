@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { PositionUser } from 'src/app/shared/class/PositionUser';
 import { UrlFront } from 'src/app/shared/routes/RoutesFront';
+import { DataFormProducts } from '../../helpers/DataFormProducts';
+import { BaseFormTamanoProducto } from './models/BaseFormTamano';
 import { BaseFormLogisticaProducto } from './models/BaseFormubicacion';
 
 declare var google: any;
@@ -28,7 +30,9 @@ export class LogisticaProductoComponent implements OnInit {
   constructor(
     public formUbicacion: BaseFormLogisticaProducto,
     private route: Router,
-    private position: PositionUser //POSITION USUARIO
+    private position: PositionUser, //POSITION USUARIO
+    public formTamano: BaseFormTamanoProducto,
+    private dataForm: DataFormProducts
   ) {}
 
   ngOnInit() {
@@ -167,6 +171,12 @@ export class LogisticaProductoComponent implements OnInit {
   }
 
   guardarProduct() {
+    console.log(
+      this.dataForm.getDataFormProducts(
+        this.position.longitud,
+        this.position.latitud
+      )
+    );
     this.route.navigateByUrl(
       `${UrlFront.Manager.managerVendedor}/${UrlFront.Manager.vendedor}/${UrlFront.Manager.listadoProductos}`
     );

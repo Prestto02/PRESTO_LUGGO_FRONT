@@ -22,6 +22,7 @@ import { BaseFormProducts } from '../models/BaseformProduct';
 import { BaseFormLogisticaProducto } from '../components/logistica-producto/models/BaseFormubicacion';
 import { GestionDimensionComponent } from '../components/logistica-producto/gestion-dimension/gestion-dimension.component';
 import { BaseFormTamanoProducto } from '../components/logistica-producto/models/BaseFormTamano';
+import { DataFormProducts } from '../helpers/DataFormProducts';
 
 export const ProductoModuleDeclarations = [
   ProductsComponent, //INDEX PRODUCTOS
@@ -51,6 +52,7 @@ export const ProductoModuleProviders = [
   BaseFormEtiquetas,
   BaseFormConfigProducts,
   BaseFormTamanoProducto,
+  DataFormProducts, //DATA FORMULARIO PRODUCTO ENVIAR
   ImgIconosComponent,
   CreateProductsComponent,
   BaseFormLogisticaProducto,

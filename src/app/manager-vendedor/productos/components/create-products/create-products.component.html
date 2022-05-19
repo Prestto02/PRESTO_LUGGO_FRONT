@@ -15,7 +15,7 @@
               </app-progress-stepper>
             </div>
             <div class="col-md-12 col-xxl-12 col-xl-12 col-12 col-sm-12">
-              <form (submit)="submit()" [formGroup]="formB.formProducts">
+              <form [formGroup]="formB.formProducts">
                 <input type="hidden" formControlName="id_product">
                 <div class="row">
                   <!------NOMBRE, MARCA, TIPO PRODUCTO----->
@@ -25,7 +25,8 @@
                         [class.is-invalid]="formB.formProducts.get('sku')?.invalid" placeholder="Nombre del producto">
                       <label for="floatingSku">SKU</label>
                       <app-form-errors-container [forControl]="formB.formProducts.get('sku')">
-                        <app-message-error forErrorCode="pattern" customMsg="No se admiten caracteres especiales: </>||¿¿''">
+                        <app-message-error forErrorCode="pattern"
+                          customMsg="No se admiten caracteres especiales: </>||¿¿''">
                         </app-message-error>
                       </app-form-errors-container>
                     </div>
@@ -147,7 +148,7 @@
   </div>
 </section>
 
-<!-- <button class="btn btn-primary collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+<button class="btn btn-primary collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo"
   aria-expanded="true" aria-controls="collapseTwo">TWO</button>
-  <button class="btn btn-primary collapsed" data-bs-toggle="collapse" data-bs-target="#collapseFour"
-  aria-expanded="false" aria-controls="collapseFour">THREE</button> -->
+<!-- <button class="btn btn-primary collapsed" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false"
+  aria-controls="collapseFour" (click)="addAtributos()">THREE</button> -->

@@ -5,7 +5,7 @@ import { FormArray, FormBuilder, Validators } from '@angular/forms';
 export class BaseFormLogisticaProducto {
   constructor(private formB: FormBuilder) {}
   formLogistica = this.formB.group({
-    descripcion: ['', [Validators.required]],
+    descripcion: [''],
     ubicacionProducto: this.formB.array([], [Validators.required]),
   });
 

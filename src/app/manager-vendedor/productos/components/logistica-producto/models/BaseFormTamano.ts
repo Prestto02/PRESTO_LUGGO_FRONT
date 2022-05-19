@@ -26,7 +26,6 @@ export class BaseFormTamanoProducto {
       '',
       [
         Validators.required,
-        Validators.minLength(1),
         Validators.maxLength(2),
         Validators.pattern(/^[1-9]{1}[0-9]{1}/), //SOLO NUMEROS DEl 1 - 9 y 0-9
       ],
