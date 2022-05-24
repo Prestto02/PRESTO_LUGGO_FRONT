@@ -10,18 +10,18 @@
           <!----PARA SUBIR LOS COLORES DE LOS ITEMS--->
           <div class="col-xl-1 col-xxl-1 col-sm-1 col-md-1 col-1" *ngFor="let colores of arrayColores">
             <div class="form-check">
-              <input class="form-check-input" [style]="colores.codigoHexagedecima" type="radio"
-                [id]="'checkbox'+colores.id"
+              <input type="radio" name="flexRadioDefault" class="form-check-input" [style]="colores.codigoHexagedecima"
+                [id]="'radio'+colores.id"
                 (click)="addColoresItems(colores.codigoHexagedecima,colores.nombre_color,$event,colores.id,nombre)">
             </div>
           </div>
         </div>
       </div>
       <!-------AGREGAR NUEVO COLOR-------->
-      <div class="col-xl-12 col-xxl-12 col-md-12 col-sm-12 col-12">
+<!--       <div class="col-xl-12 col-xxl-12 col-md-12 col-sm-12 col-12">
         <input type="color" class="btn btn-add-colors" title="Agregar otro color" />
         <button class="btn btn-primary" (click)="agregarColor();">Agregar</button>
-      </div>
+      </div> -->
     </div>
   </div>
   <!--------FORM OTROS ATRIBUTOS------->
@@ -40,9 +40,9 @@
         </div>
       </div>
       <!-------AGREGAR NUEVO ATRIBUTO-------->
-      <div class="col-xl-12 col-xxl-12 col-md-12 col-sm-12 col-12">
+<!--       <div class="col-xl-12 col-xxl-12 col-md-12 col-sm-12 col-12">
         <button class="btn btn-primary" (click)="agregarColor();">+</button>
-      </div>
+      </div> -->
     </div>
   </div>
 </div>
