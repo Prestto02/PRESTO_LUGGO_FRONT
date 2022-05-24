@@ -7,3 +7,6 @@
   color: #fff;
   font-family: Cardium A-Bold;
 }
+#formFile {
+  opacity: 0;
+}

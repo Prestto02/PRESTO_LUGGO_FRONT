@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 import { UrlFront } from 'src/app/shared/routes/RoutesFront';
 import { DataFormProducts } from '../../helpers/DataFormProducts';
 import { ProductsService } from '../../services/products.service';
+import { ValidarYTransformarImagen } from 'src/app/shared/validations/ValidarYTransformarImagen';
 
 @Component({
   selector: 'app-create-products',
@@ -19,6 +20,8 @@ export class CreateProductsComponent implements OnInit {
   activar = false;
   categoriasItems: any;
   marcaItems: any = [];
+  imgProducts = '';
+  imagenTransformada = '';
   constructor(
     private position: PositionUser, //POSICION DEl USUARIO
     public formB: BaseFormProducts, //FORM PRODUCTS
@@ -28,7 +31,8 @@ export class CreateProductsComponent implements OnInit {
     private apiMarca: MarcaService, //API MARCA
     private apiProductServi: ProductsService,
     private router: Router, //ROUTER
-    private dateApi: DataFormProducts
+    private dateApi: DataFormProducts,
+    private imgValidar: ValidarYTransformarImagen //VALIDAR IMAGENES Y TRANSFORMAR
   ) {}
 
   ngOnInit(): void {
@@ -67,7 +71,22 @@ export class CreateProductsComponent implements OnInit {
     this.apiProductServi.postNewArticuloNombre(form).subscribe((res) => {
       this.formB.formProducts.patchValue({
         id_nombre_articulo: res,
+        archivo: this.imagenTransformada,
       });
+    });
+  }
+  //OBTENER IMAGEN PARA VERIFICAR EN EL SERVER
+  getImage(e: any) {
+    this.imgValidar.getImageVerifyServer(e); //VERIFICO EN EL SERVER LA IMAGEN
+  }
+  //OBTENER LA IMAGEN PARA TRANSFORMARLA
+  getArchive(e: any) {
+    const { imgProducts, imagenTransformada } =
+      this.imgValidar.getArchiveImagen(e); //OBTENGO LO QUE ME ENVIA EL ARREGLO DE LA IMAGEN
+    this.imgProducts = imgProducts; //ASIGNO
+    this.imagenTransformada = imagenTransformada; //ASIGNO
+    this.formB.formProducts.patchValue({
+      archivo: this.imagenTransformada,
     });
   }
 }

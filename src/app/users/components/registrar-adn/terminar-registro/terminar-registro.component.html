@@ -43,9 +43,17 @@
         </div>
         <div class="col-xl-12 col-xxl-12">
           <div class="mb-3">
-            <label for="formArea" class="form-label">¿Cómo te describes?</label>
-            <textarea class="form-control tamano-area" id="formArea" formControlName="ComoTeDescribes"
-              placeholder="Soy un emprendedor..."></textarea>
+            <label for="formSelect" class="form-label">¿Cómo te describes?</label>
+            <select name="formSelect" id="formSelect" formControlName="ComoTeDescribes" class="form-select">
+              <option value="" selected>Seleccione una opción</option>
+              <option value="Vendo a tiempo completo">Vendo a tiempo completo</option>
+              <option value="Vendo a tiempo parcial, pero espero vender a tiempo completo">Vendo a tiempo parcial, pero
+                espero vender a tiempo completo</option>
+              <option value="Vendo a tiempo parcial y estoy a gusto así">Vendo a tiempo parcial y estoy a gusto así
+              </option>
+              <option value="Otro">Otro</option>
+
+            </select>
           </div>
           <app-form-errors-container [forControl]="formB.formTerminar.get('ComoTeDescribes')">
             <app-message-error forErrorCode="required"></app-message-error>

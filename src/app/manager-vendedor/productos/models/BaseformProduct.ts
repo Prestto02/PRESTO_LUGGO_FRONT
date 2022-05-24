@@ -36,6 +36,17 @@ export class BaseFormProducts {
         Validators.pattern(/^[A-Za-z0-9Á-ÿ\u00E0-\u00FC\-_ ]+$/),
       ],
     ],
+    archivo: ['', [Validators.required]],
+    Restricciones: ['', [Validators.required]],
+    Disponibilidad: ['', [Validators.required]],
+    Garantia: ['', [Validators.required]],
+    Tipo_Garantia: [
+      '',
+      [
+        Validators.required,
+        Validators.pattern(/^[A-Za-z0-9Á-ÿ\u00E0-\u00FC\-_ ]+$/),
+      ],
+    ],
     marca: ['', [Validators.required]],
   });
   limpiarForm() {

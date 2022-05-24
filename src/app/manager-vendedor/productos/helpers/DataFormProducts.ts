@@ -77,7 +77,15 @@ export class DataFormProducts {
     const sku = this.formProduct.formProducts.get('sku')?.value;
     const id_nombre_articulo =
       this.formProduct.formProducts.get('id_nombre_articulo')?.value;
-    return { descripcion, marca, sku, caracteristicas, id_nombre_articulo };
+    const archivo = this.formProduct.formProducts.get('archivo')?.value;
+    return {
+      descripcion,
+      marca,
+      sku,
+      caracteristicas,
+      id_nombre_articulo,
+      archivo,
+    };
   }
   //PARA HACER EL POST A LA API
   getDataFormProducts(longitud: any, latitud: any) {
@@ -86,14 +94,21 @@ export class DataFormProducts {
     this.getEtiquetas();
     //this.getColors();
     const dimensiones = this.getUbicacion();
-    const { descripcion, sku, caracteristicas, marca, id_nombre_articulo } =
-      this.getProducts();
+    const {
+      descripcion,
+      sku,
+      caracteristicas,
+      marca,
+      id_nombre_articulo,
+      archivo,
+    } = this.getProducts();
     return {
       id_nombre_articulo: id_nombre_articulo,
       descripcion_articulo: descripcion,
       sku: sku,
       caracteristicas: caracteristicas,
       marca: marca,
+      Multimedia: { archivo: archivo },
       etiquetas: this.arrayEtiquetas,
       articuloTieneCategoria: this.arrayCategorias,
       detalleArticulo: this.arrayAtributos,
