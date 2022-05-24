@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { PositionUser } from 'src/app/shared/class/PositionUser';
 import { RepositorioImg } from 'src/app/shared/helpers/RepositorioImg';
 import { UrlFront } from 'src/app/shared/routes/RoutesFront';
+import { DataFormProducts } from '../../helpers/DataFormProducts';
 import { ProductsService } from '../../services/products.service';
 
 @Component({
@@ -13,7 +15,9 @@ export class ListadoProductosComponent implements OnInit {
   public urlImg = RepositorioImg.urlRepositorio;
   constructor(
     private apiProducts: ProductsService, //PRODUCTS SERVIES
-    private _router: Router
+    private _router: Router,
+    private dataForm: DataFormProducts,
+    private position: PositionUser //POSITION USUARIO
   ) {}
   dataProducts: any; //ARRAY DE LOS PRODUCTOS
   key: string = 'id'; //ORRDER BY
@@ -21,11 +25,15 @@ export class ListadoProductosComponent implements OnInit {
   p: number = 1; //PAGINACION EN 1
   searchProducts = '';
   ngOnInit(): void {
-    this.getAllDataProducts();
+    this.position.getPositionUser();
+    this.getAllProducts();
   }
   //OBTENER TODOS LOS PRODUCTOS
-  getAllDataProducts() {
+  getAllProducts() {
     this.apiProducts.getDataProductos().subscribe((res) => {
+      this.apiProducts.addProductAdn(res);
+    });
+    this.apiProducts.listProductAdn.subscribe((res) => {
       this.dataProducts = res;
     });
   }
@@ -50,6 +58,20 @@ export class ListadoProductosComponent implements OnInit {
   irCrearProducto() {
     this._router.navigateByUrl(
       `${UrlFront.Manager.managerVendedor}/${UrlFront.Manager.vendedor}/${UrlFront.Manager.crearProducto}`
+    );
+  }
+  //GUARDAR EL PRODUCTO
+  guardarProduct() {
+    const form = this.dataForm.getDataFormProducts(
+      this.position.longitud,
+      this.position.latitud
+    );
+    this.apiProducts.postDataArticulo(form).subscribe((res) => {
+      this.dataForm.limpiarTodoForm();
+      this.getAllProducts();
+    });
+    this._router.navigateByUrl(
+      `${UrlFront.Manager.managerVendedor}/${UrlFront.Manager.vendedor}/${UrlFront.Manager.listadoProductos}`
     );
   }
 }

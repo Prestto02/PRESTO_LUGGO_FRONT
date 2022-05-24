@@ -1,0 +1,11 @@
+.color-groud {
+  background: #f9f9f9;
+}
+.btn-estilos {
+  background: #0075ff;
+  color: #fff;
+}
+.btn-estilos:hover {
+  background: #0567d6;
+  color: #fff;
+}

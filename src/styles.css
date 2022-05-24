@@ -44,7 +44,8 @@
 
 html {
   scroll-behavior: smooth;
-  background: #f1f3f6;
+ /*  background: #f1f3f6; */
+ background: #fff;
 }
 
 .modificColor.toast-success {

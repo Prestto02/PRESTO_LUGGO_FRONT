@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { PositionUser } from 'src/app/shared/class/PositionUser';
-import { UrlFront } from 'src/app/shared/routes/RoutesFront';
-import { DataFormProducts } from '../../helpers/DataFormProducts';
+import { ListadoProductosComponent } from '../listado-productos/listado-productos.component';
 import { BaseFormTamanoProducto } from './models/BaseFormTamano';
 import { BaseFormLogisticaProducto } from './models/BaseFormubicacion';
 
@@ -29,10 +27,9 @@ export class LogisticaProductoComponent implements OnInit {
 
   constructor(
     public formUbicacion: BaseFormLogisticaProducto,
-    private route: Router,
     private position: PositionUser, //POSITION USUARIO
     public formTamano: BaseFormTamanoProducto,
-    private dataForm: DataFormProducts
+    private componentListado: ListadoProductosComponent
   ) {}
 
   ngOnInit() {
@@ -169,23 +166,8 @@ export class LogisticaProductoComponent implements OnInit {
   clear() {
     this.overlays = [];
   }
-
+  //GUARDAR PRODUCTO
   guardarProduct() {
-    console.log(
-      this.dataForm.getDataFormProducts(
-        this.position.longitud,
-        this.position.latitud
-      )
-    );
-    this.dataForm.limpiarTodoForm();
-    console.log(
-      this.dataForm.getDataFormProducts(
-        this.position.longitud,
-        this.position.latitud
-      )
-    );
-    this.route.navigateByUrl(
-      `${UrlFront.Manager.managerVendedor}/${UrlFront.Manager.vendedor}/${UrlFront.Manager.listadoProductos}`
-    );
+    this.componentListado.guardarProduct();
   }
 }

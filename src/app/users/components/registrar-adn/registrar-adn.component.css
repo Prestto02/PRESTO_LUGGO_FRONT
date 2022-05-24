@@ -6,3 +6,26 @@
 .input-border {
   border-left: 0px;
 }
+* {
+  font-family: Cardium A-Medium;
+  background: #fff;
+}
+
+.estilo-text {
+  font-weight: 600;
+  font-size: 28px;
+}
+
+.estilo-subtitle {
+  font-weight: 400;
+  font-size: 20px;
+}
+
+.btn-estilos {
+  background: #0075ff;
+  color: #fff;
+}
+.btn-estilos:hover {
+  background: #0567d6;
+  color: #fff;
+}

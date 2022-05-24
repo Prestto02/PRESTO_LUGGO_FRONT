@@ -5,6 +5,8 @@ export class BaseFormColors {
   constructor(private formB: FormBuilder) {}
 
   formColors = this.formB.group({
+    idColor: 1,
+    idTamano: 3,
     colores: this.formB.array([]),
   });
   //TRANSFORMAR EN UN ARRAY LOS COLORES

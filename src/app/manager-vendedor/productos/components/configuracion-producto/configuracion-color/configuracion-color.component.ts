@@ -1,4 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { BaseFormConfigAtributos } from '../configuracion-atributos/models/BaseFormConfigAtributos';
+import { BaseFormConfigProducts } from '../models/BaseFormCongifProduct';
 import { BaseFormColors } from './models/BaseFormColors';
 import { ServicesColorService } from './services/services-color.service';
 
@@ -12,9 +14,11 @@ export class ConfiguracionColorComponent implements OnInit {
   @Input('url') url: string | null = null;
   arrayColores: any = [];
   arrayAtributosAny: any = [];
+  nameColor: string = '';
   constructor(
     private apiServiColor: ServicesColorService,
-    public formColor: BaseFormColors
+    public formColor: BaseFormColors,
+    private baseFormProductConfig: BaseFormConfigProducts
   ) {}
 
   ngOnInit(): void {
@@ -27,12 +31,31 @@ export class ConfiguracionColorComponent implements OnInit {
     });
   }
   //AGREGAR COLORES ITEMS AL ARRAY FORM
-  addColoresItems(colorHexadecimal: any, nameColor: any, e: any, id: any) {
+  addColoresItems(
+    colorHexadecimal: any,
+    nameColor: any,
+    e: any,
+    id: any,
+    nombre: any
+  ) {
     if (e.target.checked) {
       this.formColor.addColorVariacion(colorHexadecimal, nameColor, id); //AGREGO LOS COLORES
+      this.buscarAtributoVariacion(nombre, nameColor);
     } else {
       this.formColor.removeItemsChecked(nameColor); //SI DESACTIVA LOS COLORES LO ELIMINO
     }
+  }
+
+  //BUSCAR Y ASIGNAR PATCHVALUE SEGUN POSICION DEL ARREGLO
+  buscarAtributoVariacion(nombre: any, nameColor: any) {
+    const result = this.baseFormProductConfig.atributos.controls.findIndex(
+      (res) => {
+        return res.value.nombre == nombre;
+      }
+    );
+    this.baseFormProductConfig.atributos.at(result).patchValue({
+      escoger: nameColor,
+    });
   }
   //ELIMINAR LOS ITEMS DEL ARRAY FORM
   removeItemsChecked(i: any) {

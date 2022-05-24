@@ -23,7 +23,7 @@ export class BaseFormCategorias {
   addCategoriaItems(id: any, e: any) {
     if (e.target.checked) {
       //PREGUNTO SI EXISTE EL EVENTO CHECK: TRUE
-      this.getCategorias.push(new FormControl({ id_categoria: id }));
+      this.getCategorias.push(new FormControl({ idcategoria_articulo: id }));
       this.categoriaSeleccionadas.push(e.target.value);
     } else {
       this.eliminarItems(id);

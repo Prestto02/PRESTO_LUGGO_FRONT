@@ -9,6 +9,8 @@ import { UrlApi } from '../../../shared/routes/RoutesApi';
 export class ProductsService {
   private productDataSource = new BehaviorSubject<Array<any>>([]); //CREO El behaviorSUBJECT
   productDataPagination = this.productDataSource.asObservable(); //OBTENGO EL BEHAVIORSUBJECT
+  private ListProductAdn = new BehaviorSubject<Array<any>>([]);
+  listProductAdn = this.ListProductAdn.asObservable(); //OBTENGO EL BEHAVIORSUBJECT
   //CONSTRUCTOR
   dataScrollProduct: Array<any> = []; //PARA GUARDAR EN UN ARRAY LO QUE PIDA DE LA PAGINACION DE LA API
   constructor(private http: HttpClient) {}
@@ -40,6 +42,13 @@ export class ProductsService {
       `${UrlApi.ApiUrl}${UrlApi.traerProductosIndex}${nombre}`
     );
   }
+  //crear nuevo nombre de articulo
+  postNewArticuloNombre(form: any) {
+    return this.http.post<any>(
+      `${UrlApi.ApiUrl}${UrlApi.paraCrearArticulo}`,
+      form
+    );
+  }
   //POST DATA ARTICULOS
   postDataArticulo(form: any): Observable<any> {
     return this.http.post<any>(`${UrlApi.ApiUrl}${UrlApi.articulos}`, form);
@@ -49,7 +58,11 @@ export class ProductsService {
     this.dataScrollProduct.push(...dataObj);
     this.productDataSource.next(this.dataScrollProduct);
   }
-
+  //AGREGAR NUEVOS PRODUCTOS AL ADN
+  addProductAdn(obj: any) {
+    this.ListProductAdn.next(obj);
+  }
+  //DESUSCRIBIRSE
   unSuscribeObservable() {
     this.dataScrollProduct = [];
     this.productDataSource.next(this.dataScrollProduct);

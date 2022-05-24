@@ -2,5 +2,7 @@ body {
   background-color: #f1f3f6;
 }
 .color-container {
-  background-color: #f1f3f6;
+  /* background-color: #f1f3f6; */
+  background: #fff;
 }
+

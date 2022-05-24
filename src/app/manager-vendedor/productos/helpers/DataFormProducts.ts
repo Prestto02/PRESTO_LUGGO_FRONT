@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BaseFormCategorias } from '../../categorias/models/categorias.models';
 import { BaseFormConfigAtributos } from '../components/configuracion-producto/configuracion-atributos/models/BaseFormConfigAtributos';
+import { BaseFormColors } from '../components/configuracion-producto/configuracion-color/models/BaseFormColors';
 import { BaseFormEtiquetas } from '../components/create-products/form-etiquetas/models/BaseFormEtiquetas';
 import { BaseFormTamanoProducto } from '../components/logistica-producto/models/BaseFormTamano';
 import { BaseFormLogisticaProducto } from '../components/logistica-producto/models/BaseFormubicacion';
@@ -12,12 +13,14 @@ export class DataFormProducts {
   arrayEtiquetas: any = [];
   arrayAtributos: any = [];
   arrayUbicacion: any = [];
+  arrayImagenes: any = [];
   constructor(
     private formProduct: BaseFormProducts,
     private formCategoria: BaseFormCategorias,
     private formEtiquetas: BaseFormEtiquetas,
     private formAtributo: BaseFormConfigAtributos,
     private formTamano: BaseFormTamanoProducto,
+    public formColor: BaseFormColors,
     private formUbicacion: BaseFormLogisticaProducto
   ) {}
   //OBTENGO TODAS LAS CATEGORIAS
@@ -33,7 +36,7 @@ export class DataFormProducts {
     });
   }
   //GET ATRIBUTOS
-  getAtributos() {
+  getAtributosImagenes() {
     this.formAtributo.atributosVariacion.controls.map((res) => {
       this.arrayAtributos.push(res.value);
     });
@@ -72,22 +75,27 @@ export class DataFormProducts {
       this.formProduct.formProducts.get('caracteristicas')?.value;
     const marca = this.formProduct.formProducts.get('marca')?.value;
     const sku = this.formProduct.formProducts.get('sku')?.value;
-    return { descripcion, marca, sku, caracteristicas };
+    const id_nombre_articulo =
+      this.formProduct.formProducts.get('id_nombre_articulo')?.value;
+    return { descripcion, marca, sku, caracteristicas, id_nombre_articulo };
   }
   //PARA HACER EL POST A LA API
   getDataFormProducts(longitud: any, latitud: any) {
-    this.getAtributos();
+    this.getAtributosImagenes();
     this.getCategorias();
     this.getEtiquetas();
+    //this.getColors();
     const dimensiones = this.getUbicacion();
-    const { descripcion, sku, caracteristicas, marca } = this.getProducts();
+    const { descripcion, sku, caracteristicas, marca, id_nombre_articulo } =
+      this.getProducts();
     return {
+      id_nombre_articulo: id_nombre_articulo,
       descripcion_articulo: descripcion,
       sku: sku,
       caracteristicas: caracteristicas,
       marca: marca,
       etiquetas: this.arrayEtiquetas,
-      ArticuloTieneCategoria: this.arrayCategorias,
+      articuloTieneCategoria: this.arrayCategorias,
       detalleArticulo: this.arrayAtributos,
       logistica: { dimensiones, ubicacion: this.arrayUbicacion },
       longitud: longitud,

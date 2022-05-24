@@ -8,6 +8,7 @@ import { MarcaService } from '../../services/marca.service';
 import { Router } from '@angular/router';
 import { UrlFront } from 'src/app/shared/routes/RoutesFront';
 import { DataFormProducts } from '../../helpers/DataFormProducts';
+import { ProductsService } from '../../services/products.service';
 
 @Component({
   selector: 'app-create-products',
@@ -25,8 +26,9 @@ export class CreateProductsComponent implements OnInit {
     private serviModal: EditRegisterModalService, //SERVICES MODAL
     public formEtiqueta: BaseFormEtiquetas, //BASE FORM ETIQUETAS
     private apiMarca: MarcaService, //API MARCA
+    private apiProductServi: ProductsService,
     private router: Router, //ROUTER
-    private dateApi:DataFormProducts
+    private dateApi: DataFormProducts
   ) {}
 
   ngOnInit(): void {
@@ -51,7 +53,21 @@ export class CreateProductsComponent implements OnInit {
       `${UrlFront.Manager.managerVendedor}/${UrlFront.Manager.vendedor}/${UrlFront.Manager.listadoProductos}`
     );
   }
-/*   addAtributos(){
-    this.dateApi.getUbicacion();
-  } */
+  addAtributos() {
+    this.dateApi.getAtributosImagenes();
+  }
+  //CREAR NUEVO NOMBRE DE ARTICULO
+  crearNuevoNombreArticulo() {
+    const nombre = this.formB.formProducts.get('nombre_articulo')?.value;
+    const form = {
+      nombre_articulo: nombre,
+      latitud: this.position.latitud,
+      longitud: this.position.longitud,
+    };
+    this.apiProductServi.postNewArticuloNombre(form).subscribe((res) => {
+      this.formB.formProducts.patchValue({
+        id_nombre_articulo: res,
+      });
+    });
+  }
 }

@@ -56,4 +56,5 @@ export const ProductoModuleProviders = [
   ImgIconosComponent,
   CreateProductsComponent,
   BaseFormLogisticaProducto,
+  ListadoProductosComponent,
 ];

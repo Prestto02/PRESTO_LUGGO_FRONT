@@ -6,6 +6,7 @@ export class BaseFormProducts {
   //FORM PRODUCTOS
   formProducts = this.formB.group({
     id_product: [''],
+    id_nombre_articulo: ['', []],
     sku: ['', [Validators.pattern(/^[A-Za-z0-9_-]+$/)]], //EXPRESION REGULAR PARA NUMEROS LETRAS CON RAYAS SIN ESPACIOS
     nombre_articulo: [
       '',

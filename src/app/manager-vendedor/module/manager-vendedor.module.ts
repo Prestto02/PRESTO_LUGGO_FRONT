@@ -48,11 +48,12 @@ import { IndexMenuModule } from 'src/app/shared/components/index/module/index-me
     ErrorsExtensionsModule, //ERRORES
     DragDropModule, //DRAG AND DROP IMAGENES
     FooterIndexModule, //MODULE FOOTER INDEX
-    ProductModuleImport,//PRODUCTS MODULE IMPORTS
+    ProductModuleImport, //PRODUCTS MODULE IMPORTS
     IndexMenuModule, //FOOTER
     NgxPaginationModule, //PAGINATIONS
     OrderModule, //ORDER MODULE
   ],
+  exports: [CategoriasComponent],
   providers: [
     ProductoModuleProviders, //MODULE PROVIDERS PRODUCTOS
     BaseFormCategorias,

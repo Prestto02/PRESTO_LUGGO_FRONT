@@ -27,6 +27,7 @@ export const UrlApi = {
   verificarImg: 'api/multimedia/subiendo',
   categoriasrHijos: 'api/Familia/hijos/',
   categoriasPadres: 'api/categoria/padres',
+  paraCrearArticulo:'api/nombre_articulo',
   //Banco Y ADN
   banco: 'api/NombreBanco',
   registrarAdn: 'api/ADN',

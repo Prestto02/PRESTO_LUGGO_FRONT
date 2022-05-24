@@ -11,6 +11,9 @@ export class BaseFormConfigAtributos {
   get atributosVariacion() {
     return this.formConfigAtributos.controls['atributosVariacion'] as FormArray;
   }
+  get multimediAtributos() {
+    return this.formConfigAtributos.controls['multimedia'] as FormArray;
+  }
   //AÑADIR MAS ATRIBUTOS DE VARIACIONES
   addAtributosVariacion(nombre: any, descripcion: any) {
     let atributosForm = this.formB.group({
@@ -24,6 +27,10 @@ export class BaseFormConfigAtributos {
       ],
       StockItems: ['', [Validators.required, Validators.pattern(/^[0-9]+$/)]],
       StockMinimo: ['', [Validators.required, Validators.pattern(/^[0-9]+$/)]], //VALIDACIONES
+      atributes: this.formB.group({
+        id_Color: [45],
+        id_tamaño_articulo: [65],
+      }),
       multimedia: this.formB.array([], Validators.required),
     });
     this.atributosVariacion.push(atributosForm);
@@ -31,7 +38,7 @@ export class BaseFormConfigAtributos {
   //AGREGAR IMAGENES EN EL ARRAY
   addImagenes(id: any, imgProduct: any, imgTransfor: any, i: any) {
     let imgArray = this.formB.group({
-      /*       id: [id, [Validators.required]],
+      /*  id: [id, [Validators.required]],
       imgProductsIcons: [imgProduct, [Validators.required]], */
       archivo: [imgTransfor, [Validators.required]],
     });

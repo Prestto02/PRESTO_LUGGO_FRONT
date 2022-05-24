@@ -1,0 +1,181 @@
+<section class="container">
+  <div class="row text-start mb-4 mt-4">
+    <app-logo-luggo></app-logo-luggo>
+  </div>
+</section>
+<section class="container">
+  <app-position-stripper></app-position-stripper>
+  <div class="col-xl-12 col-xxl-12 mt-5 py-5">
+    <h1 class="estilo-text text-center">Sobre tu Negocio</h1>
+    <p class="estilo-subtitle text-center">registra los datos de tu tienda</p>
+  </div>
+  <form [formGroup]="formB.formNegocioAdn">
+    <div class="row card">
+      <div class="col-xl-12 col-xxl-12 col-sm-12 col-12 col-md-12 mt-3">
+        <div class="row">
+          <!-----NOMBRE TIENDA----->
+          <div class="col-xl-6 col-xxl-6 col-sm-6 col-6 col-md-6">
+            <div class="mb-3">
+              <label for="formNombre_Tienda" class="form-label fw-bolder">Nombre Tienda</label>
+              <input type="text" class="form-control" id="formNombre_Tienda" formControlName="Nombre_Tienda"
+                [class.is-invalid]="formB.formNegocioAdn.get('Nombre_Tienda')?.touched && formB.formNegocioAdn.get('Nombre_Tienda')?.invalid"
+                placeholder="Nombre del negocio">
+            </div>
+            <app-form-errors-container [forControl]="formB.formNegocioAdn.get('Nombre_Tienda')">
+              <app-message-error forErrorCode="required"></app-message-error>
+              <app-message-error forErrorCode="pattern" customMsg="No se admite caracteres especiales">
+              </app-message-error>
+            </app-form-errors-container>
+          </div>
+          <div class="col-xl-5 col-sm-6 col-md-5 col-xxl-5 col-6 border border-1 mt-4 color-groud">
+            <p>Ingresa el nombre de tu <b>Negocio. </b>¿Recién comienzas? No te preocupes, puedes ingresar un nombre
+              temporal ahora y cambiarlo más adelante.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-12 col-xxl-12 col-sm-12 col-12 col-md-12 mt-3">
+        <div class="row">
+          <!-----PAIS CIUDAD----->
+          <div class="col-xxl-3 col-xl-3 col-md-3 col-sm-3 col-3">
+            <!-------PIAS------->
+            <div class="mb-3">
+              <label for="formPais" class="form-label fw-bolder">Pais</label>
+              <select class="form-select" aria-label="Default select example" formControlName="Pais"
+                [class.is-invalid]="formB.formNegocioAdn.get('Pais')?.touched && formB.formNegocioAdn.get('Pais')?.invalid"
+                (change)="buscarCiudad($event);">
+                <option value="" selected>Seleccionar</option>
+                <option *ngFor="let pais of arrayPais" [value]="pais.codigo">{{pais.pais}}</option>
+              </select>
+            </div>
+            <app-form-errors-container [forControl]="formB.formNegocioAdn.get('Pais')">
+              <app-message-error forErrorCode="required"></app-message-error>
+            </app-form-errors-container>
+          </div>
+          <!-----CIUDAD----->
+          <div class="col-xl-3 col-xxl-3 col-sm-3 col-3 col-md-3">
+            <div class="mb-3">
+              <label for="ciudad" class="form-label fw-bolder">Ciudad</label>
+              <select class="form-select" aria-label="Default select example" formControlName="Ciudad"
+                [class.is-invalid]="formB.formNegocioAdn.get('Ciudad')?.touched && formB.formNegocioAdn.get('Ciudad')?.invalid">
+                <option value="" selected>Seleccionar</option>
+                <option *ngFor="let ciudad of arrayCiudad" [value]="ciudad.ciudad">{{ciudad.ciudad}}</option>
+              </select>
+            </div>
+            <app-form-errors-container [forControl]="formB.formNegocioAdn.get('Ciudad')">
+              <app-message-error forErrorCode="required"></app-message-error>
+            </app-form-errors-container>
+          </div>
+          <div class="col-xl-5 col-sm-6 col-md-5 col-xxl-5 col-6 border border-1 mt-4 color-groud">
+            <p>¿Desde dónde vas a vender? Ingresa tus datos de ubicación.</p>
+          </div>
+        </div>
+      </div>
+      <!-----DIRECION----->
+      <div class="col-xxl-12 col-xl-12 col-sm-12 col-md-12 col-12 mt-3">
+        <div class="row">
+          <div class="col-xl-6 col-xxl-6 col-sm-6 col-md-6 col-6">
+            <div class="mb-3">
+              <label for="formDirecicon" class="form-label fw-bolder">Direccion</label>
+              <input type="text" class="form-control" id="formDirecicon" formControlName="Direccion"
+                placeholder="Direccion"
+                [class.is-invalid]="formB.formNegocioAdn.get('Direccion')?.touched && formB.formNegocioAdn.get('Direccion')?.invalid">
+            </div>
+            <app-form-errors-container [forControl]="formB.formNegocioAdn.get('Direccion')">
+              <app-message-error forErrorCode="required"></app-message-error>
+              <app-message-error forErrorCode="pattern" customMsg="No se admite caracteres especiales">
+              </app-message-error>
+            </app-form-errors-container>
+          </div>
+          <div class="col-xl-5 col-sm-6 col-md-5 col-xxl-5 col-6 border border-1 mt-4 color-groud">
+            <p>Ingresa tu dirección exacta, puedes ayudarte con una planilla de servicio básico. ¿No sabes como llenar
+              este campo? Haz clic aquí</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-12 col-xxl-12 col-sm-12 col-12 col-md-12 mt-3">
+        <div class="row">
+          <div class="col-xl-3 col-xxl-3 col-sm-3 col-3">
+            <!-----SUCURSALES----->
+            <div class="mb-3">
+              <label for="formSurcursales" class="form-label fw-bolder">¿Tienes más locales?</label>
+              <select class="form-select" aria-label="Default select example" id="formSurcursales"
+                placeholder="Sucursales" formControlName="Sucursales"
+                [class.is-invalid]="formB.formNegocioAdn.get('Sucursales')?.touched && formB.formNegocioAdn.get('Sucursales')?.invalid">
+                <option value="" selected>Seleccionar</option>
+                <option value="true">Si</option>
+                <option value="false">No</option>
+              </select>
+            </div>
+            <app-form-errors-container [forControl]="formB.formNegocioAdn.get('Sucursales')">
+              <app-message-error forErrorCode="required"></app-message-error>
+            </app-form-errors-container>
+          </div>
+          <div class="col-xl-3 col-xxl-3 col-sm-3 col-3">
+            <!-----TELEFONO----->
+            <div class="mb-3">
+              <label for="formTelefono" class="form-label fw-bolder">Telefono</label>
+              <input type="text" class="form-control" id="formTelefono" formControlName="Telefono_contacto"
+                placeholder="Telefono"
+                [class.is-invalid]="formB.formNegocioAdn.get('Telefono_contacto')?.touched && formB.formNegocioAdn.get('Telefono_contacto')?.invalid">
+            </div>
+            <app-form-errors-container [forControl]="formB.formNegocioAdn.get('Telefono_contacto')">
+              <app-message-error forErrorCode="required"></app-message-error>
+              <app-message-error forErrorCode="minlength" customMsg="Máximo 10 digitos"></app-message-error>
+              <app-message-error forErrorCode="pattern" customMsg="Solo numeros"></app-message-error>
+            </app-form-errors-container>
+          </div>
+          <div class="col-xl-5 col-sm-6 col-md-5 col-xxl-5 col-6 border border-1 mt-4 color-groud">
+            <p>Registra si tienes sucursales, también puedes ingresar más de un número de contacto.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-12 col-xxl-12 col-sm-12 col-12 col-md-12 mt-3 mb-4">
+        <div class="row">
+          <div class="col-xl-6 col-xxl-6 col-sm-6 col-md-6 col-6">
+            <!-----Cómo describes tu tienda----->
+            <div class="mb-3">
+              <label for="formDescripcion-Outline" class="form-label fw-bolder">Cómo describes tu tienda</label>
+              <input type="text" class="form-control" id="formDescripcion-Outline" formControlName="descripcion_outline"
+                placeholder="Un lugar donde comprar."
+                [class.is-invalid]="formB.formNegocioAdn.get('descripcion_outline')?.touched && formB.formNegocioAdn.get('descripcion_outline')?.invalid">
+            </div>
+            <app-form-errors-container [forControl]="formB.formNegocioAdn.get('descripcion_outline')">
+              <app-message-error forErrorCode="required"></app-message-error>
+              <app-message-error forErrorCode="pattern" customMsg="No se admite caracteres especiales">
+              </app-message-error>
+            </app-form-errors-container>
+          </div>
+          <div class="col-xl-5 col-sm-6 col-md-5 col-xxl-5 col-6 border border-1 mt-4 color-groud">
+            <p>¡Aquí ponte creativo! Describe lo mejor de tu Negocio. Puedes apoyarte viendo la descripción de estas
+              grandes marcas.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-12 col-xxl-12 col sm 12 col-12 col-md-12">
+        <div class="row">
+          <div class="col-xl-6 col-xxl-6 col-sm 6 col-md-6 col-6">
+            <div class="mb-3">
+              <label for="formCategorias" class="form-label fw-bolder">¿Qué vas a vender?</label>
+              <app-categorias></app-categorias>
+            </div>
+          </div>
+          <div class="col-xl-5 col-sm-6 col-md-5 col-xxl-5 col-6 border border-1 mt-4 color-groud">
+            <p>Escoge todas las categorías que vas a vender.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</section>
+
+<section class="container-fluid mt-3">
+  <div class="modal-footer">
+    <button type="button" class="btn btn-estilos">Continuar <svg width="7" height="11" viewBox="0 0 7 11" fill="none"
+        xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M6.66853 4.75822L1.91713 0.310303C1.81296 0.211979 1.68902 0.133936 1.55246 0.0806779C1.4159 0.0274197 1.26943 0 1.1215 0C0.973565 0 0.827095 0.0274197 0.690538 0.0806779C0.553981 0.133936 0.430041 0.211979 0.325865 0.310303C0.11715 0.506853 0 0.772733 0 1.04987C0 1.32701 0.11715 1.59289 0.325865 1.78944L4.29283 5.50303L0.325865 9.21662C0.11715 9.41317 0 9.67905 0 9.95619C0 10.2333 0.11715 10.4992 0.325865 10.6958C0.430575 10.793 0.554757 10.8699 0.69129 10.9221C0.827822 10.9743 0.97402 11.0008 1.1215 11C1.26898 11.0008 1.41518 10.9743 1.55171 10.9221C1.68824 10.8699 1.81242 10.793 1.91713 10.6958L6.66853 6.24785C6.77356 6.15033 6.85693 6.0343 6.91382 5.90647C6.97071 5.77863 7 5.64152 7 5.50303C7 5.36455 6.97071 5.22743 6.91382 5.0996C6.85693 4.97176 6.77356 4.85574 6.66853 4.75822Z"
+          fill="white" />
+      </svg>
+    </button>
+  </div>
+</section>

@@ -10,9 +10,9 @@
           <!----PARA SUBIR LOS COLORES DE LOS ITEMS--->
           <div class="col-xl-1 col-xxl-1 col-sm-1 col-md-1 col-1" *ngFor="let colores of arrayColores">
             <div class="form-check">
-              <input class="form-check-input" [style]="colores.codigoHexagedecima" type="checkbox"
+              <input class="form-check-input" [style]="colores.codigoHexagedecima" type="radio"
                 [id]="'checkbox'+colores.id"
-                (click)="addColoresItems(colores.codigoHexagedecima,colores.nombre_color,$event,colores.id)">
+                (click)="addColoresItems(colores.codigoHexagedecima,colores.nombre_color,$event,colores.id,nombre)">
             </div>
           </div>
         </div>

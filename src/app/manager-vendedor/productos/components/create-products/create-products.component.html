@@ -113,7 +113,7 @@
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" (click)="irProducto();">Cancelar</button>
                   <button class="btn btn-primary collapsed" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo"
+                    data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo" (click)="crearNuevoNombreArticulo()"
                     [disabled]="formB.formProducts.invalid || formEtiqueta.formEtiquetas.invalid || formCategoria.formCategorias.invalid">Continuar
                     &nbsp;<svg width="7" height="20" viewBox="0 0 7 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path
@@ -149,6 +149,6 @@
 </section>
 
 <button class="btn btn-primary collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo"
-  aria-expanded="true" aria-controls="collapseTwo">TWO</button>
+  aria-expanded="true" aria-controls="collapseTwo" (click)="addAtributos()">TWO</button>
 <!-- <button class="btn btn-primary collapsed" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false"
   aria-controls="collapseFour" (click)="addAtributos()">THREE</button> -->
