@@ -16,20 +16,38 @@
         <div class="col-xl-6 col-xxl-6">
           <div class="mb-3">
             <label for="formDondeEres" class="form-label">¿De dónde eres?</label>
-            <input type="text" id="formDondeEres" class="form-control" placeholder="Guayaquil" />
+            <input type="text" id="formDondeEres" formControlName="DondeEres" class="form-control"
+              placeholder="Guayaquil"
+              [class.is-invalid]="formB.formTerminar.get('DondeEres')?.touched && formB.formTerminar.get('DondeEres')?.invalid" />
           </div>
+          <app-form-errors-container [forControl]="formB.formTerminar.get('DondeEres')">
+            <app-message-error forErrorCode="required"></app-message-error>
+            <app-message-error forErrorCode="pattern" customMsg="No se admite caracteres especiales">
+            </app-message-error>
+          </app-form-errors-container>
         </div>
         <div class="col-xl-6 col-xxl-6">
           <div class="mb-3">
             <label for="FormDateAdn" class="form-label">¿Cuándo naciste?</label>
-            <input type="date" id="FormDateAdn" class="form-control" placeholder="11/10/2020" />
+            <input type="date" id="FormDateAdn" formControlName="FechaNacimiento" class="form-control"
+              placeholder="11/10/2020"
+              [class.is-invalid]="formB.formTerminar.get('FechaNacimiento')?.touched && formB.formTerminar.get('FechaNacimiento')?.invalid" />
           </div>
+          <app-form-errors-container [forControl]="formB.formTerminar.get('FechaNacimiento')">
+            <app-message-error forErrorCode="required"></app-message-error>
+          </app-form-errors-container>
         </div>
         <div class="col-xl-12 col-xxl-12">
           <div class="mb-3">
             <label for="formArea" class="form-label">¿Cómo te describes?</label>
-            <textarea class="form-control tamano-area" id="formArea" placeholder="Soy un emprendedor..."></textarea>
+            <textarea class="form-control tamano-area" id="formArea" formControlName="ComoTeDescribes"
+              placeholder="Soy un emprendedor..."></textarea>
           </div>
+          <app-form-errors-container [forControl]="formB.formTerminar.get('ComoTeDescribes')">
+            <app-message-error forErrorCode="required"></app-message-error>
+            <app-message-error forErrorCode="pattern" customMsg="No se admite caracteres especiales">
+            </app-message-error>
+          </app-form-errors-container>
         </div>
         <div class="col-xl-12 col-xxl-12 mb-3">
           <p class="text-center text-tamano">Esto solo es para nuestra información y no afectará a la apertura de tu

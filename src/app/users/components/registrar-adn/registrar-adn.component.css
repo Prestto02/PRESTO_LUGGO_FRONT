@@ -29,3 +29,6 @@
   background: #0567d6;
   color: #fff;
 }
+.bg-body{
+  z-index: 10;
+}
