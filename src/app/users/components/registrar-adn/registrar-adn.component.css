@@ -7,7 +7,7 @@
   border-left: 0px;
 }
 * {
-  font-family: Cardium A-Medium;
+  font-family: Cardium B-Medium;
   background: #fff;
 }
 
@@ -17,8 +17,9 @@
 }
 
 .estilo-subtitle {
-  font-weight: 400;
+  font-weight: 300;
   font-size: 20px;
+  margin-top: -13px;
 }
 
 .btn-estilos {
@@ -31,4 +32,8 @@
 }
 .bg-body{
   z-index: 10;
+}
+
+input::placeholder {
+  color: rgba(0, 0, 0, 0.178);
 }

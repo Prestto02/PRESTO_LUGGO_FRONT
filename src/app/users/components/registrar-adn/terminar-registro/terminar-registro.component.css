@@ -2,6 +2,9 @@
   font-size: 15px;
 }
 
-.tamano-area{
+.tamano-area {
   height: 111px;
+}
+* {
+  font-family: Cardium B-Regular;
 }
