@@ -39,4 +39,17 @@ export class BaseFormNegocioAdn {
       ],
     ],
   });
+
+  getBooleanSucursales() {
+    const sucursales_boolean = this.formNegocioAdn.get('Sucursales')?.value;
+    if (sucursales_boolean === 'true') {
+      this.formNegocioAdn.patchValue({
+        Sucursales: true,
+      });
+    } else {
+      this.formNegocioAdn.patchValue({
+        Sucursales: false,
+      });
+    }
+  }
 }

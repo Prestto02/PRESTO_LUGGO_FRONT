@@ -19,4 +19,20 @@ export class BaseFormPagosAdn {
     Tipo_cuenta: ['', [Validators.required]],
     Numero_cuenta: ['', [Validators.required, Validators.pattern(/^[0-9]+$/)]],
   });
+  //TRANFORMAR A NUMEOR SEGUN LA ELECCION DE USUARIO DE SU TIPO DE CUENTA
+  //1 CORRIENTE
+  //2 AHORROS
+
+  getByteTipoCuenta() {
+    const tipo_cuenta = this.formPagoAdn.get('Tipo_cuenta')?.value;
+    if (tipo_cuenta === 1) {
+      this.formPagoAdn.patchValue({
+        Tipo_cuenta: 1,
+      });
+    } else if (tipo_cuenta === 2) {
+      this.formPagoAdn.patchValue({
+        Tipo_cuenta: 2,
+      });
+    }
+  }
 }

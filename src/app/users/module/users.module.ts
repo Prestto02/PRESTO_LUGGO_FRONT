@@ -24,6 +24,7 @@ import { BaseFormPagosAdn } from '../components/registrar-adn/models/BaseFormPag
 import { ManagerVendedorModule } from 'src/app/manager-vendedor/module/manager-vendedor.module';
 import { TerminarRegistroComponent } from '../components/registrar-adn/terminar-registro/terminar-registro.component';
 import { BaseFormTerminarAdn } from '../components/registrar-adn/models/BaseFormTerminar';
+import { DataFormAdn } from '../components/registrar-adn/helpers/DataFormAdnUsers';
 
 @NgModule({
   declarations: [
@@ -55,6 +56,7 @@ import { BaseFormTerminarAdn } from '../components/registrar-adn/models/BaseForm
     BaseFormPagosAdn,
     BaseFormNegocioAdn,
     BaseFormTerminarAdn,
+    DataFormAdn,
   ],
 })
 export class UsersModule {}

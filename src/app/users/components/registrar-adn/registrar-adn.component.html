@@ -3,19 +3,23 @@
     <app-logo-luggo></app-logo-luggo>
   </div>
 </section>
+<!------ACORDION PARA LOS PASOS------>
 <div class="accordion" id="accordionExample">
   <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
     <div class="container">
       <div class="row">
-        <app-position-stripper></app-position-stripper>
+        <app-position-stripper [width]="'width:0%;'"
+          [paso1]="'position-absolute top-0 start-0 translate-middle btn btn-sm btn-primary rounded-pill'">
+        </app-position-stripper>
       </div>
     </div>
-
+    <!----- RAYA QUE VIENE BAJO DEL STRIPPER PASOS---------->
     <section class="container-fluid">
       <hr class="border border-1 bg-dark w-100">
     </section>
+    <!------FORMULARIO------>
     <section class="container">
-      <form [formGroup]="formB.formAdn" (ngSubmit)="guardarAdn();">
+      <form [formGroup]="formB.formAdn">
         <div class="row">
           <div class="col-xl-12 col-xxl-12 mt-5">
             <h1 class="estilo-text text-center">Cuéntanos todo sobre ti</h1>
@@ -129,7 +133,7 @@
               <!-----RAZON SOCIAL----->
               <div class="col-xl-8 col-xxl-8 col-sm-12 col-12 col-md-4 mx-auto">
                 <div class="mb-3">
-                  <label for="formRazon_Social" class="form-label fw-bolder">Razon social</label>
+                  <label for="formRazon_Social" class="form-label fw-bolder">Razón social</label>
                   <input type="text" class="form-control" id="formRazon_Social" formControlName="Razon_Social"
                     placeholder="Pepito de los palotes S.A"
                     [class.is-invalid]="formB.formAdn.get('Razon_Social')?.touched && formB.formAdn.get('Razon_Social')?.invalid">
@@ -144,7 +148,7 @@
                 <div class="mb-3">
                   <label for="formInicioActividades" class="form-label fw-bolder">¿Cuándo iniciastes tus
                     actividades?</label>
-                  <input type="text" class="form-control" id="formInicioActividades"
+                  <input type="date" class="form-control" id="formInicioActividades"
                     formControlName="Inicio_actividades" placeholder="13/12/2022"
                     [class.is-invalid]="formB.formAdn.get('Inicio_actividades')?.touched && formB.formAdn.get('Inicio_actividades')?.invalid">
                 </div>
@@ -164,6 +168,7 @@
       <div class="modal-footer">
         <button type="button" class="btn btn-estilos" type="button" data-bs-toggle="collapse"
           data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">Continuar
+          &nbsp;
         </button>
       </div>
     </section>
