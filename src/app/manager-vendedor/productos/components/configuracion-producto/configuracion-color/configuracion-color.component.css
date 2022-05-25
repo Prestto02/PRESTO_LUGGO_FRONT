@@ -21,3 +21,9 @@
   height: 15px;
   border-radius: 4px;
 }
+.badge-rounded {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 20px;
+  border: 1px solid #000;
+}

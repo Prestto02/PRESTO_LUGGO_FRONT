@@ -9,11 +9,11 @@
       <!-------FORMULARIO DE ATRIBUTOS------>
       <form [formGroup]="formAtributo.formConfigProduct">
         <div class="row">
-          <div class="col-xl-2 col-xxl-2 col-sm-12 col-md-2 col-12">
+          <div class="col-xl-2 col-xxl-2 col-sm-12 col-md-2 col-12 mb-5">
             <div class="dropdown">
               <button class="btn col-xxl-12 col-sm-12 col-md-12 col-12 col-xl-12 btn-light dropdown-toggle"
                 type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
-                Atributos
+                Añadir Atributos
               </button>
               <ul class="dropdown-menu dropdown-menu-white" aria-labelledby="dropdownMenuButton2">
                 <li *ngFor="let atributos of arrayAtributos; let i = index"><input class="form-check-input me-1"
@@ -26,39 +26,45 @@
               <app-message-error forErrorCode="required"></app-message-error>
             </app-form-errors-container>
           </div>
+          <div class="col-xl-8 col-xxl-8 col-md-8 col-sm-8 col-12 border border-1 mx-auto mb-5">
+            <p class="text-center">Añade todas las opciones que ofreces. Tus compradores los verán en el orden en que
+              aparecen aquí.</p>
+          </div>
           <!----------ARRAY DE ATRIBUTOS----------->
           <ng-container formArrayName="Atributos">
             <ng-container *ngFor="let atributosForm of formAtributo.atributos.controls; let i=index;">
               <ng-container [formGroupName]="i">
-                <div class="col-xl-2 col-xxl-2 col-sm-12 col-12 col-md-2 mx-1">
-                  <div class="row position-relative">
-                    <label for="escogerFloating" class="form-label">{{atributosForm.get('nombre')?.value}}</label>
-                    <div class="input-group mb-3">
-                      <input type="text" class="form-control " id="escogerFloating" formControlName="escoger"
-                        id="floatingEscoger" placeholder="{{atributosForm.get('nombre')?.value+''}}"
-                        aria-describedby="floatingEscoger"
-                        [class.is-invalid]="atributosForm.get('escoger')?.touched && atributosForm.get('escoger')?.invalid">
-                        <app-configuracion-color [nombre]="atributosForm.get('nombre')?.value"
-                          [url]="atributosForm.get('url')?.value"></app-configuracion-color>
+                <div class="col-xl-12 col-xxl-12 col-sm-12 col-12 col-md-12 card">
+                  <div class="row position-relative mt-3 mx-2">
+
+                    <div class="col-xl-3 col-xxl-3 col-sm-12 col-md-3 col-3">
+                      <div class="row">
+                        <div class="col-xl-12 col-xxl-12 col-sm-12 col-md-12 col-12">
+                          <label for="escogerFloating"
+                            class="form-label mb-3">{{atributosForm.get('nombre')?.value}}</label>
+                        </div>
+                        <div class="col-xl-12 col-xxl-12 col-sm-12 col-md-12 col-12">
+                          <app-configuracion-color [nombre]="atributosForm.get('nombre')?.value"
+                            [url]="atributosForm.get('url')?.value"></app-configuracion-color>
+                        </div>
+                      </div>
                     </div>
-                    <app-form-errors-container [forControl]="atributosForm.get('escoger')">
-                      <app-message-error forErrorCode="required"></app-message-error>
-                      <app-message-error forErrorCode="pattern" customMsg="No se acepta: <>|?¿''{}[]">
-                      </app-message-error>
-                    </app-form-errors-container>
-                    <label for="floatingDescripcion" class="form-label">Descripcion del
-                      {{atributosForm.get('nombre')?.value}}</label>
-                    <div class="input-group">
-                      <input type="text" class="form-control" id="floatingDescripcion" formControlName="descripcion"
-                        id="floatingEscoger" placeholder="Camisa verde o grande " aria-describedby="floatingEscoger"
-                        [class.is-invalid]="atributosForm.get('descripcion')?.touched && atributosForm.get('descripcion')?.invalid">
-                      <div id="floatingEscoger" class="form-text">Ejemplo: Blanca XL, Verde SM, etc.</div>
+
+                    <div class="col-xl-3 -col-xxl-3 col-sm-12 col-md-3 col-3">
+                      <label for="floatingDescripcion" class="form-label">Descripcion del
+                        {{atributosForm.get('nombre')?.value}}</label>
+                      <div class="input-group">
+                        <input type="text" class="form-control" id="floatingDescripcion" formControlName="descripcion"
+                          id="floatingEscoger" placeholder="Camisa verde o grande " aria-describedby="floatingEscoger"
+                          [class.is-invalid]="atributosForm.get('descripcion')?.touched && atributosForm.get('descripcion')?.invalid">
+                        <div id="floatingEscoger" class="form-text">Ejemplo: Blanca XL, Verde SM, etc.</div>
+                      </div>
+                      <app-form-errors-container [forControl]="atributosForm.get('descripcion')">
+                        <app-message-error forErrorCode="required"></app-message-error>
+                        <app-message-error forErrorCode="pattern" customMsg="No se acepta: <>|?¿''{}[]">
+                        </app-message-error>
+                      </app-form-errors-container>
                     </div>
-                    <app-form-errors-container [forControl]="atributosForm.get('descripcion')">
-                      <app-message-error forErrorCode="required"></app-message-error>
-                      <app-message-error forErrorCode="pattern" customMsg="No se acepta: <>|?¿''{}[]">
-                      </app-message-error>
-                    </app-form-errors-container>
                   </div>
                 </div>
               </ng-container>
@@ -74,9 +80,9 @@
     </div>
   </div>
   <!--------COMPONENTES COLORES, TAMAÑO, CAPACIDAD---------->
-  <div class="contianer-fluid mt-3">
+  <!--   <div class="contianer-fluid mt-3">
     <app-configuracion-atributos></app-configuracion-atributos>
-  </div>
+  </div> -->
   <!-------CONTINUAR--------->
   <div class="modal-footer mb-4">
     <button type="button" class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#collapseOne"
@@ -91,3 +97,24 @@
       </svg></button>
   </div>
 </div>
+
+
+
+
+<!-- COLOR DISEÑO 2 -->
+<!--                     <div class="col-xl-3 -col-xxl-3 col-sm-12 col-md-3 col-3">
+                      <label for="escogerFloating" class="form-label">{{atributosForm.get('nombre')?.value}}</label>
+                      <div class="input-group mb-3">
+                        <input type="text" class="form-control " id="escogerFloating" formControlName="escoger"
+                          id="floatingEscoger" placeholder="{{atributosForm.get('nombre')?.value+''}}"
+                          aria-describedby="floatingEscoger"
+                          [class.is-invalid]="atributosForm.get('escoger')?.touched && atributosForm.get('escoger')?.invalid">
+                        <app-configuracion-color [nombre]="atributosForm.get('nombre')?.value"
+                          [url]="atributosForm.get('url')?.value"></app-configuracion-color>
+                      </div>
+                      <app-form-errors-container [forControl]="atributosForm.get('escoger')">
+                        <app-message-error forErrorCode="required"></app-message-error>
+                        <app-message-error forErrorCode="pattern" customMsg="No se acepta: <>|?¿''{}[]">
+                        </app-message-error>
+                      </app-form-errors-container>
+                    </div> -->

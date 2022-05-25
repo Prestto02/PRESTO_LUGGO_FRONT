@@ -31,9 +31,7 @@ export class TerminosCondicionesComponent implements OnInit, OnDestroy {
     private router: Router,
     private apiTermsCondition: TerminosCondicionesService
   ) {}
-  ngOnDestroy(): void {
-    console.log('destruir');
-  }
+  ngOnDestroy(): void {}
 
   ngOnInit(): void {
     this.position.getPositionUser();
@@ -55,7 +53,7 @@ export class TerminosCondicionesComponent implements OnInit, OnDestroy {
   }
   //GUARDAR ADN
   guardarAdn() {
-    /*     const form = this.postData.getFormData(
+    const form = this.postData.getFormData(
       this.position.latitud,
       this.position.longitud
     );
@@ -69,10 +67,6 @@ export class TerminosCondicionesComponent implements OnInit, OnDestroy {
         `/${UrlFront.ActivarCuenta.cuenta}/${UrlFront.ActivarCuenta.mensajeAlCorreo}`,
         form.user,
       ]); //ENVIO EL USUARIO A LA ACTIVACION DEL CORREO
-    }); */
-    this.router.navigate([
-      `/${UrlFront.ActivarCuenta.cuenta}/${UrlFront.ActivarCuenta.mensajeAlCorreo}`,
-      'asdas@jsadas',
-    ]);
+    });
   }
 }

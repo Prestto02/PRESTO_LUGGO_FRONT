@@ -10,7 +10,7 @@
       </ng-container>
       <input type="text" class="form-control border-input" formControlName="nameCategoria"
         placeholder="Buscar categorias" aria-label="Recipient's username" id="floatingCategorias"
-        aria-describedby="button-addon1" (focus)="categoriaFocus=true">
+        aria-describedby="button-addon1" title="hola mundo">
       <app-form-errors-container [forControl]="formB.formCategorias.get('ArticuloTieneCategoria')">
         <app-message-error forErrorCode="required" customMsg="Al menos escoja una categoría"></app-message-error>
       </app-form-errors-container>
@@ -19,7 +19,7 @@
       <div class="border bg-white w-100 position-absolute">
         <div class="form-check border-bottom"
           *ngFor=" let categorias of categoriasItems | FilterCategorias:formB.formCategorias.get('nameCategoria')?.value">
-          <input class="form-check-input" type="checkbox" [id]="categorias.id"
+          <input class="form-check-input" type="checkbox" [id]="categorias.id" [checked]="categorias.selected"
             (change)="onChangeCheckBox(categorias.id,$event)" [value]="categorias.name">
           <label class="form-check-label" [for]="categorias.id">
             {{categorias.name}}

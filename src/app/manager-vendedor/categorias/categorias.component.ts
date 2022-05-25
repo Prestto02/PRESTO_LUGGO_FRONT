@@ -17,9 +17,11 @@ export class CategoriasComponent implements OnInit {
     private apiCategoria: CategoriasService,
     private eRef: ElementRef
   ) {}
+
   ngOnInit(): void {
     this.getAllCategorias();
   }
+
   //OBTENER TODAS LAS CATEGORIAS
   getAllCategorias() {
     this.apiCategoria.getAllCategoriasPadres().subscribe((res) => {
@@ -29,6 +31,10 @@ export class CategoriasComponent implements OnInit {
   //SETEAR EL NUEVO ELEMENTO EN EL ARRAY
   onChangeCheckBox(id: any, e: any) {
     this.formB.addCategoriaItems(id, e);
+    const idI = this.categoriasItems.filter((res: any) => {
+      return res.id === id;
+    }); //PARA CAMBIAR LAS CATEGORIAS SELECTED
+    idI[0].selected = true; //PARCHEADO
   }
   //DETECTAR CLICK FUERA DEL COMPONENTE
   @HostListener('document:click', ['$event']) clickout(event: any) {
