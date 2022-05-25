@@ -25,6 +25,7 @@ import { ManagerVendedorModule } from 'src/app/manager-vendedor/module/manager-v
 import { TerminarRegistroComponent } from '../components/registrar-adn/terminar-registro/terminar-registro.component';
 import { BaseFormTerminarAdn } from '../components/registrar-adn/models/BaseFormTerminar';
 import { DataFormAdn } from '../components/registrar-adn/helpers/DataFormAdnUsers';
+import { TerminosCondicionesComponent } from '../components/registrar-adn/terminos-condiciones/terminos-condiciones.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { DataFormAdn } from '../components/registrar-adn/helpers/DataFormAdnUser
     SobreTuNegocioComponent,
     TusPagosComponent,
     TerminarRegistroComponent,
+    TerminosCondicionesComponent,
   ],
   imports: [
     UsersRoutingModule,

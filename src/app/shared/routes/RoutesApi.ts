@@ -27,7 +27,7 @@ export const UrlApi = {
   verificarImg: 'api/multimedia/subiendo',
   categoriasrHijos: 'api/Familia/hijos/',
   categoriasPadres: 'api/categoria/padres',
-  paraCrearArticulo:'api/nombre_articulo',
+  paraCrearArticulo: 'api/nombre_articulo',
   //Banco Y ADN
   banco: 'api/NombreBanco',
   registrarAdn: 'api/ADN',
@@ -49,4 +49,7 @@ export const UrlApi = {
   traerProductosIndex: 'api/Buscador/',
   productos: '',
   carrito: '',
+
+  //TERMINOS Y CONDIONCES
+  terminosCondiciones: 'api/terminoCondicion/',
 };

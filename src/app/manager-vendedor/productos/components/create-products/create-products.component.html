@@ -127,20 +127,38 @@
                 </div>
                 <!-------RESTRICCIONES Y DISPONIBILIDAD----->
                 <div class="row">
-                  <!-------APP CATEGORIAS-------->
+                  <!-------RESTRICCIONES-------->
                   <div class="col-xl-6 col-sm-6 col-md-6 col-xxl-6 col-6">
-                    <input type="text" />
+                    <div class="mb-3">
+                      <label for="forRestricciones">Restricciones</label>
+                      <select id="forRestricciones" class="form-select" formControlName="Restricciones">
+                        <option value="Apto para todo público">Apto para todo público</option>
+                        <option value="Sólo para mayores de 18 años">Sólo para mayores de 18 años</option>
+                      </select>
+                    </div>
                   </div>
-                  <!----------FORM ETIQUETAS----------->
+                  <!----------DISPONIBILIDAD----------->
                   <div class="col-xl-6 col-sm-6 col-md-6 col-xxl-6 col-6 position-relative">
-                    <input type="text" />
+                    <div class="mb-3">
+                      <label for="forDisponibilidad">Disponibilidad</label>
+                      <select id="forDisponibilidad" class="form-select" formControlName="Disponibilidad">
+                        <option value="Inmediata">Inmediata</option>
+                        <option value="Bajo pedido">Bajo pedido</option>
+                      </select>
+                    </div>
                   </div>
                 </div>
                 <!-------GARANTIA----->
                 <div class="row">
                   <!-------APP CATEGORIAS-------->
                   <div class="col-xl-6 col-sm-6 col-md-6 col-xxl-6 col-6">
-                    <input type="text" />
+                    <div class="mb-3">
+                      <label for="forDisponibilidad">Garantía</label>
+                      <select id="forDisponibilidad" class="form-select" formControlName="Disponibilidad">
+                        <option value="Si">Si</option>
+                        <option value="No">No</option>
+                      </select>
+                    </div>
                   </div>
                   <!----------FORM ETIQUETAS----------->
                   <div class="col-xl-6 col-sm-6 col-md-6 col-xxl-6 col-6 position-relative">
