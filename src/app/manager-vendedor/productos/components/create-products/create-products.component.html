@@ -63,16 +63,27 @@
                       </app-form-errors-container>
                     </div>
                   </div>
-                  <div class="col-xl-3">
-                    <div class="form-floating mb-3">
-                      <select class="form-select is-invalid" id="floatingSelect" formControlName="marca"
+                  <!------MARCA--------->
+                  <div class="col-xl-3 position-relative">
+                    <div class="form-floating">
+                      <input type="text" formControlName="marca" class="form-control" id="floatingMarca"
+                        placeholder="Nike" (keyup)="onKeyPres($event);"
+                        [class.is-invalid]="formB.formProducts.get('marca')?.touched && formB.formProducts.get('marca')?.invalid" />
+                      <!--                       <select class="form-select is-invalid" id="floatingSelect" formControlName="marca"
                         [class.is-invalid]="formB.formProducts.get('marca')?.touched && formB.formProducts.get('marca')?.invalid"
                         aria-label="Floating label select example">
                         <option value="" selected>Seleccionar</option>
                         <option *ngFor="let marca of marcaItems" [value]="marca.id_marca" selected>
                           {{marca.nombre_marca}}</option>
-                      </select>
-                      <label for="floatingSelect">Marca</label>
+                      </select> -->
+                      <label for="floatingMarca">Marca</label>
+                    </div>
+                    <div class="list-group mb-3 position-absolute" [hidden]="ocultar">
+                      <button type="button" class="list-group-item list-group-item-action"
+                        *ngFor="let marcas of marcaItems | filterMarca:formB.formProducts.get('marca')?.value"
+                        (click)="setMarcasFormProducts(marcas.id_marca,marcas.nombre_marca)">
+                        {{marcas.nombre_marca}}
+                      </button>
                     </div>
                     <app-form-errors-container [forControl]="formB.formProducts.get('marca')">
                       <app-message-error forErrorCode="required"></app-message-error>
@@ -98,8 +109,8 @@
                       </app-form-errors-container>
                     </div>
                   </div>
-                  <div class="col-xl-12 col-sm-12 col-12 col-md-12 col-xxl-12">
-                    <!--------CARACTERISTICAS---------->
+                  <!--------CARACTERISTICAS---------->
+                  <!--                   <div class="col-xl-12 col-sm-12 col-12 col-md-12 col-xxl-12">
                     <div class="form-floating mb-3">
                       <textarea type="text" class="form-control" formControlName="caracteristicas" id="floatingCantidad"
                         [class.is-invalid]="formB.formProducts.get('caracteristicas')?.touched && formB.formProducts.get('caracteristicas')?.invalid"
@@ -113,7 +124,7 @@
                         </app-message-error>
                       </app-form-errors-container>
                     </div>
-                  </div>
+                  </div> -->
                 </div>
                 <div class="row">
                   <!-------APP CATEGORIAS-------->
@@ -129,22 +140,24 @@
                 <div class="row">
                   <!-------RESTRICCIONES-------->
                   <div class="col-xl-6 col-sm-6 col-md-6 col-xxl-6 col-6">
-                    <div class="mb-3">
-                      <label for="forRestricciones">Restricciones</label>
+                    <div class="form-floating mb-3">
                       <select id="forRestricciones" class="form-select" formControlName="Restricciones">
+                        <option value="" selected>Seleccionar</option>
                         <option value="Apto para todo público">Apto para todo público</option>
                         <option value="Sólo para mayores de 18 años">Sólo para mayores de 18 años</option>
                       </select>
+                      <label for="forRestricciones">Restricciones</label>
                     </div>
                   </div>
                   <!----------DISPONIBILIDAD----------->
                   <div class="col-xl-6 col-sm-6 col-md-6 col-xxl-6 col-6 position-relative">
-                    <div class="mb-3">
-                      <label for="forDisponibilidad">Disponibilidad</label>
+                    <div class="form-floating mb-3">
                       <select id="forDisponibilidad" class="form-select" formControlName="Disponibilidad">
+                        <option value="" selected>Seleccionar</option>
                         <option value="Inmediata">Inmediata</option>
                         <option value="Bajo pedido">Bajo pedido</option>
                       </select>
+                      <label for="forDisponibilidad">Disponibilidad</label>
                     </div>
                   </div>
                 </div>
@@ -152,18 +165,26 @@
                 <div class="row">
                   <!-------APP CATEGORIAS-------->
                   <div class="col-xl-6 col-sm-6 col-md-6 col-xxl-6 col-6">
-                    <div class="mb-3">
-                      <label for="forDisponibilidad">Garantía</label>
-                      <select id="forDisponibilidad" class="form-select" formControlName="Disponibilidad">
+                    <div class="form-floating mb-3">
+                      <select id="forDisponibilidad" class="form-select" formControlName="Garantia"
+                        (click)="selectGarantia($event)">
+                        <option value="" selected>Seleccionar</option>
                         <option value="Si">Si</option>
                         <option value="No">No</option>
                       </select>
+                      <label for="forDisponibilidad">Garantía</label>
                     </div>
                   </div>
                   <!----------FORM ETIQUETAS----------->
-                  <div class="col-xl-6 col-sm-6 col-md-6 col-xxl-6 col-6 position-relative">
-                    <input type="text" />
-                  </div>
+                  <ng-container *ngIf="ActiveGarantia">
+                    <div class="col-xl-6 col-sm-6 col-md-6 col-xxl-6 col-6 position-relative">
+                      <div class="form-floating">
+                        <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"
+                          placeholder="Describa sus garantías" formControlName="Tipo_Garantia"></textarea>
+                        <label for="floatingTextarea">Garantías</label>
+                      </div>
+                    </div>
+                  </ng-container>
                 </div>
               </form>
             </div>
@@ -187,7 +208,7 @@
         </div>
       </div>
     </div>
-
+    {{formB.formProducts.value | json}}
     <div class="acordion-item border-0">
       <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
         data-bs-parent="#accordionExample">

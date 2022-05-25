@@ -23,6 +23,7 @@ import { BaseFormLogisticaProducto } from '../components/logistica-producto/mode
 import { GestionDimensionComponent } from '../components/logistica-producto/gestion-dimension/gestion-dimension.component';
 import { BaseFormTamanoProducto } from '../components/logistica-producto/models/BaseFormTamano';
 import { DataFormProducts } from '../helpers/DataFormProducts';
+import { FilterMarcaPipe } from '../components/create-products/pipe/filter-marca.pipe';
 
 export const ProductoModuleDeclarations = [
   ProductsComponent, //INDEX PRODUCTOS
@@ -38,6 +39,7 @@ export const ProductoModuleDeclarations = [
   ImgIconosDescripcionComponent,
   FormEtiquetasComponent, //FORM ETIQUETAS
   GestionDimensionComponent, //GESTION COMPONENTS
+  FilterMarcaPipe, //FILTER PIPE DE MARCAS
 ];
 export const ProductModuleImport = [
   GMapModule, //MODULE MAP

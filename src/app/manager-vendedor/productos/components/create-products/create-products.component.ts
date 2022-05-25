@@ -22,6 +22,8 @@ export class CreateProductsComponent implements OnInit {
   marcaItems: any = [];
   imgProducts = '';
   imagenTransformada = '';
+  ocultar: boolean = true; //OCULTO LA LISTA DE MARCA
+  ActiveGarantia: boolean = false; //OCULTAR LA GARANTIA
   constructor(
     private position: PositionUser, //POSICION DEl USUARIO
     public formB: BaseFormProducts, //FORM PRODUCTS
@@ -52,6 +54,7 @@ export class CreateProductsComponent implements OnInit {
       this.marcaItems = res;
     });
   }
+  //REGRESAR AL PRODUCTO
   irProducto() {
     this.router.navigateByUrl(
       `${UrlFront.Manager.managerVendedor}/${UrlFront.Manager.vendedor}/${UrlFront.Manager.listadoProductos}`
@@ -88,5 +91,35 @@ export class CreateProductsComponent implements OnInit {
     this.formB.formProducts.patchValue({
       archivo: this.imagenTransformada,
     });
+  }
+  //SETEO LAS MARCAS EN EL FORMULARIO DE PRODUCTOS
+  setMarcasFormProducts(id: any, nombre: any) {
+    this.formB.formProducts.patchValue({
+      id_marca: id,
+      marca: nombre,
+    }); //SETEO LA MARCA SEGUN LA OPCION ELEGIDA POR EL USUAIRO
+    this.ocultar = true;
+  }
+  //ACTIVO MI LISTA DE MARCAS CUANDO SEA MAYOR A 0 EL STRING
+  onKeyPres(e: any) {
+    if (e.target.value.length >= 1) {
+      this.ocultar = false;
+    } //MOSTRAR
+    if (e.target.value.length <= 0) {
+      this.ocultar = true;
+    } //OCULTAR
+    if (e.key === 'Backspace') {
+      this.formB.formProducts.patchValue({
+        id_marca: '',
+      });
+    } //CAPTURO EL BORRAR PARA SETEAR EL ID EN BLANCO
+  }
+  //SELECT CHANGE GARANTIA
+  selectGarantia(e: any) {
+    if (e.target.value === 'Si') {
+      this.ActiveGarantia = true;
+    } else if (e.target.value === 'No' || e.target.value === '') {
+      this.ActiveGarantia = false;
+    }
   }
 }
