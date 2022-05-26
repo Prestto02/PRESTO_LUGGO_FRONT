@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ConfiguracionColorComponent } from './configuracion-color.component';
+import { TercerPasoComponent } from './tercer-paso.component';
 
-describe('ConfiguracionColorComponent', () => {
-  let component: ConfiguracionColorComponent;
-  let fixture: ComponentFixture<ConfiguracionColorComponent>;
+describe('TercerPasoComponent', () => {
+  let component: TercerPasoComponent;
+  let fixture: ComponentFixture<TercerPasoComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ConfiguracionColorComponent ]
+      declarations: [ TercerPasoComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ConfiguracionColorComponent);
+    fixture = TestBed.createComponent(TercerPasoComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

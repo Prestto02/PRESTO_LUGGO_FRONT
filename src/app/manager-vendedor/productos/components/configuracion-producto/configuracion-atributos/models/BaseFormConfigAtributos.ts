@@ -19,7 +19,7 @@ export class BaseFormConfigAtributos {
     let atributosForm = this.formB.group({
       NombreAtributos: [nombre, [Validators.required]],
       Descripcion: [descripcion, [Validators.required]],
-      Sku: ['', [, Validators.pattern(/^[A-Za-z0-9-_ ]+$/)]], //VALIDACIONES
+      Sku: ['', [Validators.pattern(/^[A-Za-z0-9-_ ]+$/)]], //VALIDACIONES
       Estado_Producto: ['', [Validators.required]],
       PrecioPorVariacion: [
         '',

@@ -6,15 +6,14 @@ import { UrlApi } from 'src/app/shared/routes/RoutesApi';
 @Injectable({
   providedIn: 'root',
 })
-export class ServicesColorService {
+export class SelectAtributosService {
   constructor(private http: HttpClient) {}
 
-  //TRAIGO TODAS LAS CATEGORIAS
-  getAllColors(): Observable<any> {
+  getColorsAtributos(): Observable<any> {
     return this.http.get<any>(`${UrlApi.ApiUrl}${UrlApi.codigoColores}`);
   }
-  //TRAIGO TODAS LOS ATRIBUTOS DEPENDE LO QUE ESCOJA EL USUARIO
-  getAllAtributos(url: any): Observable<any> {
+
+  getDataAtributos(url: any): Observable<any> {
     return this.http.get<any>(`${UrlApi.ApiUrl}${url}`);
   }
 }

@@ -1,0 +1,9 @@
+.badge-diseno {
+  width: 1rem;
+  height: 1rem;
+  border: 1px solid #000;
+  border-radius: 16px;
+}
+.dropdown-item{
+  cursor: pointer;
+}

@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BaseFormCategorias } from '../../categorias/models/categorias.models';
 import { BaseFormConfigAtributos } from '../components/configuracion-producto/configuracion-atributos/models/BaseFormConfigAtributos';
-import { BaseFormColors } from '../components/configuracion-producto/configuracion-color/models/BaseFormColors';
 import { BaseFormEtiquetas } from '../components/create-products/form-etiquetas/models/BaseFormEtiquetas';
 import { BaseFormTamanoProducto } from '../components/logistica-producto/models/BaseFormTamano';
 import { BaseFormLogisticaProducto } from '../components/logistica-producto/models/BaseFormubicacion';
@@ -20,7 +19,6 @@ export class DataFormProducts {
     private formEtiquetas: BaseFormEtiquetas,
     private formAtributo: BaseFormConfigAtributos,
     private formTamano: BaseFormTamanoProducto,
-    public formColor: BaseFormColors,
     private formUbicacion: BaseFormLogisticaProducto
   ) {}
   //OBTENGO TODAS LAS CATEGORIAS

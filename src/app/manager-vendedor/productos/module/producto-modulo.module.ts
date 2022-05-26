@@ -4,8 +4,6 @@ import { ToastModule } from 'primeng/toast';
 import { ButtonModule } from 'primeng/button';
 import { ConfiguracionAtributosComponent } from '../components/configuracion-producto/configuracion-atributos/configuracion-atributos.component';
 import { BaseFormConfigAtributos } from '../components/configuracion-producto/configuracion-atributos/models/BaseFormConfigAtributos';
-import { ConfiguracionColorComponent } from '../components/configuracion-producto/configuracion-color/configuracion-color.component';
-import { BaseFormColors } from '../components/configuracion-producto/configuracion-color/models/BaseFormColors';
 import { ConfiguracionProductoComponent } from '../components/configuracion-producto/configuracion-producto.component';
 import { BaseFormConfigProducts } from '../components/configuracion-producto/models/BaseFormCongifProduct';
 import { CreateProductsComponent } from '../components/create-products/create-products.component';
@@ -24,6 +22,8 @@ import { GestionDimensionComponent } from '../components/logistica-producto/gest
 import { BaseFormTamanoProducto } from '../components/logistica-producto/models/BaseFormTamano';
 import { DataFormProducts } from '../helpers/DataFormProducts';
 import { FilterMarcaPipe } from '../components/create-products/pipe/filter-marca.pipe';
+import { SelectAtributosComponent } from '../components/configuracion-producto/select-atributos/select-atributos.component';
+import { TercerPasoComponent } from '../components/tercer-paso/tercer-paso.component';
 
 export const ProductoModuleDeclarations = [
   ProductsComponent, //INDEX PRODUCTOS
@@ -32,14 +32,15 @@ export const ProductoModuleDeclarations = [
   ProgressStepperComponent,
   ConfiguracionProductoComponent, //CONFIGURACION DEL PRODUCTO
   ConfiguracionAtributosComponent, //CONFIGURACION DE LOS PRODUCTOS
-  ConfiguracionColorComponent, //CONFIGURACION DEL COLOR
   ImagenProductosComponent, //IMAGEN DEL PRODUCTO
   LogisticaProductoComponent, //LOGITICA DE PRODUCTO
   ImgIconosComponent, //IMAGENES PEQUEÑAS COMPONENTS
-  ImgIconosDescripcionComponent,
+  SelectAtributosComponent, //SELECCION POR ATRIBUTOS
+  ImgIconosDescripcionComponent, //IMG ICONOS DESCRIPCION COMPONENTES
   FormEtiquetasComponent, //FORM ETIQUETAS
   GestionDimensionComponent, //GESTION COMPONENTS
   FilterMarcaPipe, //FILTER PIPE DE MARCAS
+  TercerPasoComponent, //TERCER PASO DEL PRODUCTO
 ];
 export const ProductModuleImport = [
   GMapModule, //MODULE MAP
@@ -49,7 +50,6 @@ export const ProductModuleImport = [
 ];
 export const ProductoModuleProviders = [
   BaseFormProducts,
-  BaseFormColors,
   BaseFormConfigAtributos,
   BaseFormEtiquetas,
   BaseFormConfigProducts,

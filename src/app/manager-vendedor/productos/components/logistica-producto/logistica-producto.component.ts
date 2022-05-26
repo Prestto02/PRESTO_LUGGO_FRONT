@@ -28,8 +28,7 @@ export class LogisticaProductoComponent implements OnInit {
   constructor(
     public formUbicacion: BaseFormLogisticaProducto,
     private position: PositionUser, //POSITION USUARIO
-    public formTamano: BaseFormTamanoProducto,
-    private componentListado: ListadoProductosComponent
+    public formTamano: BaseFormTamanoProducto
   ) {}
 
   ngOnInit() {
@@ -165,9 +164,5 @@ export class LogisticaProductoComponent implements OnInit {
 
   clear() {
     this.overlays = [];
-  }
-  //GUARDAR PRODUCTO
-  guardarProduct() {
-    this.componentListado.guardarProduct();
   }
 }

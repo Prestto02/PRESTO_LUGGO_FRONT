@@ -1,3 +1,51 @@
+<!------TIPOS DE IMPUESTOS--------->
+<div class="col-xl-2 col-xxl-2 col-sm-12 col-md-3 col-12 mb-4">
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+    <label class="form-check-label" for="flexCheckDefault">
+      Impuesto IVA
+    </label>
+  </div>
+</div>
+<div class="col-xl-3 col-xxl-3 col-sm-12 col-md-3 col-12 mb-4">
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+    <label class="form-check-label" for="flexCheckDefault">
+      Impuesto ICE
+    </label>
+  </div>
+</div>
+
+<div class="col-xl-4 col-xxl-4 col-sm-12 col-md-3 col-12 bg-light mb-4">
+  <p>Seleccione que impuestos aplica su Producto.</p>
+</div>
+<!-------------RAYA-------------->
+<hr class="mx-2">
+<!----PRECIO GLOBAL----------->
+<div class="col-xl-4 col-xxl-4 col-sm-12 col-12 col-md-4">
+  <p>Tienes {{formAtributos.atributosVariacion.controls.length | json}} variantes por configurar</p>
+</div>
+<div class="col-xl-4 col-xxl-4 col-sm-12 col-12 col-md-4">
+  <div class="row">
+    <div class="col-xl-4 col-xxl-4 col-sm-12 col-12 col-md-4 mt-2">
+      <label for="precio-global">Precio Global</label>
+    </div>
+    <div class="col-xl-5 col-xxl-5 col-md-5 col-sm-12 col-12">
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="precio-global">$</span>
+        <input type="text" class="form-control" placeholder="12,00" aria-label="Precio Global"
+          aria-describedby="precio-global">
+      </div>
+    </div>
+  </div>
+</div>
+<div class="col-xl-4 col-xxl-4 col-sm-12 col-12 col-md-4 bg-light">
+  <p>Puedes establecer un precio global si así lo deseas.</p>
+</div>
+
+
+<!------LISTADO PARA EL MENU--------->
+
 <div class="row">
   <!---------PESTAÑAS DE MENU--------->
   <div class="col-xl-1 col-xxl-1 col-sm-12 col-12 col-md-1">
@@ -22,7 +70,7 @@
     <p>Stock mínimo</p>
   </div>
 </div>
-<!---------FORM COLORES----------->
+<!---------FORM CONFIRACION DE LOS ATRIBUTOS PRECIOS CODIGO----------->
 
 <form [formGroup]="formAtributos.formConfigAtributos">
   <div class="row">
@@ -129,4 +177,3 @@
     </ng-container>
   </div>
 </form>
-
