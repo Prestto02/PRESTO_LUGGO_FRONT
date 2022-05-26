@@ -1,12 +1,20 @@
 <!------DIMENSIONES DEL PAQUETE HORA Y ENVIOS---------->
-<div class="col-xl-6 col-xxl-6 col-sm-12 col-12 col-md-6 mb-5">
+<div class="col-xl-12 col-xxl-12 col-sm-12 col-12 col-md-12 mb-5">
   <app-gestion-dimension></app-gestion-dimension>
 </div>
+<hr>
 <!-----------UBICACION DEL MAPA--------------->
 <div class="col-xl-6 col-xxl-6 col-sm-12 col-12 col-md-6 mb-5">
   <div class="row">
-    <div class="col-xl-12 col-sm-12 col-md-12 col-xxl-12">
-      <h5>Ubicación del mapa</h5>
+    <div class="col-xl-12 col-sm-12 col-md-12 col-xxl-12 mb-3">
+      <div class="row">
+        <div class="col-xl-5 col-xxl-5">
+          <h6>Ubicación de tu Bodega</h6>
+        </div>
+        <div class="col-xl-7 col-xxl-7 bg-light">
+          <p>¿Dónde se encuentra tu producto? Ubícalo aquí.</p>
+        </div>
+      </div>
     </div>
     <!-------GOOGLE MAP  y EL FORM----->
     <form [formGroup]="formUbicacion.formLogistica">

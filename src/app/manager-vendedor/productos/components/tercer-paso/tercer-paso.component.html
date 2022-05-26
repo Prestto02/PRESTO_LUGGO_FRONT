@@ -22,7 +22,7 @@
     <app-configuracion-atributos class="row" [hidden]="arrayTercerPaso[1].disabled"></app-configuracion-atributos>
     <!------CONFIGURACION DE LA LOGISTICA DEL PRODUCTO-------->
 
-    <app-logistica-producto class="row" [hidden]="arrayTercerPaso[0].disabled"></app-logistica-producto>
+    <app-logistica-producto [hidden]="arrayTercerPaso[0].disabled"></app-logistica-producto>
     <!------FINALIZAR ATRAS--------->
     <div class="modal-footer">
       <button class="btn btn-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo"

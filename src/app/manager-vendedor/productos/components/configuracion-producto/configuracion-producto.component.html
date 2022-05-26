@@ -32,80 +32,89 @@
           </div>
 
           <!----------ARRAY DE ATRIBUTOS----------->
-          <div class="col-xl-12 col-xxl-12 col-sm-12 col-12 col-md-12 card">
-            <ng-container formArrayName="Atributos">
-              <ng-container *ngFor="let atributosForm of formAtributo.atributos.controls; let i=index;">
-                <ng-container [formGroupName]="i">
-                  <div class="row mt-3 mx-2 mb-4">
+          <div class="card">
+            <div class="col-xl-12 col-xxl-12 col-sm-12 col-12 col-md-12 ">
+              <ng-container formArrayName="Atributos">
+                <ng-container *ngFor="let atributosForm of formAtributo.atributos.controls; let i=index;">
+                  <ng-container [formGroupName]="i">
+                    <div class="row mt-3 mx-2">
 
-                    <div class="col-xl-3 col-xxl-3 col-sm-12 col-md-3 col-3">
-                      <div class="row">
-                        <div class="col-xl-12 col-xxl-12 col-sm-12 col-md-12 col-12">
-                          <label for="escogerFloating"
-                            class="form-label mb-3">{{atributosForm.get('nombre')?.value}}</label>
-                        </div>
-                        <div class="col-xl-8 col-xxl-8 col-sm-12 col-md-12 col-12">
-                          <app-select-atributos [nombre]="atributosForm.get('nombre')?.value"
-                            [url]="atributosForm.get('url')?.value" [id]="i"></app-select-atributos>
+                      <div class="col-xl-3 col-xxl-3 col-sm-12 col-md-3 col-3">
+                        <div class="row">
+                          <div class="col-xl-12 col-xxl-12 col-sm-12 col-md-12 col-12">
+                            <label for="escogerFloating"
+                              class="form-label mb-3">{{atributosForm.get('nombre')?.value}}</label>
+                          </div>
+                          <div class="col-xl-8 col-xxl-8 col-sm-12 col-md-12 col-12">
+                            <app-select-atributos [nombre]="atributosForm.get('nombre')?.value"
+                              [url]="atributosForm.get('url')?.value" [id]="i"></app-select-atributos>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                    <!---------NOMBRES Y DESCRIPCION DE LOS ATRIBUTOS ELEGIDOS---------->
-                    <div class="col-xl-3 col-xxl-3 col-sm-12 col-md-3 col-3">
-                      <div class="row">
-                        <div class="col-xl-12 col-xxl-12 col-sm-12 col-md-12 col-12 mb-3">
-                          <label for="floatingDescripcion" class="form-label">Nombre del
+                      <!---------NOMBRES Y DESCRIPCION DE LOS ATRIBUTOS ELEGIDOS---------->
+                      <div class="col-xl-3 col-xxl-3 col-sm-12 col-md-3 col-3">
+                        <div class="row">
+                          <div class="col-xl-12 col-xxl-12 col-sm-12 col-md-12 col-12 mb-3">
+                            <label for="floatingDescripcion" class="form-label">Nombre del
+                              {{atributosForm.get('nombre')?.value}}</label>
+                            <input type="text" class="form-control" id="floatingDescripcion" formControlName="escoger"
+                              id="floatingEscoger" placeholder="Camisa verde o grande "
+                              aria-describedby="floatingEscoger"
+                              [class.is-invalid]="atributosForm.get('escoger')?.touched && atributosForm.get('escoger')?.invalid">
+                            <div id="floatingEscoger" class="form-text">Ejemplo: Blanca XL, Verde SM, etc.</div>
+                            <app-form-errors-container [forControl]="atributosForm.get('escoger')">
+                              <app-message-error forErrorCode="required"></app-message-error>
+                              <app-message-error forErrorCode="pattern" customMsg="No se acepta: <>|?¿''{}[]">
+                              </app-message-error>
+                            </app-form-errors-container>
+                          </div>
+                        </div>
+                        <div class="col-xl-12 col-xxl-12 col-sm-12 col-md-12 col-12">
+                          <label for="floatingDescripcion" class="form-label">Descripcion del
                             {{atributosForm.get('nombre')?.value}}</label>
-                          <input type="text" class="form-control" id="floatingDescripcion" formControlName="escoger"
+
+                          <input type="text" class="form-control" id="floatingDescripcion" formControlName="descripcion"
                             id="floatingEscoger" placeholder="Camisa verde o grande " aria-describedby="floatingEscoger"
-                            [class.is-invalid]="atributosForm.get('escoger')?.touched && atributosForm.get('escoger')?.invalid">
+                            [class.is-invalid]="atributosForm.get('descripcion')?.touched && atributosForm.get('descripcion')?.invalid">
                           <div id="floatingEscoger" class="form-text">Ejemplo: Blanca XL, Verde SM, etc.</div>
-                          <app-form-errors-container [forControl]="atributosForm.get('escoger')">
+
+                          <app-form-errors-container [forControl]="atributosForm.get('descripcion')">
                             <app-message-error forErrorCode="required"></app-message-error>
                             <app-message-error forErrorCode="pattern" customMsg="No se acepta: <>|?¿''{}[]">
                             </app-message-error>
                           </app-form-errors-container>
                         </div>
                       </div>
-                      <div class="col-xl-12 col-xxl-12 col-sm-12 col-md-12 col-12">
-                        <label for="floatingDescripcion" class="form-label">Descripcion del
-                          {{atributosForm.get('nombre')?.value}}</label>
-
-                        <input type="text" class="form-control" id="floatingDescripcion" formControlName="descripcion"
-                          id="floatingEscoger" placeholder="Camisa verde o grande " aria-describedby="floatingEscoger"
-                          [class.is-invalid]="atributosForm.get('descripcion')?.touched && atributosForm.get('descripcion')?.invalid">
-                        <div id="floatingEscoger" class="form-text">Ejemplo: Blanca XL, Verde SM, etc.</div>
-
-                        <app-form-errors-container [forControl]="atributosForm.get('descripcion')">
-                          <app-message-error forErrorCode="required"></app-message-error>
-                          <app-message-error forErrorCode="pattern" customMsg="No se acepta: <>|?¿''{}[]">
-                          </app-message-error>
-                        </app-form-errors-container>
+                      <!------MENSAJES PARA EL USUARIO-------->
+                      <div
+                        class="col-xl-3 col-xxl-3 col-md-3 col-sm-12 col-12 bg-light mx-auto d-flex align-self-center">
+                        <p>Puedes elegir uno o varios {{atributosForm.get('nombre')?.value}} que hemos creado para tu
+                          producto o si prefieres también
+                          puedes crearlo.</p>
                       </div>
-                    </div>
-                    <!------MENSAJES PARA EL USUARIO-------->
-                    <div class="col-xl-3 col-xxl-3 col-md-3 col-sm-12 col-12 bg-light mx-auto d-flex align-self-center">
-                      <p>Puedes elegir uno o varios {{atributosForm.get('nombre')?.value}} que hemos creado para tu
-                        producto o si prefieres también
-                        puedes crearlo.</p>
-                    </div>
 
-                    <hr class="mb-3 mt-4">
-                  </div>
+                      <hr class="mt-4">
+                    </div>
+                  </ng-container>
                 </ng-container>
               </ng-container>
-            </ng-container>
-          </div>
-          <!--------SI EXISTE MAS DE UN ATRIBUTO AÑADIR------->
-          <div *ngIf="formAtributo.atributos.length>0;"
-            class="col-xl-12 col-xxl-12 col-sm-12 col-md-12 col-12 text-center mb-3 mt-4">
-            <button class="btn btn-primary" [disabled]="formAtributo.formConfigProduct.invalid"
-              (click)="agregarVariaciones();">Añadir variación</button>
+            </div>
+            <!--------SI EXISTE MAS DE UN ATRIBUTO AÑADIR------->
+            <div class="modal-footer">
+              <div *ngIf="formAtributo.atributos.length>0;"
+                class="col-xl-10 col-xxl-10 col-sm-12 col-md-12 col-12 text-center mb-3">
+                <button class="btn btn-primary" [disabled]="formAtributo.formConfigProduct.invalid"
+                  (click)="agregarVariaciones();">Añadir variación</button>
+              </div>
+              <p class="text-end">{{formAtributos.atributosVariacion.controls.length | json}} Variantes en Total</p>
+            </div>
           </div>
         </div>
       </form>
     </div>
   </div>
+
+
   <!-------CONTINUAR--------->
   <div class="modal-footer mb-4">
     <button type="button" class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#collapseOne"
