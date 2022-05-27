@@ -30,13 +30,20 @@
     <div class="col-xl-4 col-xxl-4 col-sm-12 col-12 col-md-4 mt-2">
       <label for="precio-global">Precio Global</label>
     </div>
-    <div class="col-xl-5 col-xxl-5 col-md-5 col-sm-12 col-12">
-      <div class="input-group mb-3">
-        <span class="input-group-text" id="precio-global">$</span>
-        <input type="text" class="form-control" placeholder="12,00" aria-label="Precio Global"
-          aria-describedby="precio-global">
+    <ng-container [formGroup]="formGlobalPrecio.formGlobalPrecio">
+      <div class="col-xl-5 col-xxl-5 col-md-5 col-sm-12 col-12">
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="precio-global">$</span>
+          <input type="text" class="form-control" placeholder="12,00" aria-label="Precio Global"
+            aria-describedby="precio-global" formControlName="PrecioGlobal">
+          <button class="btn btn-sm btn-primary" (click)="agregarPrecioGlobal();" type="button" id="button-addon2"
+            title="Se agregara el precio a todos las variaciones">+</button>
+        </div>
+        <app-form-errors-container [forControl]="formGlobalPrecio.formGlobalPrecio.get('PrecioGlobal')">
+          <app-message-error forErrorCode="pattern" customMsg="Solo números ej: 12,00"></app-message-error>
+        </app-form-errors-container>
       </div>
-    </div>
+    </ng-container>
   </div>
 </div>
 <div class="col-xl-4 col-xxl-4 col-sm-12 col-12 col-md-4 bg-light">

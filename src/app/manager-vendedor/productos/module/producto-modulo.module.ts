@@ -24,6 +24,7 @@ import { DataFormProducts } from '../helpers/DataFormProducts';
 import { FilterMarcaPipe } from '../components/create-products/pipe/filter-marca.pipe';
 import { SelectAtributosComponent } from '../components/configuracion-producto/select-atributos/select-atributos.component';
 import { TercerPasoComponent } from '../components/tercer-paso/tercer-paso.component';
+import { BaseFormGlobalPrecio } from '../components/configuracion-producto/configuracion-atributos/models/BasePrecioGlobal';
 
 export const ProductoModuleDeclarations = [
   ProductsComponent, //INDEX PRODUCTOS
@@ -57,6 +58,7 @@ export const ProductoModuleProviders = [
   DataFormProducts, //DATA FORMULARIO PRODUCTO ENVIAR
   ImgIconosComponent,
   CreateProductsComponent,
+  BaseFormGlobalPrecio,
   BaseFormLogisticaProducto,
   ListadoProductosComponent,
 ];
