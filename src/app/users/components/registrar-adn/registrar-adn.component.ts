@@ -9,9 +9,11 @@ import { BaseFormAdnUsers } from './models/BaseFormAdnUser';
 })
 export class RegistrarAdnComponent implements OnInit {
   sugerencias: boolean = false;
+  password: boolean = false;
+  password2: boolean = false;
   constructor(
     public formB: BaseFormAdnUsers, //FORM ADN USERS
-    private position: PositionUser, //CLASS POSITION USERS
+    private position: PositionUser //CLASS POSITION USERS
   ) {}
 
   ngOnInit(): void {
@@ -27,4 +29,10 @@ export class RegistrarAdnComponent implements OnInit {
     this.sugerencias = false; //PARA OCULTAR LAS SUGERENCIAS
   }
 
+  verPassword() {
+    this.password = !this.password;
+  }
+  verPassword2() {
+    this.password2 = !this.password2;
+  }
 }
