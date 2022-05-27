@@ -15,7 +15,12 @@ export class BaseFormConfigAtributos {
     return this.formConfigAtributos.controls['multimedia'] as FormArray;
   }
   //AÑADIR MAS ATRIBUTOS DE VARIACIONES
-  addAtributosVariacion(nombre: any, descripcion: any) {
+  addAtributosVariacion(
+    nombre: any,
+    descripcion: any,
+    idColor?: any,
+    idTamano?: any
+  ) {
     let atributosForm = this.formB.group({
       NombreAtributos: [nombre, [Validators.required]],
       Descripcion: [descripcion, [Validators.required]],
@@ -28,8 +33,8 @@ export class BaseFormConfigAtributos {
       StockItems: ['', [Validators.required, Validators.pattern(/^[0-9]+$/)]],
       StockMinimo: ['', [Validators.required, Validators.pattern(/^[0-9]+$/)]], //VALIDACIONES
       atributes: this.formB.group({
-        id_Color: [45],
-        id_tamaño_articulo: [65],
+        id_Color: idColor,
+        id_tamaño_articulo: idTamano,
       }),
       multimedia: this.formB.array([], Validators.required),
     });

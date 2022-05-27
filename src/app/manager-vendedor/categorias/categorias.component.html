@@ -2,22 +2,18 @@
 <ng-container [formGroup]="formB.formCategorias">
   <div class="col-xl-12 col-xxl-12 col-sm-12 col-md-12 col-12 position-relative">
     <div class="input-group">
-      <ng-container *ngIf="formB.categoriaSeleccionadas">
-        <ng-container *ngFor="let categoriasSelect of formB.categoriaSeleccionadas; let i=index;">
-          <span class="input-group-text border-badge" id="basic-addon1"><span
-              class="badge bg-color-badge">{{categoriasSelect}}</span></span>
-        </ng-container>
-      </ng-container>
       <input type="text" class="form-control border-input" formControlName="nameCategoria"
         placeholder="Buscar categorias" aria-label="Recipient's username" id="floatingCategorias"
         aria-describedby="button-addon1" title="hola mundo">
       <app-form-errors-container [forControl]="formB.formCategorias.get('ArticuloTieneCategoria')">
         <app-message-error forErrorCode="required" customMsg="Al menos escoja una categoría"></app-message-error>
       </app-form-errors-container>
+
     </div>
+
     <ng-container *ngIf="categoriaFocus">
-      <div class="border bg-white w-100 position-absolute">
-        <div class="form-check border-bottom"
+      <div class="border bg-white w-100 position-absolute border-truncate mb-5">
+        <div class="form-check border-bottom mx-2 py-2"
           *ngFor=" let categorias of categoriasItems | FilterCategorias:formB.formCategorias.get('nameCategoria')?.value">
           <input class="form-check-input" type="checkbox" [id]="categorias.id" [checked]="categorias.selected"
             (change)="onChangeCheckBox(categorias.id,$event)" [value]="categorias.name">
@@ -27,5 +23,13 @@
         </div>
       </div>
     </ng-container>
+
+    <ng-container *ngIf="formB.categoriaSeleccionadas">
+      <ng-container *ngFor="let categoriasSelect of formB.categoriaSeleccionadas; let i=index;">
+        <span class="border-badge" id="basic-addon1"><span
+            class="badge bg-color-badge mb-3">{{categoriasSelect}}</span></span>
+      </ng-container>
+    </ng-container>
+
   </div>
 </ng-container>

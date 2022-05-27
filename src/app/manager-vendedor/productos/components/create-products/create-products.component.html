@@ -15,9 +15,9 @@
               </app-progress-stepper>
             </div>
             <!-------IMAGEN DESTACADA------>
-            <div class="col-xl-4 col-xxl-4 col-sm-12 col-12 col-md-6 mx-auto position-relative mb-5">
+            <div class="col-xl-4 col-xxl-4 col-sm-12 col-12 col-md-6 mx-5 position-relative mb-5">
               <img loading="lazy" *ngIf="imgProducts!=''" [src]="imgProducts" class="img-fluid rounded-start"
-                alt="Imágen del producto" width="350px" height="450px">
+                alt="Imágen del producto" width="450px" height="450px">
               <svg *ngIf="imgProducts==''" width="450" height="450" viewBox="0 0 250 250" fill="none"
                 xmlns="http://www.w3.org/2000/svg">
                 <rect width="250" height="250" fill="#F3F3F3" />
@@ -29,7 +29,7 @@
                 alife-file-to-base64 (onFileChanged)="getArchive($event)" (change)="getImage($event);" required>
             </div>
             <!-------Formulario--------->
-            <div class="col-xl-6 col-xxl-6 col-sm-12 col-12 col-md-6">
+            <div class="col-xl-6 col-xxl-6 col-sm-12 col-12 col-md-6 mx-3">
               <form [formGroup]="formB.formProducts">
                 <input type="hidden" formControlName="id_product">
                 <div class="row">
@@ -79,7 +79,7 @@
                       </select> -->
                       <label for="floatingMarca">Marca</label>
                     </div>
-                    <div class="list-group mb-3 position-absolute" [hidden]="ocultar">
+                    <div class="list-group mb-3 position-absolute border-truncate" [hidden]="ocultar">
                       <button type="button" class="list-group-item list-group-item-action"
                         *ngFor="let marcas of marcaItems | filterMarca:formB.formProducts.get('marca')?.value"
                         (click)="setMarcasFormProducts(marcas.id_marca,marcas.nombre_marca)">
@@ -205,8 +205,8 @@
                 </svg>
               </button>
               <!--                   <app-buttons-load [modal]="true" [load]="load" [formB]="formB.formProducts"
-                [valueButton]="activar?'Siguiente':'Editar'">
-              </app-buttons-load> -->
+              [valueButton]="activar?'Siguiente':'Editar'">
+            </app-buttons-load> -->
             </div>
           </div>
         </div>

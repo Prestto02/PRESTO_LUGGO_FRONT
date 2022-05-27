@@ -18,6 +18,7 @@ export class BaseFormConfigProducts {
       url: [url, [Validators.required]],
       nombre: [nombre, [Validators.required]],
       id_atributo: [id, Validators.required],
+      codigoHexagedecima: [''],
       escoger: [
         '',
         [

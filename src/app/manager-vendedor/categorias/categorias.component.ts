@@ -34,7 +34,11 @@ export class CategoriasComponent implements OnInit {
     const idI = this.categoriasItems.filter((res: any) => {
       return res.id === id;
     }); //PARA CAMBIAR LAS CATEGORIAS SELECTED
-    idI[0].selected = true; //PARCHEADO
+    if (e.target.checked) {
+      idI[0].selected = true; //PARCHEADO
+    } else {
+      idI[0].selected = false;
+    }
   }
   //DETECTAR CLICK FUERA DEL COMPONENTE
   @HostListener('document:click', ['$event']) clickout(event: any) {

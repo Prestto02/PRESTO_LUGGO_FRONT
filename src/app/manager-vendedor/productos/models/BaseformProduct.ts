@@ -12,8 +12,8 @@ export class BaseFormProducts {
       '',
       [
         Validators.required,
-        Validators.minLength(12),
-        Validators.maxLength(200),
+        Validators.minLength(2),
+        Validators.maxLength(65),
         Validators.pattern(/^[A-Za-z0-9Á-ÿ\u00E0-\u00FC\-_ ]+$/), //LETRA ESPACIO ACENTO Ñ y -_
       ],
     ],

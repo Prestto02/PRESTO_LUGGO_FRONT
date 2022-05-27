@@ -34,12 +34,20 @@ export class SelectAtributosComponent implements OnInit {
     });
   }
 
-  //
+  //INGRESAR LOS DATOS AL INPUT DE LOS ATRIBUTOS
+  //NOMBRE COLOR: NOMBRE
   ingresarDatosAlInput(id: any, nombre: any) {
     const data = this.formConfig.atributos.controls[id];
     data.patchValue({
       id_atributo: id,
       escoger: nombre,
+    });
+  }
+  enterSetValue(e: any, id: any) {
+    const color = e.target.value;
+    const data = this.formConfig.atributos.controls[id];
+    data.patchValue({
+      codigoHexagedecima: color,
     });
   }
 }

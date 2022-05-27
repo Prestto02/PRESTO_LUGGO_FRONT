@@ -27,14 +27,17 @@ export class ConfiguracionProductoComponent implements OnInit {
   ];
   nombreAtributo: any = '';
   descripcionAtributo: any = '';
+  idColores: any;
+  idTamanos: any;
   constructor(
     public formAtributos: BaseFormConfigAtributos, //CONFIG BASE FORM ATRIBUTOS
     public formAtributo: BaseFormConfigProducts //BASE FORM CONFIG PRODUCTS
-  ) {}
+  ) /* private apiAtributo: SelectAtributosService //PARA COLORES TALLAS,ETC */
+  {}
 
   ngOnInit(): void {}
   //AGREGAR COLORS DE ITEMS
-  addAtributosItems(e: any, nombre: any, id: any, url:any) {
+  addAtributosItems(e: any, nombre: any, id: any, url: any) {
     if (e.target.checked) {
       this.formAtributo.addAtributos(nombre, id, url); //AGREGO LOS COLORES
     } else {
@@ -46,21 +49,33 @@ export class ConfiguracionProductoComponent implements OnInit {
     this.formAtributo.atributos.controls.map((res) => {
       this.nombreAtributo += res.value.nombre + ', ';
       this.descripcionAtributo += res.value.descripcion + ', '; //OBTENGO LA POSICION DEL ARREGLO PARA ELIMINARLO
+      this.idColores = res.value.id;
     });
     this.nombreAtributo = this.nombreAtributo.slice(0, -2); //QUITAR LA ULTIMA ,
     this.descripcionAtributo = this.descripcionAtributo.slice(0, -2); //QUITAR LA ULTIMA ,
-    //SETEO EN MI NUEVO ADD ATIRBUTOS VARIACIOn
-    this.formAtributos.addAtributosVariacion(
-      this.nombreAtributo,
-      this.descripcionAtributo
-    ); //SEA AGREGA A LA NUEVA LISTA
     //LIMPIAR LAS VARIABLES
     this.formAtributo.removeAllArrayAtributos(); //DEJAR EN BLANCO EL ARRAY DE ATRIBUTOS
     this.checkFalse(); //SETEAR A FALSO TODOS LOS CHECK
     this.nombreAtributo = '';
     this.descripcionAtributo = '';
   }
-
+  /*   //ENVIAR TODOS LOS ATRIBUTOS
+  findAtributosControls() {
+    return this.formAtributo.atributos.controls.map((res) => {
+      return this.postAtributosVariacion(
+        res.value.url,
+        res.value.codigoHexagedecima
+      );
+    });
+  }
+  //AGREGAR NUEVOS ATRIBUTOS Y VARIACIONES
+  postAtributosVariacion(url: any, form: any) {
+    return this.apiAtributo
+      .postAtributos(url, { codigoHexagedecima: form })
+      .subscribe((res: any) => {
+        return res;
+      });
+  } */
   //PONER TODOS LOS CHECK EN BLANCO
   checkFalse() {
     this.arrayAtributos.map((res: any) => {

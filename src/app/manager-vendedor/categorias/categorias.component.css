@@ -6,7 +6,7 @@
 .border-input {
   height: 58px;
 }
-.border{
+.border {
   z-index: 10;
 }
 .border-badge:nth-of-type(n + 2) {
@@ -23,3 +23,7 @@
   color: #000;
 }
 
+.border-truncate {
+  height: 170px;
+  overflow: auto;
+}

@@ -1,21 +1,22 @@
 <ng-container [formGroup]="formB.formEtiquetas">
-  <div class="input-group mb-3">
+  <div class="mb-3">
+    <div class="input-group">
+      <div class="form-floating form-floating-group flex-grow-1">
+        <input type="text" class="form-control" formControlName="etiquetaForm" id="floatingInputEtiqueta"
+          placeholder="Etiquetas" (keypress)="setEtiquetas($event);" title="hola mundo" />
+        <label for="floatingInputEtiqueta">Etiquetas</label>
+      </div>
+    </div>
     <ng-container formArrayName="etiqueta">
       <ng-container *ngFor="let etiquetaForm of formB.etiquetas.controls; let i=index;">
         <ng-container [formGroupName]="i">
-          <span class="input-group-text color-input-group">
+          <span class="color-input-group">
             <span class="badge border-badge-color">{{etiquetaForm.get('nombre')?.value}}
-              <span class="btn-close mx-2" (click)="removeItems(i);"></span>
+              <span class="btn-close mx-2 mb-3" (click)="removeItems(i);"></span>
             </span>
           </span>
         </ng-container>
       </ng-container>
     </ng-container>
-    <div class="form-floating form-floating-group flex-grow-1">
-      <input type="text" class="form-control" formControlName="etiquetaForm" id="floatingInputEtiqueta"
-        placeholder="Etiquetas" (keypress)="setEtiquetas($event);" title="hola mundo"/>
-      <label for="floatingInputEtiqueta">Etiquetas</label>
-    </div>
   </div>
 </ng-container>
-

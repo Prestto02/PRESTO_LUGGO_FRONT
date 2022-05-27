@@ -4,6 +4,21 @@
   border: 1px solid #000;
   border-radius: 16px;
 }
-.dropdown-item{
+.dropdown-item {
   cursor: pointer;
+}
+.colorPicker {
+  width: 87%;
+  position: absolute;
+  opacity: 0;
+}
+.truncate-list {
+  height: 170px;
+  overflow: auto;
+}
+.text-design {
+  font-family: Cardium B-Regular;
+  color: #00000094;
+  text-align: justify;
+  margin-top: 12px;
 }

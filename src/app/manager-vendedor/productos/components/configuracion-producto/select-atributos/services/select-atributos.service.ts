@@ -16,4 +16,8 @@ export class SelectAtributosService {
   getDataAtributos(url: any): Observable<any> {
     return this.http.get<any>(`${UrlApi.ApiUrl}${url}`);
   }
+
+  postAtributos(url: any, form: any): Observable<any> {
+    return this.http.post<any>(`${UrlApi.ApiUrl}${url}`, form);
+  }
 }

@@ -15,3 +15,8 @@
   z-index: 10;
   overflow: auto;
 }
+
+.border-truncate {
+  height: 170px;
+  overflow: auto;
+}

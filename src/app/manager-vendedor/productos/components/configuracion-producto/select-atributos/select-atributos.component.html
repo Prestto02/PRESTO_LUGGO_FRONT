@@ -4,21 +4,22 @@
       aria-expanded="false">
       Seleccione el {{nombre}}
     </button>
-    <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-      <li *ngFor="let colores of arrayColores" class="d-flex justify-content-between align-items-start dropdown-item"
+    <ul class="dropdown-menu truncate-list" aria-labelledby="dropdownMenu2">
+      <li *ngFor="let colores of arrayColores" class="d-flex justify-content-between align-items-start dropdown-item "
         (click)="ingresarDatosAlInput(id,colores.nombre_color);">
         {{colores.nombre_color}}
         <span class="badge rounded-pill badge-diseno" [style]="colores.codigoHexagedecima">&nbsp;</span>
       </li>
-      <li class="d-flex justify-content-between align-items-start dropdown-item">
-        + Añadir nuevo color
-      </li>
+<!--       <li class="d-flex justify-content-between align-items-start dropdown-item">
+        <span>+ Añadir nuevo</span>
+        <input type="color" id="colorPicker" class="colorPicker" (change)="enterSetValue($event,id);">
+      </li> -->
     </ul>
   </div>
 </ng-container>
 
 <ng-container *ngIf="nombre!='Color'">
-  <div class="dropdown">
+  <div class="dropdown truncate-list">
     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-bs-toggle="dropdown"
       aria-expanded="false" (click)="getAllAtributosOtros(url)">
       Seleccione el {{nombre}}
@@ -28,9 +29,6 @@
         <button class="dropdown-item" type="button"
           (click)="ingresarDatosAlInput(id,otroAtributo.nombre_talla);">{{otroAtributo.nombre_talla}}
         </button>
-      </li>
-      <li>
-        <button class="dropdown-item" type="button">+ Añadir nuevo color</button>
       </li>
     </ul>
   </div>
