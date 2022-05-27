@@ -16,7 +16,6 @@
             (click)="ocultarSecciones(pasoTres.id);">{{pasoTres.nombre}}</a>
         </li>
       </ul>
-      <hr>
     </div>
     <!------CONFIGURACION DE LOS ATRIBUTOS DE LOS PRODUCTOS-------->
     <app-configuracion-atributos class="row" [hidden]="arrayTercerPaso[1].disabled"></app-configuracion-atributos>
@@ -24,7 +23,7 @@
 
     <app-logistica-producto [hidden]="arrayTercerPaso[0].disabled"></app-logistica-producto>
     <!------FINALIZAR ATRAS--------->
-    <div class="modal-footer">
+    <div class="modal-footer fixed-bottom bg-white">
       <button class="btn btn-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo"
         aria-expanded="true" aria-controls="collapseTwo">Atras</button>
       <button class="btn btn-primary"

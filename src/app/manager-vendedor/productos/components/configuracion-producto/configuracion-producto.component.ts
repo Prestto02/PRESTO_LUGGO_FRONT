@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BaseFormConfigAtributos } from './configuracion-atributos/models/BaseFormConfigAtributos';
 import { BaseFormConfigProducts } from './models/BaseFormCongifProduct';
-
 @Component({
   selector: 'app-configuracion-producto',
   templateUrl: './configuracion-producto.component.html',
@@ -13,6 +12,7 @@ export class ConfiguracionProductoComponent implements OnInit {
       id: 1,
       nombre: 'Color',
       url: 'api/color',
+      checked: true,
     },
     {
       id: 2,
@@ -32,8 +32,7 @@ export class ConfiguracionProductoComponent implements OnInit {
   constructor(
     public formAtributos: BaseFormConfigAtributos, //CONFIG BASE FORM ATRIBUTOS
     public formAtributo: BaseFormConfigProducts //BASE FORM CONFIG PRODUCTS
-  ) /* private apiAtributo: SelectAtributosService //PARA COLORES TALLAS,ETC */
-  {}
+  ) {}
 
   ngOnInit(): void {}
   //AGREGAR COLORS DE ITEMS
@@ -53,6 +52,12 @@ export class ConfiguracionProductoComponent implements OnInit {
     });
     this.nombreAtributo = this.nombreAtributo.slice(0, -2); //QUITAR LA ULTIMA ,
     this.descripcionAtributo = this.descripcionAtributo.slice(0, -2); //QUITAR LA ULTIMA ,
+    //SETEO EN MI NUEVO ADD ATIRBUTOS VARIACION
+    this.formAtributos.addAtributosVariacion(
+      this.nombreAtributo,
+      this.descripcionAtributo,
+      this.idColores
+    ); //SEA AGREGA A LA NUEVA LISTA
     //LIMPIAR LAS VARIABLES
     this.formAtributo.removeAllArrayAtributos(); //DEJAR EN BLANCO EL ARRAY DE ATRIBUTOS
     this.checkFalse(); //SETEAR A FALSO TODOS LOS CHECK

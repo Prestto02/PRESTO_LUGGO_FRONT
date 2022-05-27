@@ -5,7 +5,29 @@ export class BaseFormConfigProducts {
   constructor(private formB: FormBuilder) {}
   formConfigProduct = this.formB.group({
     nombreVariacion: [''],
-    Atributos: this.formB.array([]),
+    Atributos: this.formB.array([
+      this.formB.group({
+        id: ['i', [Validators.required]],
+        url: ['', [Validators.required]],
+        nombre: ['', [Validators.required]],
+        id_atributo: ['', Validators.required],
+        codigoHexagedecima: [''],
+        escoger: [
+          '',
+          [
+            Validators.required,
+            Validators.pattern(/^[A-Za-z0-9Á-ÿ\u00E0-\u00FC\-_ ]+$/),
+          ],
+        ],
+        descripcion: [
+          '',
+          [
+            Validators.required,
+            Validators.pattern(/^[A-Za-z0-9Á-ÿ\u00E0-\u00FC\-_ ]+$/),
+          ],
+        ],
+      }),
+    ]),
   });
   //TRANSFORMAR EN UN ARRAY LOS ATRIBUTOS
   get atributos() {

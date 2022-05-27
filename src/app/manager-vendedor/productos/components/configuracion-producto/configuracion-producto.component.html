@@ -5,7 +5,7 @@
         [btn-secondary]="'position-relative top-0 start-25 translate-middle btn btn-sm btn-primary rounded-pill'">
       </app-progress-stepper>
     </div>
-    <div class="col-xl-12 col-sm-12 col-md-12 col-xxl-12 col-12 mb-5">
+    <div class="col-xl-12 col-sm-12 col-md-12 col-xxl-12 col-12 mb-5 py-5">
       <!-------FORMULARIO DE ATRIBUTOS------>
       <form [formGroup]="formAtributo.formConfigProduct">
         <div class="row">
@@ -18,7 +18,8 @@
               <ul class="dropdown-menu dropdown-menu-white" aria-labelledby="dropdownMenuButton2">
                 <li *ngFor="let atributos of arrayAtributos; let i = index"><input class="form-check-input me-1"
                     type="checkbox" [id]="atributos.id" [value]="atributos.nombre"
-                    (click)="addAtributosItems($event, atributos.nombre, atributos.id,atributos.url)" />
+                    (click)="addAtributosItems($event, atributos.nombre, atributos.id,atributos.url)"
+                    [checked]="atributos.checked" />
                   {{atributos.nombre}}</li>
               </ul>
             </div>
@@ -27,7 +28,8 @@
             </app-form-errors-container>
           </div>
           <div class="col-xl-8 col-xxl-8 col-md-8 col-sm-8 col-12 border border-1 mx-auto mb-5">
-            <p class="text-center text-design">Añade todas las opciones que ofreces. Tus compradores los verán en el orden en que
+            <p class="text-center text-design">Añade todas las opciones que ofreces. Tus compradores los verán en el
+              orden en que
               aparecen aquí.</p>
           </div>
 
@@ -88,7 +90,7 @@
                       <!------MENSAJES PARA EL USUARIO-------->
                       <div
                         class="col-xl-3 col-xxl-3 col-md-3 col-sm-12 col-12 bg-light mx-auto d-flex align-self-center text-design">
-                        <p>Puedes elegir un/una {{atributosForm.get('nombre')?.value}} que hemos creado para tu
+                        <p>Puedes elegir cualquier {{atributosForm.get('nombre')?.value}} que hemos creado para tu
                           producto o si prefieres también
                           puedes crearlo.</p>
                       </div>
@@ -116,7 +118,7 @@
 
 
   <!-------CONTINUAR--------->
-  <div class="modal-footer mb-4">
+  <div class="modal-footer mb-4 fixed-bottom bg-white">
     <button type="button" class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#collapseOne"
       aria-expanded="true" aria-controls="collapseOne">Atras</button>
     <button type="button" class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#collapseFour"

@@ -1,6 +1,26 @@
 .cursor {
   cursor: pointer;
 }
-.color-bg{
-  background-color: #E1E1E1;
+.color-bg {
+  background-color: #e1e1e1;
+}
+.text-design {
+  font-family: Cardium B-Regular;
+  color: #00000094;
+  text-align: justify;
+  margin-top: -12px;
+}
+.text-tamano {
+  font-family: Cardium B-Regular;
+  margin-top: 12px;
+}
+.text-design1 {
+  font-family: Cardium B-Regular;
+  color: #00000094;
+  text-align: justify;
+  margin: 0px 0px 12px;
+}
+.text-tamano1 {
+  font-family: Cardium B-Regular;
+  margin-top: 16px;
 }

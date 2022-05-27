@@ -1,6 +1,6 @@
 <ng-container *ngIf="nombre==='Color'">
   <div class="dropdown">
-    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-bs-toggle="dropdown"
+    <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenu2" data-bs-toggle="dropdown"
       aria-expanded="false">
       Seleccione el {{nombre}}
     </button>
@@ -19,8 +19,8 @@
 </ng-container>
 
 <ng-container *ngIf="nombre!='Color'">
-  <div class="dropdown truncate-list">
-    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-bs-toggle="dropdown"
+  <div class="dropdown truncate-list ">
+    <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenu2" data-bs-toggle="dropdown"
       aria-expanded="false" (click)="getAllAtributosOtros(url)">
       Seleccione el {{nombre}}
     </button>

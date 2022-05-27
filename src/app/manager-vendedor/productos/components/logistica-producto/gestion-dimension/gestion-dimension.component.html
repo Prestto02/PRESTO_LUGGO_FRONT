@@ -6,8 +6,8 @@
         <div class="col-xxl-4 col-xl-4 col-sm-12 col-md-12 col-12">
           <p>Dimensiones del Producto</p>
         </div>
-        <div class="col-xxl-4 col-xl-4 col-sm-12 col-md-12 col-12 bg-light">
-          <p>Mide tu producto apoyándote con una regla.</p>
+        <div class="col-xxl-4 col-xl-4 col-sm-12 col-md-12 col-12 bg-light text-design">
+          <p class="text-tamano">Mide tu producto apoyándote con una regla.</p>
         </div>
       </div>
     </div>
@@ -19,7 +19,6 @@
           <label class="form-label" for="largo">Largo</label>
           <div class="input-group mb-3">
             <input type="text" class="form-control input-estilo" id="largo" placeholder="largo" aria-label="largo"
-              [class.is-invalid]="formTamano.formTamanoProducto.get('Longitud_x')?.touched && formTamano.formTamanoProducto.get('Longitud_x')?.invalid"
               aria-describedby="basic-largo">
             <span class="input-group-text span-estilo" id="basic-largo">cm</span>
           </div>
@@ -29,7 +28,6 @@
           <label class="form-label" for="largo">Ancho</label>
           <div class="input-group mb-3">
             <input type="text" class="form-control input-estilo" id="largo" placeholder="Ancho" aria-label="largo"
-              [class.is-invalid]="formTamano.formTamanoProducto.get('Longitud_x')?.touched && formTamano.formTamanoProducto.get('Longitud_x')?.invalid"
               aria-describedby="basic-largo">
             <span class="input-group-text span-estilo" id="basic-largo">cm</span>
           </div>
@@ -39,7 +37,6 @@
           <label class="form-label" for="largo">Alto</label>
           <div class="input-group mb-3">
             <input type="text" class="form-control input-estilo" id="largo" placeholder="Alto" aria-label="largo"
-              [class.is-invalid]="formTamano.formTamanoProducto.get('Longitud_x')?.touched && formTamano.formTamanoProducto.get('Longitud_x')?.invalid"
               aria-describedby="basic-largo">
             <span class="input-group-text span-estilo" id="basic-largo">cm</span>
           </div>
@@ -65,8 +62,8 @@
         <hr>
         <div class="col-xl-12 col-xxl-12 col-sm-12 col-md-12 mb-2 py-3">
           <div class="form-check">
-            <input class="form-check-input" type="radio" name="envioAdn" id="envioAdn">
-            <label class="form-check-label" for="envioAdn">
+            <input class="form-check-input" type="radio" name="envioAdn" id="envioAdn1">
+            <label class="form-check-label" for="envioAdn1">
               Puertto va a enviar este artículo (Envío gestionado por Puertto)
             </label>
           </div>
@@ -164,8 +161,8 @@
       </div>
     </div>
     <!------MENSAJE INTUITIVO DEL USUARIO-------->
-    <div class="col-xl-2 col-xxl-2 col-sm-12 col-12 col-md-3 bg-light d-flex align-self-center">
-      <p>Mide el paquete envoltorio apoyándote con una regla.</p>
+    <div class="col-xl-2 col-xxl-2 col-sm-12 col-12 col-md-3 bg-light d-flex align-self-center text-design">
+      <p class="text-tamano">Mide el paquete envoltorio apoyándote con una regla.</p>
     </div>
   </div>
 </form>

@@ -5,9 +5,9 @@
 <section>
   <div class="accordion col-xl-11 col-xxl-11 col-md-11 col-sm-12 col-12 mx-auto" id="accordionExample">
     <div class="accordion-item border-0">
-      <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+      <div id="collapseOne" class="accordion-collapse collapse show py-5" aria-labelledby="headingOne"
         data-bs-parent="#accordionExample">
-        <div class="container-fluid rounded mt-3">
+        <div class="container-fluid rounded mt-3 mb-5">
           <div class="row">
             <div class="col-xl-12 col-xxl-12 col-md-12 mb-3 mt-3">
               <app-progress-stepper [width]="'width:35%;'"
@@ -192,7 +192,7 @@
                 </div>
               </form>
             </div>
-            <div class="modal-footer">
+            <div class="modal-footer fixed-bottom bg-white">
               <button type="button" class="btn btn-secondary" (click)="irProducto();">Cancelar</button>
               <button class="btn btn-primary collapsed" type="button" data-bs-toggle="collapse"
                 data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo"
@@ -229,7 +229,7 @@
   </div>
 </section>
 
-<button class="btn btn-primary collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+<!-- <button class="btn btn-primary collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo"
   aria-expanded="true" aria-controls="collapseTwo" (click)="addAtributos()">TWO</button>
 <button class="btn btn-primary collapsed" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false"
-  aria-controls="collapseFour" (click)="addAtributos()">THREE</button>
+  aria-controls="collapseFour" (click)="addAtributos()">THREE</button> -->
