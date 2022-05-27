@@ -14,7 +14,7 @@ export const UrlFront = {
     iniciarSesion: 'iniciar-sesion',
     postRegister: 'registrar',
     buscarusuario: 'buscar-usuario',
-    cambiarContrasena: 'cambiar/contrasena',
+    cambiarContrasena: 'cambiar-contrasena',
   },
   //ACTIVAR CUENTA
   ActivarCuenta: {
