@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { UrlFront } from '../../routes/RoutesFront';
+import { ActivarCuentaService } from './service/activar-cuenta.service';
 
 @Component({
   selector: 'app-activar-cuenta',
@@ -9,7 +10,10 @@ import { UrlFront } from '../../routes/RoutesFront';
 })
 export class ActivarCuentaComponent implements OnInit {
   public emailUser?: any;
-  constructor(private route: Router, private _route: ActivatedRoute) {
+  constructor(
+    private route: Router,
+    private _route: ActivatedRoute,
+  ) {
     this.emailUser = this._route.snapshot.paramMap.get('user'); //OBTENGO EL USUARIO PARA LA ACTIVACION
   }
 

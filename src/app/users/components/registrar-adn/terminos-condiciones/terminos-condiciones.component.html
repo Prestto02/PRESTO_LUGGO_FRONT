@@ -11,8 +11,18 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+
         <button type="button" class="btn btn-primary" (click)="guardarAdn();" data-bs-dismiss="modal"
-          [disabled]="disabledScroll">Aceptar</button>
+          [disabled]="disabledScroll">
+          <ng-container *ngIf="load; else mensaje">
+            <div class="spinner-border text-secondary" role="status">
+              <span class="visually-hidden">Loading...</span>
+            </div>
+          </ng-container>
+          <ng-template #mensaje>
+            <span>Aceptar</span>
+          </ng-template>
+        </button>
       </div>
     </div>
   </div>

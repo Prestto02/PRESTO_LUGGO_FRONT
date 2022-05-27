@@ -5,3 +5,6 @@
 .modal-body {
   text-align: justify;
 }
+input::placeholder {
+  color: rgba(0, 0, 0, 0.178);
+}

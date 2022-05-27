@@ -9,6 +9,7 @@
   color: #00000094;
   text-align: justify;
   margin-top: -12px;
+  border-radius: 6px;
 }
 .text-tamano {
   font-family: Cardium B-Regular;
@@ -19,8 +20,15 @@
   color: #00000094;
   text-align: justify;
   margin: 0px 0px 12px;
+  border-radius: 6px;
 }
 .text-tamano1 {
   font-family: Cardium B-Regular;
   margin-top: 16px;
+}
+.colores-bg {
+  background-color: #f5f8ff;
+  width: 291px;
+  height: 49px;
+  border-radius: 6px;
 }

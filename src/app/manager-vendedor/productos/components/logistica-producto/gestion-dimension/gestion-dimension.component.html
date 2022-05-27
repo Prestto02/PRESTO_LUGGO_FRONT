@@ -6,7 +6,7 @@
         <div class="col-xxl-4 col-xl-4 col-sm-12 col-md-12 col-12">
           <p>Dimensiones del Producto</p>
         </div>
-        <div class="col-xxl-4 col-xl-4 col-sm-12 col-md-12 col-12 bg-light text-design">
+        <div class="col-xxl-4 col-xl-4 col-sm-12 col-md-12 col-12 bg-light text-design border">
           <p class="text-tamano">Mide tu producto apoyándote con una regla.</p>
         </div>
       </div>
@@ -51,118 +51,144 @@
     </div>
     <div class="col-xl-4 col-xxl-4 col-sm-12 col-12 col-md-4 mb-3">
       <div class="row border rounded">
-        <div class="col-xl-12 col-xxl-12 col-sm-12 col-md-12 mb-3 py-3">
+        <div class="col-xl-12 col-xxl-12 col-sm-12 col-md-12 mb-2 py-3">
           <div class="form-check">
-            <input class="form-check-input" type="radio" name="envioAdn" id="envioAdn">
-            <label class="form-check-label" for="envioAdn">
-              Yo mismo voy a enviar este artículo (Envío gestionado por ADN)
+            <input class="form-check-input" type="radio" name="envioAdn" id="envioAdn1" checked
+              (click)="abrirPuerto();">
+            <label class="form-check-label" for="envioAdn1">
+              Puertto va a enviar este artículo (Envío gestionado por Puertto)
             </label>
           </div>
         </div>
         <hr>
-        <div class="col-xl-12 col-xxl-12 col-sm-12 col-md-12 mb-2 py-3">
+        <div class="col-xl-12 col-xxl-12 col-sm-12 col-md-12 mb-3 py-3">
           <div class="form-check">
-            <input class="form-check-input" type="radio" name="envioAdn" id="envioAdn1">
-            <label class="form-check-label" for="envioAdn1">
-              Puertto va a enviar este artículo (Envío gestionado por Puertto)
+            <input class="form-check-input" type="radio" name="envioAdn" id="envioAdn" (click)="abrirArticulo();">
+            <label class="form-check-label" for="envioAdn">
+              Yo mismo voy a enviar este artículo (Envío gestionado por ADN)
             </label>
           </div>
         </div>
       </div>
     </div>
     <!--------DIMENSIONES DEL PAQUETE Y HORA-------->
-    <div class="col-xl-4 col-xxl-4 col-sm-12 col-12 col-md-4 mx-auto">
-      <div class="row">
-        <h5>Dimensiones del Paquete</h5>
-        <!--------DIMENSIONES DEL PAQUETE Y HORA-------->
-        <div class="col-xl-4 col-xxl-4 col-sm-12 col-12 col-md-4 mb-3">
-          <!----LARGO----->
-          <label class="form-label" for="largo">Largo</label>
-          <div class="input-group mb-3">
-            <input type="text" class="form-control input-estilo" id="largo" placeholder="largo" aria-label="largo"
-              [class.is-invalid]="formTamano.formTamanoProducto.get('Longitud_x')?.touched && formTamano.formTamanoProducto.get('Longitud_x')?.invalid"
-              aria-describedby="basic-largo" formControlName="Longitud_x">
-            <span class="input-group-text span-estilo" id="basic-largo">cm</span>
+    <ng-container *ngIf="puertoEnvio">
+      <!--------DIMENSIONES DEL PAQUETE Y HORA-------->
+      <div class="col-xl-4 col-xxl-4 col-sm-12 col-12 col-md-4 mx-auto">
+        <div class="row">
+          <h5>Dimensiones del Paquete</h5>
+          <!--------DIMENSIONES DEL PAQUETE Y HORA-------->
+          <div class="col-xl-4 col-xxl-4 col-sm-12 col-12 col-md-4 mb-3">
+            <!----LARGO----->
+            <label class="form-label" for="largo">Largo</label>
+            <div class="input-group mb-3">
+              <input type="text" class="form-control input-estilo" id="largo" placeholder="largo" aria-label="largo"
+                [class.is-invalid]="formTamano.formTamanoProducto.get('Longitud_x')?.touched && formTamano.formTamanoProducto.get('Longitud_x')?.invalid"
+                aria-describedby="basic-largo" formControlName="Longitud_x">
+              <span class="input-group-text span-estilo" id="basic-largo">cm</span>
+            </div>
+            <app-form-errors-container [forControl]="formTamano.formTamanoProducto.get('Longitud_x')">
+              <app-message-error forErrorCode="required"></app-message-error>
+              <app-message-error forErrorCode="pattern" customMsg="Solo numeros ej:12,11">
+              </app-message-error>
+            </app-form-errors-container>
           </div>
-          <app-form-errors-container [forControl]="formTamano.formTamanoProducto.get('Longitud_x')">
-            <app-message-error forErrorCode="required"></app-message-error>
-            <app-message-error forErrorCode="pattern" customMsg="Solo numeros ej:12,11">
-            </app-message-error>
-          </app-form-errors-container>
-        </div>
-        <!----ANCHO----->
-        <div class="col-xl-4 col-xxl-4 col-sm-12 col-12 col-md-4 mb-3">
-          <label class="form-label" for="Ancho">Ancho</label>
-          <div class="input-group mb-3">
-            <input type="text" class="form-control input-estilo" id="Ancho" placeholder="Ancho" aria-label="Ancho"
-              [class.is-invalid]="formTamano.formTamanoProducto.get('Longitud_y')?.touched && formTamano.formTamanoProducto.get('Longitud_y')?.invalid"
-              aria-describedby="basic-Ancho" formControlName="Longitud_y">
-            <span class="input-group-text span-estilo" id="basic-Ancho">cm</span>
+          <!----ANCHO----->
+          <div class="col-xl-4 col-xxl-4 col-sm-12 col-12 col-md-4 mb-3">
+            <label class="form-label" for="Ancho">Ancho</label>
+            <div class="input-group mb-3">
+              <input type="text" class="form-control input-estilo" id="Ancho" placeholder="Ancho" aria-label="Ancho"
+                [class.is-invalid]="formTamano.formTamanoProducto.get('Longitud_y')?.touched && formTamano.formTamanoProducto.get('Longitud_y')?.invalid"
+                aria-describedby="basic-Ancho" formControlName="Longitud_y">
+              <span class="input-group-text span-estilo" id="basic-Ancho">cm</span>
+            </div>
+            <app-form-errors-container [forControl]="formTamano.formTamanoProducto.get('Longitud_y')">
+              <app-message-error forErrorCode="required"></app-message-error>
+              <app-message-error forErrorCode="pattern" customMsg="Solo numeros ej:12,11">
+              </app-message-error>
+            </app-form-errors-container>
           </div>
-          <app-form-errors-container [forControl]="formTamano.formTamanoProducto.get('Longitud_y')">
-            <app-message-error forErrorCode="required"></app-message-error>
-            <app-message-error forErrorCode="pattern" customMsg="Solo numeros ej:12,11">
-            </app-message-error>
-          </app-form-errors-container>
-        </div>
-        <!----ALTO----->
-        <div class="col-xl-4 col-xxl-4 col-sm-12 col-12 col-md-4 mb-3">
-          <label class="form-label" for="Alto">Alto</label>
-          <div class="input-group mb-3">
-            <input type="text" class="form-control input-estilo" id="Alto" placeholder="Alto" aria-label="Alto"
-              [class.is-invalid]="formTamano.formTamanoProducto.get('Longitud_z')?.touched && formTamano.formTamanoProducto.get('Longitud_z')?.invalid"
-              aria-describedby="basic-Alto" formControlName="Longitud_z">
-            <span class="input-group-text span-estilo" id="basic-Alto">cm</span>
+          <!----ALTO----->
+          <div class="col-xl-4 col-xxl-4 col-sm-12 col-12 col-md-4 mb-3">
+            <label class="form-label" for="Alto">Alto</label>
+            <div class="input-group mb-3">
+              <input type="text" class="form-control input-estilo" id="Alto" placeholder="Alto" aria-label="Alto"
+                [class.is-invalid]="formTamano.formTamanoProducto.get('Longitud_z')?.touched && formTamano.formTamanoProducto.get('Longitud_z')?.invalid"
+                aria-describedby="basic-Alto" formControlName="Longitud_z">
+              <span class="input-group-text span-estilo" id="basic-Alto">cm</span>
+            </div>
+            <app-form-errors-container [forControl]="formTamano.formTamanoProducto.get('Longitud_z')">
+              <app-message-error forErrorCode="required"></app-message-error>
+              <app-message-error forErrorCode="pattern" customMsg="Solo numeros ej:12,11">
+              </app-message-error>
+            </app-form-errors-container>
           </div>
-          <app-form-errors-container [forControl]="formTamano.formTamanoProducto.get('Longitud_z')">
-            <app-message-error forErrorCode="required"></app-message-error>
-            <app-message-error forErrorCode="pattern" customMsg="Solo numeros ej:12,11">
-            </app-message-error>
-          </app-form-errors-container>
-        </div>
-        <!----PESO----->
-        <div class="col-xl-4 col-xxl-4 col-sm-12 col-12 col-md-4 mb-3">
-          <label class="form-label" for="Peso ">Peso</label>
-          <div class="input-group mb-3">
-            <input type="text" class="form-control input-estilo" id="Peso" placeholder="Peso" aria-label="Peso"
-              [class.is-invalid]="formTamano.formTamanoProducto.get('Peso')?.touched && formTamano.formTamanoProducto.get('Peso')?.invalid"
-              aria-describedby="basic-Peso" formControlName="Peso">
-            <span class="input-group-text span-estilo" id="basic-Peso">lb</span>
+          <!----PESO----->
+          <div class="col-xl-4 col-xxl-4 col-sm-12 col-12 col-md-4 mb-3">
+            <label class="form-label" for="Peso ">Peso</label>
+            <div class="input-group mb-3">
+              <input type="text" class="form-control input-estilo" id="Peso" placeholder="Peso" aria-label="Peso"
+                [class.is-invalid]="formTamano.formTamanoProducto.get('Peso')?.touched && formTamano.formTamanoProducto.get('Peso')?.invalid"
+                aria-describedby="basic-Peso" formControlName="Peso">
+              <span class="input-group-text span-estilo" id="basic-Peso">lb</span>
+            </div>
+            <app-form-errors-container [forControl]="formTamano.formTamanoProducto.get('Peso')">
+              <app-message-error forErrorCode="required"></app-message-error>
+              <app-message-error forErrorCode="pattern" customMsg="Solo numeros ej:12,22">
+              </app-message-error>
+            </app-form-errors-container>
           </div>
-          <app-form-errors-container [forControl]="formTamano.formTamanoProducto.get('Peso')">
-            <app-message-error forErrorCode="required"></app-message-error>
-            <app-message-error forErrorCode="pattern" customMsg="Solo numeros ej:12,22">
-            </app-message-error>
-          </app-form-errors-container>
-        </div>
-        <!----TIEMPO DESPACHO----->
-        <div class="col-xl-7 col-xxl-7 col-sm-12 col-12 col-md-7 mb-3">
-          <label class="form-label" for="tiempo">Tiempo de Despacho</label>
-          <div class="row">
-            <div class="col-xl-6 col-xxl-6 col-sm-12 col-12 col-md-6">
-              <div class="input-group mb-3">
-                <input type="text" class="form-control" id="tiempo" placeholder="tiempo" aria-label="tiempo"
-                  [class.is-invalid]="formTamano.formTamanoProducto.get('TiempoDespacho')?.touched && formTamano.formTamanoProducto.get('TiempoDespacho')?.invalid"
-                  aria-describedby="basic-tiempo" formControlName="TiempoDespacho">
+          <!----TIEMPO DESPACHO----->
+          <div class="col-xl-7 col-xxl-7 col-sm-12 col-12 col-md-7 mb-3">
+            <label class="form-label" for="tiempo">Tiempo de Despacho</label>
+            <div class="row">
+              <div class="col-xl-6 col-xxl-6 col-sm-12 col-12 col-md-6">
+                <div class="input-group mb-3">
+                  <input type="text" class="form-control" id="tiempo" placeholder="tiempo" aria-label="tiempo"
+                    [class.is-invalid]="formTamano.formTamanoProducto.get('TiempoDespacho')?.touched && formTamano.formTamanoProducto.get('TiempoDespacho')?.invalid"
+                    aria-describedby="basic-tiempo" formControlName="TiempoDespacho">
+                </div>
+              </div>
+              <div class="col-xl-6 col-xxl-6">
+                <span class="" id="basic-tiempo">horas</span>
               </div>
             </div>
-            <div class="col-xl-6 col-xxl-6">
-              <span class="" id="basic-tiempo">horas</span>
-            </div>
+            <app-form-errors-container [forControl]="formTamano.formTamanoProducto.get('TiempoDespacho')">
+              <app-message-error forErrorCode="required"></app-message-error>
+              <app-message-error forErrorCode="pattern" customMsg="Solo numeros del 1 al 9">
+              </app-message-error>
+              <app-message-error forErrorCode="maxlength" customMsg="Solo 2 digitos">
+              </app-message-error>
+            </app-form-errors-container>
           </div>
-          <app-form-errors-container [forControl]="formTamano.formTamanoProducto.get('TiempoDespacho')">
-            <app-message-error forErrorCode="required"></app-message-error>
-            <app-message-error forErrorCode="pattern" customMsg="Solo numeros del 1 al 9">
-            </app-message-error>
-            <app-message-error forErrorCode="maxlength" customMsg="Solo 2 digitos">
-            </app-message-error>
-          </app-form-errors-container>
         </div>
       </div>
-    </div>
-    <!------MENSAJE INTUITIVO DEL USUARIO-------->
-    <div class="col-xl-2 col-xxl-2 col-sm-12 col-12 col-md-3 bg-light d-flex align-self-center text-design">
-      <p class="text-tamano">Mide el paquete envoltorio apoyándote con una regla.</p>
-    </div>
+      <!------MENSAJE INTUITIVO DEL USUARIO-------->
+      <div class="col-xl-2 col-xxl-2 col-sm-12 col-12 col-md-3 bg-light d-flex align-self-center text-design border">
+        <p class="text-tamano">Mide el paquete envoltorio apoyándote con una regla.</p>
+      </div>
+    </ng-container>
+    <!----------------PRECIO POR COBRAR EL ENVIO DE ADN-->
+    <ng-container *ngIf="adnEnvio">
+      <div class="col-xl-4 col-xxl-4 col-sm-12 col-12 col-md-4 mx-auto">
+        <div class="row">
+          <!-------PRECIO POR COBRAR EL ENVIO-------->
+          <div class="col-xl-5 col-xxl-5 col-sm-12 col-12 col-md-4 mb-3 mt-5 py-5">
+            <label>Precio del Envío</label>
+          </div>
+          <div class="col-xl-4 col-xxl-4 col-sm-12 col-12 col-md-4 mb-3 mt-5 py-5">
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="basic-addon1">$</span>
+              <input type="text" class="form-control" placeholder="$12,00" aria-label="Username"
+                aria-describedby="basic-addon1">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-2 col-xxl-2 col-sm-12 col-12 col-md-3 bg-light d-flex align-self-center text-design border">
+        <p class="text-tamano">Establezca cuánto va a cobrar por el envío del producto</p>
+      </div>
+    </ng-container>
+
   </div>
 </form>

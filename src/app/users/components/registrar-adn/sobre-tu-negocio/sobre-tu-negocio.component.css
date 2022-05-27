@@ -18,3 +18,46 @@
 .fixed-bottom {
   background: #fff;
 }
+input::placeholder {
+  color: rgba(0, 0, 0, 0.178);
+}
+
+.text-design {
+  font-family: Cardium B-Regular;
+  color: #00000094;
+  background: #f9f9f9;
+  text-align: justify;
+  margin: 0px 0px 0px 0px;
+}
+
+.text-parrafo {
+  margin-top: 22px;
+  font-size: 13px;
+}
+
+.text-design-pequeno {
+  background: #f9f9f9;
+  font-family: Cardium B-Regular;
+  color: #00000094;
+  text-align: justify;
+  margin: 0px 0px 22px;
+  margin-top: 20px;
+}
+
+.text-parrafo-pequeno {
+  margin-top: 22px;
+  font-size: 13px;
+}
+
+.text-design-pequeno1 {
+  background: #f9f9f9;
+  font-family: Cardium B-Regular;
+  color: #00000094;
+  text-align: justify;
+  margin: 30px 0 17px;
+}
+
+.text-parrafo-pequeno1 {
+  margin-top: 22px;
+  font-size: 13px;
+}

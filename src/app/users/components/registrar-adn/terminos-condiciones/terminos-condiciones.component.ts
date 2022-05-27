@@ -19,6 +19,7 @@ import { TerminosCondicionesService } from './services/terminos-condiciones.serv
 export class TerminosCondicionesComponent implements OnInit, OnDestroy {
   disabledScroll: boolean = true;
   dataTerms: string = '';
+  load: boolean = false;
   constructor(
     public formAdn: BaseFormAdnUsers,
     public formNegocioAdn: BaseFormNegocioAdn,
@@ -53,16 +54,17 @@ export class TerminosCondicionesComponent implements OnInit, OnDestroy {
   }
   //GUARDAR ADN
   guardarAdn() {
+    this.load = true;
     const form = this.postData.getFormData(
       this.position.latitud,
       this.position.longitud
     );
-    console.log(form);
     this.apiAdn.postUserAdn(form).subscribe((res) => {
       this.toatsMessage.getSuccessMessage(
         'Exito',
         'Se agrego con exito al usuario'
       );
+      this.load = false;
       this.router.navigate([
         `/${UrlFront.ActivarCuenta.cuenta}/${UrlFront.ActivarCuenta.mensajeAlCorreo}`,
         form.user,

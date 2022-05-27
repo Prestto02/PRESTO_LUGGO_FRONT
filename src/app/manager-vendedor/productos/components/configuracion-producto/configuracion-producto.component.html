@@ -60,7 +60,7 @@
                             <label for="floatingDescripcion" class="form-label">Nombre del
                               {{atributosForm.get('nombre')?.value}}</label>
                             <input type="text" class="form-control" id="floatingDescripcion" formControlName="escoger"
-                              id="floatingEscoger" placeholder="Camisa verde o grande "
+                              id="floatingEscoger" placeholder="Camisa verde o grande " [attr.disabled]="true"
                               aria-describedby="floatingEscoger"
                               [class.is-invalid]="atributosForm.get('escoger')?.touched && atributosForm.get('escoger')?.invalid">
                             <div id="floatingEscoger" class="form-text">Ejemplo: Blanca XL, Verde SM, etc.</div>

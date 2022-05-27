@@ -7,9 +7,9 @@ export class BaseFormConfigProducts {
     nombreVariacion: [''],
     Atributos: this.formB.array([
       this.formB.group({
-        id: ['i', [Validators.required]],
-        url: ['', [Validators.required]],
-        nombre: ['', [Validators.required]],
+        id: ['', [Validators.required]],
+        url: ['api/color', [Validators.required]],
+        nombre: ['Color', [Validators.required]],
         id_atributo: ['', Validators.required],
         codigoHexagedecima: [''],
         escoger: [
