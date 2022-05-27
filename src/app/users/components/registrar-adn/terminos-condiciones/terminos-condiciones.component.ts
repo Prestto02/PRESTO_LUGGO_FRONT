@@ -54,7 +54,7 @@ export class TerminosCondicionesComponent implements OnInit, OnDestroy {
   }
   //GUARDAR ADN
   guardarAdn() {
-    this.load = true;
+    this.load = false;
     const form = this.postData.getFormData(
       this.position.latitud,
       this.position.longitud
@@ -64,7 +64,7 @@ export class TerminosCondicionesComponent implements OnInit, OnDestroy {
         'Exito',
         'Se agrego con exito al usuario'
       );
-      this.load = false;
+      this.load = true;
       this.router.navigate([
         `/${UrlFront.ActivarCuenta.cuenta}/${UrlFront.ActivarCuenta.mensajeAlCorreo}`,
         form.user,

@@ -69,6 +69,7 @@
                     aria-describedby="validationServer2Feedback" autocomplete="off"
                     [class.is-invalid]="formB.formAdn.get('pass')?.touched && formB.formAdn.get('pass')?.invalid"
                     (click)="mouseClickEvent()" (blur)="perdioElFocus()">
+                  <!------VER O DESHABILITAR LA CONTRASEÑA------->
                   <span class="input-group-text group-border-left" (click)="verPassword();">
                     <ng-container *ngIf="password else visiblePassword">
                       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -86,6 +87,7 @@
                     </ng-template>
                   </span>
                 </div>
+                <!------SUGERENCIA DE CONTRASEÑA------->
                 <div *ngIf="sugerencias" class="shadow bg-body rounded label-text w-100 position-absolute mb-3">
                   <p class="mt-3">Nivel de contraseña:</p>
                   <app-progress-password [forErrorCode]="formB.formAdn.get('pass')">
@@ -124,6 +126,8 @@
                     aria-describedby="validationServer3Feedback" [class.is-invalid]="formB.formAdn.get('contrasena_conf')?.touched && formB.formAdn.get('contrasena_conf')?.invalid
                               " class="form-control is-invalid input-border" formControlName="contrasena_conf"
                     placeholder="********" autocomplete="off">
+                  <!------VER O DESHABILITAR LA CONTRASEÑA------->
+
                   <span class="input-group-text group-border-left" (click)="verPassword2();">
                     <ng-container *ngIf="password2 else visiblePassword2">
                       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

@@ -8,6 +8,7 @@ export class TokenService {
   setTokenUsers(token: any) {
     localStorage.setItem('idUsuario', token.id_usuario);
     localStorage.setItem('correoUsuario', token.email);
+    localStorage.setItem('Token', token.token);
   }
   getTokenId() {
     return localStorage.getItem('idUsuario');
@@ -15,8 +16,12 @@ export class TokenService {
   getTokenEmail() {
     return localStorage.getItem('correoUsuario');
   }
+  getToken() {
+    return localStorage.getItem('Token');
+  }
   removeToken() {
     localStorage.removeItem('idUsuario');
     localStorage.removeItem('correoUsuario');
+    localStorage.removeItem('Token');
   }
 }
