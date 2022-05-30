@@ -188,10 +188,15 @@
           </div>
         </ng-container>
       </div>
+      <!-----SI EL PIPE DE FILTRADO ES MENOR A 0-------->
+      <ng-container *ngIf="(dataListDeseos | filter:filterPost)?.length <= 0">
+        <div class="text-center mt-4">
+          <h4 class="text-center mt-4">No hay ese producto en la lista</h4>
+        </div>
+      </ng-container>
       <ng-template #notData>
         <div class="text-center mt-4">
-          <img loading="lazy" [src]="imgEmptyListDeseos"
-            alt="No hay productos en la lista de deseos">
+          <img loading="lazy" [src]="imgEmptyListDeseos" alt="No hay productos en la lista de deseos">
           <h4 class="text text-center mt-4"> Aún no hay productos elegidos en la lista de deseos</h4>
         </div>
       </ng-template>
