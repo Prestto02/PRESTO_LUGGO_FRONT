@@ -76,6 +76,13 @@
 <!---   FINALIZAR    --->
 <section class="container-fluid mt-4 py-5">
   <div class="modal-footer fixed-bottom">
+
+    <!-------ATRAS SE MUESTRA EN EL RESPONSIVE----->
+    <button type="button" class="btn btn-secondary d-sm-block d-block d-xxl-none d-md-none d-xl-none"
+      data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false"
+      aria-controls="collapseThree">Atras
+    </button>
+
     <button
       [disabled]="formPagosAdn.formPagoAdn.invalid||formNegocioAdn.formNegocioAdn.invalid||formAdn.formAdn.invalid||formB.formTerminar.invalid"
       type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Finalizar

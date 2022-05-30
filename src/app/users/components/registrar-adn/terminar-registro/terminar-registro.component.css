@@ -9,7 +9,6 @@
   font-family: Cardium B-Regular;
 }
 
-
 .fixed-bottom {
   background: #fff;
 }
@@ -27,4 +26,14 @@
   margin: 0px 0px 22px;
   width: 97%;
   margin-top: 20px;
+}
+
+.estilo-text {
+  font-weight: 600;
+  font-size: 28px;
+}
+.estilo-subtitle {
+  font-weight: 300;
+  font-size: 20px;
+  margin-top: -13px;
 }

@@ -1,6 +1,6 @@
 .textOferta {
   font-family: Cardium B-Medium;
-  font-size: 13px;
+  font-size: 15px;
 }
 .carousel-tamano {
   height: 840px;
@@ -31,6 +31,9 @@
   font-size: 14px;
   font-family: Cardium B-Medium;
 }
+/* .heigth-Card{
+  height: 22.375rem;
+} */
 /* If the screen size is 601px wide or more, set the font-size of <div> to 80px */
 @media screen and (min-width: 1400px) and (max-width: 1500px) {
   .top-img {

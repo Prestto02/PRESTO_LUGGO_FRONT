@@ -7,7 +7,7 @@
   <hr class="border border-1 bg-dark w-100">
 </section>
 <section class="container">
-  <div class="col-xl-12 col-xxl-12 mt-3 py-3">
+  <div class="col-xl-12 col-xxl-12 col-sm-12 col-12 col-md-12 mt-3 py-3">
     <h1 class="estilo-text text-center">Cómo recibirás tus pagos</h1>
     <p class="estilo-subtitle text-center">detalla tus datos de transferencia</p>
   </div>
@@ -16,8 +16,12 @@
       <!--------NOMBRE DEL TITULAR-------->
       <div class="col-xl-12 col-xxl-12 col-md-12 col-sm-12 col-12 mt-3">
         <div class="row mx-auto">
-          <div class="col-xl-6 col-sm-6 col-md-6 col-xxl-6 col-6">
+          <div class="col-xl-6 col-sm-12 col-md-6 col-xxl-6 col-12">
             <div class="mb-3">
+              <div
+                class="col-xl-5 col-sm-12 col-md-5 col-xxl-5 col-12 border border-1 color-groud text-design d-sm-block d-block d-md-none d-xl-none d-xxl-none">
+                <p class="text-parrafo">¿Tú eres el dueño de la cuenta? Entonces ingresa tu nombre completo.</p>
+              </div>
               <label for="formNombre" class="form-label fw-bolder">Nombre de titular</label>
               <input type="text" class="form-control" id="formNombre"
                 [class.is-invalid]="formB.formPagoAdn.get('Nombre_Titular')?.touched && formB.formPagoAdn.get('Nombre_Titular')?.invalid"
@@ -29,7 +33,8 @@
               </app-message-error>
             </app-form-errors-container>
           </div>
-          <div class="col-xl-5 col-sm-6 col-md-5 col-xxl-5 col-6 border border-1 color-groud text-design">
+          <div
+            class="col-xl-5 col-sm-12 col-md-5 col-xxl-5 col-12 border border-1 color-groud text-design d-sm-none d-none d-md-block d-xl-block d-xxl-block">
             <p class="text-parrafo">¿Tú eres el dueño de la cuenta? Entonces ingresa tu nombre completo.</p>
           </div>
         </div>
@@ -37,7 +42,11 @@
       <!-------IDENTIFICACION-------->
       <div class="col-xl-12 col-xxl-12 col-12 col-sm-12 col-md-12">
         <div class="row mx-auto">
-          <div class="col-xl-3 col-sm-3 col-3 col-xxl-3 col-3">
+          <div
+            class="col-sm-12 col-12 border border-1 mt-4 text-design d-sm-block d-block d-md-none d-xl-none d-xxl-none">
+            <p class="text-parrafo">Selecciona el Banco al que perteneces.</p>
+          </div>
+          <div class="col-xl-3 col-sm-6 col-3 col-xxl-3 col-md-3">
             <div class="mb-3">
               <label for="formIdentificacionTitular" class="form-label fw-bolder">Identificación</label>
               <input type="text" placeholder="09334562716" id="formIdentificacionTitular" class="form-control"
@@ -52,7 +61,7 @@
             </app-form-errors-container>
           </div>
           <!-------CORREO ELECTRONICO-------->
-          <div class="col-xl-3 col-sm-3 col-3 col-xxl-3 col-3">
+          <div class="col-xl-3 col-sm-6 col-6 col-xxl-3 col-md-3">
             <div class="mb-3">
               <label for="formIdentificacion" class="form-label fw-bolder">Correo Electrónico</label>
               <input type="email" class="form-control" id="formIdentificacion" placeholder="micorreo@gmail.com"
@@ -64,7 +73,8 @@
               <app-message-error forErrorCode="email"></app-message-error>
             </app-form-errors-container>
           </div>
-          <div class="col-xl-5 col-sm-6 col-md-5 col-xxl-5 col-6 border border-1 mt-4 text-design">
+          <div
+            class="col-xl-5 col-md-5 col-xxl-5 border border-1 mt-4 text-design d-sm-none d-none d-md-block d-xl-block d-xxl-block">
             <p class="text-parrafo">Selecciona el Banco al que perteneces.</p>
           </div>
         </div>
@@ -73,7 +83,12 @@
       <!-- Banco de preferencia -->
       <div class="col-xl-12 col-xxl-12 col-md-12 col-sm-12 col-12 mt-3">
         <div class="row mx-auto">
-          <div class="col-xl-6 col-sm-6 col-md-6 col-xxl-6 col-6">
+          <div class="col-sm-12 col-12 border border-1 text-design d-sm-block d-block d-md-none d-xl-none d-xxl-none">
+            <p class="text-parrafo">No olvides seleccionar que tipo de cuenta es y digitar el número de la misma. No te
+              preocupes toda tu
+              información está segura con nosotros.</p>
+          </div>
+          <div class="col-xl-6 col-sm-12 col-md-6 col-xxl-6 col-12">
             <div class="mb-3">
               <label for="exampleFormControlInput1" class="form-label fw-bolder">Banco de preferencia</label>
               <select class="form-select" aria-label="Default select example" formControlName="Id_banco"
@@ -86,15 +101,18 @@
               <app-message-error forErrorCode="required"></app-message-error>
             </app-form-errors-container>
           </div>
-          <div class="col-xl-5 col-sm-6 col-md-5 col-xxl-5 col-6 border border-1 text-design">
-            <p class="text-parrafo">Selecciona el Banco al que perteneces.</p>
+          <div
+            class="col-xl-5 col-md-5 col-xxl-5 border border-1 text-design d-sm-none d-none d-md-block d-xl-block d-xxl-block">
+            <p class="text-parrafo">No olvides seleccionar que tipo de cuenta es y digitar el número de la misma. No te
+              preocupes toda tu
+              información está segura con nosotros.</p>
           </div>
         </div>
       </div>
       <!-------TIPO DE CUENTA, NUMERO DE CUENTA-------->
       <div class="col-xl-12 col-xxl-12 col-md-12 col-sm-12 col-12 mt-3 mb-3">
         <div class="row mx-auto">
-          <div class="col-xl-3 col-sm-3 col-md-3 col-xxl-3 col-3">
+          <div class="col-xl-3 col-sm-6 col-md-3 col-xxl-3 col-6">
             <div class="mb-3">
               <label for="exampleFormControlInput1" class="form-label fw-bolder">Tipo de Cuenta</label>
               <select class="form-select" aria-label="Default select example" formControlName="Tipo_cuenta"
@@ -109,7 +127,7 @@
             </app-form-errors-container>
           </div>
           <!------NUMERO DE CUENTA------->
-          <div class="col-xl-3 col-sm-3 col-md-3 col-xxl-3 col-3">
+          <div class="col-xl-3 col-sm-6 col-md-3 col-xxl-3 col-6">
             <div class="mb-3">
               <label for="formCuenta-Numero" class="form-label fw-bolder">Número de cuenta</label>
               <input type="text" formControlName="Numero_cuenta" class="form-control" id="formCuenta-Numero"
@@ -121,11 +139,6 @@
               <app-message-error forErrorCode="pattern" customMsg="Solo debe ser numeros"></app-message-error>
             </app-form-errors-container>
           </div>
-          <div class="col-xl-5 col-sm-6 col-md-5 col-xxl-5 col-6 border border-1 text-design">
-            <p class="text-parrafo">No olvides seleccionar que tipo de cuenta es y digitar el número de la misma. No te
-              preocupes toda tu
-              información está segura con nosotros.</p>
-          </div>
         </div>
       </div>
     </div>
@@ -135,6 +148,11 @@
 <!-- CONTINUAR -->
 <section class="container-fluid mt-5 py-5">
   <div class="modal-footer fixed-bottom">
+    <!-------ATRAS SE MUESTRA EN EL RESPONSIVE----->
+    <button type="button" class="btn btn-secondary d-sm-block d-block d-xxl-none d-md-none d-xl-none"
+      data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">Atras
+    </button>
+
     <button type="button" class="btn btn-estilos" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour"
       aria-expanded="false" aria-controls="collapseFour">Continuar &nbsp;<svg width="10" height="20" viewBox="0 0 11 16"
         fill="none" xmlns="http://www.w3.org/2000/svg">

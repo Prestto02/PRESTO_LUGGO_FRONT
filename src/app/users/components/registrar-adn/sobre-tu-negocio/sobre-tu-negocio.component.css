@@ -61,3 +61,12 @@ input::placeholder {
   margin-top: 22px;
   font-size: 13px;
 }
+.estilo-text {
+  font-weight: 600;
+  font-size: 28px;
+}
+.estilo-subtitle {
+  font-weight: 300;
+  font-size: 20px;
+  margin-top: -13px;
+}

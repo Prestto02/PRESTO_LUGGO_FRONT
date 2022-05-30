@@ -26,9 +26,10 @@
             <p class="estilo-subtitle text-center">comienza registrando tus datos</p>
           </div>
           <!------CORREO------>
-          <div class="col-xl-12 col-xxl-12">
+          <div class="col-xl-12 col-xxl-12 col-sm-12 col-md-12 col-12">
             <div class="card border col-xl-5 col-xxl-5 mx-auto">
-              <div class="col-xl-8 col-xxl-8 col-sm-12 col-12 col-md-4 mx-auto mt-3">
+          <!------CORREO------>
+              <div class="col-xl-8 col-xxl-8 col-sm-11 col-11 col-md-4 mx-auto mt-3">
                 <label for="email" class="form-label fw-bolder label-text">Correo electrónico</label>
                 <div class="input-group mb-3"
                   [class.is-invalid]="formB.formAdn.get('user')?.touched && formB.formAdn.get('user')?.invalid">
@@ -51,7 +52,7 @@
                 </app-form-errors-container>
               </div>
               <!------CONTRASEÑA------>
-              <div class="col-xl-8 col-xxl-8 col-sm-12 col-12 col-md-4 mx-auto position-relative mb-3">
+              <div class="col-xl-8 col-xxl-8 col-sm-11 col-11 col-md-4 mx-auto position-relative mb-3">
                 <label for="contrasena" class="form-label label-text fw-bolder">Contraseña</label>
                 <div class="input-group"
                   [class.is-invalid]="formB.formAdn.get('pass')?.touched && formB.formAdn.get('pass')?.invalid">
@@ -108,7 +109,7 @@
                 </app-form-errors-container>
               </div>
               <!------REPETIR CONTRASEÑA------>
-              <div class="col-xl-8 col-xxl-8 col-sm-12 col-12 col-md-4 mb-3 mx-auto">
+              <div class="col-xl-8 col-xxl-8 col-sm-11 col-11 col-md-4 mb-3 mx-auto">
                 <label for="contrasena" class="form-label label-text">Repetir Contraseña</label>
                 <div class="input-group"
                   [class.is-invalid]="formB.formAdn.get('contrasena_conf')?.touched && formB.formAdn.get('contrasena_conf')?.invalid">
@@ -154,7 +155,7 @@
                 </app-form-errors-container>
               </div>
               <!------RUC------>
-              <div class="col-xl-8 col-xxl-8 col-sm-12 col-12 col-md-4 mx-auto">
+              <div class="col-xl-8 col-xxl-8 col-sm-11 col-11 col-md-4 mx-auto">
                 <div class="mb-3">
                   <label for="formRuc" class="form-label fw-bolder">Ruc</label>
                   <input type="text" class="form-control" id="formRuc"
@@ -168,7 +169,7 @@
                 </app-form-errors-container>
               </div>
               <!-----RAZON SOCIAL----->
-              <div class="col-xl-8 col-xxl-8 col-sm-12 col-12 col-md-4 mx-auto">
+              <div class="col-xl-8 col-xxl-8 col-sm-11 col-11 col-md-4 mx-auto">
                 <div class="mb-3">
                   <label for="formRazon_Social" class="form-label fw-bolder">Razón social</label>
                   <input type="text" class="form-control" id="formRazon_Social" formControlName="Razon_Social"
@@ -182,7 +183,7 @@
                 </app-form-errors-container>
               </div>
               <!-----CUANDO INICIASTES LA ACTIVIDAD----->
-              <div class="col-xl-8 col-xxl-8 col-sm-12 col-12 col-md-4 mx-auto mb-3">
+              <div class="col-xl-8 col-xxl-8 col-sm-11 col-11 col-md-4 mx-auto mb-3">
                 <div class="mb-3">
                   <label for="formInicioActividades" class="form-label fw-bolder">¿Cuándo iniciastes tus
                     actividades?</label>
