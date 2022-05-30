@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { FormArray, FormBuilder, Validators } from '@angular/forms';
+import { Expresion } from 'src/app/shared/validations/expresionRegular';
 @Injectable({ providedIn: 'root' })
 export class BaseFormConfigAtributos {
   constructor(private formB: FormBuilder) {}
@@ -24,14 +25,20 @@ export class BaseFormConfigAtributos {
     let atributosForm = this.formB.group({
       NombreAtributos: [nombre, [Validators.required]],
       Descripcion: [descripcion, [Validators.required]],
-      Sku: ['', [Validators.pattern(/^[A-Za-z0-9-_ ]+$/)]], //VALIDACIONES
+      Sku: ['', [Validators.pattern(Expresion.Sku)]], //VALIDACIONES
       Estado_Producto: ['', [Validators.required]],
       PrecioPorVariacion: [
         '',
-        [Validators.required, Validators.pattern(/^[0-9]+([,][0-9]+)?$/)],
+        [Validators.required, Validators.pattern(Expresion.DolarYCentavo)],
       ],
-      StockItems: ['', [Validators.required, Validators.pattern(/^[0-9]+$/)]],
-      StockMinimo: ['', [Validators.required, Validators.pattern(/^[0-9]+$/)]], //VALIDACIONES
+      StockItems: [
+        '',
+        [Validators.required, Validators.pattern(Expresion.SoloNumeros)],
+      ],
+      StockMinimo: [
+        '',
+        [Validators.required, Validators.pattern(Expresion.SoloNumeros)],
+      ], //VALIDACIONES
       atributes: this.formB.group({
         id_Color: idColor,
         id_tamaño_articulo: idTamano,

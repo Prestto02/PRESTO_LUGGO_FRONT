@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { FormArray, FormBuilder, Validators } from '@angular/forms';
+import { Expresion } from 'src/app/shared/validations/expresionRegular';
 
 @Injectable({ providedIn: 'root' })
 export class BaseFormEtiquetas {
@@ -15,7 +16,13 @@ export class BaseFormEtiquetas {
   //AÑADIR MAS TAMANO
   addEtiquetas(data: any) {
     let etiquetaForm = this.formB.group({
-      nombre: [data, [Validators.required]],
+      nombre: [
+        data,
+        [
+          Validators.required,
+          Validators.pattern(Expresion.SoloLetrasAcentosEspacios),
+        ],
+      ],
     });
     this.etiquetas.push(etiquetaForm);
   }

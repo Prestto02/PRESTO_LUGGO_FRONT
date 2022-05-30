@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { Expresion } from 'src/app/shared/validations/expresionRegular';
 
 @Injectable({ providedIn: 'root' })
 export class BaseUsersForm {
@@ -13,7 +14,7 @@ export class BaseUsersForm {
         Validators.required,
         Validators.minLength(3),
         Validators.maxLength(20),
-        Validators.pattern(/^[A-Za-z ]+$/),
+        Validators.pattern(Expresion.SoloLetrasAcentosEspacios),
       ],
     ],
     nombre2: [
@@ -22,7 +23,7 @@ export class BaseUsersForm {
         Validators.required,
         Validators.minLength(3),
         Validators.maxLength(20),
-        Validators.pattern(/^[A-Za-z ]+$/),
+        Validators.pattern(Expresion.SoloLetrasAcentosEspacios),
       ],
     ],
     apellido1: [
@@ -31,7 +32,7 @@ export class BaseUsersForm {
         Validators.required,
         Validators.minLength(3),
         Validators.maxLength(30),
-        Validators.pattern(/^[A-Za-z ]+$/),
+        Validators.pattern(Expresion.SoloLetrasAcentosEspacios),
       ],
     ],
     apellido2: [
@@ -40,7 +41,7 @@ export class BaseUsersForm {
         Validators.required,
         Validators.minLength(3),
         Validators.maxLength(30),
-        Validators.pattern(/^[A-Za-z ]+$/),
+        Validators.pattern(Expresion.SoloLetrasAcentosEspacios),
       ],
     ],
     direccion2: [
@@ -49,7 +50,7 @@ export class BaseUsersForm {
         Validators.required,
         Validators.minLength(8),
         Validators.maxLength(50),
-        Validators.pattern(/^[A-Za-z0-9 ]+$/),
+        Validators.pattern(Expresion.SoloLetrasAcentosEspacios),
       ],
     ],
     celular: [
@@ -58,7 +59,7 @@ export class BaseUsersForm {
         Validators.required,
         Validators.maxLength(10),
         Validators.minLength(10),
-        Validators.pattern(/[0-9]{2}[0-9]{8}/),
+        Validators.pattern(Expresion.CedulaTelefono),
       ],
     ],
     cedula: [
@@ -67,7 +68,7 @@ export class BaseUsersForm {
         Validators.required,
         Validators.maxLength(10),
         Validators.minLength(10),
-        Validators.pattern(/[0-9]{2}[0-9]{8}/),
+        Validators.pattern(Expresion.CedulaTelefono),
       ],
     ],
     telefono: [
@@ -76,7 +77,7 @@ export class BaseUsersForm {
         Validators.required,
         Validators.maxLength(10),
         Validators.minLength(10),
-        Validators.pattern(/[0-9]{2}[0-9]{8}/),
+        Validators.pattern(Expresion.CedulaTelefono),
       ],
     ],
     sexo: ['', [Validators.required]],

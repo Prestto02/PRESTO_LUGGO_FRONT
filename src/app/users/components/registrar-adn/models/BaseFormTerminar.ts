@@ -1,14 +1,15 @@
 import { Injectable } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { Expresion } from 'src/app/shared/validations/expresionRegular';
 @Injectable({ providedIn: 'root' })
 export class BaseFormTerminarAdn {
   constructor(private formB: FormBuilder) {}
   formTerminar = this.formB.group({
-    DondeEres: ['', [Validators.pattern(/^[A-Za-z0-9Á-ÿ\u00E0-\u00FC\-_ ]+$/)]],
+    DondeEres: ['', [Validators.pattern(Expresion.SoloLetrasAcentosEspacios)]],
     FechaNacimiento: [''],
     ComoTeDescribes: [
       '',
-      [Validators.pattern(/^[A-Za-z0-9Á-ÿ\u00E0-\u00FC\-_ ]+$/)],
+      [Validators.pattern(Expresion.SoloLetrasAcentosEspacios)],
     ],
   });
 }

@@ -37,7 +37,7 @@
                   <div class="col-xl-3">
                     <div class="form-floating mb-3">
                       <input type="text" class="form-control is-invalid" formControlName="sku" id="floatingSku"
-                        [class.is-invalid]="formB.formProducts.get('sku')?.invalid" placeholder="Nombre del producto"
+                        [class.is-invalid]="formB.formProducts.get('sku')?.invalid" placeholder="Sku"
                         title="hola mundo">
                       <label for="floatingSku">SKU</label>
                       <app-form-errors-container [forControl]="formB.formProducts.get('sku')">
@@ -100,7 +100,7 @@
                         formControlName="descripcion_articulo"
                         [class.is-invalid]="formB.formProducts.get('descripcion_articulo')?.touched && formB.formProducts.get('descripcion_articulo')?.invalid"
                         placeholder="Detalle del producto" style="height: 100px" title="hola mundo"></textarea>
-                      <label for="floatingDetalle">Descripcioón</label>
+                      <label for="floatingDetalle">Descripción</label>
                       <app-form-errors-container [forControl]="formB.formProducts.get('descripcion_articulo')">
                         <app-message-error forErrorCode="required"></app-message-error>
                         <app-message-error forErrorCode="minlength" customMsg="Debe tener al menos 12 caracteres">
@@ -192,7 +192,7 @@
                 </div>
               </form>
             </div>
-            <div class="modal-footer fixed-bottom bg-white">
+            <div class="modal-footer">
               <button type="button" class="btn btn-secondary" (click)="irProducto();">Cancelar</button>
               <button class="btn btn-primary collapsed" type="button" data-bs-toggle="collapse"
                 data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo"
@@ -228,8 +228,7 @@
     </div>
   </div>
 </section>
-
-<!-- <button class="btn btn-primary collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+ <button class="btn btn-primary collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo"
   aria-expanded="true" aria-controls="collapseTwo" (click)="addAtributos()">TWO</button>
 <button class="btn btn-primary collapsed" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false"
-  aria-controls="collapseFour" (click)="addAtributos()">THREE</button> -->
+  aria-controls="collapseFour" (click)="addAtributos()">THREE</button>

@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { Expresion } from 'src/app/shared/validations/expresionRegular';
 @Injectable({ providedIn: 'root' })
 export class BaseFormNegocioAdn {
   constructor(private formB: FormBuilder) {}
@@ -9,7 +10,7 @@ export class BaseFormNegocioAdn {
       '',
       [
         Validators.required,
-        Validators.pattern(/^[A-Za-z0-9Á-ÿ\u00E0-\u00FC\-_ ]+$/),
+        Validators.pattern(Expresion.SoloLetrasAcentosEspacios),
       ],
     ],
     Ciudad: ['', [Validators.required]],
@@ -18,7 +19,7 @@ export class BaseFormNegocioAdn {
       '',
       [
         Validators.required,
-        Validators.pattern(/^[A-Za-z0-9Á-ÿ\u00E0-\u00FC\-_ ]+$/),
+        Validators.pattern(Expresion.SoloLetrasAcentosEspacios),
       ],
     ],
     Sucursales: [false, [Validators.required]],
@@ -28,18 +29,18 @@ export class BaseFormNegocioAdn {
         Validators.required,
         Validators.maxLength(10),
         Validators.minLength(10),
-        Validators.pattern(/[0-9]{2}[0-9]{8}/),
+        Validators.pattern(Expresion.CedulaTelefono),
       ],
     ],
     descripcion_outline: [
       '',
       [
         Validators.required,
-        Validators.pattern(/^[A-Za-z0-9Á-ÿ\u00E0-\u00FC\-_ ]+$/),
+        Validators.pattern(Expresion.SoloLetrasAcentosEspacios),
       ],
     ],
   });
-
+  //ENVIO EL BOOLEANO DE SUCURSALES
   getBooleanSucursales() {
     const sucursales_boolean = this.formNegocioAdn.get('Sucursales')?.value;
     if (sucursales_boolean === 'true') {

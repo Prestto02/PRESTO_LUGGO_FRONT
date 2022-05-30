@@ -14,13 +14,11 @@ import { UserAdnService } from '../services/user-adn.service';
   templateUrl: './terminar-registro.component.html',
   styleUrls: ['./terminar-registro.component.css'],
 })
-export class TerminarRegistroComponent implements OnInit {
+export class TerminarRegistroComponent {
   constructor(
     public formAdn: BaseFormAdnUsers,
     public formNegocioAdn: BaseFormNegocioAdn,
     public formPagosAdn: BaseFormPagosAdn,
     public formB: BaseFormTerminarAdn
   ) {}
-
-  ngOnInit(): void {}
 }

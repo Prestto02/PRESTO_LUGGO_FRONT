@@ -32,7 +32,6 @@
               orden en que
               aparecen aquí.</p>
           </div>
-
           <!----------ARRAY DE ATRIBUTOS----------->
           <div class="card">
             <div class="col-xl-12 col-xxl-12 col-sm-12 col-12 col-md-12 ">
@@ -101,6 +100,7 @@
                 </ng-container>
               </ng-container>
             </div>
+            {{formAtributo.formConfigProduct.value | json}}
             <!--------SI EXISTE MAS DE UN ATRIBUTO AÑADIR------->
             <div class="modal-footer">
               <div *ngIf="formAtributo.atributos.length>0;"

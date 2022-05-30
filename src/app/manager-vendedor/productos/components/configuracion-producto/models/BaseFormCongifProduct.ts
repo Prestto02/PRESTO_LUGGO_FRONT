@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { FormArray, FormBuilder, Validators } from '@angular/forms';
+import { Expresion } from 'src/app/shared/validations/expresionRegular';
 @Injectable({ providedIn: 'root' })
 export class BaseFormConfigProducts {
   constructor(private formB: FormBuilder) {}
@@ -7,7 +8,7 @@ export class BaseFormConfigProducts {
     nombreVariacion: [''],
     Atributos: this.formB.array([
       this.formB.group({
-        id: ['', [Validators.required]],
+        id: [1, [Validators.required]],
         url: ['api/color', [Validators.required]],
         nombre: ['Color', [Validators.required]],
         id_atributo: ['', Validators.required],
@@ -16,14 +17,14 @@ export class BaseFormConfigProducts {
           '',
           [
             Validators.required,
-            Validators.pattern(/^[A-Za-z0-9Á-ÿ\u00E0-\u00FC\-_ ]+$/),
+            Validators.pattern(Expresion.SoloLetrasAcentosEspacios),
           ],
         ],
         descripcion: [
           '',
           [
             Validators.required,
-            Validators.pattern(/^[A-Za-z0-9Á-ÿ\u00E0-\u00FC\-_ ]+$/),
+            Validators.pattern(Expresion.SoloLetrasAcentosEspacios),
           ],
         ],
       }),
@@ -45,14 +46,14 @@ export class BaseFormConfigProducts {
         '',
         [
           Validators.required,
-          Validators.pattern(/^[A-Za-z0-9Á-ÿ\u00E0-\u00FC\-_ ]+$/),
+          Validators.pattern(Expresion.SoloLetrasAcentosEspacios),
         ],
       ],
       descripcion: [
         '',
         [
           Validators.required,
-          Validators.pattern(/^[A-Za-z0-9Á-ÿ\u00E0-\u00FC\-_ ]+$/),
+          Validators.pattern(Expresion.SoloLetrasAcentosEspacios),
         ],
       ],
     });

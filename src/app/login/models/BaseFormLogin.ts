@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { Expresion } from 'src/app/shared/validations/expresionRegular';
 import { passwordsMustBeEqual } from './passwordMustEquals';
 
 @Injectable({ providedIn: 'root' })
@@ -16,7 +17,7 @@ export class BaseFormLogin {
           Validators.required,
           Validators.minLength(8),
           Validators.maxLength(20),
-          Validators.pattern(/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,})/),
+          Validators.pattern(Expresion.Contrasena),
         ],
       ],
       contrasena_conf: [
@@ -25,6 +26,7 @@ export class BaseFormLogin {
           Validators.required,
           Validators.minLength(8),
           Validators.maxLength(30),
+          Validators.pattern(Expresion.Contrasena),
         ],
       ],
     },
@@ -38,7 +40,7 @@ export class BaseFormLogin {
       [Validators.required, Validators.minLength(8), Validators.maxLength(30)],
     ],
   });
-  //BUSCaR USUARIO
+  //BUSAR USUARIO
   buscarUser = this.formB.group({
     user: ['', [Validators.required, Validators.email]],
   });
@@ -51,6 +53,7 @@ export class BaseFormLogin {
           Validators.required,
           Validators.minLength(8),
           Validators.maxLength(30),
+          Validators.pattern(Expresion.Contrasena),
         ],
       ],
       contrasena_conf: [

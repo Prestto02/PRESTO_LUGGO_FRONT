@@ -38,7 +38,7 @@ export class TerminosCondicionesComponent implements OnInit, OnDestroy {
     this.position.getPositionUser();
     this.getDataTermsCondition();
   }
-
+  //TRAER TODOS LOS TEMRINOS Y CONDICIONES
   getDataTermsCondition() {
     this.apiTermsCondition
       .getIdTermsCondition(termsConditionAdn.id)
@@ -60,11 +60,11 @@ export class TerminosCondicionesComponent implements OnInit, OnDestroy {
       this.position.longitud
     );
     this.apiAdn.postUserAdn(form).subscribe((res) => {
+      this.load = true;
       this.toatsMessage.getSuccessMessage(
         'Exito',
         'Se agrego con exito al usuario'
       );
-      this.load = true;
       this.router.navigate([
         `/${UrlFront.ActivarCuenta.cuenta}/${UrlFront.ActivarCuenta.mensajeAlCorreo}`,
         form.user,

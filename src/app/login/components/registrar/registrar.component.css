@@ -42,3 +42,6 @@ body {
   position: absolute;
   z-index: 12;
 }
+.bg-body {
+  z-index: 10;
+}

@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { Expresion } from 'src/app/shared/validations/expresionRegular';
 import { passwordsMustBeEqual } from './passwordEquaslAdn';
 @Injectable({ providedIn: 'root' })
 export class BaseFormAdnUsers {
@@ -14,7 +15,7 @@ export class BaseFormAdnUsers {
           Validators.required,
           Validators.minLength(8),
           Validators.maxLength(20),
-          Validators.pattern(/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,})/),
+          Validators.pattern(Expresion.Contrasena),
         ],
       ],
       contrasena_conf: [
@@ -23,20 +24,22 @@ export class BaseFormAdnUsers {
           Validators.required,
           Validators.minLength(8),
           Validators.maxLength(20),
-          Validators.pattern(/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,})/),
+          Validators.pattern(Expresion.Contrasena),
         ],
       ],
-      Ruc: ['', [Validators.required, Validators.pattern(/^[A-Za-z0-9]+$/)]],
+      Ruc: [
+        '',
+        [Validators.required, Validators.pattern(Expresion.NumerosYLetras)],
+      ],
       Razon_Social: [
         '',
         [
           Validators.required,
-          Validators.pattern(/^[A-Za-z0-9Á-ÿ\u00E0-\u00FC\-_ ]+$/),
+          Validators.pattern(Expresion.SoloLetrasAcentosEspacios),
         ],
       ],
       Inicio_actividades: ['', [Validators.required]],
     },
     { validator: passwordsMustBeEqual }
   );
-
 }

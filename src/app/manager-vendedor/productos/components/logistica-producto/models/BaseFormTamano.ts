@@ -1,20 +1,22 @@
 import { Injectable } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { Expresion } from 'src/app/shared/validations/expresionRegular';
 
 @Injectable({ providedIn: 'root' })
 export class BaseFormTamanoProducto {
   constructor(private formB: FormBuilder) {}
 
   formTamanoProducto = this.formB.group({
-    Longitud_x: ['', [Validators.pattern(/^[0-9]+([,][0-9]+)?$/)]],
-    Longitud_y: ['', [Validators.pattern(/^[0-9]+([,][0-9]+)?$/)]],
-    Longitud_z: ['', [Validators.pattern(/^[0-9]+([,][0-9]+)?$/)]],
-    Peso: ['', [Validators.pattern(/^[0-9]+([,][0-9]+)?$/)]],
+    Longitud_x: ['', [Validators.pattern(Expresion.DimensionConDecimales)]],
+    Longitud_y: ['', [Validators.pattern(Expresion.DimensionConDecimales)]],
+    Longitud_z: ['', [Validators.pattern(Expresion.DimensionConDecimales)]],
+    Peso: ['', [Validators.pattern(Expresion.DimensionConDecimales)]],
     TiempoDespacho: [
       '',
       [
+        Validators.minLength(1),
         Validators.maxLength(2),
-        Validators.pattern(/^[1-9]{1}[0-9]{1}/), //SOLO NUMEROS DEl 1 - 9 y 0-9
+        Validators.pattern(Expresion.TiempoDescpacho), //SOLO NUMEROS DEl 1 - 9 y 0-9
       ],
     ],
     GestionEnvio: [''],

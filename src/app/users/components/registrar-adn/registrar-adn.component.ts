@@ -28,10 +28,11 @@ export class RegistrarAdnComponent implements OnInit {
   perdioElFocus() {
     this.sugerencias = false; //PARA OCULTAR LAS SUGERENCIAS
   }
-
+  //VER CONTRASÑA
   verPassword() {
     this.password = !this.password;
   }
+  //VER CONTRASEÑA 2
   verPassword2() {
     this.password2 = !this.password2;
   }
