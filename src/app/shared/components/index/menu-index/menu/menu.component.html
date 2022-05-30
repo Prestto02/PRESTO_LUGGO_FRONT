@@ -42,7 +42,7 @@
                 <option value="{{categoria.id}}" class="color-select" *ngFor="let categoria of categoriaItems">
                   {{categoria.name}}</option>
               </select>
-              <app-autocompletado-productos class="w-75" [formGroup]="formB.formSearchProducts">
+              <app-autocompletado-productos class="w-75 responsive-autocomplete" [formGroup]="formB.formSearchProducts">
               </app-autocompletado-productos>
               <button class="input-group-text border-bottom" id="basic-addon1" type="submit">
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -67,8 +67,8 @@
               <ng-container *ngIf="emailUsuario; else noIdentificado">
                 <div
                   class="col-md-9 col-sm-8 col-7 col-xl-10 col-xxl-10 text-center d-block d-sm-block d-xxl-block d-xl-block d-md-block">
-                  <a class="nav-link cursor-item mt-3">
-                    <b (click)="irAlPerfilUsuario()" class="">Mi cuenta</b>
+                  <a class="nav-link cursor-item margin-responsive">
+                    <b (click)="irAlPerfilUsuario()">Mi cuenta</b>
                   </a>
                 </div>
                 <div (click)="irAlPerfilUsuario()"
@@ -87,9 +87,8 @@
               <ng-template #noIdentificado>
                 <div
                   class="col-md-9 col-sm-8 col-7 col-xl-10 col-xxl-9 text-center d-block d-sm-block d-xxl-block d-xl-block d-md-block">
-
-                  <a class="nav-link cursor-item" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRightLogin"
-                    aria-controls="offcanvasRight">
+                  <a class="nav-link cursor-item mt-auto" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasRightLogin" aria-controls="offcanvasRight">
                     Hola, Ingresa <b>Mi cuenta</b>
                   </a>
                 </div>
