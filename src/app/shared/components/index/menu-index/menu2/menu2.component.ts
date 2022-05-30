@@ -74,4 +74,10 @@ export class Menu2Component implements OnInit {
       `${UrlFront.Login.login}/${UrlFront.Login.iniciarSesion}`
     );
   }
+  //IR A REGISTRARSE ADN
+  venderPuerto() {
+    this.router.navigateByUrl(
+      `${UrlFront.Users.users}/${UrlFront.Users.adnRegistrar}`
+    );
+  }
 }

@@ -11,9 +11,22 @@ export class Footer2Component implements OnInit {
   constructor(private _route: Router) {}
 
   ngOnInit(): void {}
+  //QUIENES SOMOS
   irQuienesSomos() {
     this._route.navigateByUrl(
       `${UrlFront.Menu.menu}/${UrlFront.Menu.quienesSomos}`
+    );
+  }
+  //IR A REGISTRARSE ADN
+  venderPuerto() {
+    this._route.navigateByUrl(
+      `${UrlFront.Users.users}/${UrlFront.Users.adnRegistrar}`
+    );
+  }
+  //REGISTRAR CLIENTE
+  registrarseCliente() {
+    this._route.navigateByUrl(
+      `${UrlFront.Login.login}/${UrlFront.Login.postRegister}`
     );
   }
 }
