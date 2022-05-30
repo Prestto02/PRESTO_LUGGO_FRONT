@@ -13,6 +13,10 @@ export class BaseFormSearchProducts {
     categoria: [''],
     nombre: ['', BuscadorAsyncronico.BuscadorAsynProducto(this.apiServi)],
   });
+  //LIMPIAR FORMULARIO
+  limpiarFormulario() {
+    this.formSearchProducts.reset();
+  }
 }
 
 //BUSCADOR ASYNCRONICO

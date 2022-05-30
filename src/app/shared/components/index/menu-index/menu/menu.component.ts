@@ -60,6 +60,7 @@ export class MenuComponent implements OnInit {
       `/${UrlFront.Menu.menu}/${UrlFront.Menu.buscarGet}`,
       nombre,
     ]);
+    this.formB.limpiarFormulario();
   }
   //LISTA DE DESEO
   irListaDeseos() {

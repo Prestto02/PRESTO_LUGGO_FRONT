@@ -30,6 +30,7 @@ export class AutocompletadoProductosComponent implements OnInit {
       `/${UrlFront.Menu.menu}/${UrlFront.Menu.buscarGet}`,
       nombre,
     ]);
+    this.formB.limpiarFormulario(); //LIMPIAR FORMULARIO
   }
   getProductsList() {
     this.apiAsyncProduct.listProduct.subscribe((res) => {

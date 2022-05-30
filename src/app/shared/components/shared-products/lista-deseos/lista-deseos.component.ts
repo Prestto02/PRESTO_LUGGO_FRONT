@@ -13,6 +13,7 @@ import { ListaDeseosService } from './services/lista-deseos.service';
 })
 export class ListaDeseosComponent implements OnInit {
   public urlImg = RepositorioImg.urlRepositorio;
+  imgEmptyListDeseos = `${RepositorioImg.urlRepositorio}img/IM%C3%81GENES/lista-deseos/empty-wishlist.png`;
   dataListDeseos: any; //OBTENER LA LISTA DE DESEOS
   filterPost = '';
   filasDeDos = false;
