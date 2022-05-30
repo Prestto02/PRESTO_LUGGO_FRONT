@@ -10,8 +10,13 @@ export class FiltroPaginacionPipe implements PipeTransform {
       //BUSCO LOS PRODUCTOS
       (product: any) =>
         product.name
-          .toLowerCase() //DIFEENCIAR ENTRE MAYUSCULA Y MINUSCULA
-          .indexOf(searchProducts.toLowerCase()) !== -1
+          .toLowerCase() //DIFEENCIAR ENTRE MAYUSCULA Y MINUSCULA EL NOMBRE DEL PRODUCTO
+          .indexOf(searchProducts.toLowerCase()) !== -1 ||
+        product.codigo.toLowerCase().indexOf(searchProducts.toLowerCase()) !==
+          -1 || //CODIGO DE PRODUCTO
+        product.nombre_categoria
+          .toLowerCase()
+          .indexOf(searchProducts.toLowerCase()) !== -1 //CATEGORIA DEL PRODUCTO
     );
     return filterProducts;
   }

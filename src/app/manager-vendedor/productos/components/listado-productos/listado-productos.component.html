@@ -53,7 +53,7 @@
         <tbody>
           <ng-container *ngIf="dataProducts && dataProducts.length>0; else notData">
             <tr
-              *ngFor="let product of dataProducts | orderBy:key:reverse | filtroPaginacion:searchProducts | paginate: {itemsPerPage:6,currentPage:p};">
+              *ngFor="let product of dataProducts | orderBy:key:reverse | filtroPaginacion:searchProducts | paginate: {itemsPerPage:6,currentPage:p}">
               <td class="mx-auto"><img loading="lazy" src="{{urlImg}}{{product.imagen}}" alt="product" width="77px"
                   height="66px" class="img-fluid"></td>
               <td>{{product.codigo}}</td>
@@ -81,8 +81,18 @@
                   </svg>
                 </a>
               </td>
+
             </tr>
           </ng-container>
+          <!-----SI EL PIPE DE FILTRADO ES MENOR A 0-------->
+          <ng-container *ngIf="(dataProducts | filtroPaginacion:searchProducts)?.length <= 0">
+            <tr>
+              <td colspan="10" rowspan="4">
+                <h4 class="text-center mt-3">No existe ese producto</h4>
+              </td>
+            </tr>
+          </ng-container>
+          <!-----SI NO HAY REGISTRO DE PRODUCTO-------->
           <ng-template #notData>
             <tr>
               <td colspan="10" rowspan="4">
