@@ -26,7 +26,8 @@
                   fill="#AAAAAA" />
               </svg>
               <input type="file" class="form-control position-absolute top-0 h-100 w-100" id="formFile"
-                alife-file-to-base64 (onFileChanged)="getArchive($event)" (change)="getImage($event);" required>
+                title="Sube la imágen de tu producto" alife-file-to-base64 (onFileChanged)="getArchive($event)"
+                (change)="getImage($event);" required>
             </div>
             <!-------Formulario--------->
             <div class="col-xl-6 col-xxl-6 col-sm-12 col-12 col-md-6 mx-3">
@@ -38,7 +39,7 @@
                     <div class="form-floating mb-3">
                       <input type="text" class="form-control is-invalid" formControlName="sku" id="floatingSku"
                         [class.is-invalid]="formB.formProducts.get('sku')?.invalid" placeholder="Sku"
-                        title="hola mundo">
+                        title="Puedes escribir el código del producto">
                       <label for="floatingSku">SKU</label>
                       <app-form-errors-container [forControl]="formB.formProducts.get('sku')">
                         <app-message-error forErrorCode="pattern"
@@ -52,7 +53,7 @@
                       <input type="text" class="form-control is-invalid" formControlName="nombre_articulo"
                         id="floatingNombre"
                         [class.is-invalid]="formB.formProducts.get('nombre_articulo')?.touched && formB.formProducts.get('nombre_articulo')?.invalid"
-                        placeholder="Nombre del producto" title="hola mundo">
+                        placeholder="Nombre del producto" title="Escribe el nombre de tu producto">
                       <label for="floatingNombre">Nombre
                       </label>
                       <app-form-errors-container [forControl]="formB.formProducts.get('nombre_articulo')">
@@ -68,7 +69,7 @@
                   <div class="col-xl-3 position-relative">
                     <div class="form-floating">
                       <input type="text" formControlName="marca" class="form-control" id="floatingMarca"
-                        placeholder="Nike" (keyup)="onKeyPres($event);" title="hola mundo"
+                        placeholder="Nike" (keyup)="onKeyPres($event);" title="Escoja o busque la marca del producto"
                         [class.is-invalid]="formB.formProducts.get('marca')?.touched && formB.formProducts.get('marca')?.invalid" />
                       <!--                       <select class="form-select is-invalid" id="floatingSelect" formControlName="marca"
                         [class.is-invalid]="formB.formProducts.get('marca')?.touched && formB.formProducts.get('marca')?.invalid"
@@ -99,7 +100,7 @@
                       <textarea class="form-control is-invalid" id="floatingDetalle"
                         formControlName="descripcion_articulo"
                         [class.is-invalid]="formB.formProducts.get('descripcion_articulo')?.touched && formB.formProducts.get('descripcion_articulo')?.invalid"
-                        placeholder="Detalle del producto" style="height: 100px" title="hola mundo"></textarea>
+                        placeholder="Detalle del producto" style="height: 100px" title="Describe el producto "></textarea>
                       <label for="floatingDetalle">Descripción</label>
                       <app-form-errors-container [forControl]="formB.formProducts.get('descripcion_articulo')">
                         <app-message-error forErrorCode="required"></app-message-error>
@@ -143,7 +144,7 @@
                   <div class="col-xl-6 col-sm-6 col-md-6 col-xxl-6 col-6">
                     <div class="form-floating mb-3">
                       <select id="forRestricciones" class="form-select" formControlName="Restricciones"
-                        title="hola mundo">
+                        title="Selecciona las restricciones del producto">
                         <option value="" selected>Seleccionar</option>
                         <option value="Apto para todo público">Apto para todo público</option>
                         <option value="Sólo para mayores de 18 años">Sólo para mayores de 18 años</option>
@@ -155,7 +156,7 @@
                   <div class="col-xl-6 col-sm-6 col-md-6 col-xxl-6 col-6 position-relative">
                     <div class="form-floating mb-3">
                       <select id="forDisponibilidad" class="form-select" formControlName="Disponibilidad"
-                        title="hola mundo">
+                        title="Busque que tipo de disponibilidad tiene su producto">
                         <option value="" selected>Seleccionar</option>
                         <option value="Inmediata">Inmediata</option>
                         <option value="Bajo pedido">Bajo pedido</option>
@@ -170,7 +171,7 @@
                   <div class="col-xl-6 col-sm-6 col-md-6 col-xxl-6 col-6">
                     <div class="form-floating mb-3">
                       <select id="forDisponibilidad" class="form-select" formControlName="Garantia"
-                        (change)="selectGarantia($event)">
+                        (change)="selectGarantia($event)" title="Seleccione si el producto ofrece una garantia">
                         <option value="" selected>Seleccionar</option>
                         <option value="Si">Si</option>
                         <option value="No">No</option>
@@ -184,7 +185,7 @@
                       <div class="form-floating">
                         <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"
                           placeholder="Describa sus garantías" formControlName="Tipo_Garantia"
-                          title="hola mundo"></textarea>
+                          title="Describe las garantias que tiene el producto"></textarea>
                         <label for="floatingTextarea">Condiciones de Garantías</label>
                       </div>
                     </div>
@@ -192,7 +193,7 @@
                 </div>
               </form>
             </div>
-            <div class="modal-footer fixed-bottom bg-white">
+            <div class="modal-footer ">
               <button type="button" class="btn btn-secondary" (click)="irProducto();">Cancelar</button>
               <button class="btn btn-primary collapsed" type="button" data-bs-toggle="collapse"
                 data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo"
@@ -228,7 +229,7 @@
     </div>
   </div>
 </section>
-<!--  <button class="btn btn-primary collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+<button class="btn btn-primary collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo"
   aria-expanded="true" aria-controls="collapseTwo" (click)="addAtributos()">TWO</button>
 <button class="btn btn-primary collapsed" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false"
-  aria-controls="collapseFour" (click)="addAtributos()">THREE</button> -->
+  aria-controls="collapseFour" (click)="addAtributos()">THREE</button>
