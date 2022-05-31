@@ -12,13 +12,37 @@ export class BaseFormAtributosConfig {
     modelo: ['', [Validators.required]],
 
     Peso: this.formB.group({
-      peso: ['', [Validators.required]],
+      peso: [
+        '',
+        [
+          Validators.required,
+          Validators.pattern(Expresion.DimensionConDecimales),
+        ],
+      ],
     }),
 
     Tamaño_articulo: this.formB.group({
-      Longitud_x: ['', Validators.required],
-      Longitud_y: ['', Validators.required],
-      Longitud_z: ['', Validators.required],
+      Longitud_x: [
+        '',
+        [
+          Validators.required,
+          Validators.pattern(Expresion.DimensionConDecimales),
+        ],
+      ],
+      Longitud_y: [
+        '',
+        [
+          Validators.required,
+          Validators.pattern(Expresion.DimensionConDecimales),
+        ],
+      ],
+      Longitud_z: [
+        '',
+        [
+          Validators.required,
+          Validators.pattern(Expresion.DimensionConDecimales),
+        ],
+      ],
     }),
   });
   //TRANSFORMAR EL COLOR EN ARREGLO
