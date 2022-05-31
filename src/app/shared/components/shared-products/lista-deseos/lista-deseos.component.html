@@ -29,8 +29,7 @@
               </svg>
             </div>
             <div class="col-xl-7 col-xxl-7 col-sm-7 col-7 col-md-7 mx-auto" *ngIf="emailUsuario">
-              <button type="button" class="btn btn-anadir-coleccion" data-bs-toggle="modal"
-                data-bs-target="#AgregarColeccion">
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#AgregarColeccion">
                 <svg width="19" height="17" viewBox="0 0 15 19" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path
                     d="M11.458 5.79171H7.20801V1.54171C7.20801 1.35385 7.13338 1.17368 7.00054 1.04084C6.8677 0.908002 6.68754 0.833374 6.49967 0.833374C6.31181 0.833374 6.13165 0.908002 5.99881 1.04084C5.86597 1.17368 5.79134 1.35385 5.79134 1.54171V5.79171H1.54134C1.35348 5.79171 1.17331 5.86633 1.04047 5.99917C0.907636 6.13201 0.833008 6.31218 0.833008 6.50004C0.833008 6.6879 0.907636 6.86807 1.04047 7.00091C1.17331 7.13375 1.35348 7.20837 1.54134 7.20837H5.79134V11.4584C5.79134 11.6462 5.86597 11.8264 5.99881 11.9592C6.13165 12.0921 6.31181 12.1667 6.49967 12.1667C6.68754 12.1667 6.8677 12.0921 7.00054 11.9592C7.13338 11.8264 7.20801 11.6462 7.20801 11.4584V7.20837H11.458C11.6459 7.20837 11.826 7.13375 11.9589 7.00091C12.0917 6.86807 12.1663 6.6879 12.1663 6.50004C12.1663 6.31218 12.0917 6.13201 11.9589 5.99917C11.826 5.86633 11.6459 5.79171 11.458 5.79171Z"
@@ -54,7 +53,7 @@
           </div>
         </ng-container>
         <!------BUSCAR PRODUCTOS--------->
-        <div class="col-xl-3 col-xxl-3 col-12 col-sm-12 col-md-12 mt-3">
+        <div class="col-xl-3 col-xxl-3 col-12 col-sm-12 col-md-3 mt-3">
           <div class="input-group">
             <input type="text" class="form-control input-border" placeholder="Buscar" title="Buscar productos"
               [(ngModel)]="filterPost" name="filterPost" aria-label="Username" aria-describedby="basic-addon1">
@@ -80,7 +79,7 @@
               [class]="filasDeDos?'col-xl-6 col-xxl-6 col-sm-12 col-md-6 col-12 transicion':'col-xl-12 col-xl-12 col-sm-12 col-md-12 col-12 transicion'">
               <div class=" row">
                 <div
-                  [class]="filasDeDos?'col-xl-6 col-xxl-6 col-sm-12 col-md-6 col-12':'col-xl-4 col-xl-4 col-sm-12 col-md-12 col-12'">
+                  [class]="filasDeDos?'col-xl-6 col-xxl-6 col-sm-12 col-md-6 col-12':'col-12 col-md-4 col-sm-12 col-xl-4 col-xxl-4'">
                   <div class="row">
                     <div class="col-xl-7 col-xxl-7 col-7 col-sm-7 col-md-7 mx-auto">
                       <img loading="lazy" src="{{urlImg}}{{listaDeseos.imagen}}" alt="Imagen del producto"
@@ -90,13 +89,13 @@
                 </div>
                 <div class="col-xl-5 col-xxl-5 col-12 col-sm-12 col-md-5">
                   <div class="row">
-                    <div class="col-xl-12">
+                    <div class="col-xl-12 col-xxl-12 col-sm-12 col-md-12 col-12">
                       <p> {{listaDeseos.name}}</p>
                     </div>
                     <div
-                      [class]="filasDeDos?'col-xl-12 col-xxl-12 col-sm-12 col-md-12 col-12':'col-xl-5 col-xl-5 col-sm-12 col-md-5 col-12'">
+                      [class]="filasDeDos?'col-xl-12 col-xxl-12 col-sm-12 col-md-12 col-12':'col-12 col-md-6 col-xxl-5 col-sm-12 col-xl-6'">
                       <div class="row">
-                        <div class="col-xl-5">
+                        <div class="col-xl-5 col-xxl-5 col-sm-5 col-5 col-md-7">
                           <svg width="95" height="16" viewBox="0 0 95 16" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -119,7 +118,7 @@
                               fill="#F8B407" />
                           </svg>
                         </div>
-                        <div class="col-xl-3 col-xxl-3 col-sm-3 col-3 col-md-3 mt-1">
+                        <div class="col-xl-3 col-xxl-3 col-sm-3 col-3 col-md-4 mt-1">
                           <p>4.5</p>
                         </div>
                       </div>
@@ -127,7 +126,7 @@
                     <div class="col-xl-12 col-xxl-12 col-sm-12 col-12 col-md-12">
                       <div class="row">
                         <div
-                          [class]="filasDeDos?'col-xl-12 col-xxl-12 col-sm-12 col-md-12 col-12':'col-xl-3 col-xl-3 col-sm-12 col-md-3 col-12'">
+                          [class]="filasDeDos?'col-xl-12 col-xxl-12 col-sm-12 col-md-12 col-12':'col-12 col-md-6 col-sm-12 col-xxl-4 col-xl-4'">
                           <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -135,7 +134,7 @@
                               fill="#7549FE" />
                           </svg> ViviStore
                         </div>
-                        <div class="col-xl-9 col-xxl-9 col-9 col-sm-9 col-md-9">
+                        <div class="col-xl-8 col-xxl-8 col-9 col-sm-9 col-md-8">
                           <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -148,19 +147,19 @@
                   </div>
                 </div>
                 <div
-                  [class]="filasDeDos?'col-xl-12 col-xxl-12 col-sm-12 col-md-12 col-12':'mb-5 col-xl-3 col-xl-3 col-sm-12 col-md-3 col-12'">
+                  [class]="filasDeDos?'col-xl-12 col-xxl-12 col-sm-12 col-md-12 col-12':'col-12 col-md-3 col-sm-12 col-xl-3 col-xxl-3 mb-5'">
                   <div class="row">
                     <div
-                      [class]="filasDeDos?'text-end col-xl-9 col-xl-9 col-9 col-sm-9':'col-xl-7 col-12 col-sm-12 col-xxl-7 col-md-7 text-center'">
+                      [class]="filasDeDos?'text-end col-xl-9 col-xl-9 col-9 col-sm-9':'col-12 col-md-7 col-sm-12 col-xl-7 col-xxl-7 text-center'">
                       <p class="precio"> <b>${{listaDeseos.precio}}</b></p>
                     </div>
                     <div
-                      [class]="filasDeDos?'col-xl-10 col-10 col-sm-10 col-xxl-10 text-end':'col-10 col-md-7 col-sm-10 col-xl-7 col-xxl-7 text-end'">
-                      <button class="btn-anadir-carrito" (click)="agregarAlCarrito(listaDeseos.id)">Añadir al
+                      [class]="filasDeDos?'col-xl-10 col-10 col-sm-10 col-xxl-10 text-end':'col-9 col-md-9 col-sm-10 col-xl-8 col-xxl-7 text-center'">
+                      <button class="btn btn-primary" (click)="agregarAlCarrito(listaDeseos.id)">Añadir al
                         carrito</button>
                     </div>
                     <div
-                      [class]="filasDeDos?'col-xl-1 col-xxl-1 col-1 col-sm-1 col-md-1 text-center':'col-xl-2 col-xxl-2 col-md-2 col-sm-1 col-1'">
+                      [class]="filasDeDos?'col-xl-1 col-xxl-1 col-1 col-sm-1 col-md-1 text-center':'col-1 col-md-2 col-sm-1 col-xl-2 col-xxl-2'">
                       <button class="btn" (click)="eliminarListaDeseos(listaDeseos.id)" title="Eliminar">
                         <svg width="18" height="20" viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                           <path
@@ -189,7 +188,7 @@
         </ng-container>
       </div>
       <!-----SI EL PIPE DE FILTRADO ES MENOR A 0-------->
-      <ng-container *ngIf="(dataListDeseos | filter:filterPost)?.length <= 0">
+      <ng-container *ngIf="(dataListDeseos | filter:filterPost)?.length <= 0 && dataListDeseos.length>0">
         <div class="text-center mt-4">
           <h4 class="text-center mt-4">No hay ese producto en la lista</h4>
         </div>
