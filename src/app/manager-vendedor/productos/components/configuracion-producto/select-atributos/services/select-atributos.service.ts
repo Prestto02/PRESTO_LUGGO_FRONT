@@ -20,4 +20,8 @@ export class SelectAtributosService {
   postAtributos(url: any, form: any): Observable<any> {
     return this.http.post<any>(`${UrlApi.ApiUrl}${url}`, form);
   }
+
+  getMaterial(): Observable<any> {
+    return this.http.get<any>(`${UrlApi.ApiUrl}${UrlApi.material}`);
+  }
 }

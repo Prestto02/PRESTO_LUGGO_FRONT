@@ -71,13 +71,6 @@
                       <input type="text" formControlName="marca" class="form-control" id="floatingMarca"
                         placeholder="Nike" (keyup)="onKeyPres($event);" title="Escoja o busque la marca del producto"
                         [class.is-invalid]="formB.formProducts.get('marca')?.touched && formB.formProducts.get('marca')?.invalid" />
-                      <!--                       <select class="form-select is-invalid" id="floatingSelect" formControlName="marca"
-                        [class.is-invalid]="formB.formProducts.get('marca')?.touched && formB.formProducts.get('marca')?.invalid"
-                        aria-label="Floating label select example">
-                        <option value="" selected>Seleccionar</option>
-                        <option *ngFor="let marca of marcaItems" [value]="marca.id_marca" selected>
-                          {{marca.nombre_marca}}</option>
-                      </select> -->
                       <label for="floatingMarca">Marca</label>
                     </div>
                     <div class="list-group mb-3 position-absolute border-truncate" [hidden]="ocultar">
@@ -86,6 +79,11 @@
                         (click)="setMarcasFormProducts(marcas.id_marca,marcas.nombre_marca)">
                         {{marcas.nombre_marca}}
                       </button>
+                      <!----- SI NO EXISTE ESA MARCA-------->
+                      <div class="list-group-item list-group-item-action"
+                        *ngIf="(marcaItems | filterMarca:formB.formProducts.get('marca')?.value)?.length <= 0">
+                        <p>No existe esa marca</p>
+                      </div>
                     </div>
                     <app-form-errors-container [forControl]="formB.formProducts.get('marca')">
                       <app-message-error forErrorCode="required"></app-message-error>
@@ -100,7 +98,8 @@
                       <textarea class="form-control is-invalid" id="floatingDetalle"
                         formControlName="descripcion_articulo"
                         [class.is-invalid]="formB.formProducts.get('descripcion_articulo')?.touched && formB.formProducts.get('descripcion_articulo')?.invalid"
-                        placeholder="Detalle del producto" style="height: 100px" title="Describe el producto "></textarea>
+                        placeholder="Detalle del producto" style="height: 100px"
+                        title="Describe el producto "></textarea>
                       <label for="floatingDetalle">Descripción</label>
                       <app-form-errors-container [forControl]="formB.formProducts.get('descripcion_articulo')">
                         <app-message-error forErrorCode="required"></app-message-error>
@@ -216,7 +215,8 @@
     <div class="acordion-item border-0">
       <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
         data-bs-parent="#accordionExample">
-        <app-configuracion-producto></app-configuracion-producto>
+        <!-- <app-configuracion-producto></app-configuracion-producto> -->
+        <app-configuracion-productos-tercera> </app-configuracion-productos-tercera>
       </div>
     </div>
     <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"

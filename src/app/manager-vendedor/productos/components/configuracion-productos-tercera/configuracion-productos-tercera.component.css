@@ -1,0 +1,21 @@
+.form-label {
+  cursor: pointer;
+}
+
+.mostrar {
+  transition: opacity 0.15s ease;
+}
+
+.text {
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.185);
+}
+
+.span-estilo {
+  background: #fff;
+  color: #00000070;
+}
+
+.input-estilo {
+  border-right: 0px;
+}

@@ -21,6 +21,11 @@
             {{categorias.name}}
           </label>
         </div>
+        <!-----SI NO HAY ESA CATEGORIA------>
+        <div class="form-check border-bottom mx-auto py-2"
+          *ngIf="(categoriasItems | FilterCategorias:formB.formCategorias.get('nameCategoria')?.value)?.length <= 0">
+          <p>No existe esa categoria</p>
+        </div>
       </div>
     </ng-container>
 

@@ -35,6 +35,7 @@ export const UrlApi = {
   ciudad: 'api/ciudad/',
   //MARCAS
   marcas: 'api/marca',
+  material: 'api/material',
   //COLECCION PARA LA LISTA DE DESEOS
   coleccionListaDeseos: 'api/ListaDeseos',
   traerColeccion: 'api/ListaDeseos/',

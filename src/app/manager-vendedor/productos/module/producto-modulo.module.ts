@@ -25,6 +25,8 @@ import { FilterMarcaPipe } from '../components/create-products/pipe/filter-marca
 import { SelectAtributosComponent } from '../components/configuracion-producto/select-atributos/select-atributos.component';
 import { TercerPasoComponent } from '../components/tercer-paso/tercer-paso.component';
 import { BaseFormGlobalPrecio } from '../components/configuracion-producto/configuracion-atributos/models/BasePrecioGlobal';
+import { ConfiguracionProductosTerceraComponent } from '../components/configuracion-productos-tercera/configuracion-productos-tercera.component';
+import { BaseFormAtributosConfig } from '../components/configuracion-productos-tercera/models/BaseFormAtrtibutos';
 
 export const ProductoModuleDeclarations = [
   ProductsComponent, //INDEX PRODUCTOS
@@ -42,6 +44,7 @@ export const ProductoModuleDeclarations = [
   GestionDimensionComponent, //GESTION COMPONENTS
   FilterMarcaPipe, //FILTER PIPE DE MARCAS
   TercerPasoComponent, //TERCER PASO DEL PRODUCTO
+  ConfiguracionProductosTerceraComponent,
 ];
 export const ProductModuleImport = [
   GMapModule, //MODULE MAP
@@ -61,4 +64,5 @@ export const ProductoModuleProviders = [
   BaseFormGlobalPrecio,
   BaseFormLogisticaProducto,
   ListadoProductosComponent,
+  BaseFormAtributosConfig, //ATRIBUTOS CONFIGURACION
 ];
