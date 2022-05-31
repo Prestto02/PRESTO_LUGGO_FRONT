@@ -1,4 +1,4 @@
-<div class="container rounded mt-3 bg-white">
+<div class="container rounded mt-3 bg-white py-5">
   <div class="row">
     <div class="col-xl-12 col-xxl-12 col-sm-12 col-md-12 mb-3 mt-3">
       <app-progress-stepper [width]="'width:68%'"
@@ -9,8 +9,9 @@
       <h3 class="text-center mb-3">Atributos</h3>
       <hr>
       <form [formGroup]="formB.formAtributos">
-        <div class="row">
-          <!------PRECIO GLOBAl------>
+        <!------PRECIO GLOBAl------>
+        <!--         <div class="row">
+
           <div class="col-xxl-3 col-xl-3 col-sm-6 col-6 col-md-3">
             <div class="input-group mb-3">
               <label for="PrecioGlobal" class="form-label mx-3 mt-2">Precio Global</label>
@@ -30,7 +31,8 @@
             <p>Agrega el precio global del atributo que se vaya a seleccionar</p>
           </div>
         </div>
-        <hr>
+       <hr>
+      -->
         <div class="row mx-auto">
           <!-----COLOR----->
           <div class="col-xxl-4 col-xl-4 col-md-4 col-sm-12 col-12 mb-3 position-relative">
@@ -50,13 +52,27 @@
             </div>
             <div class="row">
               <span class="text">Colores seleccionados {{formB.colors.controls.length}}</span>
-              <div class="col-xxl-5 col-xl-5 col-sm-12 col-md-5 col-12 card mx-2">
+              <div class="col-xxl-7 col-xl-7 col-sm-12 col-md-8 col-12 card mx-2 colors-group">
                 <div class="row">
-                  <div class=" col-xl-1 col-xxl-1 col-sm-1 col-1 col-md-1 form-check mx-1"
+                  <div class=" col-xl-1 col-xxl-1 col-sm-1 col-1 col-md-1 form-check "
                     *ngFor="let colores of arrayColores">
                     <input class="form-check-input" type="checkbox" [value]="colores.id" [id]="'check-'+colores.id"
-                      [style]="colores.codigoHexagedecima" (click)="addColores(colores.id,$event,1)">
+                      [style]="colores.codigoHexagedecima" (click)="addColores(colores.id,$event,colores.nombre_color)">
                   </div>
+                </div>
+              </div>
+              <!------LIST BADGE DE LOS COLORES ESCOGIDOS----->
+              <div class="col-xxl-8 col-xl-8 col-sm-12 col-md-8 col-12">
+                <div class="row">
+                  <ng-container formArrayName="Color_articulo">
+                    <ng-container *ngFor="let color of formB.colors.controls; let i=index">
+                      <ng-container [formGroupName]="i">
+                        <div class="col-xl-3 col-xxl-3 col-md-3 col-4 col-sm-4">
+                          <span class="badge bg-color-badge text-wrap">{{color.get('nombre')?.value}}</span>
+                        </div>
+                      </ng-container>
+                    </ng-container>
+                  </ng-container>
                 </div>
               </div>
             </div>
@@ -64,7 +80,7 @@
           <!----MATERIAL--->
           <div class="col-xxl-4 col-xl-4 col-md-4 col-sm-12 col-12 mb-3 position-relative">
             <div class="row">
-              <div class="col-xxl-4 col-xl-4">
+              <div class="col-xxl-6 col-xl-6">
                 <label class="form-label">Material &nbsp;<svg (click)="mensajeMaterial();" width="15" height="15"
                     viewBox="0 0 9 9" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
@@ -115,7 +131,7 @@
           </div>
           <!---PESO--->
           <ng-container formGroupName="Peso">
-            <div class="col-xxl-4 col-xl-4 col-md-4 col-sm-12 col-12 mb-3">
+            <div class="col-xxl-4 col-xl-4 col-md-4 col-sm-12 col-12 mb-2">
               <label class="form-label">Peso &nbsp;<svg width="15" height="15" viewBox="0 0 9 9" fill="none"
                   xmlns="http://www.w3.org/2000/svg">
                   <path
@@ -123,15 +139,15 @@
                     fill="#444444" />
                 </svg> </label>
               <div class="row">
-                <div class="form-floating w-75">
+                <div class="w-75">
                   <input type="text" formControlName="peso" placeholder="12KG" id="pesoFloating" class="form-control" />
-                  <label for="pesoFloating">Peso</label>
+
                 </div>
               </div>
             </div>
           </ng-container>
           <!---MODELO---->
-          <div class="col-xxl-4 col-xl-4 col-md-4 col-sm-12 col-12 mb-3">
+          <div class="col-xxl-4 col-xl-4 col-md-4 col-sm-12 col-12 mb-2">
             <div class="row">
               <div class="col-xl-3 col-xxl-3">
                 <label class="form-label">Modelo &nbsp;<svg (click)="mensajeModelo();" width="15" height="15"
@@ -147,14 +163,13 @@
                 </p>
               </div>
             </div>
-            <div class="form-floating w-75">
+            <div class="w-75">
               <input type="text" class="form-control" id="floatingModelo" placeholder="Modelo" formControlName="modelo">
-              <label for="floatingModelo">Modelo</label>
             </div>
           </div>
           <!---Dimensiones---->
           <ng-container formGroupName="Tamaño_articulo">
-            <div class="col-xxl-4 col-xl-4 col-md-4 col-sm-12 col-12 mb-3">
+            <div class="col-xxl-4 col-xl-4 col-md-4 col-sm-12 col-12 mb-2 ">
               <div class="row">
                 <div class="col-xl-6 col-xxl-6">
                   <label class="form-label">Dimensiones &nbsp;<svg width="15" height="15" viewBox="0 0 9 9" fill="none"
@@ -167,8 +182,7 @@
               </div>
               <div class="row">
                 <!--largo---->
-                <div class="col-xl-4 col-xxl-4">
-                  <label class="form-label" for="largo">Largo</label>
+                <div class="col-xl-4 col-xxl-4 col-md-4 col-sm-12 col-12">
                   <div class="input-group mb-3">
                     <input type="text" class="form-control input-estilo" id="largo" placeholder="largo"
                       aria-label="largo" aria-describedby="basic-largo" formControlName="Longitud_x">
@@ -176,8 +190,7 @@
                   </div>
                 </div>
                 <!-----ancho---->
-                <div class="col-xl-4 col-xxl-4">
-                  <label class="form-label" for="ancho">Ancho</label>
+                <div class="col-xl-4 col-xxl-4 col-md-4 col-sm-12 col-12">
                   <div class="input-group mb-3">
                     <input type="text" class="form-control input-estilo" id="ancho" placeholder="ancho"
                       aria-label="ancho" aria-describedby="basic-ancho" formControlName="Longitud_y">
@@ -185,8 +198,7 @@
                   </div>
                 </div>
                 <!----alto---->
-                <div class="col-xl-4 col-xxl-4">
-                  <label class="form-label" for="alto">Alto</label>
+                <div class="col-xl-4 col-xxl-4 col-md-4 col-sm-12 col-12">
                   <div class="input-group mb-3">
                     <input type="text" class="form-control input-estilo" id="alto" placeholder="alto" aria-label="alto"
                       aria-describedby="basic-alto" formControlName="Longitud_z">

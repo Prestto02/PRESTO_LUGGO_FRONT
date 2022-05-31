@@ -4,6 +4,7 @@
 
 .mostrar {
   transition: opacity 0.15s ease;
+  z-index: 1000;
 }
 
 .text {
@@ -18,4 +19,28 @@
 
 .input-estilo {
   border-right: 0px;
+}
+
+.colors-group{
+  height: 80px;
+  overflow-y: auto;
+}
+
+.colors-group::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+.colors-group::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+.colors-group::-webkit-scrollbar-thumb {
+  background-color: #0d6efd;
+}
+.bg-color-badge {
+  background-color: #dbf6ff;
+  color: #000;
+}
+
+.borders{
+  padding: 0px;
 }

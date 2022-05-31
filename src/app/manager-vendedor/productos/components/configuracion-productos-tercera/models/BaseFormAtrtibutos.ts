@@ -26,14 +26,15 @@ export class BaseFormAtributosConfig {
     return this.formAtributos.controls['Color_articulo'] as FormArray;
   }
   //AGREGAR NUEVOS COLORES
-  addColores(id: any) {
+  addColores(id: any, nombre: any) {
     let formColores = this.formB.group({
       id_Color: [id, [Validators.required]],
+      nombre: [nombre, [Validators.required]],
     });
     this.colors.push(formColores);
   }
   //ELIMINAR COLORS SEGUN EL CHECK FALSE
-  removeCheckColors(id: any, i: any) {
+  removeCheckColors(id: any) {
     const index = this.colors.controls.findIndex(
       (res) => res.value.id_Color === id
     );

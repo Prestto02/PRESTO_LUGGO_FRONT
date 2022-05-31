@@ -49,8 +49,12 @@ export class TerminosCondicionesComponent implements OnInit, OnDestroy {
 
   onScroll(e: any) {
     if (e.target.offsetHeight + e.target.scrollTop >= e.target.scrollHeight) {
-      this.disabledScroll = false;
+      this.disabledScroll = true;
     }
+  }
+  aceptoTerminos(e: any) {
+    if (e.target.checked) this.disabledScroll = false;
+    else this.disabledScroll = true;
   }
   //GUARDAR ADN
   guardarAdn() {

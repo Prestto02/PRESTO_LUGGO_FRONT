@@ -62,8 +62,8 @@ export class ConfiguracionProductosTerceraComponent implements OnInit {
     });
   }
   //AGREGAR NUEVOS COLORES
-  addColores(id: any, e: any, i: any) {
-    if (e.target.checked) this.formB.addColores(id);
-    else this.formB.removeCheckColors(id, i);
+  addColores(id: any, e: any, nombre: any) {
+    if (e.target.checked) this.formB.addColores(id, nombre);
+    else this.formB.removeCheckColors(id);
   }
 }
