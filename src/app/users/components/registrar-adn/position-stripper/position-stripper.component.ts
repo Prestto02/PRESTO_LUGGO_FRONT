@@ -15,6 +15,11 @@ export class PositionStripperComponent implements OnInit {
   @Input('paso2') paso2: string | null = null;
   @Input('paso3') paso3: string | null = null;
   @Input('paso4') paso4: string | null = null;
+  @Input('one') one: string | null = null;
+  @Input('two') two: string | null = null;
+  @Input('trhee') trhee: string | null = null;
+  @Input('four') four: string | null = null;
+
   constructor(
     public formAdn: BaseFormAdnUsers,
     public formNegocioAdn: BaseFormNegocioAdn,
