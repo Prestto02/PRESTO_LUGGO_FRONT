@@ -13,6 +13,7 @@ import { ProductsService } from '../../services/products.service';
 })
 export class ListadoProductosComponent implements OnInit {
   public urlImg = RepositorioImg.urlRepositorio;
+  img2 = `${RepositorioImg.urlRepositorio}img/IMÁGENES/audifonos_sony.jpeg`;
   constructor(
     private apiProducts: ProductsService, //PRODUCTS SERVIES
     private _router: Router,
@@ -62,14 +63,14 @@ export class ListadoProductosComponent implements OnInit {
   }
   //GUARDAR EL PRODUCTO
   guardarProduct() {
-    const form = this.dataForm.getDataFormProducts(
+/*     const form = this.dataForm.getDataFormProducts(
       this.position.longitud,
       this.position.latitud
     );
     this.apiProducts.postDataArticulo(form).subscribe((res) => {
       this.dataForm.limpiarTodoForm();
       this.getAllProducts();
-    });
+    }); */
     this._router.navigateByUrl(
       `${UrlFront.Manager.managerVendedor}/${UrlFront.Manager.vendedor}/${UrlFront.Manager.listadoProductos}`
     );

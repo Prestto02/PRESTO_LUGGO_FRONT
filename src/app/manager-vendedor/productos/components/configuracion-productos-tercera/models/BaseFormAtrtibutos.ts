@@ -9,40 +9,34 @@ export class BaseFormAtributosConfig {
     Color_articulo: this.formB.array([], [Validators.required]),
     id_material: ['', [Validators.required]],
     estado_producto: ['', [Validators.required]],
-    modelo: ['', [Validators.required]],
-    Capacidad: ['', [Validators.pattern(Expresion.DimensionConDecimales)]],
-    Potencia_valor: ['', [Validators.pattern(Expresion.DimensionConDecimales)]],
+    modelo: [
+      '',
+      [
+        Validators.required,
+        Validators.pattern(Expresion.SoloLetrasAcentosEspacios),
+      ],
+    ],
+    Capacidad: ['', [Validators.pattern(Expresion.DimensionConComa)]],
+    Potencia_valor: ['', [Validators.pattern(Expresion.DimensionConComa)]],
     Peso: this.formB.group({
       peso: [
         '',
-        [
-          Validators.required,
-          Validators.pattern(Expresion.DimensionConDecimales),
-        ],
+        [Validators.required, Validators.pattern(Expresion.DimensionConComa)],
       ],
     }),
 
     Tamaño_articulo: this.formB.group({
       Longitud_x: [
         '',
-        [
-          Validators.required,
-          Validators.pattern(Expresion.DimensionConDecimales),
-        ],
+        [Validators.required, Validators.pattern(Expresion.DimensionConComa)],
       ],
       Longitud_y: [
         '',
-        [
-          Validators.required,
-          Validators.pattern(Expresion.DimensionConDecimales),
-        ],
+        [Validators.required, Validators.pattern(Expresion.DimensionConComa)],
       ],
       Longitud_z: [
         '',
-        [
-          Validators.required,
-          Validators.pattern(Expresion.DimensionConDecimales),
-        ],
+        [Validators.required, Validators.pattern(Expresion.DimensionConComa)],
       ],
     }),
   });

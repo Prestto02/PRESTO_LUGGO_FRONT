@@ -7,10 +7,10 @@ export class BaseFormTamanoProducto {
   constructor(private formB: FormBuilder) {}
 
   formTamanoProducto = this.formB.group({
-    Longitud_x: ['', [Validators.pattern(Expresion.DimensionConDecimales)]],
-    Longitud_y: ['', [Validators.pattern(Expresion.DimensionConDecimales)]],
-    Longitud_z: ['', [Validators.pattern(Expresion.DimensionConDecimales)]],
-    Peso: ['', [Validators.pattern(Expresion.DimensionConDecimales)]],
+    Longitud_x: ['', [Validators.pattern(Expresion.DimensionConComa)]],
+    Longitud_y: ['', [Validators.pattern(Expresion.DimensionConComa)]],
+    Longitud_z: ['', [Validators.pattern(Expresion.DimensionConComa)]],
+    Peso: ['', [Validators.pattern(Expresion.DimensionConComa)]],
     TiempoDespacho: [
       '',
       [

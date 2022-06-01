@@ -95,17 +95,21 @@
             </div>
             <!-----SELECT MATERIAL------->
             <div class="row">
-              <select class="form-select w-50" aria-label="Default select example" formControlName="id_material">
+              <select class="form-select w-50" aria-label="Default select example" formControlName="id_material"
+                [class.is-invalid]="formB.formAtributos.get('id_material')?.touched && formB.formAtributos.get('id_material')?.invalid">
                 <option selected value="">Seleccione</option>
                 <option *ngFor="let material of arrayMateriales" [value]="material.id_material">
                   {{material.nombre_material}}</option>
               </select>
+              <app-form-errors-container [forControl]="formB.formAtributos.get('id_material')">
+                <app-message-error forErrorCode="required" customMsg="Escoja un campo"></app-message-error>
+              </app-form-errors-container>
             </div>
           </div>
           <!----ESTADO---->
           <div class="col-xxl-4 col-xl-4 col-md-4 col-sm-12 col-12 mb-3 position-relative">
             <div class="row">
-              <div class="col-xxl-3 col-xl-3">
+              <div class="col-xxl-3 col-xl-4">
                 <label class="form-label">Estado &nbsp;<svg (click)="mensajeEstado();" width="15" height="15"
                     viewBox="0 0 9 9" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
@@ -120,13 +124,17 @@
               </div>
             </div>
             <div class="row">
-              <select class="form-select w-50" aria-label="Default select example" formControlName="estado_producto">
+              <select class="form-select w-50" aria-label="Default select example" formControlName="estado_producto"
+                [class.is-invalid]="formB.formAtributos.get('estado_producto')?.touched && formB.formAtributos.get('estado_producto')?.invalid">
                 <option selected value="">Seleccion</option>
                 <option value="1">Nuevo</option>
                 <option value="2">Reparado</option>
                 <option value="3">Usado</option>
                 <option value="4">Manufacturado</option>
               </select>
+              <app-form-errors-container [forControl]="formB.formAtributos.get('estado_producto')">
+                <app-message-error forErrorCode="required" customMsg="Escoja un campo"></app-message-error>
+              </app-form-errors-container>
             </div>
           </div>
           <!---PESO--->
@@ -140,16 +148,20 @@
                 </svg> </label>
               <div class="row">
                 <div class="w-75">
-                  <input type="text" formControlName="peso" placeholder="12KG" id="pesoFloating" class="form-control" />
-
+                  <input type="text" formControlName="peso" placeholder="12LB" id="pesoFloating" class="form-control"
+                    [class.is-invalid]="formB.formAtributos.get('Peso.peso')?.invalid && formB.formAtributos.get('Peso.peso')?.touched" />
                 </div>
+                <app-form-errors-container [forControl]="formB.formAtributos.get('Peso.peso')">
+                  <app-message-error forErrorCode="required" customMsg="Es requerido"></app-message-error>
+                  <app-message-error forErrorCode="pattern" customMsg="Debe ser números ej:12.00"></app-message-error>
+                </app-form-errors-container>
               </div>
             </div>
           </ng-container>
           <!---MODELO---->
           <div class="col-xxl-4 col-xl-4 col-md-4 col-sm-12 col-12 mb-2">
             <div class="row">
-              <div class="col-xl-3 col-xxl-3">
+              <div class="col-xl-4 col-xxl-4">
                 <label class="form-label">Modelo &nbsp;<svg (click)="mensajeModelo();" width="15" height="15"
                     viewBox="0 0 9 9" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
@@ -164,8 +176,13 @@
               </div>
             </div>
             <div class="w-75">
-              <input type="text" class="form-control" id="floatingModelo" placeholder="Modelo" formControlName="modelo">
+              <input type="text" class="form-control" id="floatingModelo" placeholder="Modelo" formControlName="modelo"
+                [class.is-invalid]="formB.formAtributos.get('modelo')?.invalid && formB.formAtributos.get('modelo')?.touched">
             </div>
+            <app-form-errors-container [forControl]="formB.formAtributos.get('modelo')">
+              <app-message-error forErrorCode="required" customMsg="Es requerido"></app-message-error>
+              <app-message-error forErrorCode="pattern" customMsg="No se admite </>|{[]}"></app-message-error>
+            </app-form-errors-container>
           </div>
           <!---Dimensiones---->
           <ng-container formGroupName="Tamaño_articulo">
@@ -185,25 +202,40 @@
                 <div class="col-xl-4 col-xxl-4 col-md-4 col-sm-12 col-12">
                   <div class="input-group mb-3">
                     <input type="text" class="form-control input-estilo" id="largo" placeholder="largo"
-                      aria-label="largo" aria-describedby="basic-largo" formControlName="Longitud_x">
+                      aria-label="largo" aria-describedby="basic-largo" formControlName="Longitud_x"
+                      [class.is-invalid]="formB.formAtributos.get('Tamaño_articulo.Longitud_x')?.touched &&formB.formAtributos.get('Tamaño_articulo.Longitud_x')?.invalid">
                     <span class="input-group-text span-estilo" id="basic-largo">cm</span>
                   </div>
+                  <app-form-errors-container [forControl]="formB.formAtributos.get('Tamaño_articulo.Longitud_x')">
+                    <app-message-error forErrorCode="required" customMsg="Es requerido"></app-message-error>
+                    <app-message-error forErrorCode="pattern" customMsg="Solo numeros ej 12.0 o 12"></app-message-error>
+                  </app-form-errors-container>
                 </div>
                 <!-----ancho---->
                 <div class="col-xl-4 col-xxl-4 col-md-4 col-sm-12 col-12">
                   <div class="input-group mb-3">
                     <input type="text" class="form-control input-estilo" id="ancho" placeholder="ancho"
-                      aria-label="ancho" aria-describedby="basic-ancho" formControlName="Longitud_y">
+                      aria-label="ancho" aria-describedby="basic-ancho" formControlName="Longitud_y"
+                      [class.is-invalid]="formB.formAtributos.get('Tamaño_articulo.Longitud_y')?.touched &&formB.formAtributos.get('Tamaño_articulo.Longitud_y')?.invalid">
                     <span class="input-group-text span-estilo" id="basic-ancho">cm</span>
                   </div>
+                  <app-form-errors-container [forControl]="formB.formAtributos.get('Tamaño_articulo.Longitud_y')">
+                    <app-message-error forErrorCode="required" customMsg="Es requerido"></app-message-error>
+                    <app-message-error forErrorCode="pattern" customMsg="Solo numeros ej 12.0 o 12"></app-message-error>
+                  </app-form-errors-container>
                 </div>
                 <!----alto---->
                 <div class="col-xl-4 col-xxl-4 col-md-4 col-sm-12 col-12">
                   <div class="input-group mb-3">
                     <input type="text" class="form-control input-estilo" id="alto" placeholder="alto" aria-label="alto"
-                      aria-describedby="basic-alto" formControlName="Longitud_z">
+                      aria-describedby="basic-alto" formControlName="Longitud_z"
+                      [class.is-invalid]="formB.formAtributos.get('Tamaño_articulo.Longitud_z')?.touched &&formB.formAtributos.get('Tamaño_articulo.Longitud_z')?.invalid">
                     <span class="input-group-text span-estilo" id="basic-alto">cm</span>
                   </div>
+                  <app-form-errors-container [forControl]="formB.formAtributos.get('Tamaño_articulo.Longitud_z')">
+                    <app-message-error forErrorCode="required" customMsg="Es requerido"></app-message-error>
+                    <app-message-error forErrorCode="pattern" customMsg="Solo numeros ej 12.0 o 12"></app-message-error>
+                  </app-form-errors-container>
                 </div>
               </div>
             </div>

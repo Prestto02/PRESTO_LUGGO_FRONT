@@ -29,7 +29,9 @@
   position: relative;
   right: 15px;
 }
-
+.navbar-light .navbar-nav .nav-link{
+  color: #000;
+}
 #datalistOptions {
   background-color: #7549fe;
 }

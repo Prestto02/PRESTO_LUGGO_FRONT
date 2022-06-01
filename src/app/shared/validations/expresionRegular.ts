@@ -7,5 +7,6 @@ export const Expresion = {
   Sku: /^[A-Za-z0-9_-]+$/,
   DolarYCentavo: /^[0-9]+([,][0-9]+)?$/,
   DimensionConDecimales: /^[0-9]+([,][0-9]+)?$/,
+  DimensionConComa: /^[0-9]+([.][0-9]+)?$/,
   TiempoDescpacho: /^[0-9]+$/,
 };

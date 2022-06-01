@@ -5,7 +5,9 @@ body {
 .abrir {
   cursor: pointer;
 }
-
+.navbar-light .navbar-nav .nav-link{
+  color: #000;
+}
 .color-canvas {
   background-color: rgba(32, 32, 57, 0.94);
 }

@@ -13,42 +13,13 @@
   </div>
   <form [formGroup]="formB.formPagoAdn">
     <div class="row card">
-      <!--------NOMBRE DEL TITULAR-------->
+      <!--------NOMBRE DEL TITULAR IDENTIFCAICON-------->
       <div class="col-xl-12 col-xxl-12 col-md-12 col-sm-12 col-12 mt-3">
         <div class="row mx-auto">
-          <div class="col-xl-6 col-sm-12 col-md-6 col-xxl-6 col-12">
-            <div class="mb-3">
-              <div
-                class="col-xl-5 col-sm-12 col-md-5 col-xxl-5 col-12 border border-1 color-groud text-design d-sm-block d-block d-md-none d-xl-none d-xxl-none">
-                <p class="text-parrafo">¿Tú eres el dueño de la cuenta? Entonces ingresa tu nombre completo.</p>
-              </div>
-              <label for="formNombre" class="form-label fw-bolder">Nombre de titular</label>
-              <input type="text" class="form-control" id="formNombre"
-                [class.is-invalid]="formB.formPagoAdn.get('Nombre_Titular')?.touched && formB.formPagoAdn.get('Nombre_Titular')?.invalid"
-                formControlName="Nombre_Titular" placeholder="Nombre Titular">
-            </div>
-            <app-form-errors-container [forControl]="formB.formPagoAdn.get('Nombre_Titular')">
-              <app-message-error forErrorCode="required"></app-message-error>
-              <app-message-error forErrorCode="pattern" customMsg="Debe ser solo numeros">
-              </app-message-error>
-            </app-form-errors-container>
-          </div>
-          <div
-            class="col-xl-5 col-sm-12 col-md-5 col-xxl-5 col-12 border border-1 color-groud text-design d-sm-none d-none d-md-block d-xl-block d-xxl-block">
-            <p class="text-parrafo">¿Tú eres el dueño de la cuenta? Entonces ingresa tu nombre completo.</p>
-          </div>
-        </div>
-      </div>
-      <!-------IDENTIFICACION-------->
-      <div class="col-xl-12 col-xxl-12 col-12 col-sm-12 col-md-12">
-        <div class="row mx-auto">
-          <div
-            class="col-sm-12 col-12 border border-1 mt-4 text-design d-sm-block d-block d-md-none d-xl-none d-xxl-none">
-            <p class="text-parrafo">Selecciona el Banco al que perteneces.</p>
-          </div>
+          <!----IDENTIFICAICON----->
           <div class="col-xl-3 col-sm-6 col-6 col-xxl-3 col-md-3">
             <div class="mb-3">
-              <label for="formIdentificacionTitular" class="form-label fw-bolder">Identificación</label>
+              <label for="formIdentificacionTitular" class="form-label fw-bolder">Cédula / Ruc</label>
               <input type="text" placeholder="09334562716" id="formIdentificacionTitular" class="form-control"
                 formControlName="Identificacion"
                 [class.is-invalid]="formB.formPagoAdn.get('Identificacion')?.touched && formB.formPagoAdn.get('Identificacion')?.invalid" />
@@ -60,8 +31,34 @@
               <app-message-error forErrorCode="pattern" customMsg="Solo numeros"></app-message-error>
             </app-form-errors-container>
           </div>
-          <!-------CORREO ELECTRONICO-------->
+          <!-----NOMBRE TITULAR---->
           <div class="col-xl-3 col-sm-6 col-6 col-xxl-3 col-md-3">
+            <div class="mb-3">
+              <label for="formNombre" class="form-label fw-bolder">Nombre del titular</label>
+              <input type="text" class="form-control" id="formNombre"
+                [class.is-invalid]="formB.formPagoAdn.get('Nombre_Titular')?.touched && formB.formPagoAdn.get('Nombre_Titular')?.invalid"
+                formControlName="Nombre_Titular" placeholder="Nombre Titular">
+            </div>
+            <app-form-errors-container [forControl]="formB.formPagoAdn.get('Nombre_Titular')">
+              <app-message-error forErrorCode="required"></app-message-error>
+              <app-message-error forErrorCode="pattern" customMsg="Debe ser solo numeros">
+              </app-message-error>
+            </app-form-errors-container>
+          </div>
+
+          <div
+            class="col-xl-5 col-sm-12 col-md-5 col-xxl-5 col-12 border border-1 color-groud text-design d-sm-none d-none d-md-block d-xl-block d-xxl-block">
+            <p class="text-parrafo">Ingresa el nombre completo del titular de la cuenta en la que recibirás tus pagos.
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-------CORREO ELECTRONICO-------->
+      <div class="col-xl-12 col-xxl-12 col-12 col-sm-12 col-md-12">
+        <div class="row mx-auto">
+
+          <!-------CORREO ELECTRONICO-------->
+          <div class="col-xl-6 col-sm-6 col-6 col-xxl-6 col-md-3">
             <div class="mb-3">
               <label for="formIdentificacion" class="form-label fw-bolder">Correo Electrónico</label>
               <input type="email" class="form-control" id="formIdentificacion" placeholder="micorreo@gmail.com"
@@ -75,7 +72,7 @@
           </div>
           <div
             class="col-xl-5 col-md-5 col-xxl-5 border border-1 mt-4 text-design d-sm-none d-none d-md-block d-xl-block d-xxl-block">
-            <p class="text-parrafo">Selecciona el Banco al que perteneces.</p>
+            <p class="text-parrafo">Ingresa el correo electrónico de tu cuenta.</p>
           </div>
         </div>
       </div>
@@ -90,7 +87,7 @@
           </div>
           <div class="col-xl-6 col-sm-12 col-md-6 col-xxl-6 col-12">
             <div class="mb-3">
-              <label for="exampleFormControlInput1" class="form-label fw-bolder">Banco de preferencia</label>
+              <label for="exampleFormControlInput1" class="form-label fw-bolder">Entidad Financiera</label>
               <select class="form-select" aria-label="Default select example" formControlName="Id_banco"
                 [class.is-invalid]="formB.formPagoAdn.get('Id_banco')?.touched && formB.formPagoAdn.get('Id_banco')?.invalid">
                 <option value="" selected>Seleccione</option>
