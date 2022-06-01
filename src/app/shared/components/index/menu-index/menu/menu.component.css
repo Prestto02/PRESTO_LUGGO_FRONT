@@ -29,7 +29,7 @@
   position: relative;
   right: 15px;
 }
-.navbar-light .navbar-nav .nav-link{
+.navbar-light .navbar-nav .nav-link {
   color: #000;
 }
 #datalistOptions {
@@ -93,8 +93,28 @@
   .margin-responsive {
     margin-top: 0px;
   }
+  .navbar-light .navbar-nav .nav-link {
+    color: #000;
+    font-size: 0.815rem;
+  }
+  .responsive-links {
+    margin-top: 6px;
+  }
+  .mover-icono-deseos {
+    padding: 0px;
+    position: relative;
+    right: 22px;
+  }
+  .mover-icono-user {
+    padding: 0px;
+    position: relative;
+    right: 22px;
+  }
+  .form-select {
+    font-size: 0.815rem;
+    font-weight: 400;
+  }
 }
-
 @media screen and (min-width: 1291px) and (max-width: 1560px) {
   .responsive-autocomplete {
     width: 67% !important;
