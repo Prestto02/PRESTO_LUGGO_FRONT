@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BaseFormConfigProducts } from '../models/BaseFormCongifProduct';
 import { BaseFormConfigAtributos } from './models/BaseFormConfigAtributos';
+import { BaseFormConfigAtributos2 } from './models/BaseFormConfigAtributos2';
 import { BaseFormGlobalPrecio } from './models/BasePrecioGlobal';
 
 @Component({
@@ -12,7 +13,8 @@ export class ConfiguracionAtributosComponent implements OnInit {
   constructor(
     public formAtributos: BaseFormConfigAtributos,
     public formConfigProduct: BaseFormConfigProducts,
-    public formGlobalPrecio: BaseFormGlobalPrecio
+    public formGlobalPrecio: BaseFormGlobalPrecio,
+    public formAtributosDos: BaseFormConfigAtributos2
   ) {}
 
   ngOnInit(): void {}

@@ -21,6 +21,7 @@
   color: #000000;
   background: #302f2f;
   top: 100px;
+  border: 2px solid #fff;
 }
 .tittle-cards {
   font-family: Cardium B-Bold;
@@ -94,4 +95,3 @@
     height: 690px;
   }
 }
-

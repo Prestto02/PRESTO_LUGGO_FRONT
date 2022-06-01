@@ -7,7 +7,7 @@
     </div>
   </div>
 </div>
-<section class="container card">
+<section class="container card mb-5">
   <div class="row">
     <div class="col-xl-12 col-xxl-12 col-md-12 col-12 col-sm-12 mb-4 mt-3">
       <ul class="nav">
@@ -27,7 +27,7 @@
       <button class="btn btn-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo"
         aria-expanded="true" aria-controls="collapseTwo">Atras</button>
       <button class="btn btn-primary"
-        [disabled]="formUbicacion.formLogistica.invalid || formTamano.formTamanoProducto.invalid "
+        [disabled]="formUbicacion.formLogistica.invalid || formTamano.formTamanoProducto.invalid || formAtributosDos.formAtributosDos.invalid "
         (click)="guardarProduct();">Finalizar</button>
     </div>
   </div>

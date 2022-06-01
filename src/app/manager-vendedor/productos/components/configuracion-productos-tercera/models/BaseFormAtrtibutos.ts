@@ -10,7 +10,8 @@ export class BaseFormAtributosConfig {
     id_material: ['', [Validators.required]],
     estado_producto: ['', [Validators.required]],
     modelo: ['', [Validators.required]],
-
+    Capacidad: ['', [Validators.pattern(Expresion.DimensionConDecimales)]],
+    Potencia_valor: ['', [Validators.pattern(Expresion.DimensionConDecimales)]],
     Peso: this.formB.group({
       peso: [
         '',

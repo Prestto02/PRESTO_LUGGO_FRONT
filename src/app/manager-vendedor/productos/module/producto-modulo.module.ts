@@ -27,6 +27,7 @@ import { TercerPasoComponent } from '../components/tercer-paso/tercer-paso.compo
 import { BaseFormGlobalPrecio } from '../components/configuracion-producto/configuracion-atributos/models/BasePrecioGlobal';
 import { ConfiguracionProductosTerceraComponent } from '../components/configuracion-productos-tercera/configuracion-productos-tercera.component';
 import { BaseFormAtributosConfig } from '../components/configuracion-productos-tercera/models/BaseFormAtrtibutos';
+import { BaseFormConfigAtributos2 } from '../components/configuracion-producto/configuracion-atributos/models/BaseFormConfigAtributos2';
 
 export const ProductoModuleDeclarations = [
   ProductsComponent, //INDEX PRODUCTOS
@@ -64,5 +65,6 @@ export const ProductoModuleProviders = [
   BaseFormGlobalPrecio,
   BaseFormLogisticaProducto,
   ListadoProductosComponent,
+  BaseFormConfigAtributos2, //OPCIONAL ATRIBUTOS 2 PARTE
   BaseFormAtributosConfig, //ATRIBUTOS CONFIGURACION
 ];

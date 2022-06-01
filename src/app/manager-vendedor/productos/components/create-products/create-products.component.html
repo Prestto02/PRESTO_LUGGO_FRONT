@@ -38,9 +38,9 @@
                   <div class="col-xl-3">
                     <div class="form-floating mb-3">
                       <input type="text" class="form-control is-invalid" formControlName="sku" id="floatingSku"
-                        [class.is-invalid]="formB.formProducts.get('sku')?.invalid" placeholder="Sku"
+                        [class.is-invalid]="formB.formProducts.get('sku')?.invalid" placeholder="Código"
                         title="Puedes escribir el código del producto">
-                      <label for="floatingSku">SKU</label>
+                      <label for="floatingSku">Código</label>
                       <app-form-errors-container [forControl]="formB.formProducts.get('sku')">
                         <app-message-error forErrorCode="pattern"
                           customMsg="No se admiten caracteres especiales: </>||¿¿''">
@@ -192,7 +192,7 @@
                 </div>
               </form>
             </div>
-            <div class="modal-footer ">
+            <div class="modal-footer bg-white fixed-bottom">
               <button type="button" class="btn btn-secondary" (click)="irProducto();">Cancelar</button>
               <button class="btn btn-primary collapsed" type="button" data-bs-toggle="collapse"
                 data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo"
@@ -229,7 +229,7 @@
     </div>
   </div>
 </section>
-<button class="btn btn-primary collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+<!-- <button class="btn btn-primary collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo"
   aria-expanded="true" aria-controls="collapseTwo" (click)="addAtributos()">TWO</button>
 <button class="btn btn-primary collapsed" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false"
-  aria-controls="collapseFour" (click)="addAtributos()">THREE</button>
+  aria-controls="collapseFour" (click)="addAtributos()">THREE</button> -->
