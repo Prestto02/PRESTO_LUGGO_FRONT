@@ -27,6 +27,7 @@ import { BaseFormCategorias } from '../categorias/models/categorias.models';
 import { FilterCategorias } from '../categorias/pipes/FilterCategorias.pipe';
 import { FiltroPaginacionPipe } from '../productos/components/listado-productos/pipe/filtro-paginacion.pipe';
 import { IndexMenuModule } from 'src/app/shared/components/index/module/index-menu.module';
+import { ListaPedidosProviders } from '../lista-pedidos/module/Lista-Pedidos.module';
 @NgModule({
   declarations: [
     ManagerVendedorComponent, //INDEX MANAGER
@@ -37,6 +38,7 @@ import { IndexMenuModule } from 'src/app/shared/components/index/module/index-me
     FiltroPaginacionPipe, //FILTRO PAGINACION PIPE
     SideBarIzquierdaComponent, //SIDEBARS IZQUIERDA
     DashBoardModuloDeclarations, //MODULE DASHBOARD
+    ListaPedidosProviders,
   ],
   imports: [
     ManagerVendedorRoutingModule, //MANAGER ROUTING

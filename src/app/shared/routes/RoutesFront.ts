@@ -90,6 +90,9 @@ export const UrlFront = {
     vendedor: 'vendedor',
     listadoProductos: 'productos/listado',
     crearProducto: 'productos/crear',
+    listaDePedidos: 'lista-pedidos',
+    detalleListPedidosGet: 'detalle-pedidos',
+    detalleListPedidos: 'detalle-pedidos/:id',
     dashborad: 'dashboard',
   },
 };

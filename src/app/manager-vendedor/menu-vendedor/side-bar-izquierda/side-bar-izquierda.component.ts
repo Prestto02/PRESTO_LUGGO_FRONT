@@ -22,4 +22,9 @@ export class SideBarIzquierdaComponent implements OnInit {
       `${UrlFront.Manager.managerVendedor}/${UrlFront.Manager.vendedor}/${UrlFront.Manager.listadoProductos}`
     );
   }
+  irListaPedidos() {
+    this._route.navigateByUrl(
+      `${UrlFront.Manager.managerVendedor}/${UrlFront.Manager.vendedor}/${UrlFront.Manager.listaDePedidos}`
+    );
+  }
 }
