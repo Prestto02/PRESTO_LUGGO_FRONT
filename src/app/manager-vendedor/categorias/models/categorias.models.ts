@@ -32,7 +32,7 @@ export class BaseFormCategorias {
   //ELIMINAR ITEMS DE LA CATEGORIA
   eliminarItems(id: any) {
     let index = this.getCategorias.controls.findIndex(
-      (x) => x.value.id_categoria === id
+      (x) => x.value.idcategoria_articulo === id
     ); //BUSCO COINCIDENCIA Y LUEGO ENVIO LA POSICION
     this.getCategorias.removeAt(index);
     this.categoriaSeleccionadas.splice(index, 1);

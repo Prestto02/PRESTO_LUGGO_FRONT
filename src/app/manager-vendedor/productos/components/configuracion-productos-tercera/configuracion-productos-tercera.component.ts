@@ -13,6 +13,8 @@ export class ConfiguracionProductosTerceraComponent implements OnInit {
   activarMensajeMaterial: boolean = false;
   mensajeEstadoActivar: boolean = false;
   activarModeloMensaje: boolean = false;
+  libras: any = '';
+  gramos: any = '';
   arrayColores: any;
   arrayMateriales: any;
   constructor(
@@ -29,7 +31,6 @@ export class ConfiguracionProductosTerceraComponent implements OnInit {
   getMateriales() {
     this.apSelectAtributo.getMaterial().subscribe((res) => {
       this.arrayMateriales = res;
-      console.log(this.arrayMateriales);
     });
   }
   //MENSAJE MODELO
@@ -65,5 +66,31 @@ export class ConfiguracionProductosTerceraComponent implements OnInit {
   addColores(id: any, e: any, nombre: any) {
     if (e.target.checked) this.formB.addColores(id, nombre);
     else this.formB.removeCheckColors(id);
+  }
+  //TRANSFORMACION DE KILOGRAMOS EN LIBRAS Y ONZAS
+  transformarALBYGR(e: any) {
+    const datos = e.target.value;
+    this.libras = datos * (2.2046 / 1);
+    this.gramos = datos * (1000 / 1);
+  }
+  //TRANSFORMAR DE LIBRAS A KILOGRAMOS A GRAMOS
+  transformarAKGYGR(e: any) {
+    const datos = e.target.value;
+    this.formB.formAtributos.patchValue({
+      Peso: {
+        peso: datos * (1 / 2.2046),
+      },
+    });
+    this.gramos = datos * (453.59 / 1);
+  }
+  //TRANFORMAR DE GRAMOS EN LIBRAS Y KILOGRAMOS
+  transformarALibrasYKG(e: any) {
+    const datos = e.target.value;
+    this.libras = datos * (1 / 453.59);
+    this.formB.formAtributos.patchValue({
+      Peso: {
+        peso: datos * (0.001 / 1),
+      },
+    });
   }
 }

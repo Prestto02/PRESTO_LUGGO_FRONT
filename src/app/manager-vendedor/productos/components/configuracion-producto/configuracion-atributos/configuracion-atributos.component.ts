@@ -10,6 +10,9 @@ import { BaseFormGlobalPrecio } from './models/BasePrecioGlobal';
   styleUrls: ['./configuracion-atributos.component.css'],
 })
 export class ConfiguracionAtributosComponent implements OnInit {
+  resultIva: any = '';
+  resultIC: any = '';
+  Total: any = '';
   constructor(
     public formAtributos: BaseFormConfigAtributos,
     public formConfigProduct: BaseFormConfigProducts,
@@ -32,5 +35,30 @@ export class ConfiguracionAtributosComponent implements OnInit {
         PrecioPorVariacion: precio,
       });
     });
+  }
+
+  //CALCULO DEL IVA
+  checkIva(e: any) {
+    if (e.target.checked) {
+      const datos: any =
+        this.formAtributosDos.formAtributosDos.get('PrecioGlobal')?.value;
+      this.resultIva = datos * 0.12;
+      this.Total = datos * 1.12 + this.resultIC;
+    } else {
+      this.Total = this.Total - this.resultIva;
+      this.resultIva = '';
+    }
+  }
+  //CALCULO DE ICE
+  checkIce(e: any) {
+    if (e.target.checked) {
+      const datos: any =
+        this.formAtributosDos.formAtributosDos.get('PrecioGlobal')?.value;
+      this.resultIC = datos * 0.15;
+      this.Total = datos * 1.15 + this.resultIva;
+    } else {
+      this.Total = this.Total - this.resultIC;
+      this.resultIC = '';
+    }
   }
 }
