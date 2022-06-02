@@ -35,11 +35,11 @@
         <div class="col-xl-6 col-xxl-6">
           <div class="mb-3">
             <label for="FormDateAdn" class="form-label">¿Cuándo naciste?</label>
-            <input type="date" id="FormDateAdn" formControlName="FechaNacimiento" class="form-control"
-              placeholder="11/10/2020"
-              [class.is-invalid]="formB.formTerminar.get('FechaNacimiento')?.touched && formB.formTerminar.get('FechaNacimiento')?.invalid" />
+            <input type="date" id="FormDateAdn" formControlName="Fecha_Nacimiento" class="form-control"
+              placeholder="11/10/2020" max="2022-12-31" min="1700-12-31"
+              [class.is-invalid]="formB.formTerminar.get('Fecha_Nacimiento')?.touched && formB.formTerminar.get('Fecha_Nacimiento')?.invalid" />
           </div>
-          <app-form-errors-container [forControl]="formB.formTerminar.get('FechaNacimiento')">
+          <app-form-errors-container [forControl]="formB.formTerminar.get('Fecha_Nacimiento')">
             <app-message-error forErrorCode="required"></app-message-error>
           </app-form-errors-container>
         </div>

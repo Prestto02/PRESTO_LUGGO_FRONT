@@ -6,7 +6,7 @@ export class BaseFormTerminarAdn {
   constructor(private formB: FormBuilder) {}
   formTerminar = this.formB.group({
     DondeEres: ['', [Validators.pattern(Expresion.SoloLetrasAcentosEspacios)]],
-    FechaNacimiento: [''],
+    Fecha_Nacimiento: ['',],
     ComoTeDescribes: [
       '',
       [Validators.pattern(Expresion.SoloLetrasAcentosEspacios)],

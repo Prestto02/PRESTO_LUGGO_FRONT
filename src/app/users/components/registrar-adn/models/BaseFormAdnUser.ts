@@ -27,16 +27,17 @@ export class BaseFormAdnUsers {
           Validators.pattern(Expresion.Contrasena),
         ],
       ],
-      Ruc: [
+      CedulaCheck: [''],
+      RucCheck: [''],
+      Ruc: ['', [Validators.pattern(Expresion.Ruc)]],
+      Cedula: ['', [Validators.pattern(Expresion.CedulaTelefono)]],
+      NombreCompleto: [
         '',
-        [Validators.required, Validators.pattern(Expresion.NumerosYLetras)],
+        [Validators.pattern(Expresion.SoloLetrasAcentosEspaciosSinNumeros)],
       ],
       Razon_Social: [
         '',
-        [
-          Validators.required,
-          Validators.pattern(Expresion.SoloLetrasAcentosEspacios),
-        ],
+        [Validators.pattern(Expresion.SoloLetrasAcentosEspacios)],
       ],
       Inicio_actividades: ['', [Validators.required]],
     },

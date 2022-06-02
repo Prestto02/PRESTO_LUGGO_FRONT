@@ -36,4 +36,23 @@ export class RegistrarAdnComponent implements OnInit {
   verPassword2() {
     this.password2 = !this.password2;
   }
+
+  //CHECKED RUC O CEDULA
+  checkedRucCedula(e: any) {
+    //CONSULTO SI VIENE EL RUC O CEDULA
+    if (e.target.checked && e.target.value === 'Ruc') {
+      this.formB.formAdn.patchValue({
+        CedulaCheck: '',
+        Ruc: '',
+        Razon_Social: '',
+      });
+    }
+    if (e.target.checked && e.target.value === 'cedula') {
+      this.formB.formAdn.patchValue({
+        RucCheck: '',
+        Cedula: '',
+        NombreCompleto: '',
+      });
+    }
+  }
 }
