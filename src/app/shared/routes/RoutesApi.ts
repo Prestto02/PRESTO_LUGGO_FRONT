@@ -16,7 +16,8 @@ export const UrlApi = {
   loginFacebook: 'auth/Singin',
   loginGoogle: 'Auth/Google',
   loginMicrosoft: '',
-
+  //INTENTOS DE BUSQUEDA
+  busquedaIntentoUser: 'api/BusquedaFrecuente/Intentos/',
   //COLORES TALLAS ATRIBUTOS
   codigoColores: 'api/color',
   codigoTallas: 'api/Talla',

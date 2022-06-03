@@ -1,10 +1,7 @@
 * {
   font-family: Cardium B-Medium;
 }
-.color-select {
-  background-color: rgba(43, 44, 68, 0.925);
-  color: #fff;
-}
+
 .color-article {
   background-color: #7549fe;
   color: #fff;
@@ -12,10 +9,7 @@
 .cursor-item {
   cursor: pointer;
 }
-.border-bottom {
-  background: white;
-  border-left: 1px;
-}
+
 .color-canvas {
   background-color: rgba(32, 32, 57, 0.94);
 }
@@ -31,9 +25,6 @@
 }
 .navbar-light .navbar-nav .nav-link {
   color: #000;
-}
-#datalistOptions {
-  background-color: #7549fe;
 }
 
 .margin-responsive {

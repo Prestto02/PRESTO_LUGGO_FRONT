@@ -58,6 +58,10 @@ path:hover {
   height: 171.07px;
 }
 
+.text-messageError{
+  color: rgb(0 0 0 / 52%)
+}
+
 @media screen and (min-width: 1300px) and (max-width: 1400px) {
   .pointer-deseo {
     cursor: pointer;

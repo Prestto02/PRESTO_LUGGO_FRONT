@@ -33,6 +33,12 @@ export class DataFormAdn {
         email: this.formPagosAdn.formPagoAdn.get('correo_Electronico')?.value,
         Tipo_cuenta: this.formPagosAdn.formPagoAdn.get('Tipo_cuenta')?.value,
       },
+
+      Persona: {
+        Cedula: this.formAdn.formAdn.get('Cedula')?.value,
+        NombreCompleto: this.formAdn.formAdn.get('NombreCompleto')?.value,
+      },
+
       DatosAdn: {
         Ruc: this.formAdn.formAdn.get('Ruc')?.value,
         Razon_Social: this.formAdn.formAdn.get('Razon_Social')?.value,

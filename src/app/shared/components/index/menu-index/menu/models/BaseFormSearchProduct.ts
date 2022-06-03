@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { AbstractControl, AsyncValidatorFn, FormBuilder } from '@angular/forms';
+import { AbstractControl, FormBuilder } from '@angular/forms';
 import { BuscadorProductosService } from '../services/buscador-productos.service';
 @Injectable({ providedIn: 'root' })
 export class BaseFormSearchProducts {
@@ -15,7 +15,9 @@ export class BaseFormSearchProducts {
   });
   //LIMPIAR FORMULARIo
   limpiarFormulario() {
-    this.formSearchProducts.reset();
+    this.formSearchProducts.patchValue({
+      nombre: '',
+    });
   }
 }
 
@@ -24,9 +26,15 @@ export class BuscadorAsyncronico {
   static BuscadorAsynProducto(apiServi: BuscadorProductosService) {
     return (control: AbstractControl) => {
       const value = control.value;
-      return apiServi.getAllBuscadorProduct(value).subscribe((res) => {
-        apiServi.addSearchListProducts(res);
-      });
+      if (!value.length)
+        return apiServi.getAllBuscadorProduct(value).subscribe((res) => {
+          apiServi.addSearchListProducts([]); //SI NO HAY NADA ENVIO VACIO EL ARRAY
+        });
+      if (value.length >= 1)
+        return apiServi.getAllBuscadorProduct(value).subscribe((res) => {
+          apiServi.addSearchListProducts(res);
+        });
+      return;
     };
   }
 }

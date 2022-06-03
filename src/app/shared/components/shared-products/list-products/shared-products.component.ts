@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { ProductsService } from 'src/app/manager-vendedor/productos/services/products.service';
 import { RepositorioImg } from 'src/app/shared/helpers/RepositorioImg';
 import { CarritoItemsComponent } from '../../index/menu-index/menu/carrito-items/carrito-items.component';
+import { BuscadorProductosService } from '../../index/menu-index/menu/services/buscador-productos.service';
 import { ListaDeseosService } from '../lista-deseos/services/lista-deseos.service';
 @Component({
   selector: 'app-shared-products',
@@ -18,21 +19,32 @@ export class SharedProductsComponent implements OnInit {
   public productsArray: any; //AGREGO EL ARRAY
   productsLength = 0; //CUANTOS PRODUCTOS EXiSTE ENVIADO A LA LENGTH
   nombreProduct: any;
+  errorMessageProducts: any;
   constructor(
     @Inject(DOCUMENT) private document: Document, //DOCUMENT
     private apiServi: ProductsService, //API PRODUCTOS SERVICES
     private carritoItmes: CarritoItemsComponent, //CARRITO ITEMS
     private apiListDeseo: ListaDeseosService, //LISTA DE DESEOS SERVICES
-    private _route: ActivatedRoute
+    private _route: ActivatedRoute,
+    private apySearchProducts: BuscadorProductosService //BUSCADOR DE PRODUCTOS
   ) {
     this.nombreProduct = this._route.snapshot.params['nombre'];
   }
 
   ngOnInit(): void {
     this.obtenerProductos(); //OBTENER LOS PRODUCTOS
+    this.messageErrorProductsSearchUsers();
   }
+  //DESTROY OBSERVABLE
   ngOnDestroy() {
     this.apiServi.unSuscribeObservable();
+    this.apySearchProducts.unSuscribeData();
+  }
+  //MESSAGE OF ERRORS PRODUCTS WHERE SEARCH THE PRODUCT IN THE AUTOCOMPLETE PRODUCT
+  messageErrorProductsSearchUsers() {
+    this.apySearchProducts.messageSearchUserErrors.subscribe((res) => {
+      this.errorMessageProducts = res;
+    });
   }
   //OBTENER LOS PRODUCTOS
   obtenerProductos() {

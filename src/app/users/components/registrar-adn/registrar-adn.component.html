@@ -31,7 +31,7 @@
             <div class="card border col-xl-5 col-xxl-5 mx-auto">
               <!------CORREO------>
               <div class="col-xl-8 col-xxl-8 col-sm-11 col-11 col-md-4 mx-auto mt-3">
-                <label for="email" class="form-label fw-bolder label-text">Correo electrónico</label>
+                <label for="email" class="form-label fw-bolder label-text">Correo Electrónico</label>
                 <div class="input-group mb-3"
                   [class.is-invalid]="formB.formAdn.get('user')?.touched && formB.formAdn.get('user')?.invalid">
                   <span class="input-group-text group-border" id="basic-email">
@@ -187,7 +187,7 @@
                     <label for="formRuc" class="form-label fw-bolder">Ruc</label>
                     <input type="text" class="form-control" id="formRuc"
                       [class.is-invalid]="formB.formAdn.get('Ruc')?.touched && formB.formAdn.get('Ruc')?.invalid"
-                      formControlName="Ruc" placeholder="1555555555001">
+                      formControlName="Ruc" placeholder="9999999999001">
                   </div>
                   <app-form-errors-container [forControl]="formB.formAdn.get('Ruc')">
                     <app-message-error forErrorCode="required"></app-message-error>
@@ -213,7 +213,7 @@
               <div class="col-xl-8 col-xxl-8 col-sm-11 col-11 col-md-4 mx-auto">
                 <ng-container *ngIf="formB.formAdn.get('RucCheck')?.value">
                   <div class="mb-3">
-                    <label for="formRazon_Social" class="form-label fw-bolder">Razón social</label>
+                    <label for="formRazon_Social" class="form-label fw-bolder">Razón Social</label>
                     <input type="text" class="form-control" id="formRazon_Social" formControlName="Razon_Social"
                       placeholder="Pepito de los palotes S.A"
                       [class.is-invalid]="formB.formAdn.get('Razon_Social')?.touched && formB.formAdn.get('Razon_Social')?.invalid">
@@ -228,7 +228,7 @@
                     <label for="formCedula" class="form-label fw-bolder">Cédula</label>
                     <input type="text" class="form-control" id="formCedula"
                       [class.is-invalid]="formB.formAdn.get('Cedula')?.touched && formB.formAdn.get('Cedula')?.invalid"
-                      formControlName="Cedula" placeholder="Nombre Completo">
+                      formControlName="Cedula" placeholder="0999999999">
                   </div>
                   <app-form-errors-container [forControl]="formB.formAdn.get('Cedula')">
                     <app-message-error forErrorCode="required"></app-message-error>

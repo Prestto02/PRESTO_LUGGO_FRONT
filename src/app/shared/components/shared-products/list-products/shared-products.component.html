@@ -1,5 +1,6 @@
 <!----------CONTENEDOR PARA EL LISTADO DE PRODUCTOS----------->
 <div class="container-fluid">
+  <h6 class="text-messageError mt-3 py-3" *ngIf="errorMessageProducts">{{errorMessageProducts}}:</h6>
   <div class="row">
     <div class="col-xl-5 mt-4">
       <div class="row">
