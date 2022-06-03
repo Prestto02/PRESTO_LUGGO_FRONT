@@ -10,6 +10,7 @@ import { UrlFront } from 'src/app/shared/routes/RoutesFront';
 import { DataFormProducts } from '../../helpers/DataFormProducts';
 import { ProductsService } from '../../services/products.service';
 import { ValidarYTransformarImagen } from 'src/app/shared/validations/ValidarYTransformarImagen';
+import { SearchProductsService } from '../../services/searchProducts.service';
 
 @Component({
   selector: 'app-create-products',
@@ -20,6 +21,7 @@ export class CreateProductsComponent implements OnInit {
   activar = false;
   categoriasItems: any;
   marcaItems: any = [];
+  searchProductName: any = [];
   imgProducts = '';
   imagenTransformada = '';
   ocultar: boolean = true; //OCULTO LA LISTA DE MARCA
@@ -32,6 +34,7 @@ export class CreateProductsComponent implements OnInit {
     public formEtiqueta: BaseFormEtiquetas, //BASE FORM ETIQUETAS
     private apiMarca: MarcaService, //API MARCA
     private apiProductServi: ProductsService,
+    private apiSearchProduct: SearchProductsService,
     private router: Router, //ROUTER
     private dateApi: DataFormProducts,
     private imgValidar: ValidarYTransformarImagen //VALIDAR IMAGENES Y TRANSFORMAR
@@ -41,6 +44,21 @@ export class CreateProductsComponent implements OnInit {
     this.position.getPositionUser(); //OBTENGO LA POSICION DEL USUARIO
     this.getEditOrRegister(); //CAMBIAR ESTADO DEL BOTON DE REGISTRO O EDITAR
     this.getAllMarcas();
+    this.getDataSearchProduct();
+  }
+  //API SEARCH PRODUCT
+  getDataSearchProduct() {
+    this.apiSearchProduct.listProduct.subscribe((res) => {
+      this.searchProductName = res;
+    });
+    this.searchProductName = [];
+  }
+  //GUARDAR ID DE PRODUCTO SI LO ENCUENTRA
+  guardarIdProductoNombre(id: any, nombre: any) {
+    this.formB.formProducts.patchValue({
+      id_nombre_articulo: id,
+      nombre_articulo: nombre,
+    });
   }
   //SERVICES MODALS
   getEditOrRegister() {

@@ -13,11 +13,17 @@ export class GestionDimensionComponent implements OnInit {
   constructor(public formTamano: BaseFormTamanoProducto) {}
 
   ngOnInit(): void {}
-  abrirPuerto() {
+  abrirPuerto(e: any) {
+    this.formTamano.formTamanoProducto.patchValue({
+      GestionEnvio: e.target.value,
+    });
     this.puertoEnvio = true;
     this.adnEnvio = false;
   }
-  abrirArticulo() {
+  abrirArticulo(e: any) {
+    this.formTamano.formTamanoProducto.patchValue({
+      GestionEnvio: e.target.value,
+    });
     this.puertoEnvio = false;
     this.adnEnvio = true;
   }

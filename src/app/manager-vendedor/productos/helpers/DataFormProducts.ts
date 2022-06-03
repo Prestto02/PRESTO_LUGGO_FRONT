@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { BaseFormCategorias } from '../../categorias/models/categorias.models';
 import { BaseFormConfigAtributos } from '../components/configuracion-producto/configuracion-atributos/models/BaseFormConfigAtributos';
+import { BaseFormConfigAtributos2 } from '../components/configuracion-producto/configuracion-atributos/models/BaseFormConfigAtributos2';
+import { BaseFormAtributosConfig } from '../components/configuracion-productos-tercera/models/BaseFormAtrtibutos';
 import { BaseFormEtiquetas } from '../components/create-products/form-etiquetas/models/BaseFormEtiquetas';
 import { BaseFormTamanoProducto } from '../components/logistica-producto/models/BaseFormTamano';
 import { BaseFormLogisticaProducto } from '../components/logistica-producto/models/BaseFormubicacion';
@@ -19,7 +21,9 @@ export class DataFormProducts {
     private formEtiquetas: BaseFormEtiquetas,
     private formAtributo: BaseFormConfigAtributos,
     private formTamano: BaseFormTamanoProducto,
-    private formUbicacion: BaseFormLogisticaProducto
+    private formUbicacion: BaseFormLogisticaProducto,
+    private atributoConfig: BaseFormAtributosConfig,
+    private attributosConfig2: BaseFormConfigAtributos2
   ) {}
   //OBTENGO TODAS LAS CATEGORIAS
   getCategorias() {
@@ -76,6 +80,12 @@ export class DataFormProducts {
     const id_nombre_articulo =
       this.formProduct.formProducts.get('id_nombre_articulo')?.value;
     const archivo = this.formProduct.formProducts.get('archivo')?.value;
+    const garantia = this.formProduct.formProducts.get('Tipo_Garantia')?.value;
+    const disponibilidad =
+      this.formProduct.formProducts.get('Disponibilidad')?.value;
+    const restricciones =
+      this.formProduct.formProducts.get('Restricciones')?.value;
+
     return {
       descripcion,
       marca,
@@ -83,10 +93,68 @@ export class DataFormProducts {
       caracteristicas,
       id_nombre_articulo,
       archivo,
+      garantia,
+      disponibilidad,
+      restricciones,
     };
   }
   //PARA HACER EL POST A LA API
+
   getDataFormProducts(longitud: any, latitud: any) {
+    this.getCategorias();
+    this.getEtiquetas();
+    const dimensiones = this.getUbicacion();
+    const {
+      descripcion,
+      sku,
+      caracteristicas,
+      marca,
+      id_nombre_articulo,
+      archivo,
+      garantia,
+      disponibilidad,
+      restricciones,
+    } = this.getProducts();
+    return {
+      id_nombre_articulo: id_nombre_articulo,
+      descripcion_articulo: descripcion,
+      sku: sku,
+      caracteristicas: caracteristicas,
+      marca: marca,
+      Restricciones: restricciones,
+      Disponibilidad: disponibilidad,
+      Garantia: garantia,
+      etiquetas: this.arrayEtiquetas,
+      articuloTieneCategoria: this.arrayCategorias,
+      multimedia: {
+        archivo: archivo,
+      },
+      detalleArticulo: [
+        {
+          stockMinimo:
+            this.attributosConfig2.formAtributosDos.get('Stock_Minimo')?.value,
+          stockItems:
+            this.attributosConfig2.formAtributosDos.get('Stock_General')?.value,
+          precioPorVariacion:
+            this.attributosConfig2.formAtributosDos.get('PrecioGlobal')?.value,
+          Iva: this.attributosConfig2.formAtributosDos.get('Iva')?.value,
+          Ice: this.attributosConfig2.formAtributosDos.get('Ice')?.value,
+          Atributes: this.atributoConfig.formAtributos.value,
+        },
+      ],
+      logistica: {
+        Gestion_Envio:
+          this.formTamano.formTamanoProducto.get('GestionEnvio')?.value,
+        precio_envio: this.formTamano.formTamanoProducto.get('Precio')?.value,
+        dimensiones,
+        ubicacion: this.arrayUbicacion,
+      },
+      longitud: longitud,
+      latitud: latitud,
+    };
+  }
+
+  /*   getDataFormProducts(longitud: any, latitud: any) {
     this.getAtributosImagenes();
     this.getCategorias();
     this.getEtiquetas();
@@ -114,7 +182,7 @@ export class DataFormProducts {
       longitud: longitud,
       latitud: latitud,
     };
-  }
+  } */
 
   limpiarTodoForm() {
     this.arrayAtributos = null;

@@ -63,14 +63,14 @@ export class ListadoProductosComponent implements OnInit {
   }
   //GUARDAR EL PRODUCTO
   guardarProduct() {
-/*     const form = this.dataForm.getDataFormProducts(
+    const form = this.dataForm.getDataFormProducts(
       this.position.longitud,
       this.position.latitud
     );
     this.apiProducts.postDataArticulo(form).subscribe((res) => {
       this.dataForm.limpiarTodoForm();
       this.getAllProducts();
-    }); */
+    });
     this._router.navigateByUrl(
       `${UrlFront.Manager.managerVendedor}/${UrlFront.Manager.vendedor}/${UrlFront.Manager.listadoProductos}`
     );

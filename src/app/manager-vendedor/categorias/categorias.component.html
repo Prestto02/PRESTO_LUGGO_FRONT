@@ -12,7 +12,8 @@
     </div>
 
     <ng-container *ngIf="categoriaFocus">
-      <div class="border bg-white w-100 position-absolute border-truncate mb-5">
+      <div class="border bg-white w-100 position-absolute border-truncate mb-5"
+        [class.border-pequeno]="(categoriasItems | FilterCategorias:formB.formCategorias.get('nameCategoria')?.value)?.length <=2">
         <div class="form-check border-bottom mx-2 py-2"
           *ngFor=" let categorias of categoriasItems | FilterCategorias:formB.formCategorias.get('nameCategoria')?.value">
           <input class="form-check-input" type="checkbox" [id]="categorias.id" [checked]="categorias.selected"

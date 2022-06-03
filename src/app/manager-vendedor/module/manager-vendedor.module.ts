@@ -28,6 +28,7 @@ import { FilterCategorias } from '../categorias/pipes/FilterCategorias.pipe';
 import { FiltroPaginacionPipe } from '../productos/components/listado-productos/pipe/filtro-paginacion.pipe';
 import { IndexMenuModule } from 'src/app/shared/components/index/module/index-menu.module';
 import { ListaPedidosProviders } from '../lista-pedidos/module/Lista-Pedidos.module';
+import { MenuIndexModule } from 'src/app/shared/components/index/menu-index/module/menu-index.module';
 @NgModule({
   declarations: [
     ManagerVendedorComponent, //INDEX MANAGER
@@ -54,6 +55,7 @@ import { ListaPedidosProviders } from '../lista-pedidos/module/Lista-Pedidos.mod
     IndexMenuModule, //FOOTER
     NgxPaginationModule, //PAGINATIONS
     OrderModule, //ORDER MODULE
+    MenuIndexModule, //MENU INDEX
   ],
   exports: [CategoriasComponent],
   providers: [

@@ -5,3 +5,9 @@
   font-family: Cardium B-Medium;
 }
 
+.text-subtitle {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 18px;
+}

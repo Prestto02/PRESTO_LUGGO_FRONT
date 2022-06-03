@@ -16,8 +16,12 @@ export class BaseFormAtributosConfig {
         Validators.pattern(Expresion.SoloLetrasAcentosEspacios),
       ],
     ],
-    Capacidad: ['', [Validators.pattern(Expresion.DimensionConComa)]],
-    Potencia_valor: ['', [Validators.pattern(Expresion.DimensionConComa)]],
+    Capacidad: this.formB.group({
+      Cantidad: ['', [Validators.pattern(Expresion.DimensionConComa)]],
+    }),
+    Potencia: this.formB.group({
+      Potencia_valor: ['', [Validators.pattern(Expresion.DimensionConComa)]],
+    }),
     Peso: this.formB.group({
       peso: [
         '',

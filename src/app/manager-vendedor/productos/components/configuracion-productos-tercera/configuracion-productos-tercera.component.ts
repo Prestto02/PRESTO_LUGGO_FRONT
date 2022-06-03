@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataFormProducts } from '../../helpers/DataFormProducts';
 import { SelectAtributosService } from '../configuracion-producto/select-atributos/services/select-atributos.service';
 import { BaseFormAtributosConfig } from './models/BaseFormAtrtibutos';
 

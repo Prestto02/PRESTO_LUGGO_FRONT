@@ -51,6 +51,8 @@ export const UrlApi = {
   traerProductosIndex: 'api/Buscador/',
   productos: '',
   carrito: '',
+  //PRODUCTOS
+  buscarProductoNombre: 'api/nombre_articulo/buscar/',
 
   //TERMINOS Y CONDIONCES
   terminosCondiciones: 'api/terminoCondicion/',

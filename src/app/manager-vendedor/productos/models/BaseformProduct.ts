@@ -1,13 +1,22 @@
 import { Injectable } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import {
+  AbstractControl,
+  AsyncValidatorFn,
+  FormBuilder,
+  Validators,
+} from '@angular/forms';
 import { Expresion } from 'src/app/shared/validations/expresionRegular';
+import { SearchProductsService } from '../services/searchProducts.service';
 @Injectable({ providedIn: 'root' })
 export class BaseFormProducts {
-  constructor(private formB: FormBuilder) {}
+  constructor(
+    private formB: FormBuilder,
+    private apiServi: SearchProductsService
+  ) {}
   //FORM PRODUCTOS
   formProducts = this.formB.group({
     id_product: [''],
-    id_nombre_articulo: ['', []],
+    id_nombre_articulo: [''],
     sku: ['', [Validators.pattern(Expresion.Sku)]], //EXPRESION REGULAR PARA NUMEROS LETRAS CON RAYAS SIN ESPACIOS
     nombre_articulo: [
       '',
@@ -15,8 +24,10 @@ export class BaseFormProducts {
         Validators.required,
         Validators.minLength(2),
         Validators.maxLength(65),
-        Validators.pattern(Expresion.SoloLetrasAcentosEspacios), //LETRA ESPACIO ACENTO Ñ y -_
+        Validators.pattern(Expresion.SoloLetrasAcentosEspacios),
+        //LETRA ESPACIO ACENTO Ñ y -_
       ],
+      BuscadorAsyncronico.BuscadorAsynNombreProducto(this.apiServi),
     ],
     //detalleArticulo{}
     descripcion_articulo: [
@@ -50,5 +61,31 @@ export class BaseFormProducts {
   });
   limpiarForm() {
     this.formProducts.reset();
+  }
+
+  buscadorAsyncProduct(control: AbstractControl) {
+    const value = control.value;
+    if (!value.length) return;
+    return this.apiServi.getNameProduct(value).subscribe((res) => {
+      this.apiServi.addProductName(res);
+    });
+  }
+}
+
+//BUSCADOR ASYNCRONICO
+export class BuscadorAsyncronico {
+  static BuscadorAsynNombreProducto(apiServi: SearchProductsService) {
+    return (control: AbstractControl) => {
+      const value = control.value;
+      if (!value.length)
+        return apiServi.getNameProduct(value).subscribe((res) => {
+          apiServi.addProductName(res);
+        }); //SI NO HAY NADA return
+      if (value.length >= 1)
+        return apiServi.getNameProduct(value).subscribe((res) => {
+          apiServi.addProductName(res);
+        });
+      return;
+    };
   }
 }

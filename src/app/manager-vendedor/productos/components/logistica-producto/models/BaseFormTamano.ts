@@ -19,7 +19,8 @@ export class BaseFormTamanoProducto {
         Validators.pattern(Expresion.TiempoDescpacho), //SOLO NUMEROS DEl 1 - 9 y 0-9
       ],
     ],
-    GestionEnvio: [''],
+    GestionEnvio: ['P'],
+    Precio: ['', [Validators.pattern(Expresion.DolarYCentavo)]],
   });
 
   limpiarForm() {

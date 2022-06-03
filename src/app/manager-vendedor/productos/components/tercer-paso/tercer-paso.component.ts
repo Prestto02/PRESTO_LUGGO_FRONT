@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataFormProducts } from '../../helpers/DataFormProducts';
 import { BaseFormConfigAtributos2 } from '../configuracion-producto/configuracion-atributos/models/BaseFormConfigAtributos2';
 import { ListadoProductosComponent } from '../listado-productos/listado-productos.component';
 import { BaseFormTamanoProducto } from '../logistica-producto/models/BaseFormTamano';
@@ -26,7 +27,8 @@ export class TercerPasoComponent implements OnInit {
     private componentListado: ListadoProductosComponent,
     public formUbicacion: BaseFormLogisticaProducto,
     public formTamano: BaseFormTamanoProducto,
-    public formAtributosDos: BaseFormConfigAtributos2
+    public formAtributosDos: BaseFormConfigAtributos2,
+    private dateApi: DataFormProducts
   ) {}
 
   ngOnInit(): void {}

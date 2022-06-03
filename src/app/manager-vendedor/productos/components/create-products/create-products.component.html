@@ -49,16 +49,24 @@
                     </div>
                   </div>
                   <div class="col-xl-6">
-                    <div class="form-floating mb-3">
+                    <div class="form-floating mb-3 position-relative">
                       <input type="text" class="form-control is-invalid" formControlName="nombre_articulo"
                         id="floatingNombre"
                         [class.is-invalid]="formB.formProducts.get('nombre_articulo')?.touched && formB.formProducts.get('nombre_articulo')?.invalid"
                         placeholder="Nombre del producto" title="Escribe el nombre de tu producto">
                       <label for="floatingNombre">Nombre
                       </label>
+                      <div class="position-absolute bg-white w-100 zIndex list-group">
+                        <button type="button" *ngFor="let nameProduct of searchProductName"
+                          (click)="guardarIdProductoNombre(nameProduct.id_nombre_articulo,nameProduct.nombre_articulo)"
+                          class="list-group-item list-group-item-action cursor-item">{{nameProduct.nombre_articulo}}</button>
+                      </div>
+
                       <app-form-errors-container [forControl]="formB.formProducts.get('nombre_articulo')">
                         <app-message-error forErrorCode="required"></app-message-error>
                         <app-message-error forErrorCode="minlength" customMsg="Debe tener al menos 2 caracteres">
+                        </app-message-error>
+                        <app-message-error forErrorCode="maxlength" customMsg="Debe tener ser mayor 2 caracteres">
                         </app-message-error>
                         <app-message-error forErrorCode="pattern" customMsg="No se admiten caracteres especiales">
                         </app-message-error>
@@ -157,8 +165,8 @@
                       <select id="forDisponibilidad" class="form-select" formControlName="Disponibilidad"
                         title="Busque que tipo de disponibilidad tiene su producto">
                         <option value="" selected>Seleccionar</option>
-                        <option value="Inmediata">Inmediata</option>
-                        <option value="Bajo pedido">Bajo pedido</option>
+                        <option value="1">Inmediata</option>
+                        <option value="2">Bajo pedido</option>
                       </select>
                       <label for="forDisponibilidad">Disponibilidad</label>
                     </div>
@@ -197,7 +205,7 @@
               <button class="btn btn-primary collapsed" type="button" data-bs-toggle="collapse"
                 data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo"
                 (click)="crearNuevoNombreArticulo()"
-                [disabled]="formB.formProducts.invalid || formEtiqueta.formEtiquetas.invalid || formCategoria.formCategorias.invalid">Continuar
+                [disabled]="formEtiqueta.formEtiquetas.invalid || formCategoria.formCategorias.invalid || formB.formProducts.invalid ">Continuar
                 &nbsp;<svg width="7" height="20" viewBox="0 0 7 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path
                     d="M6.25627 5.40406L1.91551 1.26667C1.82034 1.17521 1.70711 1.10261 1.58235 1.05307C1.4576 1.00353 1.32379 0.978027 1.18864 0.978027C1.05349 0.978027 0.919677 1.00353 0.794922 1.05307C0.670167 1.10261 0.556938 1.17521 0.461765 1.26667C0.271088 1.4495 0.164062 1.69681 0.164062 1.95461C0.164062 2.2124 0.271088 2.45972 0.461765 2.64255L4.08589 6.09688L0.461765 9.55121C0.271088 9.73404 0.164062 9.98136 0.164062 10.2392C0.164063 10.4969 0.271088 10.7443 0.461765 10.9271C0.557426 11.0175 0.670876 11.0891 0.795609 11.1376C0.920341 11.1862 1.0539 11.2108 1.18864 11.2101C1.32337 11.2108 1.45694 11.1862 1.58167 11.1376C1.7064 11.0891 1.81985 11.0175 1.91551 10.9271L6.25627 6.7897C6.35223 6.69898 6.42839 6.59106 6.48036 6.47215C6.53234 6.35324 6.5591 6.22569 6.5591 6.09688C6.5591 5.96806 6.53234 5.84052 6.48036 5.72161C6.42839 5.6027 6.35223 5.49477 6.25627 5.40406Z"
