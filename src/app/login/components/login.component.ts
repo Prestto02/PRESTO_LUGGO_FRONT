@@ -41,7 +41,14 @@ export class LoginComponent implements OnInit {
     this.apiLogin.postUserLogin(users).subscribe((res) => {
       this.load = true;
       this.tokenUser.setTokenUsers(res);
-      this.router.navigateByUrl(`${UrlFront.Menu.menu}/${UrlFront.Menu.index}`); //SI ES OK IRE AL LOGIN
+      if (res.rol === 'Vendedor')
+        //ROL
+        return this.router.navigateByUrl(
+          `${UrlFront.Manager.managerVendedor}/${UrlFront.Manager.vendedor}`
+        );
+      return this.router.navigateByUrl(
+        `${UrlFront.Menu.menu}/${UrlFront.Menu.index}`
+      ); //SI ES OK IRE AL LOGIN
     });
   }
   //IR A REGISTRAR CUENTA

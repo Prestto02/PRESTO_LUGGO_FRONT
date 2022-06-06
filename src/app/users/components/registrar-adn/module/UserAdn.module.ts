@@ -5,6 +5,8 @@ import { BaseFormPagosAdn } from '../models/BaseFormPagosAdn';
 import { BaseFormTerminarAdn } from '../models/BaseFormTerminar';
 import { PositionStripperComponent } from '../position-stripper/position-stripper.component';
 import { RegistrarAdnComponent } from '../registrar-adn.component';
+import { ButtonFixedComponent } from '../shared/button-fixed/button-fixed.component';
+import { MensajesApoyoComponent } from '../shared/mensajes-apoyo/mensajes-apoyo.component';
 import { FilterCiudadPipe } from '../sobre-tu-negocio/pipe/filter-ciudad.pipe';
 import { FilterPaisPipe } from '../sobre-tu-negocio/pipe/filter-pais.pipe';
 import { SobreTuNegocioComponent } from '../sobre-tu-negocio/sobre-tu-negocio.component';
@@ -20,6 +22,8 @@ export const DeclarationAdnUser = [
   TusPagosComponent,
   TerminarRegistroComponent,
   TerminosCondicionesComponent,
+  ButtonFixedComponent,
+  MensajesApoyoComponent,
   FilterPaisPipe,
   FilterCiudadPipe,
   FilterBancosPipe,

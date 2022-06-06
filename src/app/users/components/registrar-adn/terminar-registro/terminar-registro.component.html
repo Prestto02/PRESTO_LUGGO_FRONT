@@ -63,12 +63,9 @@
             </app-message-error>
           </app-form-errors-container>
         </div>
-
-        <div class="col-xl-12 col-xxl-12 mb-3 mx-2 bg-light text-design">
-          <p class="text-center text-parrafo">Esto solo es para nuestra información y no afectará a la apertura de tu
-            tienda.
-          </p>
-        </div>
+        <app-mensajes-apoyo class="col-xl-12 col-xxl-12 mb-3 mx-2 bg-light text-design text-center"
+          [mensaje]="'Esto solo es para nuestra información y no afectará a la apertura de tu tienda.'">
+        </app-mensajes-apoyo>
       </div>
     </form>
   </div>
@@ -94,5 +91,3 @@
   </div>
   <app-terminos-condiciones></app-terminos-condiciones>
 </section>
-
-<!--   -->

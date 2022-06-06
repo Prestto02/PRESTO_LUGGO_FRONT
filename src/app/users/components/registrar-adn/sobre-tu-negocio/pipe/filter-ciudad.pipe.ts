@@ -10,7 +10,7 @@ export class FilterCiudadPipe implements PipeTransform {
     }
     return ciudadItems.filter(
       (ciudad: any) =>
-      ciudad.ciudad.toLowerCase().indexOf(searchCiudad.toLowerCase()) !== -1
+        ciudad.ciudad.toLowerCase().indexOf(searchCiudad.toLowerCase()) !== -1
     );
   }
 }

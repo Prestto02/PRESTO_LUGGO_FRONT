@@ -204,7 +204,7 @@
                   </div>
                   <app-form-errors-container [forControl]="formB.formAdn.get('NombreCompleto')">
                     <app-message-error forErrorCode="required"></app-message-error>
-                    <app-message-error forErrorCode="pattern" customMsg="No se admite <>/|?¡¿{}[]">
+                    <app-message-error forErrorCode="pattern" customMsg="Solo letras">
                     </app-message-error>
                   </app-form-errors-container>
                 </ng-container>
@@ -258,14 +258,9 @@
       </form>
     </section>
 
-    <section class="container-fluid mt-5 py-5">
-      <div class="modal-footer fixed-bottom">
-        <button type="button" class="btn btn-estilos" type="button" data-bs-toggle="collapse"
-          data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">Continuar
-          &nbsp;
-        </button>
-      </div>
-    </section>
+
+    <app-button-fixed [data-target-adelante]="'#collapseTwo'" [arial-controls-adelante]="'#collapseTwo'">
+    </app-button-fixed>
   </div>
 
   <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">

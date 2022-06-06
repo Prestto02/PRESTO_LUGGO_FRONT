@@ -1,0 +1,9 @@
+.btn-estilos {
+  background: #0075ff;
+  color: #fff;
+}
+.btn-estilos:hover {
+  background: #0567d6;
+  color: #fff;
+}
+

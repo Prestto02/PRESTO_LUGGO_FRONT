@@ -90,7 +90,7 @@ export class ConfiguracionProductosTerceraComponent implements OnInit {
     this.libras = datos * (1 / 453.59);
     this.formB.formAtributos.patchValue({
       Peso: {
-        peso: datos * (0.001 / 1),
+        peso: datos * (0.001 / 1) ,
       },
     });
   }

@@ -46,12 +46,10 @@
               </app-message-error>
             </app-form-errors-container>
           </div>
-
-          <div
-            class="col-xl-5 col-sm-12 col-md-5 col-xxl-5 col-12 border border-1 color-groud text-design d-sm-none d-none d-md-block d-xl-block d-xxl-block">
-            <p class="text-parrafo">Ingresa el nombre completo del titular de la cuenta en la que recibirás tus pagos.
-            </p>
-          </div>
+          <app-mensajes-apoyo
+            class="col-xl-5 col-sm-12 col-md-5 col-xxl-5 col-12 border border-1 color-groud text-design d-sm-none d-none d-md-block d-xl-block d-xxl-block"
+            [mensaje]="'Ingresa el nombre completo del titular de la cuenta en la que recibirás tus pagos.'">
+          </app-mensajes-apoyo>
         </div>
       </div>
       <!-------CORREO ELECTRONICO-------->
@@ -71,21 +69,19 @@
               <app-message-error forErrorCode="email"></app-message-error>
             </app-form-errors-container>
           </div>
-          <div
-            class="col-xl-5 col-md-5 col-xxl-5 border border-1 mt-4 text-design d-sm-none d-none d-md-block d-xl-block d-xxl-block">
-            <p class="text-parrafo">Ingresa el correo electrónico de tu cuenta.</p>
-          </div>
+          <app-mensajes-apoyo
+            class="col-xl-5 col-md-5 col-xxl-5 border border-1 mt-4 text-design d-sm-none d-none d-md-block d-xl-block d-xxl-block"
+            [mensaje]="'Ingresa el correo electrónico de tu cuenta.'"></app-mensajes-apoyo>
         </div>
       </div>
 
       <!-- Banco de preferencia -->
       <div class="col-xl-12 col-xxl-12 col-md-12 col-sm-12 col-12 mt-3">
         <div class="row mx-auto">
-          <div class="col-sm-12 col-12 border border-1 text-design d-sm-block d-block d-md-none d-xl-none d-xxl-none">
-            <p class="text-parrafo">No olvides seleccionar que tipo de cuenta es y digitar el número de la misma. No te
-              preocupes toda tu
-              información está segura con nosotros.</p>
-          </div>
+          <app-mensajes-apoyo
+            class="col-sm-12 col-12 border border-1 text-design d-sm-block d-block d-md-none d-xl-none d-xxl-none"
+            [mensaje]="'No olvides seleccionar que tipo de cuenta es y digitar el número de la misma. No te preocupes toda tu información está segura con nosotros.'">
+          </app-mensajes-apoyo>
           <div class="col-xl-6 col-sm-12 col-md-6 col-xxl-6 col-12 mb-3 position-relative">
             <label for="formPais" class="form-label fw-bolder">Entidad Financiera</label>
             <div class="input-group">
@@ -120,25 +116,10 @@
             </app-form-errors-container>
           </div>
 
-          <!--           <div class="col-xl-6 col-sm-12 col-md-6 col-xxl-6 col-12">
-            <div class="mb-3">
-              <label for="exampleFormControlInput1" class="form-label fw-bolder">Entidad Financiera</label>
-              <select class="form-select" aria-label="Default select example" formControlName="Id_banco"
-                [class.is-invalid]="formB.formPagoAdn.get('Id_banco')?.touched && formB.formPagoAdn.get('Id_banco')?.invalid">
-                <option value="" selected>Seleccione</option>
-                <option *ngFor="let banco of arrayBanco" [value]="banco.id_banco">{{banco.nombre_banco}}</option>
-              </select>
-            </div>
-            <app-form-errors-container [forControl]="formB.formPagoAdn.get('Id_banco')">
-              <app-message-error forErrorCode="required"></app-message-error>
-            </app-form-errors-container>
-          </div> -->
-          <div
-            class="col-xl-5 col-md-5 col-xxl-5 border border-1 text-design d-sm-none d-none d-md-block d-xl-block d-xxl-block">
-            <p class="text-parrafo">No olvides seleccionar que tipo de cuenta es y digitar el número de la misma. No te
-              preocupes toda tu
-              información está segura con nosotros.</p>
-          </div>
+          <app-mensajes-apoyo
+            class="col-xl-5 col-md-5 col-xxl-5 border border-1 text-design d-sm-none d-none d-md-block d-xl-block d-xxl-block"
+            [mensaje]="'No olvides seleccionar que tipo de cuenta es y digitar el número de la misma. No te preocupes toda tu información está segura con nosotros.'">
+          </app-mensajes-apoyo>
         </div>
       </div>
       <!-------TIPO DE CUENTA, NUMERO DE CUENTA-------->
@@ -159,7 +140,7 @@
             </app-form-errors-container>
           </div>
           <!------NUMERO DE CUENTA------->
-          <div class="col-xl-3 col-sm-6 col-md-3 col-xxl-3 col-6"  (click)="ocultar=true;">
+          <div class="col-xl-3 col-sm-6 col-md-3 col-xxl-3 col-6" (click)="ocultar=true;">
             <div class="mb-3">
               <label for="formCuenta-Numero" class="form-label fw-bolder">Número de cuenta</label>
               <input type="text" formControlName="Numero_cuenta" class="form-control" id="formCuenta-Numero"
@@ -178,20 +159,5 @@
 </section>
 
 <!-- CONTINUAR -->
-<section class="container-fluid mt-5 py-5">
-  <div class="modal-footer fixed-bottom">
-    <!-------ATRAS SE MUESTRA EN EL RESPONSIVE----->
-    <button type="button" class="btn btn-secondary d-sm-block d-block d-xxl-none d-md-none d-xl-none"
-      data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">Atras
-    </button>
-
-    <button type="button" class="btn btn-estilos" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour"
-      aria-expanded="false" aria-controls="collapseFour">Continuar &nbsp;<svg width="10" height="20" viewBox="0 0 11 16"
-        fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path
-          d="M6.66853 4.75822L1.91713 0.310303C1.81296 0.211979 1.68902 0.133936 1.55246 0.0806779C1.4159 0.0274197 1.26943 0 1.1215 0C0.973565 0 0.827095 0.0274197 0.690538 0.0806779C0.553981 0.133936 0.430041 0.211979 0.325865 0.310303C0.11715 0.506853 0 0.772733 0 1.04987C0 1.32701 0.11715 1.59289 0.325865 1.78944L4.29283 5.50303L0.325865 9.21662C0.11715 9.41317 0 9.67905 0 9.95619C0 10.2333 0.11715 10.4992 0.325865 10.6958C0.430575 10.793 0.554757 10.8699 0.69129 10.9221C0.827822 10.9743 0.97402 11.0008 1.1215 11C1.26898 11.0008 1.41518 10.9743 1.55171 10.9221C1.68824 10.8699 1.81242 10.793 1.91713 10.6958L6.66853 6.24785C6.77356 6.15033 6.85693 6.0343 6.91382 5.90647C6.97071 5.77863 7 5.64152 7 5.50303C7 5.36455 6.97071 5.22743 6.91382 5.0996C6.85693 4.97176 6.77356 4.85574 6.66853 4.75822Z"
-          fill="white" />
-      </svg>
-    </button>
-  </div>
-</section>
+<app-button-fixed [data-target-atras]="'#collapseTwo'" [arial-controls-atras]="'collapseTwo'"
+  [data-target-adelante]="'#collapseFour'" [arial-controls-adelante]="'collapseFour'"></app-button-fixed>

@@ -14,15 +14,12 @@
   <form [formGroup]="formB.formNegocioAdn">
     <div class="row card">
       <!-----NOMBRE TIENDA----->
-      <div class="col-xl-12 col-xxl-12 col-sm-12 col-12 col-md-12 mt-3" (click)="ocultarTodo()">
+      <div class="col-xl-12 col-xxl-12 col-sm-12 col-12 col-md-12 mt-3" (click)="ocultarTodo();">
         <div class="row">
-          <div
-            class="col-sm-11 col-11 mx-auto border border-1 text-design d-sm-block d-block d-xxl-none d-xl-none d-md-none">
-            <p class="text-parrafo">Ingresa el nombre de tu <b>Negocio. </b>¿Recién comienzas? No te preocupes,
-              puedes
-              ingresar un nombre
-              temporal ahora y cambiarlo más adelante.</p>
-          </div>
+          <app-mensajes-apoyo
+            [mensaje]="'Ingresa el nombre de tu Negocio. ¿Recién comienzas? No te preocupes, puedes ingresar un nombre temporal ahora y cambiarlo más adelante.'"
+            class="col-sm-12 col-12 border border-1 text-design d-sm-block d-block d-xxl-none d-xl-none d-md-none">
+          </app-mensajes-apoyo>
           <div class="col-xl-6 col-xxl-6 col-sm-12 col-12 col-md-6">
             <div class="mb-3">
               <label for="formNombre_Tienda" class="form-label fw-bolder">Nombre Tienda</label>
@@ -36,22 +33,19 @@
               </app-message-error>
             </app-form-errors-container>
           </div>
-          <div
-            class="col-xl-5 col-md-5 col-xxl-5 border border-1 text-design d-sm-none d-none d-xxl-block d-xl-block d-md-block">
-            <p class="text-parrafo">Ingresa el nombre de tu <b>Negocio. </b>¿Recién comienzas? No te preocupes, puedes
-              ingresar un nombre
-              temporal ahora y cambiarlo más adelante.</p>
-          </div>
+          <app-mensajes-apoyo
+            class="col-xl-5 col-md-5 col-xxl-5 border border-1 text-design d-sm-none d-none d-xxl-block d-xl-block d-md-block"
+            [mensaje]="'Ingresa el nombre de tu Negocio. ¿Recién comienzas? No te preocupes, puedes ingresar un nombre temporal ahora y cambiarlo más adelante.'">
+          </app-mensajes-apoyo>
         </div>
       </div>
       <!-----PAIS CIUDAD----->
       <div class="col-xl-12 col-xxl-12 col-sm-12 col-12 col-md-12 mt-3">
         <div class="row">
+          <app-mensajes-apoyo
+            class="col-sm-12 col-12 border border-1 text-design d-sm-block d-block d-xxl-none d-xl-none d-md-none"
+            [mensaje]="'¿Desde dónde vas a vender? Ingresa tus datos de ubicación.'"></app-mensajes-apoyo>
           <!-------PAIS------->
-          <div
-            class="col-sm-11 col-11 mx-auto border border-1 text-design-pequeno d-sm-block d-block d-xxl-none d-xl-none d-md-none">
-            <p class="text-parrafo-pequeno">¿Desde dónde vas a vender? Ingresa tus datos de ubicación.</p>
-          </div>
           <div class="col-xxl-3 col-xl-3 col-md-3 col-sm-6 col-6 mb-3 position-relative" (click)="ocultarCiudad=true;">
             <label for="formPais" class="form-label fw-bolder">País</label>
             <div class="input-group">
@@ -80,15 +74,6 @@
                 <p>No hay registro de ese país</p>
               </div>
             </div>
-            <!--             <div class="mb-3">
-              <label for="formPais" class="form-label fw-bolder">País</label>
-              <select class="form-select" aria-label="Default select example" formControlName="Pais"
-                [class.is-invalid]="formB.formNegocioAdn.get('Pais')?.touched && formB.formNegocioAdn.get('Pais')?.invalid"
-                (change)="buscarCiudad($event);">
-                <option value="" selected>Seleccionar</option>
-                <option *ngFor="let pais of arrayPais" [value]="pais.codigo">{{pais.pais}}</option>
-              </select>
-            </div> -->
             <app-form-errors-container [forControl]="formB.formNegocioAdn.get('Pais')">
               <app-message-error forErrorCode="required"></app-message-error>
             </app-form-errors-container>
@@ -122,31 +107,23 @@
                 <p>No hay registro de esa ciudad</p>
               </div>
             </div>
-            <!--             <div class="mb-3">
-              <label for="formPais" class="form-label fw-bolder">País</label>
-              <select class="form-select" aria-label="Default select example" formControlName="Pais"
-                [class.is-invalid]="formB.formNegocioAdn.get('Pais')?.touched && formB.formNegocioAdn.get('Pais')?.invalid"
-                (change)="buscarCiudad($event);">
-                <option value="" selected>Seleccionar</option>
-                <option *ngFor="let pais of arrayPais" [value]="pais.codigo">{{pais.pais}}</option>
-              </select>
-            </div> -->
             <app-form-errors-container [forControl]="formB.formNegocioAdn.get('Ciudad')">
               <app-message-error forErrorCode="required"></app-message-error>
             </app-form-errors-container>
           </div>
-
+          <!-----MENSAJES DE APOYO----->
+          <app-mensajes-apoyo
+            class="col-xxl-5 col-xl-5 col-md-5 border border-1 text-design d-sm-none d-none d-xxl-block d-xl-block d-md-block"
+            [mensaje]="'¿Desde dónde vas a vender? Ingresa tus datos de ubicación.'"></app-mensajes-apoyo>
         </div>
       </div>
       <!-----DIRECION----->
       <div class="col-xxl-12 col-xl-12 col-sm-12 col-md-12 col-12 mt-3 mb-3" (click)="ocultarTodo();">
         <div class="row">
-          <div
-            class="col-sm-11 col-11 mx-auto border border-1 text-design d-block d-sm-block d-xxl-none d-md-none d-xl-none">
-            <p class="text-parrafo">Ingresa tu dirección exacta, puedes ayudarte con una planilla de servicio básico.
-              ¿No sabes como llenar
-              este campo?</p>
-          </div>
+          <app-mensajes-apoyo
+            class="col-sm-11 col-11 mx-auto border border-1 text-design d-block d-sm-block d-xxl-none d-md-none d-xl-none"
+            [mensaje]="'Ingresa tu dirección exacta, puedes ayudarte con una planilla de servicio básico. ¿No sabes como llenar este campo?'">
+          </app-mensajes-apoyo>
           <div class="col-xl-6 col-xxl-6 col-sm-12 col-md-6 col-12">
             <div class="mb-3">
               <label for="formDirecicon" class="form-label fw-bolder">Dirección</label>
@@ -160,22 +137,19 @@
               </app-message-error>
             </app-form-errors-container>
           </div>
-          <div
-            class="col-xl-5 col-md-5 col-xxl-5 border border-1 text-design d-none d-sm-none d-xxl-block d-md-block d-xl-block">
-            <p class="text-parrafo">Ingresa tu dirección exacta, puedes ayudarte con una planilla de servicio básico.
-              ¿No sabes como llenar
-              este campo? Haz clic aquí</p>
-          </div>
+          <app-mensajes-apoyo
+            class="col-xl-5 col-md-5 col-xxl-5 border border-1 text-design d-none d-sm-none d-xxl-block d-md-block d-xl-block"
+            [mensaje]="'Ingresa tu dirección exacta, puedes ayudarte con una planilla de servicio básico. ¿No sabes como llenar este campo? Haz clic aquí'">
+          </app-mensajes-apoyo>
         </div>
       </div>
       <!-----SUCURSALES----->
       <div class="col-xl-12 col-xxl-12 col-sm-12 col-12 col-md-12 mt-3 mb-3" (click)="ocultarTodo();">
         <div class="row">
-          <div
-            class="col-sm-11 col-11 mx-auto border border-1 text-design d-block d-sm-block d-xxl-none d-xl-none d-md-none">
-            <p class="text-parrafo">Registra si tienes sucursales, también puedes ingresar más de un número de contacto.
-            </p>
-          </div>
+          <app-mensajes-apoyo
+            class="col-sm-11 col-11 mx-auto border border-1 text-design d-block d-sm-block d-xxl-none d-xl-none d-md-none"
+            [mensaje]="'Registra si tienes sucursales, también puedes ingresar más de un número de contacto.'">
+          </app-mensajes-apoyo>
           <div class="col-xl-3 col-xxl-3 col-sm-6 col-6">
             <div class="mb-3">
               <label for="formSurcursales" class="form-label fw-bolder">¿Tienes más locales?</label>
@@ -205,41 +179,36 @@
               <app-message-error forErrorCode="pattern" customMsg="Solo numeros"></app-message-error>
             </app-form-errors-container>
           </div>
-          <div
-            class="col-xl-5 col-md-5 col-xxl-5 border border-1 text-design d-none d-sm-none d-xxl-block d-xl-block d-md-block">
-            <p class="text-parrafo">Registra si tienes sucursales, también puedes ingresar más de un número de contacto.
-            </p>
-          </div>
+          <app-mensajes-apoyo
+            class="col-xl-5 col-md-5 col-xxl-5 border border-1 text-design d-none d-sm-none d-xxl-block d-xl-block d-md-block"
+            [mensaje]="'Registra si tienes sucursales, también puedes ingresar más de un número de contacto.'">
+          </app-mensajes-apoyo>
         </div>
       </div>
       <!-----QUE VAS A VENDER---->
       <div class="col-xl-12 col-xxl-12 col sm 12 col-12 col-md-12 mb-3">
         <div class="row">
-          <div
+          <app-mensajes-apoyo [mensaje]="'Escoge todas las categorías que vas a vender.'"
             class="col-sm-11 col-11 mx-auto border border-1 text-design-pequeno1 d-block d-sm-block d-xxl-none d-xl-none d-md-none">
-            <p class="text-parrafo-pequeno1">Escoge todas las categorías que vas a vender.</p>
-          </div>
+          </app-mensajes-apoyo>
           <div class="col-xl-6 col-xxl-6 col-sm-12 col-md-6 col-12">
             <div class="mb-3">
               <label for="formCategorias" class="form-label fw-bolder">¿Qué vas a vender?</label>
               <app-categorias></app-categorias>
             </div>
           </div>
-          <div
-            class="col-xl-5 col-md-5 col-xxl-5 border border-1 text-design-pequeno1 d-none d-sm-none d-xxl-block d-xl-block d-md-block">
-            <p class="text-parrafo-pequeno1">Escoge todas las categorías que vas a vender.</p>
-          </div>
+          <app-mensajes-apoyo
+            class="col-xl-5 col-md-5 col-xxl-5 border border-1 text-design-pequeno1 d-none d-sm-none d-xxl-block d-xl-block d-md-block"
+            [mensaje]="'Escoge todas las categorías que vas a vender.'"></app-mensajes-apoyo>
         </div>
       </div>
       <!---COMO DESCRIBES TU TIENDA---->
       <div class="col-xl-12 col-xxl-12 col-sm-12 col-12 col-md-12 mt-3 mb-4">
         <div class="row">
-          <div
-            class="col-sm-11 col-11 mx-auto border border-1 text-design d-block d-sm-block d-xxl-none d-xl-none d-md-none">
-            <p class="text-parrafo">¡Aquí ponte creativo! Describe lo mejor de tu Negocio. Puedes apoyarte viendo la
-              descripción de estas
-              grandes marcas.</p>
-          </div>
+          <app-mensajes-apoyo
+            class="col-sm-11 col-11 mx-auto border border-1 text-design d-block d-sm-block d-xxl-none d-xl-none d-md-none"
+            [mensaje]="'¡Aquí ponte creativo! Describe lo mejor de tu Negocio. Puedes apoyarte viendo la descripción de estas grandes marcas.'">
+          </app-mensajes-apoyo>
           <div class="col-xl-6 col-xxl-6 col-sm-12 col-md-6 col-12">
             <!-----Cómo describes tu tienda----->
             <div class="mb-3">
@@ -254,32 +223,14 @@
               </app-message-error>
             </app-form-errors-container>
           </div>
-          <div
-            class="col-xl-5 col-md-5 col-xxl-5 border border-1 text-design d-none d-sm-none d-xxl-block d-xl-block d-md-block">
-            <p class="text-parrafo">¡Aquí ponte creativo! Describe lo mejor de tu Negocio. Puedes apoyarte viendo la
-              descripción de estas
-              grandes marcas.</p>
-          </div>
+          <app-mensajes-apoyo
+            class="col-xl-5 col-md-5 col-xxl-5 border border-1 text-design d-none d-sm-none d-xxl-block d-xl-block d-md-block"
+            [mensaje]="'¡Aquí ponte creativo! Describe lo mejor de tu Negocio. Puedes apoyarte viendo la descripción de estas grandes marcas.'">
+          </app-mensajes-apoyo>
         </div>
       </div>
     </div>
   </form>
 </section>
-<!-----CONTINUAR------>
-<section class="container-fluid mt-5 py-5">
-  <div class="modal-footer fixed-bottom">
-    <!-------ATRAS SE MUESTRA EN EL RESPONSIVE----->
-    <button type="button" class="btn btn-secondary d-sm-block d-block d-xxl-none d-md-none d-xl-none"
-      data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">Atras
-    </button>
-
-    <button type="button" class="btn btn-estilos" data-bs-toggle="collapse" data-bs-target="#collapseThree"
-      aria-expanded="false" aria-controls="collapseThree">Continuar &nbsp;<svg width="10" height="20"
-        viewBox="0 0 11 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path
-          d="M6.66853 4.75822L1.91713 0.310303C1.81296 0.211979 1.68902 0.133936 1.55246 0.0806779C1.4159 0.0274197 1.26943 0 1.1215 0C0.973565 0 0.827095 0.0274197 0.690538 0.0806779C0.553981 0.133936 0.430041 0.211979 0.325865 0.310303C0.11715 0.506853 0 0.772733 0 1.04987C0 1.32701 0.11715 1.59289 0.325865 1.78944L4.29283 5.50303L0.325865 9.21662C0.11715 9.41317 0 9.67905 0 9.95619C0 10.2333 0.11715 10.4992 0.325865 10.6958C0.430575 10.793 0.554757 10.8699 0.69129 10.9221C0.827822 10.9743 0.97402 11.0008 1.1215 11C1.26898 11.0008 1.41518 10.9743 1.55171 10.9221C1.68824 10.8699 1.81242 10.793 1.91713 10.6958L6.66853 6.24785C6.77356 6.15033 6.85693 6.0343 6.91382 5.90647C6.97071 5.77863 7 5.64152 7 5.50303C7 5.36455 6.97071 5.22743 6.91382 5.0996C6.85693 4.97176 6.77356 4.85574 6.66853 4.75822Z"
-          fill="white" />
-      </svg>
-    </button>
-  </div>
-</section>
+<app-button-fixed [data-target-atras]="'#collapseOne'" [arial-controls-atras]="'collapseOne'"
+  [data-target-adelante]="'#collapseThree'" [arial-controls-adelante]="'collapseThree'"></app-button-fixed>
