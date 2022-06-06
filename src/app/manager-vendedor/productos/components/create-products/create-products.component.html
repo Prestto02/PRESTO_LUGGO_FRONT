@@ -48,7 +48,8 @@
                       </app-form-errors-container>
                     </div>
                   </div>
-                  <div class="col-xl-6">
+                  <!-----BUSCAR NOMBRE DEL PRODUCTO----->
+                  <div class="col-xl-6" (click)="touched=true;">
                     <div class="form-floating mb-3 position-relative">
                       <input type="text" class="form-control is-invalid" formControlName="nombre_articulo"
                         id="floatingNombre"
@@ -56,7 +57,7 @@
                         placeholder="Nombre del producto" title="Escribe el nombre de tu producto">
                       <label for="floatingNombre">Nombre
                       </label>
-                      <div class="position-absolute bg-white w-100 zIndex list-group">
+                      <div class="position-absolute bg-white w-100 zIndex list-group" *ngIf="touched">
                         <button type="button" *ngFor="let nameProduct of searchProductName"
                           (click)="guardarIdProductoNombre(nameProduct.id_nombre_articulo,nameProduct.nombre_articulo)"
                           class="list-group-item list-group-item-action cursor-item">{{nameProduct.nombre_articulo}}</button>
@@ -74,7 +75,7 @@
                     </div>
                   </div>
                   <!------MARCA--------->
-                  <div class="col-xl-3 position-relative">
+                  <div class="col-xl-3 position-relative" (click)="touched=false;">
                     <div class="form-floating">
                       <input type="text" formControlName="marca" class="form-control" id="floatingMarca"
                         placeholder="Nike" (keyup)="onKeyPres($event);" title="Escoja o busque la marca del producto"
@@ -101,7 +102,7 @@
                 <!----Detalle del articulo------->
                 <div class="row">
                   <!-------DESCRIPCION--------->
-                  <div class="col-xl-12 col-sm-12 col-12 col-md-12 col-xxl-12">
+                  <div class="col-xl-12 col-sm-12 col-12 col-md-12 col-xxl-12" (click)="touched=false;">
                     <div class="form-floating mb-3">
                       <textarea class="form-control is-invalid" id="floatingDetalle"
                         formControlName="descripcion_articulo"
@@ -148,7 +149,7 @@
                 <!-------RESTRICCIONES Y DISPONIBILIDAD----->
                 <div class="row">
                   <!-------RESTRICCIONES-------->
-                  <div class="col-xl-6 col-sm-6 col-md-6 col-xxl-6 col-6">
+                  <div class="col-xl-6 col-sm-6 col-md-6 col-xxl-6 col-6" (click)="touched=false;">
                     <div class="form-floating mb-3">
                       <select id="forRestricciones" class="form-select" formControlName="Restricciones"
                         title="Selecciona las restricciones del producto">

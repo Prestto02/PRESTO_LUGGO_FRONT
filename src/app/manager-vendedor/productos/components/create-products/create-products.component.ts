@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, HostListener, OnInit } from '@angular/core';
 import { PositionUser } from 'src/app/shared/class/PositionUser';
 import { BaseFormProducts } from '../../models/BaseformProduct';
 import { BaseFormCategorias } from 'src/app/manager-vendedor/categorias/models/categorias.models';
@@ -26,6 +26,7 @@ export class CreateProductsComponent implements OnInit {
   imagenTransformada = '';
   ocultar: boolean = true; //OCULTO LA LISTA DE MARCA
   ActiveGarantia: boolean = false; //OCULTAR LA GARANTIA
+  touched: boolean = true;
   constructor(
     private position: PositionUser, //POSICION DEl USUARIO
     public formB: BaseFormProducts, //FORM PRODUCTS
@@ -37,7 +38,7 @@ export class CreateProductsComponent implements OnInit {
     private apiSearchProduct: SearchProductsService,
     private router: Router, //ROUTER
     private dateApi: DataFormProducts,
-    private imgValidar: ValidarYTransformarImagen //VALIDAR IMAGENES Y TRANSFORMAR
+    private imgValidar: ValidarYTransformarImagen, //VALIDAR IMAGENES Y TRANSFORMAR
   ) {}
 
   ngOnInit(): void {
@@ -140,4 +141,5 @@ export class CreateProductsComponent implements OnInit {
       this.ActiveGarantia = false;
     }
   }
+
 }

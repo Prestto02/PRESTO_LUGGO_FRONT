@@ -1,10 +1,6 @@
 import { Injectable } from '@angular/core';
-import {
-  AbstractControl,
-  AsyncValidatorFn,
-  FormBuilder,
-  Validators,
-} from '@angular/forms';
+import { AbstractControl, FormBuilder, Validators } from '@angular/forms';
+import { of } from 'rxjs';
 import { Expresion } from 'src/app/shared/validations/expresionRegular';
 import { SearchProductsService } from '../services/searchProducts.service';
 @Injectable({ providedIn: 'root' })
@@ -27,7 +23,7 @@ export class BaseFormProducts {
         Validators.pattern(Expresion.SoloLetrasAcentosEspacios),
         //LETRA ESPACIO ACENTO Ñ y -_
       ],
-      BuscadorAsyncronico.BuscadorAsynNombreProducto(this.apiServi),
+      [BuscadorAsyncronico.BuscadorAsynNombreProducto(this.apiServi)],
     ],
     //detalleArticulo{}
     descripcion_articulo: [
@@ -62,14 +58,6 @@ export class BaseFormProducts {
   limpiarForm() {
     this.formProducts.reset();
   }
-
-  buscadorAsyncProduct(control: AbstractControl) {
-    const value = control.value;
-    if (!value.length) return;
-    return this.apiServi.getNameProduct(value).subscribe((res) => {
-      this.apiServi.addProductName(res);
-    });
-  }
 }
 
 //BUSCADOR ASYNCRONICO
@@ -82,10 +70,11 @@ export class BuscadorAsyncronico {
           apiServi.addProductName(res);
         }); //SI NO HAY NADA return
       if (value.length >= 1)
-        return apiServi.getNameProduct(value).subscribe((res) => {
+        apiServi.getNameProduct(value).subscribe((res) => {
           apiServi.addProductName(res);
+          return of(null);
         });
-      return;
+      return of(null);
     };
   }
 }
