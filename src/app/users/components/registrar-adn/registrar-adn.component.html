@@ -189,7 +189,6 @@
                       [class.is-invalid]="formB.formAdn.get('Ruc')?.touched && formB.formAdn.get('Ruc')?.invalid"
                       formControlName="Ruc" placeholder="9999999999001">
                   </div>
-                  {{formB.formAdn.get('Ruc')?.errors | json}}
                   <app-form-errors-container [forControl]="formB.formAdn.get('Ruc')">
                     <app-message-error forErrorCode="required"></app-message-error>
                     <app-message-error forErrorCode="pattern" customMsg="Debe ser solo numeros o ruc validos">

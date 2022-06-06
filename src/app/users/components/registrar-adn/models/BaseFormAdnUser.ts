@@ -28,8 +28,8 @@ export class BaseFormAdnUsers {
         ],
       ],
       CedulaCheck: [''],
-      RucCheck: [''],
-      Ruc: ['', [Validators.pattern(Expresion.Ruc)]],
+      RucCheck: ['Ruc'],
+      Ruc: ['', [Validators.required, Validators.pattern(Expresion.Ruc)]],
       Cedula: ['', [Validators.pattern(Expresion.CedulaTelefono)]],
       NombreCompleto: [
         '',
@@ -37,49 +37,62 @@ export class BaseFormAdnUsers {
       ],
       Razon_Social: [
         '',
-        [Validators.pattern(Expresion.SoloLetrasAcentosEspacios)],
+        [
+          Validators.required,
+          Validators.pattern(Expresion.SoloLetrasAcentosEspacios),
+        ],
       ],
       Inicio_actividades: ['', [Validators.required]],
     },
     { validator: passwordsMustBeEqual }
   );
-
+  //ACTUALIAR LAS VALIDACIONES DE CEDULA Y NOMBRE COMPLETO
   setValidatorsCedulaNombreCompleto() {
-    this.formAdn.get('Cedula')?.setValidators(Validators.required);
     this.formAdn
       .get('Cedula')
-      ?.setValidators(Validators.pattern(Expresion.CedulaTelefono));
-    this.formAdn.get('NombreCompleto')?.setValidators(Validators.required);
+      ?.setValidators([
+        Validators.required,
+        Validators.pattern(Expresion.CedulaTelefono),
+      ]);
     this.formAdn
       .get('NombreCompleto')
-      ?.setValidators(
-        Validators.pattern(Expresion.SoloLetrasAcentosEspaciosSinNumeros)
-      );
+      ?.setValidators([
+        Validators.required,
+        Validators.pattern(Expresion.SoloLetrasAcentosEspaciosSinNumeros),
+      ]);
     this.updateValidate('Cedula');
     this.updateValidate('NombreCompleto');
   }
-
-  updateValidate(name: any) {
-    this.formAdn.get(name)?.updateValueAndValidity();
-  }
-
+  //CREANDO NUEVAS VALIDACIONES PARA EL RUC Y RAZON SOCIAL
   setValidatorsRucCompleto() {
-    this.formAdn.get('Ruc')?.setValidators(Validators.required);
-    this.formAdn.get('Ruc')?.setValidators(Validators.pattern(Expresion.Ruc));
-    this.formAdn.get('Razon_Social')?.setValidators(Validators.required);
+    this.formAdn
+      .get('Ruc')
+      ?.setValidators([Validators.required, Validators.pattern(Expresion.Ruc)]);
     this.formAdn
       .get('Razon_Social')
-      ?.setValidators(Validators.pattern(Expresion.SoloLetrasAcentosEspacios));
+      ?.setValidators([
+        Validators.required,
+        Validators.pattern(Expresion.SoloLetrasAcentosEspacios),
+      ]);
     this.updateValidate('Ruc');
     this.updateValidate('Razon_Social');
   }
-
+  //ELIMINAR LAS VALIDACIONES Y ACTUALIZSAR
   removeValidateCedulaNombre() {
     this.formAdn.get('Cedula')?.clearValidators();
     this.formAdn.get('NombreCompleto')?.clearValidators();
+    this.updateValidate('Cedula');
+    this.updateValidate('NombreCompleto');
   }
-
+  //ELIMINAR LAS VALIDACIONES Y ACTUALIZAR
   removeValidateRuc() {
     this.formAdn.get('Ruc')?.clearValidators();
+    this.formAdn.get('Razon_Social')?.clearValidators();
+    this.updateValidate('Ruc');
+    this.updateValidate('Razon_Social');
+  }
+  //ACTUALIZAR LOS CAMPOS PERSONALIZADOS DE VALIDACIONES
+  updateValidate(name: any) {
+    this.formAdn.get(name)?.updateValueAndValidity();
   }
 }
