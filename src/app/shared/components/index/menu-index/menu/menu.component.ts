@@ -29,10 +29,11 @@ export class MenuComponent implements OnInit {
 
   //IR AL PERFIL DE USUARIO
   irAlPerfilUsuario() {
-    this.router.navigate([
+    this.router.navigateByUrl(`${UrlFront.Manager.managerVendedor}/${UrlFront.Manager.vendedor}`)
+   /*  this.router.navigate([
       `${UrlFront.Users.users}/${UrlFront.Users.perfilRegistrar}/`,
       this.idUsuario,
-    ]);
+    ]); */
   }
   //TOTAL ITEMS CARRITO
   totalItemsCarrito() {

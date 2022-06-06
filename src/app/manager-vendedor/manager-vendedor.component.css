@@ -15,3 +15,9 @@
 .cursor-items {
   cursor: pointer;
 }
+
+.color-bg {
+  background-image: url(https://ecovitali.presttoapp.net/Puertto/Calidad/Repositorio/img/IM%C3%81GENES/puerttoImg.png);
+  width: 352px;
+  height: 249px;
+}

@@ -67,7 +67,7 @@
                         <app-message-error forErrorCode="required"></app-message-error>
                         <app-message-error forErrorCode="minlength" customMsg="Debe tener al menos 2 caracteres">
                         </app-message-error>
-                        <app-message-error forErrorCode="maxlength" customMsg="Debe tener ser mayor 2 caracteres">
+                        <app-message-error forErrorCode="maxlength" customMsg="Debe tener un máximo de 65 caracteres">
                         </app-message-error>
                         <app-message-error forErrorCode="pattern" customMsg="No se admiten caracteres especiales">
                         </app-message-error>
@@ -114,27 +114,13 @@
                         <app-message-error forErrorCode="required"></app-message-error>
                         <app-message-error forErrorCode="minlength" customMsg="Debe tener al menos 12 caracteres">
                         </app-message-error>
+                        <app-message-error forErrorCode="maxlength" customMsg="Debe ser máximo 200 caracteres">
+                        </app-message-error>
                         <app-message-error forErrorCode="pattern" customMsg="No se admiten caracteres especiales">
                         </app-message-error>
                       </app-form-errors-container>
                     </div>
                   </div>
-                  <!--------CARACTERISTICAS---------->
-                  <!--                   <div class="col-xl-12 col-sm-12 col-12 col-md-12 col-xxl-12">
-                    <div class="form-floating mb-3">
-                      <textarea type="text" class="form-control" formControlName="caracteristicas" id="floatingCantidad"
-                        [class.is-invalid]="formB.formProducts.get('caracteristicas')?.touched && formB.formProducts.get('caracteristicas')?.invalid"
-                        placeholder="Cantidad del producto" style="height: 100px;"></textarea>
-                      <label for="floatingCantidad">Caracteristicas</label>
-                      <app-form-errors-container [forControl]="formB.formProducts.get('caracteristicas')">
-                        <app-message-error forErrorCode="required"></app-message-error>
-                        <app-message-error forErrorCode="minlength" customMsg="Debe al menos 12 caracteres">
-                        </app-message-error>
-                        <app-message-error forErrorCode="pattern" customMsg="Solo letras">
-                        </app-message-error>
-                      </app-form-errors-container>
-                    </div>
-                  </div> -->
                 </div>
                 <div class="row">
                   <!-------APP CATEGORIAS-------->
@@ -201,7 +187,7 @@
                 </div>
               </form>
             </div>
-            <div class="modal-footer">
+            <div class="modal-footer bg-white fixed-bottom">
               <button type="button" class="btn btn-secondary" (click)="irProducto();">Cancelar</button>
               <button class="btn btn-primary collapsed" type="button" data-bs-toggle="collapse"
                 data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo"
@@ -213,9 +199,6 @@
                     fill="white" />
                 </svg>
               </button>
-              <!--                   <app-buttons-load [modal]="true" [load]="load" [formB]="formB.formProducts"
-              [valueButton]="activar?'Siguiente':'Editar'">
-            </app-buttons-load> -->
             </div>
           </div>
         </div>
@@ -238,7 +221,8 @@
     </div>
   </div>
 </section>
-<button class="btn btn-primary collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+<!-- <button class="btn btn-primary collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo"
   aria-expanded="true" aria-controls="collapseTwo" (click)="addAtributos()">TWO</button>
 <button class="btn btn-primary collapsed" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false"
   aria-controls="collapseFour" (click)="addAtributos()">THREE</button>
+ -->
