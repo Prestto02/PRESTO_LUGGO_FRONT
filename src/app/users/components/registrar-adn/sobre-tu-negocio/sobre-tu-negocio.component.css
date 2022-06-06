@@ -70,3 +70,9 @@ input::placeholder {
   font-size: 20px;
   margin-top: -13px;
 }
+
+.dropdown-menu-end{
+  height: 120px;
+  overflow-y: scroll;
+  cursor: pointer;
+}

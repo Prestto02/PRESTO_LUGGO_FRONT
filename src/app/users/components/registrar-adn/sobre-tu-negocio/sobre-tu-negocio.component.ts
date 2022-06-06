@@ -10,6 +10,7 @@ import { CiudadPaisService } from '../services/ciudad-pais.service';
 export class SobreTuNegocioComponent implements OnInit {
   arrayPais: any = [];
   arrayCiudad: any = [];
+  ocultar: boolean = true;
   constructor(
     private apiCiudadPais: CiudadPaisService, //SERVICES CIUDAD PAISES
     public formB: BaseFormNegocioAdn //FORM BASE NEGOCIO ADN
@@ -26,10 +27,20 @@ export class SobreTuNegocioComponent implements OnInit {
     });
   }
   //TRAER TODAS LAS CIUDADES
-  buscarCiudad(e: any) {
-    const codigo = e.target.value;
-    this.apiCiudadPais.getCiudades(codigo).subscribe((res) => {
+  buscarCiudad(siglasPais: any, nombrePais: any) {
+    this.formB.formNegocioAdn.patchValue({
+      Pais: nombrePais,
+    });
+    this.apiCiudadPais.getCiudades(siglasPais).subscribe((res) => {
       this.arrayCiudad = res;
     });
+  }
+  onKeyPres(e: any) {
+    if (e.target.value.length >= 1) {
+      this.ocultar = false;
+    } //MOSTRAR
+    if (e.target.value.length <= 0) {
+      this.ocultar = true;
+    } //OCULTAR
   }
 }
