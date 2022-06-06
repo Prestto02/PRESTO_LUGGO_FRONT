@@ -43,4 +43,43 @@ export class BaseFormAdnUsers {
     },
     { validator: passwordsMustBeEqual }
   );
+
+  setValidatorsCedulaNombreCompleto() {
+    this.formAdn.get('Cedula')?.setValidators(Validators.required);
+    this.formAdn
+      .get('Cedula')
+      ?.setValidators(Validators.pattern(Expresion.CedulaTelefono));
+    this.formAdn.get('NombreCompleto')?.setValidators(Validators.required);
+    this.formAdn
+      .get('NombreCompleto')
+      ?.setValidators(
+        Validators.pattern(Expresion.SoloLetrasAcentosEspaciosSinNumeros)
+      );
+    this.updateValidate('Cedula');
+    this.updateValidate('NombreCompleto');
+  }
+
+  updateValidate(name: any) {
+    this.formAdn.get(name)?.updateValueAndValidity();
+  }
+
+  setValidatorsRucCompleto() {
+    this.formAdn.get('Ruc')?.setValidators(Validators.required);
+    this.formAdn.get('Ruc')?.setValidators(Validators.pattern(Expresion.Ruc));
+    this.formAdn.get('Razon_Social')?.setValidators(Validators.required);
+    this.formAdn
+      .get('Razon_Social')
+      ?.setValidators(Validators.pattern(Expresion.SoloLetrasAcentosEspacios));
+    this.updateValidate('Ruc');
+    this.updateValidate('Razon_Social');
+  }
+
+  removeValidateCedulaNombre() {
+    this.formAdn.get('Cedula')?.clearValidators();
+    this.formAdn.get('NombreCompleto')?.clearValidators();
+  }
+
+  removeValidateRuc() {
+    this.formAdn.get('Ruc')?.clearValidators();
+  }
 }

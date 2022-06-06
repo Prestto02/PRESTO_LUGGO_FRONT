@@ -36,7 +36,6 @@ export class RegistrarAdnComponent implements OnInit {
   verPassword2() {
     this.password2 = !this.password2;
   }
-
   //CHECKED RUC O CEDULA
   checkedRucCedula(e: any) {
     //CONSULTO SI VIENE EL RUC O CEDULA
@@ -46,6 +45,8 @@ export class RegistrarAdnComponent implements OnInit {
         Ruc: '',
         Razon_Social: '',
       });
+      this.formB.removeValidateCedulaNombre();
+      this.formB.setValidatorsRucCompleto();
     }
     if (e.target.checked && e.target.value === 'cedula') {
       this.formB.formAdn.patchValue({
@@ -53,6 +54,8 @@ export class RegistrarAdnComponent implements OnInit {
         Cedula: '',
         NombreCompleto: '',
       });
+      this.formB.removeValidateRuc();
+      this.formB.setValidatorsCedulaNombreCompleto();
     }
   }
 }
