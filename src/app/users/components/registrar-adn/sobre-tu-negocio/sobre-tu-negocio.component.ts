@@ -10,7 +10,8 @@ import { CiudadPaisService } from '../services/ciudad-pais.service';
 export class SobreTuNegocioComponent implements OnInit {
   arrayPais: any = [];
   arrayCiudad: any = [];
-  ocultar: boolean = true;
+  ocultarPais: boolean = true;
+  ocultarCiudad: boolean = true;
   constructor(
     private apiCiudadPais: CiudadPaisService, //SERVICES CIUDAD PAISES
     public formB: BaseFormNegocioAdn //FORM BASE NEGOCIO ADN
@@ -35,12 +36,30 @@ export class SobreTuNegocioComponent implements OnInit {
       this.arrayCiudad = res;
     });
   }
-  onKeyPres(e: any) {
+  setCiudad(nombreCiudad: any) {
+    this.formB.formNegocioAdn.patchValue({
+      Ciudad: nombreCiudad,
+    });
+  }
+  onKeyPressCiudad(e: any) {
     if (e.target.value.length >= 1) {
-      this.ocultar = false;
+      this.ocultarCiudad = false;
     } //MOSTRAR
     if (e.target.value.length <= 0) {
-      this.ocultar = true;
+      this.ocultarCiudad = true;
     } //OCULTAR
+  }
+  onKeyPres(e: any) {
+    if (e.target.value.length >= 1) {
+      this.ocultarPais = false;
+    } //MOSTRAR
+    if (e.target.value.length <= 0) {
+      this.ocultarPais = true;
+    } //OCULTAR
+  }
+
+  ocultarTodo() {
+    this.ocultarCiudad = true;
+    this.ocultarPais = true;
   }
 }

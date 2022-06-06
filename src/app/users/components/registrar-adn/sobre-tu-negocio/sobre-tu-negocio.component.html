@@ -14,7 +14,7 @@
   <form [formGroup]="formB.formNegocioAdn">
     <div class="row card">
       <!-----NOMBRE TIENDA----->
-      <div class="col-xl-12 col-xxl-12 col-sm-12 col-12 col-md-12 mt-3" (click)="ocultar=true">
+      <div class="col-xl-12 col-xxl-12 col-sm-12 col-12 col-md-12 mt-3" (click)="ocultarTodo()">
         <div class="row">
           <div
             class="col-sm-11 col-11 mx-auto border border-1 text-design d-sm-block d-block d-xxl-none d-xl-none d-md-none">
@@ -52,11 +52,12 @@
             class="col-sm-11 col-11 mx-auto border border-1 text-design-pequeno d-sm-block d-block d-xxl-none d-xl-none d-md-none">
             <p class="text-parrafo-pequeno">¿Desde dónde vas a vender? Ingresa tus datos de ubicación.</p>
           </div>
-          <div class="col-xxl-3 col-xl-3 col-md-3 col-sm-6 col-6 mb-3 position-relative">
+          <div class="col-xxl-3 col-xl-3 col-md-3 col-sm-6 col-6 mb-3 position-relative" (click)="ocultarCiudad=true;">
             <label for="formPais" class="form-label fw-bolder">País</label>
             <div class="input-group">
               <input type="text" class="form-control" aria-label="Text input with dropdown button"
-                formControlName="Pais" (keyup)="onKeyPres($event);">
+                formControlName="Pais" (keyup)="onKeyPres($event);"
+                [class.is-invalid]="formB.formNegocioAdn.get('Pais')?.touched && formB.formNegocioAdn.get('Pais')?.invalid">
               <!-----LISTADO DE PRODUCTOS BOTON DE LADO DERECHO----->
               <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown"
                 aria-expanded="false"></button>
@@ -66,8 +67,8 @@
                 </li>
               </ul>
             </div>
-            <!---BUQUEDA POR FILTRO EL PRODUCTO----->
-            <div class="list-group mb-3 position-absolute border-truncate" [hidden]="ocultar">
+            <!---BUQUEDA POR FILTRO EL PAIS----->
+            <div class="list-group mb-3 position-absolute border-truncate" [hidden]="ocultarPais">
               <button type="button" class="list-group-item list-group-item-action"
                 *ngFor="let pais of arrayPais | filterPais:formB.formNegocioAdn.get('Pais')?.value"
                 (click)="buscarCiudad(pais.codigo,pais.pais)">
@@ -93,23 +94,52 @@
             </app-form-errors-container>
           </div>
           <!-----CIUDAD----->
-          <div class="col-xl-3 col-xxl-3 col-sm-6 col-6 col-md-3" (click)="ocultar=true">
-            <div class="mb-3">
-              <label for="ciudad" class="form-label fw-bolder">Ciudad</label>
-              <select class="form-select" aria-label="Default select example" formControlName="Ciudad"
+          <div class="col-xxl-3 col-xl-3 col-md-3 col-sm-6 col-6 mb-3 position-relative" (click)="ocultarPais=true">
+            <label for="formPais" class="form-label fw-bolder">Ciudad</label>
+            <div class="input-group">
+              <input type="text" class="form-control" aria-label="Text input with dropdown button"
+                (keyup)="onKeyPressCiudad($event);" formControlName="Ciudad"
                 [class.is-invalid]="formB.formNegocioAdn.get('Ciudad')?.touched && formB.formNegocioAdn.get('Ciudad')?.invalid">
-                <option value="" selected>Seleccionar</option>
-                <option *ngFor="let ciudad of arrayCiudad" [value]="ciudad.ciudad">{{ciudad.ciudad}}</option>
-              </select>
+              <!-----LISTADO DE PRODUCTOS BOTON DE LADO DERECHO----->
+              <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                aria-expanded="false"></button>
+              <ul class="dropdown-menu dropdown-menu-end w-100">
+                <li><a class="dropdown-item" *ngFor="let ciudad of arrayCiudad"
+                    (click)="setCiudad(ciudad.ciudad)">{{ciudad.ciudad}}</a>
+                </li>
+              </ul>
             </div>
+            <!---BUQUEDA POR FILTRO EL PAIS----->
+            <div class="list-group mb-3 position-absolute border-truncate" [hidden]="ocultarCiudad">
+              <button type="button" class="list-group-item list-group-item-action"
+                *ngFor="let ciudad of arrayCiudad | filterCiudad:formB.formNegocioAdn.get('Ciudad')?.value"
+                (click)="setCiudad(ciudad.ciudad)">
+                {{ciudad.ciudad}}
+              </button>
+              <!----- SI NO EXISTE ESA MARCA-------->
+              <div class="list-group-item list-group-item-action"
+                *ngIf="(arrayCiudad | filterCiudad:formB.formNegocioAdn.get('Ciudad')?.value)?.length <= 0">
+                <p>No hay registro de esa ciudad</p>
+              </div>
+            </div>
+            <!--             <div class="mb-3">
+              <label for="formPais" class="form-label fw-bolder">País</label>
+              <select class="form-select" aria-label="Default select example" formControlName="Pais"
+                [class.is-invalid]="formB.formNegocioAdn.get('Pais')?.touched && formB.formNegocioAdn.get('Pais')?.invalid"
+                (change)="buscarCiudad($event);">
+                <option value="" selected>Seleccionar</option>
+                <option *ngFor="let pais of arrayPais" [value]="pais.codigo">{{pais.pais}}</option>
+              </select>
+            </div> -->
             <app-form-errors-container [forControl]="formB.formNegocioAdn.get('Ciudad')">
               <app-message-error forErrorCode="required"></app-message-error>
             </app-form-errors-container>
           </div>
+
         </div>
       </div>
       <!-----DIRECION----->
-      <div class="col-xxl-12 col-xl-12 col-sm-12 col-md-12 col-12 mt-3 mb-3" (click)="ocultar=true">
+      <div class="col-xxl-12 col-xl-12 col-sm-12 col-md-12 col-12 mt-3 mb-3" (click)="ocultarTodo();">
         <div class="row">
           <div
             class="col-sm-11 col-11 mx-auto border border-1 text-design d-block d-sm-block d-xxl-none d-md-none d-xl-none">
@@ -139,7 +169,7 @@
         </div>
       </div>
       <!-----SUCURSALES----->
-      <div class="col-xl-12 col-xxl-12 col-sm-12 col-12 col-md-12 mt-3 mb-3" (click)="ocultar=true">
+      <div class="col-xl-12 col-xxl-12 col-sm-12 col-12 col-md-12 mt-3 mb-3" (click)="ocultarTodo();">
         <div class="row">
           <div
             class="col-sm-11 col-11 mx-auto border border-1 text-design d-block d-sm-block d-xxl-none d-xl-none d-md-none">

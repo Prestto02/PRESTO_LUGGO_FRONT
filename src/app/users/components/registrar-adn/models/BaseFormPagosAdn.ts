@@ -12,6 +12,13 @@ export class BaseFormPagosAdn {
         Validators.pattern(Expresion.SoloLetrasAcentosEspacios),
       ],
     ],
+    Nombre_Banco: [
+      '',
+      [
+        Validators.required,
+        Validators.pattern(Expresion.SoloLetrasAcentosEspacios),
+      ],
+    ],
     Id_banco: ['', [Validators.required]],
     Identificacion: [
       '',

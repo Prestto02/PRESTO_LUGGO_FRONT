@@ -15,7 +15,7 @@
   <form [formGroup]="formB.formPagoAdn">
     <div class="row card">
       <!--------NOMBRE DEL TITULAR IDENTIFCAICON-------->
-      <div class="col-xl-12 col-xxl-12 col-md-12 col-sm-12 col-12 mt-3">
+      <div class="col-xl-12 col-xxl-12 col-md-12 col-sm-12 col-12 mt-3" (click)="ocultar=true">
         <div class="row mx-auto">
           <!----IDENTIFICAICON----->
           <div class="col-xl-3 col-sm-6 col-6 col-xxl-3 col-md-3">
@@ -33,7 +33,7 @@
             </app-form-errors-container>
           </div>
           <!-----NOMBRE TITULAR---->
-          <div class="col-xl-3 col-sm-6 col-6 col-xxl-3 col-md-3">
+          <div class="col-xl-3 col-sm-6 col-6 col-xxl-3 col-md-3" (click)="ocultar=true">
             <div class="mb-3">
               <label for="formNombre" class="form-label fw-bolder">Nombre del titular</label>
               <input type="text" class="form-control" id="formNombre"
@@ -55,7 +55,7 @@
         </div>
       </div>
       <!-------CORREO ELECTRONICO-------->
-      <div class="col-xl-12 col-xxl-12 col-12 col-sm-12 col-md-12">
+      <div class="col-xl-12 col-xxl-12 col-12 col-sm-12 col-md-12" (click)="ocultar=true">
         <div class="row mx-auto">
 
           <!-------CORREO ELECTRONICO-------->
@@ -86,7 +86,41 @@
               preocupes toda tu
               información está segura con nosotros.</p>
           </div>
-          <div class="col-xl-6 col-sm-12 col-md-6 col-xxl-6 col-12">
+          <div class="col-xl-6 col-sm-12 col-md-6 col-xxl-6 col-12 mb-3 position-relative">
+            <label for="formPais" class="form-label fw-bolder">Entidad Financiera</label>
+            <div class="input-group">
+              <input type="text" class="form-control" aria-label="Text input with dropdown button"
+                [class.is-invalid]="formB.formPagoAdn.get('Nombre_Banco')?.touched && formB.formPagoAdn.get('Nombre_Banco')?.invalid"
+                (keyup)="onKeyPress($event);" formControlName="Nombre_Banco"
+                [class.is-invalid]="formB.formPagoAdn.get('Nombre_Banco')?.touched && formB.formPagoAdn.get('Nombre_Banco')?.invalid">
+              <!-----LISTADO DE PRODUCTOS BOTON DE LADO DERECHO----->
+              <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                aria-expanded="false"></button>
+              <ul class="dropdown-menu dropdown-menu-end w-100">
+                <li><a class="dropdown-item" *ngFor="let banco of arrayBanco"
+                    (click)="setBanco(banco.id_banco,banco.nombre_banco)">{{banco.nombre_banco}}</a>
+                </li>
+              </ul>
+            </div>
+            <!---BUQUEDA POR FILTRO EL PAIS----->
+            <div class="list-group mb-3 position-absolute border-truncate" [hidden]="ocultar">
+              <button type="button" class="list-group-item list-group-item-action"
+                *ngFor="let banco of arrayBanco | filterBancos:formB.formPagoAdn.get('Nombre_Banco')?.value"
+                (click)="setBanco(banco.id_banco,banco.nombre_banco)">
+                {{banco.nombre_banco}}
+              </button>
+              <!----- SI NO EXISTE ESA MARCA-------->
+              <div class="list-group-item list-group-item-action"
+                *ngIf="(arrayBanco | filterBancos:formB.formPagoAdn.get('Nombre_Banco')?.value)?.length <= 0">
+                <p>No hay registro de esa banco</p>
+              </div>
+            </div>
+            <app-form-errors-container [forControl]="formB.formPagoAdn.get('Id_banco')">
+              <app-message-error forErrorCode="required"></app-message-error>
+            </app-form-errors-container>
+          </div>
+
+          <!--           <div class="col-xl-6 col-sm-12 col-md-6 col-xxl-6 col-12">
             <div class="mb-3">
               <label for="exampleFormControlInput1" class="form-label fw-bolder">Entidad Financiera</label>
               <select class="form-select" aria-label="Default select example" formControlName="Id_banco"
@@ -98,7 +132,7 @@
             <app-form-errors-container [forControl]="formB.formPagoAdn.get('Id_banco')">
               <app-message-error forErrorCode="required"></app-message-error>
             </app-form-errors-container>
-          </div>
+          </div> -->
           <div
             class="col-xl-5 col-md-5 col-xxl-5 border border-1 text-design d-sm-none d-none d-md-block d-xl-block d-xxl-block">
             <p class="text-parrafo">No olvides seleccionar que tipo de cuenta es y digitar el número de la misma. No te
@@ -110,7 +144,7 @@
       <!-------TIPO DE CUENTA, NUMERO DE CUENTA-------->
       <div class="col-xl-12 col-xxl-12 col-md-12 col-sm-12 col-12 mt-3 mb-3">
         <div class="row mx-auto">
-          <div class="col-xl-3 col-sm-6 col-md-3 col-xxl-3 col-6">
+          <div class="col-xl-3 col-sm-6 col-md-3 col-xxl-3 col-6" (click)="ocultar=true;">
             <div class="mb-3">
               <label for="exampleFormControlInput1" class="form-label fw-bolder">Tipo de Cuenta</label>
               <select class="form-select" aria-label="Default select example" formControlName="Tipo_cuenta"
@@ -125,7 +159,7 @@
             </app-form-errors-container>
           </div>
           <!------NUMERO DE CUENTA------->
-          <div class="col-xl-3 col-sm-6 col-md-3 col-xxl-3 col-6">
+          <div class="col-xl-3 col-sm-6 col-md-3 col-xxl-3 col-6"  (click)="ocultar=true;">
             <div class="mb-3">
               <label for="formCuenta-Numero" class="form-label fw-bolder">Número de cuenta</label>
               <input type="text" formControlName="Numero_cuenta" class="form-control" id="formCuenta-Numero"

@@ -9,6 +9,7 @@ import { BancoService } from '../services/banco.service';
 })
 export class TusPagosComponent implements OnInit {
   arrayBanco: any = [];
+  ocultar: boolean = true;
   constructor(
     public formB: BaseFormPagosAdn,
     private apiBanco: BancoService //SERVICES BANCO
@@ -22,6 +23,22 @@ export class TusPagosComponent implements OnInit {
   getAllBancos() {
     this.apiBanco.getAllBancos().subscribe((res) => {
       this.arrayBanco = res;
+    });
+  }
+
+  onKeyPress(e: any) {
+    if (e.target.value.length >= 1) {
+      this.ocultar = false;
+    } //MOSTRAR
+    if (e.target.value.length <= 0) {
+      this.ocultar = true;
+    } //OCULTAR
+  }
+
+  setBanco(id: any, nombre: any) {
+    this.formB.formPagoAdn.patchValue({
+      Nombre_Banco: nombre,
+      Id_banco: id,
     });
   }
 }
