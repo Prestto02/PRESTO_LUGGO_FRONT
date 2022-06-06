@@ -38,7 +38,8 @@ export class ValidarYTransformarImagen {
     const file = e.target.files[0]; //LA POSICION TARGET DE LA IMAGEN
     const formData = new FormData(); //CREO EL FORM DATA PARA ENVIARLO AL SERVIDOR
     formData.append('files', file); //ASIGNO A LA VARIABLE FILES LO QUE TENGO EN EL TARGET
-    this.apiProducts.postVerifyImg(formData).subscribe(
+    //VALIDACION BACKEND
+   /*  this.apiProducts.postVerifyImg(formData).subscribe(
       //HAGO LA PETICION
       (res) => {
         return res;
@@ -46,6 +47,6 @@ export class ValidarYTransformarImagen {
       (err) => {
         return err.error;
       }
-    );
+    ); */
   }
 }

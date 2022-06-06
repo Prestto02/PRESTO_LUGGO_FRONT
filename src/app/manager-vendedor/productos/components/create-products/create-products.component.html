@@ -16,7 +16,7 @@
             </div>
             <!-------IMAGEN DESTACADA------>
             <div class="col-xl-4 col-xxl-4 col-sm-12 col-12 col-md-6 mx-5 position-relative mb-5">
-              <img loading="lazy" *ngIf="imgProducts!=''" [src]="imgProducts" class="img-fluid rounded-start"
+              <img loading="lazy" *ngIf="imgProducts!=''" [src]="imgProducts" class="img-fluid border border-1"
                 alt="Imágen del producto" width="450px" height="450px">
               <svg *ngIf="imgProducts==''" width="450" height="450" viewBox="0 0 250 250" fill="none"
                 xmlns="http://www.w3.org/2000/svg">
@@ -138,25 +138,33 @@
                   <div class="col-xl-6 col-sm-6 col-md-6 col-xxl-6 col-6" (click)="touched=false;">
                     <div class="form-floating mb-3">
                       <select id="forRestricciones" class="form-select" formControlName="Restricciones"
-                        title="Selecciona las restricciones del producto">
+                        title="Selecciona las restricciones del producto"
+                        [class.is-invalid]="formB.formProducts.get('Restricciones')?.touched && formB.formProducts.get('Restricciones')?.invalid">
                         <option value="" selected>Seleccionar</option>
                         <option value="Apto para todo público">Apto para todo público</option>
                         <option value="Sólo para mayores de 18 años">Sólo para mayores de 18 años</option>
                       </select>
                       <label for="forRestricciones">Restricciones</label>
                     </div>
+                    <app-form-errors-container [forControl]="formB.formProducts.get('Restricciones')">
+                      <app-message-error forErrorCode="required"></app-message-error>
+                    </app-form-errors-container>
                   </div>
                   <!----------DISPONIBILIDAD----------->
                   <div class="col-xl-6 col-sm-6 col-md-6 col-xxl-6 col-6 position-relative">
                     <div class="form-floating mb-3">
                       <select id="forDisponibilidad" class="form-select" formControlName="Disponibilidad"
-                        title="Busque que tipo de disponibilidad tiene su producto">
+                        title="Busque que tipo de disponibilidad tiene su producto"
+                        [class.is-invalid]="formB.formProducts.get('Disponibilidad')?.touched && formB.formProducts.get('Disponibilidad')?.invalid">
                         <option value="" selected>Seleccionar</option>
                         <option value="1">Inmediata</option>
                         <option value="2">Bajo pedido</option>
                       </select>
                       <label for="forDisponibilidad">Disponibilidad</label>
                     </div>
+                    <app-form-errors-container [forControl]="formB.formProducts.get('Disponibilidad')">
+                      <app-message-error forErrorCode="required"></app-message-error>
+                    </app-form-errors-container>
                   </div>
                 </div>
                 <!-------GARANTIA----->
@@ -165,13 +173,17 @@
                   <div class="col-xl-6 col-sm-6 col-md-6 col-xxl-6 col-6">
                     <div class="form-floating mb-3">
                       <select id="forDisponibilidad" class="form-select" formControlName="Garantia"
-                        (change)="selectGarantia($event)" title="Seleccione si el producto ofrece una garantia">
+                        (change)="selectGarantia($event)" title="Seleccione si el producto ofrece una garantia"
+                        [class.is-invalid]="formB.formProducts.get('Garantia')?.touched && formB.formProducts.get('Garantia')?.invalid">
                         <option value="" selected>Seleccionar</option>
                         <option value="Si">Si</option>
                         <option value="No">No</option>
                       </select>
                       <label for="forDisponibilidad">Garantía</label>
                     </div>
+                    <app-form-errors-container [forControl]="formB.formProducts.get('Garantia')">
+                      <app-message-error forErrorCode="required"></app-message-error>
+                    </app-form-errors-container>
                   </div>
                   <!----------FORM ETIQUETAS----------->
                   <ng-container *ngIf="ActiveGarantia">
