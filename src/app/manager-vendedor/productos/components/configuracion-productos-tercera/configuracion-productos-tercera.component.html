@@ -148,17 +148,14 @@
                 </svg> </label>
               <div class="row">
                 <div class="col-xl-4 col-xxl-4">
-                  <label for="pesoFloating">Lb</label>
                   <input type="text" placeholder="12 GR" id="pesoFloating" class="form-control"
                     (keyup)="transformarAKGYGR($event);" [value]="libras" />
                 </div>
                 <div class="col-xl-4 col-xxl-4">
-                  <label for="pesoFloating">Gr</label>
                   <input type="text" placeholder="12 GR" id="pesoFloating" class="form-control"
                     (keyup)="transformarALibrasYKG($event);" [value]="gramos" />
                 </div>
                 <div class="col-xl-4 col-xxl-4">
-                  <label for="pesoFloating">KG</label>
                   <input type="text" formControlName="peso" placeholder="12 KG" id="pesoFloating" class="form-control"
                     (keyup)="transformarALBYGR($event);"
                     [class.is-invalid]="formB.formAtributos.get('Peso.peso')?.invalid && formB.formAtributos.get('Peso.peso')?.touched" />

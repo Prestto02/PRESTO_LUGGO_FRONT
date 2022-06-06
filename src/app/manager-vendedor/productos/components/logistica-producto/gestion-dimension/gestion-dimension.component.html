@@ -75,7 +75,7 @@
     <!--------DIMENSIONES DEL PAQUETE Y HORA-------->
     <ng-container *ngIf="puertoEnvio">
       <!--------DIMENSIONES DEL PAQUETE Y HORA-------->
-      <div class="col-xl-4 col-xxl-4 col-sm-12 col-12 col-md-4 mx-auto">
+      <div class="col-xl-5 col-xxl-5 col-sm-12 col-12 col-md-5 mx-auto">
         <div class="row">
           <h5>Dimensiones del Paquete</h5>
           <!--------DIMENSIONES DEL PAQUETE Y HORA-------->
@@ -171,11 +171,11 @@
     </ng-container>
     <!----------------PRECIO POR COBRAR EL ENVIO DE ADN-->
     <ng-container *ngIf="adnEnvio">
-      <div class="col-xl-4 col-xxl-4 col-sm-12 col-12 col-md-4 mx-auto">
+      <div class="col-xl-5 col-xxl-5 col-sm-12 col-12 col-md-5 mx-auto">
         <div class="row">
           <!-------PRECIO POR COBRAR EL ENVIO-------->
           <div class="col-xl-5 col-xxl-5 col-sm-12 col-12 col-md-4 mb-3 mt-5 py-5">
-            <label>Precio del Envío</label>
+            <label class="form-label mt-1">Precio del Envío</label>
           </div>
           <div class="col-xl-4 col-xxl-4 col-sm-12 col-12 col-md-4 mb-3 mt-5 py-5">
             <div class="input-group mb-3">
@@ -183,6 +183,11 @@
               <input type="text" class="form-control" placeholder="$12,00" aria-label="Username"
                 formControlName="Precio" aria-describedby="basic-addon1">
             </div>
+            <app-form-errors-container [forControl]="formTamano.formTamanoProducto.get('Precio')">
+              <app-message-error forErrorCode="required"></app-message-error>
+              <app-message-error forErrorCode="pattern" customMsg="Solo numeros ej:12,00">
+              </app-message-error>
+            </app-form-errors-container>
           </div>
         </div>
       </div>
