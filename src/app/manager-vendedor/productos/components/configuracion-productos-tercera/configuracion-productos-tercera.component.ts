@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { DataFormProducts } from '../../helpers/DataFormProducts';
 import { SelectAtributosService } from '../configuracion-producto/select-atributos/services/select-atributos.service';
 import { BaseFormAtributosConfig } from './models/BaseFormAtrtibutos';
 
@@ -9,11 +8,7 @@ import { BaseFormAtributosConfig } from './models/BaseFormAtrtibutos';
   styleUrls: ['./configuracion-productos-tercera.component.css'],
 })
 export class ConfiguracionProductosTerceraComponent implements OnInit {
-  activarMensajeGlobal: boolean = false;
-  activarMensajeColor: boolean = false;
-  activarMensajeMaterial: boolean = false;
-  mensajeEstadoActivar: boolean = false;
-  activarModeloMensaje: boolean = false;
+  activarCheck: boolean = false;
   libras: any = '';
   gramos: any = '';
   arrayColores: any;
@@ -25,38 +20,15 @@ export class ConfiguracionProductosTerceraComponent implements OnInit {
 
   ngOnInit(): void {
     this.getAllColors();
- /*    this.getMateriales(); */
+    /*    this.getMateriales(); */
   }
 
   //TRAEER TODOS LOS MATERIALES
-/*   getMateriales() {
+  /*   getMateriales() {
     this.apSelectAtributo.getMaterial().subscribe((res) => {
       this.arrayMateriales = res;
     });
   } */
-  //MENSAJE MODELO
-  mensajeModelo() {
-    this.activarModeloMensaje = !this.activarModeloMensaje;
-  }
-  //MENSAJE ESTADO
-  mensajeEstado() {
-    this.mensajeEstadoActivar = !this.mensajeEstadoActivar;
-  }
-
-  //MENSAJES INTUITUVO
-  mensajeIntuitivo() {
-    this.activarMensajeGlobal = !this.activarMensajeGlobal;
-  }
-
-  //MENSAJE MATERIAL
-  mensajeMaterial() {
-    this.activarMensajeMaterial = !this.activarMensajeMaterial;
-  }
-
-  //MENSAJE DE COLOR
-  mensajeColor() {
-    this.activarMensajeColor = !this.activarMensajeColor;
-  }
   //TODOS LOS ATRIBUTOS
   getAllColors() {
     this.apSelectAtributo.getColorsAtributos().subscribe((res) => {
@@ -90,7 +62,7 @@ export class ConfiguracionProductosTerceraComponent implements OnInit {
     this.libras = datos * (1 / 453.59);
     this.formB.formAtributos.patchValue({
       Peso: {
-        peso: datos * (0.001 / 1) ,
+        peso: datos * (0.001 / 1),
       },
     });
   }

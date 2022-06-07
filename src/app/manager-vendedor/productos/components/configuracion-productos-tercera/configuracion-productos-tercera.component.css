@@ -2,16 +2,6 @@
   cursor: pointer;
 }
 
-.mostrar {
-  transition: opacity 0.15s ease;
-  z-index: 1000;
-}
-
-.text {
-  font-size: 12px;
-  color: rgba(0, 0, 0, 0.185);
-}
-
 .span-estilo {
   background: #fff;
   color: #00000070;

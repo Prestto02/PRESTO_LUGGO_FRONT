@@ -1,0 +1,11 @@
+.information {
+  cursor: pointer;
+}
+.mostrar {
+  transition: opacity 0.15s ease;
+  z-index: 1000;
+}
+.text {
+  font-size: 12.5px;
+  color: rgb(0 0 0 / 46%);
+}

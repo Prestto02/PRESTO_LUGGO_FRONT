@@ -31,6 +31,7 @@ import { ListaPedidosProviders } from '../lista-pedidos/module/Lista-Pedidos.mod
 import { MenuIndexModule } from 'src/app/shared/components/index/menu-index/module/menu-index.module';
 import { AdnCerrarSesionComponent } from '../adn-cerrar-sesion/adn-cerrar-sesion.component';
 import { SeccionAdnComponent } from '../seccion-adn/seccion-adn.component';
+import { MensajesAyudaComponent } from '../mensajes-ayuda/mensajes-ayuda.component';
 @NgModule({
   declarations: [
     ManagerVendedorComponent, //INDEX MANAGER
@@ -43,6 +44,7 @@ import { SeccionAdnComponent } from '../seccion-adn/seccion-adn.component';
     DashBoardModuloDeclarations, //MODULE DASHBOARD
     AdnCerrarSesionComponent, //ADN CERRAR SESION
     SeccionAdnComponent, //SECCION ADN PARA SABER EN QUE MODULO SE ENCUENTRA UBICADO
+    MensajesAyudaComponent, // MENSAJES AYUDA COMPONENTS
     ListaPedidosProviders,
   ],
   imports: [

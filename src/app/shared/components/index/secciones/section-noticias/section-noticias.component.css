@@ -5,7 +5,7 @@
   border: 0px solid #000000;
 }
 .btn-color {
-  background: #7549fe;
+  background: #007bff;
   font-family: Cardium B-Medium;
   color: #fff;
   font-size: 14px;
@@ -26,7 +26,28 @@
 }
 
 /* If the screen size is 601px wide or more, set the font-size of <div> to 80px */
-
+@media screen and (min-width: 1300px) and (max-width: 1436px) {
+  .text-footer {
+    color: #007bff;
+    font-size: 12px;
+    font-family: Cardium B-Medium;
+  }
+  .text-categorias {
+    font-family: Cardium B-Medium;
+    font-size: 12px;
+    color: #000;
+  }
+  .tltle-cards {
+    font-family: Cardium B-Bold;
+    font-size: 18px;
+  }
+  .btn-color {
+    background: #007bff;
+    font-family: Cardium B-Medium;
+    color: #fff;
+    font-size: 12.2px;
+  }
+}
 @media screen and (min-width: 1200px) and (max-width: 1299px) {
   .text-footer {
     color: #007bff;
@@ -43,7 +64,7 @@
     font-size: 16px;
   }
   .btn-color {
-    background: #7549fe;
+    background: #007bff;
     font-family: Cardium B-Medium;
     color: #fff;
     font-size: 11px;
@@ -66,7 +87,7 @@
     font-size: 16px;
   }
   .btn-color {
-    background: #7549fe;
+    background: #007bff;
     font-family: Cardium B-Medium;
     color: #fff;
     font-size: 11px;
@@ -89,7 +110,7 @@
     font-size: 16px;
   }
   .btn-color {
-    background: #7549fe;
+    background: #007bff;
     font-family: Cardium B-Medium;
     color: #fff;
     font-size: 11px;
@@ -112,7 +133,7 @@
     font-size: 16px;
   }
   .btn-color {
-    background: #7549fe;
+    background: #007bff;
     font-family: Cardium B-Medium;
     color: #fff;
     font-size: 11px;
