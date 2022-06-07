@@ -38,7 +38,7 @@ export class SharedProductsComponent implements OnInit {
   //DESTROY OBSERVABLE
   ngOnDestroy() {
     this.apiServi.unSuscribeObservable();
-    this.apySearchProducts.unSuscribeData();
+    this.apySearchProducts.unSuscribeDataProducts();
   }
   //MESSAGE OF ERRORS PRODUCTS WHERE SEARCH THE PRODUCT IN THE AUTOCOMPLETE PRODUCT
   messageErrorProductsSearchUsers() {
@@ -86,7 +86,6 @@ export class SharedProductsComponent implements OnInit {
   }
   //AGRGAR AL CARRITO
   agregarAlCarrito(id: any) {
-    console.log(id);
     this.carritoItmes.getListItemCarrito(id);
     //PARA SUBIR EL ITEMS DEL CARRITO
   }

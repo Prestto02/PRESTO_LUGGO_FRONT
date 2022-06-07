@@ -2,6 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { TokenService } from 'src/app/login/services/token.service';
 import { CategoriasService } from 'src/app/manager-vendedor/productos/services/categorias.service';
+import { SharedProductsComponent } from 'src/app/shared/components/shared-products/list-products/shared-products.component';
 import { UrlFront } from 'src/app/shared/routes/RoutesFront';
 import { BaseFormSearchProducts } from '../models/BaseFormSearchProduct';
 import { BuscadorProductosService } from '../services/buscador-productos.service';
@@ -21,10 +22,11 @@ export class AutocompletadoProductosComponent implements OnInit, OnDestroy {
     private apiAsyncProduct: BuscadorProductosService,
     private apiToken: TokenService,
     private apiCategoria: CategoriasService, //SERVICES CATEGORIA
-    public formB: BaseFormSearchProducts
+    public formB: BaseFormSearchProducts,
+    private componentSharedProduct: SharedProductsComponent // PRODUCTO COMPARTIDO
   ) {}
   ngOnDestroy(): void {
-    this.apiAsyncProduct.unSuscribeData();
+    this.apiAsyncProduct.unSuscribeDataProducts();
     this.listSearchProduct = [];
   }
 
@@ -49,7 +51,7 @@ export class AutocompletadoProductosComponent implements OnInit, OnDestroy {
       nombre: value,
     });
     this.buscarProducts();
-    this.listSearchProduct = [];
+    //this.listSearchProduct = [];
   }
   //BUSCAR PRODUCTOS
   getProductsList() {
@@ -67,7 +69,7 @@ export class AutocompletadoProductosComponent implements OnInit, OnDestroy {
     this.apiAsyncProduct
       .buscarProductosIntentos(nombre, { id_usuario: this.id })
       .subscribe((res) => {
-        if (res === null) return;
+        if (res === null) return; //SI NO EXISTE RETURN
         this.apiAsyncProduct.addMessageErrorsUserProduct(res.mensaje);
       });
   }
@@ -82,7 +84,6 @@ export class AutocompletadoProductosComponent implements OnInit, OnDestroy {
         `/${UrlFront.Menu.menu}/${UrlFront.Menu.buscarGet}`,
         nombre,
       ]);
-      this.listSearchProduct = [];
     } else {
       this._route.navigate([
         `/${UrlFront.Menu.menu}/${UrlFront.Menu.buscarGet}`,

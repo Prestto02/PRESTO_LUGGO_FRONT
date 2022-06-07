@@ -28,7 +28,7 @@ export class BuscadorProductosService {
     this.messageSearchUser.next(message);
   }
   //UNSUSCRIBE DATA
-  unSuscribeData() {
+  unSuscribeDataProducts() {
     const data: any = [];
     this.listProductoBuscados.next(data);
     this.messageSearchUser.next('');

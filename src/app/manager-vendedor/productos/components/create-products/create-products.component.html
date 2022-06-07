@@ -89,10 +89,10 @@
                         {{marcas.nombre_marca}}
                       </button>
                       <!----- SI NO EXISTE ESA MARCA-------->
-                      <div class="list-group-item list-group-item-action"
+<!--                       <div class="list-group-item list-group-item-action"
                         *ngIf="(marcaItems | filterMarca:formB.formProducts.get('marca')?.value)?.length <= 0">
                         <p>No existe esa marca</p>
-                      </div>
+                      </div> -->
                     </div>
                     <app-form-errors-container [forControl]="formB.formProducts.get('marca')">
                       <app-message-error forErrorCode="required"></app-message-error>
@@ -199,7 +199,7 @@
                 </div>
               </form>
             </div>
-            <div class="modal-footer bg-white fixed-bottom">
+            <div class="modal-footer ">
               <button type="button" class="btn btn-secondary" (click)="irProducto();">Cancelar</button>
               <button class="btn btn-primary collapsed" type="button" data-bs-toggle="collapse"
                 data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo"
@@ -233,8 +233,8 @@
     </div>
   </div>
 </section>
-<!-- <button class="btn btn-primary collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+<button class="btn btn-primary collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo"
   aria-expanded="true" aria-controls="collapseTwo" (click)="addAtributos()">TWO</button>
 <button class="btn btn-primary collapsed" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false"
   aria-controls="collapseFour" (click)="addAtributos()">THREE</button>
- -->
+

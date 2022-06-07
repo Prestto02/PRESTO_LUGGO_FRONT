@@ -7,7 +7,9 @@ export class BaseFormAtributosConfig {
 
   formAtributos = this.formB.group({
     Color_articulo: this.formB.array([], [Validators.required]),
-    id_material: ['', [Validators.required]],
+    Material_constituido: this.formB.group({
+      nombre_material: ['', [Validators.required,Validators.pattern(Expresion.SoloLetrasAcentosEspacios)]],
+    }),
     estado_producto: ['', [Validators.required]],
     modelo: [
       '',

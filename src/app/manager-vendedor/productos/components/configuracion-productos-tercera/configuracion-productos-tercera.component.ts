@@ -25,15 +25,15 @@ export class ConfiguracionProductosTerceraComponent implements OnInit {
 
   ngOnInit(): void {
     this.getAllColors();
-    this.getMateriales();
+ /*    this.getMateriales(); */
   }
 
   //TRAEER TODOS LOS MATERIALES
-  getMateriales() {
+/*   getMateriales() {
     this.apSelectAtributo.getMaterial().subscribe((res) => {
       this.arrayMateriales = res;
     });
-  }
+  } */
   //MENSAJE MODELO
   mensajeModelo() {
     this.activarModeloMensaje = !this.activarModeloMensaje;

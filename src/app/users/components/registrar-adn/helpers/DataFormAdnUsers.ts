@@ -34,7 +34,7 @@ export class DataFormAdn {
         Tipo_cuenta: this.formPagosAdn.formPagoAdn.get('Tipo_cuenta')?.value,
       },
 
-      Persona: {
+      Persona_: {
         Cedula: this.formAdn.formAdn.get('Cedula')?.value,
         NombreCompleto: this.formAdn.formAdn.get('NombreCompleto')?.value,
       },
