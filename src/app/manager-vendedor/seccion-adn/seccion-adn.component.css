@@ -1,4 +1,7 @@
-*{
-  background: #fff;
+* {
   font-family: Cardium B-Medium;
+}
+
+.cursor{
+  cursor: pointer;
 }

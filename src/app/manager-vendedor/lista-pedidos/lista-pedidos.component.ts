@@ -8,6 +8,8 @@ import { UrlFront } from 'src/app/shared/routes/RoutesFront';
   styleUrls: ['./lista-pedidos.component.css'],
 })
 export class ListaPedidosComponent implements OnInit {
+  public ruta: any = `${UrlFront.Manager.vendedor}`;
+
   arrayListaPedidos: any = [
     {
       id: 1,

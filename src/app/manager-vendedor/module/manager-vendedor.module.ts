@@ -29,6 +29,8 @@ import { FiltroPaginacionPipe } from '../productos/components/listado-productos/
 import { IndexMenuModule } from 'src/app/shared/components/index/module/index-menu.module';
 import { ListaPedidosProviders } from '../lista-pedidos/module/Lista-Pedidos.module';
 import { MenuIndexModule } from 'src/app/shared/components/index/menu-index/module/menu-index.module';
+import { AdnCerrarSesionComponent } from '../adn-cerrar-sesion/adn-cerrar-sesion.component';
+import { SeccionAdnComponent } from '../seccion-adn/seccion-adn.component';
 @NgModule({
   declarations: [
     ManagerVendedorComponent, //INDEX MANAGER
@@ -39,6 +41,8 @@ import { MenuIndexModule } from 'src/app/shared/components/index/menu-index/modu
     FiltroPaginacionPipe, //FILTRO PAGINACION PIPE
     SideBarIzquierdaComponent, //SIDEBARS IZQUIERDA
     DashBoardModuloDeclarations, //MODULE DASHBOARD
+    AdnCerrarSesionComponent, //ADN CERRAR SESION
+    SeccionAdnComponent, //SECCION ADN PARA SABER EN QUE MODULO SE ENCUENTRA UBICADO
     ListaPedidosProviders,
   ],
   imports: [
