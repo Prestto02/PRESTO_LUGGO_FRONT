@@ -22,13 +22,13 @@
             <div class="mb-3">
               <label for="formIdentificacionTitular" class="form-label fw-bolder">Cédula / Ruc</label>
               <input type="text" placeholder="09334562716" id="formIdentificacionTitular" class="form-control"
-                formControlName="Identificacion"
+                formControlName="Identificacion" maxlength="13" minlength="10"
                 [class.is-invalid]="formB.formPagoAdn.get('Identificacion')?.touched && formB.formPagoAdn.get('Identificacion')?.invalid" />
             </div>
             <app-form-errors-container [forControl]="formB.formPagoAdn.get('Identificacion')">
               <app-message-error forErrorCode="required"></app-message-error>
               <app-message-error forErrorCode="minlength" customMsg="Máximo 10 digitos"></app-message-error>
-              <app-message-error forErrorCode="maxlength" customMsg="Máximo 10 digitos"></app-message-error>
+              <app-message-error forErrorCode="maxlength" customMsg="Máximo 13 digitos"></app-message-error>
               <app-message-error forErrorCode="pattern" customMsg="Solo numeros"></app-message-error>
             </app-form-errors-container>
           </div>
