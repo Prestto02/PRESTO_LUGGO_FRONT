@@ -10,7 +10,7 @@
 }
 
 .boton {
-  background-color: #7549fe;
+  background-color: #0b5ed7;
   font-family: Cardium B-Bold;
   color: #fff;
   font-size: 15px;
@@ -27,16 +27,24 @@
 }
 
 @media screen and (min-width: 1180px) and (max-width: 1375px) {
+  .title {
+    font-family: Cardium B-Bold;
+    font-size: 13px;
+  }
   .subtitle {
     font-family: Cardium B-Medium;
-    font-size: 13px;
+    font-size: 11px;
   }
 }
 
 @media screen and (min-width: 769px) and (max-width: 1170px) {
+  .title {
+    font-family: Cardium B-Bold;
+    font-size: 13px;
+  }
   .subtitle {
     font-family: Cardium B-Medium;
-    font-size: 13px;
+    font-size: 11px;
   }
   .card-responsive {
     margin: 0px 0px 15px;

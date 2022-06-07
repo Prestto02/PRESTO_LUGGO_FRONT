@@ -32,14 +32,21 @@
   font-size: 14px;
   font-family: Cardium B-Medium;
 }
-.carousel-control-next-icon, .carousel-control-prev-icon
-{
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
   width: 1.2rem;
   height: 1.2rem;
 }
-/* .heigth-Card{
-  height: 22.375rem;
-} */
+
+.degradado {
+  background: linear-gradient(180deg, #f1f3f600, #f1f3f6);
+  height: 164px;
+  bottom: 15px;
+  position: absolute;
+  top: 610px;
+  z-index: 1;
+}
+
 /* If the screen size is 601px wide or more, set the font-size of <div> to 80px */
 @media screen and (min-width: 1400px) and (max-width: 1500px) {
   .top-img {
@@ -48,8 +55,14 @@
   .carousel-tamano {
     height: 840px;
   }
+  .degradado {
+    background: linear-gradient(180deg, #f1f3f600, #f1f3f6);
+    height: 164px;
+    position: absolute;
+    top: 610px;
+    z-index: 1;
+  }
 }
-
 /*RESPONSIVE*/
 @media screen and (min-width: 1350px) and (max-width: 1399px) {
   .top-img {
@@ -58,6 +71,13 @@
   }
   .carousel-tamano {
     height: 780px;
+  }
+  .degradado {
+    background: linear-gradient(180deg, #f1f3f600, #f1f3f6);
+    height: 164px;
+    position: absolute;
+    top: 496px;
+    z-index: 1;
   }
 }
 
@@ -69,15 +89,37 @@
   .carousel-tamano {
     height: 740px;
   }
+  .degradado {
+    background: linear-gradient(180deg, #f1f3f600, #f1f3f6);
+    height: 164px;
+    position: absolute;
+    top: 472px;
+    z-index: 1;
+  }
 }
 
 @media screen and (min-width: 1200px) and (max-width: 1299px) {
   .top-img {
-    top: 490px;
+    top: 534px;
     z-index: 1;
   }
   .carousel-tamano {
     height: 720px;
+  }
+  .degradado {
+    background: linear-gradient(180deg, #f1f3f600, #f1f3f6);
+    height: 164px;
+    position: absolute;
+    top: 460px;
+    z-index: 1;
+  }
+  .textOferta {
+    font-family: Cardium B-Medium;
+    font-size: 13px;
+  }
+  .tittle-cards {
+    font-family: Cardium B-Bold;
+    font-size: 18px;
   }
 }
 
@@ -89,6 +131,21 @@
   .carousel-tamano {
     height: 700px;
   }
+  .degradado {
+    background: linear-gradient(180deg, #f1f3f600, #f1f3f6);
+    height: 164px;
+    position: absolute;
+    top: 374px;
+    z-index: 1;
+  }
+  .textOferta {
+    font-family: Cardium B-Medium;
+    font-size: 13px;
+  }
+  .tittle-cards {
+    font-family: Cardium B-Bold;
+    font-size: 18px;
+  }
 }
 
 @media screen and (min-width: 1000px) and (max-width: 1099px) {
@@ -98,5 +155,20 @@
   }
   .carousel-tamano {
     height: 690px;
+  }
+  .degradado {
+    background: linear-gradient(180deg, #f1f3f600, #f1f3f6);
+    height: 164px;
+    position: absolute;
+    top: 325px;
+    z-index: 1;
+  }
+  .textOferta {
+    font-family: Cardium B-Medium;
+    font-size: 13px;
+  }
+  .tittle-cards {
+    font-family: Cardium B-Bold;
+    font-size: 18px;
   }
 }
