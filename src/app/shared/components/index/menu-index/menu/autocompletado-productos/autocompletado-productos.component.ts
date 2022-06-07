@@ -2,7 +2,6 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { TokenService } from 'src/app/login/services/token.service';
 import { CategoriasService } from 'src/app/manager-vendedor/productos/services/categorias.service';
-import { SharedProductsComponent } from 'src/app/shared/components/shared-products/list-products/shared-products.component';
 import { UrlFront } from 'src/app/shared/routes/RoutesFront';
 import { BaseFormSearchProducts } from '../models/BaseFormSearchProduct';
 import { BuscadorProductosService } from '../services/buscador-productos.service';
@@ -22,8 +21,7 @@ export class AutocompletadoProductosComponent implements OnInit, OnDestroy {
     private apiAsyncProduct: BuscadorProductosService,
     private apiToken: TokenService,
     private apiCategoria: CategoriasService, //SERVICES CATEGORIA
-    public formB: BaseFormSearchProducts,
-    private componentSharedProduct: SharedProductsComponent // PRODUCTO COMPARTIDO
+    public formB: BaseFormSearchProducts
   ) {}
   ngOnDestroy(): void {
     this.apiAsyncProduct.unSuscribeDataProducts();

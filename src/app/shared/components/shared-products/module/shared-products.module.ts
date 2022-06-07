@@ -46,7 +46,7 @@ import { NgxImgZoomModule } from 'ngx-img-zoom';
     FooterIndexModule,
     MenuIndexModule,
   ],
-  providers: [BaseFormListaDeseos, SharedProductsComponent],
+  providers: [BaseFormListaDeseos],
   exports: [SharedProductsComponent],
 })
 export class SharedProductosModule {}

@@ -1,6 +1,6 @@
 import { DOCUMENT } from '@angular/common';
 import { Component, HostListener, Inject, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, ParamMap } from '@angular/router';
 import { ProductsService } from 'src/app/manager-vendedor/productos/services/products.service';
 import { RepositorioImg } from 'src/app/shared/helpers/RepositorioImg';
 import { CarritoItemsComponent } from '../../index/menu-index/menu/carrito-items/carrito-items.component';
@@ -27,13 +27,19 @@ export class SharedProductsComponent implements OnInit {
     private apiListDeseo: ListaDeseosService, //LISTA DE DESEOS SERVICES
     private _route: ActivatedRoute,
     private apySearchProducts: BuscadorProductosService //BUSCADOR DE PRODUCTOS
-  ) {
-    this.nombreProduct = this._route.snapshot.params['nombre'];
-  }
+  ) {}
 
   ngOnInit(): void {
-    this.obtenerProductos(); //OBTENER LOS PRODUCTOS
+    this.getNombreParams();
     this.messageErrorProductsSearchUsers();
+  }
+  //SUSCRIBE ROUTE PARAMETRO DEL NOMBRE
+  getNombreParams() {
+    this._route.paramMap.subscribe((params: ParamMap) => {
+      this.nombreProduct = params.get('nombre'); //SI VIENE ALGO NUEVO DE LA URL HAGO EL SUSCRIBE
+      this.apiServi.unSuscribeObservable(); //LIMPIO EL OBSERVABLE PARA OBTENER NUEVOS PRODUCTOS SEGUN LA BUSQUEDA
+      this.obtenerProductos(); //LLAMO EL OBTENR PRODUCTOS SEGUN LA BUSQUEDA
+    });
   }
   //DESTROY OBSERVABLE
   ngOnDestroy() {
