@@ -9,6 +9,7 @@ import { BaseFormLogin } from '../models/BaseFormLogin';
 import { HttpClientModule } from '@angular/common/http';
 import { ErrorsExtensionsModule } from '../../shared/components/errors/errors-module.module';
 import { BuscarUsuarioComponent } from '../components/buscar-usuario/buscar-usuario.component';
+import { RedesSocialesComponent } from '../components/redes-sociales/redes-sociales.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { BuscarUsuarioComponent } from '../components/buscar-usuario/buscar-usua
     RegistrarComponent, //REGISTRAR COMPONENTS
     ResetPasswordComponent, //RESET-PASSWORD COMPONENTS
     BuscarUsuarioComponent, //BUSCAR-USUARIO COMPONENTS
+    RedesSocialesComponent, //REDES SOCIALES USUARIOS
   ],
   imports: [
     CommonModule,

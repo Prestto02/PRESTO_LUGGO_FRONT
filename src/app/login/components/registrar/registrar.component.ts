@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { PositionUser } from 'src/app/shared/class/PositionUser';
-import { UrlApi } from 'src/app/shared/routes/RoutesApi';
 import { UrlFront } from 'src/app/shared/routes/RoutesFront';
 import { BaseFormLogin } from '../../models/BaseFormLogin';
 import { LoginService } from '../../services/login.service';
@@ -11,10 +10,10 @@ import { LoginService } from '../../services/login.service';
   styleUrls: ['./registrar.component.css'],
 })
 export class RegistrarComponent implements OnInit {
-  public urlapi = UrlApi.loginFacebook;
   error = false; //ERORES
   load = false; //LOAD
   sugerencias = false; //SUGERENCIAS
+  public rutaLogin = `${UrlFront.Login.login}/${UrlFront.Login.iniciarSesion}`;
   constructor(
     public formB: BaseFormLogin,
     private router: Router,
@@ -56,11 +55,5 @@ export class RegistrarComponent implements OnInit {
   //LIMPIAR FORMULARIO
   limpiar() {
     this.formB.limpiarForm();
-  }
-  //REGRESAR A INICIO DE SESiON= Login/inicio-sesion
-  irAlLogin() {
-    this.router.navigateByUrl(
-      `${UrlFront.Login.login}/${UrlFront.Login.iniciarSesion}`
-    );
   }
 }

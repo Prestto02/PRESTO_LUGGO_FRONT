@@ -16,9 +16,7 @@ export class LoginComponent implements OnInit {
   public errorLogin = false;
   load = false;
   public urlapi = UrlApi; //API
-  public urlFacebook = `${UrlApi.ApiUrl}${UrlApi.loginFacebook}`;
-  public urlGoogle = `${UrlApi.ApiUrl}${UrlApi.loginGoogle}`;
-  public urlMicrosoft = `${UrlApi.ApiUrl}${UrlApi.loginMicrosoft}`;
+  public rutaRegistrar=`${UrlFront.Login.login}/${UrlFront.Login.postRegister}`
   constructor(
     public formB: BaseFormLogin, //fORM REACTIVE
     private router: Router, //ROUTES
@@ -50,12 +48,6 @@ export class LoginComponent implements OnInit {
         `${UrlFront.Menu.menu}/${UrlFront.Menu.index}`
       ); //SI ES OK IRE AL LOGIN
     });
-  }
-  //IR A REGISTRAR CUENTA
-  registraCuenta() {
-    this.router.navigateByUrl(
-      `${UrlFront.Login.login}/${UrlFront.Login.postRegister}`
-    );
   }
 
   //CAMBIAR CONTRASEÑA
