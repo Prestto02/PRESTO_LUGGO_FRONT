@@ -9,7 +9,7 @@
   font-size: 1.5rem;
   width: 45px;
   height: 45px;
-  background-color: #7549fe;
+  background-color: #0b5ed7;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -25,7 +25,7 @@
   -webkit-box-orient: vertical;
 }
 .text-precio {
-  color: #7549fe;
+  color: #0b5ed7;
   font-size: 22px;
   font-family: Cardium A-Bold;
 }
@@ -38,7 +38,7 @@
   font-size: 42px;
 }
 .border-title {
-  border: 10px solid #7549fe;
+  border: 10px solid #0b5ed7;
   height: 0px;
 }
 .pointer-deseo {
@@ -48,9 +48,9 @@
   cursor: pointer;
 }
 path:hover {
-  background-color: #7549fe;
+  background-color: #1156bd;
   cursor: pointer;
-  fill: #7549fe !important;
+  fill: #1156bd !important;
 }
 
 .card-img {
@@ -63,6 +63,10 @@ path:hover {
 }
 
 @media screen and (min-width: 1300px) and (max-width: 1400px) {
+  .title-h1{
+    font-family: Cardium A-Bold;
+    font-size: 42px;
+  }
   .pointer-deseo {
     cursor: pointer;
     margin: 0px -4px;
@@ -74,6 +78,26 @@ path:hover {
 }
 
 @media screen and (min-width: 1200px) and (max-width: 1299px) {
+  .title-h1{
+    font-family: Cardium A-Bold;
+    font-size: 35px;
+  }
+  .pointer-deseo {
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+  }
+  .pointer-carrito {
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+  }
+}
+@media screen and (min-width: 1000px) and (max-width: 1199px) {
+  .title-h1{
+    font-family: Cardium A-Bold;
+    font-size: 36px;
+  }
   .pointer-deseo {
     cursor: pointer;
     width: 24px;
