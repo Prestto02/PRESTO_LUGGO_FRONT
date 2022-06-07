@@ -28,7 +28,14 @@
         aria-expanded="true" aria-controls="collapseTwo">Atras</button>
       <button class="btn btn-primary"
         [disabled]="formUbicacion.formLogistica.invalid || formTamano.formTamanoProducto.invalid || formAtributosDos.formAtributosDos.invalid "
-        (click)="guardarProduct();">Finalizar</button>
+        (click)="guardarProduct();"> <ng-container *ngIf="load; else mensaje">
+          <div class="spinner-border text-secondary" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+        </ng-container>
+        <ng-template #mensaje>
+          <span>Finalizar</span>
+        </ng-template></button>
     </div>
   </div>
 </section>

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { DataFormProducts } from '../../helpers/DataFormProducts';
 import { BaseFormConfigAtributos2 } from '../configuracion-producto/configuracion-atributos/models/BaseFormConfigAtributos2';
 import { ListadoProductosComponent } from '../listado-productos/listado-productos.component';
 import { BaseFormTamanoProducto } from '../logistica-producto/models/BaseFormTamano';
@@ -11,6 +10,7 @@ import { BaseFormLogisticaProducto } from '../logistica-producto/models/BaseForm
   styleUrls: ['./tercer-paso.component.css'],
 })
 export class TercerPasoComponent implements OnInit {
+  load: boolean = false;
   arrayTercerPaso = [
     {
       id: 1,
@@ -27,14 +27,15 @@ export class TercerPasoComponent implements OnInit {
     private componentListado: ListadoProductosComponent,
     public formUbicacion: BaseFormLogisticaProducto,
     public formTamano: BaseFormTamanoProducto,
-    public formAtributosDos: BaseFormConfigAtributos2,
-    private dateApi: DataFormProducts
+    public formAtributosDos: BaseFormConfigAtributos2
   ) {}
 
   ngOnInit(): void {}
   //GUARDAR PRODUCTO
   guardarProduct() {
+    this.load = true;
     this.componentListado.guardarProduct();
+    this.load = false;
   }
   //OCULTAR LAS SECCIONES SEGUN EL ID
   ocultarSecciones(id: any) {
