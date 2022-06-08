@@ -19,7 +19,7 @@
     <div class="col-xxl-2 col-sm-6 col-6 col-xl-2 col-md-4 mt-3 mb-3" *ngFor="let products of productsArray">
       <div class="card border rounded py-3 px-1">
         <img loading="lazy" src="{{urlImg}}{{products.imagen}}" class="card-img-top img-fluid mx-auto mb-3 card-img"
-          alt="{{products.id}}">
+          alt="{{products.id_artic}}">
         <div class="row">
           <p class="card-title text-truncate">{{products.name}}</p>
           <p class="card-text text-iva mx-1"><b class="text-precio">{{products.precio|currency: 'USD'}}</b></p>
@@ -44,7 +44,7 @@
               </div>
               <div class="col-xxl-2 col-xl-1 col-md-1 col-sm-1 col-1">
                 <!-------AGREGAR AL CARRITo--->
-                <svg title="Agregar al carrito" class="pointer-carrito" (click)="agregarAlCarrito(products.id);"
+                <svg title="Agregar al carrito" class="pointer-carrito" (click)="agregarAlCarrito(products.id_artic);"
                   width="22" height="24" viewBox="0 0 22 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path
                     d="M16.2136 2.39316C16.9532 2.39316 17.5448 2.94017 17.6187 3.55556L19.3936 20.1026C19.4675 20.5812 19.1717 20.9915 19.0238 21.1282C18.8759 21.265 18.5062 21.5385 17.9885 21.5385H4.08545C3.56779 21.5385 3.19803 21.265 3.05012 21.1282C2.90222 20.9915 2.60641 20.6496 2.68036 20.1026L4.38126 3.62393C4.45522 2.94017 5.04683 2.46154 5.78636 2.46154L16.2136 2.39316ZM16.2136 0H5.86031C3.78964 0 2.01479 1.4359 1.86688 3.35043L0.0180741 19.8974C-0.203783 22.0855 1.64503 24 4.0115 24H17.9885C20.355 24 22.2038 22.0855 21.9819 19.8974L20.2071 3.35043C19.9852 1.4359 18.2843 0 16.2136 0Z"

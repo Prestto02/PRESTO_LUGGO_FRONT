@@ -3,11 +3,11 @@ import { InterceptorHttpHeadersService } from '../interceptors/interceptor-http-
 import { InterceptorsErrorsService } from '../interceptors/interceptors-errors.service';
 
 export const InterceptorsProviders = [
-  /* {
+  {
     provide: HTTP_INTERCEPTORS,
     useClass: InterceptorHttpHeadersService,
     multi: true,
-  },*/
+  },
   {
     provide: HTTP_INTERCEPTORS,
     useClass: InterceptorsErrorsService,

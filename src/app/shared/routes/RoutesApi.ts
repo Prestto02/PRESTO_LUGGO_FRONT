@@ -56,4 +56,7 @@ export const UrlApi = {
 
   //TERMINOS Y CONDIONCES
   terminosCondiciones: 'api/terminoCondicion/',
+
+  //ENVIAR CARRITO
+  carritoPostUser: 'api/carrito',
 };
