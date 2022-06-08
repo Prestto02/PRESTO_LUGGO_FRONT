@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { TokenService } from 'src/app/login/services/token.service';
 import { BaseFormCategorias } from '../../categorias/models/categorias.models';
 import { BaseFormConfigAtributos } from '../components/configuracion-producto/configuracion-atributos/models/BaseFormConfigAtributos';
 import { BaseFormConfigAtributos2 } from '../components/configuracion-producto/configuracion-atributos/models/BaseFormConfigAtributos2';
@@ -23,7 +24,8 @@ export class DataFormProducts {
     private formTamano: BaseFormTamanoProducto,
     private formUbicacion: BaseFormLogisticaProducto,
     private atributoConfig: BaseFormAtributosConfig,
-    private attributosConfig2: BaseFormConfigAtributos2
+    private attributosConfig2: BaseFormConfigAtributos2,
+    private token: TokenService
   ) {}
   //OBTENGO TODAS LAS CATEGORIAS
   getCategorias() {
@@ -116,6 +118,7 @@ export class DataFormProducts {
       restricciones,
     } = this.getProducts();
     return {
+      id_vendedor: this.token.getTokenId(),
       id_nombre_articulo: id_nombre_articulo,
       descripcion_articulo: descripcion,
       sku: sku,
