@@ -51,8 +51,8 @@ export class CarritoItemsComponent implements OnInit {
       this.totalAPagar = this.totalAPagar + subtotal;
     });
     this.apiServi.totalAPAgarObservable(this.totalAPagar); //CAMBIO EL ESTADO DEL OBSERVABLE
+    //ME SUSCRIBO AL NUEVO CAMBIO DEL TOTAL A PAGAR SEGUN CAMBIOS CREADOS EN DISTINTOS COMPONENTES
     this.apiServi.totalAPagar$.subscribe((res) => {
-      //ME SUSCRIBO AL NUEVO CAMBIO DEL TOTAL A PAGAR
       this.totalAPagar = res;
     });
   }

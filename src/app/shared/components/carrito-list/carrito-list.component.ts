@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { UrlFront } from '../../routes/RoutesFront';
 import { CarritoItemsService } from '../index/menu-index/menu/services/carrito-items.service';
 
 @Component({
@@ -8,22 +10,31 @@ import { CarritoItemsService } from '../index/menu-index/menu/services/carrito-i
 })
 export class CarritoListComponent implements OnInit {
   productoItems: any;
-  constructor(private apiServi: CarritoItemsService) {}
+  constructor(private apiServi: CarritoItemsService, private router: Router) {}
   ngOnInit(): void {
     this.getAllProductsList();
   }
-  //ALL PRODUCTOS
+  //OBTENGO LOS PRODUCTOS
   getAllProductsList() {
     this.apiServi.productCarrito.subscribe((res: any) => {
       this.productoItems = res;
     });
-    this.getSubtotalPagar();
-
+    this.getSubtotalPagar(); //ACTUALIZO LA PAGA DEL SUBTOTAL
   }
   //OBTENER EL SUBTOTAL CUANDO SEA SOLO UN ITEMS
   getSubtotalPagar() {
     this.productoItems.map((res: any) => {
       res.subtotal = res.item * res.precio;
     });
+  }
+  //IR A BUSCAR MAS PRODUCTOS
+  irAProductos() {
+    this.router.navigateByUrl(`${UrlFront.Menu.menu}/${UrlFront.Menu.buscar}`);
+  }
+
+  //IR AL METODO DE PAGO
+  irAPAgar() {
+    /*
+    this.router.navigateByUrl(``) */
   }
 }

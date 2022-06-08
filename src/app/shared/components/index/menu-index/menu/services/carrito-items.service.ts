@@ -14,7 +14,7 @@ export class CarritoItemsService {
   addCarritoProduct: Array<any> = []; //ARREGLO DE CARRITO DE PRODUCTOS
   private productsLength = new BehaviorSubject<Number>(0); //BEHAVIOR PARA EL TOTAL DE PRODUCTOS
   productsLengthtotal = this.productsLength.asObservable(); //OBTENGO EL SUSCRIBE PARA EL TOTAL DE PRODUCTOS
-  private totalAPagarOb = new BehaviorSubject<any>('');
+  private totalAPagarOb = new BehaviorSubject<any>(''); //TOTAL A PAGAR OBSERVABLE
   totalAPagar$ = this.totalAPagarOb.asObservable();
   //CONSTRUCTOR
   constructor(
@@ -67,7 +67,7 @@ export class CarritoItemsService {
     this.addCarritoProduct.splice(data, 1); //ELIMINO LA COINCIDENCIA QUE ENCONTRO
   }
 
-  //TOTAL A PAGAR OBSERVABLE
+  //TOTAL A PAGAR OBSERVABLE PARA REFLEJAR TODOS LOS CAMBIOS SEGUN LOS COMPONENTES SUSCRIPTOS
   totalAPAgarObservable(totalAPagar: any) {
     this.totalAPagarOb.next(totalAPagar);
   }

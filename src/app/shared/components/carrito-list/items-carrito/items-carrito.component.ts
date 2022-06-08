@@ -29,10 +29,11 @@ export class ItemsCarritoComponent implements OnInit {
   getSubtotalCarrito() {
     this.totalAPagar = 0;
     this.carritoProductList.map((res: any) => {
-      this.totalAPagar = this.totalAPagar + res.subtotal;
+      this.totalAPagar = this.totalAPagar + res.subtotal; //REALIZO LA SUMA SEGUN LOS PRODUCTOS EN EL ARREGLO OBSERVABLE
     });
     this.apiServi.totalAPAgarObservable(this.totalAPagar); //CAMBIO EL ESTADO DEL OBSERVABLE
   }
+  //ACTUALIZAR EL TAMAÑO DEL CARRITO
   getCarritoLength() {
     this.apiServi.obtenerTamañoDelCarrito();
   }
@@ -40,7 +41,7 @@ export class ItemsCarritoComponent implements OnInit {
   removeItemsCarrito(id: any) {
     this.apiServi.eliminarListaDeseos(id);
     this.getSubtotalCarrito(); //OBTENER EL NUEVO SUBTOTAL DEL CARRITO
-    this.getCarritoLength();
+    this.getCarritoLength(); // ACTUALIZAR EL TAMAÑO DEL CARRITO
   }
   //ME SUSCRIBO AL TOTAL A PAGAR
   totalAPagarCarrito() {
