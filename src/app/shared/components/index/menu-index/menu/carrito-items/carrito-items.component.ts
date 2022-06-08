@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
+import { Component, Inject, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { RepositorioImg } from 'src/app/shared/helpers/RepositorioImg';
 import { UrlFront } from 'src/app/shared/routes/RoutesFront';
@@ -13,9 +14,14 @@ export class CarritoItemsComponent implements OnInit {
   totalAPagar = 0;
   productoItems: any;
   public urlImg = RepositorioImg.urlRepositorio;
-  constructor(private apiServi: CarritoItemsService, private router: Router) {}
+  constructor(
+    @Inject(DOCUMENT) private document: Document, //DOCUMENT
+    private apiServi: CarritoItemsService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
+    this.document.documentElement.scrollTop = 0;
     this.getItemCarrito();
   }
   //OBTENER EL ID DEl PRODUCTO
@@ -64,6 +70,7 @@ export class CarritoItemsComponent implements OnInit {
     res[0].subtotal = res[0].precio * res[0].item; //MULTIPLICO CON El ITEM Y EL PRECIO
     this.carritoTotal();
   }
+
   //DISMINUIR ITEMS
   descrement(id: any) {
     const res = this.buscarProductoId(id);

@@ -4,3 +4,10 @@
 * {
   font-family: Cardium B-Medium;
 }
+.btn-group {
+  width: 35px;
+  height: 38px;
+}
+.input-group-items {
+  width: 145px;
+}
