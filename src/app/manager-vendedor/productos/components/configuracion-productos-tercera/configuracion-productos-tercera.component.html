@@ -220,6 +220,9 @@
                   aria-label="Capacidad" aria-describedby="basic-Capacidad" formControlName="Cantidad">
                 <span class="input-group-text span-estilo" id="basic-Capacidad">m/l</span>
               </div>
+              <app-form-errors-container [forControl]="formB.formAtributos.get('Capacidad.Cantidad')">
+                <app-message-error forErrorCode="pattern" customMsg="Solo admite numeros ej 12.00"></app-message-error>
+              </app-form-errors-container>
             </div>
           </ng-container>
           <div class="col-xxl-4 col-xl-4 col-md-3 col-sm-12 col-12 mb-3 bg-white border mx-auto rounded">
@@ -235,6 +238,9 @@
                   aria-label="Capacidad" aria-describedby="basic-Potencia_valor" formControlName="Potencia_valor">
                 <span class="input-group-text span-estilo" id="basic-Potencia_valor">v/w</span>
               </div>
+              <app-form-errors-container [forControl]="formB.formAtributos.get('Potencia.Potencia_valor')">
+                <app-message-error forErrorCode="pattern" customMsg="Solo admite numeros ej 12.00"></app-message-error>
+              </app-form-errors-container>
             </div>
           </ng-container>
           <div class="col-xxl-4 col-xl-4 col-md-3 col-sm-12 col-12 mb-3 bg-white border mx-auto rounded">
