@@ -11,6 +11,7 @@ import { SubMenuCategoriasComponent } from '../menu2/sub-menu-categorias/sub-men
 import { MenuIndexComponent } from '../menu-index.component';
 import { AutocompletadoProductosComponent } from '../menu/autocompletado-productos/autocompletado-productos.component';
 import { BaseFormSearchProducts } from '../menu/models/BaseFormSearchProduct';
+import { ItemsProductsVerify } from 'src/app/shared/helpers/ItemsProductsVerify';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,12 @@ import { BaseFormSearchProducts } from '../menu/models/BaseFormSearchProduct';
     AutocompletadoProductosComponent, //AUTO COMPLETADO
   ],
   imports: [CommonModule, ReactiveFormsModule, HttpClientModule],
-  providers: [Menu2Component, BaseFormSearchProducts, CarritoItemsComponent],
+  providers: [
+    Menu2Component,
+    BaseFormSearchProducts,
+    CarritoItemsComponent,
+    ItemsProductsVerify,
+  ],
   exports: [MenuIndexComponent, MenuComponent, Menu2Component],
 })
 export class MenuIndexModule {}

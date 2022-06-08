@@ -21,7 +21,7 @@
                 </svg>
               </button>
             </div>
-            <input type="text" class="form-control text-center" [value]="product.item" aria-label=""
+            <input type="number" max=9 min=1 class="form-control text-center" [value]="product.item" aria-label=""
               aria-describedby="basic-addon1" (change)="verifyChange($event,product.id_artic)">
             <div class="input-group-prepend">
               <button class="btn btn-primary btn-group" type="button" (click)="increment(product.id_artic)">

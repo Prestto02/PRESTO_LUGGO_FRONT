@@ -1,6 +1,7 @@
 import { DOCUMENT } from '@angular/common';
 import { Component, Inject, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ItemsProductsVerify } from 'src/app/shared/helpers/ItemsProductsVerify';
 import { RepositorioImg } from 'src/app/shared/helpers/RepositorioImg';
 import { UrlFront } from 'src/app/shared/routes/RoutesFront';
 import { CarritoItemsService } from '../services/carrito-items.service';
@@ -17,7 +18,8 @@ export class CarritoItemsComponent implements OnInit {
   constructor(
     @Inject(DOCUMENT) private document: Document, //DOCUMENT
     private apiServi: CarritoItemsService,
-    private router: Router
+    private router: Router,
+    private verifyItem: ItemsProductsVerify
   ) {}
 
   ngOnInit(): void {
@@ -32,12 +34,8 @@ export class CarritoItemsComponent implements OnInit {
   }
   //OBTENER LOS ITEMS DEL INPUT
   verifyChange(e: any, id: any) {
-    if (e.target.value <= 0) {
-      e.target.value = 1;
-    }
     const res = this.buscarProductoId(id); //OBTENGO EL ID DEL PRODUCTO
-    res[0].item = e.target.value;
-    res[0].subtotal = res[0].precio * res[0].item; //MULTIPLICO CON El ITEM Y EL PRECIO
+    this.verifyItem.verifyChangeInputs(e, res); //ENVIO EL ITEM PARA SU RESPECTIVO CALCULO
     this.carritoTotal();
   }
   //ME SUSCRIBO PARA GUARDAR LA LISTA DE PRODUCTOS QUE TENGO
@@ -66,8 +64,7 @@ export class CarritoItemsComponent implements OnInit {
   //INCREMENTAR ITEMS
   increment(id: any) {
     const res = this.buscarProductoId(id); //BUSCO EL PRODUCTO ID
-    res[0].item++; //HAGO LA SUMA
-    res[0].subtotal = res[0].precio * res[0].item; //MULTIPLICO CON El ITEM Y EL PRECIO
+    this.verifyItem.incrementItems(res); //INCREMENTO EL INPUT
     this.carritoTotal();
   }
 
@@ -75,11 +72,8 @@ export class CarritoItemsComponent implements OnInit {
   descrement(id: any) {
     const res = this.buscarProductoId(id);
     //SI ES MAYOR A 0 LE RESTO CASO CONTRARIO NO HAGO NADA
-    if (res[0].item > 1) {
-      res[0].item = res[0].item - 1;
-      res[0].subtotal = res[0].precio * res[0].item;
-      this.carritoTotal();
-    }
+    this.verifyItem.descrementsItems(res);
+    this.carritoTotal();
   }
 
   //BUSCAR EL ID DEL PRODUCTO DEL ARREGLO ASIGNADO DEL CARRITO
