@@ -14,6 +14,8 @@ export class CarritoItemsService {
   addCarritoProduct: Array<any> = []; //ARREGLO DE CARRITO DE PRODUCTOS
   private productsLength = new BehaviorSubject<Number>(0); //BEHAVIOR PARA EL TOTAL DE PRODUCTOS
   productsLengthtotal = this.productsLength.asObservable(); //OBTENGO EL SUSCRIBE PARA EL TOTAL DE PRODUCTOS
+  private totalAPagarOb = new BehaviorSubject<any>('');
+  totalAPagar$ = this.totalAPagarOb.asObservable();
   //CONSTRUCTOR
   constructor(
     private http: HttpClient,
@@ -63,5 +65,10 @@ export class CarritoItemsService {
   eliminarListaDeseos(id: any) {
     const data = this.addCarritoProduct.findIndex((res) => res.id_artic === id);
     this.addCarritoProduct.splice(data, 1); //ELIMINO LA COINCIDENCIA QUE ENCONTRO
+  }
+
+  //TOTAL A PAGAR OBSERVABLE
+  totalAPAgarObservable(totalAPagar: any) {
+    this.totalAPagarOb.next(totalAPagar);
   }
 }

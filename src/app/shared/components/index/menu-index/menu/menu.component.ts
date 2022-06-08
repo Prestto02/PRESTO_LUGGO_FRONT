@@ -18,7 +18,7 @@ export class MenuComponent implements OnInit {
   constructor(
     private router: Router,
     private apiForm: CarritoItemsService, //FORMULARIO CATEGORIAS
-    private tokenUser: TokenService, //TOKEN SERVICES
+    private tokenUser: TokenService //TOKEN SERVICES
   ) {}
 
   ngOnInit(): void {
@@ -29,8 +29,10 @@ export class MenuComponent implements OnInit {
 
   //IR AL PERFIL DE USUARIO
   irAlPerfilUsuario() {
-    this.router.navigateByUrl(`${UrlFront.Manager.managerVendedor}/${UrlFront.Manager.vendedor}`)
-   /*  this.router.navigate([
+    this.router.navigateByUrl(
+      `${UrlFront.Manager.managerVendedor}/${UrlFront.Manager.vendedor}`
+    );
+    /*  this.router.navigate([
       `${UrlFront.Users.users}/${UrlFront.Users.perfilRegistrar}/`,
       this.idUsuario,
     ]); */

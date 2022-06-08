@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { RepositorioImg } from 'src/app/shared/helpers/RepositorioImg';
+import { UrlFront } from 'src/app/shared/routes/RoutesFront';
 import { CarritoItemsService } from '../services/carrito-items.service';
 
 @Component({
@@ -11,7 +13,7 @@ export class CarritoItemsComponent implements OnInit {
   totalAPagar = 0;
   productoItems: any;
   public urlImg = RepositorioImg.urlRepositorio;
-  constructor(private apiServi: CarritoItemsService) {}
+  constructor(private apiServi: CarritoItemsService, private router: Router) {}
 
   ngOnInit(): void {
     this.getItemCarrito();
@@ -32,7 +34,6 @@ export class CarritoItemsComponent implements OnInit {
     res[0].subtotal = res[0].precio * res[0].item; //MULTIPLICO CON El ITEM Y EL PRECIO
     this.carritoTotal();
   }
-
   //ME SUSCRIBO PARA GUARDAR LA LISTA DE PRODUCTOS QUE TENGO
   getItemCarrito() {
     this.apiServi.productCarrito.subscribe((res) => {
@@ -48,6 +49,11 @@ export class CarritoItemsComponent implements OnInit {
     this.productoItems.map((res: any) => {
       const subtotal = res.precio * res.item;
       this.totalAPagar = this.totalAPagar + subtotal;
+    });
+    this.apiServi.totalAPAgarObservable(this.totalAPagar); //CAMBIO EL ESTADO DEL OBSERVABLE
+    this.apiServi.totalAPagar$.subscribe((res) => {
+      //ME SUSCRIBO AL NUEVO CAMBIO DEL TOTAL A PAGAR
+      this.totalAPagar = res;
     });
   }
 
@@ -81,5 +87,11 @@ export class CarritoItemsComponent implements OnInit {
   removeItemCarrito(id: any) {
     this.apiServi.eliminarListaDeseos(id);
     this.carritoTotal(); //TOTAL DE PRODUCTOS
+  }
+  //IR AL CARRITO
+  irCarrito() {
+    this.router.navigateByUrl(
+      `${UrlFront.CarritoList.carrito}/${UrlFront.CarritoList.carritoList}`
+    );
   }
 }
