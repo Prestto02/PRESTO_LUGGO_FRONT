@@ -10,9 +10,11 @@
       <div class="position-relative">
         <input type="text" class="form-control input-border" formControlName="nombre" placeholder=""
           aria-label="Username" aria-describedby="basic-addon1" autocomplete="off" />
-        <div class="position-absolute bg-white w-100 zIndex list-group" *ngIf="listSearchProduct">
-          <button type="button" (click)="consultar(product)" *ngFor="let product of listSearchProduct" [value]="product"
-            class="list-group-item list-group-item-action cursor-item">{{product}}</button>
+        <div class="position-absolute bg-white w-100 zIndex list-group" [class.zIndex-2]="listSearchProduct.length===3"
+          [class.zIndex-3]="listSearchProduct.length===1" [class.zIndex-4]="listSearchProduct.length===2"
+          *ngIf="listSearchProduct.length>0">
+          <button type="button" (click)="consultar(product)" *ngFor="let product of listSearchProduct let i=index;"
+            [value]="product" class="list-group-item list-group-item-action cursor-item">{{product}}</button>
         </div>
       </div>
     </div>

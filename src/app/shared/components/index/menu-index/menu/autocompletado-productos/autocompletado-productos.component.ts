@@ -61,7 +61,6 @@ export class AutocompletadoProductosComponent implements OnInit, OnDestroy {
   submitProduct() {
     this.buscarProducts();
   }
-
   //SET VALUE GET ERRORS INTENT 3
   errorsMessageIntent(nombre: any) {
     this.apiAsyncProduct
