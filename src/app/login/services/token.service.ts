@@ -19,9 +19,11 @@ export class TokenService {
   getToken() {
     return localStorage.getItem('Token');
   }
+  //ELIMINO TODA LA SESION DEL USUARIO
   removeToken() {
     localStorage.removeItem('idUsuario');
     localStorage.removeItem('correoUsuario');
     localStorage.removeItem('Token');
+    localStorage.removeItem('dataUsuarioItems');
   }
 }
