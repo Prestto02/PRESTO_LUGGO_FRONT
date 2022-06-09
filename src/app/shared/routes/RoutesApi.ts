@@ -43,7 +43,7 @@ export const UrlApi = {
   putColeccionListaDeseos: 'api/detalle_lista',
   traerColeccionPorId: 'api/detalle_lista/',
   //LISTADOS DE PRODUCTOS
-  listProductsUsers: 'api/articulo/listado/productos',
+  listProductsUsers: 'api/ADN/Mis-productos',
   //CARRITO, BUSCAR PRODUCTO,
   traerProductosCarrito: 'api/Articulo/listado',
   buscarProductos: 'api/Articulo/producto/',

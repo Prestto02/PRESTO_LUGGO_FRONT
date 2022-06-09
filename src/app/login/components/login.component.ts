@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { RolUserService } from 'src/app/guards/services/rol-user.service';
 import { PositionUser } from 'src/app/shared/class/PositionUser';
 import { UrlApi } from 'src/app/shared/routes/RoutesApi';
 import { UrlFront } from 'src/app/shared/routes/RoutesFront';
@@ -22,7 +23,8 @@ export class LoginComponent implements OnInit {
     private router: Router, //ROUTES
     private apiLogin: LoginService, //SERVICELOGIN
     private tokenUser: TokenService, //TOKEN SERVICES
-    private position: PositionUser //POSITION USER
+    private position: PositionUser, //POSITION USER
+    private rolService: RolUserService //ROL USUARIO SERVICES
   ) {}
 
   ngOnInit(): void {
@@ -41,17 +43,8 @@ export class LoginComponent implements OnInit {
     ); //ENVIO LOS DATOS PARA FORMATEAR A UN JSON ESTANDAR
     this.apiLogin.postUserLogin(users).subscribe((res) => {
       this.load = true;
-      this.tokenUser.setTokenUsers(res);
-      if (res.rol === 'Vendedor')
-        //ROL
-        return this.router.navigateByUrl(
-          `${UrlFront.Manager.managerVendedor}/${UrlFront.Manager.vendedor}`
-        );
-      if (res.rol === 'Cliente')
-        return this.router.navigateByUrl(
-          `${UrlFront.Cliente.cliente}/${UrlFront.Cliente.miCuenta}`
-        ); //SI ES OK IRE AL LOGIN
-      return;
+      this.tokenUser.setTokenUsers(res); //SET TOKEN USUARIO
+      this.rolService.setDataRolUser(res.rol); //SET ROL USUARIO
     });
   }
 

@@ -13,6 +13,7 @@ const routes: Routes = [
   //CLIENTE
   {
     path: UrlFront.Cliente.cliente,
+
     loadChildren: () =>
       import('./cliente/module/cliente.module').then((m) => m.ClienteModule),
   },

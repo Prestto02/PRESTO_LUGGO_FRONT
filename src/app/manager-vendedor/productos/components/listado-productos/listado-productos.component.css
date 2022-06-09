@@ -25,3 +25,8 @@
   color: #fff;
   border-radius: 6px;
 }
+
+.heigth-categoria {
+  height: 75px;
+  overflow: auto;
+}

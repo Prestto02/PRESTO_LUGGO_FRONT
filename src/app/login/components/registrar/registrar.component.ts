@@ -4,6 +4,7 @@ import { PositionUser } from 'src/app/shared/class/PositionUser';
 import { UrlFront } from 'src/app/shared/routes/RoutesFront';
 import { BaseFormLogin } from '../../models/BaseFormLogin';
 import { LoginService } from '../../services/login.service';
+import { TokenService } from '../../services/token.service';
 @Component({
   selector: 'app-registrar',
   templateUrl: './registrar.component.html',
@@ -17,11 +18,15 @@ export class RegistrarComponent implements OnInit {
   constructor(
     public formB: BaseFormLogin,
     private router: Router,
+    private tokenUser: TokenService, //TOKEN SERVICES
     private apiService: LoginService,
     private position: PositionUser
   ) {}
 
   ngOnInit(): void {
+    if (this.tokenUser.getTokenEmail() || this.tokenUser.getTokenId()) {
+      this.router.navigateByUrl(`${UrlFront.Menu.menu}/${UrlFront.Menu.index}`);
+    }
     this.position.getPositionUser(); //POSICION DEL USUARIO
   }
   //MOUSE CLICK EVENT

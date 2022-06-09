@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { TokenService } from 'src/app/login/services/token.service';
 import { PositionUser } from 'src/app/shared/class/PositionUser';
+import { UrlFront } from 'src/app/shared/routes/RoutesFront';
 import { BaseFormAdnUsers } from './models/BaseFormAdnUser';
 
 @Component({
@@ -10,10 +13,15 @@ import { BaseFormAdnUsers } from './models/BaseFormAdnUser';
 export class RegistrarAdnComponent implements OnInit {
   constructor(
     public formB: BaseFormAdnUsers, //FORM ADN USERS
-    private position: PositionUser //CLASS POSITION USERS
+    private position: PositionUser, //CLASS POSITION USERS
+    private tokenUser: TokenService, //TOKEN SERVICES
+    private router: Router //ROUTES
   ) {}
 
   ngOnInit(): void {
+    if (this.tokenUser.getTokenEmail() || this.tokenUser.getTokenId()) {
+      this.router.navigateByUrl(`${UrlFront.Menu.menu}/${UrlFront.Menu.index}`);
+    }
     this.position.getPositionUser();
   }
 

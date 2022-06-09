@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { VendedorGuard } from 'src/app/guards/vendedor.guard';
 import { UrlFront } from 'src/app/shared/routes/RoutesFront';
 import { DashboardComponent } from '../dashboard/dashboard.component';
 import { DetallesPedidosComponent } from '../lista-pedidos/detalles-pedidos/detalles-pedidos.component';
@@ -14,26 +15,32 @@ const routes: Routes = [
     children: [
       {
         path: UrlFront.Manager.vendedor,
+        canActivate: [VendedorGuard],
         component: ManagerVendedorComponent,
       },
       {
         path: `${UrlFront.Manager.vendedor}/${UrlFront.Manager.listadoProductos}`,
+        canActivate: [VendedorGuard],
         component: ProductsComponent,
       },
       {
         path: `${UrlFront.Manager.vendedor}/${UrlFront.Manager.crearProducto}`,
+        canActivate: [VendedorGuard],
         component: CreateProductsComponent,
       },
       {
         path: `${UrlFront.Manager.vendedor}/${UrlFront.Manager.dashborad}`,
+        canActivate: [VendedorGuard],
         component: DashboardComponent,
       },
       {
         path: `${UrlFront.Manager.vendedor}/${UrlFront.Manager.listaDePedidos}`,
+        canActivate: [VendedorGuard],
         component: ListaPedidosComponent,
       },
       {
         path: `${UrlFront.Manager.vendedor}/${UrlFront.Manager.detalleListPedidos}`,
+        canActivate: [VendedorGuard],
         component: DetallesPedidosComponent,
       },
       {

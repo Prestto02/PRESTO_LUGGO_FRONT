@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { RolUserService } from 'src/app/guards/services/rol-user.service';
 import { TokenService } from 'src/app/login/services/token.service';
 import { CategoriasService } from 'src/app/manager-vendedor/productos/services/categorias.service';
 import { UrlFront } from 'src/app/shared/routes/RoutesFront';
@@ -15,10 +16,12 @@ export class MenuComponent implements OnInit {
   idUsuario: any;
   emailUsuario: any;
   id: any;
+  rolTipo: any = 0;
   constructor(
     private router: Router,
     private apiForm: CarritoItemsService, //FORMULARIO CATEGORIAS
-    private tokenUser: TokenService //TOKEN SERVICES
+    private tokenUser: TokenService, //TOKEN SERVICES
+    private authServi: RolUserService
   ) {}
 
   ngOnInit(): void {
@@ -29,13 +32,8 @@ export class MenuComponent implements OnInit {
 
   //IR AL PERFIL DE USUARIO
   irAlPerfilUsuario() {
-    this.router.navigateByUrl(
-      `${UrlFront.Manager.managerVendedor}/${UrlFront.Manager.vendedor}`
-    );
-    /*  this.router.navigate([
-      `${UrlFront.Users.users}/${UrlFront.Users.perfilRegistrar}/`,
-      this.idUsuario,
-    ]); */
+    this.rolTipo = localStorage.getItem('dataUsuarioItems');
+    this.authServi.verificarTipoRol(this.rolTipo); //PARA IR A LA RUTA SEGUN EL ROL
   }
   //TOTAL ITEMS CARRITO
   totalItemsCarrito() {
