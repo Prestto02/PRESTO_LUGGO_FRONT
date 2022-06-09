@@ -1,11 +1,5 @@
 import { Injectable } from '@angular/core';
-import {
-  ActivatedRouteSnapshot,
-  CanActivate,
-  Router,
-  RouterStateSnapshot,
-  UrlTree,
-} from '@angular/router';
+import { CanActivate, Router, UrlTree } from '@angular/router';
 import { Observable } from 'rxjs';
 import { UrlFront } from '../shared/routes/RoutesFront';
 
@@ -15,11 +9,7 @@ import { UrlFront } from '../shared/routes/RoutesFront';
 export class VendedorGuard implements CanActivate {
   number: any = 0;
   constructor(private route: Router) {}
-  canActivate():
-    | Observable<boolean | UrlTree>
-    | Promise<boolean | UrlTree>
-    | boolean
-    | UrlTree {
+  canActivate(): Observable<boolean | UrlTree> | boolean | UrlTree {
     if (this.verifyVendedorValue()) return true; //SI ES CLIENTE RETURNO TRUE
     this.route.navigateByUrl(
       `${UrlFront.Login.login}/${UrlFront.Login.iniciarSesion}` //SI NO ES CLIENTE LO LLEVO AL INICIO
