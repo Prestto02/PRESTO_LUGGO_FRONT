@@ -40,7 +40,10 @@ export class CarritoListComponent implements OnInit {
   }
   //IR A BUSCAR MAS PRODUCTOS
   irAProductos() {
-    this.router.navigateByUrl(`${UrlFront.Menu.menu}/${UrlFront.Menu.buscar}`);
+    this.router.navigate([
+      `${UrlFront.Menu.menu}/${UrlFront.Menu.buscarGet}`,
+      'todos',
+    ]);
   }
   //PUSH ARRAY DETALLE_CARRITO
   pushDetalleCarrito() {
