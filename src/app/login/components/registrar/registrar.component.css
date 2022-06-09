@@ -1,15 +1,11 @@
 .group-border {
   border-right: 0px;
-  border-top: 1.2px solid #000;
-  border-bottom: 1.2px solid #000;
-  border-left: 1.2px solid #000;
+
   background: #fff;
 }
 .input-border {
   border-left: 0px;
-  border-top: 1.2px solid #000;
-  border-bottom: 1.2px solid #000;
-  border-right: 1.2px solid #000;
+
 }
 .title {
   font-family: Cardium A-SemiBold;

@@ -1,12 +1,3 @@
-.group-border {
-  background: #fff;
-  border-right: 0px;
-}
-
-.input-border {
-  border-left: 0px;
-  border-right: 0px;
-}
 * {
   font-family: Cardium B-Medium;
   background: #fff;
@@ -31,16 +22,10 @@
   background: #0567d6;
   color: #fff;
 }
-.bg-body {
-  z-index: 10;
-}
 input::placeholder {
   color: rgba(0, 0, 0, 0.178);
 }
 
-.group-border-left {
-  cursor: pointer;
-}
 div.is-invalid {
   border: 1px solid #dc3545;
   border-radius: 6px;

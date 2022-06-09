@@ -213,9 +213,9 @@
             <!-----Cómo describes tu tienda----->
             <div class="mb-3">
               <label for="formDescripcion-Outline" class="form-label fw-bolder">¿Cómo describes tu tienda?</label>
-              <input type="text" class="form-control" id="formDescripcion-Outline" formControlName="descripcion_outline"
-                placeholder="Un lugar donde comprar."
-                [class.is-invalid]="formB.formNegocioAdn.get('descripcion_outline')?.touched && formB.formNegocioAdn.get('descripcion_outline')?.invalid">
+              <textarea type="text" class="form-control" id="formDescripcion-Outline"
+                formControlName="descripcion_outline" placeholder="Un lugar donde comprar."
+                [class.is-invalid]="formB.formNegocioAdn.get('descripcion_outline')?.touched && formB.formNegocioAdn.get('descripcion_outline')?.invalid"></textarea>
             </div>
             <app-form-errors-container [forControl]="formB.formNegocioAdn.get('descripcion_outline')">
               <app-message-error forErrorCode="required"></app-message-error>

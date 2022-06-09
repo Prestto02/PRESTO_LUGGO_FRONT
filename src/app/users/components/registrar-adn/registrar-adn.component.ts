@@ -8,9 +8,6 @@ import { BaseFormAdnUsers } from './models/BaseFormAdnUser';
   styleUrls: ['./registrar-adn.component.css'],
 })
 export class RegistrarAdnComponent implements OnInit {
-  sugerencias: boolean = false;
-  password: boolean = false;
-  password2: boolean = false;
   constructor(
     public formB: BaseFormAdnUsers, //FORM ADN USERS
     private position: PositionUser //CLASS POSITION USERS
@@ -20,22 +17,6 @@ export class RegistrarAdnComponent implements OnInit {
     this.position.getPositionUser();
   }
 
-  //MOUSE CLICK EVENT
-  mouseClickEvent() {
-    this.sugerencias = true; //PARA PRESENTAR LAS SUGERENCIAS
-  }
-
-  perdioElFocus() {
-    this.sugerencias = false; //PARA OCULTAR LAS SUGERENCIAS
-  }
-  //VER CONTRASÑA
-  verPassword() {
-    this.password = !this.password;
-  }
-  //VER CONTRASEÑA 2
-  verPassword2() {
-    this.password2 = !this.password2;
-  }
   //CHECKED RUC O CEDULA
   checkedRucCedula(e: any) {
     //CONSULTO SI VIENE EL RUC O CEDULA

@@ -20,6 +20,7 @@ import {
   DeclarationAdnUser,
   ProvidersAdnUser,
 } from '../components/registrar-adn/module/UserAdn.module';
+import { PasswordVisibleModule } from 'src/app/shared/components/password-visible/password-visible.module';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import {
     IndexMenuModule,
     ErrorsExtensionsModule, //ERRORES DE FORMULARIO REACTIVO
     AlifeFileToBase64Module, //BASE 64 IMG
+    PasswordVisibleModule,
   ],
   providers: [BaseUsersForm, PerfilUsersComponent, ProvidersAdnUser],
 })

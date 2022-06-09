@@ -10,7 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ErrorsExtensionsModule } from '../../shared/components/errors/errors-module.module';
 import { BuscarUsuarioComponent } from '../components/buscar-usuario/buscar-usuario.component';
 import { RedesSocialesComponent } from '../components/redes-sociales/redes-sociales.component';
-
+import { PasswordVisibleModule } from 'src/app/shared/components/password-visible/password-visible.module';
 @NgModule({
   declarations: [
     LoginComponent, //LOGIN COMPONENTS
@@ -24,6 +24,7 @@ import { RedesSocialesComponent } from '../components/redes-sociales/redes-socia
     LoginRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
+    PasswordVisibleModule,
     ErrorsExtensionsModule,
   ],
   providers: [BaseFormLogin],
