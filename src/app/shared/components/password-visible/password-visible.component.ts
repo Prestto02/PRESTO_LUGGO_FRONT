@@ -10,6 +10,7 @@ export class PasswordVisibleComponent implements OnInit {
   @Input('password') passwordName: any | null = null;
   @Input('class') class: any | null = null;
   @Input('classTwo') classTwo: any | null = null;
+  @Input('login') login: boolean = true;
   sugerencias: boolean = false;
   password: boolean = false;
   password2: boolean = false;
