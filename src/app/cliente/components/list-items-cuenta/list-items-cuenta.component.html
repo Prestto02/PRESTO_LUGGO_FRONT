@@ -1,0 +1,17 @@
+<div class="col-xl-12 col-xxl-12 col-sm-12 col-md-12 col-12">
+  <div class="row">
+    <div class="col-xl-3 col-xxl-3 col-sm-3 col-md-3 mx-5 mb-5 mt-3 card cursor" *ngFor="let list of arratListItems">
+      <div class="row mx-auto">
+        <div class="col-xl-4 col-xxl-4 col-sm-4 col-md-4 col-4 mx-auto mt-3 py-2 p-2">
+          <img [src]="list.icons">
+        </div>
+        <div class="col-xl-8 col-xxl-8 col-sm-8 col-8 mt-3 py-3 p-2">
+          <h5 class="title">{{list.title}}</h5>
+          <p class="subtitle">
+            {{list.subtitle}}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

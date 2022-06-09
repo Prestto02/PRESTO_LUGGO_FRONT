@@ -1,0 +1,20 @@
+* {
+  font-family: Cardium B-Medium;
+}
+
+.subtitle {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 18px;
+}
+.title {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 17px;
+  line-height: 18px;
+}
+
+.cursor{
+  cursor: pointer;
+}

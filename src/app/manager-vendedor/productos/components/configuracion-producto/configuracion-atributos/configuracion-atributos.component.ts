@@ -12,7 +12,7 @@ import { BaseFormGlobalPrecio } from './models/BasePrecioGlobal';
 export class ConfiguracionAtributosComponent implements OnInit {
   resultIva: any = '';
   resultIC: any = '';
-  Total: any = '';
+  Total: any = 0;
   constructor(
     public formAtributos: BaseFormConfigAtributos,
     public formConfigProduct: BaseFormConfigProducts,

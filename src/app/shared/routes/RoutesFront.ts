@@ -8,6 +8,11 @@ export const UrlFront = {
     perfilUsuario: 'perfil-usuario/:id',
     adnRegistrar: 'adn-registrar',
   },
+  //CLIENTE
+  Cliente: {
+    cliente: 'cliente',
+    miCuenta: 'cuenta-cliente',
+  },
   //LOGIN
   Login: {
     login: 'Login',

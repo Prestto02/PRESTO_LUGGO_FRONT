@@ -46,7 +46,7 @@ export class LoginComponent implements OnInit {
         );
       if (res.rol === 'Cliente')
         return this.router.navigateByUrl(
-          `${UrlFront.Menu.menu}/${UrlFront.Menu.index}`
+          `${UrlFront.Cliente.cliente}/${UrlFront.Cliente.miCuenta}`
         ); //SI ES OK IRE AL LOGIN
       return;
     });

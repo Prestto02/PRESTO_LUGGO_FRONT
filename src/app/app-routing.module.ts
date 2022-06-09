@@ -10,7 +10,12 @@ const routes: Routes = [
     loadChildren: () =>
       import('./users/module/users.module').then((m) => m.UsersModule),
   },
-
+  //CLIENTE
+  {
+    path: UrlFront.Cliente.cliente,
+    loadChildren: () =>
+      import('./cliente/module/cliente.module').then((m) => m.ClienteModule),
+  },
   //LOGIN LAZY LOADING
   {
     path: UrlFront.Login.login,
