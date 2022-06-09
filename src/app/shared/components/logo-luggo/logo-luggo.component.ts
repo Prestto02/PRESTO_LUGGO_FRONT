@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { UrlFront } from '../../routes/RoutesFront';
 
 @Component({
   selector: 'app-logo-luggo',
@@ -6,7 +8,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./logo-luggo.component.css'],
 })
 export class LogoLuggoComponent implements OnInit {
-  constructor() {}
+  constructor(private router: Router) {}
 
   ngOnInit(): void {}
+  irIndex() {
+    this.router.navigateByUrl(`${UrlFront.Menu.menu}/${UrlFront.Menu.index}`);
+  }
 }
