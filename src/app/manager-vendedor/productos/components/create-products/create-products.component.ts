@@ -1,4 +1,10 @@
-import { Component, ElementRef, HostListener, OnInit } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  HostListener,
+  OnDestroy,
+  OnInit,
+} from '@angular/core';
 import { PositionUser } from 'src/app/shared/class/PositionUser';
 import { BaseFormProducts } from '../../models/BaseformProduct';
 import { BaseFormCategorias } from 'src/app/manager-vendedor/categorias/models/categorias.models';
@@ -11,6 +17,7 @@ import { DataFormProducts } from '../../helpers/DataFormProducts';
 import { ProductsService } from '../../services/products.service';
 import { ValidarYTransformarImagen } from 'src/app/shared/validations/ValidarYTransformarImagen';
 import { SearchProductsService } from '../../services/searchProducts.service';
+import { ListadoProductosComponent } from '../listado-productos/listado-productos.component';
 
 @Component({
   selector: 'app-create-products',
@@ -38,7 +45,7 @@ export class CreateProductsComponent implements OnInit {
     private apiSearchProduct: SearchProductsService,
     private router: Router, //ROUTER
     private dateApi: DataFormProducts,
-    private imgValidar: ValidarYTransformarImagen, //VALIDAR IMAGENES Y TRANSFORMAR
+    private imgValidar: ValidarYTransformarImagen //VALIDAR IMAGENES Y TRANSFORMAR
   ) {}
 
   ngOnInit(): void {
@@ -141,5 +148,4 @@ export class CreateProductsComponent implements OnInit {
       this.ActiveGarantia = false;
     }
   }
-
 }

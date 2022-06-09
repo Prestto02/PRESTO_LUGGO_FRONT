@@ -46,8 +46,8 @@ export class BaseFormCategorias {
     return this.formCategorias.get('ArticuloTieneCategoria')?.value;
   }
   limpiarForm() {
+    this.categoriaSeleccionadas = [];
     this.formCategorias.reset();
     this.getCategorias.clear();
-    this.categoriaSeleccionadas = null;
   }
 }

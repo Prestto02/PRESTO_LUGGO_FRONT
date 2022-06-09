@@ -16,7 +16,7 @@ export class LoginComponent implements OnInit {
   public errorLogin = false;
   load = false;
   public urlapi = UrlApi; //API
-  public rutaRegistrar=`${UrlFront.Login.login}/${UrlFront.Login.postRegister}`
+  public rutaRegistrar = `${UrlFront.Login.login}/${UrlFront.Login.postRegister}`;
   constructor(
     public formB: BaseFormLogin, //fORM REACTIVE
     private router: Router, //ROUTES
@@ -44,9 +44,11 @@ export class LoginComponent implements OnInit {
         return this.router.navigateByUrl(
           `${UrlFront.Manager.managerVendedor}/${UrlFront.Manager.vendedor}`
         );
-      return this.router.navigateByUrl(
-        `${UrlFront.Menu.menu}/${UrlFront.Menu.index}`
-      ); //SI ES OK IRE AL LOGIN
+      if (res.rol === 'Cliente')
+        return this.router.navigateByUrl(
+          `${UrlFront.Menu.menu}/${UrlFront.Menu.index}`
+        ); //SI ES OK IRE AL LOGIN
+      return;
     });
   }
 

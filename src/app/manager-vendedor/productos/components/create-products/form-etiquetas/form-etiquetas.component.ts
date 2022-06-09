@@ -13,7 +13,7 @@ export class FormEtiquetasComponent implements OnInit {
   //AGREGAR ETIQUETAS CON LA TECLA ENTER
   setEtiquetas(e: any) {
     const valor = this.formB.formEtiquetas.get('etiquetaForm')?.value;
-    if (valor.length <= 2) return;
+   /*  if (valor.length <= 2) return; */
     if (e.key === 'Enter' && this.verifyInputErrors()) {
       //VERIFICO LOS CARACTERES ESPECIALES Y LA TECLA ENTER
       e.preventDefault();

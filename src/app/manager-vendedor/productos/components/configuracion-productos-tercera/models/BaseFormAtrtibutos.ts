@@ -8,7 +8,13 @@ export class BaseFormAtributosConfig {
   formAtributos = this.formB.group({
     Color_articulo: this.formB.array([], [Validators.required]),
     Material_constituido: this.formB.group({
-      nombre_material: ['', [Validators.required,Validators.pattern(Expresion.SoloLetrasAcentosEspacios)]],
+      nombre_material: [
+        '',
+        [
+          Validators.required,
+          Validators.pattern(Expresion.SoloLetrasAcentosEspacios),
+        ],
+      ],
     }),
     estado_producto: ['', [Validators.required]],
     modelo: [
@@ -68,5 +74,9 @@ export class BaseFormAtributosConfig {
   //BORRAR DEL ITEMS DEL COLOR DE ARREGLO
   removeItemsColors(i: any) {
     this.colors.removeAt(i);
+  }
+  limpiarFormulario() {
+    this.formAtributos.reset();
+    this.colors.clear();
   }
 }

@@ -54,7 +54,6 @@ export class ItemsCarritoComponent implements OnInit {
       this.totalAPagar = res;
     });
   }
-
   //VERIFYCHANGE USER
   verifyChange(e: any, id: any) {
     const res = this.buscarProductoId(id); //OBTENGO EL ID DEL PRODUCTO
@@ -67,8 +66,6 @@ export class ItemsCarritoComponent implements OnInit {
     this.verifyInput.descrementsItems(res); //ENVIO A VERIFICAR EL DESREMENTO
     this.getSubtotalCarrito();
   }
-
-  //INCREMENT INPUT TARGE ITEMS
   //INCREMENTAR ITEMS
   increment(id: any) {
     const res = this.buscarProductoId(id); //BUSCO EL PRODUCTO ID

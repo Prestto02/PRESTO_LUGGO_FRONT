@@ -60,14 +60,12 @@ export class CarritoItemsComponent implements OnInit {
       this.totalAPagar = res;
     });
   }
-
   //INCREMENTAR ITEMS
   increment(id: any) {
     const res = this.buscarProductoId(id); //BUSCO EL PRODUCTO ID
     this.verifyItem.incrementItems(res); //INCREMENTO EL INPUT
     this.carritoTotal();
   }
-
   //DISMINUIR ITEMS
   descrement(id: any) {
     const res = this.buscarProductoId(id);
@@ -75,7 +73,6 @@ export class CarritoItemsComponent implements OnInit {
     this.verifyItem.descrementsItems(res);
     this.carritoTotal();
   }
-
   //BUSCAR EL ID DEL PRODUCTO DEL ARREGLO ASIGNADO DEL CARRITO
   buscarProductoId(id: any) {
     return this.productoItems

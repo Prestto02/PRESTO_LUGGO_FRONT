@@ -6,7 +6,10 @@ import { Expresion } from 'src/app/shared/validations/expresionRegular';
 export class BaseFormEtiquetas {
   constructor(private formB: FormBuilder) {}
   formEtiquetas = this.formB.group({
-    etiquetaForm: ['',[Validators.pattern(Expresion.SoloLetrasAcentosEspacios)]],
+    etiquetaForm: [
+      '',
+      [Validators.pattern(Expresion.SoloLetrasAcentosEspacios)],
+    ],
     etiqueta: this.formB.array([], [Validators.required]),
   });
   //TRANSFORMAR EN UN ARRAY LOS TAMANO
