@@ -73,7 +73,9 @@ export class AutocompletadoProductosComponent implements OnInit, OnDestroy {
   }
   //BUSCAR PRODUCTOS EN LOS REGISTROS
   buscarProducts() {
-    const nombre = this.formB.formSearchProducts.get('nombre')?.value;
+    const nombre = this.formB.formSearchProducts.get('nombre')?.value
+      ? this.formB.formSearchProducts.get('nombre')?.value
+      : ' todos';
     this.formB.limpiarFormulario(); //LIMPIAR FORMULARIO
     if (this.id) {
       //SI ESTA LOGGEADO EMPIEZA LA SESION DE INTENTO
