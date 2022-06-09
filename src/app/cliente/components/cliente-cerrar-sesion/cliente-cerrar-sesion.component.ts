@@ -9,7 +9,7 @@ import { UrlFront } from 'src/app/shared/routes/RoutesFront';
   styleUrls: ['./cliente-cerrar-sesion.component.css'],
 })
 export class ClienteCerrarSesionComponent implements OnInit {
-  email: any = '';
+  email: any;
   constructor(private router: Router, private tokenUser: TokenService) {}
 
   ngOnInit(): void {

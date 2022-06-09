@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { TokenService } from '../login/services/token.service';
 import { RepositorioImg } from '../shared/helpers/RepositorioImg';
 import { UrlFront } from '../shared/routes/RoutesFront';
 
@@ -14,10 +15,12 @@ export class ManagerVendedorComponent implements OnInit {
   imgBilletera = `${RepositorioImg.urlRepositorio}img/IMÁGENES/billeteraAdn.png`;
   imgContenedorCarrito = `${RepositorioImg.urlRepositorio}img/IMÁGENES/contenedorCarritoAdn.png`;
   imgListContent = `${RepositorioImg.urlRepositorio}img/IMÁGENES/list-content-adn.png`;
+  email: any;
+  constructor(private _router: Router, private token: TokenService) {}
 
-  constructor(private _router: Router) {}
-
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.email = this.token.getTokenEmail();
+  }
 
   irAlModuloCatalogo() {
     this._router.navigateByUrl(
