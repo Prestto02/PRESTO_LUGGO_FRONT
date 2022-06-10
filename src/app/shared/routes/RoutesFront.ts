@@ -4,14 +4,14 @@ export const UrlFront = {
     users: 'usuarios',
     put: 'registrar/:id/:users',
     post: 'registrar',
-    perfilRegistrar: 'perfil-usuario',
-    perfilUsuario: 'perfil-usuario/:id',
     adnRegistrar: 'adn-registrar',
   },
   //CLIENTE
   Cliente: {
     cliente: 'cliente',
     miCuenta: 'cuenta-cliente',
+    perfilCliente: 'perfil-cliente',
+    faceClientId: 'perfil-cliente/:id',
   },
   //LOGIN
   Login: {

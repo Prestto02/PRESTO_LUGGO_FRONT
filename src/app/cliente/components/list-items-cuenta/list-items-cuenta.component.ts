@@ -1,4 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { TokenService } from 'src/app/login/services/token.service';
 
 @Component({
   selector: 'app-list-items-cuenta',
@@ -7,7 +9,13 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class ListItemsCuentaComponent implements OnInit {
   @Input('arrayList') arratListItems: any | null = null;
-  constructor() {}
+  idCliente: any;
+  constructor(private router: Router, private Token: TokenService) {
+    this.idCliente = this.Token.getTokenId();
+  }
 
   ngOnInit(): void {}
+  irAlLink(link: any) {
+    this.router.navigateByUrl(`${link}/${this.idCliente}`);
+  }
 }

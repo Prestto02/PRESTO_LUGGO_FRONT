@@ -50,10 +50,10 @@ export class Menu2Component implements OnInit {
   }
   //IR A MI PERFIL
   irAMiPerfil() {
-    this.router.navigate([
-      `${UrlFront.Users.users}/${UrlFront.Users.perfilRegistrar}/`,
+    /*     this.router.navigate([
+      `${UrlFront.Users.users}/${UrlFront.Users.}/`,
       this.idUsuario,
-    ]);
+    ]); */
   }
   //IR A REGISTRARME
   registrarme() {

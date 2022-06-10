@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { TokenService } from 'src/app/login/services/token.service';
 import { UrlFront } from 'src/app/shared/routes/RoutesFront';
@@ -10,6 +10,7 @@ import { UrlFront } from 'src/app/shared/routes/RoutesFront';
 })
 export class ClienteCerrarSesionComponent implements OnInit {
   email: any;
+  @Input('label') label: any | null = null;
   constructor(private router: Router, private tokenUser: TokenService) {}
 
   ngOnInit(): void {
