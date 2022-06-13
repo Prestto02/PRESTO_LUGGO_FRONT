@@ -1,4 +1,4 @@
-<div class="container rounded mt-3 bg-white py-5">
+<div class="container-fluid rounded mt-3 bg-white py-5">
   <div class="row">
     <div class="col-xl-12 col-xxl-12 col-sm-12 col-md-12 mb-3 mt-3">
       <app-progress-stepper [width]="'width:68%'"
@@ -97,7 +97,7 @@
               </app-mensajes-ayuda>
             </div>
             <div class="row">
-              <select class="form-select w-50" aria-label="Default select example" formControlName="estado_producto"
+              <select class="form-select w-xxl-50 w-xl-50 w-100 w-sm-100 w-md-100" aria-label="Default select example" formControlName="estado_producto"
                 [class.is-invalid]="formB.formAtributos.get('estado_producto')?.touched && formB.formAtributos.get('estado_producto')?.invalid">
                 <option selected value="">Seleccion</option>
                 <option value="1">Nuevo</option>
@@ -119,15 +119,15 @@
                 </app-mensajes-ayuda>
               </div>
               <div class="row">
-                <div class="col-xl-4 col-xxl-4">
+                <div class="col-xl-4 col-xxl-4 col-md-5 mb-3">
                   <input type="text" placeholder="12 LB" id="pesoFloating" class="form-control"
                     (keyup)="transformarAKGYGR($event);" [value]="libras | number : '1.1-4'" />
                 </div>
-                <div class="col-xl-4 col-xxl-4">
+                <div class="col-xl-4 col-xxl-4 col-md-5 mb-3">
                   <input type="text" placeholder="12 GR" id="pesoFloating" class="form-control"
                     (keyup)="transformarALibrasYKG($event);" [value]="gramos | number : '1.2-4'" />
                 </div>
-                <div class="col-xl-4 col-xxl-4">
+                <div class="col-xl-4 col-xxl-4 col-md-5 mb-3">
                   <input type="text" formControlName="peso" placeholder="12 KG" id="pesoFloating" class="form-control"
                     (keyup)="transformarALBYGR($event);"
                     [value]="formB.formAtributos.get('Peso.peso')?.value | number:'1.2-4'"
@@ -143,7 +143,7 @@
           <!---MODELO---->
           <div class="col-xxl-4 col-xl-4 col-md-4 col-sm-12 col-12 mb-2 position-relative">
             <div class="row">
-              <app-mensajes-ayuda [class]="'col-xl-4 col-xxl-4'" [Label]="'Modelo'"
+              <app-mensajes-ayuda [class]="'col-xl-4 col-xxl-4 '" [Label]="'Modelo'"
                 [mensaje]="'Escoja el estado del producto si se encuentra usado, usado como nuevo, usado semi nuevo, etc.'">
               </app-mensajes-ayuda>
             </div>
@@ -166,8 +166,8 @@
               </div>
               <div class="row">
                 <!--largo---->
-                <div class="col-xl-4 col-xxl-4 col-md-4 col-sm-12 col-12">
-                  <div class="input-group mb-3">
+                <div class="col-xl-4 col-xxl-4 col-md-6 mb-3 col-sm-12 col-12">
+                  <div class="input-group">
                     <input type="text" class="form-control input-estilo" id="largo" placeholder="largo"
                       aria-label="largo" aria-describedby="basic-largo" formControlName="Longitud_x"
                       [class.is-invalid]="formB.formAtributos.get('Tamaño_articulo.Longitud_x')?.touched &&formB.formAtributos.get('Tamaño_articulo.Longitud_x')?.invalid">
@@ -179,8 +179,8 @@
                   </app-form-errors-container>
                 </div>
                 <!-----ancho---->
-                <div class="col-xl-4 col-xxl-4 col-md-4 col-sm-12 col-12">
-                  <div class="input-group mb-3">
+                <div class="col-xl-4 col-xxl-4 col-md-6 mb-3 col-sm-12 col-12">
+                  <div class="input-group">
                     <input type="text" class="form-control input-estilo" id="ancho" placeholder="ancho"
                       aria-label="ancho" aria-describedby="basic-ancho" formControlName="Longitud_y"
                       [class.is-invalid]="formB.formAtributos.get('Tamaño_articulo.Longitud_y')?.touched &&formB.formAtributos.get('Tamaño_articulo.Longitud_y')?.invalid">
@@ -192,8 +192,8 @@
                   </app-form-errors-container>
                 </div>
                 <!----alto---->
-                <div class="col-xl-4 col-xxl-4 col-md-4 col-sm-12 col-12">
-                  <div class="input-group mb-3">
+                <div class="col-xl-4 col-xxl-4 col-md-6 mb-3 col-sm-12 col-12">
+                  <div class="input-group ">
                     <input type="text" class="form-control input-estilo" id="alto" placeholder="alto" aria-label="alto"
                       aria-describedby="basic-alto" formControlName="Longitud_z"
                       [class.is-invalid]="formB.formAtributos.get('Tamaño_articulo.Longitud_z')?.touched &&formB.formAtributos.get('Tamaño_articulo.Longitud_z')?.invalid">

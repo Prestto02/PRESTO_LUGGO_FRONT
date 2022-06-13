@@ -2,7 +2,7 @@
   <p class="text-tamano">Seleccione que impuestos aplica su Producto.</p>
 </div> -->
 <ng-container [formGroup]="formAtributosDos.formAtributosDos">
-  <div class="col-xl-2 col-xxl-2 col-sm-12 col-md-3 col-12 mb-4 mt-3">
+  <div class="col-xl-2 col-xxl-2 col-sm-4 col-md-3 col-12 mb-4 mt-3">
     <label for="stockGeneral" class="form-label">Stock Disponible</label>
     <div class="input-group mb-3">
       <div class="input-group-prepend">
@@ -17,7 +17,7 @@
       <app-message-error forErrorCode="pattern" customMsg="Solo números "></app-message-error>
     </app-form-errors-container>
   </div>
-  <div class="col-xl-3 col-xxl-2 col-sm-12 col-md-3 col-12 mb-4 mt-3 mx-auto">
+  <div class="col-xl-3 col-xxl-2 col-sm-4 col-md-3 col-12 mb-4 mt-3 mx-auto">
     <label for="stockMinimo" class="form-label">Stock Mínimo</label>
     <div class="input-group mb-3">
       <div class="input-group-prepend">
@@ -33,7 +33,7 @@
     </app-form-errors-container>
   </div>
 
-  <div class="col-xl-3 col-xxl-3 col-sm-12 col-12 col-md-4 bg-light text-design1 border">
+  <div class="col-xl-3 col-xxl-3 col-sm-4 col-12 col-md-4 bg-light text-design1 border">
     <p class="text-tamano1">Tu stock es muy importante, especificalo para mantener un mejor control en el producto.</p>
   </div>
   <!-------------RAYA-------------->
@@ -44,12 +44,12 @@
 </div>
  -->
   <!----PRECIO GLOBAL----------->
-  <div class="col-xl-4 col-xxl-4 col-sm-12 col-12 col-md-4 mt-2">
+  <div class="col-xl-4 col-xxl-4 col-sm-12 col-12 col-md-12 mt-2">
     <div class="row">
-      <div class="col-xl-4 col-xxl-4 col-sm-12 col-12 col-md-4 mt-2">
+      <div class="col-xl-4 col-xxl-4 col-sm-4 col-12 col-md-3 mt-2">
         <label for="precio-global">Precio Global</label>
       </div>
-      <div class="col-xl-5 col-xxl-5 col-md-5 col-sm-12 col-12">
+      <div class="col-xl-5 col-xxl-5 col-md-3 col-sm-6 col-12">
         <div class="input-group mb-3">
           <span class="input-group-text" id="precio-global">$</span>
           <input type="text" class="form-control" placeholder="12,00" aria-label="Precio Global"
@@ -66,36 +66,37 @@
     </div>
   </div>
   <!------TIPOS DE IMPUESTOS--------->
-  <div class="col-xl-2 col-xxl-2 col-sm-12 col-md-3 col-12 mb-4 mt-3">
-    <div class="form-check">
-      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" formControlName="Iva"
-        (change)="checkIva($event);">
-      <label class="form-check-label" for="flexCheckDefault">
-        Impuesto IVA
-      </label>
+
+    <div class="col-xl-2 col-xxl-2 col-sm-3 col-md-3 col-12 mb-4 mt-3">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" formControlName="Iva"
+          (change)="checkIva($event);">
+        <label class="form-check-label" for="flexCheckDefault">
+          Impuesto IVA
+        </label>
+      </div>
+      <span>{{resultIva | currency: 'USD'}}</span>
     </div>
-    <span>{{resultIva | currency: 'USD'}}</span>
-  </div>
-  <div class="col-xl-2 col-xxl-2 col-sm-12 col-md-3 col-12 mb-4 mt-3">
-    <div class="form-check">
-      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" formControlName="Ice"
-        (change)="checkIce($event)">
-      <label class="form-check-label" for="flexCheckDefault">
-        Impuesto ICE
-      </label>
+    <div class="col-xl-2 col-xxl-2 col-sm-3 col-md-4 col-12 mb-4 mt-3">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" formControlName="Ice"
+          (change)="checkIce($event)">
+        <label class="form-check-label" for="flexCheckDefault">
+          Impuesto ICE
+        </label>
+      </div>
+      <span>{{resultIC | currency: 'USD'}}</span>
     </div>
-    <span>{{resultIC | currency: 'USD'}}</span>
-  </div>
-  <div class="col-xl-1 col-xxl-1 col-sm-12 col-md-3 col-12 mb-4 mt-3">
-    <div>Total</div>
-    <ng-container *ngIf="Total else precioNormal;">
-      <span>{{Total|currency: 'USD' }}</span>
-    </ng-container>
-    <ng-template #precioNormal>
-      <span>{{this.formGlobalPrecio.formGlobalPrecio.get('PrecioGlobal')?.value |currency: 'USD' }}</span>
-    </ng-template>
-  </div>
-  <div class="col-xl-3 col-xxl-3 col-sm-12 col-12 col-md-4 bg-light text-design1 border">
-    <p class="text-tamano1">Establece un precio global para el producto, es opcional si aplica impuestos.</p>
+    <div class="col-xl-1 col-xxl-1 col-sm-3 col-md-3 col-12 mb-4 mt-3">
+      <div>Total</div>
+      <ng-container *ngIf="Total else precioNormal;">
+        <span>{{Total|currency: 'USD' }}</span>
+      </ng-container>
+      <ng-template #precioNormal>
+        <span>{{this.formGlobalPrecio.formGlobalPrecio.get('PrecioGlobal')?.value |currency: 'USD' }}</span>
+      </ng-template>
+    </div>
+    <div class="col-xl-3 col-xxl-3 col-sm-12 col-12 col-md-8 mx-md-auto bg-light text-design1 border">
+      <p class="text-tamano1">Establece un precio global para el producto, es opcional si aplica impuestos.</p>
   </div>
 </ng-container>

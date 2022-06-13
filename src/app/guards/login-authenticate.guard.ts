@@ -23,6 +23,6 @@ export class LoginAuthenticateGuard implements CanActivate {
     this.email = localStorage.getItem('correoUsuario');
     this.rolUsuario = localStorage.getItem('dataUsuarioItems');
     this.token = localStorage.getItem('Token');
-    return this.email && this.rolUsuario && this.token ? true : false;
+    return this.email && this.rolUsuario && this.token ? true : false; //SI EXISTE ESOS 3 NO PASARA AL LOGIN NI A REGISTRO USUARIO
   }
 }

@@ -11,8 +11,12 @@
 .input-estilo {
   border-right: 0px;
 }
+.text {
+  font-size: 11px;
+  color: #000000a1;
+}
 
-.colors-group{
+.colors-group {
   height: 80px;
   overflow-y: auto;
 }
@@ -32,6 +36,6 @@
   color: #000;
 }
 
-.borders{
+.borders {
   padding: 0px;
 }
