@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { RolUserService } from 'src/app/guards/services/rol-user.service';
 import { TokenService } from 'src/app/login/services/token.service';
 import { CategoriasService } from 'src/app/manager-vendedor/productos/services/categorias.service';
+import { EncryptService } from 'src/app/shared/class/Encryptar';
 import { UrlFront } from 'src/app/shared/routes/RoutesFront';
 import { CarritoItemsService } from './services/carrito-items.service';
 
@@ -21,7 +22,8 @@ export class MenuComponent implements OnInit {
     private router: Router,
     private apiForm: CarritoItemsService, //FORMULARIO CATEGORIAS
     private tokenUser: TokenService, //TOKEN SERVICES
-    private authServi: RolUserService
+    private authServi: RolUserService,
+    private encrypServi: EncryptService
   ) {}
 
   ngOnInit(): void {
@@ -33,6 +35,10 @@ export class MenuComponent implements OnInit {
   //IR AL PERFIL DE USUARIO
   irAlPerfilUsuario() {
     this.rolTipo = localStorage.getItem('dataUsuarioItems');
+    this.rolTipo = this.encrypServi.encrypOrDesrypRol(
+      this.rolTipo,
+      'Desencriptar'
+    ); //DESENCRIPTAR
     this.authServi.verificarTipoRol(this.rolTipo); //PARA IR A LA RUTA SEGUN EL ROL
   }
   //TOTAL ITEMS CARRITO

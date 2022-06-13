@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
+import { EncryptService } from 'src/app/shared/class/Encryptar';
 import { UrlFront } from 'src/app/shared/routes/RoutesFront';
 
 @Injectable({
@@ -10,7 +11,7 @@ export class RolUserService {
   private rolUser = new BehaviorSubject<any>('');
   rolUser$ = this.rolUser.asObservable();
 
-  constructor(private route: Router) {}
+  constructor(private route: Router, private encryp: EncryptService) {}
   //SETEO EL ROL DEL USUARIO
   setDataLocalStorage(data: any) {
     localStorage.setItem('dataUsuarioItems', `${data}`);
@@ -21,7 +22,8 @@ export class RolUserService {
 
   setDataRolUser(rol: any) {
     const data = this.verifyRolUser(rol);
-    this.setDataLocalStorage(data);
+    const rolCifrado = this.encryp.encrypOrDesrypRol(data, 'Encriptar'); //ENCRIPTO EL ROL DE USUARIO
+    this.setDataLocalStorage(rolCifrado);
     this.rolUser.next(this.getLocalStorageRol());
   }
   //VERIFICO EL TIPO DE ROL DE USUARIO SEGUN SU NUMERO
