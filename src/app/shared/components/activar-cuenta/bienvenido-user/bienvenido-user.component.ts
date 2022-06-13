@@ -17,7 +17,7 @@ export class BienvenidoUserComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.enviarCodigo(); //ENVIO EL CODIGO AL SERVIDOR PARA VERIFICAR
+    this.enviarCodigo();  //ENVIO EL CODIGO AL SERVIDOR PARA VERIFICAR
   }
   //REVISAR EL CODIGO DE VALIDACIoN Del USUARIO
   enviarCodigo() {

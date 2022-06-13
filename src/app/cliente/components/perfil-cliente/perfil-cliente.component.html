@@ -11,10 +11,11 @@
       <div class="row">
         <div class="col-xxl-12 col-xl-12 col-md-12 col-sm-12 col-12 py-3">
           <ul class="nav">
-            <li class="nav-item text-center col-xl-6 col-xxl-6 col-md-6 col-sm-6 col-6"
+            <li class="nav-item text-center col-xl-4 col-xxl-4 col-md-6 col-sm-6 col-6 mx-auto"
               *ngFor="let perfil of perfilPersona;">
               <a class="{{perfil.disabled?'nav-link active text-dark cursor':'nav-link text-dark cursor'}}"
-                aria-current="page" (click)="ocultarSecciones(perfil.id);">{{perfil.title}}</a>
+                [class.active]="!perfil.disabled" aria-current="page"
+                (click)="ocultarSecciones(perfil.id);"><b>{{perfil.title}}</b></a>
             </li>
           </ul>
         </div>

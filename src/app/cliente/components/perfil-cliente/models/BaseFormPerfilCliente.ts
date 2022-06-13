@@ -44,7 +44,12 @@ export class BaseFormCliente {
     ],
     cedula: [
       '',
-      [Validators.required, Validators.pattern(Expresion.CedulaTelefono)],
+      [
+        Validators.required,
+        Validators.minLength(10),
+        Validators.maxLength(10),
+        Validators.pattern(Expresion.CedulaTelefono),
+      ],
     ],
     sexo: ['', [Validators.required]],
     datopersona: this.formB.group({
@@ -64,12 +69,14 @@ export class BaseFormCliente {
       ],
       celular: [
         '',
-        [Validators.required, Validators.pattern(Expresion.CedulaTelefono)],
+        [
+          Validators.required,
+          Validators.minLength(10),
+          Validators.maxLength(10),
+          Validators.pattern(Expresion.CedulaTelefono),
+        ],
       ],
-      telefono: [
-        '',
-        [Validators.required, Validators.pattern(Expresion.CedulaTelefono)],
-      ],
+      telefono: ['', [Validators.pattern(Expresion.CedulaTelefono)]],
       fechanacimiento: [''],
     }),
   });

@@ -5,7 +5,9 @@
       <div class="col-xxl-6 col-xl-6 col-md-6 col-sm-6 col-6 mb-3">
         <label for="nombre1" class="form-label fw-bolder label-text">Primer Nombre</label>
         <div class="input-group mb-3">
-          <span class="input-group-text" id="basic-addon1"><svg width="21" height="22" viewBox="0 0 21 22" fill="none"
+          <span class="input-group-text"
+            [class.is-invalid]="formB.get('nombre1')?.touched && formB.get('nombre1')?.invalid" id="basic-addon1"><svg
+              id="basic-addon1" width="21" height="22" viewBox="0 0 21 22" fill="none"
               xmlns="http://www.w3.org/2000/svg">
               <path fill-rule="evenodd" clip-rule="evenodd"
                 d="M18.4167 21C18.4167 21 20 21 20 19.3333C20 17.6667 18.4167 12.6667 10.5 12.6667C2.58333 12.6667 1 17.6667 1 19.3333C1 21 2.58333 21 2.58333 21H18.4167ZM2.61817 19.3333H18.3818C18.3892 19.3324 18.3966 19.3313 18.404 19.33L18.4167 19.3267C18.4151 18.9167 18.1728 17.6833 17.0993 16.5533C16.067 15.4667 14.1243 14.3333 10.5 14.3333C6.87417 14.3333 4.933 15.4667 3.90067 16.5533C2.82717 17.6833 2.5865 18.9167 2.58333 19.3267C2.59492 19.329 2.60653 19.3312 2.61817 19.3333ZM10.5 9.33333C11.3399 9.33333 12.1453 8.98214 12.7392 8.35702C13.333 7.7319 13.6667 6.88406 13.6667 6C13.6667 5.11594 13.333 4.2681 12.7392 3.64298C12.1453 3.01786 11.3399 2.66667 10.5 2.66667C9.66015 2.66667 8.85469 3.01786 8.26083 3.64298C7.66696 4.2681 7.33333 5.11594 7.33333 6C7.33333 6.88406 7.66696 7.7319 8.26083 8.35702C8.85469 8.98214 9.66015 9.33333 10.5 9.33333ZM15.25 6C15.25 7.32608 14.7496 8.59785 13.8588 9.53553C12.968 10.4732 11.7598 11 10.5 11C9.24022 11 8.03204 10.4732 7.14124 9.53553C6.25045 8.59785 5.75 7.32608 5.75 6C5.75 4.67392 6.25045 3.40215 7.14124 2.46447C8.03204 1.52678 9.24022 1 10.5 1C11.7598 1 12.968 1.52678 13.8588 2.46447C14.7496 3.40215 15.25 4.67392 15.25 6Z"
@@ -15,15 +17,23 @@
                 fill="#1B73F9" />
             </svg></span>
           <input type="text" id="nombre1" class="form-control input-border" placeholder="Primer Nombre"
-            aria-label="Username" aria-describedby="basic-addon1" formControlName="nombre1">
+            aria-label="Username" [class.is-invalid]="formB.get('nombre1')?.touched && formB.get('nombre1')?.invalid"
+            aria-describedby="basic-addon1" formControlName="nombre1">
         </div>
+        <app-form-errors-container [forControl]="formB.get('nombre1')">
+          <app-message-error forErrorCode="required"></app-message-error>
+          <app-message-error forErrorCode="pattern" [customMsg]="'No se acepta caracteres especiales |<$#>%&'">
+          </app-message-error>
+        </app-form-errors-container>
       </div>
+
       <!--  NOMBRE 2 -->
       <div class="col-xxl-6 col-xl-6 col-md-6 col-sm-6 col-6 mb-3">
         <label for="nombre2" class="form-label fw-bolder label-text">Segundo Nombre</label>
         <div class="input-group mb-3">
-          <span class="input-group-text" id="basic-addon1"><svg width="21" height="22" viewBox="0 0 21 22" fill="none"
-              xmlns="http://www.w3.org/2000/svg">
+          <span class="input-group-text" id="basic-addon1"
+            [class.is-invalid]="formB.get('nombre2')?.touched && formB.get('nombre2')?.invalid"><svg width="21"
+              height="22" viewBox="0 0 21 22" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path fill-rule="evenodd" clip-rule="evenodd"
                 d="M18.4167 21C18.4167 21 20 21 20 19.3333C20 17.6667 18.4167 12.6667 10.5 12.6667C2.58333 12.6667 1 17.6667 1 19.3333C1 21 2.58333 21 2.58333 21H18.4167ZM2.61817 19.3333H18.3818C18.3892 19.3324 18.3966 19.3313 18.404 19.33L18.4167 19.3267C18.4151 18.9167 18.1728 17.6833 17.0993 16.5533C16.067 15.4667 14.1243 14.3333 10.5 14.3333C6.87417 14.3333 4.933 15.4667 3.90067 16.5533C2.82717 17.6833 2.5865 18.9167 2.58333 19.3267C2.59492 19.329 2.60653 19.3312 2.61817 19.3333ZM10.5 9.33333C11.3399 9.33333 12.1453 8.98214 12.7392 8.35702C13.333 7.7319 13.6667 6.88406 13.6667 6C13.6667 5.11594 13.333 4.2681 12.7392 3.64298C12.1453 3.01786 11.3399 2.66667 10.5 2.66667C9.66015 2.66667 8.85469 3.01786 8.26083 3.64298C7.66696 4.2681 7.33333 5.11594 7.33333 6C7.33333 6.88406 7.66696 7.7319 8.26083 8.35702C8.85469 8.98214 9.66015 9.33333 10.5 9.33333ZM15.25 6C15.25 7.32608 14.7496 8.59785 13.8588 9.53553C12.968 10.4732 11.7598 11 10.5 11C9.24022 11 8.03204 10.4732 7.14124 9.53553C6.25045 8.59785 5.75 7.32608 5.75 6C5.75 4.67392 6.25045 3.40215 7.14124 2.46447C8.03204 1.52678 9.24022 1 10.5 1C11.7598 1 12.968 1.52678 13.8588 2.46447C14.7496 3.40215 15.25 4.67392 15.25 6Z"
                 fill="#1B73F9" />
@@ -32,16 +42,23 @@
                 fill="#1B73F9" />
             </svg></span>
           <input type="text" id="nombre2" class="form-control input-border" placeholder="Segundo Nombre"
-            aria-label="Username" aria-describedby="basic-addon1" formControlName="nombre2">
+            aria-label="Username" [class.is-invalid]="formB.get('nombre2')?.touched && formB.get('nombre2')?.invalid"
+            aria-describedby="basic-addon1" formControlName="nombre2">
         </div>
+        <app-form-errors-container [forControl]="formB.get('nombre2')">
+          <app-message-error forErrorCode="required"></app-message-error>
+          <app-message-error forErrorCode="pattern" [customMsg]="'No se acepta caracteres especiales |<$#>%&'">
+          </app-message-error>
+        </app-form-errors-container>
       </div>
 
       <!--  Apellido 1 -->
       <div class="col-xxl-6 col-xl-6 col-md-6 col-sm-6 col-6 mb-3">
         <label for="apellido1" class="form-label fw-bolder label-text">Segundo Apellido</label>
         <div class="input-group mb-3">
-          <span class="input-group-text" id="basic-addon1"><svg width="21" height="22" viewBox="0 0 21 22" fill="none"
-              xmlns="http://www.w3.org/2000/svg">
+          <span class="input-group-text" id="basic-addon1"
+            [class.is-invalid]="formB.get('apellido1')?.touched && formB.get('apellido1')?.invalid"><svg width="21"
+              height="22" viewBox="0 0 21 22" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path fill-rule="evenodd" clip-rule="evenodd"
                 d="M18.4167 21C18.4167 21 20 21 20 19.3333C20 17.6667 18.4167 12.6667 10.5 12.6667C2.58333 12.6667 1 17.6667 1 19.3333C1 21 2.58333 21 2.58333 21H18.4167ZM2.61817 19.3333H18.3818C18.3892 19.3324 18.3966 19.3313 18.404 19.33L18.4167 19.3267C18.4151 18.9167 18.1728 17.6833 17.0993 16.5533C16.067 15.4667 14.1243 14.3333 10.5 14.3333C6.87417 14.3333 4.933 15.4667 3.90067 16.5533C2.82717 17.6833 2.5865 18.9167 2.58333 19.3267C2.59492 19.329 2.60653 19.3312 2.61817 19.3333ZM10.5 9.33333C11.3399 9.33333 12.1453 8.98214 12.7392 8.35702C13.333 7.7319 13.6667 6.88406 13.6667 6C13.6667 5.11594 13.333 4.2681 12.7392 3.64298C12.1453 3.01786 11.3399 2.66667 10.5 2.66667C9.66015 2.66667 8.85469 3.01786 8.26083 3.64298C7.66696 4.2681 7.33333 5.11594 7.33333 6C7.33333 6.88406 7.66696 7.7319 8.26083 8.35702C8.85469 8.98214 9.66015 9.33333 10.5 9.33333ZM15.25 6C15.25 7.32608 14.7496 8.59785 13.8588 9.53553C12.968 10.4732 11.7598 11 10.5 11C9.24022 11 8.03204 10.4732 7.14124 9.53553C6.25045 8.59785 5.75 7.32608 5.75 6C5.75 4.67392 6.25045 3.40215 7.14124 2.46447C8.03204 1.52678 9.24022 1 10.5 1C11.7598 1 12.968 1.52678 13.8588 2.46447C14.7496 3.40215 15.25 4.67392 15.25 6Z"
                 fill="#1B73F9" />
@@ -50,16 +67,23 @@
                 fill="#1B73F9" />
             </svg></span>
           <input type="text" id="apellido1" class="form-control input-border" placeholder="Segundo Apellido"
-            aria-label="Username" aria-describedby="basic-addon1" formControlName="apellido1">
+            aria-label="Username" aria-describedby="basic-addon1" formControlName="apellido1"
+            [class.is-invalid]="formB.get('apellido1')?.touched && formB.get('apellido1')?.invalid">
         </div>
+        <app-form-errors-container [forControl]="formB.get('apellido1')">
+          <app-message-error forErrorCode="required"></app-message-error>
+          <app-message-error forErrorCode="pattern" [customMsg]="'No se acepta caracteres especiales |<$#>%&'">
+          </app-message-error>
+        </app-form-errors-container>
       </div>
 
       <!--  Apellido 2 -->
       <div class="col-xxl-6 col-xl-6 col-md-6 col-sm-6 col-6 mb-3">
         <label for="apellido2" class="form-label fw-bolder label-text">Segundo Apellido</label>
         <div class="input-group mb-3">
-          <span class="input-group-text" id="basic-addon1"><svg width="21" height="22" viewBox="0 0 21 22" fill="none"
-              xmlns="http://www.w3.org/2000/svg">
+          <span class="input-group-text" id="basic-addon1"
+            [class.is-invalid]="formB.get('apellido2')?.touched && formB.get('apellido2')?.invalid"><svg width="21"
+              height="22" viewBox="0 0 21 22" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path fill-rule="evenodd" clip-rule="evenodd"
                 d="M18.4167 21C18.4167 21 20 21 20 19.3333C20 17.6667 18.4167 12.6667 10.5 12.6667C2.58333 12.6667 1 17.6667 1 19.3333C1 21 2.58333 21 2.58333 21H18.4167ZM2.61817 19.3333H18.3818C18.3892 19.3324 18.3966 19.3313 18.404 19.33L18.4167 19.3267C18.4151 18.9167 18.1728 17.6833 17.0993 16.5533C16.067 15.4667 14.1243 14.3333 10.5 14.3333C6.87417 14.3333 4.933 15.4667 3.90067 16.5533C2.82717 17.6833 2.5865 18.9167 2.58333 19.3267C2.59492 19.329 2.60653 19.3312 2.61817 19.3333ZM10.5 9.33333C11.3399 9.33333 12.1453 8.98214 12.7392 8.35702C13.333 7.7319 13.6667 6.88406 13.6667 6C13.6667 5.11594 13.333 4.2681 12.7392 3.64298C12.1453 3.01786 11.3399 2.66667 10.5 2.66667C9.66015 2.66667 8.85469 3.01786 8.26083 3.64298C7.66696 4.2681 7.33333 5.11594 7.33333 6C7.33333 6.88406 7.66696 7.7319 8.26083 8.35702C8.85469 8.98214 9.66015 9.33333 10.5 9.33333ZM15.25 6C15.25 7.32608 14.7496 8.59785 13.8588 9.53553C12.968 10.4732 11.7598 11 10.5 11C9.24022 11 8.03204 10.4732 7.14124 9.53553C6.25045 8.59785 5.75 7.32608 5.75 6C5.75 4.67392 6.25045 3.40215 7.14124 2.46447C8.03204 1.52678 9.24022 1 10.5 1C11.7598 1 12.968 1.52678 13.8588 2.46447C14.7496 3.40215 15.25 4.67392 15.25 6Z"
                 fill="#1B73F9" />
@@ -68,27 +92,38 @@
                 fill="#1B73F9" />
             </svg></span>
           <input type="text" id="apellido2" class="form-control input-border" placeholder="Segundo Apellido"
-            aria-label="Username" aria-describedby="basic-addon1" formControlName="apellido2">
+            aria-label="Username" aria-describedby="basic-addon1" formControlName="apellido2"
+            [class.is-invalid]="formB.get('apellido2')?.touched && formB.get('apellido2')?.invalid">
         </div>
+        <app-form-errors-container [forControl]="formB.get('apellido2')">
+          <app-message-error forErrorCode="required"></app-message-error>
+          <app-message-error forErrorCode="pattern" [customMsg]="'No se acepta caracteres especiales |<$#>%&'">
+          </app-message-error>
+        </app-form-errors-container>
       </div>
 
       <!--  SEXO -->
       <div class="col-xxl-6 col-xl-6 col-md-6 col-sm-6 col-6 mb-3">
-        <label for="sexo" class="form-label fw-bolder label-text">Tipo Genero</label>
-        <select class="form-select" id="sexo" aria-label="Default select example" formControlName="sexo">
+        <label for="sexo" class="form-label fw-bolder label-text">Género</label>
+        <select class="form-select" id="sexo" aria-label="Default select example" formControlName="sexo"
+          [class.is-invalid]="formB.get('sexo')?.touched && formB.get('sexo')?.invalid">
           <option value="" selected>Escoja una opción</option>
           <option value="1">Masculino</option>
           <option value="2">Femenino</option>
           <option value="3">Otros</option>
         </select>
+        <app-form-errors-container [forControl]="formB.get('sexo')">
+          <app-message-error forErrorCode="required"></app-message-error>
+        </app-form-errors-container>
       </div>
 
       <!-- CEDULA -->
       <div class="col-xxl-6 col-xl-6 col-md-6 col-sm-6 col-6 mb-3">
         <label for="cedula" class="form-label fw-bolder label-text">Cédula</label>
         <div class="input-group mb-3">
-          <span class="input-group-text" id="basic-addon1"><svg width="21" height="22" viewBox="0 0 21 22" fill="none"
-              xmlns="http://www.w3.org/2000/svg">
+          <span class="input-group-text" id="basic-addon1"
+            [class.is-invalid]="formB.get('cedula')?.touched && formB.get('cedula')?.invalid"><svg width="21"
+              height="22" viewBox="0 0 21 22" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path fill-rule="evenodd" clip-rule="evenodd"
                 d="M18.4167 21C18.4167 21 20 21 20 19.3333C20 17.6667 18.4167 12.6667 10.5 12.6667C2.58333 12.6667 1 17.6667 1 19.3333C1 21 2.58333 21 2.58333 21H18.4167ZM2.61817 19.3333H18.3818C18.3892 19.3324 18.3966 19.3313 18.404 19.33L18.4167 19.3267C18.4151 18.9167 18.1728 17.6833 17.0993 16.5533C16.067 15.4667 14.1243 14.3333 10.5 14.3333C6.87417 14.3333 4.933 15.4667 3.90067 16.5533C2.82717 17.6833 2.5865 18.9167 2.58333 19.3267C2.59492 19.329 2.60653 19.3312 2.61817 19.3333ZM10.5 9.33333C11.3399 9.33333 12.1453 8.98214 12.7392 8.35702C13.333 7.7319 13.6667 6.88406 13.6667 6C13.6667 5.11594 13.333 4.2681 12.7392 3.64298C12.1453 3.01786 11.3399 2.66667 10.5 2.66667C9.66015 2.66667 8.85469 3.01786 8.26083 3.64298C7.66696 4.2681 7.33333 5.11594 7.33333 6C7.33333 6.88406 7.66696 7.7319 8.26083 8.35702C8.85469 8.98214 9.66015 9.33333 10.5 9.33333ZM15.25 6C15.25 7.32608 14.7496 8.59785 13.8588 9.53553C12.968 10.4732 11.7598 11 10.5 11C9.24022 11 8.03204 10.4732 7.14124 9.53553C6.25045 8.59785 5.75 7.32608 5.75 6C5.75 4.67392 6.25045 3.40215 7.14124 2.46447C8.03204 1.52678 9.24022 1 10.5 1C11.7598 1 12.968 1.52678 13.8588 2.46447C14.7496 3.40215 15.25 4.67392 15.25 6Z"
                 fill="#1B73F9" />
@@ -97,8 +132,14 @@
                 fill="#1B73F9" />
             </svg></span>
           <input type="text" id="cedula" maxlength="10" class="form-control input-border" placeholder="0999999999"
-            aria-label="Username" aria-describedby="basic-addon1" formControlName="cedula">
+            aria-label="Username" aria-describedby="basic-addon1" formControlName="cedula"
+            [class.is-invalid]="formB.get('cedula')?.touched && formB.get('cedula')?.invalid">
         </div>
+        <app-form-errors-container [forControl]="formB.get('cedula')">
+          <app-message-error forErrorCode="required"></app-message-error>
+          <app-message-error forErrorCode="minlength" [customMsg]="'Debe tener 10 digitos'"></app-message-error>
+          <app-message-error forErrorCode="pattern" [customMsg]="'Debe ser una cédula válida'"></app-message-error>
+        </app-form-errors-container>
       </div>
 
     </div>
