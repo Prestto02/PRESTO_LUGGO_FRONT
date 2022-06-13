@@ -46,8 +46,8 @@ export class RolUserService {
       case 'Cliente': {
         this.route.navigateByUrl(
           `${UrlFront.Cliente.cliente}/${UrlFront.Cliente.miCuenta}`
-        );
-        return 1;
+        ); //LO ENVIO AL PERFIL CLIENTE
+        return 1; //RETORNO EL VALOR 1 PARA EL ROL
       }
       case 'Vendedor': {
         this.route.navigateByUrl(
