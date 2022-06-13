@@ -28,9 +28,9 @@ export class LoginComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    if (this.tokenUser.getTokenEmail() || this.tokenUser.getTokenId()) {
+/*     if (this.tokenUser.getTokenEmail() || this.tokenUser.getTokenId()) {
       this.router.navigateByUrl(`${UrlFront.Menu.menu}/${UrlFront.Menu.index}`);
-    }
+    } */
     this.position.getPositionUser(); //OBTENGO LA POSICION DEL USUARIO
   }
   //SUBMIT LOGIN
