@@ -13,7 +13,7 @@
     </div>
     <div class="col-xl-5 col-xxl-5 col-sm-12 col-12 col-md-6 mx-auto py-3 mt-3">
       <div class="card">
-        <div class="row row sticky-top bg-white">
+        <div class="row row sticky-top bg-white border-bottom">
           <div class="col-xxl-4 col-xl-4 mt-3">
             <h5 class="text text-center">Producto</h5>
           </div>
@@ -24,27 +24,31 @@
             <h5 class="text text-center">Total</h5>
           </div>
         </div>
-        <hr>
-        <div class="row" *ngFor="let product of arrayProductsList">
-          <div class="col-xxl-4 col-xl-4 mt-3">
-            <p class="text-center">{{product.name}}</p>
+
+        <ng-container *ngIf="arrayProductsList.length>0; else notData">
+          <div class="row" *ngFor="let product of arrayProductsList">
+            <div class="col-xxl-4 col-xl-4 mt-3">
+              <p class="text-center">{{product.name}}</p>
+            </div>
+            <div class="col-xxl-4 col-xl-4 mt-3">
+              <p class="text-center">{{product.item}}</p>
+            </div>
+            <div class="col-xxl-4 col-xl-4 mt-3">
+              <p class="text-center"><b>{{product.subtotal | currency:'USD'}}</b></p>
+            </div>
           </div>
-          <div class="col-xxl-4 col-xl-4 mt-3">
-            <p class="text-center">{{product.item}}</p>
+          <div class="row fixed-sticky-bottom border-top">
+            <div class="col-xxl-6 col-xl-6 col-sm-12 col-12 col-md-6 py-3 mt-3">
+              <p class="text fs-6"><b>Total:</b></p>
+            </div>
+            <div class="col-xxl-6 col-xl-6 col-sm-12 col-12 col-md-6 text-end py-3 mt-3">
+              <p class="text fs-6"><b>{{totalAPagar | currency:'USD'}}</b></p>
+            </div>
           </div>
-          <div class="col-xxl-4 col-xl-4 mt-3">
-            <p class="text-center"><b>{{product.subtotal | currency:'USD'}}</b></p>
-          </div>
-        </div>
-        <hr>
-        <div class="row fixed-sticky-bottom">
-          <div class="col-xxl-6 col-xl-6 col-sm-12 col-12 col-md-6 py-3 mt-3">
-            <p class="text fs-6"><b>Total:</b></p>
-          </div>
-          <div class="col-xxl-6 col-xl-6 col-sm-12 col-12 col-md-6 text-end py-3 mt-3">
-            <p class="text fs-6"><b>{{totalAPagar | currency:'USD'}}</b></p>
-          </div>
-        </div>
+        </ng-container>
+        <ng-template #notData>
+          <p class="text-center mt-3 py-3">No hay aún lista del producto en el carrito</p>
+        </ng-template>
       </div>
     </div>
   </div>
