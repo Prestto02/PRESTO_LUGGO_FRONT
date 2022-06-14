@@ -29,4 +29,14 @@ export class Footer2Component implements OnInit {
       `${UrlFront.Login.login}/${UrlFront.Login.postRegister}`
     );
   }
+  irANoticias() {
+    this._route.navigateByUrl(
+      `${UrlFront.Noticias.noticias}/${UrlFront.Noticias.noticiasBlog}`
+    );
+  }
+  irAPoliticas() {
+    this._route.navigateByUrl(
+      `${UrlFront.Politicas.politicas}/${UrlFront.Politicas.politicasLuggo}`
+    );
+  }
 }
