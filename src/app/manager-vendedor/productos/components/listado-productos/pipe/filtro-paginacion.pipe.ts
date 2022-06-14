@@ -12,11 +12,12 @@ export class FiltroPaginacionPipe implements PipeTransform {
         product.name
           .toLowerCase() //DIFEENCIAR ENTRE MAYUSCULA Y MINUSCULA EL NOMBRE DEL PRODUCTO
           .indexOf(searchProducts.toLowerCase()) !== -1 ||
-        product.codigo.toLowerCase().indexOf(searchProducts.toLowerCase()) !==
-          -1 || //CODIGO DE PRODUCTO
-        product.nombre_categoria
-          .toLowerCase()
-          .indexOf(searchProducts.toLowerCase()) !== -1 //CATEGORIA DEL PRODUCTO
+        product.codigo.toLowerCase().indexOf(searchProducts.toLowerCase()) !== //CODIGO DE PRODUCTO
+          -1 ||
+        product.marca.toLowerCase().indexOf(searchProducts.toLowerCase()) !== //MARCA DEL PRODUCTO
+          -1 ||
+        product.stock.toString().indexOf(searchProducts) !== -1 || //STOCK DEL PRODUCTO
+        product.precio.toString().indexOf(searchProducts) !== -1 //STOCK DEL PRODUCTO
     );
     return filterProducts;
   }

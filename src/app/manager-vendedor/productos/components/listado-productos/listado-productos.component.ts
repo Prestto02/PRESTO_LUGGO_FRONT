@@ -32,7 +32,6 @@ export class ListadoProductosComponent implements OnInit {
   //OBTENER TODOS LOS PRODUCTOS
   getAllProducts() {
     this.apiProducts.getDataProductos().subscribe((res) => {
-      console.log(res);
       this.apiProducts.addProductAdn(res);
     });
     this.apiProducts.listProductAdn.subscribe((res) => {
