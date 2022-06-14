@@ -1,0 +1,45 @@
+<div class="card">
+  <div class="row">
+    <div class="col-xxl-12 col-xl-12 col-sm-12 col-md-12 col-12 py-3 mt-3">
+      <h5 class="mx-2">Dato de la factura</h5>
+      <hr>
+    </div>
+  </div>
+
+  <form [formGroup]="formB.formPagar">
+    <div class="row mx-auto">
+      <div class="col-xxl-6 col-xl-6 col-sm-6 col-12 col-md-6 mb-3 py-3">
+        <label for="formControlNombre" class="form-label">Nombres</label>
+        <input type="text" class="form-control" id="formControlNombre" formControlName="Nombres"
+          placeholder="Nombres Completos">
+      </div>
+
+      <div class="col-xxl-6 col-xl-6 col-sm-6 col-12 col-md-6 mb-3 py-3">
+        <label for="formControlApellidos" class="form-label">Apellidos</label>
+        <input type="text" class="form-control" id="formControlApellidos" formControlName="Apellidos"
+          placeholder="Apellidos Completos">
+      </div>
+
+      <div class="col-xxl-6 col-xl-6 col-sm-6 col-12 col-md-6 mb-5 py-3">
+        <label for="formControlCelular" class="form-label">Celular</label>
+        <div class="input-group">
+          <select class="form-select" aria-label="Default select example">
+            <option *ngFor="let codigoPais of arrayCodigosPaises" [value]="codigoPais.Codigo">
+              <!--  <img [src]="codigoPais.icons" width="30" class="" [alt]="codigoPais.Name" /> -->
+              {{codigoPais.Codigo}}
+            </option>
+          </select>
+          <input type="text" class="form-control w-50" id="formControlCelular" formControlName="Celular"
+            placeholder="Celular">
+        </div>
+      </div>
+
+      <div class="col-xxl-6 col-xl-6 col-sm-6 col-12 col-md-6 mb-5 py-3">
+        <label for="formControlCorreo" class="form-label">Correo</label>
+        <input type="text" class="form-control" id="formControlCorreo" formControlName="Correo"
+          placeholder="example@example.com">
+      </div>
+
+    </div>
+  </form>
+</div>

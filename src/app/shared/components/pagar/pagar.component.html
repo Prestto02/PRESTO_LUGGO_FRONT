@@ -1,16 +1,19 @@
 <app-menu-index></app-menu-index>
 
-<section class="container mt-3 py-3">
+<section class="container-fluid mt-3 py-3">
   <div class="col-xxl-12 col-xl-12 col-sm-12 col-md-12 col-12">
-    <h5 class="text"><b>Comprar</b></h5>
+    <h5><b>Detalle de la compra</b></h5>
   </div>
 </section>
 
 <section class="container-fluid mb-3">
   <div class="row">
-    <div class="col-xl-7 col-xxl-7 col-sm-12 col-12 col-md-6 mx-auto py-3 mt-3">
+    <div class="col-xl-5 col-xxl-5 mx-auto py-3 mt-3">
+      <app-formulario-pagar></app-formulario-pagar>
+    </div>
+    <div class="col-xl-5 col-xxl-5 col-sm-12 col-12 col-md-6 mx-auto py-3 mt-3">
       <div class="card">
-        <div class="row">
+        <div class="row row sticky-top bg-white">
           <div class="col-xxl-4 col-xl-4 mt-3">
             <h5 class="text text-center">Producto</h5>
           </div>
@@ -34,7 +37,7 @@
           </div>
         </div>
         <hr>
-        <div class="row">
+        <div class="row fixed-sticky-bottom">
           <div class="col-xxl-6 col-xl-6 col-sm-12 col-12 col-md-6 py-3 mt-3">
             <p class="text fs-6"><b>Total:</b></p>
           </div>
@@ -46,5 +49,9 @@
     </div>
   </div>
 
+</section>
+<section class="modal-footer">
+  <button type="button" (click)="submitPagar(formB.formPagar.value)" class="btn btn-dark"
+    [disabled]="formB.formPagar.invalid || arrayProductsList.length<=0">Continuar</button>
 </section>
 <app-footer-index></app-footer-index>

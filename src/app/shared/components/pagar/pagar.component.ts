@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CarritoItemsService } from '../index/menu-index/menu/services/carrito-items.service';
+import { BaseFormPagar } from './formulario-pagar/models/BaseFormPagar';
+import { IFormularioPagar } from './formulario-pagar/models/IPagarForm';
 
 @Component({
   selector: 'app-pagar',
@@ -9,7 +11,10 @@ import { CarritoItemsService } from '../index/menu-index/menu/services/carrito-i
 export class PagarComponent implements OnInit {
   arrayProductsList: any = [];
   totalAPagar: any = 0;
-  constructor(private apiServi: CarritoItemsService) {}
+  constructor(
+    private apiServi: CarritoItemsService,
+    public formB: BaseFormPagar
+  ) {}
 
   ngOnInit(): void {
     this.getAllProducts();
@@ -34,5 +39,9 @@ export class PagarComponent implements OnInit {
     this.apiServi.totalAPagar$.subscribe((res: any) => {
       this.totalAPagar = res;
     });
+  }
+
+  submitPagar(form: IFormularioPagar) {
+    console.log(form);
   }
 }
