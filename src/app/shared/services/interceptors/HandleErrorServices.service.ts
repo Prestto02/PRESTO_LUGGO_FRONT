@@ -1,10 +1,10 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { ToastrService } from 'ngx-toastr';
+import { MessageFrontEndService } from '../../Toasts/services/message-front-end.service';
 
 @Injectable({ providedIn: 'root' })
 export class HandleErrorServices {
-  constructor(private toaster: ToastrService) {}
+  constructor(private toaster: MessageFrontEndService) {}
 
   public handleError(err: HttpErrorResponse) {
     let errorMessage: string; //ENVIAR EL MENSAJE AL TOAST
@@ -38,7 +38,7 @@ export class HandleErrorServices {
         default:
           errorMessage = 'Algo salio mal intentelo mas tarde';
       }
-      this.toaster.error(errorMessage);
+      this.toaster.getDangerMessage('Error', errorMessage);
     }
   }
 }

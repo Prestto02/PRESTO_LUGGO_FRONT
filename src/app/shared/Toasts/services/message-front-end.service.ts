@@ -9,7 +9,7 @@ export class MessageFrontEndService {
   //SUCCESS
   getSuccessMessage(title: any, message: any) {
     //{ toastClass: 'modificColor ngx-toastr' } PARA MODIFICAR LOS COLORES DEL TOAST
-    this.toastr.success(message, title, { toastClass: 'modificColor ngx-toastr' });
+    this.toastr.success(message, title);
   }
   //WARNING
   getWarningMessage(title: any, message: any) {
@@ -17,7 +17,9 @@ export class MessageFrontEndService {
   }
   //DANGER
   getDangerMessage(title: any, message: any) {
-    this.toastr.error(message, title);
+    this.toastr.error(message, title, /* {
+      toastClass: 'newColorDanger ngx-toastr',
+    } */);
   }
   //INFO
   getInfoMessage(title: any, message: any) {

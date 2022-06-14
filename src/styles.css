@@ -48,9 +48,9 @@ html {
  background: #fff;
 }
 
-.modificColor.toast-success {
-  background-color: #12963a;
-}
+/* .newColorDanger.toast-error {
+  background-color: #c4b31c;
+} */
 
 /* .modificColor.toast-success .toast-title {
   color: black;
