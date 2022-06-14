@@ -45,7 +45,7 @@ export class RolUserService {
     switch (tipoRol) {
       case 'Cliente': {
         this.route.navigateByUrl(
-          `${UrlFront.Cliente.cliente}/${UrlFront.Cliente.miCuenta}`
+          `${UrlFront.Menu.menu}/${UrlFront.Menu.index}`
         ); //LO ENVIO AL PERFIL CLIENTE
         return 1; //RETORNO EL VALOR 1 PARA EL ROL
       }
