@@ -81,3 +81,7 @@
 .transicion {
   transition-duration: 1.8s;
 }
+
+.btn-dark:hover{
+  background-color: #000000;
+}

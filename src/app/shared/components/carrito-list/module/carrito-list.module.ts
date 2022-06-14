@@ -6,14 +6,9 @@ import { CarritoListComponent } from '../carrito-list.component';
 import { CarritoListRoutingModule } from './carrito-list-routing.module';
 import { ItemsCarritoComponent } from '../items-carrito/items-carrito.component';
 import { HttpClientModule } from '@angular/common/http';
-import { ItemsInputsComponent } from '../items-inputs/items-inputs.component';
 
 @NgModule({
-  declarations: [
-    CarritoListComponent,
-    ItemsCarritoComponent,
-    ItemsInputsComponent,
-  ],
+  declarations: [CarritoListComponent, ItemsCarritoComponent],
   imports: [
     CommonModule,
     CarritoListRoutingModule,

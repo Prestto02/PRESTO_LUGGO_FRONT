@@ -26,16 +26,18 @@
     <div class="modal-footer fixed-bottom bg-white">
       <button class="btn btn-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo"
         aria-expanded="true" aria-controls="collapseTwo">Atras</button>
-      <button class="btn btn-primary"
+      <button class="btn btn-dark"
         [disabled]="formUbicacion.formLogistica.invalid || formTamano.formTamanoProducto.invalid || formAtributosDos.formAtributosDos.invalid "
-        (click)="guardarProduct();"> <ng-container *ngIf="load; else mensaje">
+        (click)="guardarProduct();">
+        <ng-container *ngIf="load; else mensaje">
           <div class="spinner-border text-secondary" role="status">
             <span class="visually-hidden">Loading...</span>
           </div>
         </ng-container>
         <ng-template #mensaje>
           <span>Finalizar</span>
-        </ng-template></button>
+        </ng-template>
+      </button>
     </div>
   </div>
 </section>

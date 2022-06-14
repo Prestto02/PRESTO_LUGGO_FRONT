@@ -1,8 +1,8 @@
 <div [class]="modal?'':'input-group mt-4'">
   <button type="submit" [disabled]="formB?.invalid || load"
-    [class]="modal?'btn btn-modal':'form-control btn btn-primary'">
+    [class]="modal?'btn btn-modal':'form-control btn btn-dark'">
     <ng-container *ngIf="load; else mensaje">
-      <div class="spinner-border text-secondary" role="status">
+      <div class="spinner-border text-white" role="status">
         <span class="visually-hidden">Loading...</span>
       </div>
     </ng-container>

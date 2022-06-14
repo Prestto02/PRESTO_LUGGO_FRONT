@@ -32,4 +32,11 @@ export class ManagerVendedorComponent implements OnInit {
       `${UrlFront.Manager.managerVendedor}/${UrlFront.Manager.vendedor}/${UrlFront.Manager.listaDePedidos}`
     );
   }
+
+  irAPrecios() {
+    this._router.navigateByUrl('**');
+  }
+  irAPagos() {
+    this._router.navigateByUrl('**');
+  }
 }

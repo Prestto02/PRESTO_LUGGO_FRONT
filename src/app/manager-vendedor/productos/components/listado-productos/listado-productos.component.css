@@ -17,13 +17,16 @@
 }
 .btn-color {
   color: #000;
-  border: 1px solid #7549fe;
+  border: 1px solid #313131;
   border-radius: 6px;
 }
 .btn-color:hover {
-  background: #7549fe;
+  background: #242424;
   color: #fff;
   border-radius: 6px;
+}
+.btn-color:hover svg path {
+  fill: #fff;
 }
 
 .heigth-categoria {
