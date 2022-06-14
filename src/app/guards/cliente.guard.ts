@@ -21,6 +21,7 @@ export class ClienteGuard implements CanActivate {
   //VERIFICO SI ES EL CLIENTE O ADMIN
   verifyClientValue(): boolean {
     this.number = localStorage.getItem('dataUsuarioItems');
+    if (!this.number) return false;
     this.number = this.encrypServi.encrypOrDesrypRol(
       this.number,
       'Desencriptar'

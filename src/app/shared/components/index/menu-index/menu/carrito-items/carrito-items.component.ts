@@ -92,4 +92,9 @@ export class CarritoItemsComponent implements OnInit {
       `${UrlFront.CarritoList.carrito}/${UrlFront.CarritoList.carritoList}`
     );
   }
+  irAPagar() {
+    this.router.navigateByUrl(
+      `${UrlFront.Pagar.pagar}/${UrlFront.Pagar.processoPagar}`
+    );
+  }
 }
