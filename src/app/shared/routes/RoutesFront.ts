@@ -20,6 +20,7 @@ export const UrlFront = {
     postRegister: 'registrar',
     buscarusuario: 'buscar-usuario',
     cambiarContrasena: 'cambiar-contrasena',
+    google: 'auth-Externo',
   },
   //ACTIVAR CUENTA
   ActivarCuenta: {
@@ -81,7 +82,6 @@ export const UrlFront = {
   Productos: {
     detalleProducto: 'detalle-producto/:id',
     detalleGetProducto: 'detalle-producto/',
-
   },
   //LISTA DE DESEOS
   ListaDeseos: {

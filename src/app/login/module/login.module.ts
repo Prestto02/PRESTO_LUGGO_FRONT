@@ -11,6 +11,7 @@ import { ErrorsExtensionsModule } from '../../shared/components/errors/errors-mo
 import { BuscarUsuarioComponent } from '../components/buscar-usuario/buscar-usuario.component';
 import { RedesSocialesComponent } from '../components/redes-sociales/redes-sociales.component';
 import { PasswordVisibleModule } from 'src/app/shared/components/password-visible/password-visible.module';
+import { GoogleComponent } from '../components/google/google.component';
 @NgModule({
   declarations: [
     LoginComponent, //LOGIN COMPONENTS
@@ -18,6 +19,7 @@ import { PasswordVisibleModule } from 'src/app/shared/components/password-visibl
     ResetPasswordComponent, //RESET-PASSWORD COMPONENTS
     BuscarUsuarioComponent, //BUSCAR-USUARIO COMPONENTS
     RedesSocialesComponent, //REDES SOCIALES USUARIOS
+    GoogleComponent,
   ],
   imports: [
     CommonModule,

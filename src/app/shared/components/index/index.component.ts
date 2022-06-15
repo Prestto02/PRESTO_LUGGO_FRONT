@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-index',
@@ -9,6 +9,7 @@ import { ActivatedRoute } from '@angular/router';
 export class IndexComponent implements OnInit {
   public nombre: any;
   public categoria?: any;
+
   constructor(private _route: ActivatedRoute) {
     this.nombre = this._route.snapshot.paramMap.get('nombre');
     this.categoria = this._route.snapshot.paramMap.get('categoria');
