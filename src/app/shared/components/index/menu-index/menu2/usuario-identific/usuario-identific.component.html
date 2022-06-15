@@ -1,25 +1,12 @@
 <ng-container *ngIf="correoUsuario; else notIdentifyUser">
-  <div class="col-md-12 col-sm-12 col-xl-12 col-xxl-12 col-12 cursor-item">
-    <p>Mi cuenta</p>
-  </div>
-  <div class="col-md-12 col-sm-12 col-xl-12 col-xxl-12 col-12 cursor-item">
-    <p>Atención al cliente</p>
-  </div>
-  <div class="col-md-12 col-sm-12 col-xl-12 col-xxl-12 col-12 cursor-item" (click)="logoutUser();">
-    Cerrar Sesión
+  <div class="col-md-12 col-sm-12 col-xl-12 col-xxl-12 col-12 cursor-item" (click)="irLink(list.link);"
+    *ngFor="let list of arrayListIdentify">
+    <p>{{list.name}}</p>
   </div>
 </ng-container>
 <ng-template #notIdentifyUser>
-  <div class="col-md-12 col-sm-12 col-xl-12 col-xxl-12 col-12 cursor-item" (click)="inciarSesion()">
-    <p>Iniciar Sesión</p>
-  </div>
-  <div class="col-md-12 col-sm-12 col-xl-12 col-xxl-12 col-12 cursor-item" (click)="registrarme()">
-    <p>Registrarse</p>
-  </div>
-  <div class="col-md-12 col-sm-12 col-xl-12 col-xxl-12 col-12 cursor-item" (click)="venderPuerto();">
-    <p>Vender con Puertto</p>
-  </div>
-  <div class="col-md-12 col-sm-12 col-xl-12 col-xxl-12 col-12 cursor-item">
-    <p>Atención al cliente</p>
+  <div class="col-md-12 col-sm-12 col-xl-12 col-xxl-12 col-12 cursor-item" (click)="irLink(list.link)"
+    *ngFor="let list of arrayListNotIdentify">
+    <p>{{list.name}}</p>
   </div>
 </ng-template>

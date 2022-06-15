@@ -2,6 +2,10 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { TokenService } from 'src/app/login/services/token.service';
 import { UrlFront } from 'src/app/shared/routes/RoutesFront';
+import {
+  arrayListIdentifyUser,
+  arrayListNotIdenfityUser,
+} from '../LisItemsMenu';
 
 @Component({
   selector: 'app-usuario-identific',
@@ -10,6 +14,8 @@ import { UrlFront } from 'src/app/shared/routes/RoutesFront';
 })
 export class UsuarioIdentificComponent implements OnInit {
   @Input('correoUsuario') correoUsuario: any | null = null;
+  arrayListIdentify = arrayListIdentifyUser;
+  arrayListNotIdentify = arrayListNotIdenfityUser;
   constructor(
     private tokenUser: TokenService, //TOKEN SERVICES
     private router: Router
@@ -17,29 +23,13 @@ export class UsuarioIdentificComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  //CERRAR SESION
-  logoutUser() {
-    this.tokenUser.removeToken();
-    this.router.navigateByUrl(
-      `${UrlFront.Login.login}/${UrlFront.Login.iniciarSesion}`
-    );
-  }
-  //INCIAR SESION
-  inciarSesion() {
-    this.router.navigateByUrl(
-      `${UrlFront.Login.login}/${UrlFront.Login.iniciarSesion}`
-    );
-  }
-  //IR A REGISTRARSE ADN
-  venderPuerto() {
-    this.router.navigateByUrl(
-      `${UrlFront.Users.users}/${UrlFront.Users.adnRegistrar}`
-    );
-  }
-  //IR A REGISTRARME
-  registrarme() {
-    this.router.navigateByUrl(
-      `${UrlFront.Login.login}/${UrlFront.Login.postRegister}`
-    ); //REGISTRAR AL USUARIO
+  //VERIFICO QUE LINK ME LLEGA PARA PROCESARLO
+  irLink(link: any) {
+    const logout: string = `${UrlFront.Login.login}/${UrlFront.Login.iniciarSesion}`;
+    if (link === logout) {
+      this.tokenUser.removeToken();
+      this.router.navigateByUrl(link);
+    }
+    this.router.navigateByUrl(link);
   }
 }

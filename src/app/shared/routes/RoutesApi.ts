@@ -14,7 +14,7 @@ export const UrlApi = {
 
   //LOGIN FACEBOOK, GOOGLE, MICROSOFT
   loginFacebook: 'auth/Singin',
-  loginGoogle: 'Auth/Google',
+  loginGoogle: 'api/LoginExterno',
   loginMicrosoft: '',
   //INTENTOS DE BUSQUEDA
   busquedaIntentoUser: 'api/BusquedaFrecuente/Intentos/',

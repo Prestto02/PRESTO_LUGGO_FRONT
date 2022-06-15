@@ -3,6 +3,7 @@
     aria-controls="navbarSupportedContent2" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
+  <!------ITEMS DEL NAVEGADOR----->
   <app-item-nav class="collapse navbar-collapse" id="navbarSupportedContent2"></app-item-nav>
 </nav>
 <!-------OFF CANVAS------>
@@ -11,7 +12,6 @@
   <div class="offcanvas-body sidenav-card">
     <div class="row text-white " id="offcanvasLabel">
       <!-----CABEZERA Y VERIFICO SI EL USUARIO ESTA LOGGEADO---->
-
       <ng-container *ngIf="correoUsuario; else notIdentify">
         <div class="col-md-1 col-xl-1 col-xxl-1 col-1 col-sm-1 mt-2">
           <svg width="27" height="30" viewBox="0 0 27 30" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -56,19 +56,9 @@
         <div class="col-md-12 col-xl-12 col-xxl-12 col-sm-12 col-12">
           <h4>Tendencias</h4>
         </div>
-
-        <div class="col-md-12 col-xl-12 col-xxl-12 col-sm-12 col-12 cursor-item">
-          <p>Lo más vendido</p>
+        <div class="col-md-12 col-xl-12 col-xxl-12 col-sm-12 col-12 cursor-item" *ngFor="let list of arrayLisVendidos">
+          <p>{{list.name}}</p>
         </div>
-
-        <div class="col-md-12 col-xl-12 col-xxl-12 col-sm-12 col-12 cursor-item">
-          <p>Lo más nuevo</p>
-        </div>
-
-        <div class="col-md-12 col-xl-12 col-xxl-12 col-sm-12 col-12 cursor-item">
-          <p>Productos del momento</p>
-        </div>
-
         <div class="col-md-12 col-xl-12 col-xxl-12 col-sm-12 col-12">
           <hr>
         </div>
@@ -116,7 +106,6 @@
         <hr>
       </div>
       <!----SECCION 3---->
-
       <div class="col-md-12 col-sm-12 col-xl-12 col-xxl-12 col-12">
         <h4>Ajustes y Soporte</h4>
       </div>

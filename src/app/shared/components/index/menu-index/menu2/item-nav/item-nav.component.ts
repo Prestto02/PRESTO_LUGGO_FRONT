@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { arrayListItemsMenu } from './ListitemsMenu2';
+import { UrlFront } from 'src/app/shared/routes/RoutesFront';
+import { arrayListItemsMenu } from '../LisItemsMenu';
 
 @Component({
   selector: 'app-item-nav',
@@ -15,5 +16,10 @@ export class ItemNavComponent implements OnInit {
 
   irAlLink(link: any) {
     this.router.navigateByUrl(link);
+  }
+  verProductos() {
+    this.router.navigateByUrl(
+      `${UrlFront.Menu.menu}/${UrlFront.Menu.buscarGet}/todos`
+    );
   }
 }

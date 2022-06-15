@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { TokenService } from 'src/app/login/services/token.service';
 import { CategoriasService } from 'src/app/manager-vendedor/productos/services/categorias.service';
 import { UrlFront } from 'src/app/shared/routes/RoutesFront';
+import { arrayListMasVendidos } from './LisItemsMenu';
 @Component({
   selector: 'app-menu2',
   templateUrl: './menu2.component.html',
@@ -12,9 +13,9 @@ export class Menu2Component implements OnInit {
   categoriasItems: any = [];
   ocultarMenu: boolean = false;
   subCategorias: any = [];
-  idUsuario: any;
   nombreCategoria = '';
   correoUsuario: any;
+  arrayLisVendidos = arrayListMasVendidos; //LIST LOS MAS VENDIDOS
   constructor(
     private router: Router,
     private apiCategoria: CategoriasService, //SERVICE CATEGORIA
@@ -23,7 +24,6 @@ export class Menu2Component implements OnInit {
 
   ngOnInit(): void {
     this.getAllCategorias(); //TRAIGO TODAS LAS CATEGORIAS
-    this.idUsuario = this.tokenUser.getTokenId(); //OBTENGO EL ID
     this.correoUsuario = this.tokenUser.getTokenEmail(); //OBTENGO EL EMAIL
   }
   //TODAS LAS CATEGORIAS
@@ -61,5 +61,4 @@ export class Menu2Component implements OnInit {
       `${UrlFront.Login.login}/${UrlFront.Login.postRegister}`
     ); //REGISTRAR AL USUARIO
   }
-
 }
