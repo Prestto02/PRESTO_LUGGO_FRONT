@@ -101,6 +101,9 @@
     position: relative;
     right: 20px;
   }
+  .margin-laptop{
+    margin-top: 9px;
+  }
   .form-select {
     font-size: 0.815rem;
     font-weight: 400;

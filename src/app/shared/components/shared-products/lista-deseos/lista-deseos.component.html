@@ -12,7 +12,7 @@
           [class]="emailUsuario?'col-xl-3 col-xxl-3 col-md-6 col-12 col-sm-12 mt-3':'col-xl-9 col-xxl-9 col-md-9 col-12 col-sm-12 mt-3'">
           <div class="row">
             <div
-              [class]="emailUsuario?'col-xl-1 col-sm-1 col-1 col-xxl-1 mx-3 mt-1':'col-xl-1 col-sm-1 col-1 col-xxl-1 mt-1 text-start'">
+              [class]="emailUsuario?'col-1 col-sm-1 col-xl-1 col-xxl-1 mt-1':'col-xl-1 col-sm-1 col-1 col-xxl-1 mt-1 text-start'">
               <svg (click)="filasDeDos=false;" class="pointer" width="24" height="24" viewBox="0 0 24 24" fill="none"
                 xmlns="http://www.w3.org/2000/svg">
                 <path
@@ -21,7 +21,7 @@
               </svg>
             </div>
 
-            <div class="col-xl-1 col-sm-1 col-1 col-xxl-1 mt-1">
+            <div class="ccol-xl-1 col-sm-1 col-1 col-xxl-1 mt-1 mx-2">
               <svg (click)="filasDeDos=true;" class="pointer" width="24" height="24" viewBox="0 0 24 24" fill="none"
                 xmlns="http://www.w3.org/2000/svg">
                 <path
@@ -30,7 +30,7 @@
               </svg>
             </div>
 
-            <div class="col-xl-7 col-xxl-7 col-sm-7 col-7 col-md-7 mx-auto" *ngIf="emailUsuario">
+            <div class="col-xl-9 col-xxl-7 col-sm-7 col-7 col-md-7" *ngIf="emailUsuario">
               <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#AgregarColeccion">
                 <svg width="19" height="17" viewBox="0 0 15 19" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path

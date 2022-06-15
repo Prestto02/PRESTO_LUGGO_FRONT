@@ -46,7 +46,7 @@
               <ng-container *ngIf="emailUsuario; else noIdentificado">
                 <div
                   class="col-md-9 col-sm-8 col-7 col-xl-10 col-xxl-10 text-center d-block d-sm-block d-xxl-block d-xl-block d-md-block">
-                  <a class="nav-link cursor-item margin-responsive">
+                  <a class="nav-link cursor-item margin-responsive margin-laptop">
                     <b (click)="irAlPerfilUsuario()">Mi cuenta</b>
                   </a>
                 </div>
@@ -66,7 +66,7 @@
               <ng-template #noIdentificado>
                 <div
                   class="col-md-9 col-sm-8 col-7 col-xl-10 col-xxl-9 text-center responsive-links d-block d-sm-block d-xxl-block d-xl-block d-md-block">
-                  <a class="nav-link cursor-item mt-auto" data-bs-toggle="offcanvas"
+                  <a class="nav-link cursor-item mt-auto margin-laptop" data-bs-toggle="offcanvas"
                     data-bs-target="#offcanvasRightLogin" aria-controls="offcanvasRight">
                     Hola, Ingresa <b>Mi cuenta</b>
                   </a>

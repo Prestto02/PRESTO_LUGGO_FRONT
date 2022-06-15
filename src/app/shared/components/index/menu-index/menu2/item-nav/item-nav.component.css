@@ -1,0 +1,9 @@
+li.nav-item {
+  padding-right: 1rem;
+}
+.navbar-nav .nav-link {
+  color: #000;
+}
+.abrir {
+  cursor: pointer;
+}

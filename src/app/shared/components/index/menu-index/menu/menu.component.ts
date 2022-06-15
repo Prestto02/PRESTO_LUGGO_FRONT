@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { RolUserService } from 'src/app/guards/services/rol-user.service';
 import { TokenService } from 'src/app/login/services/token.service';
-import { CategoriasService } from 'src/app/manager-vendedor/productos/services/categorias.service';
 import { EncryptService } from 'src/app/shared/class/Encryptar';
 import { UrlFront } from 'src/app/shared/routes/RoutesFront';
 import { CarritoItemsService } from './services/carrito-items.service';

@@ -61,23 +61,5 @@ export class Menu2Component implements OnInit {
       `${UrlFront.Login.login}/${UrlFront.Login.postRegister}`
     ); //REGISTRAR AL USUARIO
   }
-  //CERRAR SESION
-  logoutUser() {
-    this.tokenUser.removeToken();
-    this.router.navigateByUrl(
-      `${UrlFront.Login.login}/${UrlFront.Login.iniciarSesion}`
-    );
-  }
-  //INCIAR SESION
-  inciarSesion() {
-    this.router.navigateByUrl(
-      `${UrlFront.Login.login}/${UrlFront.Login.iniciarSesion}`
-    );
-  }
-  //IR A REGISTRARSE ADN
-  venderPuerto() {
-    this.router.navigateByUrl(
-      `${UrlFront.Users.users}/${UrlFront.Users.adnRegistrar}`
-    );
-  }
+
 }

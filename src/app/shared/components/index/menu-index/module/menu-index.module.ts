@@ -12,15 +12,19 @@ import { MenuIndexComponent } from '../menu-index.component';
 import { AutocompletadoProductosComponent } from '../menu/autocompletado-productos/autocompletado-productos.component';
 import { BaseFormSearchProducts } from '../menu/models/BaseFormSearchProduct';
 import { ItemsProductsVerify } from 'src/app/shared/helpers/ItemsProductsVerify';
+import { ItemNavComponent } from '../menu2/item-nav/item-nav.component';
+import { UsuarioIdentificComponent } from '../menu2/usuario-identific/usuario-identific.component';
 
 @NgModule({
   declarations: [
     MenuIndexComponent, //MENU INDEX COMPONENTS
     MenuComponent, //PRIMER MENU
     Menu2Component, //SEGUNDO MENU
+    ItemNavComponent,
     CarritoItemsComponent, //ITEMS DE CARRITO DE COMPRA
     IniciarSesionComponent, //OOFCANVAS PARA INICIAR SESION
     SubMenuCategoriasComponent, //SUB MENU DE CATEGORIAS
+    UsuarioIdentificComponent, //USUARIO IDENTIFICADO NUEVOS MENUS
     AutocompletadoProductosComponent, //AUTO COMPLETADO
   ],
   imports: [CommonModule, ReactiveFormsModule, HttpClientModule],

@@ -2,9 +2,6 @@ body {
   transition: background-color 0.5s;
 }
 
-.abrir {
-  cursor: pointer;
-}
 .navbar-light .navbar-nav .nav-link {
   color: #000;
 }
@@ -39,9 +36,7 @@ body {
   }
 }
 
-li.nav-item {
-  padding-right: 1rem;
-}
+
 
 @media screen and (min-width: 1200px) and (max-width: 1290px) {
   .navbar-light .navbar-nav .nav-link {
