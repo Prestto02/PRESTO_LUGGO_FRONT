@@ -23,8 +23,8 @@
   <div class="row" infiniteScroll (scrolled)="onScrollDown();">
     <div class="col-xxl-2 col-sm-6 col-6 col-xl-2 col-md-4 mt-3 mb-3" *ngFor="let products of productsArray">
       <div class="card border rounded py-3 px-1">
-        <img loading="lazy" src="{{urlImg}}{{products.imagen}}" class="card-img-top img-fluid mx-auto mb-3 card-img"
-          alt="{{products.id_artic}}">
+        <img loading="lazy" src="{{urlImg}}{{products.imagen}}" class="card-img-top img-fluid mx-auto mb-3 card-img pointer-deseo"
+          alt="{{products.id_artic}}" (click)="irAlDetalle(products.id_artic)">
         <div class="row">
           <p class="card-title text-truncate">{{products.name}}</p>
           <p class="card-text text-iva mx-1"><b class="text-precio">{{products.precio | currency: 'USD'}}</b></p>

@@ -1,15 +1,8 @@
 <div class="container-fluid">
   <div class="row">
-    <div class="col-xl-2 col-xxl-2 col-md-2 col-sm-2 col-2 mt-3">
-      <ul class="list-group" *ngFor="let imgProduct of imagenArray;">
-        <li class="list-group-item mb-3 mx-auto puntero" *ngFor="let imgPequena of imgProduct.pequena;let i=index"><img
-            loading="lazy" (mouseover)="mouseCambioImg(i)" [src]="imgPequena" alt="" class="mb-2 mx-auto">
-        </li>
-      </ul>
-    </div>
-    <div class="col-xl-8 col-xxl-8 mx-2 col-md-8 col-sm-8 col-8 mb-3">
+    <div class="col-xl-12 col-xxl-8 mx-auto col-md-12 col-sm-12 col-12 mb-3">
       <ngx-img-zoom [zoomImageSrc]="imgGrande" [previewImageSrc]="imageRaton"
-        [imgStyle]="'height:450px;border:1px solid #dcdcdc;'" [resultStyle]="styleResults"
+        [imgStyle]="'width:400px;height:450px;border:1px solid #dcdcdc;'" [resultStyle]="styleResults"
         lensStyle="width:210px; height:300px;" [enableZoom]="true" [containerStyle]="'position:relative;'">
       </ngx-img-zoom>
       <p class="text-diseno">Pasa el mouse encima de la imagen para aplicar zoom</p>

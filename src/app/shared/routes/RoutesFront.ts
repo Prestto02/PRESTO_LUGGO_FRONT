@@ -79,7 +79,9 @@ export const UrlFront = {
   },
   //PRODUCTOS
   Productos: {
-    detalleProducto: 'detalle-producto',
+    detalleProducto: 'detalle-producto/:id',
+    detalleGetProducto: 'detalle-producto/',
+
   },
   //LISTA DE DESEOS
   ListaDeseos: {

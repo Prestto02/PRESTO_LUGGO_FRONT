@@ -1,8 +1,9 @@
 import { DOCUMENT } from '@angular/common';
 import { Component, HostListener, Inject, OnInit } from '@angular/core';
-import { ActivatedRoute, ParamMap } from '@angular/router';
+import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { ProductsService } from 'src/app/manager-vendedor/productos/services/products.service';
 import { RepositorioImg } from 'src/app/shared/helpers/RepositorioImg';
+import { UrlFront } from 'src/app/shared/routes/RoutesFront';
 import { CarritoItemsComponent } from '../../index/menu-index/menu/carrito-items/carrito-items.component';
 import { BuscadorProductosService } from '../../index/menu-index/menu/services/buscador-productos.service';
 import { ListaDeseosService } from '../lista-deseos/services/lista-deseos.service';
@@ -26,6 +27,7 @@ export class SharedProductsComponent implements OnInit {
     private carritoItmes: CarritoItemsComponent, //CARRITO ITEMS
     private apiListDeseo: ListaDeseosService, //LISTA DE DESEOS SERVICES
     private _route: ActivatedRoute,
+    private router: Router,
     private apySearchProducts: BuscadorProductosService //BUSCADOR DE PRODUCTOS
   ) {}
 
@@ -99,5 +101,12 @@ export class SharedProductsComponent implements OnInit {
   //AGREGAR LISTA DE DESEOS
   agregarAlDeseo(products: any) {
     this.apiListDeseo.addListaDeseos(products);
+  }
+
+  //DETALLE DEL PRODCUTO
+  irAlDetalle(id: any) {
+    this.router.navigateByUrl(
+      `${UrlFront.Menu.menu}/${UrlFront.Productos.detalleGetProducto}${id}`
+    );
   }
 }

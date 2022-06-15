@@ -4,6 +4,8 @@
 .text-diseno {
   font-size: 12px;
   color: #000;
+  text-align: center;
+  margin-top:2px;
 }
 
 /*********IMG HOVER**********/
