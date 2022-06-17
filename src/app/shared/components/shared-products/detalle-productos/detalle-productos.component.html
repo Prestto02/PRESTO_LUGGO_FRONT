@@ -11,15 +11,38 @@
     <div class="col-xl-5 col-xxl-5 col-md-6 col-sm-12 col-12 mt-4">
       <div class="row">
         <app-product-description [productoObjeto]="productoObjeto"></app-product-description>
-        <p>Categorias:</p>
+        <p><b>Categorias:</b></p>
         <ul>
           <li class="position-margin" *ngFor="let categoria of productoObjeto.categorias">{{categoria.nombre_categoria}}
           </li>
         </ul>
         <app-atributos-descripcion [productoObjeto]="productoObjeto.atributes"></app-atributos-descripcion>
-        <p>Etiquetas de busqueda:</p>
+        <p><b>Etiquetas de busqueda:</b></p>
         <div class="ul-list">
-          <span class="badge badge-primary" *ngFor="let etiquetas of productoObjeto.etiquetas">{{etiquetas.nombre}}</span>
+          <span class="badge badge-primary mb-3"
+            *ngFor="let etiquetas of productoObjeto.etiquetas">{{etiquetas.nombre}}</span>
+        </div>
+        <div class="col-xxl-12 col-xl-12 col-md-12 col-sm-12 col-12">
+          <div class="row">
+            <div class="col-xxl-6 col-xxl-6 col-md-6 col-sm-6 col-6">
+              <p><b>Disponibilidad</b></p>
+            </div>
+            <div class="col-xxl-6 col-xxl-6 col-md-6 col-sm-6 col-6">
+              <p><b>Restricciones</b></p>
+            </div>
+            <div class="col-xxl-6 col-xxl-6 col-md-6 col-sm-6 col-6">
+              <p>{{productoObjeto.disponibilidad===1?'No':'Si'}}</p>
+            </div>
+            <div class="col-xxl-6 col-xxl-6 col-md-6 col-sm-6 col-6">
+              <p>{{productoObjeto.restricciones}}</p>
+            </div>
+          </div>
+          <div class="col-xxl-12 col-xl-12 col-md-12 col-sm-12 col-12">
+            <p><b>Garantía</b></p>
+          </div>
+          <div class="col-xxl-12 col-xl-12 col-md-12 col-sm-12 col-12">
+            {{productoObjeto.garantia?productoObjeto.garantia:'No'}}
+          </div>
         </div>
       </div>
     </div>
