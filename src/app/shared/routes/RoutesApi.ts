@@ -29,6 +29,7 @@ export const UrlApi = {
   categoriasrHijos: 'api/Familia/hijos/',
   categoriasPadres: 'api/categoria/padres',
   paraCrearArticulo: 'api/nombre_articulo',
+  detalleArticulo: 'api/articulo/profile/',
   //Banco Y ADN
   banco: 'api/NombreBanco',
   registrarAdn: 'api/ADN',

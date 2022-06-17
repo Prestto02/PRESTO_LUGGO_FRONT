@@ -21,6 +21,8 @@ import { SharedProductsRoutingModule } from './shared-products-routing.module';
 import { DetalleProductosComponent } from '../detalle-productos/detalle-productos.component';
 import { ImagenProductsComponent } from '../detalle-productos/imagen-products/imagen-products.component';
 import { NgxImgZoomModule } from 'ngx-img-zoom';
+import { ProductDescriptionComponent } from '../detalle-productos/product-description/product-description.component';
+import { AtributosDescripcionComponent } from '../detalle-productos/atributos-descripcion/atributos-descripcion.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +33,8 @@ import { NgxImgZoomModule } from 'ngx-img-zoom';
     DetalleProductosComponent,
     ImagenProductsComponent, //IMAGEN DEL PRODUCTO
     CompararProductosComponent,
+    ProductDescriptionComponent, //PRODUCTO DESCRIPTION
+    AtributosDescripcionComponent, //ATRIBUTOS DESCRIPCION COMPONENT
     FilterPipe,
   ],
   imports: [

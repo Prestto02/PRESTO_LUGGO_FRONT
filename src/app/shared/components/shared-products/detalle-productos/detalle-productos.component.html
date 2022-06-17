@@ -3,16 +3,25 @@
   <app-menu2></app-menu2>
 </header>
 <section class="container-fluid mb-3">
-  <div class="row" *ngFor="let product of productoArray">
+  <div class="row">
     <div class="col-xl-5 col-xxl-5 col-md-5 col-sm-12 col-12 mt-4">
-      <app-imagen-products [imagenArray]="product.imagenes"></app-imagen-products>
+      <app-imagen-products [imagenArray]="productoObjeto.imagen" [imagenZoom]="productoObjeto.imagen_zoom">
+      </app-imagen-products>
     </div>
     <div class="col-xl-5 col-xxl-5 col-md-6 col-sm-12 col-12 mt-4">
-      <h4>{{product.title}}</h4>
-      <p class="text-info">Precio: <span class="text-danger">{{product.precio}}</span></p>
-      <ul>
-        <li *ngFor="let productList of product.lista">{{productList}}</li>
-      </ul>
+      <div class="row">
+        <app-product-description [productoObjeto]="productoObjeto"></app-product-description>
+        <p>Categorias:</p>
+        <ul>
+          <li class="position-margin" *ngFor="let categoria of productoObjeto.categorias">{{categoria.nombre_categoria}}
+          </li>
+        </ul>
+        <app-atributos-descripcion [productoObjeto]="productoObjeto.atributes"></app-atributos-descripcion>
+        <p>Etiquetas de busqueda:</p>
+        <div class="ul-list">
+          <span class="badge badge-primary" *ngFor="let etiquetas of productoObjeto.etiquetas">{{etiquetas.nombre}}</span>
+        </div>
+      </div>
     </div>
   </div>
 </section>
