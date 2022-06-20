@@ -59,12 +59,17 @@ export class ListaDeseosService {
   }
 
   eliminarListaDeseos(id: any) {
-    const data = this.addListaDeseosProdut.findIndex((res) => res.id === id);
+    const data = this.addListaDeseosProdut.findIndex(
+      (res) => res.id_artic === id
+    );
+    console.log(data);
     this.addListaDeseosProdut.splice(data, 1); //ELIMINO LA COINCIDENCIA QUE ENCONTRO
   }
 
   //VERIFICAR SI EXISTE EN LA LISTA DEL CARRITO
   verifyCarrito(idProduct: any) {
-    return this.addListaDeseosProdut.filter((res) => res.id === idProduct.id_artic);
+    return this.addListaDeseosProdut.filter(
+      (res) => res.id_artic === idProduct.id_artic
+    );
   }
 }

@@ -65,6 +65,7 @@ export class CarritoItemsService {
   eliminarItemsCarrito(id: any) {
     const data = this.addCarritoProduct.findIndex((res) => res.id_artic === id);
     this.addCarritoProduct.splice(data, 1); //ELIMINO LA COINCIDENCIA QUE ENCONTRO
+    this.obtenerTamañoDelCarrito();
   }
 
   //TOTAL A PAGAR OBSERVABLE PARA REFLEJAR TODOS LOS CAMBIOS SEGUN LOS COMPONENTES SUSCRIPTOS
