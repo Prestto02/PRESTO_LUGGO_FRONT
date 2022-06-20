@@ -83,7 +83,7 @@ export class CarritoItemsComponent implements OnInit {
   }
   //ELIMINAR DE LA LISTA DEL CARRITO
   removeItemCarrito(id: any) {
-    this.apiServi.eliminarListaDeseos(id);
+    this.apiServi.eliminarItemsCarrito(id);
     this.carritoTotal(); //TOTAL DE PRODUCTOS
   }
   //IR AL CARRITO

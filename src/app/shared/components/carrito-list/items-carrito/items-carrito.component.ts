@@ -44,7 +44,7 @@ export class ItemsCarritoComponent implements OnInit {
   }
   //ELIMINAR ITEMS DEL CARRITO
   removeItemsCarrito(id: any) {
-    this.apiServi.eliminarListaDeseos(id);
+    this.apiServi.eliminarItemsCarrito(id);
     this.getSubtotalCarrito(); //OBTENER EL NUEVO SUBTOTAL DEL CARRITO
     this.getCarritoLength(); // ACTUALIZAR EL TAMAÑO DEL CARRITO
   }

@@ -62,7 +62,7 @@ export class CarritoItemsService {
     );
   }
   //ELIMINAR DE LA LISTA DEL CARRITO
-  eliminarListaDeseos(id: any) {
+  eliminarItemsCarrito(id: any) {
     const data = this.addCarritoProduct.findIndex((res) => res.id_artic === id);
     this.addCarritoProduct.splice(data, 1); //ELIMINO LA COINCIDENCIA QUE ENCONTRO
   }
