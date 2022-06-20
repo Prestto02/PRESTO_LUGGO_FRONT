@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { LoginService } from 'src/app/login/services/login.service';
 import { TokenService } from 'src/app/login/services/token.service';
 import { UrlFront } from 'src/app/shared/routes/RoutesFront';
 
@@ -11,7 +12,8 @@ import { UrlFront } from 'src/app/shared/routes/RoutesFront';
 export class AdnCerrarSesionComponent implements OnInit {
   constructor(
     private router: Router,
-    private tokenUser: TokenService //TOKEN SERVICES
+    private tokenUser: TokenService, //TOKEN SERVICES
+    private apiLogin: LoginService
   ) {}
 
   ngOnInit(): void {}
@@ -26,5 +28,6 @@ export class AdnCerrarSesionComponent implements OnInit {
     this.router.navigateByUrl(
       `${UrlFront.Login.login}/${UrlFront.Login.iniciarSesion}`
     );
+    this.apiLogin.cerrarSesionBackend();
   }
 }

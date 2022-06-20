@@ -35,4 +35,10 @@ export class LoginService {
   deleteUserDataApi(id: any): Observable<any> {
     return this.http.delete<any>(`${this.urlApi}${this.url}/${id}`);
   }
+  cerrarSesionBackend(): Observable<any> {
+    return this.http.post<any>(
+      `${UrlApi.ApiUrl}${UrlApi.cerrarSesionBackEnd}`,
+      null
+    );
+  }
 }

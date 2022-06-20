@@ -9,6 +9,7 @@ export const UrlApi = {
   passwordReset: 'api/usuario/cambiar_contraseña',
   usuario: 'api/USUARIO',
   login: 'api/login',
+  cerrarSesionBackEnd: 'api/Login/SingOut',
   codigoRecuperacion: 'api/usuario/comprobar',
   revisarCodigoActivacion: 'api/usuario/activacion',
 
