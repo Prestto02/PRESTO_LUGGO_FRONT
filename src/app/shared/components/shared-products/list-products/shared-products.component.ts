@@ -5,9 +5,8 @@ import { ProductsService } from 'src/app/manager-vendedor/productos/services/pro
 import { AddCarsOrListDesire } from 'src/app/shared/helpers/AddCarsOrListDesire';
 import { RepositorioImg } from 'src/app/shared/helpers/RepositorioImg';
 import { UrlFront } from 'src/app/shared/routes/RoutesFront';
-import { CarritoItemsComponent } from '../../index/menu-index/menu/carrito-items/carrito-items.component';
 import { BuscadorProductosService } from '../../index/menu-index/menu/services/buscador-productos.service';
-import { ListaDeseosService } from '../lista-deseos/services/lista-deseos.service';
+
 @Component({
   selector: 'app-shared-products',
   templateUrl: './shared-products.component.html',
@@ -25,8 +24,7 @@ export class SharedProductsComponent implements OnInit {
   constructor(
     @Inject(DOCUMENT) private document: Document, //DOCUMENT
     private apiServi: ProductsService, //API PRODUCTOS SERVICES
-    private carritoItmes: CarritoItemsComponent, //CARRITO ITEMS
-    private apiListDeseo: AddCarsOrListDesire,
+
     private _route: ActivatedRoute,
     private router: Router,
     private apySearchProducts: BuscadorProductosService //BUSCADOR DE PRODUCTOS
@@ -92,16 +90,6 @@ export class SharedProductsComponent implements OnInit {
         this.productsArray = res;
       });
     });
-  }
-  //AGRGAR AL CARRITO
-  agregarAlCarrito(id: any) {
-    this.carritoItmes.getListItemCarrito(id);
-    //PARA SUBIR EL ITEMS DEL CARRITO
-  }
-
-  //AGREGAR LISTA DE DESEOS
-  agregarAlDeseo(products: any) {
-    this.apiListDeseo.addListDesire(products);
   }
 
   //DETALLE DEL PRODCUTO

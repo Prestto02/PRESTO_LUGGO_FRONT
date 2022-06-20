@@ -24,6 +24,7 @@ import { NgxImgZoomModule } from 'ngx-img-zoom';
 import { ProductDescriptionComponent } from '../detalle-productos/product-description/product-description.component';
 import { AtributosDescripcionComponent } from '../detalle-productos/atributos-descripcion/atributos-descripcion.component';
 import { ButtonAddOrListComponent } from '../detalle-productos/button-add-or-list/button-add-or-list.component';
+import { IconsCarsDesireComponent } from '../list-products/icons-cars-desire/icons-cars-desire.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { ButtonAddOrListComponent } from '../detalle-productos/button-add-or-lis
     ProductDescriptionComponent, //PRODUCTO DESCRIPTION
     AtributosDescripcionComponent, //ATRIBUTOS DESCRIPCION COMPONENT
     ButtonAddOrListComponent, //ADD OR LIST COMPONENT
+    IconsCarsDesireComponent,
     FilterPipe,
   ],
   imports: [
@@ -53,6 +55,6 @@ import { ButtonAddOrListComponent } from '../detalle-productos/button-add-or-lis
     MenuIndexModule,
   ],
   providers: [BaseFormListaDeseos],
-  exports: [SharedProductsComponent],
+  exports: [SharedProductsComponent, IconsCarsDesireComponent],
 })
 export class SharedProductosModule {}
