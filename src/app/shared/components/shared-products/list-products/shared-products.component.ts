@@ -101,7 +101,6 @@ export class SharedProductsComponent implements OnInit {
 
   //AGREGAR LISTA DE DESEOS
   agregarAlDeseo(products: any) {
-    console.log(products);
     this.apiListDeseo.addListDesire(products);
   }
 
