@@ -57,6 +57,7 @@ export class ListaDeseosService {
       `${UrlApi.ApiUrl}${UrlApi.traerColeccionPorId}${id}`
     );
   }
+
   eliminarListaDeseos(id: any) {
     const data = this.addListaDeseosProdut.findIndex((res) => res.id === id);
     this.addListaDeseosProdut.splice(data, 1); //ELIMINO LA COINCIDENCIA QUE ENCONTRO
