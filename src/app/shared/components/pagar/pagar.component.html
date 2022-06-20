@@ -34,7 +34,8 @@
               <p class="text-center">{{product.item}}</p>
             </div>
             <div class="col-xxl-4 col-xl-4 mt-3">
-              <p class="text-center"><b>{{product.subtotal | currency:'USD'}}</b></p>
+              <p class="text-center"><b>{{product.subtotal===0? product.precio : product.subtotal | currency:'USD'}}</b>
+              </p>
             </div>
           </div>
           <div class="row fixed-sticky-bottom border-top">

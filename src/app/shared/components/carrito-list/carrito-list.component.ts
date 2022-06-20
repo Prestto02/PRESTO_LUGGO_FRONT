@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { TokenService } from 'src/app/login/services/token.service';
+import { AddCarsOrListDesire } from '../../helpers/AddCarsOrListDesire';
 import { UrlFront } from '../../routes/RoutesFront';
 import { CarritoItemsService } from '../index/menu-index/menu/services/carrito-items.service';
-import { CarritoUserLoginService } from './services/carrito-user-login.service';
 
 @Component({
   selector: 'app-carrito-list',
@@ -12,13 +12,12 @@ import { CarritoUserLoginService } from './services/carrito-user-login.service';
 })
 export class CarritoListComponent implements OnInit {
   productoItems: any;
-  detalle_carrito: any = [];
   idUser: any;
   constructor(
     private apiServi: CarritoItemsService,
     private router: Router,
     private token: TokenService,
-    private apiCarritoUser: CarritoUserLoginService
+    private addCars: AddCarsOrListDesire
   ) {
     this.idUser = this.token.getTokenId();
   }
@@ -48,25 +47,14 @@ export class CarritoListComponent implements OnInit {
   //PUSH ARRAY DETALLE_CARRITO
   pushDetalleCarrito() {
     this.productoItems.map((res: any) => {
-      this.detalle_carrito.push({
-        id_detalle_articulo: res.id_detalle_articulo,
-        cantidad: res.item,
-      });
+      this.addCars.addDetalleCarrito(res);
     });
   }
   //POST CARRITO ITEMS
   postCarritoItems() {
     this.pushDetalleCarrito(); //PUSH DETALLE CARRITO
-    const form = {
-      id_usuario: this.idUser,
-      detalle_carrito: this.detalle_carrito,
-    };
     //POST CARRITO ITEMS
-    this.apiCarritoUser.postCarritoItems(form).subscribe((res) => {
-      this.router.navigateByUrl(
-        `${UrlFront.Pagar.pagar}/${UrlFront.Pagar.processoPagar}`
-      );
-    });
+    this.addCars.postCarritoItems(this.idUser);
   }
   //REGRESAR AL LOGIN
   irLogin() {

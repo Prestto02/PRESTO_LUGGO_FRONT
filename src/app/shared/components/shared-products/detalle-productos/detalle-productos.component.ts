@@ -20,10 +20,10 @@ export class DetalleProductosComponent implements OnInit {
   ngOnInit(): void {
     this.getProductById();
   }
+  //BUSCO EL PRODUCTO PARA TRAER TODO SU DETALLE
   getProductById() {
     this.apiProduct.getByDetailsProductsId(this.idProduct).subscribe((res) => {
       this.productoObjeto = res;
-      console.log(this.productoObjeto);
     });
   }
 }

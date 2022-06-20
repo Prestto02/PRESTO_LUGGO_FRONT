@@ -1,0 +1,12 @@
+<section class="container-fluid card">
+  <div class="col-xxl-12 col-xl-12 col-sm-12 col-md-12 col-12 mt-4 mb-3">
+    <p>US: {{productoObjeto.precio | currency:'USD'}}</p>
+    <p>Stock:&nbsp;{{productoObjeto.stock>10?'Disponible':'No disponible'}}</p>
+    <button class="btn btn-primary mb-3" (click)="addCarrito(productoObjeto.id_artic);">Agregar al carrito</button>
+    <button class="btn btn-dark mb-3" (click)="comprarProduct(productoObjeto.id_artic,productoObjeto)">Comprar</button>
+    <button class=" btn btn-secondary mb-3" (click)="addList(productoObjeto);">Lista de deseos</button>
+    <p>Transacción segura</p>
+    <p>Vendido por: {{productoObjeto.nombre_tienda}}</p>
+    <p>Marca: {{productoObjeto.nombre_marca}}</p>
+  </div>
+</section>

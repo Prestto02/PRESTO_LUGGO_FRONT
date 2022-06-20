@@ -8,46 +8,53 @@
       <app-imagen-products [imagenArray]="productoObjeto.imagen" [imagenZoom]="productoObjeto.imagen_zoom">
       </app-imagen-products>
     </div>
-    <div class="col-xl-5 col-xxl-5 col-md-6 col-sm-12 col-12 mt-4">
+    <div class="col-xl-5 col-xxl-5 col-md-6 col-sm-12 col-12 mt-4 mb-3">
       <div class="row">
         <app-product-description [productoObjeto]="productoObjeto"></app-product-description>
-        <p><b>Categorias:</b></p>
-        <ul>
+        <!--         <ul class="ul-list">
+          <span><b>Categorias:</b></span>
           <li class="position-margin" *ngFor="let categoria of productoObjeto.categorias">{{categoria.nombre_categoria}}
           </li>
-        </ul>
+        </ul> -->
         <app-atributos-descripcion [productoObjeto]="productoObjeto.atributes"></app-atributos-descripcion>
-        <p><b>Etiquetas de busqueda:</b></p>
-        <div class="ul-list">
-          <span class="badge badge-primary mb-3"
-            *ngFor="let etiquetas of productoObjeto.etiquetas">{{etiquetas.nombre}}</span>
-        </div>
-        <div class="col-xxl-12 col-xl-12 col-md-12 col-sm-12 col-12">
+        <div class="col-xxl-12 col-xl-12 col-md-12 col-sm-12 col-12 mb-3">
           <div class="row">
-            <div class="col-xxl-6 col-xxl-6 col-md-6 col-sm-6 col-6">
-              <p><b>Disponibilidad</b></p>
+            <div class="col-xxl-3 col-xl-3 col-md-3 col-sm-3 col-3">
+              <p><b>Disponibilidad:</b></p>
             </div>
-            <div class="col-xxl-6 col-xxl-6 col-md-6 col-sm-6 col-6">
-              <p><b>Restricciones</b></p>
-            </div>
-            <div class="col-xxl-6 col-xxl-6 col-md-6 col-sm-6 col-6">
+            <div class="col-xxl-9 col-xl-9 col-md-9 col-sm-9 col-9">
               <p>{{productoObjeto.disponibilidad===1?'No':'Si'}}</p>
             </div>
-            <div class="col-xxl-6 col-xxl-6 col-md-6 col-sm-6 col-6">
-              <p>{{productoObjeto.restricciones}}</p>
+            <div class="col-xxl-3 col-xl-3 col-md-3 col-sm-3 col-3">
+              <p><b>Restricciones:</b></p>
+            </div>
+            <div class="col-xxl-9 col-xl-9 col-md-9 col-sm-9 col-9">
+              <p>{{productoObjeto.restricciones? productoObjeto.restricciones:''}}</p>
             </div>
           </div>
-          <div class="col-xxl-12 col-xl-12 col-md-12 col-sm-12 col-12">
-            <p><b>Garantía</b></p>
+          <div class="row">
+            <div class="col-xxl-3 col-xl-3 col-md-3 col-sm-3 col-3 mb-3">
+              <p><b>Garantía:</b></p>
+            </div>
+            <div class="col-xxl-9 col-xl-9 col-md-9 col-sm-9 col-9">
+              <p>{{productoObjeto.garantia?productoObjeto.garantia:'No'}}</p>
+            </div>
           </div>
-          <div class="col-xxl-12 col-xl-12 col-md-12 col-sm-12 col-12">
-            {{productoObjeto.garantia?productoObjeto.garantia:'No'}}
+          <div class="ul-list">
+            <span><b>Etiquetas de busqueda: &nbsp;</b></span>
+            <span class="badge badge-primary mb-3" *ngFor="let etiquetas of productoObjeto.etiquetas">
+              {{etiquetas.nombre}}</span>
           </div>
         </div>
       </div>
     </div>
+    <div class="col-xxl-2 col-xl-2 col-md-2 col-sm-2 col-2 mt-4">
+      <app-button-add-or-list [productoObjeto]="productoObjeto"></app-button-add-or-list>
+    </div>
   </div>
 </section>
+
+
 <!---------- FOOTER   ----------->
 <footer>
   <app-footer-index></app-footer-index>

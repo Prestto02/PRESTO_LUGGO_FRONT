@@ -1,6 +1,7 @@
 import { DOCUMENT } from '@angular/common';
 import { Component, Inject, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AddCarsOrListDesire } from 'src/app/shared/helpers/AddCarsOrListDesire';
 import { ItemsProductsVerify } from 'src/app/shared/helpers/ItemsProductsVerify';
 import { RepositorioImg } from 'src/app/shared/helpers/RepositorioImg';
 import { UrlFront } from 'src/app/shared/routes/RoutesFront';
@@ -19,7 +20,8 @@ export class CarritoItemsComponent implements OnInit {
     @Inject(DOCUMENT) private document: Document, //DOCUMENT
     private apiServi: CarritoItemsService,
     private router: Router,
-    private verifyItem: ItemsProductsVerify
+    private verifyItem: ItemsProductsVerify,
+    private addCars: AddCarsOrListDesire
   ) {}
 
   ngOnInit(): void {
@@ -28,9 +30,7 @@ export class CarritoItemsComponent implements OnInit {
   }
   //OBTENER EL ID DEl PRODUCTO
   getListItemCarrito(id: any) {
-    this.apiServi.getDataProducts(id).subscribe((res) => {
-      this.apiServi.addProductCarrito(res); //GUARDO ESE PRODUCTO EN UN ARREGLO BEHAVIOR
-    });
+    this.addCars.addProductCars(id);
   }
   //OBTENER LOS ITEMS DEL INPUT
   verifyChange(e: any, id: any) {

@@ -2,6 +2,7 @@ import { DOCUMENT } from '@angular/common';
 import { Component, HostListener, Inject, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { ProductsService } from 'src/app/manager-vendedor/productos/services/products.service';
+import { AddCarsOrListDesire } from 'src/app/shared/helpers/AddCarsOrListDesire';
 import { RepositorioImg } from 'src/app/shared/helpers/RepositorioImg';
 import { UrlFront } from 'src/app/shared/routes/RoutesFront';
 import { CarritoItemsComponent } from '../../index/menu-index/menu/carrito-items/carrito-items.component';
@@ -25,7 +26,7 @@ export class SharedProductsComponent implements OnInit {
     @Inject(DOCUMENT) private document: Document, //DOCUMENT
     private apiServi: ProductsService, //API PRODUCTOS SERVICES
     private carritoItmes: CarritoItemsComponent, //CARRITO ITEMS
-    private apiListDeseo: ListaDeseosService, //LISTA DE DESEOS SERVICES
+    private apiListDeseo: AddCarsOrListDesire,
     private _route: ActivatedRoute,
     private router: Router,
     private apySearchProducts: BuscadorProductosService //BUSCADOR DE PRODUCTOS
@@ -100,7 +101,7 @@ export class SharedProductsComponent implements OnInit {
 
   //AGREGAR LISTA DE DESEOS
   agregarAlDeseo(products: any) {
-    this.apiListDeseo.addListaDeseos(products);
+    this.apiListDeseo.addListDesire(products);
   }
 
   //DETALLE DEL PRODCUTO

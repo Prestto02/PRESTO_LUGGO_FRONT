@@ -23,6 +23,7 @@ import { ImagenProductsComponent } from '../detalle-productos/imagen-products/im
 import { NgxImgZoomModule } from 'ngx-img-zoom';
 import { ProductDescriptionComponent } from '../detalle-productos/product-description/product-description.component';
 import { AtributosDescripcionComponent } from '../detalle-productos/atributos-descripcion/atributos-descripcion.component';
+import { ButtonAddOrListComponent } from '../detalle-productos/button-add-or-list/button-add-or-list.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { AtributosDescripcionComponent } from '../detalle-productos/atributos-de
     CompararProductosComponent,
     ProductDescriptionComponent, //PRODUCTO DESCRIPTION
     AtributosDescripcionComponent, //ATRIBUTOS DESCRIPCION COMPONENT
+    ButtonAddOrListComponent, //ADD OR LIST COMPONENT
     FilterPipe,
   ],
   imports: [
