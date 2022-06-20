@@ -3,7 +3,7 @@
 }
 
 .color-article {
-  background-color: #007bff;
+  background-color: #EA2313;
   color: #fff;
 }
 .cursor-item {
@@ -30,7 +30,9 @@
 .margin-responsive {
   margin-top: 12px;
 }
-
+.margin-left-icon{
+  margin-left: 8px;
+}
 /* RESPONSIVE EL AUTOCOMPLETADO */
 @media screen and (min-width: 300px) and (max-width: 461px) {
   .responsive-autocomplete {

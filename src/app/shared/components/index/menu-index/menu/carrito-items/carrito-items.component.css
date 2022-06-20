@@ -28,6 +28,11 @@
 .text-color {
   color: #56ffc2;
 }
+
+.text-truncate {
+  font-size: 13px;
+  font-family: Cardium B-Regular;
+}
 .text-color-header {
   cursor: pointer;
   color: #a3e9ff;
@@ -43,7 +48,9 @@
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
 }
-
+.cursor {
+  cursor: pointer;
+}
 .diseno-input {
   background-color: #ffffff00;
   color: white;

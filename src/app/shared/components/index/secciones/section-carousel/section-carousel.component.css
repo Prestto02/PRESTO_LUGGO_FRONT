@@ -38,6 +38,10 @@
   height: 1.2rem;
 }
 
+.cursor{
+  cursor: pointer;
+}
+
 .degradado {
   background: linear-gradient(180deg, #f1f3f600, #f1f3f6);
   height: 164px;

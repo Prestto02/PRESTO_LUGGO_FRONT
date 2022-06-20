@@ -9,7 +9,7 @@
   font-size: 1.5rem;
   width: 45px;
   height: 45px;
-  background-color: #0b5ed7;
+  background-color: #ea2313;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -25,7 +25,7 @@
   -webkit-box-orient: vertical;
 }
 .text-precio {
-  color: #0b5ed7;
+  color: #ea2313;
   font-size: 22px;
   font-family: Cardium A-Bold;
 }
@@ -47,10 +47,13 @@
 .pointer-carrito {
   cursor: pointer;
 }
-path:hover {
-  background-color: #1156bd;
+.cursor{
   cursor: pointer;
-  fill: #1156bd !important;
+}
+path:hover {
+  background-color: #ea2313;
+  cursor: pointer;
+  fill: #ea2313 !important;
 }
 
 .card-img {

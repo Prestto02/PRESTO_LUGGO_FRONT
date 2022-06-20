@@ -64,6 +64,6 @@ export class ListaDeseosService {
 
   //VERIFICAR SI EXISTE EN LA LISTA DEL CARRITO
   verifyCarrito(idProduct: any) {
-    return this.addListaDeseosProdut.filter((res) => res.id === idProduct.id);
+    return this.addListaDeseosProdut.filter((res) => res.id === idProduct.id_artic);
   }
 }

@@ -3,11 +3,12 @@
   cursor: pointer;
 }
 .btn-sesion {
-  background-color: #7549fe;
-  color: #fff;
+  background-color: #fff;
+  color: black;
+  font-weight: 600;
   width: 170px;
 }
-*{
+* {
   overflow-y: hidden;
   overflow-x: hidden;
 }

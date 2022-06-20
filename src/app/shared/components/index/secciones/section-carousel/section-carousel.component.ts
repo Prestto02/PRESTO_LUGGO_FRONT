@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { RepositorioImg } from 'src/app/shared/helpers/RepositorioImg';
+import { UrlFront } from 'src/app/shared/routes/RoutesFront';
 import { arrayListImgCarousel } from './ListImg';
 
 @Component({
@@ -20,7 +22,13 @@ export class SectionCarouselComponent implements OnInit {
   card3Img3 = `${RepositorioImg.urlRepositorio}img/IM%C3%81GENES/Cards-section-1/GorraSkaters.jpg`;
   card3Img4 = `${RepositorioImg.urlRepositorio}img/IM%C3%81GENES/Cards-section-1/GorraUnderArmour.jpg`;
   card4Img1 = `${RepositorioImg.urlRepositorio}img/IM%C3%81GENES/Cards-section-1/HechoEcuador.jpg`;
-  constructor() {}
+  constructor(private router: Router) {}
 
   ngOnInit(): void {}
+
+  verProductos() {
+    this.router.navigateByUrl(
+      `${UrlFront.Menu.menu}/${UrlFront.Menu.buscarGet}/todos`
+    );
+  }
 }
