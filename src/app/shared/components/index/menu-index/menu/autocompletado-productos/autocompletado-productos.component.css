@@ -12,6 +12,16 @@
 .cursor-item {
   cursor: pointer;
 }
+.display-flex {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+.responsive-autocomplete{
+  width: 62rem;
+  min-width: 95%;
+}
 .zIndex {
   z-index: 10000;
   height: 206px;
@@ -31,7 +41,7 @@
   border-top: 0px;
   height: 42px;
 }
-.zIndex-4{
+.zIndex-4 {
   z-index: 10000;
   border-radius: 0px;
   border-top: 0px;
@@ -94,19 +104,12 @@
 }
 
 @media screen and (min-width: 1200px) and (max-width: 1290px) {
-  .responsive-autocomplete {
-    width: 67% !important;
-  }
+
   .responsive-links {
     margin-top: 6px;
   }
   .form-select {
     font-size: 0.815rem;
     font-weight: 400;
-  }
-}
-@media screen and (min-width: 1291px) and (max-width: 1560px) {
-  .responsive-autocomplete {
-    width: 67% !important;
   }
 }

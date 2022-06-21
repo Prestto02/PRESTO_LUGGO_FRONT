@@ -1,14 +1,14 @@
 <form [formGroup]="formB.formSearchProducts" (ngSubmit)="buscarProducts();">
-  <div class="input-group">
-    <select class="form-select" formControlName="categoria" aria-label="Default select example">
+  <div class="input-group display-flex">
+<!--     <select class="form-select" formControlName="categoria" aria-label="Default select example">
       <option class="color-select" value="" selected>Todas las categorías</option>
       <option value="{{categoria.id}}" class="color-select" *ngFor="let categoria of categoriaItems">
         {{categoria.name}}</option>
-    </select>
+    </select> -->
 
-    <div class="w-75 responsive-autocomplete">
+    <div class="responsive-autocomplete">
       <div class="position-relative">
-        <input type="text" class="form-control input-border" formControlName="nombre" placeholder=""
+        <input type="text" class="form-control input-border" formControlName="nombre" placeholder="Buscar producto"
           aria-label="Username" aria-describedby="basic-addon1" autocomplete="off" />
         <div class="position-absolute bg-white w-100 zIndex list-group" [class.zIndex-2]="listSearchProduct.length===3"
           [class.zIndex-3]="listSearchProduct.length===1" [class.zIndex-4]="listSearchProduct.length===2"

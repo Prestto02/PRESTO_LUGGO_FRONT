@@ -28,10 +28,10 @@ export class ListaDeseosService {
     } else {
       this.addListaDeseosProdut.push({ ...dataObj }); //GUARDO EL OBJETO EN EN ARREGLO
       this.ListaDeseosItem.next(this.addListaDeseosProdut); //GUARDO EN EL OBSERVABLE EL ARREGLO ASIGNADO
-      this.messageFront.getSuccessMessage(
+/*       this.messageFront.getSuccessMessage(
         message.Success.title,
         message.Success.productoAgregado
-      ); //OK SE AGREGO EL PRODUCTO
+      ); //OK SE AGREGO EL PRODUCTO */
     }
   }
   getAllColeccion(id: any): Observable<any> {

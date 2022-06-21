@@ -9,6 +9,7 @@ path:hover {
   cursor: pointer;
   fill: #ea2313 !important;
 }
+
 @media screen and (min-width: 1300px) and (max-width: 1400px) {
   .pointer-deseo {
     cursor: pointer;
@@ -33,7 +34,6 @@ path:hover {
   }
 }
 @media screen and (min-width: 1000px) and (max-width: 1199px) {
-
   .pointer-deseo {
     cursor: pointer;
     width: 24px;
