@@ -3,7 +3,7 @@
 }
 
 .color-article {
-  background-color: #EA2313;
+  background-color: #ea2313;
   color: #fff;
 }
 .cursor-item {
@@ -30,7 +30,7 @@
 .margin-responsive {
   margin-top: 12px;
 }
-.margin-left-icon{
+.margin-left-icon {
   margin-left: 8px;
 }
 /* RESPONSIVE EL AUTOCOMPLETADO */
@@ -91,7 +91,13 @@
     font-size: 0.825rem;
   }
   .responsive-links {
-    margin-top: 6px;
+    margin-top: 8px;
+    margin-left: -20px;
+    padding: 0;
+  }
+  .responsive-links-1 {
+    margin-top: 8px;
+    margin-left: 3px;
   }
   .mover-icono-deseos {
     padding: 0px;
@@ -103,7 +109,7 @@
     position: relative;
     right: 20px;
   }
-  .margin-laptop{
+  .margin-laptop {
     margin-top: 9px;
   }
   .form-select {

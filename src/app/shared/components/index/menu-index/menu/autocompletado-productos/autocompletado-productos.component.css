@@ -20,7 +20,7 @@
 }
 .responsive-autocomplete{
   width: 62rem;
-  min-width: 95%;
+  max-width: 95%;
 }
 .zIndex {
   z-index: 10000;
@@ -75,36 +75,38 @@
 /* RESPONSIVE EL AUTOCOMPLETADO */
 @media screen and (min-width: 300px) and (max-width: 461px) {
   .responsive-autocomplete {
-    width: 30% !important;
+    width: 100% !important;
   }
 }
 
 @media screen and (min-width: 460px) and (max-width: 539px) {
   .responsive-autocomplete {
-    width: 38% !important;
+    width: 100% !important;
   }
 }
 
 @media screen and (min-width: 540px) and (max-width: 819px) {
   .responsive-autocomplete {
-    width: 47% !important;
+    width: 100% !important;
   }
 }
 
 @media screen and (min-width: 820px) and (max-width: 1109px) {
   .responsive-autocomplete {
-    width: 54% !important;
+    width: 100% !important;
   }
 }
 
 @media screen and (min-width: 1100px) and (max-width: 1199px) {
   .responsive-autocomplete {
-    width: 60% !important;
+    width: 100% !important;
   }
 }
 
 @media screen and (min-width: 1200px) and (max-width: 1290px) {
-
+  .responsive-autocomplete {
+    width: 89%!important;
+  }
   .responsive-links {
     margin-top: 6px;
   }

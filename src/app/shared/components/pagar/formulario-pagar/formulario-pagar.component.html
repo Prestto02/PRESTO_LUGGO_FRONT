@@ -24,9 +24,9 @@
         <label for="formControlCelular" class="form-label">Celular</label>
         <div class="input-group">
           <select class="form-select" aria-label="Default select example">
-            <option *ngFor="let codigoPais of arrayCodigosPaises" [value]="codigoPais.Codigo">
+            <option *ngFor="let codigoPais of arrayCodigosPaises" [value]="codigoPais.code_Phone">
               <!--  <img [src]="codigoPais.icons" width="30" class="" [alt]="codigoPais.Name" /> -->
-              {{codigoPais.Codigo}}
+              + &nbsp;{{codigoPais.code_Phone}}
             </option>
           </select>
           <input type="text" class="form-control w-50" id="formControlCelular" formControlName="Celular"
