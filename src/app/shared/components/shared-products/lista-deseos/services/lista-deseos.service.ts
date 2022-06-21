@@ -4,6 +4,7 @@ import { MessageFrontEndService } from 'src/app/shared/Toasts/services/message-f
 import { errorFront as message } from 'src/app/shared/dictonary/MessageErrorFront';
 import { HttpClient } from '@angular/common/http';
 import { UrlApi } from 'src/app/shared/routes/RoutesApi';
+import { IconCheckServices } from '../../list-products/icons-cars-desire/services/IconsCheck.service';
 
 @Injectable({
   providedIn: 'root',
@@ -21,14 +22,14 @@ export class ListaDeseosService {
   addListaDeseos(dataObj: any) {
     if (this.verifyCarrito(dataObj).length > 0) {
       //SI EXISTE EN EL ARREGLO EL MISMO PRODUCTO NO AGREGARLO
-      this.messageFront.getInfoMessage(
+      /*       this.messageFront.getInfoMessage(
         message.Info.title,
         message.Info.dobleProducto
-      ); //MENSAJE DE ERROR
+      ); //MENSAJE DE ERROR */
     } else {
       this.addListaDeseosProdut.push({ ...dataObj }); //GUARDO EL OBJETO EN EN ARREGLO
       this.ListaDeseosItem.next(this.addListaDeseosProdut); //GUARDO EN EL OBSERVABLE EL ARREGLO ASIGNADO
-/*       this.messageFront.getSuccessMessage(
+      /*       this.messageFront.getSuccessMessage(
         message.Success.title,
         message.Success.productoAgregado
       ); //OK SE AGREGO EL PRODUCTO */
