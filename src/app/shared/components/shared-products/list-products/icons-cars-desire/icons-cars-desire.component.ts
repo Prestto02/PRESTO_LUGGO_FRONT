@@ -31,9 +31,7 @@ export class IconsCarsDesireComponent implements OnInit {
     this.arrayProductSelect.map((res: any) => {
       if (res === this.products.id_artic) {
         this.products.carritoValidacion = true;
-        this.count++;
-      } else {
-        this.products.carritoValidacion = false;
+        this.count++; //SI ESTA SETEO EL COUNT +1
       }
     });
   }
@@ -51,11 +49,13 @@ export class IconsCarsDesireComponent implements OnInit {
 
   verifyCheckDesire(products: any) {
     if (this.count % 2 == 0) {
+      //SI EL COUNT ES PAR
       this.apiObservableListDesire.eliminarListaDeseos(products.id_artic);
       this.checkDesire.removeCheckDesire(products.id_artic);
-      this.products.carritoValidacion = false;
+      this.products.carritoValidacion = false; //ELIMINO TODO
     } else {
-      this.apiListDeseo.addListDesire(products);
+      //SI ES IMPAR
+      this.apiListDeseo.addListDesire(products); //AGREGO TODO DEL ARTICULO
       this.checkDesire.addCheckDesire(products.id_artic);
       this.products.carritoValidacion = true;
     }
