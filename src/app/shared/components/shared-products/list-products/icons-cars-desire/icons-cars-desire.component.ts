@@ -44,7 +44,7 @@ export class IconsCarsDesireComponent implements OnInit {
   //AGREGAR LISTA DE DESEOS
   agregarAlDeseo(products: any) {
     this.count++;
-    this.verifyCheckDesire(products);
+    this.verifyCheckDesire(products); //ENVIO LO VERIFICACION DEL PRODUCTO
   }
 
   verifyCheckDesire(products: any) {
