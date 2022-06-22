@@ -10,7 +10,7 @@ export class EncryptService {
   encIduser: string = '';
   descIdUser: string = '';
   constructor() {}
-
+  //ENCRIPTAR EL ROL DEL USUARIO
   encrypOrDesrypRol(rolEncrypt: any, tipo: string) {
     if (tipo === 'Encriptar') {
       this.encRol = CryptoJS.AES.encrypt(
@@ -26,6 +26,7 @@ export class EncryptService {
       return this.descRol;
     }
   }
+  //ENCRIPTAR EL ID DEL USUARIO
   encrypOrDescrypIdUser(idEncrypt: any, tipo: string) {
     if (tipo === 'Encriptar') {
       this.encIduser = CryptoJS.AES.encrypt(

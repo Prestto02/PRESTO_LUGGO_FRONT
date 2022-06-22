@@ -1,11 +1,60 @@
 .puntero {
   cursor: pointer;
 }
-.text-diseno {
-  font-size: 12px;
-  color: #000;
-  text-align: center;
-  margin-top:2px;
+
+/* .image {
+  width: 400px;
+  height: auto;
 }
 
-/*********IMG HOVER**********/
+.img-zoom-container {
+  position: relative;
+}
+
+.img-zoom-lens {
+  position: absolute;
+  border: 1px solid #d4d4d4;
+  width: 40px;
+  height: 40px;
+}
+
+.img-zoom-result {
+  border: 1px solid #d4d4d4;
+  width: 300px;
+  height: 300px;
+} */
+
+body {
+  padding: 0 20px;
+}
+
+.container {
+  width: 500px;
+
+  position: relative;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+}
+
+.lens {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+.result {
+  position: absolute;
+  left: calc(100% + 50px);
+  top: 30px;
+  width: 300px;
+  height: 300px;
+
+  background-repeat: no-repeat;
+}

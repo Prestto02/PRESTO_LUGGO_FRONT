@@ -20,6 +20,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     InterceptorsProviders,
     // { provide: LocationStrategy, useClass: HashLocationStrategy },
   ],
+
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -48,8 +48,8 @@ import { IconsCarsDesireComponent } from '../list-products/icons-cars-desire/ico
     HttpClientModule,
     ErrorsExtensionsModule, //ERRORES MODULE
     InfiniteScrollModule,
-    NgxImgZoomModule, //NG IMG ZOOM MODULE
     SharedProductsRoutingModule,
+    NgxImgZoomModule,
     SeccionesModule,
     FooterIndexModule,
     MenuIndexModule,
