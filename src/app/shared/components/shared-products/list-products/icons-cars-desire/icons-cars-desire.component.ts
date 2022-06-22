@@ -2,7 +2,6 @@ import { Component, Input, OnInit } from '@angular/core';
 import { AddCarsOrListDesire } from 'src/app/shared/helpers/AddCarsOrListDesire';
 import { CarritoItemsComponent } from '../../../index/menu-index/menu/carrito-items/carrito-items.component';
 import { ListaDeseosService } from '../../lista-deseos/services/lista-deseos.service';
-import { IconCheckServices } from './services/IconsCheck.service';
 
 @Component({
   selector: 'app-icons-cars-desire',
@@ -16,8 +15,7 @@ export class IconsCarsDesireComponent implements OnInit {
   constructor(
     private carritoItmes: CarritoItemsComponent, //CARRITO ITEMS
     private apiListDeseo: AddCarsOrListDesire,
-    private apiObservableListDesire: ListaDeseosService,
-    private checkDesire: IconCheckServices
+    private apiObservableListDesire: ListaDeseosService
   ) {}
 
   ngOnInit(): void {
@@ -25,13 +23,13 @@ export class IconsCarsDesireComponent implements OnInit {
   }
   //VERIFY IF FIND THE ID_ARTIC OF LISTCHECKDESIRE
   checkDesireProduct() {
-    this.checkDesire.listCheckDesire.subscribe((res) => {
+    this.apiObservableListDesire.listaDeseos.subscribe((res: any) => {
       this.arrayProductSelect = res;
     });
     this.arrayProductSelect.map((res: any) => {
-      if (res === this.products.id_artic) {
+      if (res.id_artic === this.products.id_artic) {
         this.products.carritoValidacion = true;
-        this.count++; //SI ESTA SETEO EL COUNT +1
+        this.count++;
       }
     });
   }
@@ -51,13 +49,11 @@ export class IconsCarsDesireComponent implements OnInit {
     if (this.count % 2 == 0) {
       //SI EL COUNT ES PAR
       this.apiObservableListDesire.eliminarListaDeseos(products.id_artic);
-      this.checkDesire.removeCheckDesire(products.id_artic);
       this.products.carritoValidacion = false; //ELIMINO TODO
     } else {
       //SI ES IMPAR
-      this.apiListDeseo.addListDesire(products); //AGREGO TODO DEL ARTICULO
-      this.checkDesire.addCheckDesire(products.id_artic);
       this.products.carritoValidacion = true;
+      this.apiListDeseo.addListDesire(products); //AGREGO TODO DEL ARTICULO
     }
   }
 }

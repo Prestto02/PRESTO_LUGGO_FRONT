@@ -2,11 +2,9 @@ import { DOCUMENT } from '@angular/common';
 import { Component, HostListener, Inject, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { ProductsService } from 'src/app/manager-vendedor/productos/services/products.service';
-import { AddCarsOrListDesire } from 'src/app/shared/helpers/AddCarsOrListDesire';
 import { RepositorioImg } from 'src/app/shared/helpers/RepositorioImg';
 import { UrlFront } from 'src/app/shared/routes/RoutesFront';
 import { BuscadorProductosService } from '../../index/menu-index/menu/services/buscador-productos.service';
-import { IconCheckServices } from './icons-cars-desire/services/IconsCheck.service';
 
 @Component({
   selector: 'app-shared-products',

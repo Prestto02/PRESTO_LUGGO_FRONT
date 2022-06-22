@@ -4,7 +4,7 @@ import { RepositorioImg } from 'src/app/shared/helpers/RepositorioImg';
 import { MessageFrontEndService } from 'src/app/shared/Toasts/services/message-front-end.service';
 import { errorFront as message } from '../../../dictonary/MessageErrorFront';
 import { CarritoItemsComponent } from '../../index/menu-index/menu/carrito-items/carrito-items.component';
-import { IconCheckServices } from '../list-products/icons-cars-desire/services/IconsCheck.service';
+/* import { IconCheckServices } from '../list-products/icons-cars-desire/services/IconsCheck.service'; */
 import { ListaDeseosService } from './services/lista-deseos.service';
 
 @Component({
@@ -25,7 +25,7 @@ export class ListaDeseosComponent implements OnInit {
     private carritoItmes: CarritoItemsComponent, //CARRITO ITEMS COMPONENTS
     private tokenServi: TokenService, //TOKEN SERVICES
     private serviMessage: MessageFrontEndService,
-    private checkIcon: IconCheckServices
+   /*  private checkIcon: IconCheckServices */
   ) {}
 
   ngOnInit(): void {
@@ -61,7 +61,7 @@ export class ListaDeseosComponent implements OnInit {
   //ELIMINAR DE LA LISTA DE DESEOS
   eliminarListaDeseos(id: any) {
     this.apiListDeseos.eliminarListaDeseos(id); //ELIMINAR DE LA LISTA
-    this.checkIcon.removeCheckDesire(id); //QUITAR EL CHECK DE LOS PRODUCTOS
+    /* this.checkIcon.removeCheckDesire(id); //QUITAR EL CHECK DE LOS PRODUCTOS */
   }
   //AGREGAR A LA COLECCION
   agregarColeccion(id_articulo: any, id_lista: any) {

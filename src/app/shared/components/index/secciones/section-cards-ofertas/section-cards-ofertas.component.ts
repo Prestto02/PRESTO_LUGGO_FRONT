@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { RepositorioImg } from 'src/app/shared/helpers/RepositorioImg';
+import { arrayOfertasImg } from './arrayOfertasImagen';
 
 @Component({
   selector: 'app-section-cards-ofertas',
@@ -7,10 +7,7 @@ import { RepositorioImg } from 'src/app/shared/helpers/RepositorioImg';
   styleUrls: ['./section-cards-ofertas.component.css'],
 })
 export class SectionCardsOfertasComponent implements OnInit {
-  imgOferta1 = `${RepositorioImg.urlRepositorio}img/banners-section-1/sb-tecnologia.jpg`;
-  imgOferta2 = `${RepositorioImg.urlRepositorio}img/banners-section-1/sb-audifonos.jpg`;
-  imgOferta3 = `${RepositorioImg.urlRepositorio}img/banners-section-1/sb-deportiva.jpg`;
-  imgOferta4 = `${RepositorioImg.urlRepositorio}img/banners-section-1/sb-cosmeticos.jpg`;
+  arrayOfertasImg = arrayOfertasImg;
   constructor() {}
 
   ngOnInit(): void {}
