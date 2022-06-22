@@ -47,12 +47,24 @@
   height: 164px;
   bottom: 15px;
   position: absolute;
-  top: 610px;
+  top: 614px;
   z-index: 1;
 }
 
 /* If the screen size is 601px wide or more, set the font-size of <div> to 80px */
-@media screen and (min-width: 1400px) and (max-width: 1500px) {
+@media screen and (max-width: 2200px) {
+  .top-img {
+    top: 800px;
+  }
+  .carousel-tamano {
+    height: 1050px;
+  }
+  .degradado {
+    top: 785px;
+  }
+}
+
+@media screen and (max-width: 1700px) {
   .top-img {
     top: 650px;
   }
@@ -60,119 +72,42 @@
     height: 840px;
   }
   .degradado {
-    background: linear-gradient(180deg, #f1f3f600, #f1f3f6);
-    height: 164px;
-    position: absolute;
-    top: 540px;
-    z-index: 1;
-  }
-}
-/*RESPONSIVE*/
-@media screen and (min-width: 1350px) and (max-width: 1399px) {
-  .top-img {
-    top: 590px;
-    z-index: 1;
-  }
-  .carousel-tamano {
-    height: 780px;
-  }
-  .degradado {
-    background: linear-gradient(180deg, #f1f3f600, #f1f3f6);
-    height: 164px;
-    position: absolute;
-    top: 496px;
-    z-index: 1;
+    top: 614px;
   }
 }
 
-@media screen and (min-width: 1300px) and (max-width: 1349px) {
+@media screen and (max-width: 1400px) {
   .top-img {
-    top: 540px;
-    z-index: 1;
-  }
-  .carousel-tamano {
-    height: 740px;
-  }
-  .degradado {
-    background: linear-gradient(180deg, #f1f3f600, #f1f3f6);
-    height: 164px;
-    position: absolute;
-    top: 472px;
-    z-index: 1;
-  }
-}
-
-@media screen and (min-width: 1200px) and (max-width: 1299px) {
-  .top-img {
-    top: 534px;
-    z-index: 1;
+    top: 560px;
   }
   .carousel-tamano {
     height: 720px;
   }
   .degradado {
-    background: linear-gradient(180deg, #f1f3f600, #f1f3f6);
-    height: 164px;
-    position: absolute;
+    top: 500px;
+  }
+  .textOferta {
+    font-size: 13px;
+  }
+  .tittle-cards {
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  .top-img {
+    top: 534px;
+  }
+  .carousel-tamano {
+    height: 720px;
+  }
+  .degradado {
     top: 460px;
-    z-index: 1;
   }
   .textOferta {
-    font-family: Cardium B-Medium;
     font-size: 13px;
   }
   .tittle-cards {
-    font-family: Cardium B-Bold;
-    font-size: 18px;
-  }
-}
-
-@media screen and (min-width: 1100px) and (max-width: 1199px) {
-  .top-img {
-    top: 495px;
-    z-index: 1;
-  }
-  .carousel-tamano {
-    height: 700px;
-  }
-  .degradado {
-    background: linear-gradient(180deg, #f1f3f600, #f1f3f6);
-    height: 164px;
-    position: absolute;
-    top: 374px;
-    z-index: 1;
-  }
-  .textOferta {
-    font-family: Cardium B-Medium;
-    font-size: 13px;
-  }
-  .tittle-cards {
-    font-family: Cardium B-Bold;
-    font-size: 18px;
-  }
-}
-
-@media screen and (min-width: 1000px) and (max-width: 1099px) {
-  .top-img {
-    top: 475px;
-    z-index: 1;
-  }
-  .carousel-tamano {
-    height: 690px;
-  }
-  .degradado {
-    background: linear-gradient(180deg, #f1f3f600, #f1f3f6);
-    height: 164px;
-    position: absolute;
-    top: 325px;
-    z-index: 1;
-  }
-  .textOferta {
-    font-family: Cardium B-Medium;
-    font-size: 13px;
-  }
-  .tittle-cards {
-    font-family: Cardium B-Bold;
     font-size: 18px;
   }
 }
