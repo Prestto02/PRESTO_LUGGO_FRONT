@@ -20,6 +20,7 @@ export class SharedProductsComponent implements OnInit {
   productsLength = 0; //CUANTOS PRODUCTOS EXiSTE ENVIADO A LA LENGTH
   nombreProduct: any;
   errorMessageProducts: any;
+  imgIcons = `${RepositorioImg.urlRepositorio}img/IMÁGENES/img-iconos/shop.png`;
   constructor(
     @Inject(DOCUMENT) private document: Document, //DOCUMENT
     private apiServi: ProductsService, //API PRODUCTOS SERVICES

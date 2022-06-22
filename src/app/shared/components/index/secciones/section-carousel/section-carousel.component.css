@@ -11,6 +11,16 @@
   -webkit-border-radius: 16px 16px 16px 16px;
   border: 0px solid #000000;
 }
+.card-img-bottom {
+  width: 100%;
+  height: auto;
+}
+
+.card-img-icon {
+  width: 100%;
+  max-width: 147px;
+  height: auto;
+}
 .top-img {
   top: 650px;
   z-index: 1;
@@ -50,6 +60,9 @@
   top: 614px;
   z-index: 1;
 }
+.textOfertaIpad {
+  display: none;
+}
 
 /* If the screen size is 601px wide or more, set the font-size of <div> to 80px */
 @media screen and (max-width: 2200px) {
@@ -62,6 +75,14 @@
   .degradado {
     top: 785px;
   }
+  .textOferta {
+    font-size: 17px;
+  }
+  .card-img-icon {
+    width: 100%;
+    max-width: 205px;
+    height: auto;
+  }
 }
 
 @media screen and (max-width: 1700px) {
@@ -73,6 +94,11 @@
   }
   .degradado {
     top: 614px;
+  }
+  .card-img-icon {
+    width: 100%;
+    max-width: 144px;
+    height: auto;
   }
 }
 
@@ -92,6 +118,10 @@
   .tittle-cards {
     font-size: 18px;
   }
+  .card-img-icon {
+    max-width: 112px;
+    height: auto;
+  }
 }
 
 @media screen and (max-width: 1300px) {
@@ -105,9 +135,12 @@
     top: 460px;
   }
   .textOferta {
-    font-size: 13px;
+    font-size: 12px;
   }
   .tittle-cards {
-    font-size: 18px;
+    font-size: 17px;
+  }
+  .card-img-icon {
+    max-width: 97px;
   }
 }
