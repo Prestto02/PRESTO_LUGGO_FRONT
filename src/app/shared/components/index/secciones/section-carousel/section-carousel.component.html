@@ -38,7 +38,7 @@
             <div class="card-body">
               <ng-container *ngIf="list.img.length>1; else imgOneList; ">
                 <div class="row">
-                  <div class="col-md-6 mb-1" *ngFor="let imgList of list.img">
+                  <div class="col-md-6 mb-xxl-1 mb-xl-2" *ngFor="let imgList of list.img">
                     <img loading="lazy" [src]="imgList.img" class="card-img-icon" [alt]="imgList.id" />
                     <span class="textOferta mb-2 mt-2"><b>{{imgList.title}}</b></span>
                     <!--                   <span class="textOfertaIpad"><b>30% desc.</b></span> -->
