@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { RepositorioImg } from 'src/app/shared/helpers/RepositorioImg';
 import { UrlApi } from 'src/app/shared/routes/RoutesApi';
 import { UrlFront } from 'src/app/shared/routes/RoutesFront';
+import { userCheck } from './arrayCheckUser';
 import { arrayTiendas } from './arrayTiendas';
 
 @Component({
@@ -13,7 +14,10 @@ import { arrayTiendas } from './arrayTiendas';
 export class SectionNoticiasComponent implements OnInit {
   public urlGoogle = `${UrlApi.ApiUrl}${UrlApi.loginGoogle}`;
   arrayTiendas = arrayTiendas;
+  userCheck = userCheck;
+  registerCheck: boolean = false;
   /* CARDS */
+  atrasPng = `${RepositorioImg.urlRepositorio}img/IM%C3%81GENES/Cards-section-2/atras.png`;
   cardIcons1 = `${RepositorioImg.urlRepositorio}img/IM%C3%81GENES/Cards-section-2/tecnologia.png`;
   cardIcons2 = `${RepositorioImg.urlRepositorio}img/IM%C3%81GENES/Cards-section-2/linea blanca.png`;
   cardIcons3 = `${RepositorioImg.urlRepositorio}img/IM%C3%81GENES/Cards-section-2/herramientas.png`;
@@ -28,5 +32,11 @@ export class SectionNoticiasComponent implements OnInit {
     this.router.navigateByUrl(
       `${UrlFront.Menu.menu}/${UrlFront.Menu.buscar}${url}`
     );
+  }
+  registerUser() {
+    this.registerCheck = !this.registerCheck;
+  }
+  irALaRuta(url: any) {
+    this.router.navigateByUrl(url);
   }
 }

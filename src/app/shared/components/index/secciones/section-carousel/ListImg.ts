@@ -43,6 +43,10 @@ export const arrayListImgCarouselLogout = [
   },
   {
     id: 2,
-    url: `${RepositorioImg.urlRepositorio}img/banner-principales/LUGGO-Contenido-Febrero-2022-Propuesta-Banner-Categoria-Tecnología.jpg`,
+    url: `${RepositorioImg.urlRepositorio}img/IMÁGENES/Slide-sign-out/Slide2.jpg`,
+  },
+  {
+    id: 3,
+    url: `${RepositorioImg.urlRepositorio}img/IMÁGENES/Slide-sign-out/Slide3.jpg`,
   },
 ];

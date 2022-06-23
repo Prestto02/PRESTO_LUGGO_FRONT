@@ -22,6 +22,9 @@
   font-family: Cardium B-Bold;
   font-size: 21px;
 }
+.cursor {
+  cursor: pointer;
+}
 .text-footer {
   color: #007bff;
   font-size: 14px;

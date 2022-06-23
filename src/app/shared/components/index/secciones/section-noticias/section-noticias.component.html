@@ -4,32 +4,55 @@
       <div class="col-md-12 col-12 col-xl-12 col-sm-12 mb-sm-3 mb-3">
         <!----------ACCEDE A TUS CUENTAS------------->
         <div class="card border">
-          <div class="card-body mt-4">
-            <div class="row mb-xxl-2 mb-xl-1">
-              <div class="col-md-8 col-8 col-xxl-7 col-sm-9 col-xl-7 mb-xl-3 mb-xxl-3 mb-md-4 mb-sm-3 mb-3">
-                <b>
-                  <h4 class="tltle-cards">¿Aún no tienes cuenta?</h4>
-                </b>
-              </div>
-              <div class="col-xxl-5 col-xl-5 col-md-4 col-4 col-sm-3 text-center mb-3">
-                <span class="cardium-b">o accede con</span>
-              </div>
-              <div class="col-md-8 col-xl-7 col-xxl-7 col-8 col-sm-7 mb-3">
-                <button class="btn btn-dark input-group">Regístra tus datos aquí </button>
-              </div>
-              <div class="col-md-4 col-4 col-xl-5 col-xxl-5 col-sm-5 mt-1 text-center mb-3">
-                <a [href]="urlGoogle+'/Google'" class="mx-1">
-                  <img loading="lazy" [src]="cardIconsGoogle" alt="Icon google" />
-                </a>
-                <a [href]="urlGoogle+'/Google'" class="mx-1">
-                  <img loading="lazy" [src]="cardIconsFacebook" alt="Icon Facebook" />
-                </a>
-                <!--                 <a href="" class="mx-1">
-                  <img loading="lazy" [src]="cardIconsMicrosoft" alt="Icon Microsoft" />
-                </a> -->
+          <!--------QUIERES SER VENDEDOR O CLIENTE-------->
+          <ng-container *ngIf="registerCheck else notCheck">
+            <div class="card-body">
+              <div class="row mx-xxl-auto">
+                <div class="col-xxl-12 col-xl-12 col-sm-12 col-md-12 col-12 cursor" (click)="registerUser();">
+                  <img [src]="atrasPng" alt="atras" />
+                </div>
+                <div class="col-xxl-6 col-xl-6 col-sm-6 col-md-6 col-6" *ngFor="let list of userCheck">
+                  <div class="row mx-xxl-auto">
+                    <div class="col-xxl-12 col-xl-12 col-md-12 col-sm-12 col-12 mb-2">
+                      <img [src]="list.imgUrl" [alt]="list.id" class="img-fluid mx-5" />
+                    </div>
+                    <div class="col-xxl-12 col-xl-12 col-md-12 col-sm-12 col-12 mx-auto">
+                      <button class="btn btn-dark" (click)="irALaRuta(list.url)">{{list.texto}}</button>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
+          </ng-container>
+          <!--------AUN NO TIENES CUENTA-------->
+          <ng-template #notCheck>
+            <div class="card-body mt-4">
+              <div class="row mb-xxl-2 mb-xl-1">
+                <div class="col-md-8 col-8 col-xxl-7 col-sm-9 col-xl-7 mb-xl-3 mb-xxl-3 mb-md-4 mb-sm-3 mb-3">
+                  <b>
+                    <h4 class="tltle-cards">¿Aún no tienes cuenta?</h4>
+                  </b>
+                </div>
+                <div class="col-xxl-5 col-xl-5 col-md-4 col-4 col-sm-3 text-center mb-3">
+                  <span class="cardium-b">o accede con</span>
+                </div>
+                <div class="col-md-8 col-xl-7 col-xxl-7 col-8 col-sm-7 mb-3">
+                  <button class="btn btn-dark input-group" (click)="registerUser();">Regístra tus datos aquí </button>
+                </div>
+                <div class="col-md-4 col-4 col-xl-5 col-xxl-5 col-sm-5 mt-1 text-center mb-3">
+                  <a [href]="urlGoogle+'/Google'" class="mx-1">
+                    <img loading="lazy" [src]="cardIconsGoogle" alt="Icon google" />
+                  </a>
+                  <a [href]="urlGoogle+'/Google'" class="mx-1">
+                    <img loading="lazy" [src]="cardIconsFacebook" alt="Icon Facebook" />
+                  </a>
+                  <!--                 <a href="" class="mx-1">
+                  <img loading="lazy" [src]="cardIconsMicrosoft" alt="Icon Microsoft" />
+                </a> -->
+                </div>
+              </div>
+            </div>
+          </ng-template>
         </div>
       </div>
       <!----------CATEGORIAS MAS POPULARES------------->
@@ -37,7 +60,7 @@
         <div class="card border">
           <div class="card-body">
             <div class="row">
-              <div class="col-md-8 col-8 col-sm-8 col-xl-9 tltle-cards mb-3">
+              <div class="col-md-8 col-8 col-sm-8 col-xl-9 tltle-cards mb-xxl-3 mb-xl-2">
                 <b>
                   Categorías
                 </b>
@@ -45,15 +68,15 @@
               <div class="col-md-4 col-xl-3 col-xxl-3 col-4 text-center col-sm-4">
                 <a href="" class="text-color-links">Ver todo</a>
               </div>
-              <div class="col-md-4 col-4 col-sm-4 col-xl-4 col-xxl-4 text-center mt-xxl-3 mt-xl-3 mt-md-4">
+              <div class="col-md-4 col-4 col-sm-4 col-xl-4 col-xxl-4 text-center mt-xxl-3 mt-xl-2 mt-md-4">
                 <img loading="lazy" [src]="cardIcons1" class="img-fluid" alt="Tecnologia" />
                 <p class="text-center text-categorias mt-3">Tecnología</p>
               </div>
-              <div class="col-md-4 col-4 col-sm-4 col-xl-4 col-xxl-4 text-center mt-xxl-3 mt-md-4">
+              <div class="col-md-4 col-4 col-sm-4 col-xl-4 col-xxl-4 text-center mt-xxl-3 mt-xl-2 mt-md-4">
                 <img loading="lazy" [src]="cardIcons2" class="img-fluid" alt="linea blanca" />
                 <p class="text-center text-categorias mt-3">Línea Blanca</p>
               </div>
-              <div class="col-md-4 col-4 col-sm-4 col-xl-4 col-xxl-4 text-center mt-xxl-3 mt-md-4">
+              <div class="col-md-4 col-4 col-sm-4 col-xl-4 col-xxl-4 text-center mt-xxl-3 mt-xl-2 mt-md-4">
                 <img loading="lazy" [src]="cardIcons3" class="img-fluid" alt="Herramientas" />
                 <p class="text-center text-categorias mt-3">Herramientas</p>
               </div>
@@ -68,7 +91,8 @@
         <div class="card-body">
           <h5 class="card-title tltle-cards mt-3">Tiendas <span class="text-adn">ADN</span></h5>
           <div class="row mt-3 mx-auto">
-            <div class="col-md-6 col-sm-6 col-6 col-xl-4 mx-xxl-4 mx-xl-4 mx-md-0 col-xxl-4" *ngFor="let list of arrayTiendas">
+            <div class="col-md-6 col-sm-6 col-6 col-xl-4 mx-xxl-4 mx-xl-4 mx-md-0 col-xxl-4"
+              *ngFor="let list of arrayTiendas">
               <img loading="lazy" [src]="list.imgUrl" class="img-fluid" [alt]="list.id">
               <p class="text-center">{{list.text}}</p>
             </div>
