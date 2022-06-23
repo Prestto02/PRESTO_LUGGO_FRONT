@@ -5,30 +5,27 @@
   border: 1px solid #d1d1d1;
 }
 .text-titulo {
-  color: #7549fe;
+  color: #ea2313;
   font-family: Cardium A-Bold;
   font-size: 42px;
 }
 .text-ofertas {
-  font-size: 22px;
+  font-size: 42px;
   font-family: Cardium B-SemiBold;
-  color: #7549fe;
+  color: #fff;
 }
 
 /* If the screen size is 601px wide or more, set the font-size of <div> to 80px */
-@media screen and (min-width: 767px) and (max-width: 835px) {
+@media screen and (max-width: 835px) {
   .text-titulo {
-    color: #7549fe;
-    font-family: Cardium A-Bold;
     font-size: 25px;
   }
-  .text-tecnologia{
+  .text-tecnologia {
     position: absolute;
-    top:-40px;
+    top: -40px;
   }
   .text-ofertas {
-    font-size: 17px;
-    font-family: Cardium B-SemiBold;
-    color: #7549fe;
+    font-size: 30px;
+    margin-top: 12px;
   }
 }
