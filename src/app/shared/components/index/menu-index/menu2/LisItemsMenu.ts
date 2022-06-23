@@ -3,13 +3,13 @@ import { UrlFront } from 'src/app/shared/routes/RoutesFront';
 export const arrayListItemsMenu = [
   {
     id: 1,
-    name: 'Quieres ser un ADN',
-    link: `${UrlFront.Users.users}/${UrlFront.Users.adnRegistrar}`,
+    name: 'Atención al cliente',
+    link: `#`,
   },
   {
     id: 2,
-    name: 'Atención al cliente',
-    link: '#',
+    name: 'Vende con nosotros',
+    link: `${UrlFront.Users.users}/${UrlFront.Users.adnRegistrar}`,
   },
 ];
 //ARRAY LA LISTA DE LOS MAS VENDEDIDOS DEL OFF CANVAS MENU

@@ -2,28 +2,31 @@
   <div class="row  mt-2">
     <div class="col-md-4 col-xl-4 col-xxl-4 mt-5">
       <div class="col-md-12 col-12 col-xl-12 col-sm-12">
-
-        <div class="card border mt-1">
-          <div class="card-body">
-            <div class="row">
-              <div class="col-md-12 col-12 col-xxl-7 col-sm-12 col-xl-7">
+        <!----------ACCEDE A TUS CUENTAS------------->
+        <div class="card border">
+          <div class="card-body mt-4">
+            <div class="row mb-xxl-2 mb-xl-1">
+              <div class="col-md-9 col-9 col-xxl-7 col-sm-9 col-xl-7 mb-3">
                 <b>
-                  <h4 class="tltle-cards">Regístrate y dale un GO a tus compras</h4>
+                  <h4 class="tltle-cards">¿Aún no tienes cuenta?</h4>
                 </b>
               </div>
-              <div class="col-md-12 col-xl-7 col-xxl-7 col-12 col-sm-7">
-                <button class="btn btn-color input-group">Ingresa de manera segura con</button>
+              <div class="col-xxl-5 col-xl-5 col-md-3 col-3 col-sm-3 text-center mb-3">
+                <span class="cardium-b">o accede con</span>
               </div>
-              <div class="col-md-12 col-12 col-xl-5 col-xxl-5 col-sm-5 mt-1 text-center">
-                <a href="" class="mx-1">
+              <div class="col-md-12 col-xl-7 col-xxl-7 col-12 col-sm-7 mb-3">
+                <button class="btn btn-dark input-group">Regístra tus datos aquí </button>
+              </div>
+              <div class="col-md-12 col-12 col-xl-5 col-xxl-5 col-sm-5 mt-1 text-center mb-3">
+                <a [href]="urlGoogle+'/Google'" class="mx-1">
                   <img loading="lazy" [src]="cardIconsGoogle" alt="Icon google" />
                 </a>
-                <a href="" class="mx-1">
+                <a [href]="urlGoogle+'/Google'" class="mx-1">
                   <img loading="lazy" [src]="cardIconsFacebook" alt="Icon Facebook" />
                 </a>
-                <a href="" class="mx-1">
+                <!--                 <a href="" class="mx-1">
                   <img loading="lazy" [src]="cardIconsMicrosoft" alt="Icon Microsoft" />
-                </a>
+                </a> -->
               </div>
             </div>
           </div>
@@ -34,23 +37,23 @@
         <div class="card border">
           <div class="card-body">
             <div class="row">
-              <div class="col-md-9 col-8 col-sm-8 col-xl-9 tltle-cards">
+              <div class="col-md-9 col-8 col-sm-8 col-xl-9 tltle-cards mb-3">
                 <b>
-                  Categorías más populares
+                  Categorías
                 </b>
               </div>
               <div class="col-md-3 col-xl-3 col-xxl-3 col-4 text-center col-sm-4">
-                <a href="" class="">Ver todo</a>
+                <a href="" class="text-color-links">Ver todo</a>
               </div>
-              <div class="col-md-4 col-4 col-sm-4 col-xl-4 col-xxl-4 text-center mt-3">
+              <div class="col-md-4 col-4 col-sm-4 col-xl-4 col-xxl-4 text-center mt-xxl-3">
                 <img loading="lazy" [src]="cardIcons1" class="img-fluid" alt="Tecnologia" />
                 <p class="text-center text-categorias mt-3">Tecnología</p>
               </div>
-              <div class="col-md-4 col-4 col-sm-4 col-xl-4 col-xxl-4 text-center mt-3">
+              <div class="col-md-4 col-4 col-sm-4 col-xl-4 col-xxl-4 text-center mt-xxl-3">
                 <img loading="lazy" [src]="cardIcons2" class="img-fluid" alt="linea blanca" />
                 <p class="text-center text-categorias mt-3">Línea Blanca</p>
               </div>
-              <div class="col-md-4 col-4 col-sm-4 col-xl-4 col-xxl-4 text-center mt-3">
+              <div class="col-md-4 col-4 col-sm-4 col-xl-4 col-xxl-4 text-center mt-xxl-3">
                 <img loading="lazy" [src]="cardIcons3" class="img-fluid" alt="Herramientas" />
                 <p class="text-center text-categorias mt-3">Herramientas</p>
               </div>
@@ -60,27 +63,18 @@
       </div>
     </div>
     <!----------LO MAS NUEVO EN TECNOLOGIA------------->
-
     <div class="col-md-4 col-sm-12 col-12 col-xl-4 mt-5">
       <div class="card border">
         <div class="card-body">
-          <h5 class="card-title tltle-cards mt-3">Lo más nuevo en tecnología</h5>
-          <div class="row mt-3">
-            <div class="col-md-6 text-center col-sm-6 col-6 col-xl-6">
-              <img loading="lazy" src="{{card3Img1}}" class="img-fluid" alt="audifonos">
-            </div>
-            <div class="col-md-6 text-center col-sm-6 col-6 col-xl-6">
-              <img loading="lazy" src="{{card3Img2}}" class="img-fluid" alt="Celulares">
-            </div>
-            <div class="col-md-6 text-center col-sm-6 col-6 col-xl-6">
-              <img loading="lazy" src="{{card3Img3}}" class="img-fluid" alt="Drones">
-            </div>
-            <div class="col-md-6 text-center col-sm-6 col-6 col-xl-6">
-              <img loading="lazy" src="{{card3Img4}}" class="img-fluid" alt="televisores">
+          <h5 class="card-title tltle-cards mt-3">Tiendas <span class="text-adn">ADN</span></h5>
+          <div class="row mt-3 mx-auto">
+            <div class="col-md-6 col-sm-6 col-6 col-xl-4 mx-4 col-xxl-4" *ngFor="let list of arrayTiendas">
+              <img loading="lazy" [src]="list.imgUrl" class="img-fluid" [alt]="list.id">
+              <p class="text-center">{{list.text}}</p>
             </div>
           </div>
           <div class="col-md-12 col-sm-12 col-xl-12 col-12 mt-2">
-            <p class="text-footer">Audífonos, celulares, drones, televisores y más...</p>
+            <p class="text-color-links" (click)="irProductos('todos');">Ver todo</p>
           </div>
         </div>
       </div>
@@ -90,19 +84,10 @@
     <div class="col-md-4 col-sm-12 col-12 col-xl-4 mt-5 mx-auto">
       <div class="card border">
         <div class="card-body">
-          <h5 class="card-title tltle-cards mt-3">Ofertas del 30% de desc.</h5>
+          <h5 class="card-title tltle-cards mt-3">Impulsamos tu <span class="text-adn">NEGOCIO</span></h5>
           <div class="row">
-            <div class="col-md-6 text-center col-sm-6 col-6 col-xl-6 ">
-              <img loading="lazy" src="{{card4Img1}}" class="img-fluid" alt="">
-            </div>
-            <div class="col-md-6 text-center col-sm-6 col-6 col-xl-6">
-              <img loading="lazy" src="{{card4Img2}}" class="img-fluid" alt="">
-            </div>
-            <div class="col-md-6 text-center col-sm-6 col-6 col-xl-6">
-              <img loading="lazy" src="{{card4Img3}}" class="img-fluid" alt="">
-            </div>
-            <div class="col-md-6 text-center col-sm-6 col-6 col-xl-6">
-              <img loading="lazy" src="{{card4Img4}}" class="img-fluid" alt="">
+            <div class="col-md-12 text-center col-sm-12 col-12 col-xl-12 col-xxl-12 ">
+              <img loading="lazy" src="asd" class="img-fluid" alt="">
             </div>
             <div class="col-md-12 col-12 col-sm-12 col-xl-12 mx-2 mt-2">
               <p class="text-footer">Maletas, mancuernas, ollas, patinetas y más...</p>

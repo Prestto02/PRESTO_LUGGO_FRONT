@@ -10,6 +10,14 @@
   color: #fff;
   font-size: 14px;
 }
+.cardium-b {
+  font-family: Cardium B-light;
+}
+.text-color-links {
+  color: #ea2313;
+  font-weight: 500;
+  cursor: pointer;
+}
 .tltle-cards {
   font-family: Cardium B-Bold;
   font-size: 21px;
@@ -23,6 +31,9 @@
   font-family: Cardium B-Medium;
   font-size: 14px;
   color: #000;
+}
+.text-adn {
+  color: #ea2313;
 }
 
 /* If the screen size is 601px wide or more, set the font-size of <div> to 80px */
@@ -139,8 +150,6 @@
     font-size: 11px;
   }
 }
-
-
 
 @media screen and (min-width: 1200px) and (max-width: 1299px) {
   .top-img {
