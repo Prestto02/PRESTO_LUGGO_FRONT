@@ -21,8 +21,8 @@
     </div>
   </div>
 
-  <div class="row justify-content-center d-flex" infiniteScroll (scrolled)="onScrollDown();">
-    <div class="col-xxl-2 col-xl-2 col-sm-6 col-6 col-md-3 mt-3 mb-3 mx-xxl-2 mx-xl-2 mx-0"
+  <div class="row card-responsive" infiniteScroll (scrolled)="onScrollDown();">
+    <div class="col-xxl-2 col-xl-2 col-sm-6 col-6 col-md-3 mt-3 mb-3 mx-xxl-2 mx-xl-0 mx-0 card-responsive-laptop "
       *ngFor="let products of productsArray">
       <div class="card border rounded py-3 px-1">
         <img loading="lazy" src="{{urlImg}}{{products.imagen}}"
@@ -35,12 +35,12 @@
             <p class="card-text text-iva mx-1"><b class="text-precio">{{products.ice_porcentaje}}</b></p> -->
           <div class="col-xxl-12 col-xl-12 col-md-12 col-sm-12 col-12 mx-auto">
             <div class="row">
-              <div class="col-xxl-7 col-xl-8 col-sm-7 col-md-7 col-12">
+              <div class="col-xxl-7 col-xl-7 col-sm-7 col-md-7 col-12">
                 <!----NOMBRE TIENDA STORE---->
                 <img [src]="imgIcons" class="img-fluid" [alt]="products.nombre_tienda" />
-                <span>{{products.nombre_tienda}}</span>
+                <span class="nombre-tienda">{{products.nombre_tienda}}</span>
               </div>
-              <app-icons-cars-desire class="col-xxl-5 col-xl-4 col-sm-5 col-md-5 col-12" [product]="products">
+              <app-icons-cars-desire class="col-xxl-5 col-xl-5 col-sm-5 col-md-5 col-12" [product]="products">
               </app-icons-cars-desire>
             </div>
           </div>
