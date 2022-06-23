@@ -7,9 +7,14 @@ import { PagarComponent } from '../pagar.component';
 import { FormularioPagarComponent } from '../formulario-pagar/formulario-pagar.component';
 import { BaseFormPagar } from '../formulario-pagar/models/BaseFormPagar';
 import { ReactiveFormsModule } from '@angular/forms';
+import { VerificarPaymentsComponent } from '../verificar-payments/verificar-payments.component';
 
 @NgModule({
-  declarations: [PagarComponent, FormularioPagarComponent],
+  declarations: [
+    PagarComponent,
+    FormularioPagarComponent,
+    VerificarPaymentsComponent,
+  ],
   imports: [
     CommonModule,
     PagarRoutingModule,

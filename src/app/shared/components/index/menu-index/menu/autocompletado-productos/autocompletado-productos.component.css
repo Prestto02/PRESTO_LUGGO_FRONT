@@ -71,6 +71,8 @@
 .input-border {
   border-right: 0px;
   border-radius: 0px;
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
 }
 /* RESPONSIVE EL AUTOCOMPLETADO */
 @media screen and (min-width: 300px) and (max-width: 461px) {
@@ -118,7 +120,7 @@
 
 @media screen and (min-width: 1800px) and (max-width: 2200px) {
   .responsive-autocomplete {
-    width: 65rem;
+    width: 6rem;
     width: 100% !important;
   }
 }

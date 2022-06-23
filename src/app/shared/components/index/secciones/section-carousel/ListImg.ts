@@ -34,3 +34,15 @@ export const arrayListImgCarousel = [
     url: `${RepositorioImg.urlRepositorio}img/banner-principales/LUGGO-Contenido-Febrero-2022-Propuesta-Banner-Categoria-Tecnología.jpg`,
   },
 ];
+
+/* ARRAY DE LISTA DE IMAGENES SIN INICIAR SESION */
+export const arrayListImgCarouselLogout = [
+  {
+    id: 1,
+    url: `${RepositorioImg.urlRepositorio}img/IMÁGENES/Slide-sign-out/Slide1.jpg`,
+  },
+  {
+    id: 2,
+    url: `${RepositorioImg.urlRepositorio}img/banner-principales/LUGGO-Contenido-Febrero-2022-Propuesta-Banner-Categoria-Tecnología.jpg`,
+  },
+];

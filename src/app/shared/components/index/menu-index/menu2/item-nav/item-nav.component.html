@@ -10,8 +10,9 @@
       </svg>
     </a>
   </li>
-    <li class="nav-item" *ngFor="let listItems of arrayList">
-    <a class="nav-link font-item abrir" aria-current="page" (click)="irAlLink(listItems.link)">{{listItems.name}}</a>
+  <li [class]="i>0?'nav-item':'nav-item px-xxl-5 px-xl-5 mx-xl-2 mx-xxl-0'" *ngFor="let listItems of arrayList;let i=index;">
+    <a [class]="i>0?'nav-link font-item abrir':'nav-link font-item abrir px-xl-5 px-xxl-5'" aria-current="page"
+      (click)="irAlLink(listItems.link)">{{listItems.name}}</a>
   </li>
 </ul>
 <div class="d-flex">

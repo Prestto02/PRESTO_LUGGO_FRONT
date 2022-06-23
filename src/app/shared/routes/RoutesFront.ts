@@ -51,6 +51,7 @@ export const UrlFront = {
   Pagar: {
     pagar: 'pagar',
     processoPagar: 'proceso-pagar',
+    verificarPago: 'verificar-pago',
   },
   //TIENDAS
   Tiendas: {
