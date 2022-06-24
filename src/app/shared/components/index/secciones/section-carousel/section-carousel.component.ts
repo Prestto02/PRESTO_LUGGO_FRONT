@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { TokenService } from 'src/app/login/services/token.service';
-import { RepositorioImg } from 'src/app/shared/helpers/RepositorioImg';
 import { UrlFront } from 'src/app/shared/routes/RoutesFront';
 import { arrayCardImg } from './ListCardImg';
 import { arrayListImgCarousel, arrayListImgCarouselLogout } from './ListImg';

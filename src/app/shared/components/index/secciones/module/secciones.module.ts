@@ -1,10 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-//MODULOS
-import { SharedProductosModule } from '../../../shared-products/module/shared-products.module';
 //COMPONENTES
 import { SectionCarouselComponent } from '../section-carousel/section-carousel.component';
-import { ResponsiveSectionCarouselComponent } from '../section-carousel/responsive-section-carousel/responsive-section-carousel.component';
 import { SectionNoticiasComponent } from '../section-noticias/section-noticias.component';
 import { SectionNovedadesComponent } from '../section-novedades/section-novedades.component';
 import { ResponsiveSectionNovedadesComponent } from '../section-novedades/responsive-section-novedades/responsive-section-novedades.component';
@@ -20,7 +17,7 @@ import { SeccionesComponent } from '../secciones.component';
   declarations: [
     SeccionesComponent, //SECCION INDEX
     SectionCarouselComponent,
-    ResponsiveSectionCarouselComponent, //CAROUSEL SECTION
+
     SectionNoticiasComponent,
     SectionNovedadesComponent,
     ResponsiveSectionNovedadesComponent, //RESPONSIVE SECTION NOVEDadeS
