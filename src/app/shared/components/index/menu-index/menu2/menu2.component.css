@@ -16,7 +16,7 @@ body {
 }
 .text-parrafo {
   font-size: 18px;
-  color: #ffec7c;
+  color: #ffe7c7;
 }
 .sidenav-card {
   width: 400px;
@@ -37,7 +37,7 @@ body {
 .text-parrafo-regresar {
   cursor: pointer;
   font-size: 15px;
-  color: #ffec7c;
+  color: #ffe7c7;
 }
 /* SCROLL EDIT */
 .offcanvas-body {

@@ -11,11 +11,11 @@ export const arrayServicios = [
     name: 'Aceptamos todas las tarjetas',
     img: `${RepositorioImg.urlRepositorio}img/IMÁGENES/section-servicios/tarjetas.png`,
   },
-  {
+/*   {
     id: 3,
     name: 'Llama y compra al (04) 600 5454',
     img: `${RepositorioImg.urlRepositorio}img/IMÁGENES/section-servicios/llamadas.png`,
-  },
+  }, */
   {
     id: 4,
     name: 'Soporte y servicio técnico online',
