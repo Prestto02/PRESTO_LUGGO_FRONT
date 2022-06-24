@@ -10,7 +10,7 @@ export const userCheck = [
   },
   {
     id: 2,
-    imgUrl: `${RepositorioImg.urlRepositorio}/img/IMÁGENES/Cards-section-2/users.png`,
+    imgUrl: `${RepositorioImg.urlRepositorio}/img/IMÁGENES/Cards-section-2/cliente.png`,
     texto: '¿Quieres vender?',
     url: `${UrlFront.Users.users}/${UrlFront.Users.adnRegistrar}`,
   },

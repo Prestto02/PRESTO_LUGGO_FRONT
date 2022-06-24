@@ -4,6 +4,9 @@
   -webkit-border-radius: 16px 16px 16px 16px;
   border: 0px solid #000000;
 }
+*{
+  font-family: Cardium B-Medium;
+}
 .btn-color {
   background: #007bff;
   font-family: Cardium B-Medium;
