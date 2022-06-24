@@ -16,6 +16,7 @@ export class SectionNoticiasComponent implements OnInit {
   arrayTiendas = arrayTiendas;
   userCheck = userCheck;
   registerCheck: boolean = false;
+
   /* CARDS */
   atrasPng = `${RepositorioImg.urlRepositorio}img/IM%C3%81GENES/Cards-section-2/atras.png`;
   cardIcons1 = `${RepositorioImg.urlRepositorio}img/IM%C3%81GENES/Cards-section-2/tecnologia.png`;

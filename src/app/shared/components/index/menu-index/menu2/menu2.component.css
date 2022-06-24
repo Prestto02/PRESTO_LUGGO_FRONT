@@ -6,9 +6,11 @@ body {
   color: #000;
 }
 .color-canvas {
-  background-color: rgba(32, 32, 57, 0.94);
+  background-color: #222224f0;
 }
-
+.color-link{
+  color: #FF4401;
+}
 .sidenav-card {
   width: 400px;
   height: 100%;
@@ -29,10 +31,10 @@ body {
 }
 
 /* SCROLL EDIT */
-.offcanvas-body{
+.offcanvas-body {
   direction: rtl;
 }
-.row{
+.row {
   direction: ltr;
 }
 .offcanvas-body::-webkit-scrollbar {

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { UrlApi } from 'src/app/shared/routes/RoutesApi';
 import { UrlFront } from '../../../../../routes/RoutesFront';
 
 @Component({
@@ -8,6 +9,7 @@ import { UrlFront } from '../../../../../routes/RoutesFront';
   styleUrls: ['./iniciar-sesion.component.css'],
 })
 export class IniciarSesionComponent implements OnInit {
+  public urlGoogle = `${UrlApi.ApiUrl}${UrlApi.loginGoogle}`;
   constructor(private router: Router) {}
 
   ngOnInit(): void {}

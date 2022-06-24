@@ -1,6 +1,9 @@
 .link-luggo {
-  color: #9193f8;
+  color: #FF4401;
   cursor: pointer;
+}
+.color-link{
+  color: #FF4401;
 }
 .btn-sesion {
   background-color: #fff;
