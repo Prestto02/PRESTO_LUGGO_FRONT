@@ -10,12 +10,12 @@ import { CarouselSharedComponent } from '../../carousel-shared/carousel-shared.c
   declarations: [
     FooterIndexComponent, //FOOTER INDEX COMPONENTS
     FooterComponent, //FOOTER
-    Footer2Component, //FOOTER2
+    //Footer2Component, //FOOTER2
     FooterPuerttoComponent,
     CarouselSharedComponent,
   ],
   imports: [CommonModule],
   providers: [],
-  exports: [FooterIndexComponent, FooterPuerttoComponent, Footer2Component],
+  exports: [FooterIndexComponent, FooterPuerttoComponent, /* Footer2Component */],
 })
 export class FooterIndexModule {}
