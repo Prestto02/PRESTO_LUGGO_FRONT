@@ -64,4 +64,8 @@ export const UrlApi = {
 
   //PARA PEDIR CARDS
   cardsApi: 'api/Cards/',
+
+  //VENTA
+
+  pagarUser: 'api/Venta',
 };
