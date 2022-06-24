@@ -16,16 +16,30 @@
 }
 
 /* If the screen size is 601px wide or more, set the font-size of <div> to 80px */
-@media screen and (max-width: 835px) {
+@media screen and (max-width: 820px) {
   .text-titulo {
-    font-size: 25px;
+    font-size: 23px;
   }
   .text-tecnologia {
     position: absolute;
     top: -40px;
   }
   .text-ofertas {
-    font-size: 30px;
-    margin-top: 12px;
+    font-size: 26px;
+    margin-top: 0px;
+  }
+  .container-responsive {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+  }
+  .container-responsive::-webkit-scrollbar {
+    height: 3px; /* Tamaño del scroll en horizontal */
+    display: none; /* Ocultar scroll */
+  }
+  .container-responsive::-webkit-scrollbar-thumb {
+    background: #ea2313;
+    border-radius: 4px;
   }
 }

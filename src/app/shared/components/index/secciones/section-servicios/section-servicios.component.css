@@ -19,17 +19,20 @@
   }
 }
 
-@media screen and (max-width:820px){
-  .container-responsive{
+@media screen and (max-width: 820px) {
+  .container-responsive {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    overflow-x: auto ;
+    overflow-x: auto;
   }
   .container-responsive::-webkit-scrollbar {
-    width: 8px; /* Tamaño del scroll en vertical */
-    height: 8px; /* Tamaño del scroll en horizontal */
+    height: 3px; /* Tamaño del scroll en horizontal */
     display: block; /* Ocultar scroll */
+  }
+  .container-responsive::-webkit-scrollbar-thumb {
+    background: #ea2313;
+    border-radius: 4px;
   }
   .text-cardium-b {
     font-family: Cardium B-Medium;
