@@ -31,7 +31,7 @@ export class SectionNoticiasComponent implements OnInit {
 
   irProductos(url: string) {
     this.router.navigateByUrl(
-      `${UrlFront.Menu.menu}/${UrlFront.Menu.buscar}${url}`
+      `${UrlFront.Menu.menu}/${UrlFront.Menu.buscarGet}/${url}`
     );
   }
   registerUser() {

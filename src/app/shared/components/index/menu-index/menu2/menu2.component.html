@@ -53,7 +53,7 @@
       </div>
       <!----SECCION 1---->
       <ng-container *ngIf="!ocultarMenu">
-        <div class="col-md-12 col-xl-12 col-xxl-12 col-sm-12 col-12">
+        <div class="col-md-12 col-xl-12 col-xxl-12 col-sm-12 col-12 mb-1 text-parrafo">
           <h4>Tendencias</h4>
         </div>
         <div class="col-md-12 col-xl-12 col-xxl-12 col-sm-12 col-12 cursor-item" *ngFor="let list of arrayLisVendidos">
@@ -63,14 +63,14 @@
           <hr>
         </div>
         <!----SECCION 2---->
-        <div class="col-md-12 col-xl-12 col-xxl-12 col-sm-12 col-12">
+        <div class="col-md-12 col-xl-12 col-xxl-12 col-sm-12 col-12 text-parrafo">
           <h4>Busca Por Categorías</h4>
         </div>
       </ng-container>
       <!-----SECCION 2------>
       <ng-container *ngIf="!ocultarMenu">
         <ng-container *ngFor="let categorias of categoriasItems; let  index=index">
-          <div class="col-md-9 col-xl-9 col-xxl-9 col-10 col-sm-10 cursor-item" (click)="AbrirSubMenu(categorias);">
+          <div class="col-md-9 col-xl-9 col-xxl-9 col-10 col-sm-10 cursor-item mb-1" (click)="AbrirSubMenu(categorias);">
             <p>{{categorias.name}}</p>
           </div>
           <div class="col-md-1 col-xl-1 col-xxl-1 col-1 col-sm-1 mx-auto cursor-item"
@@ -85,7 +85,7 @@
       </ng-container>
       <!---------MUESTRO LA SUBCATEGORIA-------->
       <ng-container *ngIf="subCategorias && ocultarMenu">
-        <div class="col-md-9 col-xl-10 col-xxl-10 col-10 col-sm-10 cursor-item" (click)="cerrarSubMenu();">
+        <div class="col-md-9 col-xl-10 col-xxl-10 col-10 col-sm-10 cursor-item text-parrafo-regresar" (click)="cerrarSubMenu();">
           <p>Regresar al menú</p>
         </div>
         <div class="col-md-1 col-xl-1 col-xxl-1 col-1 col-sm-1 mx-auto cursor-item" (click)="cerrarSubMenu();">

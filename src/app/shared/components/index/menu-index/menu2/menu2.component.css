@@ -1,7 +1,9 @@
 body {
   transition: background-color 0.5s;
 }
-
+*{
+  font-family: Cardium B-Regular;
+}
 .navbar-light .navbar-nav .nav-link {
   color: #000;
 }
@@ -10,6 +12,9 @@ body {
 }
 .color-link{
   color: #FF4401;
+}
+.text-parrafo{
+  font-size: 18px;
 }
 .sidenav-card {
   width: 400px;
@@ -28,8 +33,12 @@ body {
 
 .cursor-item {
   cursor: pointer;
+  font-size: 14px;
 }
-
+.text-parrafo-regresar{
+  cursor: pointer;
+  font-size: 15px;
+}
 /* SCROLL EDIT */
 .offcanvas-body {
   direction: rtl;
