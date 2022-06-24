@@ -53,25 +53,25 @@
       </div>
       <!----SECCION 1---->
       <ng-container *ngIf="!ocultarMenu">
-        <div class="col-md-12 col-xl-12 col-xxl-12 col-sm-12 col-12 mb-1 text-parrafo">
-          <h4>Tendencias</h4>
+        <div class="col-md-12 col-xl-12 col-xxl-12 col-sm-12 col-12 mb-1">
+          <h4 class="text-parrafo">Tendencias</h4>
         </div>
         <div class="col-md-12 col-xl-12 col-xxl-12 col-sm-12 col-12 cursor-item" *ngFor="let list of arrayLisVendidos">
-          <p>{{list.name}}</p>
+          <p class="cursor-item">{{list.name}}</p>
         </div>
         <div class="col-md-12 col-xl-12 col-xxl-12 col-sm-12 col-12">
           <hr>
         </div>
         <!----SECCION 2---->
-        <div class="col-md-12 col-xl-12 col-xxl-12 col-sm-12 col-12 text-parrafo">
-          <h4>Busca Por Categorías</h4>
+        <div class="col-md-12 col-xl-12 col-xxl-12 col-sm-12 col-12">
+          <h4 class="text-parrafo">Busca Por Categorías</h4>
         </div>
       </ng-container>
       <!-----SECCION 2------>
       <ng-container *ngIf="!ocultarMenu">
         <ng-container *ngFor="let categorias of categoriasItems; let  index=index">
           <div class="col-md-9 col-xl-9 col-xxl-9 col-10 col-sm-10 cursor-item mb-1" (click)="AbrirSubMenu(categorias);">
-            <p>{{categorias.name}}</p>
+            <p class="cursor-item">{{categorias.name}}</p>
           </div>
           <div class="col-md-1 col-xl-1 col-xxl-1 col-1 col-sm-1 mx-auto cursor-item"
             (click)="AbrirSubMenu(categorias);">
@@ -107,7 +107,7 @@
       </div>
       <!----SECCION 3---->
       <div class="col-md-12 col-sm-12 col-xl-12 col-xxl-12 col-12">
-        <h4>Ajustes y Soporte</h4>
+        <h4 class="text-parrafo">Ajustes y Soporte</h4>
       </div>
       <!--------USUARIO IDENTIFICADO------>
       <app-usuario-identific [correoUsuario]="correoUsuario"></app-usuario-identific>

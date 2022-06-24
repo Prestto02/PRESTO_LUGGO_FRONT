@@ -1,7 +1,7 @@
 <ng-container *ngIf="correoUsuario; else notIdentifyUser">
   <div class="col-md-12 col-sm-12 col-xl-12 col-xxl-12 col-12 cursor-item" (click)="irLink(list.link);"
     *ngFor="let list of arrayListIdentify">
-    <p>{{list.name}}</p>
+    <p class="cursor-item">{{list.name}}</p>
   </div>
 </ng-container>
 <ng-template #notIdentifyUser>

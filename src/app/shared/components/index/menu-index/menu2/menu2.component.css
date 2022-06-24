@@ -1,8 +1,9 @@
 body {
   transition: background-color 0.5s;
 }
-*{
-  font-family: Cardium B-Regular;
+
+* {
+  font-family: Cardium B-Medium;
 }
 .navbar-light .navbar-nav .nav-link {
   color: #000;
@@ -10,11 +11,12 @@ body {
 .color-canvas {
   background-color: #222224f0;
 }
-.color-link{
-  color: #FF4401;
+.color-link {
+  color: #ff4401;
 }
-.text-parrafo{
+.text-parrafo {
   font-size: 18px;
+  color: #ffec7c;
 }
 .sidenav-card {
   width: 400px;
@@ -27,17 +29,15 @@ body {
   transition: 0.7s;
 }
 
-* {
-  font-family: Cardium B-Medium;
-}
-
 .cursor-item {
   cursor: pointer;
   font-size: 14px;
+  font-family: Cardium B-Regular;
 }
-.text-parrafo-regresar{
+.text-parrafo-regresar {
   cursor: pointer;
   font-size: 15px;
+  color: #ffec7c;
 }
 /* SCROLL EDIT */
 .offcanvas-body {
