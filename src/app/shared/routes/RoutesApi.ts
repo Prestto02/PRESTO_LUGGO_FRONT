@@ -61,4 +61,7 @@ export const UrlApi = {
 
   //ENVIAR CARRITO
   carritoPostUser: 'api/carrito',
+
+  //PARA PEDIR CARDS
+  cardsApi: 'api/Cards/',
 };
