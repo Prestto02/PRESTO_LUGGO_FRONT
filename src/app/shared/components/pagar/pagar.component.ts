@@ -1,9 +1,15 @@
-import { AfterViewInit, Component, OnInit } from '@angular/core';
+import {
+  AfterViewChecked,
+  AfterViewInit,
+  Component,
+  ElementRef,
+  OnInit,
+} from '@angular/core';
+import { Router } from '@angular/router';
 import { CarritoItemsService } from '../index/menu-index/menu/services/carrito-items.service';
 import { BaseFormPagar } from './formulario-pagar/models/BaseFormPagar';
 import { IFormularioPagar } from './formulario-pagar/models/IPagarForm';
 import { PagarServices } from './services/Pagar.service';
-
 @Component({
   selector: 'app-pagar',
   templateUrl: './pagar.component.html',
@@ -16,7 +22,8 @@ export class PagarComponent implements OnInit {
   constructor(
     private apiServi: CarritoItemsService,
     public formB: BaseFormPagar,
-    private apiPagar: PagarServices
+    private apiPagar: PagarServices,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -46,21 +53,24 @@ export class PagarComponent implements OnInit {
 
   submitPagar(form: IFormularioPagar) {
     /*  const element = <HTMLElement>document.querySelector('#paymentsCheck'); */
-    const element = <HTMLElement>document.createElement('div');
     /* this.arrayProductsList.map((res: any) => {
       this.arrayPagoProducts.push({
         cantidad: res.item,
         id_detalle_articulo: res.id_detalle_articulo,
       });
     }); */
+    this.pagarSubmit();
+  }
+  pagarSubmit() {
+    const element = <HTMLElement>document.getElementById('paymentNext');
     const formPayments: any = {
       direccion_entrega: 'PPG',
       metodo_pago: 1,
       detalle_Venta: this.arrayPagoProducts,
     };
     this.apiPagar.postPagoUser(formPayments).subscribe((res: any) => {
-      element.innerHTML = res.data;
-      const elementBody = <HTMLElement>document.body.appendChild(element);
+      console.log(res.data);
+      element.insertAdjacentHTML('beforeend', `${res.data}`);
       /* element.innerHTML = this.htmlInsert; */
     });
   }
