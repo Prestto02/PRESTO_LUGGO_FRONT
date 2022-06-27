@@ -62,7 +62,8 @@
 .container-fluid {
   position: relative;
   height: 800px;
-  overflow: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 .card-title {
   font-size: 14px;

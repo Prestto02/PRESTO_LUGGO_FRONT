@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { CarritoItemsService } from '../index/menu-index/menu/services/carrito-items.service';
 import { BaseFormPagar } from './formulario-pagar/models/BaseFormPagar';
 import { IFormularioPagar } from './formulario-pagar/models/IPagarForm';
@@ -45,19 +45,23 @@ export class PagarComponent implements OnInit {
   }
 
   submitPagar(form: IFormularioPagar) {
-    this.arrayProductsList.map((res: any) => {
+    /*  const element = <HTMLElement>document.querySelector('#paymentsCheck'); */
+    const element = <HTMLElement>document.createElement('div');
+    /* this.arrayProductsList.map((res: any) => {
       this.arrayPagoProducts.push({
         cantidad: res.item,
         id_detalle_articulo: res.id_detalle_articulo,
       });
-    });
-    const data: any = {
+    }); */
+    const formPayments: any = {
       direccion_entrega: 'PPG',
       metodo_pago: 1,
       detalle_Venta: this.arrayPagoProducts,
     };
-    this.apiPagar.postPagoUser(data).subscribe((res: any) => {
-      console.log(res);
+    this.apiPagar.postPagoUser(formPayments).subscribe((res: any) => {
+      element.innerHTML = res.data;
+      const elementBody = <HTMLElement>document.body.appendChild(element);
+      /* element.innerHTML = this.htmlInsert; */
     });
   }
 }

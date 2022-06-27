@@ -11,6 +11,10 @@
   background: #0567d6;
   color: #fff;
 }
+.btn-primary {
+  background-color: #EA2313;
+  border: 1px solid #EA2313;
+}
 * {
   font-family: Cardium B-Regular;
 }
