@@ -70,7 +70,10 @@ export class PagarComponent implements OnInit {
     };
     this.apiPagar.postPagoUser(formPayments).subscribe((res: any) => {
       console.log(res.data);
-      element.insertAdjacentHTML('beforeend', `${res.data}`);
+      element.insertAdjacentHTML(
+        'beforeend',
+        `<iframe srcdoc='${res.data}' width="2000px" heigth="1024"></iframe>`
+      );
       /* element.innerHTML = this.htmlInsert; */
     });
   }

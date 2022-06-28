@@ -31,7 +31,7 @@
             <div class="card-body">
               <ng-container *ngIf="list.img.length>1; else imgOneList; ">
                 <div class="row">
-                  <div class="col-md-6 mb-1" *ngFor="let imgList of list.img">
+                  <div class="col-md-6 mb-1 grid-heigth" *ngFor="let imgList of list.img">
                     <img loading="lazy" [src]="rutaImg+imgList.img" class="card-img-icon" [alt]="imgList.id" />
                     <span class="textOferta"><b>{{imgList.title}}</b></span>
                     <!--                   <span class="textOfertaIpad"><b>30% desc.</b></span> -->
