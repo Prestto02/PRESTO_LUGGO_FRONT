@@ -13,7 +13,7 @@
             <form (ngSubmit)="submit();" [formGroup]="formB.registerUser">
               <!------CORREO------>
               <label for="email" class="form-label label-text">Correo electrónico</label>
-              <div class="input-group mb-3">
+              <div class="input-group">
                 <span class="input-group-text group-border" id="basic-email">
                   <svg width="21" height="22" viewBox="0 0 21 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" clip-rule="evenodd"
@@ -28,11 +28,13 @@
                   formControlName="email" aria-describedby="validationServer1Feedback" [class.is-invalid]="formB.registerUser.get('email')?.touched && formB.registerUser.get('email')?.invalid
               " placeholder="abc@example.com">
               </div>
-              <app-form-errors-container [forControl]="formB.registerUser.get('email')">
-                <app-message-error forErrorCode="required"></app-message-error>
-                <app-message-error forErrorCode="email"></app-message-error>
-              </app-form-errors-container>
-               <!------CONTRASEÑA Y REPETIR CONTRASENA------>
+              <div class="mb-3">
+                <app-form-errors-container [forControl]="formB.registerUser.get('email')">
+                  <app-message-error forErrorCode="required"></app-message-error>
+                  <app-message-error forErrorCode="email"></app-message-error>
+                </app-form-errors-container>
+              </div>
+              <!------CONTRASEÑA Y REPETIR CONTRASENA------>
               <app-password-visible [class]="'position-relative mb-3'" [password]="'contrasena'"
                 [formB]="formB.registerUser"></app-password-visible>
 
