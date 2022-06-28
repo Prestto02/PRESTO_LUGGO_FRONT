@@ -116,7 +116,7 @@
     width: 100%;
     max-width: 144px;
     height: 100%;
-    max-height: 205px;
+    max-height: 177px;
   }
 }
 /* PANTALLA MEDIANAMENTE GRANDE */
@@ -179,7 +179,7 @@
   .card-img-icon {
     max-width: 102px;
     height: 100%;
-    max-height: 108px;
+    max-height: 110px;
   }
 }
 /* IPADS */
