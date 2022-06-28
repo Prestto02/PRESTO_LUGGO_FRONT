@@ -100,10 +100,14 @@
 }
 .grid {
   max-width: 150px;
+  display: flex;
+  justify-content: center;
 }
 .grid-large {
   max-width: 340px;
   position: relative;
+  display: flex;
+  justify-content: center;
 }
 .card-img-large {
   width: 100%;

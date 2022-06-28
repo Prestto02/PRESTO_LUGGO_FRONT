@@ -56,8 +56,8 @@
 
 </section>
 <section class="modal-footer">
-  <button type="button" (click)="submitPagar(formB.formPagar.value)" class="btn btn-dark">Continuar</button>
+  <button type="button" [disabled]=" formB.formPagar.invalid ||arrayProductsList.length<=0"
+    (click)="submitPagar(formB.formPagar.value)" class="btn btn-dark">Continuar</button>
 </section>
 <section class="container-fluid" id="paymentNext"></section>
-<!-- formB.formPagar.invalid ||arrayProductsList.length<=0  -->
 <app-footer-index></app-footer-index>

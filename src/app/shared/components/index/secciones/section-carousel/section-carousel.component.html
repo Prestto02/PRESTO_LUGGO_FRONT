@@ -43,16 +43,14 @@
               <ng-template #imgOneList>
                 <ng-container *ngIf="i===0 else outherImg">
                   <div class="grid-large">
-                    <img loading="lazy" [src]="rutaImg+list.img[0].img" class="card-img-large"
-                      [alt]="list.img[0].id" />
+                    <img loading="lazy" [src]="rutaImg+list.img[0].img" class="card-img-large" [alt]="list.img[0].id" />
                     <div class="img-overlay" (click)="verProductos(list.url)">
-                      <h4 class="text-center text-white text-font-white">Día del padre</h4>
+                      <h4 class="text-center text-white text-font-white">{{list.img[0].title}}</h4>
                     </div>
                   </div>
                 </ng-container>
                 <ng-template #outherImg>
-                  <img loading="lazy" [src]="rutaImg+list.img[0].img" class="card-img-large"
-                    [alt]="list.img[0].id" />
+                  <img loading="lazy" [src]="rutaImg+list.img[0].img" class="card-img-large" [alt]="list.img[0].id" />
                 </ng-template>
               </ng-template>
             </div>

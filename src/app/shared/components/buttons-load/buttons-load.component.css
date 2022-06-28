@@ -1,12 +1,3 @@
-.btn-iniciar-sesion {
-  background: #7549fe;
-  color: #fff;
-  font-family: Cardium A-Bold;
-  font-size: 18px;
-  padding: 9px;
-}
-.btn-modal {
-  background: #7549fe;
-  color: #fff;
-  font-family: Cardium A-Bold;
+.btn-dark {
+  font-family: "Cardium B-Bold";
 }
