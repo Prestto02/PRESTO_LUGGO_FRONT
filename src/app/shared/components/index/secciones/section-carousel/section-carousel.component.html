@@ -31,25 +31,27 @@
             <div class="card-body">
               <ng-container *ngIf="list.img.length>1; else imgOneList; ">
                 <div class="row">
-                  <div class="col-md-6 mb-1 grid-heigth" *ngFor="let imgList of list.img">
-                    <img loading="lazy" [src]="rutaImg+imgList.img" class="card-img-icon" [alt]="imgList.id" />
-                    <span class="textOferta"><b>{{imgList.title}}</b></span>
-                    <!--                   <span class="textOfertaIpad"><b>30% desc.</b></span> -->
+                  <div class="col-md-6 mb-1 col-xl-6 col-xxl-6" *ngFor="let imgList of list.img">
+                    <div class="grid">
+                      <img loading="lazy" [src]="rutaImg+imgList.img" class="card-img-icon" [alt]="imgList.id" />
+                    </div>
+                    <p class="textOferta" [title]="imgList.title"><b>{{imgList.title}}</b></p>
                   </div>
+                  <!--                   <span class="textOfertaIpad"><b>30% desc.</b></span> -->
                 </div>
               </ng-container>
               <ng-template #imgOneList>
                 <ng-container *ngIf="i===0 else outherImg">
-                  <div class="position-relative">
-                    <img loading="lazy" [src]="rutaImg+list.img[0].img" class="card-img-bottom heigth-Card"
+                  <div class="grid-large">
+                    <img loading="lazy" [src]="rutaImg+list.img[0].img" class="card-img-large"
                       [alt]="list.img[0].id" />
                     <div class="img-overlay" (click)="verProductos(list.url)">
-                      <h4 class="text-center text-white text-font-white" >Día del padre</h4>
+                      <h4 class="text-center text-white text-font-white">Día del padre</h4>
                     </div>
                   </div>
                 </ng-container>
                 <ng-template #outherImg>
-                  <img loading="lazy" [src]="rutaImg+list.img[0].img" class="card-img-bottom heigth-Card"
+                  <img loading="lazy" [src]="rutaImg+list.img[0].img" class="card-img-large"
                     [alt]="list.img[0].id" />
                 </ng-template>
               </ng-template>
