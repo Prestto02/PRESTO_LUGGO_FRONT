@@ -71,9 +71,11 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body" id="modal-body-server">
-
+          <ng-container *ngIf="!htmlServer">
+            <p class="text-center mt-3 mb-3">Procesando...</p>
+          </ng-container>
         </div>
-<!--         <div class="modal-footer">
+        <!--         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
         </div> -->
       </div>

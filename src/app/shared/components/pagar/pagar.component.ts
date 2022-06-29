@@ -19,6 +19,8 @@ export class PagarComponent implements OnInit {
   arrayProductsList: any = [];
   totalAPagar: any = 0;
   arrayPagoProducts: any = [];
+  htmlServer: any;
+  contador: number = 0;
   constructor(
     private apiServi: CarritoItemsService,
     public formB: BaseFormPagar,
@@ -52,18 +54,20 @@ export class PagarComponent implements OnInit {
   }
 
   submitPagar(form: IFormularioPagar) {
-    const element = <HTMLElement>document.querySelector('#modal-body-server');
-    const formPayments = this.pagarSubmit(form);
-    this.apiPagar.postPagoUser(formPayments).subscribe((res: any) => {
-      console.log(res.data);
-      element.insertAdjacentHTML(
-        'beforeend',
-        `<iframe srcdoc='${res.data}' style="height: 500px;" height='500px' width='100%' id='iframeServer'></iframe>`
-      );
-      this.estilosIframe();
-    });
+    this.contador++;
+    if (this.contador === 1) {
+      const element = <HTMLElement>document.querySelector('#modal-body-server');
+      const formPayments = this.pagarSubmit(form);
+      this.apiPagar.postPagoUser(formPayments).subscribe((res: any) => {
+        this.htmlServer = res.data;
+        element.insertAdjacentHTML(
+          'beforeend',
+          `<iframe srcdoc='${res.data}' style="height: 500px;" height='500px' width='100%' id='iframeServer'></iframe>`
+        );
+        this.estilosIframe();
+      });
+    }
   }
-
   estilosIframe() {
     const iframe = <HTMLElement>document.querySelector('iframe');
     iframe.style.width = '100%';
@@ -71,6 +75,7 @@ export class PagarComponent implements OnInit {
   }
 
   pagarSubmit(form: IFormularioPagar) {
+    this.arrayPagoProducts = [];
     this.arrayProductsList.map((res: any) => {
       this.arrayPagoProducts.push({
         cantidad: res.item,
