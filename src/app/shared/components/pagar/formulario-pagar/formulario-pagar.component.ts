@@ -19,8 +19,8 @@ export class FormularioPagarComponent implements OnInit {
     this.getPaisCodigo();
   }
   getPaisCodigo() {
-    this.apiCiudadPais.getPaises().subscribe((res) => {
+   /*  this.apiCiudadPais.getPaises().subscribe((res) => {
       this.arrayCodigosPaises = res;
-    });
+    }); */
   }
 }

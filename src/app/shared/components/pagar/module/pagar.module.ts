@@ -8,7 +8,7 @@ import { FormularioPagarComponent } from '../formulario-pagar/formulario-pagar.c
 import { BaseFormPagar } from '../formulario-pagar/models/BaseFormPagar';
 import { ReactiveFormsModule } from '@angular/forms';
 import { VerificarPaymentsComponent } from '../verificar-payments/verificar-payments.component';
-import { ApiHtmlDirective } from '../directive/api-html.directive';
+
 import { ErrorsExtensionsModule } from '../../errors/errors-module.module';
 
 @NgModule({
@@ -16,7 +16,6 @@ import { ErrorsExtensionsModule } from '../../errors/errors-module.module';
     PagarComponent,
     FormularioPagarComponent,
     VerificarPaymentsComponent,
-    ApiHtmlDirective,
   ],
   imports: [
     CommonModule,
