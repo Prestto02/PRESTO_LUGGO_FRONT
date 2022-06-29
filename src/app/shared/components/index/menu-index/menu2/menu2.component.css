@@ -42,10 +42,12 @@ body {
 /* SCROLL EDIT */
 .offcanvas-body {
   direction: rtl;
+  overflow-x: hidden;
 }
 .row {
   direction: ltr;
 }
+
 .offcanvas-body::-webkit-scrollbar {
   width: 8px; /* Tamaño del scroll en vertical */
   height: 8px; /* Tamaño del scroll en horizontal */

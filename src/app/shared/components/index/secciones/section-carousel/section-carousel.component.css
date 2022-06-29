@@ -101,6 +101,7 @@
 .grid {
   max-width: 150px;
   display: flex;
+  cursor: pointer;
   justify-content: center;
 }
 .grid-large {
