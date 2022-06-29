@@ -20,11 +20,23 @@ export class BaseFormPagar {
         Validators.pattern(Expresion.SoloLetrasAcentosEspacios),
       ],
     ],
-    Celular: [
+    cliente_phone: [
       '',
       [Validators.required, Validators.pattern(Expresion.SoloNumeros)],
     ],
-    Correo: ['', [Validators.required, Validators.email]],
+    code_phone: [593, [Validators.required]],
+    identificacion: [
+      '',
+      [Validators.required, Validators.pattern(Expresion.CedulaTelefono)],
+    ],
+    direccion_entrega: [
+      '',
+      [
+        Validators.required,
+        Validators.pattern(Expresion.SoloLetrasAcentosEspacios),
+      ],
+    ],
+    correo: ['', [Validators.required, Validators.email]],
   });
 
   limpiarFormulario() {

@@ -7,6 +7,7 @@
   </div>
 
   <form [formGroup]="formB.formPagar">
+
     <div class="row mx-auto">
       <div class="col-xxl-6 col-xl-6 col-sm-6 col-12 col-md-6 mb-3 py-3">
         <label for="formControlNombre" class="form-label">Nombres</label>
@@ -20,24 +21,36 @@
           placeholder="Apellidos Completos">
       </div>
 
-      <div class="col-xxl-6 col-xl-6 col-sm-6 col-12 col-md-6 mb-5 py-3">
+      <div class="col-xxl-6 col-xl-6 col-sm-6 col-12 col-md-6 mb-3 py-3">
         <label for="formControlCelular" class="form-label">Celular</label>
         <div class="input-group">
-          <select class="form-select" aria-label="Default select example">
-            <option *ngFor="let codigoPais of arrayCodigosPaises" [value]="codigoPais.code_Phone">
-              <!--  <img [src]="codigoPais.icons" width="30" class="" [alt]="codigoPais.Name" /> -->
-              + &nbsp;{{codigoPais.code_Phone}}
-            </option>
+          <select class="form-select" aria-label="Default select example" formControlName="code_phone">
+            <!--  <option *ngFor="let codigoPais of arrayCodigosPaises" [value]="codigoPais.code_Phone">
+                + &nbsp;{{codigoPais.code_Phone}}
+            </option> -->
+            <option selected [value]="codigo_phone">+593</option>
           </select>
-          <input type="text" class="form-control w-50" id="formControlCelular" formControlName="Celular"
-            placeholder="Celular">
+          <input type="text" class="form-control w-50" maxlength="9" id="formControlCelular"
+            formControlName="cliente_phone" placeholder="Celular">
         </div>
       </div>
 
-      <div class="col-xxl-6 col-xl-6 col-sm-6 col-12 col-md-6 mb-5 py-3">
+      <div class="col-xxl-6 col-xl-6 col-sm-6 col-12 col-md-6 mb-3 py-3">
+        <label for="formControlIdentificacion" class="form-label">Cédula</label>
+        <input type="text" maxlength="10" class="form-control" id="formControlIdentificacion"
+          formControlName="identificacion" placeholder="0999999999">
+      </div>
+
+      <div class="col-xxl-6 col-xl-6 col-sm-6 col-12 col-md-6 mb-3 py-3">
         <label for="formControlCorreo" class="form-label">Correo</label>
-        <input type="text" class="form-control" id="formControlCorreo" formControlName="Correo"
+        <input type="email" class="form-control" id="formControlCorreo" formControlName="correo"
           placeholder="example@example.com">
+      </div>
+
+      <div class="col-xxl-6 col-xl-6 col-sm-6 col-12 col-md-6 mb-3 py-3">
+        <label for="formControlDireccion" class="form-label">Dirección</label>
+        <input type="text" class="form-control" id="formControlDireccion" formControlName="direccion_entrega"
+          placeholder="Dirección">
       </div>
 
     </div>

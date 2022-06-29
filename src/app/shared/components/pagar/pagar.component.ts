@@ -52,29 +52,35 @@ export class PagarComponent implements OnInit {
   }
 
   submitPagar(form: IFormularioPagar) {
-    /*  const element = <HTMLElement>document.querySelector('#paymentsCheck'); */
-    /* this.arrayProductsList.map((res: any) => {
-      this.arrayPagoProducts.push({
-        cantidad: res.item,
-        id_detalle_articulo: res.id_detalle_articulo,
-      });
-    }); */
-    this.pagarSubmit();
-  }
-  pagarSubmit() {
-    const element = <HTMLElement>document.getElementById('paymentNext');
-    const formPayments: any = {
-      direccion_entrega: 'PPG',
-      metodo_pago: 1,
-      detalle_Venta: this.arrayPagoProducts,
-    };
+    const element = <HTMLElement>document.querySelector('#modal-body-server');
+    const formPayments = this.pagarSubmit(form);
     this.apiPagar.postPagoUser(formPayments).subscribe((res: any) => {
       console.log(res.data);
       element.insertAdjacentHTML(
         'beforeend',
-        `<iframe srcdoc='${res.data}' width="2000px" heigth="1024"></iframe>`
+        `<iframe srcdoc='${res.data}' style="height: 500px;" height='500px' width='100%' id='iframeServer'></iframe>`
       );
-      /* element.innerHTML = this.htmlInsert; */
+      this.estilosIframe();
     });
+  }
+
+  estilosIframe() {
+    const iframe = <HTMLElement>document.querySelector('iframe');
+    iframe.style.width = '100%';
+    iframe.style.height = '500px';
+  }
+
+  pagarSubmit(form: IFormularioPagar) {
+    this.arrayProductsList.map((res: any) => {
+      this.arrayPagoProducts.push({
+        cantidad: res.item,
+        id_detalle_articulo: res.id_detalle_articulo,
+      });
+    });
+    const formPayments: any = {
+      ...form,
+      detalle_Venta: this.arrayPagoProducts,
+    };
+    return formPayments;
   }
 }

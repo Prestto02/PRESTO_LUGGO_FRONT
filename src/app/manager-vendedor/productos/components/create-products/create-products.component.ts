@@ -1,10 +1,4 @@
-import {
-  Component,
-  ElementRef,
-  HostListener,
-  OnDestroy,
-  OnInit,
-} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { PositionUser } from 'src/app/shared/class/PositionUser';
 import { BaseFormProducts } from '../../models/BaseformProduct';
 import { BaseFormCategorias } from 'src/app/manager-vendedor/categorias/models/categorias.models';
@@ -17,7 +11,6 @@ import { DataFormProducts } from '../../helpers/DataFormProducts';
 import { ProductsService } from '../../services/products.service';
 import { ValidarYTransformarImagen } from 'src/app/shared/validations/ValidarYTransformarImagen';
 import { SearchProductsService } from '../../services/searchProducts.service';
-import { ListadoProductosComponent } from '../listado-productos/listado-productos.component';
 
 @Component({
   selector: 'app-create-products',
@@ -25,6 +18,7 @@ import { ListadoProductosComponent } from '../listado-productos/listado-producto
   styleUrls: ['./create-products.component.css'],
 })
 export class CreateProductsComponent implements OnInit {
+  public ruta: any = `${UrlFront.Manager.vendedor}`;
   activar = false;
   categoriasItems: any;
   marcaItems: any = [];

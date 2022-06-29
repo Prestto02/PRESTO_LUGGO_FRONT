@@ -6,7 +6,6 @@ export interface IFormularioPagar {
   identificacion: string;
   correo: string;
   direccion_entrega: string;
-  detalle_Venta: Array<detalle_venta>;
 }
 
 export interface detalle_venta {

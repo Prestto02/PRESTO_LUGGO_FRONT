@@ -9,6 +9,7 @@ import { BaseFormPagar } from './models/BaseFormPagar';
 })
 export class FormularioPagarComponent implements OnInit {
   arrayCodigosPaises: any = [];
+  codigo_phone = '593';
   constructor(
     public formB: BaseFormPagar,
     private apiCiudadPais: CiudadPaisService //SERVICES CIUDAD PAISES

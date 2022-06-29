@@ -9,6 +9,7 @@ import { BaseFormPagar } from '../formulario-pagar/models/BaseFormPagar';
 import { ReactiveFormsModule } from '@angular/forms';
 import { VerificarPaymentsComponent } from '../verificar-payments/verificar-payments.component';
 import { ApiHtmlDirective } from '../directive/api-html.directive';
+import { ErrorsExtensionsModule } from '../../errors/errors-module.module';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { ApiHtmlDirective } from '../directive/api-html.directive';
     PagarRoutingModule,
     ReactiveFormsModule,
     MenuIndexModule,
+    ErrorsExtensionsModule,
     FooterIndexModule,
   ],
   providers: [BaseFormPagar],

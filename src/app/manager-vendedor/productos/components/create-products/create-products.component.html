@@ -1,6 +1,11 @@
-<header>
-  <app-menu-vendedor></app-menu-vendedor>
+<header class="sticky-top">
+  <app-menu-index></app-menu-index>
 </header>
+
+<app-adn-cerrar-sesion></app-adn-cerrar-sesion>
+
+<app-seccion-adn [NombreUbicacion]="'Crear Productos'" [ruta]="ruta"></app-seccion-adn>
+
 <!---SECTIONS CREAR PRODUCTOS---->
 <section>
   <div class="accordion col-xl-11 col-xxl-11 col-md-11 col-sm-12 col-12 mx-auto" id="accordionExample">
