@@ -25,6 +25,9 @@ export class AddCarsOrListDesire {
       this.apiServi.addProductCarrito(res); //GUARDO ESE PRODUCTO EN UN ARREGLO BEHAVIOR
     });
   }
+  addProductDetails(product: any) {
+    this.apiServi.addProductCarrito(product);
+  }
   //HACER PUSH DEL DETALLE DEL CARRITO
   addDetalleCarrito(res: any) {
     this.detalle_carrito.push({

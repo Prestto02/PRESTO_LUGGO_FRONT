@@ -1,3 +1,40 @@
-*{
+* {
   font-family: Cardium A-Medium;
 }
+.bg-colors {
+  background: #eeeeee;
+  color: #282828;
+}
+
+.title-product {
+  font-weight: 600;
+}
+
+.subtitle-product {
+  font-weight: 400;
+}
+
+.text-precio {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 54.06px;
+  color: #ea2313;
+}
+.text-iva {
+  line-height: 54.06px;
+}
+.color-stock {
+  color: #9f0505;
+  font-weight: 600;
+  line-height: 54.06px;
+  font-size: 14px;
+}
+.text-detalle {
+  color: #9f0505;
+  font-weight: 500;
+  font-size: 14px;
+}
+.form-control {
+  border: 1px solid #9f0505;
+}
+

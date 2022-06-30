@@ -1,12 +1,13 @@
-<section class="container-fluid card">
-  <div class="col-xxl-12 col-xl-12 col-sm-12 col-md-12 col-12 mt-4 mb-3">
-    <p>US: {{productoObjeto.precio | currency:'USD'}}</p>
-    <p>Stock:&nbsp;{{productoObjeto.stock>10?'Disponible':'No disponible'}}</p>
-    <button class="btn btn-primary mb-3" (click)="addCarrito(productoObjeto.id_artic);">Agregar al carrito</button>
-    <button class="btn btn-dark mb-3" (click)="comprarProduct(productoObjeto.id_artic,productoObjeto)">Comprar</button>
-    <button class=" btn btn-secondary mb-3" (click)="addList(productoObjeto);">Lista de deseos</button>
-    <p>Transacción segura</p>
-    <p>Vendido por: {{productoObjeto.nombre_tienda}}</p>
-    <p>Marca: {{productoObjeto.nombre_marca}}</p>
+<section class="container-fluid">
+  <div class="row col-xxl-10 col-xl-10 col-md-10 col-sm-10 col-10">
+    <button class="btn btn-dark mb-3 btn-lg" (click)="addCarrito(productoObjeto);">Añadir al carrito</button>
+  </div>
+  <div class="row">
+    <div class="col-xxl-5 col-xl-5 col-md-5 col-sm-5 col-5 p-0 columns">
+      <button class="btn btn-secondary-colors mb-3" (click)="comprarProduct(productoObjeto)">Comprar</button>
+    </div>
+    <div class="col-xxl-5 col-xl-5 col-md-5 col-sm-5 col-5">
+      <button class="btn btn-secondary-colors mb-3" (click)="addList(productoObjeto);">Lista de deseos</button>
+    </div>
   </div>
 </section>

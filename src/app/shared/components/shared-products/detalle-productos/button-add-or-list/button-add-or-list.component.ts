@@ -22,15 +22,15 @@ export class ButtonAddOrListComponent implements OnInit {
 
   ngOnInit(): void {}
   //AGREGAR AL CARRITO
-  addCarrito(id: any) {
-    this.apiCarOrList.addProductCars(id);
+  addCarrito(product: any) {
+    this.apiCarOrList.addProductDetails(product);
   }
   addList(product: any) {
     this.apiCarOrList.addListDesire(product);
   }
   //PARA IR A COMPRAR EL PRODUCTO Y A SU VEZ REGISTRAR EL CARRITO
-  comprarProduct(id: any, producto: any) {
-    this.addCarrito(id);
+  comprarProduct(producto: any) {
+    this.addCarrito(producto);
     this.apiCarOrList.addDetalleCarrito(producto);
     this.idUsuario
       ? this.apiCarOrList.postCarritoItems(this.idUsuario, true)

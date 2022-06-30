@@ -18,13 +18,10 @@ import { ListaDeseosComponent } from '../lista-deseos/lista-deseos.component';
 import { ErrorsExtensionsModule } from '../../errors/errors-module.module';
 import { HttpClientModule } from '@angular/common/http';
 import { SharedProductsRoutingModule } from './shared-products-routing.module';
-import { DetalleProductosComponent } from '../detalle-productos/detalle-productos.component';
 import { ImagenProductsComponent } from '../detalle-productos/imagen-products/imagen-products.component';
 import { NgxImgZoomModule } from 'ngx-img-zoom';
-import { ProductDescriptionComponent } from '../detalle-productos/product-description/product-description.component';
-import { AtributosDescripcionComponent } from '../detalle-productos/atributos-descripcion/atributos-descripcion.component';
-import { ButtonAddOrListComponent } from '../detalle-productos/button-add-or-list/button-add-or-list.component';
 import { IconsCarsDesireComponent } from '../list-products/icons-cars-desire/icons-cars-desire.component';
+import { DetalleProductDecalarations } from '../detalle-productos/module/detalle-products.module';
 
 @NgModule({
   declarations: [
@@ -32,12 +29,9 @@ import { IconsCarsDesireComponent } from '../list-products/icons-cars-desire/ico
     SharedProductsComponent,
     ListaDeseosComponent,
     AgregarColeccionComponent,
-    DetalleProductosComponent,
     ImagenProductsComponent, //IMAGEN DEL PRODUCTO
     CompararProductosComponent,
-    ProductDescriptionComponent, //PRODUCTO DESCRIPTION
-    AtributosDescripcionComponent, //ATRIBUTOS DESCRIPCION COMPONENT
-    ButtonAddOrListComponent, //ADD OR LIST COMPONENT
+    DetalleProductDecalarations,
     IconsCarsDesireComponent,
     FilterPipe,
   ],
