@@ -54,7 +54,7 @@ export class CarritoListComponent implements OnInit {
   postCarritoItems() {
     this.pushDetalleCarrito(); //PUSH DETALLE CARRITO
     //POST CARRITO ITEMS
-    this.addCars.postCarritoItems(this.idUser);
+    this.addCars.postCarritoItems(this.idUser, true);
   }
   //REGRESAR AL LOGIN
   irLogin() {

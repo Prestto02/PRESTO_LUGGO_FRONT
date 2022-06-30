@@ -6,9 +6,12 @@ import {
   OnInit,
 } from '@angular/core';
 import { Router } from '@angular/router';
+import { TokenService } from 'src/app/login/services/token.service';
+import { AddCarsOrListDesire } from '../../helpers/AddCarsOrListDesire';
 import { CarritoItemsService } from '../index/menu-index/menu/services/carrito-items.service';
 import { BaseFormPagar } from './formulario-pagar/models/BaseFormPagar';
 import { IFormularioPagar } from './formulario-pagar/models/IPagarForm';
+import { PagarOCarritoPost } from './helpers/PagaryCarritoPost';
 import { PagarServices } from './services/Pagar.service';
 @Component({
   selector: 'app-pagar',
@@ -25,7 +28,8 @@ export class PagarComponent implements OnInit {
     private apiServi: CarritoItemsService,
     public formB: BaseFormPagar,
     private apiPagar: PagarServices,
-    private router: Router
+    private router: Router,
+    private pagarOCarrito: PagarOCarritoPost
   ) {}
 
   ngOnInit(): void {
@@ -56,36 +60,14 @@ export class PagarComponent implements OnInit {
   submitPagar(form: IFormularioPagar) {
     this.contador++;
     if (this.contador === 1) {
-      const element = <HTMLElement>document.querySelector('#modal-body-server');
-      const formPayments = this.pagarSubmit(form);
+      const formPayments = this.pagarOCarrito.pagarSubmit(
+        form,
+        this.arrayProductsList
+      );
       this.apiPagar.postPagoUser(formPayments).subscribe((res: any) => {
         this.htmlServer = res.data;
-        element.insertAdjacentHTML(
-          'beforeend',
-          `<iframe srcdoc='${res.data}' style="height: 500px;" height='500px' width='100%' id='iframeServer'></iframe>`
-        );
-        this.estilosIframe();
+        this.pagarOCarrito.injectDomIFrame(res);
       });
     }
-  }
-  estilosIframe() {
-    const iframe = <HTMLElement>document.querySelector('iframe');
-    iframe.style.width = '100%';
-    iframe.style.height = '500px';
-  }
-
-  pagarSubmit(form: IFormularioPagar) {
-    this.arrayPagoProducts = [];
-    this.arrayProductsList.map((res: any) => {
-      this.arrayPagoProducts.push({
-        cantidad: res.item,
-        id_detalle_articulo: res.id_detalle_articulo,
-      });
-    });
-    const formPayments: any = {
-      ...form,
-      detalle_Venta: this.arrayPagoProducts,
-    };
-    return formPayments;
   }
 }

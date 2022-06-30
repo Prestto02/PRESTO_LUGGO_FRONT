@@ -33,16 +33,23 @@ export class AddCarsOrListDesire {
     });
   }
   //HACER POST CUANDO YA SE VAYA A COMPRAR EN EL CARRITO
-  postCarritoItems(id: any) {
+  postCarritoItems(id: any, variable: boolean) {
     const form = {
       id_usuario: id,
       detalle_carrito: this.detalle_carrito,
     };
     //POST CARRITO ITEMS
-    this.apiCarritoUser.postCarritoItems(form).subscribe((res) => {
-      this.router.navigateByUrl(
-        `${UrlFront.Pagar.pagar}/${UrlFront.Pagar.processoPagar}`
-      );
-    });
+    this.apiCarritoUser.postCarritoItems(form).subscribe(
+      (res) => {
+        console.log(res);
+        if (variable)
+          this.router.navigateByUrl(
+            `${UrlFront.Pagar.pagar}/${UrlFront.Pagar.processoPagar}`
+          );
+      },
+      (err) => {
+        console.log(err);
+      }
+    );
   }
 }
