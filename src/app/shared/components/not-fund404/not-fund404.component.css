@@ -7,3 +7,11 @@
   width: 40%;
   margin: 0 auto;
 }
+* {
+  font-family: Cardium B-Medium;
+}
+.text-center {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 22.15px;
+}
