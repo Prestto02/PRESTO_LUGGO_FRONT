@@ -33,7 +33,7 @@ export class ButtonAddOrListComponent implements OnInit {
     this.addCarrito(id);
     this.apiCarOrList.addDetalleCarrito(producto);
     this.idUsuario
-      ? this.apiCarOrList.postCarritoItems(this.idUsuario)
+      ? this.apiCarOrList.postCarritoItems(this.idUsuario, true)
       : this.irLogin();
   }
   //REGRESAR AL LOGIN
