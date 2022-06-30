@@ -22,6 +22,7 @@ import { ImagenProductsComponent } from '../detalle-productos/imagen-products/im
 import { NgxImgZoomModule } from 'ngx-img-zoom';
 import { IconsCarsDesireComponent } from '../list-products/icons-cars-desire/icons-cars-desire.component';
 import { DetalleProductDecalarations } from '../detalle-productos/module/detalle-products.module';
+import { NotFund404Component } from '../../not-fund404/not-fund404.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { DetalleProductDecalarations } from '../detalle-productos/module/detalle
     CompararProductosComponent,
     DetalleProductDecalarations,
     IconsCarsDesireComponent,
+    NotFund404Component,
     FilterPipe,
   ],
   imports: [

@@ -1,23 +1,25 @@
-<header>
-  <app-menu></app-menu>
-  <app-menu2></app-menu2>
-</header>
-<section class="container-fluid mb-3">
-  <div class="row">
-    <div class="col-xl-5 col-xxl-5 col-md-5 col-sm-12 col-12 mt-4">
-      <app-imagen-products [imagenArray]="productoObjeto?.imagen" [imagenZoom]="productoObjeto?.imagen_zoom">
-      </app-imagen-products>
-    </div>
-    <div class="col-xl-5 col-xxl-5 col-md-6 col-sm-12 col-12 mt-4 mb-3">
-      <div class="row">
-        <app-product-description [productoObjeto]="productoObjeto"></app-product-description>
-        <!--         <app-atributos-descripcion [productoObjeto]="productoObjeto.atributes"></app-atributos-descripcion> -->
-        <app-button-add-or-list [productoObjeto]="productoObjeto"></app-button-add-or-list>
-        <p>Características del Producto</p>
-        <hr>
+<app-menu-index></app-menu-index>
+<section class="container-fluid mb-5 mt-3">
+  <ng-container *ngIf="productoObjeto else notData">
+    <div class="row mx-auto">
+      <div class="col-xxl-6 col-xl-6 col-md-6 col-sm-12 col-12 mt-4">
+        <app-imagen-products [imagenArray]="productoObjeto?.imagen" [imagenZoom]="productoObjeto?.imagen_zoom">
+        </app-imagen-products>
+      </div>
+      <div class="col-xxl-6 col-xl-6 col-md-6 col-sm-12 col-12 mt-4 mb-3">
+        <div class="row mx-md-auto mx-sm-auto mx-auto mx-xxl-0 mx-xl-0">
+          <app-product-description [productoObjeto]="productoObjeto"></app-product-description>
+          <!--         <app-atributos-descripcion [productoObjeto]="productoObjeto.atributes"></app-atributos-descripcion> -->
+          <app-button-add-or-list [productoObjeto]="productoObjeto"></app-button-add-or-list>
+          <p>Características del Producto</p>
+          <hr>
+        </div>
       </div>
     </div>
-  </div>
+  </ng-container>
+  <ng-template #notData>
+    <app-not-fund404 [mensaje]="'El producto'"></app-not-fund404>
+  </ng-template>
 </section>
 
 <section class="container-fluid mx-5">
@@ -40,6 +42,4 @@
 </section>
 <app-section-servicios class="mt-4"></app-section-servicios>
 <!---------- FOOTER   ----------->
-<footer>
-  <app-footer-index></app-footer-index>
-</footer>
+<app-footer-index></app-footer-index>

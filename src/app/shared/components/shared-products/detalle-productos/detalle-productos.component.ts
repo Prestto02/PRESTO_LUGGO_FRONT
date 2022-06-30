@@ -9,7 +9,7 @@ import { ProductDetailsService } from './services/product-details.service';
   styleUrls: ['./detalle-productos.component.css'],
 })
 export class DetalleProductosComponent implements OnInit {
-  productoObjeto: any = [];
+  productoObjeto: any;
   idProduct: any;
   constructor(
     private _router: ActivatedRoute,

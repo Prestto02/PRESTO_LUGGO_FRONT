@@ -5,10 +5,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { InterceptorsProviders } from './shared/services/module/module-interceptors.module';
 import { ToastConfig } from './shared/Toasts/ToastsConfig';
-import { NotFund404Component } from './shared/components/not-fund404/not-fund404.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 @NgModule({
-  declarations: [AppComponent, NotFund404Component],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,

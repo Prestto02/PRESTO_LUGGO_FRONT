@@ -5,16 +5,6 @@
   <h5 class="title-product">{{productoObjeto.name}}</h5>
   <h5 class="subtitle-product">{{productoObjeto.descripcion_articulo}}</h5>
 </div>
-<!-- <div class="col-xxl-12 col-xl-12 col-sm-12 col-md-12 col-12 mb-3">
-  <div class="row">
-    <div class="col-xxl-12 col-xl-12 col-md-12 col-sm-12 col-12">
-      <span>{{productoObjeto.nombre_tienda}}</span>
-    </div>
-    <div class="col-xxl-12 col-xl-12 col-md-12 col-sm-12 col-12">
-      <p>Marca: <span>{{productoObjeto.nombre_marca}}</span></p>
-    </div>
-  </div>
-</div> -->
 <div class="col-xxl-12 col-xl-12 col-md-12 col-sm-12 col-12 mb-2">
   <div class="row">
     <div class="col-xxl-2 col-xl-2 col-md-2 col-sm-2 col-2">
@@ -23,11 +13,14 @@
     </div>
     <div class="col-xxl-5 col-xl-5 col-md-5 col-sm-5 col-5">
       <span class="text-iva">&nbsp;
-        <span>{{productoObjeto.iva_porcentaje===0?'No aplica':'IVA incluido'}}</span>
+        <span>{{productoObjeto.iva_porcentaje===0?'No aplica iva':'IVA incluido'}}</span>
+      </span>
+      <span class="text-iva">&nbsp;
+        <span>{{productoObjeto.ice_porcentaje===0?'':'| ICE incluido'}}</span>
       </span>
     </div>
     <div class="col-xxl-4 col-xl-4 col-md-5 col-sm-4 col-4">
-      <span class="color-stock">{{productoObjeto.stock>10?'En Stock':'No disponible'}}</span>
+      <span class="color-stock">{{productoObjeto.stock>10?'&#10004; En Stock':'No disponible'}}</span>
     </div>
   </div>
 </div>
@@ -41,7 +34,7 @@
         <p><img [src]="seguridad" alt="seguridad" class="img-fluid mx-1" />Transacción Segura</p>
       </div>
     </div>
-    <app-input-product class="col-xxl-3 col-xl-3 col-md-3 col-sm-3 col-3 mt-5" [productObjeto]="productoObjeto">
-    </app-input-product>
+    <!--     <app-input-product class="col-xxl-3 col-xl-3 col-md-3 col-sm-3 col-3 mt-5" [productObjeto]="productoObjeto">
+    </app-input-product> -->
   </div>
 </div>
