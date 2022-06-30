@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { arrayOfertasImg } from './arrayOfertasImagen';
+import { BannersCardsOFertas } from './services/BannersCardsOfertas.service';
 
 @Component({
   selector: 'app-section-cards-ofertas',
@@ -7,8 +8,16 @@ import { arrayOfertasImg } from './arrayOfertasImagen';
   styleUrls: ['./section-cards-ofertas.component.css'],
 })
 export class SectionCardsOfertasComponent implements OnInit {
-  arrayOfertasImg = arrayOfertasImg;
-  constructor() {}
+  arrayOfertasImg: any = [];
+  constructor(private apiBanerCards: BannersCardsOFertas) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.getSectionOfertas();
+  }
+
+  getSectionOfertas() {
+    this.apiBanerCards.getElementsBannersOfertas().subscribe((res: any) => {
+      this.arrayOfertasImg = res;
+    });
+  }
 }

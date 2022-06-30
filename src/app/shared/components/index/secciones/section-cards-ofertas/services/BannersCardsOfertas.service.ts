@@ -3,16 +3,13 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { urlApiAzure } from 'src/app/shared/routes/RoutesApiAzure';
 
-@Injectable({
-  providedIn: 'root',
-})
-export class BannersServices {
+@Injectable({ providedIn: 'root' })
+export class BannersCardsOFertas {
   constructor(private http: HttpClient) {}
 
-  //GET BANNERS USERS
-  getBannersUSers(variable: string): Observable<any> {
+  getElementsBannersOfertas(): Observable<any> {
     return this.http.get<any>(
-      ` ${urlApiAzure.UrlApi}${urlApiAzure.bannersIndex}${variable}`
+      `${urlApiAzure.UrlApi}${urlApiAzure.bannersCruzIndex}`
     );
   }
 }
