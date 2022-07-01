@@ -6,13 +6,26 @@
         <app-imagen-products [imagenArray]="productoObjeto?.imagen" [imagenZoom]="productoObjeto?.imagen_zoom">
         </app-imagen-products>
       </div>
-      <div class="col-xxl-6 col-xl-6 col-md-6 col-sm-12 col-12 mt-4 mb-3">
+      <div class="col-xxl-4 col-xl-6 col-md-6 col-sm-12 col-12 mt-4 mb-3">
         <div class="row mx-md-auto mx-sm-auto mx-auto mx-xxl-0 mx-xl-0">
           <app-product-description [productoObjeto]="productoObjeto"></app-product-description>
           <!--         <app-atributos-descripcion [productoObjeto]="productoObjeto.atributes"></app-atributos-descripcion> -->
           <app-button-add-or-list [productoObjeto]="productoObjeto"></app-button-add-or-list>
-          <p>Características del Producto</p>
-          <hr>
+        </div>
+        <div class="row style-caracteristicas mx-4">
+          <div class="col-xxl-11 col-xl-11 col-md-11 col-sm-11 col-11">
+            <span class=" mb-2 mt-3" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+              aria-controls="offcanvasRight">Características
+              del Producto </span>
+          </div>
+          <div class="col-xxl-1 col-xl-1 col-md-1 col-sm-1 col-1">
+            <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M1.35355 0.646447C1.15829 0.451185 0.841709 0.451185 0.646446 0.646447C0.451185 0.841709 0.451185 1.15829 0.646447 1.35355L1.35355 0.646447ZM5 5L5.35355 5.35355C5.54882 5.15829 5.54882 4.84171 5.35355 4.64645L5 5ZM0.646447 8.64645C0.451185 8.84171 0.451185 9.15829 0.646447 9.35355C0.84171 9.54882 1.15829 9.54882 1.35355 9.35355L0.646447 8.64645ZM0.646447 1.35355L4.64645 5.35355L5.35355 4.64645L1.35355 0.646447L0.646447 1.35355ZM4.64645 4.64645L0.646447 8.64645L1.35355 9.35355L5.35355 5.35355L4.64645 4.64645Z"
+                fill="#282828" />
+            </svg>
+            <app-atributos-descripcion [productoObjeto]="productoObjeto"></app-atributos-descripcion>
+          </div>
         </div>
       </div>
     </div>
@@ -21,6 +34,7 @@
     <app-not-fund404 [mensaje]="'El producto'"></app-not-fund404>
   </ng-template>
 </section>
+
 
 <section class="container-fluid mx-5">
   <a class="btn btn-sm font-item-right" (click)="verProductos();">

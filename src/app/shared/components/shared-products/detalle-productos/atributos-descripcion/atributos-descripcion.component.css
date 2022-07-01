@@ -1,3 +1,21 @@
-*{
+* {
   font-family: Cardium A-Medium;
+  cursor: auto;
+}
+.row-header{
+  width: 100%;
+}
+.text-subtitle {
+  font-size: 14px;
+  font-weight: 500;
+}
+.style-colors {
+  width: 1.2rem;
+  height: 1.2rem;
+  border-radius: 6px;
+}
+
+.flex-text {
+  display: flex;
+  align-items: center;
 }
