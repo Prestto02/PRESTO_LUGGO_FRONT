@@ -24,7 +24,8 @@
           </div>
           <div class="col-xxl-4 col-xl-4 col-md-4 col-sm-4 col-4">
             <ng-container *ngIf="list.propiedad==='Color' else notColor">
-              <p [style]="list.valor" class="style-colors">&nbsp;</p>
+              <p [style]="list.valor |SeparedComaColorBg:'colors'" class="style-colors">&nbsp;</p>
+              <p class="">{{list.valor |SeparedComaColorBg:'name'}}</p>
             </ng-container>
             <ng-template #notColor>
               <span class="text">{{list.valor}}</span>
