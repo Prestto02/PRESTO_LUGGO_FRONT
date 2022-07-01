@@ -22,10 +22,10 @@
           <div class="col-xxl-8 col-xl-8 col-md-8 col-sm-8 col-8 flex-text">
             <p>{{list.propiedad}}</p>
           </div>
-          <div class="col-xxl-4 col-xl-4 col-md-4 col-sm-4 col-4">
+          <div class="col-xxl-4 col-xl-4 col-md-4 col-sm-4 col-4 d-flex">
             <ng-container *ngIf="list.propiedad==='Color' else notColor">
               <p [style]="list.valor |SeparedComaColorBg:'colors'" class="style-colors">&nbsp;</p>
-              <p class="">{{list.valor |SeparedComaColorBg:'name'}}</p>
+              <span class="mx-2">{{list.valor |SeparedComaColorBg:'name'}}</span>
             </ng-container>
             <ng-template #notColor>
               <span class="text">{{list.valor}}</span>
