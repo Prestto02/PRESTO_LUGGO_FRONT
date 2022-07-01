@@ -26,7 +26,13 @@
   background: #fff;
   overflow-x: hidden;
 }
-
+.text-propiedad {
+  font-size: 14px;
+}
+.text-atributo {
+  font-family: Cardium B-Regular;
+  font-size: 13px;
+}
 .offcanvas-body::-webkit-scrollbar {
   width: 8px; /* Tamaño del scroll en vertical */
   height: 8px; /* Tamaño del scroll en horizontal */
