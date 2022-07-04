@@ -26,6 +26,10 @@ const routes: Routes = [
         component: ResetPasswordComponent,
       },
       {
+        path: UrlFront.Login.buscarusuario,
+        component: BuscarUsuarioComponent,
+      },
+      {
         path: UrlFront.Login.google,
         component: GoogleComponent,
       },
