@@ -24,10 +24,6 @@ export class UsersService {
   getDataPerson(id: any): Observable<any> {
     return this.http.get<any>(`${this.urlApi}${this.urlPersonaOne}/${id}`);
   }
-  //GUARDAR USUSARIO
-  /*  postDataUSer(form: any): Observable<any> {
-    return this.http.post<any>(`${this.urlApi}${this.url}`, form);
-  } */
   //PUT DATA PERSONA
   putDataPersona(form: any): Observable<any> {
     return this.http.put<any>(

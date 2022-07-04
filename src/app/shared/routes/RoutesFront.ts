@@ -103,4 +103,9 @@ export const UrlFront = {
     detalleListPedidos: 'detalle-pedidos/:id',
     dashborad: 'dashboard',
   },
+  //LISTA DE PEDIDOS
+  listaPedidos: {
+    lista: 'lista',
+    listado: 'lista-pedidos',
+  },
 };

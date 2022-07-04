@@ -129,6 +129,14 @@ const routes: Routes = [
         (m) => m.ManagerVendedorModule
       ),
   },
+  {
+    path: UrlFront.listaPedidos.lista,
+    loadChildren: () =>
+      import(
+        './shared/components/list-pedidos/module/list-pedidos.module'
+      ).then((m) => m.ListPedidosModule),
+  },
+
   //REDIRECCIONAR EN MENU DIRECTO
   {
     path: '',

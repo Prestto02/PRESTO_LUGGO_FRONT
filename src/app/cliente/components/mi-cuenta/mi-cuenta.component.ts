@@ -14,7 +14,7 @@ export class MiCuentaComponent implements OnInit {
       title: 'Mis Pedidos',
       icons: `${RepositorioImg.urlRepositorio}img/IMÁGENES/list-content-adn.png`,
       subtitle: 'Crea tu catálogo de productos o servicios.',
-      link: `${UrlFront.Cliente.cliente}/${UrlFront.Cliente.miCuenta}`,
+      link: `${UrlFront.listaPedidos.lista}/${UrlFront.listaPedidos.listado}`,
     },
     {
       id: 2,

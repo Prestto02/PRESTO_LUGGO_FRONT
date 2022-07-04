@@ -68,4 +68,7 @@ export const UrlApi = {
   //VENTA
 
   pagarUser: 'api/Venta',
+
+  //LISTADO DE COMPRAS DE LOS CLIENTES
+  listadoPedidos: 'api/pedido/mis-compras',
 };
