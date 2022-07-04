@@ -14,7 +14,7 @@ import { BaseFormSearchProducts } from '../menu/models/BaseFormSearchProduct';
 import { ItemsProductsVerify } from 'src/app/shared/helpers/ItemsProductsVerify';
 import { ItemNavComponent } from '../menu2/item-nav/item-nav.component';
 import { UsuarioIdentificComponent } from '../menu2/usuario-identific/usuario-identific.component';
-
+import { InputIncreaseDiminishComponent } from '../../../input-increase-diminish/input-increase-diminish.component';
 @NgModule({
   declarations: [
     MenuIndexComponent, //MENU INDEX COMPONENTS
@@ -26,6 +26,7 @@ import { UsuarioIdentificComponent } from '../menu2/usuario-identific/usuario-id
     SubMenuCategoriasComponent, //SUB MENU DE CATEGORIAS
     UsuarioIdentificComponent, //USUARIO IDENTIFICADO NUEVOS MENUS
     AutocompletadoProductosComponent, //AUTO COMPLETADO
+    InputIncreaseDiminishComponent,
   ],
   imports: [CommonModule, ReactiveFormsModule, HttpClientModule],
   providers: [
@@ -34,6 +35,11 @@ import { UsuarioIdentificComponent } from '../menu2/usuario-identific/usuario-id
     CarritoItemsComponent,
     ItemsProductsVerify,
   ],
-  exports: [MenuIndexComponent, MenuComponent, Menu2Component],
+  exports: [
+    MenuIndexComponent,
+    MenuComponent,
+    Menu2Component,
+    InputIncreaseDiminishComponent,
+  ],
 })
 export class MenuIndexModule {}

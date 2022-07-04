@@ -2,7 +2,6 @@ import { DOCUMENT } from '@angular/common';
 import { Component, Inject, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AddCarsOrListDesire } from 'src/app/shared/helpers/AddCarsOrListDesire';
-import { ItemsProductsVerify } from 'src/app/shared/helpers/ItemsProductsVerify';
 import { RepositorioImg } from 'src/app/shared/helpers/RepositorioImg';
 import { UrlFront } from 'src/app/shared/routes/RoutesFront';
 import { CarritoItemsService } from '../services/carrito-items.service';
@@ -20,7 +19,6 @@ export class CarritoItemsComponent implements OnInit {
     @Inject(DOCUMENT) private document: Document, //DOCUMENT
     private apiServi: CarritoItemsService,
     private router: Router,
-    private verifyItem: ItemsProductsVerify,
     private addCars: AddCarsOrListDesire
   ) {}
 
@@ -31,12 +29,6 @@ export class CarritoItemsComponent implements OnInit {
   //OBTENER EL ID DEl PRODUCTO
   getListItemCarrito(id: any) {
     this.addCars.addProductCars(id);
-  }
-  //OBTENER LOS ITEMS DEL INPUT
-  verifyChange(e: any, id: any) {
-    const res = this.buscarProductoId(id); //OBTENGO EL ID DEL PRODUCTO
-    this.verifyItem.verifyChangeInputs(e, res); //ENVIO EL ITEM PARA SU RESPECTIVO CALCULO
-    this.carritoTotal();
   }
   //ME SUSCRIBO PARA GUARDAR LA LISTA DE PRODUCTOS QUE TENGO
   getItemCarrito() {
@@ -60,27 +52,7 @@ export class CarritoItemsComponent implements OnInit {
       this.totalAPagar = res;
     });
   }
-  //INCREMENTAR ITEMS
-  increment(id: any) {
-    const res = this.buscarProductoId(id); //BUSCO EL PRODUCTO ID
-    this.verifyItem.incrementItems(res); //INCREMENTO EL INPUT
-    this.carritoTotal();
-  }
-  //DISMINUIR ITEMS
-  descrement(id: any) {
-    const res = this.buscarProductoId(id);
-    //SI ES MAYOR A 0 LE RESTO CASO CONTRARIO NO HAGO NADA
-    this.verifyItem.descrementsItems(res);
-    this.carritoTotal();
-  }
-  //BUSCAR EL ID DEL PRODUCTO DEL ARREGLO ASIGNADO DEL CARRITO
-  buscarProductoId(id: any) {
-    return this.productoItems
-      .filter((elements: any) => elements.id_artic === id)
-      .map((res: any) => {
-        return res;
-      });
-  }
+
   //ELIMINAR DE LA LISTA DEL CARRITO
   removeItemCarrito(id: any) {
     this.apiServi.eliminarItemsCarrito(id);

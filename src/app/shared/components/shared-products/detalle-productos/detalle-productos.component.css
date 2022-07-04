@@ -23,9 +23,18 @@
   font-size: 14px;
   color: #ea2313;
 }
+.font-item-right:hover {
+  background-color: #ea2313;
+  color: #fff;
+  border: 1px solid #ea2313;
+
+}
+.font-item-right:hover > svg path {
+  fill: #fff;
+}
 .style-caracteristicas {
   cursor: pointer;
   width: 73%;
-  border-bottom: 1px solid #9C9B9B;
+  border-bottom: 1px solid #9c9b9b;
   padding-bottom: 7px;
 }

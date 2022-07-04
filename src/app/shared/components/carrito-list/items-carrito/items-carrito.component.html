@@ -27,27 +27,9 @@
           <p class="subtotalPagar"><b>{{listProduct.subtotal | currency:'USD'}}</b></p>
           <p>Subtotal</p>
         </div>
-        <div class="col-xxl-6 col-xl-6 col-sm-6 col-md-6 col-6">
-          <div class="input-group mb-3 input-group-items">
-            <div class="input-group-prepend">
-              <button class="btn btn-dark btn-group" type="button" (click)="descrement(listProduct.id_artic)">
-                <svg width=" 11" height="19" viewBox="0 0 11 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M9.03718 1.82129L1.09332 9.70255L9.03718 17.5838" stroke="white" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-              </button>
-            </div>
-            <input type="number" max=9 min=1 class="form-control text-center" [value]="listProduct.item" aria-label=""
-              aria-describedby="basic-addon1" (change)="verifyChange($event,listProduct.id_artic)">
-            <div class="input-group-prepend">
-              <button class="btn btn-dark btn-group" type="button" (click)="increment(listProduct.id_artic)">
-                <svg width="11" height="19" viewBox="0 0 11 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M1.40112 17.585L9.34509 9.7037L1.40113 1.82243" stroke="white" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-              </button>
-            </div>
-          </div>
+        <div class="col-xxl-6 col-xl-6 col-sm-6 col-md-6 col-6 mt-3">
+          <app-input-increase-diminish [carritoProductList]="listProduct" [colorsButton]="'background-color: #000;'">
+          </app-input-increase-diminish>
         </div>
       </div>
       <p class="text-end mt-3 subtotalPagar cursor p-1" (click)="iraDetalles(listProduct.id_artic)">Ver detalles</p>

@@ -5,8 +5,8 @@ export const ToastConfig = [
   ToastrModule.forRoot({
     timeOut: 3000,
     positionClass: 'toast-bottom-right',
-    progressBar: true,
-    progressAnimation: 'increasing',
+    progressBar: false,
+    /*    progressAnimation: 'increasing', */
     closeButton: true,
   }),
   ToastContainerModule,

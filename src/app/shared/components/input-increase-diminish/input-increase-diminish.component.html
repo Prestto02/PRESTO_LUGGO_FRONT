@@ -1,0 +1,22 @@
+<div class="group-input">
+  <input type="text" placeholder="12" class="input-type" [style]="widthInput" name="number-input" type="number" max=9
+    min=1 id="items" (change)="verifyChange($event,carritoProductList)" [value]="carritoProductList.item">
+  <div class="button-grid" [style]="buttonWidth">
+    <button type="button" [class]="colorsButton?'button-up-black':'button-up-white'"
+      (click)="increment(carritoProductList);">
+      <svg width="8" height="15" viewBox="0 0 8 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M0.820296 3.20285C0.518112 3.48614 0.502801 3.96077 0.786099 4.26296C1.0694 4.56514 1.54402 4.58045 1.84621 4.29715L0.820296 3.20285ZM3.99992 1.25L4.51287 0.702847C4.22438 0.432385 3.77546 0.432385 3.48696 0.702847L3.99992 1.25ZM6.15363 4.29715C6.45581 4.58045 6.93044 4.56514 7.21374 4.26296C7.49704 3.96077 7.48173 3.48614 7.17954 3.20285L6.15363 4.29715ZM1.84621 4.29715L4.51287 1.79715L3.48696 0.702847L0.820296 3.20285L1.84621 4.29715ZM3.48696 1.79715L6.15363 4.29715L7.17954 3.20285L4.51287 0.702847L3.48696 1.79715Z"
+          [attr.fill]="colorsButton?'white':'black'" />
+      </svg>
+    </button>
+    <button type="button" [class]="colorsButton?'button-down-black':'button-down-white'"
+      (click)="descrement(carritoProductList);">
+      <svg width="8" height="15" viewBox="0 0 8 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M7.17954 1.79715C7.48173 1.51386 7.49704 1.03923 7.21374 0.737044C6.93044 0.43486 6.45581 0.41955 6.15363 0.702847L7.17954 1.79715ZM3.99992 3.75L3.48696 4.29715C3.77546 4.56762 4.22438 4.56762 4.51287 4.29715L3.99992 3.75ZM1.84621 0.702847C1.54402 0.41955 1.0694 0.43486 0.786099 0.737045C0.502801 1.03923 0.518112 1.51386 0.820296 1.79715L1.84621 0.702847ZM6.15363 0.702847L3.48696 3.20285L4.51287 4.29715L7.17954 1.79715L6.15363 0.702847ZM4.51287 3.20285L1.84621 0.702847L0.820296 1.79715L3.48696 4.29715L4.51287 3.20285Z"
+          [attr.fill]="colorsButton?'white':'black'" />
+      </svg>
+    </button>
+  </div>
+</div>

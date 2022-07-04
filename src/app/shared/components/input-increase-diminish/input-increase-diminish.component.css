@@ -1,0 +1,106 @@
+.group-input {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  height: 40px;
+  max-width: 100%;
+}
+input {
+  border: 1px solid #636262;
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+  text-indent: 8px;
+  font-size: 14px;
+}
+input::placeholder {
+  color: #63626279;
+}
+input:focus {
+  outline: none !important;
+  border-color: #c00d0d;
+  box-shadow: 0 0 10px #c00d0d98;
+}
+.button-grid {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  min-width: 25%;
+  height: 100%;
+}
+.button-up-black {
+  background-color: #000;
+  border-top-right-radius: 6px;
+  color: #fff;
+  cursor: pointer;
+  border: 1px solid #636262;
+  border-bottom: 0px;
+  height: 50%;
+  border-left: 0px;
+}
+.button-up-black:hover {
+  background-color: rgb(32, 32, 32);
+}
+.button-down-black {
+  cursor: pointer;
+  background-color: #000;
+  border-bottom-right-radius: 6px;
+  color: #fff;
+  height: 50%;
+  border: 1px solid #636262;
+  border-top: 0px;
+  border-left: 0px;
+}
+.button-down-black:hover {
+  background-color: rgb(32, 32, 32);
+}
+
+.button-up-white {
+  background-color: #e1e1e1;
+  border-top-right-radius: 6px;
+  color: #fff;
+  cursor: pointer;
+  border: 1px solid #636262;
+  border-bottom: 0px;
+  height: 50%;
+  border-left: 0px;
+}
+.button-up-white:hover {
+  background-color: #d3d0d0;
+}
+.button-down-white {
+  cursor: pointer;
+  background-color: #e1e1e1;
+  border-bottom-right-radius: 6px;
+  color: #fff;
+  height: 50%;
+  border: 1px solid #636262;
+  border-top: 0px;
+  border-left: 0px;
+}
+.button-down-white:hover {
+  background-color: #d3d0d0;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+@media screen and (max-width: 800px) {
+  input {
+    max-width: 13%;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  input {
+    max-width: 18%;
+  }
+}
+.container {
+  display: flex;
+}
