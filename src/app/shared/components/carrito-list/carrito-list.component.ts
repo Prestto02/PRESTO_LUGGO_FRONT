@@ -13,6 +13,7 @@ import { CarritoItemsService } from '../index/menu-index/menu/services/carrito-i
 export class CarritoListComponent implements OnInit {
   productoItems: any;
   idUser: any;
+  totalPagarCarrito: any = 0;
   constructor(
     private apiServi: CarritoItemsService,
     private router: Router,
@@ -23,6 +24,7 @@ export class CarritoListComponent implements OnInit {
   }
   ngOnInit(): void {
     this.getAllProductsList();
+    this.totalPagar();
   }
   //OBTENGO LOS PRODUCTOS
   getAllProductsList() {
@@ -61,6 +63,12 @@ export class CarritoListComponent implements OnInit {
     this.router.navigateByUrl(
       `${UrlFront.Login.login}/${UrlFront.Login.iniciarSesion}`
     );
+  }
+  //TOTAL A PAGAR DEL CARRITO
+  totalPagar() {
+    this.apiServi.totalAPagar$.subscribe((res) => {
+      this.totalPagarCarrito = res;
+    });
   }
   //IR AL METODO DE PAGO
   irAPAgar() {

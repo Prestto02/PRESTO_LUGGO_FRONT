@@ -1,6 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ItemsProductsVerify } from 'src/app/shared/helpers/ItemsProductsVerify';
 import { RepositorioImg } from 'src/app/shared/helpers/RepositorioImg';
+import { UrlFront } from 'src/app/shared/routes/RoutesFront';
 import { CarritoItemsService } from '../../index/menu-index/menu/services/carrito-items.service';
 
 @Component({
@@ -10,19 +12,14 @@ import { CarritoItemsService } from '../../index/menu-index/menu/services/carrit
 })
 export class ItemsCarritoComponent implements OnInit {
   @Input('carritoProductList') carritoProductList: any | null = null;
+  imgIcons = `${RepositorioImg.urlRepositorio}img/IMÁGENES/img-iconos/shop.png`;
   public urlImg = RepositorioImg.urlRepositorio;
-  arrayTheadTable: any = [
-    'Imagen',
-    'Nombre del producto',
-    'Precio',
-    'Cantidad',
-    'SubTotal',
-    'Acción',
-  ];
   totalAPagar: any = 0;
+  totalItems: number = 0;
   constructor(
     private apiServi: CarritoItemsService,
-    private verifyInput: ItemsProductsVerify
+    private verifyInput: ItemsProductsVerify,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -79,5 +76,11 @@ export class ItemsCarritoComponent implements OnInit {
       .map((res: any) => {
         return res;
       });
+  }
+
+  iraDetalles(idarticulo: any) {
+    this.router.navigateByUrl(
+      `${UrlFront.Menu.menu}/${UrlFront.Productos.detalleGetProducto}${idarticulo}`
+    );
   }
 }

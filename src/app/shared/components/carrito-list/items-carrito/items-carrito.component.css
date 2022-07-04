@@ -11,6 +11,34 @@
 .input-group-items {
   width: 145px;
 }
+.border-radius {
+  border-radius: 15px;
+}
+.list-precio {
+  color: #ea2313;
+  font-size: 21px;
+  font-weight: 700;
+}
+
+.iva {
+  font-size: 14px;
+  font-weight: 500;
+}
+.bg-colors {
+  background-color: #f8f8f8;
+}
+.img-tamano {
+  max-width: 200px;
+  height: auto;
+}
+.subtotalPagar {
+  color: #9f0505;
+}
+.nombre-tienda {
+  color: #9f0505;
+  position: absolute;
+  margin-top: 5px;
+}
 
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {

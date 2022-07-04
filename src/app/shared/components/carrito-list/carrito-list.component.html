@@ -1,30 +1,55 @@
 <app-menu-index></app-menu-index>
-<section class="container-fluid mt-3 py-3">
-  <h4>Carrito de compra</h4>
+<section class="container-fluid border-top">
+  <div class="row">
+    <ng-container *ngIf="productoItems.length>0 else notDataProduct">
+      <div class="col-xxl-9 col-xl-9 col-md-9 col-sm-9 col-9">
+        <h4 class="mx-5 mt-3 py-3">Tu Carrito</h4>
+        <app-items-carrito class="row mx-5" [carritoProductList]="productoItems"></app-items-carrito>
+      </div>
+    </ng-container>
+    <ng-template #notDataProduct>
+      <div class="col-xxl-12 col-xl-12 col-md-12 col-sm-12 col-12">
+        <h4 class="text text-center fs-6 mt-3 mb-3"><b>Aún no haz agregado productos al carrito</b></h4>
+        <p class="text text-center">Dale click <a (click)="irAProductos();" class="cursor btn-link">aquí</a> para
+          agregar
+          productos al carrito </p>
+      </div>
+    </ng-template>
+
+    <!-- RESUMEN DE LA COMPRA -->
+    <div class="col-xxl-3 col-xl-3 col-md-3 col-sm-3 col-3 bg-colors-secondary" *ngIf="productoItems.length>0">
+      <h3 class="mt-3 py-3">Resumen</h3>
+      <div class="card bg-white border-radius p-3">
+        <div class="row">
+          <div class="col-xxl-8 col-xl-8 col-md-8 col-sm-8 col-8">
+            <p>{{productoItems.length}} productos</p>
+          </div>
+          <div class="col-xxl-4 col-xl-4 col-md-4 col-sm-4 col-4">
+            <p>{{totalPagarCarrito | currency:'USD'}}</p>
+          </div>
+          <div class="col-xxl-8 col-xl-8 col-md-8 col-sm-8 col-8">
+            <p>Envío desde Puertto</p>
+          </div>
+          <div class="col-xxl-4 col-xl-4 col-md-4 col-sm-4 col-4">
+            <p>$5.00</p>
+          </div>
+          <div class="col-xxl-12 col-xl-12 col-md-12 col-sm-12 col-12">
+            <hr>
+          </div>
+          <div class="col-xxl-8 col-xl-8 col-md-8 col-sm-8 col-8">
+            <p><b>Total a Pagar</b></p>
+          </div>
+          <div class="col-xxl-4 col-xl-4 col-md-4 col-sm-4 col-4">
+            <p class="totalPagar"><b>{{totalPagarCarrito +5 | currency: 'USD'}}</b>
+            </p>
+          </div>
+          <div class="col-xxl-12 col-xl-12 col-md-12 col-sm-12 col-12">
+            <button class="btn btn-dark btn-lg w-100 text-center" (click)="irAPAgar();">Proceder al Pago</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
-<ng-container *ngIf="productoItems.length>0 else notDataProduct">
-  <section class="container-fluid">
-    <div class="row">
-      <app-items-carrito [carritoProductList]="productoItems"></app-items-carrito>
-    </div>
-    <div class="row mx-auto py-3 mt-3">
-      <div class="col-xl-6 col-xxl-6 col-sm-6 col-md-6 text-start">
-        <button class="btn btn-outline-dark" (click)="irAProductos();">Continuar comprando</button>
-      </div>
-      <div class="col-xl-6 col-xxl-6 col-sm-6 col-md-6 text-end">
-        <button class="btn btn-outline-dark" (click)="irAPAgar();">Realizar el pago</button>
-      </div>
-    </div>
-  </section>
-</ng-container>
-<ng-template #notDataProduct>
-  <section class="container-fluid py-3 mt-3 mb-3">
-    <div class="row">
-      <h4 class="text text-center fs-6"><b>Aún no haz agregado productos al carrito</b></h4>
-      <p class="text text-center">Dale click <a (click)="irAProductos();" class="cursor btn-link">aquí</a> para agregar
-        productos al carrito </p>
-    </div>
-  </section>
-</ng-template>
 
 <app-footer-index></app-footer-index>
