@@ -89,4 +89,10 @@ export class CarritoItemsService {
   totalAPAgarObservable(totalAPagar: any) {
     this.totalAPagarOb.next(totalAPagar);
   }
+
+  eliminarTodo() {
+    this.addCarritoProduct = [];
+    this.productCarritoItem.next(this.addCarritoProduct);
+    this.obtenerTamañoDelCarrito();
+  }
 }
