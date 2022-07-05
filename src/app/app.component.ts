@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
+import { CarritoItemsService } from './shared/components/index/menu-index/menu/services/carrito-items.service';
 
 @Component({
   selector: 'app-root',
@@ -8,7 +9,7 @@ import { NavigationEnd, Router } from '@angular/router';
 })
 export class AppComponent {
   //title = 'frontend';
-  constructor(private router: Router) {
+  constructor(private router: Router, private apiCarrito: CarritoItemsService) {
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         this.verifyMenuIndex(event);
@@ -25,5 +26,13 @@ export class AppComponent {
     } else {
       element.style.background = '#fff';
     }
+  }
+  @HostListener('window:unload', ['$event'])
+  unloadHandler(event: any) {
+    this.apiCarrito.saveCarsLocalStorage();
+  }
+  @HostListener('window:load', ['$event'])
+  onloadPage(event: any) {
+    this.apiCarrito.verifyCarsLocalStorage();
   }
 }

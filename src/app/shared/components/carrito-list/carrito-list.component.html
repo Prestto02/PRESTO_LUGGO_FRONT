@@ -4,11 +4,11 @@
     <ng-container *ngIf="productoItems.length>0 else notDataProduct">
       <div class="col-xxl-9 col-xl-9 col-md-9 col-sm-9 col-9">
         <h4 class="mx-5 mt-3 py-3">Tu Carrito</h4>
-        <app-items-carrito class="row mx-5 container-productos" [carritoProductList]="productoItems"></app-items-carrito>
+        <app-items-carrito class="row mx-5" [carritoProductList]="productoItems"></app-items-carrito>
       </div>
     </ng-container>
     <ng-template #notDataProduct>
-      <div class="col-xxl-12 col-xl-12 col-md-12 col-sm-12 col-12">
+      <div class="col-xxl-12 col-xl-12 col-md-12 col-sm-12 col-12 py-3 mt-3">
         <h4 class="text text-center fs-6 mt-3 mb-3"><b>Aún no haz agregado productos al carrito</b></h4>
         <p class="text text-center">Dale click <a (click)="irAProductos();" class="cursor btn-link">aquí</a> para
           agregar

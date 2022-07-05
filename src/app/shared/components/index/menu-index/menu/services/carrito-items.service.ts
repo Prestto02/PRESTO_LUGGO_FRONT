@@ -43,18 +43,35 @@ export class CarritoItemsService {
       this.addCarritoProduct.push({ ...dataObj }); //GUARDO EL OBJETO EN EN ARREGLO
       this.productCarritoItem.next(this.addCarritoProduct); //GUARDO EN EL OBSERVABLE EL ARREGLO ASIGNADO
       this.obtenerTamañoDelCarrito(); //OBTENGO EL TAMAÑO DEL ARREGLO addCarritoProduct LENGTH
-      this.messageFront.getSuccessMessage(
+      /*       this.messageFront.getSuccessMessage(
         message.Success.title,
         message.Success.productoAgregado
-      ); //OK SE AGREGO EL PRODUCTO
+      ); //OK SE AGREGO EL PRODUCTO */
     }
+  }
+  verifyCarsLocalStorage() {
+    const itemsCars: any = localStorage.getItem('carritoItems');
+    const data = JSON.parse(itemsCars); //TRANSFORMANDO LO QUE TENGO EN EL LOCAL STORAGE
+    data.map((res: any) => {
+      this.addProductCarrito(res); //REOCORRO Y INSERTO EN EL ARRAY
+    });
   }
   //OBTENER EL TAMAÑOO TOTAL DEL CARRITO
   obtenerTamañoDelCarrito() {
     const total = this.addCarritoProduct.length;
     this.productsLength.next(total);
   }
-
+  //GUARDAR EL CARS DEL LOCAL STORAGE
+  saveCarsLocalStorage() {
+    let carritoItems: any = [];
+    if (this.addCarritoProduct.length > 0) {
+      //SI ES MAYOR GUARDO EL NUEVO ARRAY
+      this.productCarrito.subscribe((res: any) => {
+        carritoItems = res;
+      });
+      localStorage.setItem('carritoItems', JSON.stringify(carritoItems));
+    }
+  }
   //VERIFICAR SI EXISTE EN LA LISTA DEL CARRITO
   verifyCarrito(idProduct: any) {
     return this.addCarritoProduct.filter(

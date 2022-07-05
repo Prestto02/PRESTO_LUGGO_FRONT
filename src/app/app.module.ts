@@ -15,10 +15,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HttpClientModule,
     ToastConfig,
   ],
-  providers: [
-    InterceptorsProviders,
-    // { provide: LocationStrategy, useClass: HashLocationStrategy },
-  ],
+  providers: [InterceptorsProviders],
 
   bootstrap: [AppComponent],
 })

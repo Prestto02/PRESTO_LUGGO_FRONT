@@ -6,29 +6,8 @@ import { CarritoItemsService } from '../components/index/menu-index/menu/service
 export class ItemsProductsVerify {
   productsListCars: any = [];
   totalAPagar: any = 0;
-  constructor(private apiServi: CarritoItemsService) {}
-
-  //VERIFICAR EL CHANGE INPUTS
-  verifyChangeInputs(e: any, res: any) {
-    if (e.target.value <= 0) {
-      e.target.value = 1;
-    }
-    if (res) {
-      res[0].item = e.target.value;
-      res[0].subtotal = res[0].precio * res[0].item; //MULTIPLICO CON El ITEM Y EL PRECIO
-    }
-  }
-  //INCREMENT ITEMS
-  incrementItems(res: any) {
-    res[0].item++; //HAGO LA SUMA
-    res[0].subtotal = res[0].precio * res[0].item; //MULTIPLICO CON El ITEM Y EL PRECIO
-  }
-  //DESCREMENTAR ITEMS
-  descrementsItems(res: any) {
-    if (res[0].item > 1) {
-      res[0].item = res[0].item - 1;
-      res[0].subtotal = res[0].precio * res[0].item;
-    }
+  constructor(private apiServi: CarritoItemsService) {
+    this.getTotalCars();
   }
   //ELIMINAR PRODUCTO DE LA LISTA DE CARRITO Y ACTUALZAR EL CONTADOR DEL TAMAÑO DEL CARRITO
   removeItemsProducts(id: any) {
