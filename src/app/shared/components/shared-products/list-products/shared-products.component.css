@@ -73,6 +73,11 @@
   position: absolute;
   margin-top: 5px;
 }
+.text {
+  font-weight: 600;
+  font-size: 22px;
+  color: #ea2313;
+}
 @media screen and (min-width: 1300px) and (max-width: 2200px) {
   .title-h1 {
     font-size: 42px;

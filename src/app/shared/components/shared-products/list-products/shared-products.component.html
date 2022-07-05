@@ -12,7 +12,8 @@
             <h5 class="title-h1">Los más destacados</h5>
           </ng-template>
         </div>
-        <div [class]="this.nombreProduct?'col-xl-1 col-xxl-1 mt-3 d-none d-xl-block d-xxl-block d-md-block':'col-xl-1 mt-3 py-3 d-none d-xl-block d-xxl-block d-md-block'">
+        <div
+          [class]="this.nombreProduct?'col-xl-1 col-xxl-1 mt-3 d-none d-xl-block d-xxl-block d-md-block':'col-xl-1 mt-3 py-3 d-none d-xl-block d-xxl-block d-md-block'">
           <svg width="941" height="6" viewBox="0 0 941 6" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M3 3H938" stroke="#EA2313" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" />
           </svg>
@@ -21,38 +22,43 @@
     </div>
   </div>
 
-  <div class="row card-responsive" infiniteScroll (scrolled)="onScrollDown();">
-    <div class="col-xxl-2 col-xl-2 col-sm-6 col-6 col-md-3 mt-3 mb-3 mx-xxl-2 mx-xl-0 mx-0 card-responsive-laptop "
-      *ngFor="let products of productsArray">
-      <div class="card border rounded py-3 px-1">
-        <img loading="lazy" src="{{urlImg}}{{products.imagen}}"
-          class="card-img-top img-fluid mx-auto mb-3 card-img cursor" alt="{{products.id_artic}}"
-          (click)="irAlDetalle(products.id_artic)">
-        <div class="row mx-1">
-          <p class="card-title text-truncate">{{products.name}}</p>
-          <p class="card-text text-iva"><b class="text-precio">{{products.precio | currency: 'USD'}}</b></p>
-          <!--           <p class="card-text text-iva mx-1"><b class="text-precio">{{products.iva_porcentaje}}</b></p>
+  <ng-container *ngIf="productsArray.length>0 else notData">
+    <div class="row card-responsive" infiniteScroll (scrolled)="onScrollDown();">
+      <div class="col-xxl-2 col-xl-2 col-sm-6 col-6 col-md-3 mt-3 mb-3 mx-xxl-2 mx-xl-0 mx-0 card-responsive-laptop "
+        *ngFor="let products of productsArray">
+        <div class="card border rounded py-3 px-1">
+          <img loading="lazy" src="{{urlImg}}{{products.imagen}}"
+            class="card-img-top img-fluid mx-auto mb-3 card-img cursor" alt="{{products.id_artic}}"
+            (click)="irAlDetalle(products.id_artic)">
+          <div class="row mx-1">
+            <p class="card-title text-truncate">{{products.name}}</p>
+            <p class="card-text text-iva"><b class="text-precio">{{products.precio | currency: 'USD'}}</b></p>
+            <!--           <p class="card-text text-iva mx-1"><b class="text-precio">{{products.iva_porcentaje}}</b></p>
             <p class="card-text text-iva mx-1"><b class="text-precio">{{products.ice_porcentaje}}</b></p> -->
-          <div class="col-xxl-12 col-xl-12 col-md-12 col-sm-12 col-12 mx-auto">
-            <div class="row">
-              <div class="col-xxl-7 col-xl-7 col-sm-7 col-md-7 col-12">
-                <!----NOMBRE TIENDA STORE---->
-                <img [src]="imgIcons" class="img-fluid" [alt]="products.nombre_tienda" />
-                <span class="nombre-tienda">{{products.nombre_tienda}}</span>
+            <div class="col-xxl-12 col-xl-12 col-md-12 col-sm-12 col-12 mx-auto">
+              <div class="row">
+                <div class="col-xxl-7 col-xl-7 col-sm-7 col-md-7 col-12">
+                  <!----NOMBRE TIENDA STORE---->
+                  <img [src]="imgIcons" class="img-fluid" [alt]="products.nombre_tienda" />
+                  <span class="nombre-tienda">{{products.nombre_tienda}}</span>
+                </div>
+                <app-icons-cars-desire class="col-xxl-5 col-xl-5 col-sm-5 col-md-5 col-12" [product]="products">
+                </app-icons-cars-desire>
               </div>
-              <app-icons-cars-desire class="col-xxl-5 col-xl-5 col-sm-5 col-md-5 col-12" [product]="products">
-              </app-icons-cars-desire>
             </div>
           </div>
         </div>
       </div>
+      <button *ngIf="showButton" (click)="onScrollTop()" type="button" class="btn rounded-circle buttonRegresar"
+        data-bs-toggle="tooltip" data-bs-placement="top" title="Subir al inicio"><svg width="21" height="12"
+          viewBox="0 0 21 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M19.8818 10.8816L10.678 1.52612L1.47412 10.8816" stroke="white" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </button>
     </div>
-    <button *ngIf="showButton" (click)="onScrollTop()" type="button" class="btn rounded-circle buttonRegresar"
-      data-bs-toggle="tooltip" data-bs-placement="top" title="Subir al inicio"><svg width="21" height="12"
-        viewBox="0 0 21 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M19.8818 10.8816L10.678 1.52612L1.47412 10.8816" stroke="white" stroke-width="2" stroke-linecap="round"
-          stroke-linejoin="round" />
-      </svg>
-    </button>
-  </div>
+  </ng-container>
+  <ng-template #notData>
+    <h4 class="text text-center mt-3 py-3">No hay productos registrados</h4>
+  </ng-template>
 </div>
