@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UrlFront } from 'src/app/shared/routes/RoutesFront';
+import { CarritoItemsService } from '../../index/menu-index/menu/services/carrito-items.service';
 import { PagarServices } from '../services/Pagar.service';
 import { Message } from './messages/messagesServer';
 
@@ -14,7 +15,11 @@ export class VerificarPaymentsComponent implements OnInit {
   codigoCheck: any;
   decode64: string = '';
   message: string = '';
-  constructor(private apiServi: PagarServices, private route: Router) {
+  constructor(
+    private apiServi: PagarServices,
+    private route: Router,
+    private apiServiCarrito: CarritoItemsService
+  ) {
     this.urlCheck = this.route.parseUrl(this.route.url);
     this.codigoCheck = this.urlCheck.queryParams['Verificador'];
   }
@@ -29,7 +34,11 @@ export class VerificarPaymentsComponent implements OnInit {
 
   verifyPago() {
     this.decodeBase64();
-    if (this.decode64 === 'ACEPTADO') this.message = Message.aceptado;
+    if (this.decode64 === 'ACEPTADO') {
+      this.apiServiCarrito.eliminarTodo();
+      localStorage.removeItem('carritoItems');
+      this.message = Message.aceptado;
+    }
     if (this.decode64 === 'RECHAZADO') this.message = Message.rechazado;
   }
   irAPedidos() {

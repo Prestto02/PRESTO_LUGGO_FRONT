@@ -1,14 +1,25 @@
-.tittle {
-  font-family: Cardium B-Bold;
-}
-.subtitle {
+* {
   font-family: Cardium B-Medium;
 }
-.button {
-  background: #5a31d6;
-  color: #fff;
+.text-title {
+  font-size: 23px;
+  font-weight: 600;
 }
-.button:hover {
-  background: #7549fe;
-  color: #fff;
+
+.color-text {
+  color: #ea2313;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.subtitle-text {
+  font-size: 14px;
+  font-weight: 500;
+}
+.subtitle-text-list {
+  font-size: 12px;
+  font-family: Cardium B-Medium;
+  font-weight: 400;
+  text-align: justify;
+  line-height: 16.61px;
 }

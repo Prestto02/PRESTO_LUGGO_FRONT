@@ -43,6 +43,7 @@ export class CarritoItemsComponent implements OnInit {
   carritoTotal() {
     this.totalAPagar = 0;
     this.productoItems.map((res: any) => {
+      console.log(res);
       const subtotal = res.precio * res.item;
       this.totalAPagar = this.totalAPagar + subtotal;
     });
@@ -65,8 +66,8 @@ export class CarritoItemsComponent implements OnInit {
     );
   }
   irAPagar() {
-/*     this.apiServi.eliminarTodo();
-    localStorage.removeItem('carritoItems'); */
+    this.apiServi.eliminarTodo();
+    localStorage.removeItem('carritoItems');
     this.router.navigateByUrl(
       `${UrlFront.Pagar.pagar}/${UrlFront.Pagar.processoPagar}`
     );

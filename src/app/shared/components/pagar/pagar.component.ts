@@ -1,13 +1,5 @@
-import {
-  AfterViewChecked,
-  AfterViewInit,
-  Component,
-  ElementRef,
-  OnInit,
-} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { TokenService } from 'src/app/login/services/token.service';
-import { AddCarsOrListDesire } from '../../helpers/AddCarsOrListDesire';
 import { CarritoItemsService } from '../index/menu-index/menu/services/carrito-items.service';
 import { BaseFormPagar } from './formulario-pagar/models/BaseFormPagar';
 import { IFormularioPagar } from './formulario-pagar/models/IPagarForm';
@@ -60,7 +52,6 @@ export class PagarComponent implements OnInit {
   submitPagar(form: IFormularioPagar) {
     this.contador++;
     if (this.contador === 1) {
-      localStorage.removeItem('carritoItems');
       const formPayments = this.pagarOCarrito.pagarSubmit(
         form,
         this.arrayProductsList
