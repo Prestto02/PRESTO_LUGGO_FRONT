@@ -13,7 +13,7 @@
           <div class="row">
             <div
               [class]="emailUsuario?'col-1 col-sm-1 col-xl-1 col-xxl-1 mt-1':'col-xl-1 col-sm-1 col-1 col-xxl-1 mt-1 text-start'">
-             <!--  <svg (click)="filasDeDos=false;" class="pointer" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              <!--  <svg (click)="filasDeDos=false;" class="pointer" width="24" height="24" viewBox="0 0 24 24" fill="none"
                 xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M2 3L2 21C2 21.2652 2.10536 21.5196 2.29289 21.7071C2.48043 21.8946 2.73478 22 3 22L21 22C21.2652 22 21.5196 21.8946 21.7071 21.7071C21.8946 21.5196 22 21.2652 22 21L22 3C22 2.73478 21.8946 2.48043 21.7071 2.29289C21.5196 2.10536 21.2652 2 21 2L3 2C2.73478 2 2.48043 2.10536 2.29289 2.29289C2.10536 2.48043 2 2.73478 2 3ZM20 16L20 20L4 20L4 16L20 16ZM20 10L20 14L4 14L4 10L20 10ZM20 4L20 8L4 8L4 4L20 4Z"
@@ -21,7 +21,7 @@
               </svg> -->
             </div>
 
-<!--             <div class="ccol-xl-1 col-sm-1 col-1 col-xxl-1 mt-1 mx-2">
+            <!--             <div class="ccol-xl-1 col-sm-1 col-1 col-xxl-1 mt-1 mx-2">
               <svg (click)="filasDeDos=true;" class="pointer" width="24" height="24" viewBox="0 0 24 24" fill="none"
                 xmlns="http://www.w3.org/2000/svg">
                 <path
@@ -31,14 +31,15 @@
             </div> -->
 
             <div class="col-xl-9 col-xxl-7 col-sm-7 col-7 col-md-7" *ngIf="emailUsuario">
-              <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#AgregarColeccion">
+              <h5>Lista de deseos</h5>
+              <!--  <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#AgregarColeccion">
                 <svg width="19" height="17" viewBox="0 0 15 19" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path
                     d="M11.458 5.79171H7.20801V1.54171C7.20801 1.35385 7.13338 1.17368 7.00054 1.04084C6.8677 0.908002 6.68754 0.833374 6.49967 0.833374C6.31181 0.833374 6.13165 0.908002 5.99881 1.04084C5.86597 1.17368 5.79134 1.35385 5.79134 1.54171V5.79171H1.54134C1.35348 5.79171 1.17331 5.86633 1.04047 5.99917C0.907636 6.13201 0.833008 6.31218 0.833008 6.50004C0.833008 6.6879 0.907636 6.86807 1.04047 7.00091C1.17331 7.13375 1.35348 7.20837 1.54134 7.20837H5.79134V11.4584C5.79134 11.6462 5.86597 11.8264 5.99881 11.9592C6.13165 12.0921 6.31181 12.1667 6.49967 12.1667C6.68754 12.1667 6.8677 12.0921 7.00054 11.9592C7.13338 11.8264 7.20801 11.6462 7.20801 11.4584V7.20837H11.458C11.6459 7.20837 11.826 7.13375 11.9589 7.00091C12.0917 6.86807 12.1663 6.6879 12.1663 6.50004C12.1663 6.31218 12.0917 6.13201 11.9589 5.99917C11.826 5.86633 11.6459 5.79171 11.458 5.79171Z"
                     fill="#fff" />
                 </svg>
                 Añadir colección
-              </button>
+              </button> -->
             </div>
           </div>
         </div>
@@ -98,7 +99,7 @@
                     <div
                       [class]="filasDeDos?'col-xl-12 col-xxl-12 col-sm-12 col-md-12 col-12':'col-12 col-md-6 col-xxl-5 col-sm-12 col-xl-6'">
                       <div class="row">
-<!--                         <div class="col-xl-5 col-xxl-5 col-sm-5 col-5 col-md-7">
+                        <!--                         <div class="col-xl-5 col-xxl-5 col-sm-5 col-5 col-md-7">
                           <svg width="95" height="16" viewBox="0 0 95 16" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -138,7 +139,7 @@
                               fill="#0d6efd" />
                           </svg> {{listaDeseos.nombre_tienda}}
                         </div>
-<!--                         <div class="col-xl-8 col-xxl-8 col-9 col-sm-9 col-md-8">
+                        <!--                         <div class="col-xl-8 col-xxl-8 col-9 col-sm-9 col-md-8">
                           <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -173,7 +174,7 @@
                         </svg>
                       </button>
                     </div>
-                    <div *ngIf="emailUsuario"
+<!--                     <div *ngIf="emailUsuario"
                       [class]="filasDeDos?'text-end col-xl-9 col-xxl-9 col-sm-9 col-8 col-md-9 mx-5 pointer dropdown':'col-xl-7 col-sm-12 col-12 col-md-7 col-xxl-7 text-center pointer dropdown'">
                       <p class="color-text dropdown-toggle" id="dropdownMenuButton1" data-bs-toggle="dropdown"
                         aria-expanded="false">
@@ -183,7 +184,7 @@
                         <li><a *ngFor="let coleccion of coleccionUsuario" class="dropdown-item"
                             (click)="agregarColeccion(listaDeseos.id,coleccion.id_lista)">{{coleccion.nombre}}</a></li>
                       </ul>
-                    </div>
+                    </div> -->
                   </div>
                 </div>
               </div>
