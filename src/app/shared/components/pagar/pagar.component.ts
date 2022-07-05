@@ -60,6 +60,7 @@ export class PagarComponent implements OnInit {
   submitPagar(form: IFormularioPagar) {
     this.contador++;
     if (this.contador === 1) {
+      localStorage.removeItem('carritoItems');
       const formPayments = this.pagarOCarrito.pagarSubmit(
         form,
         this.arrayProductsList
