@@ -4,6 +4,7 @@ export const ToastConfig = [
   BrowserAnimationsModule,
   ToastrModule.forRoot({
     timeOut: 3000,
+    preventDuplicates: false,
     positionClass: 'toast-bottom-right',
     progressBar: false,
     /*    progressAnimation: 'increasing', */
