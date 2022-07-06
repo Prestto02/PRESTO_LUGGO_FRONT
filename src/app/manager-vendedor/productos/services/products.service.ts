@@ -55,7 +55,11 @@ export class ProductsService {
   }
   //AGREGAR LOS PRODUCTOS SCROLL INFINITO
   addProductPagination(dataObj: any) {
+    let hash: any = {};
     this.dataScrollProduct.push(...dataObj);
+    this.dataScrollProduct = this.dataScrollProduct.filter(
+      (res: any) => (hash[res.id_artic] ? false : (hash[res.id_artic] = true)) //PARA QUITAR LOS PRODUCTOS REPETIDOS
+    );
     this.productDataSource.next(this.dataScrollProduct);
   }
   //AGREGAR NUEVOS PRODUCTOS AL ADN
