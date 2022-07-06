@@ -73,6 +73,8 @@ export class CarritoItemsService {
         carritoItems = res;
       });
       localStorage.setItem('carritoItems', JSON.stringify(carritoItems));
+    } else {
+      localStorage.removeItem('carritoItems'); //SI ES MENOR A 0 ELIMINO EL LOCALSTORAGE
     }
   }
   //VERIFICAR SI EXISTE EN LA LISTA DEL CARRITO
@@ -86,6 +88,7 @@ export class CarritoItemsService {
     const data = this.addCarritoProduct.findIndex((res) => res.id_artic === id);
     this.addCarritoProduct.splice(data, 1); //ELIMINO LA COINCIDENCIA QUE ENCONTRO
     this.obtenerTamañoDelCarrito();
+    this.saveCarsLocalStorage();
   }
 
   //TOTAL A PAGAR OBSERVABLE PARA REFLEJAR TODOS LOS CAMBIOS SEGUN LOS COMPONENTES SUSCRIPTOS

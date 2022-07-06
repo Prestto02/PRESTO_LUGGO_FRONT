@@ -8,3 +8,7 @@
 input::placeholder {
   color: rgba(0, 0, 0, 0.178);
 }
+.form-check-label {
+  font-family: Cardium B-Regular;
+  font-size: 12px;
+}

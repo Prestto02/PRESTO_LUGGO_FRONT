@@ -64,7 +64,29 @@ export class ListaDeseosService {
     );
     this.addListaDeseosProdut.splice(data, 1); //ELIMINO LA COINCIDENCIA QUE ENCONTRO
   }
-
+  //VERFICO EL LISTA EN EL LOCAL STORAGE
+  verifyListLocalStorage() {
+    const itemsList: any = localStorage.getItem('listDeseoItems');
+    const data = JSON.parse(itemsList); //TRANSFORMANDO LO QUE TENGO EN EL LOCAL STORAGE
+    if (data) {
+      data.map((res: any) => {
+        this.addListaDeseos(res); //REOCORRO Y INSERTO EN EL ARRAY
+      });
+    }
+  }
+  //GUARDAR EL LIST DEL LOCAL STORAGE
+  saveListLocalStorage() {
+    let listItems: any = [];
+    if (this.addListaDeseosProdut.length > 0) {
+      //SI ES MAYOR GUARDO EL NUEVO ARRAY
+      this.listaDeseos.subscribe((res: any) => {
+        listItems = res;
+      });
+      localStorage.setItem('listDeseoItems', JSON.stringify(listItems));
+    } else {
+      localStorage.removeItem('listDeseoItems'); //SI ES MENOR A 0 ELIMINO EL LOCALSTORAGE
+    }
+  }
   //VERIFICAR SI EXISTE EN LA LISTA DEL CARRITO
   verifyCarrito(idProduct: any) {
     return this.addListaDeseosProdut.filter(
