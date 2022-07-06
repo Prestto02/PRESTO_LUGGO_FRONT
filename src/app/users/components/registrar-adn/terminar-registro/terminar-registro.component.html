@@ -80,7 +80,9 @@
       aria-controls="collapseThree">Atras
     </button>
 
-    <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Finalizar
+    <button
+      [disabled]="formPagosAdn.formPagoAdn.invalid||formNegocioAdn.formNegocioAdn.invalid||formAdn.formAdn.invalid||formB.formTerminar.invalid"
+      type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Finalizar
       &nbsp;<svg width="10" height="20" viewBox="0 0 11 16" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path
           d="M6.66853 4.75822L1.91713 0.310303C1.81296 0.211979 1.68902 0.133936 1.55246 0.0806779C1.4159 0.0274197 1.26943 0 1.1215 0C0.973565 0 0.827095 0.0274197 0.690538 0.0806779C0.553981 0.133936 0.430041 0.211979 0.325865 0.310303C0.11715 0.506853 0 0.772733 0 1.04987C0 1.32701 0.11715 1.59289 0.325865 1.78944L4.29283 5.50303L0.325865 9.21662C0.11715 9.41317 0 9.67905 0 9.95619C0 10.2333 0.11715 10.4992 0.325865 10.6958C0.430575 10.793 0.554757 10.8699 0.69129 10.9221C0.827822 10.9743 0.97402 11.0008 1.1215 11C1.26898 11.0008 1.41518 10.9743 1.55171 10.9221C1.68824 10.8699 1.81242 10.793 1.91713 10.6958L6.66853 6.24785C6.77356 6.15033 6.85693 6.0343 6.91382 5.90647C6.97071 5.77863 7 5.64152 7 5.50303C7 5.36455 6.97071 5.22743 6.91382 5.0996C6.85693 4.97176 6.77356 4.85574 6.66853 4.75822Z"
@@ -89,4 +91,3 @@
   </div>
   <app-terminos-condiciones></app-terminos-condiciones>
 </section>
-<!-- [disabled]="formPagosAdn.formPagoAdn.invalid||formNegocioAdn.formNegocioAdn.invalid||formAdn.formAdn.invalid||formB.formTerminar.invalid" -->
