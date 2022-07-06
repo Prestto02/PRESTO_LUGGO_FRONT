@@ -12,23 +12,18 @@ import { CarritoItemsService } from '../services/carrito-items.service';
   styleUrls: ['./carrito-items.component.css'],
 })
 export class CarritoItemsComponent implements OnInit {
-  totalAPagar = 0;
+  totalAPagar: any;
   productoItems: any;
   public urlImg = RepositorioImg.urlRepositorio;
   constructor(
     @Inject(DOCUMENT) private document: Document, //DOCUMENT
     private apiServi: CarritoItemsService,
-    private router: Router,
-    private addCars: AddCarsOrListDesire
+    private router: Router
   ) {}
 
   ngOnInit(): void {
     this.document.documentElement.scrollTop = 0;
     this.getItemCarrito();
-  }
-  //OBTENER EL ID DEl PRODUCTO
-  getListItemCarrito(id: any) {
-    this.addCars.addProductCars(id);
   }
   //ME SUSCRIBO PARA GUARDAR LA LISTA DE PRODUCTOS QUE TENGO
   getItemCarrito() {
@@ -43,7 +38,6 @@ export class CarritoItemsComponent implements OnInit {
   carritoTotal() {
     this.totalAPagar = 0;
     this.productoItems.map((res: any) => {
-      console.log(res);
       const subtotal = res.precio * res.item;
       this.totalAPagar = this.totalAPagar + subtotal;
     });
@@ -66,8 +60,8 @@ export class CarritoItemsComponent implements OnInit {
     );
   }
   irAPagar() {
-    this.apiServi.eliminarTodo();
-    localStorage.removeItem('carritoItems');
+    /*     this.apiServi.eliminarTodo();
+    localStorage.removeItem('carritoItems'); */
     this.router.navigateByUrl(
       `${UrlFront.Pagar.pagar}/${UrlFront.Pagar.processoPagar}`
     );

@@ -5,7 +5,7 @@ import { CarritoItemsService } from '../components/index/menu-index/menu/service
 })
 export class ItemsProductsVerify {
   productsListCars: any = [];
-  totalAPagar: any = 0;
+  totalAPagar: any;
   constructor(private apiServi: CarritoItemsService) {
     this.getTotalCars();
   }
@@ -26,7 +26,8 @@ export class ItemsProductsVerify {
     this.getAllProductsCars();
     this.totalAPagar = 0;
     this.productsListCars.map((res: any) => {
-      this.totalAPagar = this.totalAPagar + res.subtotal; //REALIZO LA SUMA SEGUN LOS PRODUCTOS EN EL ARREGLO OBSERVABLE
+      const subtotal = res.precio * res.item;
+      this.totalAPagar = this.totalAPagar + subtotal; //REALIZO LA SUMA SEGUN LOS PRODUCTOS EN EL ARREGLO OBSERVABLE
     });
     this.apiServi.totalAPAgarObservable(this.totalAPagar); //CAMBIO EL ESTADO DEL OBSERVABLE
   }

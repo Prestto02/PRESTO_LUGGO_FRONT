@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TokenService } from 'src/app/login/services/token.service';
+import { AddCarsOrListDesire } from 'src/app/shared/helpers/AddCarsOrListDesire';
 import { RepositorioImg } from 'src/app/shared/helpers/RepositorioImg';
 import { MessageFrontEndService } from 'src/app/shared/Toasts/services/message-front-end.service';
 import { errorFront as message } from '../../../dictonary/MessageErrorFront';
@@ -22,11 +23,11 @@ export class ListaDeseosComponent implements OnInit {
   emailUsuario: any;
   constructor(
     private apiListDeseos: ListaDeseosService, //LISTADO DESEOS SERVICES
-    private carritoItmes: CarritoItemsComponent, //CARRITO ITEMS COMPONENTS
+    private addCars: AddCarsOrListDesire,
     private tokenServi: TokenService, //TOKEN SERVICES
-    private serviMessage: MessageFrontEndService,
-   /*  private checkIcon: IconCheckServices */
-  ) {}
+    private serviMessage: MessageFrontEndService
+  ) /*  private checkIcon: IconCheckServices */
+  {}
 
   ngOnInit(): void {
     this.getDataListDeseos(); //PReSENTO LA LISTA DE DESEOS
@@ -49,7 +50,7 @@ export class ListaDeseosComponent implements OnInit {
   }
   //AGREGAR AL CARRITO
   agregarAlCarrito(id: any) {
-    this.carritoItmes.getListItemCarrito(id);
+    this.addCars.addProductCars(id);
     //PARA SUBIR EL ITEMS DEL CARRITO
   }
   //TRAER TODO LO QUE SE OBTUVO DE LA LISTA DE DESEOS

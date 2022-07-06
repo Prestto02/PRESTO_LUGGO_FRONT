@@ -1,9 +1,12 @@
-.sticky-header{
-
+/* .fixed-header {
+  position: sticky;
 }
-
-header {
+.sticky-top-header {
+  position: fixed;
+  top: 0;
+} */
+/* header {
   position: sticky;
   top: 0px;
   z-index: 1000;
-}
+} */

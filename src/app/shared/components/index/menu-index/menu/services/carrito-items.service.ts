@@ -49,12 +49,15 @@ export class CarritoItemsService {
       ); //OK SE AGREGO EL PRODUCTO */
     }
   }
+  //VERFICO EL CARRITO EN EL LOCAL STORAGE
   verifyCarsLocalStorage() {
     const itemsCars: any = localStorage.getItem('carritoItems');
     const data = JSON.parse(itemsCars); //TRANSFORMANDO LO QUE TENGO EN EL LOCAL STORAGE
-    data.map((res: any) => {
-      this.addProductCarrito(res); //REOCORRO Y INSERTO EN EL ARRAY
-    });
+    if (data) {
+      data.map((res: any) => {
+        this.addProductCarrito(res); //REOCORRO Y INSERTO EN EL ARRAY
+      });
+    }
   }
   //OBTENER EL TAMAÑOO TOTAL DEL CARRITO
   obtenerTamañoDelCarrito() {

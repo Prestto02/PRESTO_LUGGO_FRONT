@@ -1,6 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { AddCarsOrListDesire } from 'src/app/shared/helpers/AddCarsOrListDesire';
-import { CarritoItemsComponent } from '../../../index/menu-index/menu/carrito-items/carrito-items.component';
 import { ListaDeseosService } from '../../lista-deseos/services/lista-deseos.service';
 
 @Component({
@@ -11,10 +10,8 @@ import { ListaDeseosService } from '../../lista-deseos/services/lista-deseos.ser
 export class IconsCarsDesireComponent implements OnInit {
   @Input('product') products: any | null = null;
   arrayProductSelect: any = [];
-
   count = 0;
   constructor(
-    private carritoItmes: CarritoItemsComponent, //CARRITO ITEMS
     private apiListDeseo: AddCarsOrListDesire,
     private apiObservableListDesire: ListaDeseosService
   ) {}
@@ -36,7 +33,7 @@ export class IconsCarsDesireComponent implements OnInit {
   }
   //AGRGAR AL CARRITO
   agregarAlCarrito(id: any) {
-    this.carritoItmes.getListItemCarrito(id);
+    this.apiListDeseo.addProductCars(id);
     //PARA SUBIR EL ITEMS DEL CARRITO
   }
 
