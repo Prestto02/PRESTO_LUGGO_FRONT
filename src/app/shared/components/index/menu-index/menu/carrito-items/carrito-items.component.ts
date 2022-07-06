@@ -60,8 +60,6 @@ export class CarritoItemsComponent implements OnInit {
     );
   }
   irAPagar() {
-    /*     this.apiServi.eliminarTodo();
-    localStorage.removeItem('carritoItems'); */
     this.router.navigateByUrl(
       `${UrlFront.Pagar.pagar}/${UrlFront.Pagar.processoPagar}`
     );
