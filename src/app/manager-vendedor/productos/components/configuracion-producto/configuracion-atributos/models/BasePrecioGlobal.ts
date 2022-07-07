@@ -12,4 +12,8 @@ export class BaseFormGlobalPrecio {
       [Validators.required, Validators.pattern(Expresion.DolarYCentavo)],
     ],
   });
+
+  limpiarForm() {
+    this.formGlobalPrecio.reset();
+  }
 }

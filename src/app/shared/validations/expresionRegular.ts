@@ -7,8 +7,8 @@ export const Expresion = {
   SoloLetrasAcentosEspaciosSinNumeros: /^[^$%&{}|<>]*$/, //ACEPTA TODO MENOS ESOS CARACTERES
   Contrasena: /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,})/,
   Sku: /^[A-Za-z0-9_-]+$/,
-  DolarYCentavo: /^[0-9]+([,][0-9]+)?$/,
-  DimensionConDecimales: /^[0-9]+([,][0-9]+)?$/,
+  DolarYCentavo: /^[0-9]+([.][0-9]+)?$/,
+  DimensionConDecimales: /^[0-9]+([.][0-9]+)?$/,
   DimensionConComa: /^[0-9]+([.][0-9]+)?$/,
   TiempoDescpacho: /^[0-9]+$/,
 };

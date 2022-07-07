@@ -6,7 +6,10 @@ export class BaseFormAtributosConfig {
   constructor(private formB: FormBuilder) {}
 
   formAtributos = this.formB.group({
-    Color_articulo: this.formB.array([], [Validators.required]),
+    Color_articulo: this.formB.group({
+      id_Color: ['', [Validators.required]],
+      nombre: [''],
+    }),
     Material_constituido: this.formB.group({
       nombre_material: [
         '',
@@ -77,6 +80,13 @@ export class BaseFormAtributosConfig {
   }
   limpiarFormulario() {
     this.formAtributos.reset();
-    this.colors.clear();
+/*     this.formAtributos.get('Material_constituido')?.reset();
+    this.formAtributos.get('Color_articulo')?.reset();
+    this.formAtributos.get('Capacidad')?.reset();
+    this.formAtributos.get('Potencia')?.reset();
+    this.formAtributos.get('Peso')?.reset();
+    this.formAtributos.get('Tamaño_articulo')?.reset(); */
+
+    /* this.colors.clear(); */
   }
 }

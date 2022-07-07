@@ -37,8 +37,12 @@ export class ConfiguracionProductosTerceraComponent implements OnInit {
   }
   //AGREGAR NUEVOS COLORES
   addColores(id: any, e: any, nombre: any) {
-    if (e.target.checked) this.formB.addColores(id, nombre);
-    else this.formB.removeCheckColors(id);
+    if (e.target.checked) {
+      this.formB.formAtributos.get('Color_articulo')?.patchValue({
+        id_Color: id,
+      });
+    }
+    //else this.formB.removeCheckColors(id);
   }
   //TRANSFORMACION DE KILOGRAMOS EN LIBRAS Y ONZAS
   transformarALBYGR(e: any) {

@@ -67,14 +67,15 @@ export class ListadoProductosComponent implements OnInit {
       this.position.longitud,
       this.position.latitud
     );
-    this.dataForm.limpiarTodoForm();
     this.apiProducts.postDataArticulo(form).subscribe(
       (res) => {
         this.getAllProducts();
+        this.dataForm.limpiarTodoForm();
       },
-      (err) => {}
+      (err) => {
+        this.dataForm.limpiarTodoForm();
+      }
     );
-    this.dataForm.limpiarTodoForm();
     this._router.navigateByUrl(
       `${UrlFront.Manager.managerVendedor}/${UrlFront.Manager.vendedor}/${UrlFront.Manager.listadoProductos}`
     );

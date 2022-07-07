@@ -41,21 +41,28 @@
               <app-mensajes-ayuda [class]="'col-xxl-3 col-xl-3'" [Label]="'Color'"
                 [mensaje]="'Puedes escoger uno o varios colores para el producto.'"></app-mensajes-ayuda>
             </div>
-            <div class="row">
-              <span class="text">Colores seleccionados {{formB.colors.controls.length}}</span>
-              <div class="col-xxl-7 col-xl-7 col-sm-12 col-md-8 col-12 card mx-2 colors-group">
-                <div class="row">
-                  <div class=" col-xl-1 col-xxl-1 col-sm-1 col-1 col-md-1 form-check "
-                    *ngFor="let colores of arrayColores">
-                    <input class="form-check-input" type="checkbox" [value]="colores.id" [id]="'check-'+colores.id"
-                      [style]="colores.codigoHexagedecima" (click)="addColores(colores.id,$event,colores.nombre_color)">
+            <ng-container formGroupName="Color_articulo">
+              <div class="row">
+                <!--    <span class="text">Colores seleccionados {{formB.colors.controls.length}}</span> -->
+                <div class="col-xxl-7 col-xl-7 col-sm-12 col-md-8 col-12 card mx-2 colors-group">
+                  <div class="row">
+                    <div class=" col-xl-1 col-xxl-1 col-sm-1 col-1 col-md-1 form-check "
+                      *ngFor="let colores of arrayColores">
+                      <input class="form-check-input" type="radio" name="flexRadioDefault" [id]="'check'+colores.id"
+                        [style]="colores.codigoHexagedecima"
+                        (click)="addColores(colores.id,$event,colores.nombre_color)" />
+                    </div>
+                    <!--  -->
                   </div>
                 </div>
-              </div>
-              <!------LIST BADGE DE LOS COLORES ESCOGIDOS----->
-              <div class="col-xxl-8 col-xl-8 col-sm-12 col-md-8 col-12">
-                <div class="row">
-                  <ng-container formArrayName="Color_articulo">
+                <!------LIST BADGE DE LOS COLORES ESCOGIDOS----->
+                <div class="col-xxl-8 col-xl-8 col-sm-12 col-md-8 col-12">
+                  <div class="row">
+                    <!--                     <ng-container>
+                      <span
+                        class="badge bg-color-badge text-wrap">{{formB.formAtributos.get('Color_articulo.nombre')}}</span>
+                    </ng-container> -->
+                    <!-- <ng-container formArrayName="Color_articulo">
                     <ng-container *ngFor="let color of formB.colors.controls; let i=index">
                       <ng-container [formGroupName]="i">
                         <div class="col-xl-3 col-xxl-3 col-md-3 col-4 col-sm-4">
@@ -63,10 +70,11 @@
                         </div>
                       </ng-container>
                     </ng-container>
-                  </ng-container>
+                  </ng-container> -->
+                  </div>
                 </div>
               </div>
-            </div>
+            </ng-container>
           </div>
           <!----MATERIAL--->
           <ng-container formGroupName="Material_constituido">
@@ -97,7 +105,8 @@
               </app-mensajes-ayuda>
             </div>
             <div class="row">
-              <select class="form-select w-xxl-50 w-xl-50 w-100 w-sm-100 w-md-100" aria-label="Default select example" formControlName="estado_producto"
+              <select class="form-select w-xxl-50 w-xl-50 w-100 w-sm-100 w-md-100" aria-label="Default select example"
+                formControlName="estado_producto"
                 [class.is-invalid]="formB.formAtributos.get('estado_producto')?.touched && formB.formAtributos.get('estado_producto')?.invalid">
                 <option selected value="">Seleccion</option>
                 <option value="1">Nuevo</option>

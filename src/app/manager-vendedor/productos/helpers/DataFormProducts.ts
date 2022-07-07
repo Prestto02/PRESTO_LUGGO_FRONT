@@ -3,6 +3,7 @@ import { TokenService } from 'src/app/login/services/token.service';
 import { BaseFormCategorias } from '../../categorias/models/categorias.models';
 import { BaseFormConfigAtributos } from '../components/configuracion-producto/configuracion-atributos/models/BaseFormConfigAtributos';
 import { BaseFormConfigAtributos2 } from '../components/configuracion-producto/configuracion-atributos/models/BaseFormConfigAtributos2';
+import { BaseFormGlobalPrecio } from '../components/configuracion-producto/configuracion-atributos/models/BasePrecioGlobal';
 import { BaseFormAtributosConfig } from '../components/configuracion-productos-tercera/models/BaseFormAtrtibutos';
 import { BaseFormEtiquetas } from '../components/create-products/form-etiquetas/models/BaseFormEtiquetas';
 import { BaseFormTamanoProducto } from '../components/logistica-producto/models/BaseFormTamano';
@@ -23,6 +24,7 @@ export class DataFormProducts {
     private formAtributo: BaseFormConfigAtributos,
     private formTamano: BaseFormTamanoProducto,
     private formUbicacion: BaseFormLogisticaProducto,
+    private baseGlobalPrecio: BaseFormGlobalPrecio,
     private atributoConfig: BaseFormAtributosConfig,
     private attributosConfig2: BaseFormConfigAtributos2,
     private token: TokenService
@@ -31,6 +33,8 @@ export class DataFormProducts {
   getCategorias() {
     this.formCategoria.getCategorias.controls.map((res) => {
       this.arrayCategorias.push(res.value);
+      console.log(res.value);
+      console.log(this.arrayCategorias);
     });
   }
   //OBTENGO TODAS LAS ETIQUETAS
@@ -47,9 +51,9 @@ export class DataFormProducts {
   }
   //GET UBICACION
   getUbicacion() {
-    this.formUbicacion.ubicacionProducto.controls.map((res) => {
+/*     this.formUbicacion.ubicacionProducto.controls.map((res) => {
       this.arrayUbicacion.push(res.value);
-    });
+    }); */
     //OBTENGO EL TAMANO DEL PRODUCTO PARTE 3 LOGISTICA
     const Longitud_x =
       this.formTamano.formTamanoProducto.get('Longitud_x')?.value;
@@ -103,8 +107,8 @@ export class DataFormProducts {
   //PARA HACER EL POST A LA API
 
   getDataFormProducts(longitud: any, latitud: any) {
-    this.getCategorias();
-    this.getEtiquetas();
+   // this.getCategorias();
+    //this.getEtiquetas();
     const dimensiones = this.getUbicacion();
     const {
       descripcion,
@@ -127,8 +131,8 @@ export class DataFormProducts {
       Restricciones: restricciones,
       Disponibilidad: disponibilidad,
       Garantia: garantia,
-      etiquetas: this.arrayEtiquetas,
-      articuloTieneCategoria: this.arrayCategorias,
+      etiquetas: this.formEtiquetas.formEtiquetas.get('etiqueta')?.value,
+      articuloTieneCategoria: this.formCategoria.formCategorias.get('ArticuloTieneCategoria')?.value,
       multimedia: {
         archivo: archivo,
       },
@@ -150,7 +154,7 @@ export class DataFormProducts {
           this.formTamano.formTamanoProducto.get('GestionEnvio')?.value,
         precio_envio: this.formTamano.formTamanoProducto.get('Precio')?.value,
         dimensiones,
-        ubicacion: this.arrayUbicacion,
+        ubicacion: this.formUbicacion.formLogistica.get('ubicacionProducto')?.value,
       },
       longitud: longitud,
       latitud: latitud,
@@ -196,6 +200,9 @@ export class DataFormProducts {
     this.formAtributo.limpiarForm();
     this.formEtiquetas.limpiarForm();
     this.formCategoria.limpiarForm();
+    this.atributoConfig.limpiarFormulario();
+    this.baseGlobalPrecio.limpiarForm();
+    this.attributosConfig2.limpiarFormulario();
     this.formTamano.limpiarForm();
     this.formUbicacion.limpiarForm();
   }

@@ -18,7 +18,7 @@ import { SearchProductsService } from '../../services/searchProducts.service';
   styleUrls: ['./create-products.component.css'],
 })
 export class CreateProductsComponent implements OnInit {
-  public ruta: any = `${UrlFront.Manager.vendedor}`;
+  public ruta: any = `${UrlFront.Manager.vendedor}/${UrlFront.Manager.listadoProductos}`;
   activar = false;
   categoriasItems: any;
   marcaItems: any = [];
@@ -76,6 +76,7 @@ export class CreateProductsComponent implements OnInit {
   }
   //REGRESAR AL PRODUCTO
   irProducto() {
+    this.dateApi.limpiarTodoForm();
     this.router.navigateByUrl(
       `${UrlFront.Manager.managerVendedor}/${UrlFront.Manager.vendedor}/${UrlFront.Manager.listadoProductos}`
     );

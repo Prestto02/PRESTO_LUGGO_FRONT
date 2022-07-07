@@ -21,4 +21,8 @@ export class BaseFormConfigAtributos2 {
     Iva: [false],
     Ice: [false],
   });
+
+  limpiarFormulario() {
+    this.formAtributosDos.reset();
+  }
 }
