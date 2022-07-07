@@ -1,0 +1,43 @@
+<div class="container rounded mt-3 bg-white">
+  <div class="row">
+    <div class="col-xl-12 col-xxl-12 col-sm-12 col-md-12 mb-3 mt-3">
+      <app-progress-stepper [width]="'width:68%'"
+        [btn-secondary]="'position-relative top-0 start-25 translate-middle btn btn-sm btn-primary rounded-pill'">
+      </app-progress-stepper>
+    </div>
+  </div>
+</div>
+<section class="container-fluid card mb-5">
+  <div class="row">
+    <div class="col-xl-12 col-xxl-12 col-md-12 col-12 col-sm-12 mb-4 mt-3">
+      <ul class="nav">
+        <li class="nav-item" *ngFor="let pasoTres of arrayTercerPaso;">
+          <a class="{{pasoTres.disabled?'nav-link active text-dark':'nav-link text-dark'}}" aria-current="page"
+            (click)="ocultarSecciones(pasoTres.id);">{{pasoTres.nombre}}</a>
+        </li>
+      </ul>
+    </div>
+    <!------CONFIGURACION DE LOS ATRIBUTOS DE LOS PRODUCTOS-------->
+<!--     <app-configuracion-atributos class="row" [hidden]="arrayTercerPaso[1].disabled"></app-configuracion-atributos> -->
+    <!------CONFIGURACION DE LA LOGISTICA DEL PRODUCTO-------->
+
+    <app-logistica-producto [hidden]="arrayTercerPaso[0].disabled"></app-logistica-producto>
+    <!------FINALIZAR ATRAS--------->
+    <div class="modal-footer fixed-bottom bg-white">
+      <button class="btn btn-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+        aria-expanded="true" aria-controls="collapseTwo">Atras</button>
+      <button class="btn btn-dark"
+        [disabled]="formUbicacion.formLogistica.invalid || formTamano.formTamanoProducto.invalid || formAtributosDos.formAtributosDos.invalid "
+        (click)="guardarProduct();">
+        <ng-container *ngIf="load; else mensaje">
+          <div class="spinner-border text-secondary" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+        </ng-container>
+        <ng-template #mensaje>
+          <span>Finalizar</span>
+        </ng-template>
+      </button>
+    </div>
+  </div>
+</section>

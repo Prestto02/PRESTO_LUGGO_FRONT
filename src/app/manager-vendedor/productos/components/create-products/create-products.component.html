@@ -1,0 +1,242 @@
+<header class="sticky-top">
+  <app-menu-index></app-menu-index>
+</header>
+
+<app-adn-cerrar-sesion></app-adn-cerrar-sesion>
+
+<app-seccion-adn [NombreUbicacion]="'Crear Productos'" [ruta]="ruta"></app-seccion-adn>
+
+<!---SECTIONS CREAR PRODUCTOS---->
+<section>
+  <div class="accordion col-xl-11 col-xxl-11 col-md-11 col-sm-12 col-12 mx-auto" id="accordionExample">
+    <div class="accordion-item border-0">
+      <div id="collapseOne" class="accordion-collapse collapse show py-5" aria-labelledby="headingOne"
+        data-bs-parent="#accordionExample">
+        <div class="container-fluid rounded mt-3 mb-5">
+          <div class="row">
+            <div class="col-xl-12 col-xxl-12 col-md-12 mb-3 mt-3">
+              <app-progress-stepper [width]="'width:35%;'"
+                [btn-primary]="'position-relative top-0 start-0 translate-middle btn btn-sm btn-primary rounded-pill'">
+              </app-progress-stepper>
+            </div>
+            <!-------IMAGEN DESTACADA------>
+            <div class="col-xl-4 col-xxl-4 col-sm-7 col-12 col-md-4 mx-xxl-5 mx-xl-4 mx-sm-auto position-relative mb-5">
+              <img loading="lazy" *ngIf="imgProducts!=''" [src]="imgProducts" class="img-fluid border border-1"
+                alt="Imágen del producto" width="450px" height="450px">
+              <svg *ngIf="imgProducts==''" width="450" height="450" viewBox="0 0 250 250" fill="none"
+                xmlns="http://www.w3.org/2000/svg" class="img-fluid">
+                <rect width="250" height="250" fill="#F3F3F3" />
+                <path
+                  d="M159.436 115.161C158.132 115.161 156.88 115.679 155.958 116.602C155.035 117.524 154.517 118.775 154.517 120.08V136.706L147.237 129.426C144.667 126.876 141.192 125.445 137.571 125.445C133.95 125.445 130.476 126.876 127.905 129.426L124.462 132.918L112.263 120.67C109.693 118.12 106.218 116.689 102.597 116.689C98.9763 116.689 95.5021 118.12 92.9315 120.67L85.6514 127.999V100.404C85.6514 99.0994 86.1697 97.8482 87.0922 96.9257C88.0147 96.0033 89.2658 95.485 90.5704 95.485H129.922C131.227 95.485 132.478 94.9668 133.401 94.0443C134.323 93.1218 134.841 91.8706 134.841 90.566C134.841 89.2614 134.323 88.0103 133.401 87.0878C132.478 86.1653 131.227 85.647 129.922 85.647H90.5704C86.6566 85.647 82.9031 87.2018 80.1357 89.9693C77.3682 92.7367 75.8135 96.4902 75.8135 100.404V160.514C75.8264 164.137 77.2713 167.607 79.833 170.169C82.3948 172.731 85.8655 174.176 89.4882 174.189H150.68C152.013 174.178 153.338 173.979 154.616 173.598C157.456 172.802 159.957 171.095 161.734 168.74C163.511 166.386 164.466 163.513 164.454 160.563V120.08C164.454 119.426 164.323 118.778 164.07 118.174C163.817 117.571 163.445 117.024 162.978 116.566C162.511 116.108 161.957 115.748 161.349 115.507C160.741 115.265 160.09 115.148 159.436 115.161ZM90.5704 164.351C89.2658 164.351 88.0147 163.832 87.0922 162.91C86.1697 161.988 85.6514 160.736 85.6514 159.432V141.871L99.8673 127.655C100.586 126.94 101.559 126.539 102.573 126.539C103.587 126.539 104.559 126.94 105.278 127.655L142.023 164.351H90.5704ZM154.517 159.432C154.486 160.384 154.178 161.307 153.632 162.088L131.398 139.756L134.89 136.313C135.243 135.953 135.664 135.667 136.129 135.471C136.593 135.276 137.092 135.176 137.596 135.176C138.1 135.176 138.599 135.276 139.063 135.471C139.528 135.667 139.949 135.953 140.301 136.313L154.517 150.627V159.432ZM169.274 85.647H164.355V80.7281C164.355 79.4235 163.837 78.1723 162.914 77.2498C161.992 76.3273 160.741 75.8091 159.436 75.8091C158.132 75.8091 156.88 76.3273 155.958 77.2498C155.035 78.1723 154.517 79.4235 154.517 80.7281V85.647H149.598C148.294 85.647 147.042 86.1653 146.12 87.0878C145.197 88.0103 144.679 89.2614 144.679 90.566C144.679 91.8706 145.197 93.1218 146.12 94.0443C147.042 94.9668 148.294 95.485 149.598 95.485H154.517V100.404C154.517 101.709 155.035 102.96 155.958 103.882C156.88 104.805 158.132 105.323 159.436 105.323C160.741 105.323 161.992 104.805 162.914 103.882C163.837 102.96 164.355 101.709 164.355 100.404V95.485H169.274C170.579 95.485 171.83 94.9668 172.752 94.0443C173.675 93.1218 174.193 91.8706 174.193 90.566C174.193 89.2614 173.675 88.0103 172.752 87.0878C171.83 86.1653 170.579 85.647 169.274 85.647Z"
+                  fill="#AAAAAA" />
+              </svg>
+              <input type="file" class="form-control position-absolute top-0 h-100 w-100" id="formFile"
+                title="Sube la imágen de tu producto" alife-file-to-base64 (onFileChanged)="getArchive($event)"
+                (change)="getImage($event);" required>
+            </div>
+            <!-------Formulario--------->
+            <div class="col-xl-6 col-xxl-6 col-sm-5 col-12 col-md-8 mx-xxl-3 mx-xl-5">
+              <form [formGroup]="formB.formProducts">
+                <input type="hidden" formControlName="id_product">
+                <div class="row">
+                  <!------NOMBRE, MARCA, TIPO PRODUCTO----->
+                  <div class="col-xl-3 mb-3 col-xxl-3 col-md-3 col-sm-12 col-4">
+                    <div class="form-floating ">
+                      <input type="text" class="form-control is-invalid" formControlName="sku" id="floatingSku"
+                        [class.is-invalid]="formB.formProducts.get('sku')?.invalid" placeholder="Código"
+                        title="Puedes escribir el código del producto">
+                      <label for="floatingSku">Código</label>
+                      <app-form-errors-container [forControl]="formB.formProducts.get('sku')">
+                        <app-message-error forErrorCode="pattern"
+                          customMsg="No se admiten caracteres especiales: </>||¿¿''">
+                        </app-message-error>
+                      </app-form-errors-container>
+                    </div>
+                  </div>
+                  <!-----BUSCAR NOMBRE DEL PRODUCTO----->
+                  <div class="col-xl-6 mb-3 col-xxl-6 col-md-6 col-sm-12 col-8" (click)="touched=true;">
+                    <div class="form-floating position-relative">
+                      <input type="text" class="form-control is-invalid" formControlName="nombre_articulo"
+                        id="floatingNombre"
+                        [class.is-invalid]="formB.formProducts.get('nombre_articulo')?.touched && formB.formProducts.get('nombre_articulo')?.invalid"
+                        placeholder="Nombre del producto" title="Escribe el nombre de tu producto">
+                      <label for="floatingNombre">Nombre
+                      </label>
+                      <div class="position-absolute bg-white w-100 zIndex list-group" *ngIf="touched">
+                        <button type="button" *ngFor="let nameProduct of searchProductName"
+                          (click)="guardarIdProductoNombre(nameProduct.id_nombre_articulo,nameProduct.nombre_articulo)"
+                          class="list-group-item list-group-item-action cursor-item">{{nameProduct.nombre_articulo}}</button>
+                      </div>
+
+                      <app-form-errors-container [forControl]="formB.formProducts.get('nombre_articulo')">
+                        <app-message-error forErrorCode="required"></app-message-error>
+                        <app-message-error forErrorCode="minlength" customMsg="Debe tener al menos 2 caracteres">
+                        </app-message-error>
+                        <app-message-error forErrorCode="maxlength" customMsg="Debe tener un máximo de 65 caracteres">
+                        </app-message-error>
+                        <app-message-error forErrorCode="pattern" customMsg="No se admiten caracteres especiales">
+                        </app-message-error>
+                      </app-form-errors-container>
+                    </div>
+                  </div>
+                  <!------MARCA--------->
+                  <div class="col-xl-3 mb-3 col-xxl-3 col-md-3 col-sm-12 col-12 position-relative"
+                    (click)="touched=false;">
+                    <div class="form-floating">
+                      <input type="text" formControlName="marca" class="form-control" id="floatingMarca"
+                        placeholder="Nike" (keyup)="onKeyPres($event);" title="Escoja o busque la marca del producto"
+                        [class.is-invalid]="formB.formProducts.get('marca')?.touched && formB.formProducts.get('marca')?.invalid" />
+                      <label for="floatingMarca">Marca</label>
+                    </div>
+                    <div class="list-group mb-3 position-absolute border-truncate" [hidden]="ocultar">
+                      <button type="button" class="list-group-item list-group-item-action"
+                        *ngFor="let marcas of marcaItems | filterMarca:formB.formProducts.get('marca')?.value"
+                        (click)="setMarcasFormProducts(marcas.id_marca,marcas.nombre_marca)">
+                        {{marcas.nombre_marca}}
+                      </button>
+                      <!----- SI NO EXISTE ESA MARCA-------->
+                      <!--                       <div class="list-group-item list-group-item-action"
+                        *ngIf="(marcaItems | filterMarca:formB.formProducts.get('marca')?.value)?.length <= 0">
+                        <p>No existe esa marca</p>
+                      </div> -->
+                    </div>
+                    <app-form-errors-container [forControl]="formB.formProducts.get('marca')">
+                      <app-message-error forErrorCode="required"></app-message-error>
+                    </app-form-errors-container>
+                  </div>
+                </div>
+                <!----Detalle del articulo------->
+                <div class="row mb-3">
+                  <!-------DESCRIPCION--------->
+                  <div class="col-xl-12 col-sm-12 col-12 col-md-12 col-xxl-12" (click)="touched=false;">
+                    <div class="form-floating">
+                      <textarea class="form-control is-invalid" id="floatingDetalle"
+                        formControlName="descripcion_articulo"
+                        [class.is-invalid]="formB.formProducts.get('descripcion_articulo')?.touched && formB.formProducts.get('descripcion_articulo')?.invalid"
+                        placeholder="Detalle del producto" style="height: 100px"
+                        title="Describe el producto "></textarea>
+                      <label for="floatingDetalle">Descripción</label>
+                      <app-form-errors-container [forControl]="formB.formProducts.get('descripcion_articulo')">
+                        <app-message-error forErrorCode="required"></app-message-error>
+                        <app-message-error forErrorCode="minlength" customMsg="Debe tener al menos 12 caracteres">
+                        </app-message-error>
+                        <app-message-error forErrorCode="maxlength" customMsg="Debe ser máximo 200 caracteres">
+                        </app-message-error>
+                        <app-message-error forErrorCode="pattern" customMsg="No se admiten caracteres especiales">
+                        </app-message-error>
+                      </app-form-errors-container>
+                    </div>
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <!-------APP CATEGORIAS-------->
+                  <div class="col-xl-6 col-sm-12 col-md-6 col-xxl-6 col-12 mb-sm-3 mb-3">
+                    <app-categorias></app-categorias>
+                  </div>
+                  <!----------FORM ETIQUETAS----------->
+                  <div class="col-xl-6 col-sm-12 col-md-6 col-xxl-6 col-12 position-relative">
+                    <app-form-etiquetas></app-form-etiquetas>
+                  </div>
+                </div>
+                <!-------RESTRICCIONES Y DISPONIBILIDAD----->
+                <div class="row">
+                  <!-------RESTRICCIONES-------->
+                  <div class="col-xl-6 col-sm-12 col-md-6 col-xxl-6 col-6" (click)="touched=false;">
+                    <div class="form-floating mb-3">
+                      <select id="forRestricciones" class="form-select" formControlName="Restricciones"
+                        title="Selecciona las restricciones del producto"
+                        [class.is-invalid]="formB.formProducts.get('Restricciones')?.touched && formB.formProducts.get('Restricciones')?.invalid">
+                        <option value="" selected>Seleccionar</option>
+                        <option value="Apto para todo público">Apto para todo público</option>
+                        <option value="Sólo para mayores de 18 años">Sólo para mayores de 18 años</option>
+                      </select>
+                      <label for="forRestricciones">Restricciones</label>
+                    </div>
+                    <app-form-errors-container [forControl]="formB.formProducts.get('Restricciones')">
+                      <app-message-error forErrorCode="required"></app-message-error>
+                    </app-form-errors-container>
+                  </div>
+                  <!----------DISPONIBILIDAD----------->
+                  <div class="col-xl-6 col-sm-12 col-md-6 col-xxl-6 col-6 position-relative">
+                    <div class="form-floating mb-3">
+                      <select id="forDisponibilidad" class="form-select" formControlName="Disponibilidad"
+                        title="Busque que tipo de disponibilidad tiene su producto"
+                        [class.is-invalid]="formB.formProducts.get('Disponibilidad')?.touched && formB.formProducts.get('Disponibilidad')?.invalid">
+                        <option value="" selected>Seleccionar</option>
+                        <option value="1">Inmediata</option>
+                        <option value="2">Bajo pedido</option>
+                      </select>
+                      <label for="forDisponibilidad">Disponibilidad</label>
+                    </div>
+                    <app-form-errors-container [forControl]="formB.formProducts.get('Disponibilidad')">
+                      <app-message-error forErrorCode="required"></app-message-error>
+                    </app-form-errors-container>
+                  </div>
+                </div>
+                <!-------GARANTIA----->
+                <div class="row">
+                  <!-------APP CATEGORIAS-------->
+                  <div class="col-xl-6 col-sm-12 col-md-6 col-xxl-6 col-5">
+                    <div class="form-floating mb-3">
+                      <select id="forDisponibilidad" class="form-select" formControlName="Garantia"
+                        (change)="selectGarantia($event)" title="Seleccione si el producto ofrece una garantia"
+                        [class.is-invalid]="formB.formProducts.get('Garantia')?.touched && formB.formProducts.get('Garantia')?.invalid">
+                        <option value="" selected>Seleccionar</option>
+                        <option value="Si">Si</option>
+                        <option value="No">No</option>
+                      </select>
+                      <label for="forDisponibilidad">Garantía</label>
+                    </div>
+                    <app-form-errors-container [forControl]="formB.formProducts.get('Garantia')">
+                      <app-message-error forErrorCode="required"></app-message-error>
+                    </app-form-errors-container>
+                  </div>
+                  <!----------FORM ETIQUETAS----------->
+                  <ng-container *ngIf="ActiveGarantia">
+                    <div class="col-xl-6 col-sm-12 col-md-6 col-xxl-6 col-7 position-relative">
+                      <div class="form-floating">
+                        <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"
+                          placeholder="Describa sus garantías" formControlName="Tipo_Garantia"
+                          title="Describe las garantias que tiene el producto"></textarea>
+                        <label for="floatingTextarea">Condiciones de Garantías</label>
+                      </div>
+                    </div>
+                  </ng-container>
+                </div>
+              </form>
+            </div>
+            <!-- modal-footer fixed-bottom -->
+            <div class=" bg-white ">
+              <button type="button" class="btn btn-secondary" (click)="irProducto();">Cancelar</button>
+              <button class="btn btn-dark collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo"
+                (click)="crearNuevoNombreArticulo()"
+                [disabled]="formEtiqueta.formEtiquetas.invalid || formCategoria.formCategorias.invalid || formB.formProducts.invalid ">Continuar
+                &nbsp;<svg width="7" height="20" viewBox="0 0 7 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M6.25627 5.40406L1.91551 1.26667C1.82034 1.17521 1.70711 1.10261 1.58235 1.05307C1.4576 1.00353 1.32379 0.978027 1.18864 0.978027C1.05349 0.978027 0.919677 1.00353 0.794922 1.05307C0.670167 1.10261 0.556938 1.17521 0.461765 1.26667C0.271088 1.4495 0.164062 1.69681 0.164062 1.95461C0.164062 2.2124 0.271088 2.45972 0.461765 2.64255L4.08589 6.09688L0.461765 9.55121C0.271088 9.73404 0.164062 9.98136 0.164062 10.2392C0.164063 10.4969 0.271088 10.7443 0.461765 10.9271C0.557426 11.0175 0.670876 11.0891 0.795609 11.1376C0.920341 11.1862 1.0539 11.2108 1.18864 11.2101C1.32337 11.2108 1.45694 11.1862 1.58167 11.1376C1.7064 11.0891 1.81985 11.0175 1.91551 10.9271L6.25627 6.7897C6.35223 6.69898 6.42839 6.59106 6.48036 6.47215C6.53234 6.35324 6.5591 6.22569 6.5591 6.09688C6.5591 5.96806 6.53234 5.84052 6.48036 5.72161C6.42839 5.6027 6.35223 5.49477 6.25627 5.40406Z"
+                    fill="white" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="acordion-item border-0">
+      <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+        data-bs-parent="#accordionExample">
+        <app-productos-atributos></app-productos-atributos>
+      </div>
+    </div>
+
+    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingThree"
+      data-bs-parent="#accordionExample">
+      <app-tercer-paso></app-tercer-paso>
+    </div>
+  </div>
+</section>
+<button class="btn btn-primary collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+  aria-expanded="true" aria-controls="collapseTwo" (click)="addAtributos()">TWO</button>
+<button class="btn btn-primary collapsed" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false"
+  aria-controls="collapseFour" (click)="addAtributos()">THREE</button>
