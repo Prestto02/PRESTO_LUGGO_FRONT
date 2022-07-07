@@ -16,19 +16,31 @@
 .mover-icono-user {
   padding: 0px;
   position: relative;
-  right: 21px;
+  right: 54px;
 }
 .mover-icono-deseos {
   padding: 0px;
   position: relative;
-  right: 15px;
+  right: 45px;
 }
 .navbar-light .navbar-nav .nav-link {
   color: #000;
 }
 
+.carrito-items {
+  position: relative;
+  right: 50px;
+}
 
+.margin-laptop {
+  position: relative;
+  right: 54px;
+}
 
+.responsive-links-1 {
+  position: relative;
+  right: 45px;
+}
 .margin-responsive {
   margin-top: 12px;
 }

@@ -34,7 +34,10 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarToggleExternalContent">
       <ul class="navbar-nav me-auto mb-3 mb-lg-0 col-xl-9 col-xxl-9 col-md-9 col-12 col-sm-12">
-        <li class="container-fluid col-md-12 col-sm-12 col-xl-12 col-12 col-xxl-12">
+        <li>
+          <app-item-nav class="text-end"></app-item-nav>
+        </li>
+        <li class="container-fluid col-md-12 col-sm-12 col-xl-10 col-12 col-xxl-10">
           <app-autocompletado-productos></app-autocompletado-productos>
         </li>
       </ul>
@@ -44,12 +47,6 @@
             <div class="row mt-xl-1">
               <!--------VERIFICO SI EL USUARIO ESTA LOGEADO------->
               <ng-container *ngIf="emailUsuario; else noIdentificado">
-                <div
-                  class="col-md-9 col-sm-8 col-7 col-xl-10 col-xxl-10 text-center d-block d-sm-block d-xxl-block d-xl-block d-md-block">
-                  <a class="nav-link cursor-item margin-responsive margin-laptop">
-                    <b (click)="irAlPerfilUsuario()">Mi puertto</b>
-                  </a>
-                </div>
                 <div (click)="irAlPerfilUsuario()"
                   class="col-md-2 col-sm-2 col-xl-1 col-xxl-1 col-2 d-md-none d-xl-block d-xxl-block d-block d-sm-block mover-icono-user">
                   <svg type="button" width="28" height="70" viewBox="0 0 21 22" fill="none"
@@ -62,15 +59,14 @@
                       fill="#000" />
                   </svg>
                 </div>
-              </ng-container>
-              <ng-template #noIdentificado>
                 <div
-                  class="col-md-9 col-sm-8 col-7 col-xl-10 col-xxl-9 text-center responsive-links d-block d-sm-block d-xxl-block d-xl-block d-md-block">
-                  <a class="nav-link cursor-item mt-auto margin-laptop" data-bs-toggle="offcanvas"
-                    data-bs-target="#offcanvasRightLogin" aria-controls="offcanvasRight">
-                    Hola, Ingresa <b>Mi cuenta</b>
+                  class="col-md-9 col-sm-8 col-7 col-xl-10 col-xxl-10 text-center d-block d-sm-block d-xxl-block d-xl-block d-md-block">
+                  <a class="nav-link cursor-item margin-responsive margin-laptop">
+                    <b (click)="irAlPerfilUsuario()">Mi puertto</b>
                   </a>
                 </div>
+              </ng-container>
+              <ng-template #noIdentificado>
                 <div
                   class="col-md-2 col-sm-2 col-xl-1 col-xxl-1 col-2  d-md-none d-xl-block d-xxl-block d-block d-sm-block mover-icono-user">
                   <svg type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRightLogin"
@@ -84,6 +80,13 @@
                       fill="#000" />
                   </svg>
                 </div>
+                <div
+                  class="col-md-9 col-sm-8 col-7 col-xl-10 col-xxl-9 text-center responsive-links d-block d-sm-block d-xxl-block d-xl-block d-md-block">
+                  <a class="nav-link cursor-item mt-auto margin-laptop" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasRightLogin" aria-controls="offcanvasRight">
+                    Hola, Ingresa <b>Mi cuenta</b>
+                  </a>
+                </div>
               </ng-template>
               <!--------VERIFICO SI EL USUARIO ESTA LOGEADO FIN------->
             </div>
@@ -91,10 +94,6 @@
           </li>
           <li class="navbar-nav mt-xl-1">
             <div class="row">
-              <div
-                class="col-md-9 col-sm-8 col-8 col-xl-9 col-xxl-8 text-center responsive-links-1 d-block d-sm-block d-xxl-block d-xl-block d-md-block">
-                <a class="nav-link cursor-item" (click)="irListaDeseos();">Lista de <b>Deseos</b></a>
-              </div>
               <div
                 class="col-md-2 col-sm-2 col-xl-1 col-xxl-1 col-2 mt-3 d-md-none d-xl-block d-xxl-block d-block d-sm-block mover-icono-deseos">
                 <svg type="button" (click)="irListaDeseos()" width="29" height="29" viewBox="0 0 29 29" fill="none"
@@ -104,24 +103,29 @@
                     fill="#272727" />
                 </svg>
               </div>
+              <div
+                class="col-md-9 col-sm-8 col-8 col-xl-9 col-xxl-8 text-center responsive-links-1 d-block d-sm-block d-xxl-block d-xl-block d-md-block">
+                <a class="nav-link cursor-item" (click)="irListaDeseos();">Lista de <b>Deseos</b></a>
+              </div>
             </div>
           </li>
           <li class="navbar-nav">
-            <a class="nav-link cursor-item" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRightCarrito"
-              aria-controls="offcanvasRightCarrito"><span>
+            <a class="nav-link cursor-item carrito-items" data-bs-toggle="offcanvas"
+              data-bs-target="#offcanvasRightCarrito" aria-controls="offcanvasRightCarrito"><span>
                 <svg data-bs-toggle="offcanvas" ata-bs-toggle="offcanvas" aria-controls="offcanvasRightCarrito"
-                  data-bs-target="#offcanvasRightCarrito" aria-controls="offcanvasRightCarrito" width="35" height="40"
-                  viewBox="0 0 35 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  data-bs-target="#offcanvasRightCarrito" aria-controls="offcanvasRightCarrito" width="30" height="55"
+                  viewBox="0 0 30 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path
-                    d="M16.2136 18.3932C16.9531 18.3932 17.5447 18.9402 17.6187 19.5556L19.3935 36.1026C19.4675 36.5812 19.1717 36.9915 19.0238 37.1282C18.8759 37.265 18.5061 37.5385 17.9884 37.5385H4.08544C3.56778 37.5385 3.19801 37.265 3.05011 37.1282C2.90221 36.9915 2.6064 36.6496 2.68035 36.1026L4.38125 19.6239C4.4552 18.9402 5.04682 18.4615 5.78634 18.4615L16.2136 18.3932ZM16.2136 16H5.86029C3.78963 16 2.01478 17.4359 1.86688 19.3504L0.018074 35.8974C-0.203782 38.0855 1.64502 40 4.01149 40H17.9884C20.3549 40 22.2037 38.0855 21.9818 35.8974L20.207 19.3504C19.9851 17.4359 18.2842 16 16.2136 16Z"
-                    fill="#353535" />
-                  <path
-                    d="M14.2919 20.3076C13.8221 20.3076 13.3523 20.6495 13.2181 21.1281C12.8825 22.0854 12.01 22.7692 11.0033 22.7692C9.99663 22.7692 9.12415 22.0854 8.78858 21.1281C8.65436 20.6495 8.18456 20.3076 7.71476 20.3076C6.9094 20.3076 6.30537 21.1281 6.64094 21.9486C7.31208 23.7948 9.05704 25.0939 11.0705 25.0939C13.0839 25.0939 14.8288 23.7948 15.5 21.9486C15.6342 21.1281 15.0973 20.3076 14.2919 20.3076Z"
-                    fill="#EA2313" />
-
+                    d="M2.08856 0.5C1.26013 0.5 0.588562 1.17157 0.588562 2C0.588562 2.82843 1.26013 3.5 2.08856 3.5V0.5ZM5.23498 3.38151L6.66865 2.94038L5.23498 3.38151ZM9.82749 18.3072L8.39382 18.7483L9.82749 18.3072ZM24.3244 18.3929L22.9126 17.8861V17.8861L24.3244 18.3929ZM27.8921 8.45436L29.3039 8.96116L27.8921 8.45436ZM12.9739 3.02696C12.1455 3.02696 11.4739 3.69853 11.4739 4.52696C11.4739 5.35538 12.1455 6.02696 12.9739 6.02696V3.02696ZM2.08856 3.5H3.36447V0.5H2.08856V3.5ZM3.80131 3.82264L8.39382 18.7483L11.2612 17.866L6.66865 2.94038L3.80131 3.82264ZM11.698 21.1887H22.4825V18.1887H11.698V21.1887ZM25.7362 18.8997L29.3039 8.96116L26.4803 7.94756L22.9126 17.8861L25.7362 18.8997ZM25.1291 3.02696H12.9739V6.02696H25.1291V3.02696ZM29.3039 8.96116C30.3413 6.07132 28.1995 3.02696 25.1291 3.02696V6.02696C26.1229 6.02696 26.816 7.01227 26.4803 7.94756L29.3039 8.96116ZM22.4825 21.1887C23.9414 21.1887 25.2433 20.2728 25.7362 18.8997L22.9126 17.8861C22.8475 18.0676 22.6753 18.1887 22.4825 18.1887V21.1887ZM8.39382 18.7483C8.84015 20.1989 10.1803 21.1887 11.698 21.1887V18.1887C11.4974 18.1887 11.3202 18.0578 11.2612 17.866L8.39382 18.7483ZM3.36447 3.5C3.56512 3.5 3.7423 3.63086 3.80131 3.82264L6.66865 2.94038C6.22232 1.48983 4.88213 0.5 3.36447 0.5V3.5Z"
+                    fill="#282828" />
+                  <circle cx="12.0694" cy="24.6852" r="2.31481" fill="#282828" />
+                  <circle cx="22.2546" cy="24.6852" r="2.31481" fill="#282828" />
                 </svg>
                 <span class="position-absolute start-10 mt-2 translate-middle badge rounded-pill color-article">
                   {{totalCarrito}}
+                </span>
+                <span class="position-absolute bottom-0 mt-2 translate-middle-y">
+                  Carrito
                 </span>
               </span>
             </a>
@@ -141,3 +145,6 @@
   id="offcanvasRightCarrito" aria-labelledby="offcanvasRightCarritoLabel">
   <ng-content class="text-center"> </ng-content>
 </app-carrito-items>
+
+
+<app-menu2></app-menu2>
