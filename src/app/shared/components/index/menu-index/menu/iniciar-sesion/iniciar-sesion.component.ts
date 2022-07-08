@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { RepositorioImg } from 'src/app/shared/helpers/RepositorioImg';
 import { UrlApi } from 'src/app/shared/routes/RoutesApi';
 import { UrlFront } from '../../../../../routes/RoutesFront';
 
@@ -10,6 +11,7 @@ import { UrlFront } from '../../../../../routes/RoutesFront';
 })
 export class IniciarSesionComponent implements OnInit {
   public urlGoogle = `${UrlApi.ApiUrl}${UrlApi.loginGoogle}`;
+  registroAdn: string = `${RepositorioImg.urlRepositorio}img/IMÁGENES/icons-users-perfil/registro-adn.png`;
   constructor(private router: Router) {}
 
   ngOnInit(): void {}

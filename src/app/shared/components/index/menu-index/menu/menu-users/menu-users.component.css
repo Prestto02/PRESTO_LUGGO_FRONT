@@ -3,10 +3,20 @@
   color: white;
 }
 
-.cursor{
+.cursor {
   cursor: pointer;
 }
 
-h6{
+h6 {
   color: #ff4401;
+}
+.text-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #ffe7c7;
+}
+
+.text-items {
+  font-size: 14px;
+  font-weight: 500;
 }

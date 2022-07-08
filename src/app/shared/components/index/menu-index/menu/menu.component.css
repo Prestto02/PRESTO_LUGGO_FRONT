@@ -23,7 +23,7 @@ span{
 .mover-icono-deseos {
   padding: 0px;
   position: relative;
-  right: 45px;
+  right: 52px;
 }
 .navbar-light .navbar-nav .nav-link {
   color: #000;
@@ -31,7 +31,7 @@ span{
 
 .carrito-items {
   position: relative;
-  right: 50px;
+  right: 78px;
 }
 
 .margin-laptop {
@@ -41,7 +41,7 @@ span{
 
 .responsive-links-1 {
   position: relative;
-  right: 45px;
+  right: 50px;
 }
 .margin-responsive {
   margin-top: 12px;
@@ -113,7 +113,7 @@ span{
   }
   .responsive-links {
     margin-top: 8px;
-    margin-left: -20px;
+    margin-left: -10px;
     padding: 0;
   }
   .responsive-links-1 {

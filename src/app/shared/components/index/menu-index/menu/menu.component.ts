@@ -15,6 +15,7 @@ export class MenuComponent implements OnInit {
   totalCarrito: any;
   idUsuario: any;
   emailUsuario: any;
+  nombre: string = '';
   id: any;
   rolTipo: any = 0;
   constructor(
