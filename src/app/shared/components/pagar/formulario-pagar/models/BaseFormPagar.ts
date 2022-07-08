@@ -22,12 +22,20 @@ export class BaseFormPagar {
     ],
     cliente_phone: [
       '',
-      [Validators.required, Validators.pattern(Expresion.SoloNumeros)],
+      [
+        Validators.required,
+        Validators.minLength(10),
+        Validators.pattern(Expresion.SoloNumeros),
+      ],
     ],
     code_phone: [593, [Validators.required]],
     identificacion: [
       '',
-      [Validators.required, Validators.pattern(Expresion.CedulaTelefono)],
+      [
+        Validators.required,
+        Validators.minLength(10),
+        Validators.pattern(Expresion.CedulaTelefono),
+      ],
     ],
     direccion_entrega: [
       '',

@@ -13,12 +13,20 @@
         <label for="formControlNombre" class="form-label">Nombres</label>
         <input type="text" class="form-control" id="formControlNombre" formControlName="Nombres"
           placeholder="Nombres Completos">
+        <app-form-errors-container [forControl]="formB.formPagar.get('Nombres')">
+          <app-message-error forErrorCode="required"></app-message-error>
+          <app-message-error forErrorCode="pattern" customMsg="Debe tener solo letras"></app-message-error>
+        </app-form-errors-container>
       </div>
 
       <div class="col-xxl-6 col-xl-6 col-sm-6 col-12 col-md-6 mb-3 py-3">
         <label for="formControlApellidos" class="form-label">Apellidos</label>
         <input type="text" class="form-control" id="formControlApellidos" formControlName="Apellidos"
           placeholder="Apellidos Completos">
+        <app-form-errors-container [forControl]="formB.formPagar.get('Apellidos')">
+          <app-message-error forErrorCode="required"></app-message-error>
+          <app-message-error forErrorCode="pattern" customMsg="Debe tener solo letras"></app-message-error>
+        </app-form-errors-container>
       </div>
 
       <div class="col-xxl-6 col-xl-6 col-sm-6 col-12 col-md-6 mb-3 py-3">
@@ -30,8 +38,13 @@
             </option> -->
             <option selected [value]="codigo_phone">+593</option>
           </select>
-          <input type="text" class="form-control w-50" maxlength="9" id="formControlCelular"
+          <input type="text" class="form-control w-50" maxlength="10" id="formControlCelular"
             formControlName="cliente_phone" placeholder="Celular">
+          <app-form-errors-container [forControl]="formB.formPagar.get('cliente_phone')">
+            <app-message-error forErrorCode="required"></app-message-error>
+            <app-message-error forErrorCode="pattern" customMsg="Debe tener solo números"></app-message-error>
+            <app-message-error forErrorCode="minlength" customMsg="Máximo 10 caracteres"></app-message-error>
+          </app-form-errors-container>
         </div>
       </div>
 
@@ -39,18 +52,33 @@
         <label for="formControlIdentificacion" class="form-label">Cédula</label>
         <input type="text" maxlength="10" class="form-control" id="formControlIdentificacion"
           formControlName="identificacion" placeholder="0999999999">
+        <app-form-errors-container [forControl]="formB.formPagar.get('identificacion')">
+          <app-message-error forErrorCode="required"></app-message-error>
+          <app-message-error forErrorCode="pattern" customMsg="Debe tener solo números"></app-message-error>
+          <app-message-error forErrorCode="minlength" customMsg="Máximo 10 caracteres"></app-message-error>
+
+        </app-form-errors-container>
       </div>
 
       <div class="col-xxl-6 col-xl-6 col-sm-6 col-12 col-md-6 mb-3 py-3">
         <label for="formControlCorreo" class="form-label">Correo</label>
         <input type="email" class="form-control" id="formControlCorreo" formControlName="correo"
           placeholder="example@example.com">
+        <app-form-errors-container [forControl]="formB.formPagar.get('correo')">
+          <app-message-error forErrorCode="required"></app-message-error>
+          <app-message-error forErrorCode="email"></app-message-error>
+        </app-form-errors-container>
       </div>
 
       <div class="col-xxl-6 col-xl-6 col-sm-6 col-12 col-md-6 mb-3 py-3">
         <label for="formControlDireccion" class="form-label">Dirección</label>
         <input type="text" class="form-control" id="formControlDireccion" formControlName="direccion_entrega"
           placeholder="Dirección">
+        <app-form-errors-container [forControl]="formB.formPagar.get('direccion_entrega')">
+          <app-message-error forErrorCode="required"></app-message-error>
+          <app-message-error forErrorCode="pattern" customMsg="No debe tener caracteres especiales">
+          </app-message-error>
+        </app-form-errors-container>
       </div>
 
     </div>
