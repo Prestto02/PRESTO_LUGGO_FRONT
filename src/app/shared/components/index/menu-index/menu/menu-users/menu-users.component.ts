@@ -24,7 +24,7 @@ export class MenuUsersComponent implements OnInit {
   registroAdn: string = `${RepositorioImg.urlRepositorio}img/IMÁGENES/icons-users-perfil/registro-adn.png`;
   name: string = '';
   users: string = 'Cliente';
-  centerClient: string = `${UrlFront.Cliente.cliente}/${UrlFront.Cliente.miCuenta}`;
+  centerClient: string = '';
   linkVender: string = `${UrlFront.Users.users}/${UrlFront.Users.adnRegistrar}`;
   rolTipo: any;
   rolTipoUsuario: any;
@@ -60,9 +60,12 @@ export class MenuUsersComponent implements OnInit {
     this.irAlPerfilUsuario();
     console.log(this.rolTipoUsuario);
     if (this.rolTipoUsuario === '1') {
+      this.centerClient = `${UrlFront.Cliente.cliente}/${UrlFront.Cliente.miCuenta}`;
+
       this.arrayCliente = ItemsClientMenuOffCanvas;
     }
     if (this.rolTipoUsuario === '2') {
+      this.centerClient=`${UrlFront.Manager.managerVendedor}/${UrlFront.Manager.vendedor}`
       this.arrayCliente = ItemsAdnMenuOffCanvas;
     }
   }

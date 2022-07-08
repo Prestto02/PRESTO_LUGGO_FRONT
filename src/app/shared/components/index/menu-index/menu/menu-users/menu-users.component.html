@@ -11,7 +11,7 @@
     aria-label="Close"></button>
 </div>
 <!--------SEPARACION------>
-<hr class="col-xxl-11 mx-auto">
+<hr class="col-xxl-11 col-xl-11 col-md-11 col-sm-11 col-11 mx-auto">
 <div class="offcanvas-body">
   <h5 class="cursor mb-4" (click)="irARuta(centerClient)"><span class="text-title cursor">Central
       {{users===''?'cliente':users}}</span>
@@ -28,7 +28,8 @@
     </div>
   </div>
   <!--------SEPARACION------>
-  <hr class="col-xxl-11 mx-auto">
+  <hr class="col-xxl-11 col-xl-11 col-md-11 col-sm-11 col-11 mx-auto">
+
   <ng-container *ngIf="users==='Cliente'">
     <div class="row col-xxl-10 mx-auto mb-3 mt-3 cursor border p-3 rounded">
       <p class="text text-center cursor mt-3" (click)="irARuta(linkVender)">
