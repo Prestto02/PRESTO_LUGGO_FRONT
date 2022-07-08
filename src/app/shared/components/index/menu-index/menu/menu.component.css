@@ -1,7 +1,9 @@
 * {
   font-family: Cardium B-Medium;
 }
-
+nav {
+  border-bottom: 1px solid #9d9d9d;
+}
 .color-article {
   background-color: #ea2313;
   color: #fff;
@@ -9,7 +11,7 @@
 .cursor-item {
   cursor: pointer;
 }
-span{
+span {
   font-family: Cardium B-Medium;
 }
 .color-canvas {
@@ -50,7 +52,7 @@ span{
   margin-left: 8px;
 }
 
-.offcanvas-end{
+.offcanvas-end {
   background-color: #222224f0;
 }
 
