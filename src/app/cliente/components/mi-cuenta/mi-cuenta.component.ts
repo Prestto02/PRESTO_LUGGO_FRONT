@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RepositorioImg } from 'src/app/shared/helpers/RepositorioImg';
 import { ItemsClientMenu } from './models/ItemsMenuClient';
 import { MenuClient } from './models/MenuClients.interface';
 
@@ -9,6 +10,7 @@ import { MenuClient } from './models/MenuClients.interface';
 })
 export class MiCuentaComponent implements OnInit {
   arrayList: MenuClient[] = ItemsClientMenu;
+  bannerCliente: string = `${RepositorioImg.urlRepositorio}img/IMÁGENES/banners-usuarios/central-cliente.png`;
   constructor() {}
 
   ngOnInit(): void {}

@@ -24,10 +24,10 @@ export const UrlApi = {
   codigoTallas: 'api/Talla',
 
   //CATEGORIAS Y ARTICULOS
-  categorias: 'api/Familia/padres',
+  categorias: 'api/categoria/padres',
   articulos: 'api/articulo',
   verificarImg: 'api/multimedia/subiendo',
-  categoriasrHijos: 'api/Familia/hijos/',
+  categoriasrHijos: 'api/categoria/hijos/',
   categoriasPadres: 'api/categoria/padres',
   paraCrearArticulo: 'api/nombre_articulo',
   detalleArticulo: 'api/articulo/profile/',

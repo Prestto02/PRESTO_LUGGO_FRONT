@@ -62,9 +62,9 @@
                 </div>
                 <div data-bs-toggle="offcanvas" data-bs-target="#offcanvasRightUsers"
                   aria-controls="offcanvasRightUsers"
-                  class="col-md-12 col-sm-8 col-7 col-xl-10 col-xxl-10 text-center d-block d-sm-block d-xxl-block d-xl-block d-md-block">
+                  class="col-md-12 col-sm-8 col-7 col-xl-10 col-xxl-10 text-start d-block d-sm-block d-xxl-block d-xl-block d-md-block">
                   <a class="nav-link cursor-item margin-responsive margin-laptop">
-                   {{nombre}} <b>Mi puertto</b>
+                    <b>Mi puertto</b>
                   </a>
                 </div>
               </ng-container>
@@ -150,6 +150,7 @@
 
 
 <app-menu2></app-menu2>
-
-<app-menu-users class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRightUsers"
-  aria-labelledby="offcanvasRightLabelUsers"></app-menu-users>
+<ng-container *ngIf="emailUsuario;">
+  <app-menu-users class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRightUsers"
+    aria-labelledby="offcanvasRightLabelUsers"></app-menu-users>
+</ng-container>

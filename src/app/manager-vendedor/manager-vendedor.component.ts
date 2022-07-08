@@ -15,6 +15,7 @@ export class ManagerVendedorComponent implements OnInit {
   imgBilletera = `${RepositorioImg.urlRepositorio}img/IMÁGENES/billeteraAdn.png`;
   imgContenedorCarrito = `${RepositorioImg.urlRepositorio}img/IMÁGENES/contenedorCarritoAdn.png`;
   imgListContent = `${RepositorioImg.urlRepositorio}img/IMÁGENES/list-content-adn.png`;
+  bannerAdn: string = `${RepositorioImg.urlRepositorio}img/IMÁGENES/banners-usuarios/central-adn.png`;
   email: any;
   constructor(private _router: Router, private token: TokenService) {}
 

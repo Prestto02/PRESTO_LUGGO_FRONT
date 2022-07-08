@@ -21,3 +21,9 @@
   width: 352px;
   height: 249px;
 }
+
+.img-responsive {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}

@@ -26,7 +26,11 @@ export class AppComponent {
     const element: any = <HTMLElement>(
       document.getElementById('color-container')
     );
-    if (event.url.match('/Menu/index')) {
+    if (
+      event.url.match('/Menu/index') ||
+      event.url.match('/manager/vendedor') ||
+      event.url.match('/cliente/cuenta-cliente')
+    ) {
       element.style.background = '#f1f3f6';
     } else {
       element.style.background = '#fff';

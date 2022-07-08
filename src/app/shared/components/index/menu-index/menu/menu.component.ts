@@ -17,13 +17,10 @@ export class MenuComponent implements OnInit {
   emailUsuario: any;
   nombre: string = '';
   id: any;
-  rolTipo: any = 0;
   constructor(
     private router: Router,
     private apiForm: CarritoItemsService, //FORMULARIO CATEGORIAS
-    private tokenUser: TokenService, //TOKEN SERVICES
-    private authServi: RolUserService,
-    private encrypServi: EncryptService
+    private tokenUser: TokenService //TOKEN SERVICES
   ) {}
 
   ngOnInit(): void {
@@ -32,15 +29,6 @@ export class MenuComponent implements OnInit {
     this.emailUsuario = this.tokenUser.getTokenEmail(); //OBTENGO EL EMAIL DEL USUARIO
   }
 
-  //IR AL PERFIL DE USUARIO
-  irAlPerfilUsuario() {
-    this.rolTipo = localStorage.getItem('dataUsuarioItems');
-    this.rolTipo = this.encrypServi.encrypOrDesrypRol(
-      this.rolTipo,
-      'Desencriptar'
-    ); //DESENCRIPTAR
-    this.authServi.verificarTipoRol(this.rolTipo); //PARA IR A LA RUTA SEGUN EL ROL
-  }
   //TOTAL ITEMS CARRITO
   totalItemsCarrito() {
     this.apiForm.productsLengthtotal.subscribe((res) => {
