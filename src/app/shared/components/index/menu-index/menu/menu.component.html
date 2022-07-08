@@ -37,7 +37,7 @@
         <li>
           <app-item-nav class="text-end"></app-item-nav>
         </li>
-        <li class="container-fluid col-md-12 col-sm-12 col-xl-10 col-12 col-xxl-10">
+        <li class="col-md-12 col-sm-12 col-xl-10 col-12 col-xxl-10">
           <app-autocompletado-productos></app-autocompletado-productos>
         </li>
       </ul>
@@ -47,7 +47,8 @@
             <div class="row mt-xl-1">
               <!--------VERIFICO SI EL USUARIO ESTA LOGEADO------->
               <ng-container *ngIf="emailUsuario; else noIdentificado">
-                <div (click)="irAlPerfilUsuario()"
+                <div data-bs-toggle="offcanvas" data-bs-target="#offcanvasRightUsers"
+                  aria-controls="offcanvasRightUsers"
                   class="col-md-2 col-sm-2 col-xl-1 col-xxl-1 col-2 d-md-none d-xl-block d-xxl-block d-block d-sm-block mover-icono-user">
                   <svg type="button" width="28" height="70" viewBox="0 0 21 22" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
@@ -59,10 +60,11 @@
                       fill="#000" />
                   </svg>
                 </div>
-                <div
-                  class="col-md-9 col-sm-8 col-7 col-xl-10 col-xxl-10 text-center d-block d-sm-block d-xxl-block d-xl-block d-md-block">
+                <div data-bs-toggle="offcanvas" data-bs-target="#offcanvasRightUsers"
+                  aria-controls="offcanvasRightUsers"
+                  class="col-md-12 col-sm-8 col-7 col-xl-10 col-xxl-10 text-center d-block d-sm-block d-xxl-block d-xl-block d-md-block">
                   <a class="nav-link cursor-item margin-responsive margin-laptop">
-                    <b (click)="irAlPerfilUsuario()">Mi puertto</b>
+                    <b>Mi puertto</b>
                   </a>
                 </div>
               </ng-container>
@@ -81,7 +83,7 @@
                   </svg>
                 </div>
                 <div
-                  class="col-md-9 col-sm-8 col-7 col-xl-10 col-xxl-9 text-center responsive-links d-block d-sm-block d-xxl-block d-xl-block d-md-block">
+                  class="col-md-12 col-sm-8 col-7 col-xl-10 col-xxl-9 text-center responsive-links d-block d-sm-block d-xxl-block d-xl-block d-md-block">
                   <a class="nav-link cursor-item mt-auto margin-laptop" data-bs-toggle="offcanvas"
                     data-bs-target="#offcanvasRightLogin" aria-controls="offcanvasRight">
                     Hola, Ingresa <b>Mi cuenta</b>
@@ -104,7 +106,7 @@
                 </svg>
               </div>
               <div
-                class="col-md-9 col-sm-8 col-8 col-xl-9 col-xxl-8 text-center responsive-links-1 d-block d-sm-block d-xxl-block d-xl-block d-md-block">
+                class="col-md-12 col-sm-8 col-8 col-xl-9 col-xxl-8 text-center responsive-links-1 d-block d-sm-block d-xxl-block d-xl-block d-md-block">
                 <a class="nav-link cursor-item" (click)="irListaDeseos();">Lista de <b>Deseos</b></a>
               </div>
             </div>
@@ -148,3 +150,6 @@
 
 
 <app-menu2></app-menu2>
+
+<app-menu-users class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRightUsers"
+  aria-labelledby="offcanvasRightLabelUsers"></app-menu-users>

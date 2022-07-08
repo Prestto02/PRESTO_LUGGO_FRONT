@@ -8,7 +8,7 @@ const routes: Routes = [
     path: '',
     children: [
       {
-        path: UrlFront.listaPedidos.listado, //RUTA INDEX
+        path: UrlFront.listaPedidos.getListado, //RUTA INDEX
         component: ListPedidosComponent,
       },
       {

@@ -95,13 +95,19 @@
 
 @media screen and (min-width: 820px) and (max-width: 1109px) {
   .responsive-autocomplete {
-    width: 100% !important;
+    width: 70% !important;
+  }
+  .display-flex {
+    justify-content: start;
   }
 }
 
 @media screen and (min-width: 1100px) and (max-width: 1199px) {
   .responsive-autocomplete {
-    width: 100% !important;
+    width: 75% !important;
+  }
+  .display-flex {
+    justify-content: start;
   }
 }
 

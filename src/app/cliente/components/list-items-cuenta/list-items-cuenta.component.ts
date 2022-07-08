@@ -16,6 +16,6 @@ export class ListItemsCuentaComponent implements OnInit {
 
   ngOnInit(): void {}
   irAlLink(link: any) {
-    this.router.navigateByUrl(`${link}`);
+    this.router.navigateByUrl(`${link}/${this.idCliente}`);
   }
 }

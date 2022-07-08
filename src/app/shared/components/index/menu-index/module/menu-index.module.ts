@@ -15,6 +15,7 @@ import { ItemsProductsVerify } from 'src/app/shared/helpers/ItemsProductsVerify'
 import { ItemNavComponent } from '../menu2/item-nav/item-nav.component';
 import { UsuarioIdentificComponent } from '../menu2/usuario-identific/usuario-identific.component';
 import { InputIncreaseDiminishComponent } from '../../../input-increase-diminish/input-increase-diminish.component';
+import { MenuUsersComponent } from '../menu/menu-users/menu-users.component';
 @NgModule({
   declarations: [
     MenuIndexComponent, //MENU INDEX COMPONENTS
@@ -27,6 +28,7 @@ import { InputIncreaseDiminishComponent } from '../../../input-increase-diminish
     UsuarioIdentificComponent, //USUARIO IDENTIFICADO NUEVOS MENUS
     AutocompletadoProductosComponent, //AUTO COMPLETADO
     InputIncreaseDiminishComponent,
+    MenuUsersComponent,
   ],
   imports: [CommonModule, ReactiveFormsModule, HttpClientModule],
   providers: [

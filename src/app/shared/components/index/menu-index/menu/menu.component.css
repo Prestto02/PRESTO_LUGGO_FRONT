@@ -9,7 +9,9 @@
 .cursor-item {
   cursor: pointer;
 }
-
+span{
+  font-family: Cardium B-Medium;
+}
 .color-canvas {
   background-color: #222224f0;
 }
@@ -47,6 +49,11 @@
 .margin-left-icon {
   margin-left: 8px;
 }
+
+.offcanvas-end{
+  background-color: #222224f0;
+}
+
 /* RESPONSIVE EL AUTOCOMPLETADO */
 @media screen and (min-width: 300px) and (max-width: 461px) {
   .responsive-autocomplete {
@@ -116,12 +123,12 @@
   .mover-icono-deseos {
     padding: 0px;
     position: relative;
-    right: 20px;
+    right: 43px;
   }
   .mover-icono-user {
     padding: 0px;
     position: relative;
-    right: 16px;
+    right: 73px;
   }
   .margin-laptop {
     margin-top: 9px;

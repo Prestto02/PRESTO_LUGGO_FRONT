@@ -107,5 +107,6 @@ export const UrlFront = {
   listaPedidos: {
     lista: 'lista',
     listado: 'lista-pedidos',
+    getListado: 'lista-pedidos/:id',
   },
 };
