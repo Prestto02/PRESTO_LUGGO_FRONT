@@ -44,7 +44,9 @@ export class MenuUsersComponent implements OnInit {
   }
 
   irARuta(link: string) {
-    this.route.navigateByUrl(`${link}`);
+    this.linkVender
+      ? this.route.navigateByUrl(link)
+      : this.route.navigateByUrl(`${link}/${this.idCliente}`);
   }
 
   cerrarSesion() {
@@ -62,7 +64,7 @@ export class MenuUsersComponent implements OnInit {
       this.arrayCliente = ItemsClientMenuOffCanvas;
     }
     if (this.rolTipoUsuario === '2') {
-      this.centerClient = `${UrlFront.Manager.managerVendedor}/${UrlFront.Manager.vendedor}`;
+      this.linkVender = `${UrlFront.Manager.managerVendedor}/${UrlFront.Manager.vendedor}`;
       this.arrayCliente = ItemsAdnMenuOffCanvas;
     }
   }
