@@ -36,6 +36,9 @@ export class ItemsProductsVerify {
     if (e.target.value <= 0) {
       e.target.value = 1;
     }
+    if (e.target.value > res.stock) {
+      e.target.value = res.stock;
+    }
     if (res) {
       res.item = e.target.value;
       res.subtotal = res.precio * res.item;
@@ -45,9 +48,11 @@ export class ItemsProductsVerify {
 
   //INCREMENT JSON DETAILS PRODUCTS
   incrementItemsJSON(res: any) {
-    res.item++; //HAGO LA SUMA
-    res.subtotal = res.precio * res.item; //MULTIPLICO CON El ITEM Y EL PRECIO
-    this.getTotalCars();
+    if (res.item < res.stock) {
+      res.item++; //HAGO LA SUMA
+      res.subtotal = res.precio * res.item; //MULTIPLICO CON El ITEM Y EL PRECIO
+      this.getTotalCars();
+    }
   }
   //DESCREMENT JSON DETAILS PRODUCTS
   descrementsItemsJSON(res: any) {

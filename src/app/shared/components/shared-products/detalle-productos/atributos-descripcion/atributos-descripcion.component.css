@@ -39,6 +39,5 @@
   display: block; /* Ocultar scroll */
 }
 .offcanvas-body::-webkit-scrollbar-thumb {
-  background: #ea2313;
   border-radius: 4px;
 }
