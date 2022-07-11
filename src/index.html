@@ -26,19 +26,4 @@
 
 </script>
 
-<script>
-  var geocoder = new google.maps.Geocoder;
-  geocoder.geocode({
-    'location': '-34.653015, -58.674850'
-  }, function (results, status) {
-    // si la solicitud fue exitosa
-    if (status === google.maps.GeocoderStatus.OK) {
-      // si encontró algún resultado.
-      if (results[1]) {
-        console.log(results[1].formatted_address);
-      }
-    }
-  });
-</script>
-
 </html>

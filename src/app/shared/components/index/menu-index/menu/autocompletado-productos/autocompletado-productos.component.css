@@ -23,7 +23,7 @@
   max-width: 95%;
 }
 .zIndex {
-  z-index: 10000;
+  z-index: 10;
   height: 206px;
   overflow: auto;
   border-radius: 0px;
