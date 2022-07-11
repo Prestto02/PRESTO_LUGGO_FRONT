@@ -60,13 +60,13 @@ export const ItemsAdnMenuOffCanvas: MenuClient[] = [
     title: 'Mis Pedidos',
     icons: `${RepositorioImg.urlRepositorio}img/IMÁGENES/icons-users-perfil/mi-perfil.png`,
     subtitle: 'Revisa el estado de tus pedidos online.',
-    link: `${UrlFront.Cliente.cliente}/${UrlFront.Cliente.miCuenta}`,
+    link: `${UrlFront.Manager.managerVendedor}/${UrlFront.Manager.vendedor}/${UrlFront.Manager.listaDePedidos}`,
   },
   {
     id: 3,
     title: 'Pagos',
     icons: `${RepositorioImg.urlRepositorio}img/IMÁGENES/icons-users-perfil/billeteraAdn.png`,
     subtitle: 'Revisa el estado de tus pedidos online.',
-    link: `${UrlFront.Cliente.cliente}/${UrlFront.Cliente.perfilCliente}`,
+    link: `${UrlFront.Manager.managerVendedor}/${UrlFront.Manager.vendedor}`,
   },
 ];

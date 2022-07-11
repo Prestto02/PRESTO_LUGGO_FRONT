@@ -44,9 +44,7 @@ export class MenuUsersComponent implements OnInit {
   }
 
   irARuta(link: string) {
-    link === this.centerClient || link === this.linkVender
-      ? this.route.navigateByUrl(link)
-      : this.route.navigateByUrl(`${link}/${this.idCliente}`);
+    this.route.navigateByUrl(`${link}`);
   }
 
   cerrarSesion() {
@@ -58,14 +56,13 @@ export class MenuUsersComponent implements OnInit {
   }
   verifyRolUsuario() {
     this.irAlPerfilUsuario();
-    console.log(this.rolTipoUsuario);
     if (this.rolTipoUsuario === '1') {
       this.centerClient = `${UrlFront.Cliente.cliente}/${UrlFront.Cliente.miCuenta}`;
 
       this.arrayCliente = ItemsClientMenuOffCanvas;
     }
     if (this.rolTipoUsuario === '2') {
-      this.centerClient=`${UrlFront.Manager.managerVendedor}/${UrlFront.Manager.vendedor}`
+      this.centerClient = `${UrlFront.Manager.managerVendedor}/${UrlFront.Manager.vendedor}`;
       this.arrayCliente = ItemsAdnMenuOffCanvas;
     }
   }
