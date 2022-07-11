@@ -109,10 +109,10 @@
                 formControlName="estado_producto"
                 [class.is-invalid]="formB.formAtributos.get('estado_producto')?.touched && formB.formAtributos.get('estado_producto')?.invalid">
                 <option selected value="">Seleccion</option>
-                <option value="1">Nuevo</option>
-                <option value="2">Reparado</option>
-                <option value="3">Usado</option>
-                <option value="4">Manufacturado</option>
+                <option value="0">Nuevo</option>
+                <option value="1">Reparado</option>
+                <option value="2">Usado</option>
+                <option value="3">Manufacturado</option>
               </select>
               <app-form-errors-container [forControl]="formB.formAtributos.get('estado_producto')">
                 <app-message-error forErrorCode="required" customMsg="Escoja un campo"></app-message-error>
