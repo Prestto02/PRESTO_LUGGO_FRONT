@@ -1,5 +1,6 @@
 export const UrlApi = {
-  ApiUrl: 'https://ecovitali.presttoapp.net/Puertto/Calidad/Api/',
+  /* CALIDAD */
+  ApiUrl: 'https://ecovitali.presttoapp.net/Puertto/Api/',
   //PERSONAS
   getPersonaId: 'api/usuario',
   persona: 'api/persona',
