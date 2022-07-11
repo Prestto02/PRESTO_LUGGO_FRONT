@@ -125,15 +125,19 @@ span {
   .mover-icono-deseos {
     padding: 0px;
     position: relative;
-    right: 43px;
+    right: 50px;
   }
   .mover-icono-user {
     padding: 0px;
     position: relative;
-    right: 73px;
+    right: 80px;
   }
   .margin-laptop {
     margin-top: 9px;
+  }
+  .carrito-items{
+    position: relative;
+    right: 65px;
   }
   .form-select {
     font-size: 0.815rem;
