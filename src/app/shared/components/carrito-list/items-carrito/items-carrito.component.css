@@ -1,0 +1,63 @@
+.cursor {
+  cursor: pointer;
+}
+* {
+  font-family: Cardium B-Medium;
+}
+.btn-group {
+  width: 35px;
+  height: 38px;
+}
+.input-group-items {
+  width: 145px;
+}
+.border-radius {
+  border-radius: 15px;
+}
+.list-precio {
+  color: #ea2313;
+  font-size: 21px;
+  font-weight: 700;
+}
+
+.iva {
+  font-size: 14px;
+  font-weight: 500;
+}
+.bg-colors {
+  background-color: #f8f8f8;
+}
+.img-tamano {
+  max-width: 200px;
+  height: auto;
+}
+.subtotalPagar {
+  color: #9f0505;
+}
+.nombre-tienda {
+  color: #9f0505;
+  position: absolute;
+  margin-top: 5px;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+
+.container-fluid::-webkit-scrollbar {
+  width: 8px; /* Tamaño del scroll en vertical */
+  height: 8px; /* Tamaño del scroll en horizontal */
+  display: none; /* Ocultar scroll */
+}
+.container-fluid {
+  position: relative;
+  height: 800px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}

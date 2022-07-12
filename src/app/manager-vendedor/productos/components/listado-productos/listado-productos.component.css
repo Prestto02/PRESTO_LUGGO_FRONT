@@ -1,0 +1,35 @@
+.puntero {
+  cursor: pointer;
+}
+.border-bottom {
+  background: white;
+  border-left: 1px;
+}
+.container-fluid {
+  background-color: white;
+  border-radius: 10px;
+}
+.input-border {
+  border-right: 0px;
+}
+* {
+  font-family: Cardium B-Medium;
+}
+.btn-color {
+  color: #000;
+  border: 1px solid #313131;
+  border-radius: 6px;
+}
+.btn-color:hover {
+  background: #242424;
+  color: #fff;
+  border-radius: 6px;
+}
+.btn-color:hover svg path {
+  fill: #fff;
+}
+
+.heigth-categoria {
+  height: 75px;
+  overflow: auto;
+}

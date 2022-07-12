@@ -1,0 +1,43 @@
+.card-bordes {
+  border-radius: 16px 16px 16px 16px;
+  -moz-border-radius: 16px 16px 16px 16px;
+  -webkit-border-radius: 16px 16px 16px 16px;
+  border: 1px solid #d1d1d1;
+}
+.img-card {
+  width: 188px;
+  height: 196px;
+}
+.text-primary {
+  color: #007bff;
+  font-family: Cardium B-Medium;
+  font-size: 14px;
+}
+.text-cardium-b {
+  font-family: Cardium B-Bold;
+  font-size: 21px;
+}
+
+@media screen and (min-width: 1021px) and (max-width: 1290px) {
+  .text-primary {
+    color: #007bff;
+    font-family: Cardium B-Medium;
+    font-size: 12px;
+  }
+  .text-cardium-b {
+    font-family: Cardium B-Bold;
+    font-size: 18px;
+  }
+}
+
+@media screen and (min-width: 766px) and (max-width: 1020px) {
+  .text-primary {
+    color: #007bff;
+    font-family: Cardium B-Medium;
+    font-size: 12px;
+  }
+  .text-cardium-b {
+    font-family: Cardium B-Bold;
+    font-size: 18px;
+  }
+}

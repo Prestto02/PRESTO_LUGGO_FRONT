@@ -1,0 +1,86 @@
+<app-menu-index></app-menu-index>
+
+<section class="container-fluid mt-3 py-3">
+  <div class="col-xxl-12 col-xl-12 col-sm-12 col-md-12 col-12">
+    <h5><b>Detalle de la compra</b></h5>
+  </div>
+</section>
+
+<section class="container-fluid mb-3">
+  <div class="row">
+    <div class="col-xl-5 col-xxl-5 mx-auto py-3 mt-3">
+      <app-formulario-pagar></app-formulario-pagar>
+    </div>
+    <div class="col-xl-5 col-xxl-5 col-sm-12 col-12 col-md-6 mx-auto py-3 mt-3">
+      <div class="card">
+        <div class="row fixed-sticky-top bg-white border-bottom">
+          <div class="col-xxl-4 col-xl-4 mt-3">
+            <h5 class="text text-center">Producto</h5>
+          </div>
+          <div class="col-xxl-4 col-xl-4  mt-3">
+            <h5 class="text text-center">Cantidad</h5>
+          </div>
+          <div class="col-xxl-4 col-xl-4 mt-3">
+            <h5 class="text text-center">Total</h5>
+          </div>
+        </div>
+
+        <ng-container *ngIf="arrayProductsList.length>0; else notData">
+          <div class="row" *ngFor="let product of arrayProductsList">
+            <div class="col-xxl-4 col-xl-4 mt-3">
+              <p class="text-center">{{product.name}}</p>
+            </div>
+            <div class="col-xxl-4 col-xl-4 mt-3">
+              <p class="text-center">{{product.item}}</p>
+            </div>
+            <div class="col-xxl-4 col-xl-4 mt-3">
+              <p class="text-center"><b>{{product.subtotal===0? product.precio : product.subtotal | currency:'USD'}}</b>
+              </p>
+            </div>
+          </div>
+          <div class="row fixed-sticky-bottom border-top">
+            <div class="col-xxl-6 col-xl-6 col-sm-12 col-12 col-md-6 py-3 mt-3">
+              <p class="text fs-6"><b>Total:</b></p>
+            </div>
+            <div class="col-xxl-6 col-xl-6 col-sm-12 col-12 col-md-6 text-end py-3 mt-3">
+              <p class="text fs-6"><b>{{totalAPagar | currency:'USD'}}</b></p>
+            </div>
+          </div>
+        </ng-container>
+        <ng-template #notData>
+          <p class="text-center mt-3 py-3">No hay aún lista del producto en el carrito</p>
+        </ng-template>
+      </div>
+    </div>
+  </div>
+
+</section>
+<section class="modal-footer">
+  <button type="button" (click)="submitPagar(formB.formPagar.value)"
+    [disabled]="formB.formPagar.invalid || arrayProductsList.length<=0" class="btn btn-dark" data-bs-toggle="modal"
+    data-bs-target="#exampleModal">Continuar</button>
+</section>
+<!-- SECCION TARJETAS -->
+
+<section class="container-fluid" id="paymentNext">
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <app-logo-luggo></app-logo-luggo>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" id="modal-body-server">
+          <ng-container *ngIf="!htmlServer">
+            <p class="text-center mt-3 mb-3">Procesando...</p>
+          </ng-container>
+        </div>
+        <!--         <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        </div> -->
+      </div>
+    </div>
+  </div>
+</section>
+
+<app-footer-index></app-footer-index>

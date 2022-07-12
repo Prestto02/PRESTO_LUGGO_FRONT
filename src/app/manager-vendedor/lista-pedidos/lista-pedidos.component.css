@@ -1,0 +1,13 @@
+* {
+  font-family: Cardium B-Light;
+}
+.cursor{
+  cursor: pointer;
+}
+.hover-tables:hover{
+  background-color: rgb(0 0 0 / 4%);
+  cursor: pointer;
+}
+.text-bajo{
+  color: rgba(0, 0, 0, 0.315);
+}

@@ -1,0 +1,119 @@
+<!-- <nav class="navbar navbar-expand-lg navbar-light bg-white" aria-label="Secondary Main">
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent2"
+    aria-controls="navbarSupportedContent2" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+</nav> -->
+<!------ITEMS DEL NAVEGADOR----->
+<!-- <app-item-nav class="collapse navbar-collapse" id="navbarSupportedContent2"></app-item-nav> -->
+<!-------OFF CANVAS------>
+<div class="offcanvas offcanvas-start color-canvas" tabindex="-1" id="offcanvasExample"
+  aria-labelledby="offcanvasExampleLabel" data-bs-scroll="true">
+  <div class="offcanvas-body sidenav-card">
+    <div class="row text-white " id="offcanvasLabel">
+      <!-----CABEZERA Y VERIFICO SI EL USUARIO ESTA LOGGEADO---->
+      <ng-container *ngIf="correoUsuario; else notIdentify">
+        <div class="col-md-1 col-xl-1 col-xxl-1 col-1 col-sm-1 mt-2">
+          <svg width="27" height="30" viewBox="0 0 27 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="13.375" cy="10.625" r="4.125" fill="white" />
+            <circle cx="13.375" cy="13.375" r="12.375" stroke="white" stroke-width="2" />
+            <path
+              d="M21.4488 22.7364C21.5547 22.6518 21.5974 22.5099 21.5497 22.3831C21.0328 21.0087 19.9934 19.7971 18.5745 18.9207C17.0828 17.9994 15.2552 17.5 13.375 17.5C11.4948 17.5 9.66719 17.9994 8.17555 18.9207C6.75662 19.7971 5.71716 21.0087 5.20032 22.3831C5.15262 22.5099 5.19533 22.6518 5.30118 22.7364C10.0227 26.509 16.7273 26.509 21.4488 22.7364Z"
+              fill="#7E869E" fill-opacity="0.25" stroke="white" stroke-width="2" stroke-linecap="round" />
+          </svg>
+        </div>
+
+        <div class="col-md-7 col-xl-7 col-xxl-7 col-7 col-sm-7 mt-2 text-start">
+          <b>Mi puertto</b>
+        </div>
+        <div class="col-md-4 mt-2 col-xl-4 col-xxl-4 col-sm-4 col-4">
+          <a class="btn-link link-info cursor-item" (click)="irAMiPerfil()">Mi cuenta</a>
+        </div>
+      </ng-container>
+      <ng-template #notIdentify>
+        <div class="col-md-1 col-xl-1 col-xxl-1 col-1 col-sm-1 mt-2 ">
+          <svg width="27" height="30" viewBox="0 0 27 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="13.375" cy="10.625" r="4.125" fill="white" />
+            <circle cx="13.375" cy="13.375" r="12.375" stroke="white" stroke-width="2" />
+            <path
+              d="M21.4488 22.7364C21.5547 22.6518 21.5974 22.5099 21.5497 22.3831C21.0328 21.0087 19.9934 19.7971 18.5745 18.9207C17.0828 17.9994 15.2552 17.5 13.375 17.5C11.4948 17.5 9.66719 17.9994 8.17555 18.9207C6.75662 19.7971 5.71716 21.0087 5.20032 22.3831C5.15262 22.5099 5.19533 22.6518 5.30118 22.7364C10.0227 26.509 16.7273 26.509 21.4488 22.7364Z"
+              fill="#7E869E" fill-opacity="0.25" stroke="white" stroke-width="2" stroke-linecap="round" />
+          </svg>
+        </div>
+        <div class="col-md-6 col-xl-6 col-xxl-6 col-6 col-sm-6 mt-2">
+          <b>¿No tienes cuenta?</b>
+        </div>
+        <div class="col-md-5 mt-2 col-xl-5 col-xxl-5 col-sm-5 col-5">
+          <a class="btn-link color-link cursor-item" (click)="registrarme()">Regístrate aquí</a>
+        </div>
+      </ng-template>
+      <!-----CABEZERA Y VERIFICO SI EL USUARIO ESTA LOGGEADO FIN---->
+      <div class="col-md-12">
+        <hr>
+      </div>
+      <!----SECCION 1---->
+      <ng-container *ngIf="!ocultarMenu">
+        <div class="col-md-12 col-xl-12 col-xxl-12 col-sm-12 col-12 mb-1">
+          <h4 class="text-parrafo">Tendencias</h4>
+        </div>
+        <div class="col-md-12 col-xl-12 col-xxl-12 col-sm-12 col-12 cursor-item" *ngFor="let list of arrayLisVendidos">
+          <p class="cursor-item">{{list.name}}</p>
+        </div>
+        <div class="col-md-12 col-xl-12 col-xxl-12 col-sm-12 col-12">
+          <hr>
+        </div>
+        <!----SECCION 2---->
+        <div class="col-md-12 col-xl-12 col-xxl-12 col-sm-12 col-12">
+          <h4 class="text-parrafo">Busca Por Categorías</h4>
+        </div>
+      </ng-container>
+      <!-----SECCION 2------>
+      <ng-container *ngIf="!ocultarMenu">
+        <ng-container *ngFor="let categorias of categoriasItems; let  index=index">
+          <div class="col-md-9 col-xl-9 col-xxl-9 col-10 col-sm-10 cursor-item mb-1"
+            (click)="AbrirSubMenu(categorias);">
+            <p class="cursor-item">{{categorias.name}}</p>
+          </div>
+          <div class="col-md-1 col-xl-1 col-xxl-1 col-1 col-sm-1 mx-auto cursor-item"
+            (click)="AbrirSubMenu(categorias);">
+            <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M2.04715 1.15387C1.76386 0.851689 1.28923 0.836378 0.987044 1.11968C0.68486 1.40297 0.66955 1.8776 0.952847 2.17978L2.04715 1.15387ZM6.5 7.00016L7.04715 7.51312C7.31762 7.22462 7.31762 6.7757 7.04715 6.48721L6.5 7.00016ZM0.952848 11.8205C0.66955 12.1227 0.684861 12.5974 0.987045 12.8806C1.28923 13.1639 1.76386 13.1486 2.04715 12.8465L0.952848 11.8205ZM0.952847 2.17978L5.95285 7.51312L7.04715 6.48721L2.04715 1.15387L0.952847 2.17978ZM5.95285 6.48721L0.952848 11.8205L2.04715 12.8465L7.04715 7.51312L5.95285 6.48721Z"
+                fill="#B6B6B6" />
+            </svg>
+          </div>
+        </ng-container>
+      </ng-container>
+      <!---------MUESTRO LA SUBCATEGORIA-------->
+      <ng-container *ngIf="subCategorias && ocultarMenu">
+        <div class="col-md-9 col-xl-10 col-xxl-10 col-10 col-sm-10 cursor-item text-parrafo-regresar"
+          (click)="cerrarSubMenu();">
+          <p>Regresar al menú</p>
+        </div>
+        <div class="col-md-1 col-xl-1 col-xxl-1 col-1 col-sm-1 mx-auto cursor-item" (click)="cerrarSubMenu();">
+          <svg width="8" height="14" viewBox="0 0 13 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M11.1427 1.64404L1.7666 10.918L11.1427 20.192" stroke="white" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </div>
+        <div class="col-md-12 col-sm-12 col-xl-12 col-xxl-12 col-12">
+          <hr>
+        </div>
+        <div class="col-md-9 col-xl-10 col-xxl-10 col-10 col-sm-10">
+          <h5><b>{{nombreCategoria}}</b></h5>
+        </div>
+        <app-sub-menu-categorias class="row" [ItemsSubCategoria]="subCategorias"></app-sub-menu-categorias>
+      </ng-container>
+      <div class="col-md-12 col-sm-12 col-xl-12 col-xxl-12 col-12">
+        <hr>
+      </div>
+      <!----SECCION 3---->
+      <div class="col-md-12 col-sm-12 col-xl-12 col-xxl-12 col-12">
+        <h4 class="text-parrafo">Ajustes y Soporte</h4>
+      </div>
+      <!--------USUARIO IDENTIFICADO------>
+      <app-usuario-identific [correoUsuario]="correoUsuario"></app-usuario-identific>
+      <!--------USUARIO IDENTIFICADO FIN------>
+    </div>
+  </div>
+</div>

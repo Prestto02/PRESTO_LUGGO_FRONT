@@ -1,0 +1,6 @@
+.nav-link {
+  cursor: pointer;
+}
+.active {
+  border-bottom: 2px solid #1b73f9;
+}

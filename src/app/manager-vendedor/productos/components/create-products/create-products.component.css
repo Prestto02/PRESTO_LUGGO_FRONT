@@ -1,0 +1,28 @@
+* {
+  font-family: Cardium B-Medium;
+}
+
+.btn-modal {
+  background: #7549fe;
+  color: #fff;
+  font-family: Cardium A-Bold;
+}
+#formFile {
+  opacity: 0;
+}
+
+.position-absolute {
+  z-index: 10;
+  overflow: auto;
+}
+
+.border-truncate {
+  height: 170px;
+  overflow: auto;
+}
+
+.zIndex {
+  z-index: 10000;
+  border-radius: 0px;
+  border-top: 0px;
+}

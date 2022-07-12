@@ -1,0 +1,19 @@
+.span-estilo {
+  background: #fff;
+  color: #00000070;
+}
+
+.input-estilo {
+  border-right: 0px;
+}
+.text-design {
+  font-family: Cardium B-Regular;
+  color: #00000094;
+  text-align: justify;
+  margin-top: -12px;
+  border-radius: 6px;
+}
+.text-tamano{
+  font-family: Cardium B-Regular;
+  margin-top:12px
+}

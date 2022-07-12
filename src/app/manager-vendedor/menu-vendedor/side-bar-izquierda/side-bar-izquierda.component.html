@@ -1,0 +1,89 @@
+<div class="offcanvas offcanvas-start color-canvas" tabindex="-1" id="offcanvasExample"
+  aria-labelledby="offcanvasExampleLabel" data-bs-scroll="true">
+  <div class="offcanvas-header text-white">
+    <div class="col-xl-12 col-xxl-12 col-sm-12 col-12 col-md-12">
+      <div class="row">
+        <div class="col-xl-4 col-xxl-4 mx-auto mb-3">
+          <img src="https://i.pinimg.com/originals/89/90/48/899048ab0cc455154006fdb9676964b3.jpg" alt="img-client"
+            width="120" height="120" class="img-fluid rounded-circle">
+        </div>
+        <h5 class="text-center mb-3">Carlos</h5>
+      </div>
+    </div>
+  </div>
+  <div class="offcanvas-body text-white">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-xl-12 col-xxl-12 hover-products mb-4" (click)=irDashBoard();>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="feather feather-home" _ngcontent-serverapp-c16="">
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+          </svg>
+          Dashboard
+        </div>
+        <div class="col-xl-12 col-xxl-12 hover-products mb-4" (click)="irProductos();">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="feather feather-box" _ngcontent-serverapp-c16="">
+            <path
+              d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z">
+            </path>
+            <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+            <line x1="12" y1="22.08" x2="12" y2="12"></line>
+          </svg>
+          Productos
+        </div>
+        <div class="col-xl-12 col-xxl-12 hover-products mb-4" (click)="irListaPedidos();">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="feather feather-dollar-sign" _ngcontent-serverapp-c16="">
+            <line x1="12" y1="1" x2="12" y2="23"></line>
+            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+          </svg>
+          Lista Pedidos
+        </div>
+        <div class="col-xl-12 col-xxl-12 hover-products mb-4">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="feather feather-tag" _ngcontent-serverapp-c16="">
+            <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path>
+            <line x1="7" y1="7" x2="7.01" y2="7"></line>
+          </svg>
+          Cupones
+        </div>
+        <div class="col-xl-12 col-xxl-12 hover-products mb-4">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="feather feather-clipboard" _ngcontent-serverapp-c16="">
+            <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path>
+            <rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect>
+          </svg>
+          Pagos
+        </div>
+        <div class="col-xl-12 col-xxl-12 hover-products mb-4">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="feather feather-users" _ngcontent-serverapp-c16="">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+            <circle cx="9" cy="7" r="4"></circle>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+          </svg>
+          Vendedores
+        </div>
+        <div class="col-xl-12 col-xxl-12 hover-products mb-4">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="feather feather-log-in" _ngcontent-serverapp-c16="">
+            <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path>
+            <polyline points="10 17 15 12 10 7"></polyline>
+            <line x1="15" y1="12" x2="3" y2="12"></line>
+          </svg>
+          Cerrar Sesión
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,47 @@
+.pointer-deseo {
+  cursor: pointer;
+}
+.pointer-carrito {
+  cursor: pointer;
+}
+path:hover {
+  background-color: #ea2313;
+  cursor: pointer;
+  fill: #ea2313 !important;
+}
+
+@media screen and (min-width: 1300px) and (max-width: 1400px) {
+  .pointer-deseo {
+    cursor: pointer;
+    margin: 0px -4px;
+  }
+  .pointer-carrito {
+    cursor: pointer;
+    margin-left: 0px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1299px) {
+  .pointer-deseo {
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+  }
+  .pointer-carrito {
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+  }
+}
+@media screen and (min-width: 1000px) and (max-width: 1199px) {
+  .pointer-deseo {
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+  }
+  .pointer-carrito {
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+  }
+}

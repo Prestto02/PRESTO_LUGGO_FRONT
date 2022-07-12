@@ -10,7 +10,13 @@ const routes: Routes = [
     loadChildren: () =>
       import('./users/module/users.module').then((m) => m.UsersModule),
   },
+  //CLIENTE
+  {
+    path: UrlFront.Cliente.cliente,
 
+    loadChildren: () =>
+      import('./cliente/module/cliente.module').then((m) => m.ClienteModule),
+  },
   //LOGIN LAZY LOADING
   {
     path: UrlFront.Login.login,
@@ -26,15 +32,88 @@ const routes: Routes = [
         (m) => m.IndexMenuModule
       ),
   },
-
-  //PRODUCTS
+  //ATENCION AL CLIENTE LAZY LOADING
   {
-    path: UrlFront.Products.products,
+    path: UrlFront.AtencionCliente.atencion,
     loadChildren: () =>
-      import('./products/module/products.module').then((m) => m.ProductsModule),
+      import(
+        './shared/components/atencion-cliente/module/atencionCliente.module'
+      ).then((m) => m.AtencionClienteModule),
+  },
+  //CARRITO LIST LAZY LOADING
+  {
+    path: UrlFront.CarritoList.carrito,
+    loadChildren: () =>
+      import(
+        './shared/components/carrito-list/module/carrito-list.module'
+      ).then((m) => m.CarritoListModule),
+  },
+  //PAGAR EL CARRITO LAZY LOADING
+  {
+    path: UrlFront.Pagar.pagar,
+    loadChildren: () =>
+      import('./shared/components/pagar/module/pagar.module').then(
+        (m) => m.PagarModule
+      ),
+  },
+  //TIENDAS LAZY LOADING
+  {
+    path: UrlFront.Tiendas.tiendas,
+    loadChildren: () =>
+      import('./shared/components/tiendas/module/tiendas.module').then(
+        (m) => m.TiendasModule
+      ),
+  },
+  //DEVOLUCIONES LAZY LOADING
+  {
+    path: UrlFront.Devoluciones.devolucion,
+    loadChildren: () =>
+      import(
+        './shared/components/devoluciones/module/devoluciones.module'
+      ).then((m) => m.DevolucionesModule),
+  },
+  //NOTICIAS LAZY LOADING
+  {
+    path: UrlFront.Noticias.noticias,
+    loadChildren: () =>
+      import('./shared/components/noticias/module/noticias.module').then(
+        (m) => m.NoticiasModule
+      ),
+  },
+  //POLITICAS LAZY LOADING
+  {
+    path: UrlFront.Politicas.politicas,
+    loadChildren: () =>
+      import('./shared/components/politicas/module/politicas.module').then(
+        (m) => m.PoliticasModule
+      ),
+  },
+  //COMUNIDAD LAZY LOADING
+  {
+    path: UrlFront.Comunidad.comunidad,
+    loadChildren: () =>
+      import('./shared/components/comunidad/module/comunidad.module').then(
+        (m) => m.ComunidadModule
+      ),
   },
 
-  //ACTIVAR CUENTA
+  //QUIENES SOMOS LAZY LOADING
+  {
+    path: UrlFront.Menu.menu,
+    loadChildren: () =>
+      import(
+        './shared/components/quienes-somos/module/quienes-somos.module'
+      ).then((m) => m.QuienesSomosModule),
+  },
+  //PRODUCTO COMPARTIDO, LISTA DE DESEO, LISTA DE SCROLL INFINITO
+  {
+    path: UrlFront.Menu.menu,
+    loadChildren: () =>
+      import(
+        './shared/components/shared-products/module/shared-products.module'
+      ).then((m) => m.SharedProductosModule),
+  },
+  //ACTIVAR CUENTA LAZY LOADING
   {
     path: UrlFront.ActivarCuenta.cuenta,
     loadChildren: () =>
@@ -42,8 +121,23 @@ const routes: Routes = [
         './shared/components/activar-cuenta/module/activar-cuenta.module'
       ).then((m) => m.ActivarCuentaModule),
   },
+  //MANAGER VENDEDOR LAZY LOADING
+  {
+    path: UrlFront.Manager.managerVendedor,
+    loadChildren: () =>
+      import('./manager-vendedor/module/manager-vendedor.module').then(
+        (m) => m.ManagerVendedorModule
+      ),
+  },
+  {
+    path: UrlFront.listaPedidos.lista,
+    loadChildren: () =>
+      import(
+        './shared/components/list-pedidos/module/list-pedidos.module'
+      ).then((m) => m.ListPedidosModule),
+  },
 
-  //REDIRECCIONAR EN LOGIN DIRECTO
+  //REDIRECCIONAR EN MENU DIRECTO
   {
     path: '',
     redirectTo: UrlFront.Menu.menu,

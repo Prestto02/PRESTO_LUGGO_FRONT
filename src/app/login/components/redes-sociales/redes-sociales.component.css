@@ -1,0 +1,19 @@
+.btn-link {
+  color: #ea2313;
+  cursor: pointer;
+}
+* {
+  font-family: Cardium B-Regular;
+}
+.acceso-rapido-text {
+  font-family: Cardium B-Medium;
+  font-size: 13px;
+}
+.link-text {
+  font-family: Cardium B-Regular;
+  font-size: 16px;
+}
+.link-crear {
+  font-family: Cardium A-SemiBold;
+  font-size: 16px;
+}

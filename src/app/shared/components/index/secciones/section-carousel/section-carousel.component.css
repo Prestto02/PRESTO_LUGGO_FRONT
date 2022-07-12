@@ -1,0 +1,195 @@
+.textOferta {
+  font-family: Cardium B-Medium;
+  font-size: 15px;
+}
+.carousel-tamano {
+  height: 840px;
+}
+.border {
+  border-radius: 16px 16px 16px 16px;
+  -moz-border-radius: 16px 16px 16px 16px;
+  -webkit-border-radius: 16px 16px 16px 16px;
+  border: 0px solid #000000;
+}
+.card-img-bottom {
+  width: 100%;
+  height: auto;
+}
+
+.card-img-icon {
+  width: 100%;
+  max-width: 147px;
+  height: auto;
+}
+.top-img {
+  top: 650px;
+  z-index: 1;
+}
+.btn-carousel {
+  width: 40px;
+  height: 40px;
+  color: #000000;
+  background: #302f2f;
+  top: 100px;
+  border: 2px solid #fff;
+}
+.tittle-cards {
+  font-family: Cardium B-Bold;
+  font-size: 21px;
+}
+.text-footer {
+  color: #ea2313;
+  font-size: 14px;
+  font-family: Cardium B-Medium;
+}
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+.cursor {
+  cursor: pointer;
+}
+
+.degradado {
+  background: linear-gradient(180deg, #f1f3f600, #f1f3f6);
+  height: 164px;
+  bottom: 15px;
+  position: absolute;
+  top: 614px;
+  z-index: 1;
+}
+.textOfertaIpad {
+  display: none;
+}
+.img-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(31, 4, 1, 0.55);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0;
+  justify-content: center;
+  transition: opacity 0.25s;
+}
+.img-overlay:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+.img-overlay > * {
+  transform: translateY(20px);
+  transition: 0.25s;
+}
+.img-overlay:hover > * {
+  transform: translateY(0);
+}
+.text-font-white {
+  font-weight: 600;
+}
+.textOferta {
+  font-size: 15px;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+.grid {
+  max-width: 150px;
+  display: flex;
+  cursor: pointer;
+  justify-content: center;
+}
+.grid-large {
+  max-width: 340px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+.card-img-large {
+  width: 100%;
+  height: 343px;
+}
+.card-img-icon {
+  width: 100%;
+  height: 129px;
+  background-size: contain;
+}
+/* If the screen size is 601px wide or more, set the font-size of <div> to 80px */
+@media screen and (max-width: 2200px) {
+  .top-img {
+    top: 800px;
+  }
+  .carousel-tamano {
+    height: 1050px;
+  }
+  .degradado {
+    top: 785px;
+  }
+  .textOferta {
+    font-size: 15px;
+  }
+}
+/* PANTALLA MEDIANAMENTE GRANDE */
+@media screen and (max-width: 1700px) {
+  .top-img {
+    top: 650px;
+  }
+  .carousel-tamano {
+    height: 840px;
+  }
+  .degradado {
+    top: 614px;
+  }
+}
+/* PANTALLAS GRANDES */
+@media screen and (max-width: 1400px) {
+  .top-img {
+    top: 560px;
+  }
+  .carousel-tamano {
+    height: 750px;
+  }
+  .degradado {
+    top: 525px;
+  }
+  .textOferta {
+    font-size: 13px;
+  }
+  .tittle-cards {
+    font-size: 18px;
+  }
+}
+/* LAPTOPS */
+@media screen and (max-width: 1300px) {
+  .top-img {
+    top: 534px;
+  }
+  .carousel-tamano {
+    height: 720px;
+  }
+  .degradado {
+    top: 470px;
+  }
+  .card-img-large {
+    max-height: 333px;
+  }
+  .textOferta {
+    font-size: 11.6px;
+  }
+  .tittle-cards {
+    font-size: 17px;
+  }
+}
+@media screen and (max-width: 900px) {
+  .carousel-tamano {
+    height: 760px;
+  }
+  .degradado {
+    top: 470px;
+  }
+}

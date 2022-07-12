@@ -1,0 +1,32 @@
+* {
+  font-family: Cardium B-Medium;
+}
+
+.cursor {
+  cursor: pointer;
+}
+
+.bg-colors-secondary {
+  background: #f8f8f8;
+}
+
+.border-radius {
+  border-radius: 15px;
+}
+
+.totalPagar {
+  color: #9f0505;
+}
+
+
+.container-productos::-webkit-scrollbar {
+  width: 8px; /* Tamaño del scroll en vertical */
+  height: 8px; /* Tamaño del scroll en horizontal */
+  display: none; /* Ocultar scroll */
+}
+.container-productos {
+  position: relative;
+  height: 800px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}

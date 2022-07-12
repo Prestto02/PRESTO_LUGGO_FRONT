@@ -1,0 +1,12 @@
+* {
+  font-family: Cardium B-Medium;
+}
+
+.btn-primary {
+  background-color: #ea2313;
+  border: 1px solid #ea2313;
+}
+
+.progress-bar {
+  background-color: #ea2313;
+}

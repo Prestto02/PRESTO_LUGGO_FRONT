@@ -1,0 +1,41 @@
+.form-label {
+  cursor: pointer;
+}
+
+.span-estilo {
+  background: #fff;
+  color: #00000070;
+  font-size: 12px;
+}
+
+.input-estilo {
+  border-right: 0px;
+}
+.text {
+  font-size: 11px;
+  color: #000000a1;
+}
+
+.colors-group {
+  height: 80px;
+  overflow-y: auto;
+}
+
+.colors-group::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+.colors-group::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+.colors-group::-webkit-scrollbar-thumb {
+  background-color: #0d6efd;
+}
+.bg-color-badge {
+  background-color: #dbf6ff;
+  color: #000;
+}
+
+.borders {
+  padding: 0px;
+}

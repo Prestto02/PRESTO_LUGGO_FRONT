@@ -63,18 +63,19 @@ export class ListadoProductosComponent implements OnInit {
   }
   //GUARDAR EL PRODUCTO
   guardarProduct() {
-/*     const form = this.dataForm.getDataFormProducts(
+    const form = this.dataForm.getDataFormProducts(
       this.position.longitud,
       this.position.latitud
-    ); */
-
-   /*  this.apiProducts.postDataArticulo(form).subscribe(
+    );
+    this.apiProducts.postDataArticulo(form).subscribe(
       (res) => {
         this.getAllProducts();
+        this.dataForm.limpiarTodoForm();
       },
-      (err) => {}
+      (err) => {
+        this.dataForm.limpiarTodoForm();
+      }
     );
-   */
     this._router.navigateByUrl(
       `${UrlFront.Manager.managerVendedor}/${UrlFront.Manager.vendedor}/${UrlFront.Manager.listadoProductos}`
     );

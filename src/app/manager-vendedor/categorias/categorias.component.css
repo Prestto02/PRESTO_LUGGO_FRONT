@@ -1,0 +1,33 @@
+.border-badge {
+  background-color: #fff;
+  border-right: 0px;
+  padding: 2px;
+}
+.border-input {
+  height: 58px;
+}
+.border {
+  z-index: 10;
+}
+.border-badge:nth-of-type(n + 2) {
+  background-color: #fff;
+  border-left: 0px;
+  padding: 2px;
+}
+.border-listado {
+  border: 1px solid #000;
+  border-radius: 6px;
+}
+.bg-color-badge {
+  background-color: #dbf6ff;
+  color: #000;
+}
+
+.border-truncate {
+  height: 170px;
+  overflow: auto;
+}
+
+.border-pequeno{
+  height: 50px;
+}

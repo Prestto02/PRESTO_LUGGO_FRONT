@@ -1,0 +1,68 @@
+<div id="carouselExampleControlsPrimario"
+  class="carousel slide carousel-fade carousel-tamano border-0 col-md-12 col-xl-12 mb-5 d-sm-none d-none d-xl-block d-xxl-block d-md-block position-relative"
+  data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div *ngFor="let list of arrayCarouselImg; let i=index" [class]="i===0?'carousel-item active':'carousel-item'">
+      <img loading="lazy" src="{{list.url}}" class="d-block w-100 img-fluid h-auto" [alt]="'img'+list.id" />
+    </div>
+  </div>
+  <button class="carousel-control-prev btn-carousel rounded-circle mx-5 mt-5" type="button"
+    data-bs-target="#carouselExampleControlsPrimario" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Atras</span>
+  </button>
+  <button class="carousel-control-next btn-carousel rounded-circle mx-5 mt-5" type="button"
+    data-bs-target="#carouselExampleControlsPrimario" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Siguiente</span>
+  </button>
+  <div class="postion-absolute bottom-0 mt-1 col-xl-12 col-xxl-12 col-sm-12 col-md-12 col-1 degradado"></div>
+  <!-- SECCION CARDS -->
+  <div class="position-absolute start-50 top-img translate-middle col-xl-12 col-xxl-12 col-sm-12 col-md-12 col-12">
+    <div class="container-fluid">
+      <div class="row">
+
+        <div class="col-md-3 col-3 col-sm-3 col-md-3 col-xl-3 col-xxl-3"
+          *ngFor="let list of arrayCardImg; let i=index;">
+          <div class="card border">
+            <div class="card-text mt-3 mx-3">
+              <h4 class="tittle-cards"><b>{{list.title}}</b></h4>
+            </div>
+            <div class="card-body">
+              <ng-container *ngIf="list.img.length>1; else imgOneList; ">
+                <div class="row">
+                  <div class="col-md-6 mb-1 col-xl-6 col-xxl-6" *ngFor="let imgList of list.img">
+                    <div class="grid" (click)="verProductos(imgList.url_detalle_product)">
+                      <img loading="lazy" [src]="rutaImg+imgList.img" class="card-img-icon" [alt]="imgList.id" />
+                    </div>
+                    <p class="textOferta" [title]="imgList.title"><b>{{imgList.title}}</b></p>
+                  </div>
+                  <!--                   <span class="textOfertaIpad"><b>30% desc.</b></span> -->
+                </div>
+              </ng-container>
+              <ng-template #imgOneList>
+                <ng-container *ngIf="i===0 else outherImg">
+                  <div class="grid-large">
+                    <img loading="lazy" [src]="rutaImg+list.img[0].img" class="card-img-large" [alt]="list.img[0].id" />
+                    <div class="img-overlay" (click)="verProductos(list.url)">
+                      <h4 class="text-center text-white text-font-white">{{list.img[0].title}}</h4>
+                    </div>
+                  </div>
+                </ng-container>
+                <ng-template #outherImg>
+                  <img loading="lazy" [src]="rutaImg+list.img[0].img" class="card-img-large" [alt]="list.img[0].id" />
+                </ng-template>
+              </ng-template>
+            </div>
+            <div class="card-body cursor">
+              <p class="text-footer" (click)="verProductos(list.url);">
+                {{list.urlText}}
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

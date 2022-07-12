@@ -1,0 +1,10 @@
+.text-reset {
+  text-decoration: none;
+  cursor: pointer;
+}
+.cursor {
+  cursor: pointer;
+}
+* {
+  font-family: Cardium B-Medium;
+}

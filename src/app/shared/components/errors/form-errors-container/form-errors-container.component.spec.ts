@@ -1,4 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { FormsModule } from '@angular/forms';
+import { BrowserDynamicTestingModule } from '@angular/platform-browser-dynamic/testing';
 
 import { FormErrorsContainerComponent } from './form-errors-container.component';
 
@@ -8,9 +10,9 @@ describe('FormErrorsContainerComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ FormErrorsContainerComponent ]
-    })
-    .compileComponents();
+      imports: [FormsModule, BrowserDynamicTestingModule],
+      declarations: [FormErrorsContainerComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

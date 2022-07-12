@@ -1,0 +1,18 @@
+.footer-color {
+  background-color: #454545;
+  color: aliceblue;
+}
+.btn-color {
+  background-color: #454545;
+  color: #fff;
+  border: 1px solid #fff;
+}
+.btn-color:hover {
+  background-color: #2e2d2d;
+  color: #fff;
+  border: 1px solid #fff;
+}
+
+* {
+  font-family: Cardium B-Medium;
+}

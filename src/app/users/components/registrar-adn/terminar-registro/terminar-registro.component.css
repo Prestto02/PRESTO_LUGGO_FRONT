@@ -1,0 +1,39 @@
+.text-tamano {
+  font-size: 15px;
+}
+
+.tamano-area {
+  height: 111px;
+}
+* {
+  font-family: Cardium B-Regular;
+}
+
+.fixed-bottom {
+  background: #fff;
+}
+
+.text-parrafo {
+  margin-top: 22px;
+  font-size: 15px;
+}
+
+.text-design {
+  background: #f9f9f9;
+  font-family: Cardium B-Regular;
+  color: #00000094;
+  text-align: justify;
+  margin: 0px 0px 22px;
+  width: 97%;
+  margin-top: 20px;
+}
+
+.estilo-text {
+  font-weight: 600;
+  font-size: 28px;
+}
+.estilo-subtitle {
+  font-weight: 300;
+  font-size: 20px;
+  margin-top: -13px;
+}

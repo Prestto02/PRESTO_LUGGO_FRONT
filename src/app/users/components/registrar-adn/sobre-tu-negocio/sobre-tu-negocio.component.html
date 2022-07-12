@@ -1,0 +1,236 @@
+<section class="container">
+  <app-position-stripper [width]="'width:30%;'"
+    [paso2]="'position-absolute top-0 translate-middle btn btn-sm btn-primary rounded-pill'" [two]="'true'">
+  </app-position-stripper>
+</section>
+<section class="container-fluid py-3">
+  <hr class="border border-1 bg-dark w-100">
+</section>
+<section class="container">
+  <div class="col-xl-12 col-xxl-12 mt-3 py-3">
+    <h1 class="estilo-text text-center">Sobre tu negocio</h1>
+    <p class="estilo-subtitle text-center">registra los datos de tu tienda</p>
+  </div>
+  <form [formGroup]="formB.formNegocioAdn">
+    <div class="row card">
+      <!-----NOMBRE TIENDA----->
+      <div class="col-xl-12 col-xxl-12 col-sm-12 col-12 col-md-12 mt-3" (click)="ocultarTodo();">
+        <div class="row">
+          <app-mensajes-apoyo
+            [mensaje]="'Ingresa el nombre de tu Negocio. ¿Recién comienzas? No te preocupes, puedes ingresar un nombre temporal ahora y cambiarlo más adelante.'"
+            class="col-sm-12 col-12 border border-1 text-design d-sm-block d-block d-xxl-none d-xl-none d-md-none">
+          </app-mensajes-apoyo>
+          <div class="col-xl-6 col-xxl-6 col-sm-12 col-12 col-md-6">
+            <div class="mb-3">
+              <label for="formNombre_Tienda" class="form-label fw-bolder">Nombre Tienda</label>
+              <input type="text" class="form-control" id="formNombre_Tienda" formControlName="Nombre_Tienda"
+                [class.is-invalid]="formB.formNegocioAdn.get('Nombre_Tienda')?.touched && formB.formNegocioAdn.get('Nombre_Tienda')?.invalid"
+                placeholder="Nombre del negocio">
+            </div>
+            <app-form-errors-container [forControl]="formB.formNegocioAdn.get('Nombre_Tienda')">
+              <app-message-error forErrorCode="required"></app-message-error>
+              <app-message-error forErrorCode="pattern" customMsg="No se admite caracteres especiales">
+              </app-message-error>
+            </app-form-errors-container>
+          </div>
+          <app-mensajes-apoyo
+            class="col-xl-5 col-md-5 col-xxl-5 border border-1 text-design d-sm-none d-none d-xxl-block d-xl-block d-md-block"
+            [mensaje]="'Ingresa el nombre de tu Negocio. ¿Recién comienzas? No te preocupes, puedes ingresar un nombre temporal ahora y cambiarlo más adelante.'">
+          </app-mensajes-apoyo>
+        </div>
+      </div>
+      <!-----PAIS CIUDAD----->
+      <div class="col-xl-12 col-xxl-12 col-sm-12 col-12 col-md-12 mt-3">
+        <div class="row">
+          <app-mensajes-apoyo
+            class="col-sm-12 col-12 border border-1 text-design d-sm-block d-block d-xxl-none d-xl-none d-md-none"
+            [mensaje]="'¿Desde dónde vas a vender? Ingresa tus datos de ubicación.'"></app-mensajes-apoyo>
+          <!-------PAIS------->
+          <div class="col-xxl-3 col-xl-3 col-md-3 col-sm-6 col-6 mb-3 position-relative" (click)="ocultarCiudad=true;">
+            <label for="formPais" class="form-label fw-bolder">País</label>
+            <div class="input-group">
+              <input type="text" class="form-control" aria-label="Text input with dropdown button"
+                formControlName="Pais" (keyup)="onKeyPres($event);"
+                [class.is-invalid]="formB.formNegocioAdn.get('Pais')?.touched && formB.formNegocioAdn.get('Pais')?.invalid">
+              <!-----LISTADO DE PRODUCTOS BOTON DE LADO DERECHO----->
+              <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                aria-expanded="false"></button>
+              <ul class="dropdown-menu dropdown-menu-end w-100">
+                <li><a class="dropdown-item" *ngFor="let pais of arrayPais"
+                    (click)="buscarCiudad(pais.codigo,pais.pais)">{{pais.pais}}</a>
+                </li>
+              </ul>
+            </div>
+            <!---BUQUEDA POR FILTRO EL PAIS----->
+            <div class="list-group mb-3 position-absolute border-truncate" [hidden]="ocultarPais">
+              <button type="button" class="list-group-item list-group-item-action"
+                *ngFor="let pais of arrayPais | filterPais:formB.formNegocioAdn.get('Pais')?.value"
+                (click)="buscarCiudad(pais.codigo,pais.pais)">
+                {{pais.pais}}
+              </button>
+              <!----- SI NO EXISTE ESA MARCA-------->
+              <div class="list-group-item list-group-item-action"
+                *ngIf="(arrayPais | filterPais:formB.formNegocioAdn.get('Pais')?.value)?.length <= 0">
+                <p>No hay registro de ese país</p>
+              </div>
+            </div>
+            <app-form-errors-container [forControl]="formB.formNegocioAdn.get('Pais')">
+              <app-message-error forErrorCode="required"></app-message-error>
+            </app-form-errors-container>
+          </div>
+          <!-----CIUDAD----->
+          <div class="col-xxl-3 col-xl-3 col-md-3 col-sm-6 col-6 mb-3 position-relative" (click)="ocultarPais=true">
+            <label for="formPais" class="form-label fw-bolder">Ciudad</label>
+            <div class="input-group">
+              <input type="text" class="form-control" aria-label="Text input with dropdown button"
+                (keyup)="onKeyPressCiudad($event);" formControlName="Ciudad"
+                [class.is-invalid]="formB.formNegocioAdn.get('Ciudad')?.touched && formB.formNegocioAdn.get('Ciudad')?.invalid">
+              <!-----LISTADO DE PRODUCTOS BOTON DE LADO DERECHO----->
+              <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                aria-expanded="false"></button>
+              <ul class="dropdown-menu dropdown-menu-end w-100">
+                <li><a class="dropdown-item" *ngFor="let ciudad of arrayCiudad"
+                    (click)="setCiudad(ciudad.ciudad)">{{ciudad.ciudad}}</a>
+                </li>
+              </ul>
+            </div>
+            <!---BUQUEDA POR FILTRO EL PAIS----->
+            <div class="list-group mb-3 position-absolute border-truncate" [hidden]="ocultarCiudad">
+              <button type="button" class="list-group-item list-group-item-action"
+                *ngFor="let ciudad of arrayCiudad | filterCiudad:formB.formNegocioAdn.get('Ciudad')?.value"
+                (click)="setCiudad(ciudad.ciudad)">
+                {{ciudad.ciudad}}
+              </button>
+              <!----- SI NO EXISTE ESA MARCA-------->
+              <div class="list-group-item list-group-item-action"
+                *ngIf="(arrayCiudad | filterCiudad:formB.formNegocioAdn.get('Ciudad')?.value)?.length <= 0">
+                <p>No hay registro de esa ciudad</p>
+              </div>
+            </div>
+            <app-form-errors-container [forControl]="formB.formNegocioAdn.get('Ciudad')">
+              <app-message-error forErrorCode="required"></app-message-error>
+            </app-form-errors-container>
+          </div>
+          <!-----MENSAJES DE APOYO----->
+          <app-mensajes-apoyo
+            class="col-xxl-5 col-xl-5 col-md-5 border border-1 text-design d-sm-none d-none d-xxl-block d-xl-block d-md-block"
+            [mensaje]="'¿Desde dónde vas a vender? Ingresa tus datos de ubicación.'"></app-mensajes-apoyo>
+        </div>
+      </div>
+      <!-----DIRECION----->
+      <div class="col-xxl-12 col-xl-12 col-sm-12 col-md-12 col-12 mt-3 mb-3" (click)="ocultarTodo();">
+        <div class="row">
+          <app-mensajes-apoyo
+            class="col-sm-11 col-11 mx-auto border border-1 text-design d-block d-sm-block d-xxl-none d-md-none d-xl-none"
+            [mensaje]="'Ingresa tu dirección exacta, puedes ayudarte con una planilla de servicio básico. ¿No sabes como llenar este campo?'">
+          </app-mensajes-apoyo>
+          <div class="col-xl-6 col-xxl-6 col-sm-12 col-md-6 col-12">
+            <div class="mb-3">
+              <label for="formDirecicon" class="form-label fw-bolder">Dirección</label>
+              <input type="text" class="form-control" id="formDirecicon" formControlName="Direccion"
+                placeholder="Direccion"
+                [class.is-invalid]="formB.formNegocioAdn.get('Direccion')?.touched && formB.formNegocioAdn.get('Direccion')?.invalid">
+            </div>
+            <app-form-errors-container [forControl]="formB.formNegocioAdn.get('Direccion')">
+              <app-message-error forErrorCode="required"></app-message-error>
+              <app-message-error forErrorCode="pattern" customMsg="No se admite caracteres especiales">
+              </app-message-error>
+            </app-form-errors-container>
+          </div>
+          <app-mensajes-apoyo
+            class="col-xl-5 col-md-5 col-xxl-5 border border-1 text-design d-none d-sm-none d-xxl-block d-md-block d-xl-block"
+            [mensaje]="'Ingresa tu dirección exacta, puedes ayudarte con una planilla de servicio básico. ¿No sabes como llenar este campo? Haz clic aquí'">
+          </app-mensajes-apoyo>
+        </div>
+      </div>
+      <!-----SUCURSALES----->
+      <div class="col-xl-12 col-xxl-12 col-sm-12 col-12 col-md-12 mt-3 mb-3" (click)="ocultarTodo();">
+        <div class="row">
+          <app-mensajes-apoyo
+            class="col-sm-11 col-11 mx-auto border border-1 text-design d-block d-sm-block d-xxl-none d-xl-none d-md-none"
+            [mensaje]="'Registra si tienes sucursales, también puedes ingresar más de un número de contacto.'">
+          </app-mensajes-apoyo>
+          <div class="col-xl-3 col-xxl-3 col-sm-6 col-6">
+            <div class="mb-3">
+              <label for="formSurcursales" class="form-label fw-bolder">¿Tienes más locales?</label>
+              <select class="form-select" aria-label="Default select example" id="formSurcursales"
+                placeholder="Sucursales" formControlName="Sucursales"
+                [class.is-invalid]="formB.formNegocioAdn.get('Sucursales')?.touched && formB.formNegocioAdn.get('Sucursales')?.invalid">
+                <option value="" selected>Seleccionar</option>
+                <option value="true">Si</option>
+                <option value="false">No</option>
+              </select>
+            </div>
+            <app-form-errors-container [forControl]="formB.formNegocioAdn.get('Sucursales')">
+              <app-message-error forErrorCode="required"></app-message-error>
+            </app-form-errors-container>
+          </div>
+          <div class="col-xl-3 col-xxl-3 col-sm-6 col-6">
+            <!-----TELEFONO----->
+            <div class="mb-3">
+              <label for="formTelefono" class="form-label fw-bolder">Teléfono de contacto</label>
+              <input type="text" class="form-control" id="formTelefono" formControlName="Telefono_contacto"
+                placeholder="Telefono"
+                [class.is-invalid]="formB.formNegocioAdn.get('Telefono_contacto')?.touched && formB.formNegocioAdn.get('Telefono_contacto')?.invalid">
+            </div>
+            <app-form-errors-container [forControl]="formB.formNegocioAdn.get('Telefono_contacto')">
+              <app-message-error forErrorCode="required"></app-message-error>
+              <app-message-error forErrorCode="minlength" customMsg="Máximo 10 digitos"></app-message-error>
+              <app-message-error forErrorCode="pattern" customMsg="Solo numeros"></app-message-error>
+            </app-form-errors-container>
+          </div>
+          <app-mensajes-apoyo
+            class="col-xl-5 col-md-5 col-xxl-5 border border-1 text-design d-none d-sm-none d-xxl-block d-xl-block d-md-block"
+            [mensaje]="'Registra si tienes sucursales, también puedes ingresar más de un número de contacto.'">
+          </app-mensajes-apoyo>
+        </div>
+      </div>
+      <!-----QUE VAS A VENDER---->
+      <div class="col-xl-12 col-xxl-12 col sm 12 col-12 col-md-12 mb-3">
+        <div class="row">
+          <app-mensajes-apoyo [mensaje]="'Escoge todas las categorías que vas a vender.'"
+            class="col-sm-11 col-11 mx-auto border border-1 text-design-pequeno1 d-block d-sm-block d-xxl-none d-xl-none d-md-none">
+          </app-mensajes-apoyo>
+          <div class="col-xl-6 col-xxl-6 col-sm-12 col-md-6 col-12">
+            <div class="mb-3">
+              <label for="formCategorias" class="form-label fw-bolder">¿Qué vas a vender?</label>
+              <app-categorias></app-categorias>
+            </div>
+          </div>
+          <app-mensajes-apoyo
+            class="col-xl-5 col-md-5 col-xxl-5 border border-1 text-design-pequeno1 d-none d-sm-none d-xxl-block d-xl-block d-md-block"
+            [mensaje]="'Escoge todas las categorías que vas a vender.'"></app-mensajes-apoyo>
+        </div>
+      </div>
+      <!---COMO DESCRIBES TU TIENDA---->
+      <div class="col-xl-12 col-xxl-12 col-sm-12 col-12 col-md-12 mt-3 mb-4">
+        <div class="row">
+          <app-mensajes-apoyo
+            class="col-sm-11 col-11 mx-auto border border-1 text-design d-block d-sm-block d-xxl-none d-xl-none d-md-none"
+            [mensaje]="'¡Aquí ponte creativo! Describe lo mejor de tu Negocio. Puedes apoyarte viendo la descripción de estas grandes marcas.'">
+          </app-mensajes-apoyo>
+          <div class="col-xl-6 col-xxl-6 col-sm-12 col-md-6 col-12">
+            <!-----Cómo describes tu tienda----->
+            <div class="mb-3">
+              <label for="formDescripcion-Outline" class="form-label fw-bolder">¿Cómo describes tu tienda?</label>
+              <textarea type="text" class="form-control" id="formDescripcion-Outline"
+                formControlName="descripcion_outline" placeholder="Un lugar donde comprar."
+                [class.is-invalid]="formB.formNegocioAdn.get('descripcion_outline')?.touched && formB.formNegocioAdn.get('descripcion_outline')?.invalid"></textarea>
+            </div>
+            <app-form-errors-container [forControl]="formB.formNegocioAdn.get('descripcion_outline')">
+              <app-message-error forErrorCode="required"></app-message-error>
+              <app-message-error forErrorCode="pattern" customMsg="No se admite caracteres especiales">
+              </app-message-error>
+            </app-form-errors-container>
+          </div>
+          <app-mensajes-apoyo
+            class="col-xl-5 col-md-5 col-xxl-5 border border-1 text-design d-none d-sm-none d-xxl-block d-xl-block d-md-block"
+            [mensaje]="'¡Aquí ponte creativo! Describe lo mejor de tu Negocio. Puedes apoyarte viendo la descripción de estas grandes marcas.'">
+          </app-mensajes-apoyo>
+        </div>
+      </div>
+    </div>
+  </form>
+</section>
+<app-button-fixed [data-target-atras]="'#collapseOne'" [arial-controls-atras]="'collapseOne'"
+  [data-target-adelante]="'#collapseThree'" [arial-controls-adelante]="'collapseThree'"></app-button-fixed>

@@ -1,3 +1,4 @@
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 
 import { PasswordResetService } from './password-reset.service';
@@ -6,7 +7,9 @@ describe('PasswordResetService', () => {
   let service: PasswordResetService;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({});
+    TestBed.configureTestingModule({
+      imports: [HttpClientTestingModule],
+    });
     service = TestBed.inject(PasswordResetService);
   });
 

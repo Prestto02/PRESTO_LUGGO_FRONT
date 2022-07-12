@@ -1,0 +1,43 @@
+* {
+  font-family: Cardium A-Medium;
+  cursor: auto;
+}
+.row-header {
+  width: 100%;
+}
+.text-subtitle {
+  font-size: 14px;
+  font-weight: 500;
+}
+.style-colors {
+  width: 1.2rem;
+  height: 1.2rem;
+  border-radius: 6px;
+}
+
+.flex-text {
+  display: flex;
+  align-items: center;
+}
+
+.offcanvas-body {
+  scroll-behavior: smooth;
+  /*  background: #f1f3f6; */
+  background: #fff;
+  overflow-x: hidden;
+}
+.text-propiedad {
+  font-size: 14px;
+}
+.text-atributo {
+  font-family: Cardium B-Regular;
+  font-size: 13px;
+}
+.offcanvas-body::-webkit-scrollbar {
+  width: 8px; /* Tamaño del scroll en vertical */
+  height: 8px; /* Tamaño del scroll en horizontal */
+  display: block; /* Ocultar scroll */
+}
+.offcanvas-body::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+}

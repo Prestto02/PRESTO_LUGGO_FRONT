@@ -1,0 +1,41 @@
+<header>
+  <app-menu-index></app-menu-index>
+</header>
+
+<div class="container-fluid mt-3 py-3">
+  <app-cliente-cerrar-sesion [label]="'Perfil del cliente'"></app-cliente-cerrar-sesion>
+</div>
+<section class="container-fluid py-3 mt-3 mb-3">
+  <div class="row">
+    <div class="col-xxl-6 col-xl-6 col-sm-10 col-md-8 col-11 mx-auto card">
+      <div class="row">
+        <div class="col-xxl-12 col-xl-12 col-md-12 col-sm-12 col-12 py-3">
+          <ul class="nav">
+            <li class="nav-item text-center col-xl-5 col-xxl-4 col-md-6 col-sm-6 col-6 mx-auto"
+              *ngFor="let perfil of perfilPersona;">
+              <a class="{{perfil.disabled?'nav-link active text-dark cursor':'nav-link text-dark cursor'}}"
+                [class.active]="!perfil.disabled" aria-current="page"
+                (click)="ocultarSecciones(perfil.id);"><b>{{perfil.title}}</b></a>
+            </li>
+          </ul>
+        </div>
+        <hr>
+        <ng-container [formGroup]="formB.formCliente">
+          <app-dato-personales [formB]="formB.formCliente" [hidden]="perfilPersona[0].disabled"></app-dato-personales>
+          <app-informacion-adicional [formB]="formB.formCliente" [hidden]="perfilPersona[1].disabled">
+          </app-informacion-adicional>
+          <hr>
+          <div class="col-xl-12 col-xxl-12 text-end mx-2 mt-3 mb-4">
+            <button type="button" class="btn btn-secondary mx-2" (click)="regresar();">Regresar</button>
+            <button type="submit" [disabled]="formB.formCliente.invalid" class="btn btn-dark"
+              (click)="guardarInformacion()">Guardar</button>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <app-footer-index></app-footer-index>
+</footer>

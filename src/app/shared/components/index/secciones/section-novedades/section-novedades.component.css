@@ -1,0 +1,76 @@
+.border {
+  border-radius: 16px 16px 16px 16px;
+  -moz-border-radius: 16px 16px 16px 16px;
+  -webkit-border-radius: 16px 16px 16px 16px;
+  border: 0px solid #000000;
+}
+.btn-carousel {
+  width: 40px;
+  height: 40px;
+  top: 100px;
+  color: #000000;
+  background: #302f2f;
+}
+.img-card-tamano {
+  width: 180px;
+  height: 180px;
+}
+.card-tamaño {
+  width: 250px;
+  height: 270px;
+}
+.title {
+  font-family: Cardium B-Medium;
+}
+.text-card-footer {
+  color: #0b5ed7;
+  font-family: Cardium B-Medium;
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1299px) {
+  .title {
+    font-family: Cardium B-Medium;
+    font-size: 18px;
+  }
+  .text-card-footer {
+    color: #0b5ed7;
+    font-family: Cardium B-Medium;
+    font-size: 12px;
+  }
+  .btn-link {
+    font-family: Cardium B-Medium;
+    font-size: 18px;
+  }
+}
+
+@media screen and (min-width: 1100px) and (max-width: 1199px) {
+  .title {
+    font-family: Cardium B-Medium;
+    font-size: 18px;
+  }
+  .text-card-footer {
+    color: #0b5ed7;
+    font-family: Cardium B-Medium;
+    font-size: 12px;
+  }
+  .btn-link {
+    font-family: Cardium B-Medium;
+    font-size: 18px;
+  }
+}
+
+@media screen and (min-width: 1000px) and (max-width: 1099px) {
+  .title {
+    font-family: Cardium B-Medium;
+    font-size: 18px;
+  }
+  .text-card-footer {
+    color: #0b5ed7;
+    font-family: Cardium B-Medium;
+    font-size: 12px;
+  }
+  .btn-link {
+    font-family: Cardium B-Medium;
+    font-size: 18px;
+  }
+}

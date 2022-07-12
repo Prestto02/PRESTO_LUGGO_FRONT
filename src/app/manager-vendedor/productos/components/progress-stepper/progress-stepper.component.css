@@ -1,0 +1,16 @@
+#cursorTamano {
+  cursor: default;
+  width: 2rem;
+  height: 2rem;
+}
+
+.btn-primary {
+  background-color: #ea2313;
+  border: 1px solid #ea2313;
+}
+.btn-primary:hover {
+  background-color: #cf1e12;
+}
+.progress-bar {
+  background-color: #ea2313;
+}

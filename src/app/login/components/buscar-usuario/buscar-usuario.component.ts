@@ -11,7 +11,6 @@ import { PasswordResetService } from '../../services/password-reset.service';
   styleUrls: ['./buscar-usuario.component.css'],
 })
 export class BuscarUsuarioComponent implements OnInit {
-  error = false;
   success = false;
   constructor(
     public formB: BaseFormLogin,
@@ -21,23 +20,20 @@ export class BuscarUsuarioComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.position.getPositionUser();
+    this.position.getPositionUser(); //POSICION DEL USUARIO
   }
   //BUSCAR USUARIO
   submit() {
     const email = this.formB.getSearchUser(
       this.position.latitud,
       this.position.longitud
-    );
+    ); //EMAIL DEL USUARIO
     this.serviPassword.postUserEmail(email).subscribe(
       (res) => {
-        this.error = false;
-        this.success = true;
+        this.success = true; //SI LO ENCUENTRO
       },
       (err) => {
-        console.log(err);
-        this.error = true;
-        this.success = false;
+        this.success = false; //SI NO LO ENCUENTRO
       }
     );
   }

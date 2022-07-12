@@ -3,11 +3,11 @@ import { ToastrModule, ToastContainerModule } from 'ngx-toastr';
 export const ToastConfig = [
   BrowserAnimationsModule,
   ToastrModule.forRoot({
-    timeOut: 7000,
-    positionClass: 'toast-bottom-right',
+    timeOut: 3000,
     preventDuplicates: true,
-    progressBar: true,
-    progressAnimation: 'increasing',
+    positionClass: 'toast-bottom-right',
+    progressBar: false,
+    /*    progressAnimation: 'increasing', */
     closeButton: true,
   }),
   ToastContainerModule,

@@ -1,0 +1,98 @@
+body {
+  transition: background-color 0.5s;
+}
+
+* {
+  font-family: Cardium B-Medium;
+}
+.navbar-light .navbar-nav .nav-link {
+  color: #000;
+}
+.color-canvas {
+  background-color: #222224f0;
+}
+.color-link {
+  color: #ff4401;
+}
+.text-parrafo {
+  font-size: 18px;
+  color: #ffe7c7;
+}
+.sidenav-card {
+  width: 400px;
+  height: 100%;
+  top: 0;
+  left: 0px;
+  position: fixed;
+  overflow: auto;
+  z-index: 1;
+  transition: 0.7s;
+}
+
+.cursor-item {
+  cursor: pointer;
+  font-size: 14px;
+  font-family: Cardium B-Regular;
+}
+.text-parrafo-regresar {
+  cursor: pointer;
+  font-size: 15px;
+  color: #ffe7c7;
+}
+/* SCROLL EDIT */
+.offcanvas-body {
+  direction: rtl;
+  overflow-x: hidden;
+}
+.row {
+  direction: ltr;
+}
+
+.offcanvas-body::-webkit-scrollbar {
+  width: 8px; /* Tamaño del scroll en vertical */
+  height: 8px; /* Tamaño del scroll en horizontal */
+  display: block; /* Ocultar scroll */
+}
+
+.offcanvas-body::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 4px;
+}
+
+/* Cambiamos el fondo y agregamos una sombra cuando esté en hover */
+.offcanvas-body::-webkit-scrollbar-thumb:hover {
+  background: #b3b3b3;
+  box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+/* Cambiamos el fondo cuando esté en active */
+.offcanvas-body::-webkit-scrollbar-thumb:active {
+  background-color: #999999;
+}
+/* Ponemos un color de fondo y redondeamos las esquinas del track */
+.offcanvas-body::-webkit-scrollbar-track {
+  background: #e1e1e1;
+  border-radius: 4px;
+}
+
+/* Cambiamos el fondo cuando esté en active o hover */
+.offcanvas-body::-webkit-scrollbar-track:hover,
+.offcanvas-body::-webkit-scrollbar-track:active {
+  background: #d4d4d4;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {
+    padding-top: 15px;
+  }
+  .sidenav a {
+    font-size: 18px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1290px) {
+  .navbar-light .navbar-nav .nav-link {
+    color: #000;
+    font-size: 0.815rem;
+  }
+}

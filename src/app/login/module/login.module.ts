@@ -8,13 +8,17 @@ import { ResetPasswordComponent } from '../components/reset-password/reset-passw
 import { BaseFormLogin } from '../models/BaseFormLogin';
 import { HttpClientModule } from '@angular/common/http';
 import { ErrorsExtensionsModule } from '../../shared/components/errors/errors-module.module';
+import { RedesSocialesComponent } from '../components/redes-sociales/redes-sociales.component';
+import { PasswordVisibleModule } from 'src/app/shared/components/password-visible/password-visible.module';
+import { GoogleComponent } from '../components/google/google.component';
 import { BuscarUsuarioComponent } from '../components/buscar-usuario/buscar-usuario.component';
-
 @NgModule({
   declarations: [
-    LoginComponent,
-    RegistrarComponent,
-    ResetPasswordComponent,
+    LoginComponent, //LOGIN COMPONENTS
+    RegistrarComponent, //REGISTRAR COMPONENTS
+    ResetPasswordComponent, //RESET-PASSWORD COMPONENTS
+    RedesSocialesComponent, //REDES SOCIALES USUARIOS
+    GoogleComponent,
     BuscarUsuarioComponent,
   ],
   imports: [
@@ -22,6 +26,7 @@ import { BuscarUsuarioComponent } from '../components/buscar-usuario/buscar-usua
     LoginRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
+    PasswordVisibleModule,
     ErrorsExtensionsModule,
   ],
   providers: [BaseFormLogin],

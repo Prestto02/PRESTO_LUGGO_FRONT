@@ -205,8 +205,7 @@
                 </div>
               </form>
             </div>
-            <!-- modal-footer fixed-bottom -->
-            <div class=" bg-white ">
+            <div class=" modal-footer bg-white fixed-bottom">
               <button type="button" class="btn btn-secondary" (click)="irProducto();">Cancelar</button>
               <button class="btn btn-dark collapsed" type="button" data-bs-toggle="collapse"
                 data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo"
@@ -226,17 +225,21 @@
     <div class="acordion-item border-0">
       <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
         data-bs-parent="#accordionExample">
-        <app-productos-atributos></app-productos-atributos>
+        <!-- <app-configuracion-producto></app-configuracion-producto> -->
+        <app-configuracion-productos-tercera> </app-configuracion-productos-tercera>
       </div>
     </div>
-
+    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+      data-bs-parent="#accordionExample">
+      <app-imagen-productos></app-imagen-productos>
+    </div>
     <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingThree"
       data-bs-parent="#accordionExample">
       <app-tercer-paso></app-tercer-paso>
     </div>
   </div>
 </section>
-<button class="btn btn-primary collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+<!-- <button class="btn btn-primary collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo"
   aria-expanded="true" aria-controls="collapseTwo" (click)="addAtributos()">TWO</button>
 <button class="btn btn-primary collapsed" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false"
-  aria-controls="collapseFour" (click)="addAtributos()">THREE</button>
+  aria-controls="collapseFour" (click)="addAtributos()">THREE</button> -->

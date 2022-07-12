@@ -10,8 +10,8 @@ export class PositionUser {
   getPositionUser() {
     this.serviPosition.getPosition().then(
       (pos) => {
-        this.latitud = pos.latitude;
-        this.longitud = pos.longitude;
+        this.latitud = pos.latitude; //OBTENGO LA LATITUDE
+        this.longitud = pos.longitude; //OBTENGO LA LONGITUD
       },
       (err) => {
         console.log(err);

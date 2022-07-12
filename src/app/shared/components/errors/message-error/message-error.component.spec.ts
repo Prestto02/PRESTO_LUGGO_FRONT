@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { FormsModule } from '@angular/forms';
+import { FormErrorsContainerComponent } from '../form-errors-container/form-errors-container.component';
 import { MessageErrorComponent } from './message-error.component';
 
 describe('MessageErrorComponent', () => {
@@ -8,18 +9,14 @@ describe('MessageErrorComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ MessageErrorComponent ]
-    })
-    .compileComponents();
+      imports: [FormsModule],
+      declarations: [MessageErrorComponent, FormErrorsContainerComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {
     fixture = TestBed.createComponent(MessageErrorComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
-  });
-
-  it('should create', () => {
-    expect(component).toBeTruthy();
   });
 });

@@ -20,7 +20,7 @@ export class InterceptorHttpHeadersService implements HttpInterceptor {
     //token USERS
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      Authorization: `bearer ${localStorage.getItem('token')}`,
+      Authorization: `${localStorage.getItem('Token')}`,
     });
     const reqClon = req.clone({
       headers,

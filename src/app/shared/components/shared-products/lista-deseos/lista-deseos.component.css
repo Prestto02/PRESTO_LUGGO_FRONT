@@ -1,0 +1,87 @@
+.border-thead {
+  border-bottom: 1px solid rgba(131, 129, 129, 0);
+}
+
+* {
+  font-family: Cardium B-SemiBold;
+}
+.color-card {
+  background-color: #fff;
+}
+.container-fluid {
+  background: #f1f3f6;
+}
+
+.border-bottom {
+  background: white;
+  border-left: 1px;
+}
+
+.input-border {
+  border-right: 0px;
+}
+.color-cabecera {
+  background-color: #fff;
+}
+.btn-anadir-coleccion {
+  background-color: #fff;
+  color: #000;
+  border: 2px solid #7549fe;
+  box-sizing: border-box;
+  border-radius: 6px;
+}
+
+.btn-anadir-coleccion:hover {
+  background-color: #7549fe;
+  color: #fff;
+  border: 2px solid #7549fe;
+  box-sizing: border-box;
+  border-radius: 6px;
+}
+
+.button-categorias {
+  width: 142.62px;
+  height: 32px;
+  color: #000;
+  background-color: #fff;
+  border: 2px solid #7549fe;
+  box-sizing: border-box;
+  border-radius: 6px;
+}
+
+.button-categorias:hover {
+  background-color: #7549fe;
+  color: #fff;
+  border: 2px solid #7549fe;
+  box-sizing: border-box;
+  border-radius: 6px;
+}
+
+.btn-anadir-carrito {
+  width: 211px;
+  height: 32px;
+  background: #7549fe;
+  color: #fff;
+  border-radius: 6px;
+}
+
+.color-text {
+  color: #7549fe;
+}
+
+.precio {
+  font-family: Cardium B-Bold;
+  font-size: 24px;
+  color: #272727;
+}
+
+.pointer {
+  cursor: pointer;
+}
+.transicion {
+  transition-duration: 1.8s;
+}
+
+.btn-dark:hover{
+  background-color: #000000;
+}

@@ -1,0 +1,51 @@
+.color-groud {
+  background: #f9f9f9;
+  height: 65px;
+  font-size: 14px;
+}
+.btn-estilos {
+  background: #0075ff;
+  color: #fff;
+}
+.btn-estilos:hover {
+  background: #0567d6;
+  color: #fff;
+}
+.btn-primary {
+  background-color: #EA2313;
+  border: 1px solid #EA2313;
+}
+* {
+  font-family: Cardium B-Regular;
+}
+.estilo-text {
+  font-weight: 600;
+  font-size: 28px;
+}
+.estilo-subtitle {
+  font-weight: 300;
+  font-size: 20px;
+  margin-top: -13px;
+}
+
+
+.fixed-bottom {
+  background: #fff;
+}
+input::placeholder {
+  color: rgba(0, 0, 0, 0.178);
+}
+
+.text-parrafo {
+  margin-top: 22px;
+  font-size: 13px;
+}
+
+.text-design {
+  background: #f9f9f9;
+  font-family: Cardium B-Regular;
+  color: #00000094;
+  text-align: justify;
+  margin: 0px 0px 22px;
+  margin-top: 20px;
+}

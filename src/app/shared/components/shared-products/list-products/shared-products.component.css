@@ -1,0 +1,118 @@
+.buttonRegresar {
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 3;
+  padding: 1rem;
+  color: #fff;
+  cursor: pointer;
+  font-size: 1.5rem;
+  width: 45px;
+  height: 45px;
+  background-color: #ea2313;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+* {
+  font-family: Cardium A-Light;
+}
+.text-truncate-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.text-precio {
+  color: #ea2313;
+  font-size: 20px;
+  font-family: Cardium A-Bold;
+}
+.text-iva {
+  font-family: Cardium A-Medium;
+  font-size: 13px;
+}
+.title-h1 {
+  font-family: Cardium A-Bold;
+  font-size: 32px;
+}
+.border-title {
+  border: 10px solid #0b5ed7;
+  height: 0px;
+}
+.cursor {
+  cursor: pointer;
+}
+
+.card-img {
+  width: 195px;
+  height: 200px;
+}
+
+.text-messageError {
+  color: rgb(0 0 0 / 52%);
+}
+
+.container-fluid::-webkit-scrollbar {
+  width: 8px; /* Tamaño del scroll en vertical */
+  height: 8px; /* Tamaño del scroll en horizontal */
+  display: none; /* Ocultar scroll */
+}
+.container-fluid {
+  position: relative;
+  height: 800px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.card-title {
+  font-size: 14px;
+  font-family: Cardium B-Medium;
+}
+.nombre-tienda {
+  position: absolute;
+  margin-top: 5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 108px;
+}
+.text {
+  font-weight: 600;
+  font-size: 22px;
+  color: #ea2313;
+}
+@media screen and (min-width: 1300px) and (max-width: 2200px) {
+  .title-h1 {
+    font-size: 42px;
+  }
+  .card-responsive {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1299px) {
+  .title-h1 {
+    font-family: Cardium A-Bold;
+    font-size: 35px;
+  }
+  .card-responsive {
+    display: grid;
+    grid-template-columns: 15rem 15rem 15rem 15rem 15rem;
+    padding: 0;
+    justify-content: center;
+  }
+  .card-responsive-laptop {
+    width: 100%;
+    max-width: 16rem;
+    padding: 0px;
+    padding-left: 14px;
+  }
+}
+@media screen and (min-width: 1000px) and (max-width: 1199px) {
+  .title-h1 {
+    font-family: Cardium A-Bold;
+    font-size: 36px;
+  }
+}

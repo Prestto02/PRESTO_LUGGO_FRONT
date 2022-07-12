@@ -1,0 +1,39 @@
+<div class="position-relative m-4 mb-5 d-sm-none d-none d-md-block d-xl-block d-xxl-block">
+  <div class="progress" style="height: 1px;">
+    <div class="progress-bar" role="progressbar" [style]="width?width:'width:30%;'" aria-valuenow="50" aria-valuemin="0"
+      aria-valuemax="100"></div>
+  </div>
+
+  <button type="button"
+    [class]="paso1?paso1:'position-absolute top-0 start-0 translate-middle btn btn-sm btn-primary rounded-pill'"
+    style="width: 2rem; height:2rem;" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false"
+    aria-controls="collapseOne" [disabled]="one?true:false">
+    {{formAdn.formAdn.invalid?'':'&#10003;'}}
+  </button>
+  <p class="position-absolute translate-middle start-0" style="top: 35px;">Cuéntanos sobre ti</p>
+
+  <button type="button"
+    [class]="paso2?paso2:'position-absolute top-0 translate-middle btn btn-sm btn-secondary rounded-pill'"
+    style="width: 2rem; height:2rem; left: 30%;" data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+    aria-expanded="false" aria-controls="collapseTwo" [disabled]="two?true:false">
+    {{formNegocioAdn.formNegocioAdn.invalid?'':'&#10003;'}}
+  </button>
+  <p class="position-absolute translate-middle" style="left:30%;top: 35px;">Sobre tu negocio</p>
+
+  <button type="button"
+    [class]="paso3?paso3:'position-absolute top-0 translate-middle btn btn-sm btn-secondary rounded-pill'"
+    style="width: 2rem; height:2rem; left: 60%;" data-bs-toggle="collapse" data-bs-target="#collapseThree"
+    aria-expanded="false" aria-controls="collapseThree" [disabled]="trhee?true:false">
+    {{formPagosAdn.formPagoAdn.invalid?'':'&#10003;'}}
+  </button>
+  <p class="position-absolute translate-middle" style="left: 60%; top: 35px;">¿Cómo recibirás tus pagos?</p>
+
+  <button type="button"
+    [class]="paso4?paso4:'position-absolute top-0 start-100 translate-middle btn btn-sm btn-secondary rounded-pill'"
+    style="width: 2rem; height:2rem;" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false"
+    aria-controls="collapseFour" [disabled]="four?true:false">
+    <!--   {{formB.formTerminar.invalid?'':'&#10003;'}} -->
+  </button>
+  <p class="position-absolute translate-middle start-100" style="top: 35px;right: -178px;">¡Ya casi terminamos!</p>
+
+</div>

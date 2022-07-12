@@ -1,4 +1,6 @@
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
 
 import { BienvenidoUserComponent } from './bienvenido-user.component';
 
@@ -8,9 +10,9 @@ describe('BienvenidoUserComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ BienvenidoUserComponent ]
-    })
-    .compileComponents();
+      imports: [RouterTestingModule, HttpClientTestingModule],
+      declarations: [BienvenidoUserComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

@@ -1,0 +1,80 @@
+<section class="container-fluid">
+  <div class="row mt-4 mx-auto">
+    <h5 class="text-center">Reporte en pastel de las ventas</h5>
+    <div class="col-xl-4 col-xxl-4 col-sm-12 col-12 col-md-4">
+      <ngx-charts-pie-chart [view]="view" [scheme]="colorScheme" [results]="single" [gradient]="gradient"
+        [legend]="showLegend" [legendPosition]="legendPosition" [labels]="showLabels" [doughnut]="isDoughnut"
+        (select)="onSelect($event)" (activate)="onActivate($event)" (deactivate)="onDesactivate($event)"
+        legendTitle="Leyenda">
+      </ngx-charts-pie-chart>
+      <div class="row">
+        <div class="col-xl-6">
+          <p><span class="badge rounded-pill" [ngStyle]="{'background':colorScheme.domain[0]}">Pollo</span></p>
+        </div>
+        <div class="col-xl-6">
+          $200
+        </div>
+        <div class="col-xl-6">
+          <p><span class="badge rounded-pill" [ngStyle]="{'background':colorScheme.domain[1]}">Carne</span></p>
+        </div>
+        <div class="col-xl-6">
+          $300
+        </div>
+        <div class="col-xl-6">
+          <p><span class="badge rounded-pill" [ngStyle]="{'background':colorScheme.domain[2]}">Camaron</span></p>
+
+        </div>
+        <div class="col-xl-6">
+          $400
+        </div>
+        <div class="col-xl-6">
+          <p><span class="badge rounded-pill" [ngStyle]="{'background':colorScheme.domain[3]}">Pescado</span></p>
+        </div>
+        <div class="col-xl-6">
+          $500
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-4 col-xxl-4 col-sm-12 col-12 col-md-4">
+      <ngx-charts-pie-chart [view]="view" [scheme]="colorScheme" [results]="single" [gradient]="gradient"
+        [legend]="showLegend" [legendPosition]="legendPosition" [labels]="showLabels" [doughnut]="isDoughnut"
+        (select)="onSelect($event)" (activate)="onActivate($event)" (deactivate)="onDesactivate($event)"
+        legendTitle="Leyenda">
+      </ngx-charts-pie-chart>
+      <div class="row">
+        <div class="col-xl-6">
+          <p><span class="badge rounded-pill" [ngStyle]="{'background':colorScheme.domain[0]}">Pollo</span></p>
+        </div>
+        <div class="col-xl-6">
+          $200
+        </div>
+        <div class="col-xl-6">
+          <p><span class="badge rounded-pill" [ngStyle]="{'background':colorScheme.domain[1]}">Carne</span></p>
+        </div>
+        <div class="col-xl-6">
+          $300
+        </div>
+        <div class="col-xl-6">
+          <p><span class="badge rounded-pill" [ngStyle]="{'background':colorScheme.domain[2]}">Camaron</span></p>
+
+        </div>
+        <div class="col-xl-6">
+          $400
+        </div>
+        <div class="col-xl-6">
+          <p><span class="badge rounded-pill" [ngStyle]="{'background':colorScheme.domain[3]}">Pescado</span></p>
+        </div>
+        <div class="col-xl-6">
+          $500
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-4 col-xxl-4 col-sm-12 col-12 col-md-4 mt-3">
+      <ngx-charts-line-chart [view]="viewLineal" [scheme]="colorScheme" [showXAxisLabel]="showXAxisLabel"
+        [showYAxisLabel]="showYAxisLabel" [xAxis]="xAxis" [yAxis]="yAxis" [timeline]="timeline" [results]="multi"
+        (select)="onSelect($event)" (activate)="onActivate($event)" (deactivate)="onDesactivate($event)"
+        legendTitle="Leyenda">
+      </ngx-charts-line-chart>
+    </div>
+  </div>
+</section>

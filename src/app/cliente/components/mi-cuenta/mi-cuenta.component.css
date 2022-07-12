@@ -1,0 +1,9 @@
+* {
+  font-family: Cardium B-Medium;
+}
+
+.img-responsive {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}

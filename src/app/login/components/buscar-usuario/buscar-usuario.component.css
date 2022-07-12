@@ -1,23 +1,26 @@
-.title{
+.title {
   font-family: Cardium B-Bold;
 }
-.subtitle{
+.subtitle {
   font-family: Cardium B-Medium;
   font-size: 15px;
   text-align: justify;
 }
 .btn-enviar {
-  background: #7549fe;
+  background: #282828;
   color: #fff;
   font-family: Cardium B-Medium;
 }
-.btn-regresar{
+.btn-regresar {
   background: #e9ecef;
   font-family: Cardium B-Medium;
   color: black;
 }
-.btn-regresar:hover{
+.btn-regresar:hover {
   background: #d1d4d6;
   font-family: Cardium B-Medium;
   color: black;
+}
+.color-container {
+  background-color: #f1f3f6;
 }

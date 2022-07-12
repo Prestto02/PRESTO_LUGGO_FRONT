@@ -1,0 +1,85 @@
+.color-card {
+  border-radius: 20px;
+  background: #0b5ed7;
+}
+.btn-pago {
+  background: #0b5ed7;
+  border: 2px solid #fff;
+  font-family: Cardium B-SemiBold;
+  color: #fff;
+}
+.btn-pago:hover {
+  background: #0b5ed7;
+}
+.card-texto {
+  font-family: Cardium A-Medium;
+  font-size: 36px;
+}
+.cardium-A-semibold {
+  font-family: Cardium A-SemiBold;
+}
+.cardium-b-bold {
+  font-family: Cardium B-Bold;
+  font-size: 16px;
+}
+.card-carousel {
+  border-radius: 20px;
+}
+.btn-carousel-next {
+  width: 40px;
+  height: 40px;
+  color: #000000;
+  top: 67px;
+  right: -24px;
+  background: #302f2f;
+}
+.btn-carousel-previous {
+  width: 40px;
+  height: 40px;
+  color: #000000;
+  top: 67px;
+  left: -24px;
+  background: #302f2f;
+}
+.color-precio {
+  color: #7549fe;
+  font-weight: bold;
+  font-size: 18px;
+}
+.color-badge {
+  background-color: #f62a5b;
+  color: #fff;
+}
+.font-weitgth-ofertas{
+  font-weight: 600;
+}
+/* If the screen size is 601px wide or more, set the font-size of <div> to 80px */
+@media screen and (min-width: 1021px) and (max-width: 1290px) {
+  .card-texto {
+    font-family: Cardium A-Medium;
+    font-size: 32px;
+  }
+  .cardium-b-bold {
+    font-family: Cardium B-Medium;
+    font-size: 13.5px;
+  }
+  .card-texto {
+    font-family: Cardium A-Medium;
+    font-size: 21px;
+  }
+}
+
+@media screen and (min-width: 766px) and (max-width: 1020px) {
+  .card-texto {
+    font-family: Cardium A-Medium;
+    font-size: 32px;
+  }
+  .cardium-b-bold {
+    font-family: Cardium B-Medium;
+    font-size: 13.5px;
+  }
+  .card-texto {
+    font-family: Cardium A-Medium;
+    font-size: 21px;
+  }
+}

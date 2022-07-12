@@ -1,0 +1,59 @@
+<header>
+  <app-menu-vendedor></app-menu-vendedor>
+</header>
+
+<app-adn-cerrar-sesion></app-adn-cerrar-sesion>
+
+<app-seccion-adn [NombreUbicacion]="'Mis pedidos'" [ruta]="ruta"></app-seccion-adn>
+
+<section class="container mb-3 mt-auto py-3">
+  <div class="row">
+    <div class="col-xl-7 col-xxl-7 col-sm-12 col-12 col-md-7 mt-4">
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+        </div>
+        <input type="text" class="form-control" placeholder="Buscar orden por número de orden, nombre, fecha"
+          aria-label="Username" aria-describedby="basic-addon1" (keyup)="buscarProductos($event);">
+        <button class="input-group-text" id="basic-addon1">Search</button>
+      </div>
+    </div>
+    <div class="col-xl-8 col-xxl-8 col-sm-12 col-12 col-md-5 mb-3">
+      <span>Total de ordenes: {{arrayListaPedidos.length}}</span>
+    </div>
+    <hr>
+    <div class="col-xl-12 col-xxl-12 col-sm-12 col-12 col-md-12 cursor"
+      *ngFor="let pedidos of arrayListaPedidos | filterPedidosLista:searchPedidos"
+      (click)="buscarDetallePedido(pedidos.id);">
+      <div class="row mx-auto hover-tables">
+        <div class="col-xl-9 col-xxl-9 col-md-9 col-9 col-sm-9 py-2">
+          <span><span [class]="'badge rounded-circle '+pedidos.colorEstado"
+              style="width: 1rem; height: 1rem;">&nbsp;</span> Pedido:
+            <b>{{pedidos.NumeroOrden}}</b></span>
+        </div>
+        <div class="col-xl-3 col-xxl-3 col-md-3 col-sm-3 col-3">
+          <span class="text-bajo">{{pedidos.Fecha | date: 'M-d-yyyy, h:mm a' }}</span>
+        </div>
+
+        <div class="col-xl-9 col-xxl-9 col-md-9 col-sm-9 col-9 py-2">
+          <span>Estado: <span [class]="'badge '+pedidos.colorEstado">{{pedidos.Estado}}</span></span>
+        </div>
+        <div class="col-xl-3 col-xxl-3 col-md-3 col-sm-3 col-3">
+          <span>Total: <b>{{pedidos.Total | currency:'USD'}}</b></span>
+        </div>
+        <div class="col-xl-9 col-xxl-9 col-md-9 col-sm-9 col-9 py-2">
+          <span class="text-bajo">Realizado por: {{pedidos.Orden}}</span>
+        </div>
+        <div class="col-xl-3 col-xxl-3 col-md-3 col-sm-3 col-3">
+          <span class="text-bajo">{{pedidos.items}} producto(s)</span>
+        </div>
+      </div>
+      <hr>
+    </div>
+  </div>
+</section>
+
+<!-- <footer>
+  <app-footer2></app-footer2>
+</footer>
+ -->
+ <app-footer-index></app-footer-index>

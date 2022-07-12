@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PositionUser } from 'src/app/shared/class/PositionUser';
-import { BaseFormProducts } from '../../models/Perchita/BaseformProduct';
+import { BaseFormProducts } from '../../models/BaseformProduct';
 import { BaseFormCategorias } from 'src/app/manager-vendedor/categorias/models/categorias.models';
 import { EditRegisterModalService } from 'src/app/shared/components/modals/services/edit-register-modal.service';
 import { BaseFormEtiquetas } from './form-etiquetas/models/BaseFormEtiquetas';
@@ -76,12 +76,13 @@ export class CreateProductsComponent implements OnInit {
   }
   //REGRESAR AL PRODUCTO
   irProducto() {
+    this.dateApi.limpiarTodoForm();
     this.router.navigateByUrl(
       `${UrlFront.Manager.managerVendedor}/${UrlFront.Manager.vendedor}/${UrlFront.Manager.listadoProductos}`
     );
   }
   addAtributos() {
-    //this.dateApi.getAtributosImagenes();
+    this.dateApi.getAtributosImagenes();
   }
   //CREAR NUEVO NOMBRE DE ARTICULO
   crearNuevoNombreArticulo() {

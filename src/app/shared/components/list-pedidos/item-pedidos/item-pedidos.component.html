@@ -1,0 +1,20 @@
+<div class="col-xl-12">
+  <div class="row mx-3">
+    <ng-container *ngIf="listPedidos">
+      <div class="col-xxl-12 col-xl-12" *ngFor="let list of listPedidos">
+        <p>codigo de la venta: {{list.id_venta}}</p>
+        <p>total a pagar:{{list.Total}}</p>
+        <ng-container *ngFor="let listDetalle of list.detalle_venta">
+          <img [src]="imgIcons+listDetalle.img" width="200px" height="200px" />
+          <p>id detalle venta:{{listDetalle.id_detalle_venta}}</p>
+          <p>nombre producto:{{listDetalle.nombre_producto}}</p>
+          <p> nombre tienda: {{listDetalle.nombre_tienda}}</p>
+          <p>cantidad comprada:{{listDetalle.item}}</p>
+          <p>iva:{{listDetalle.iva?'IVa aplica':''}}</p>
+          <p>Subtotal del producto: {{listDetalle.sub_Total_producto}}</p>
+          <p class="badge badge-primary">estado del pedido:{{listDetalle.estado_pedido}}</p>
+        </ng-container>
+      </div>
+    </ng-container>
+  </div>
+</div>

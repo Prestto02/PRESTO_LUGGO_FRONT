@@ -1,0 +1,178 @@
+* {
+  font-family: Cardium B-Medium;
+}
+nav {
+  border-bottom: 1px solid #9d9d9d;
+}
+.color-article {
+  background-color: #ea2313;
+  color: #fff;
+}
+.cursor-item {
+  cursor: pointer;
+}
+span {
+  font-family: Cardium B-Medium;
+}
+.color-canvas {
+  background-color: #222224f0;
+}
+.mover-icono-user {
+  padding: 0px;
+  position: relative;
+  right: 54px;
+}
+.mover-icono-deseos {
+  padding: 0px;
+  position: relative;
+  right: 52px;
+}
+.navbar-light .navbar-nav .nav-link {
+  color: #000;
+}
+
+.carrito-items {
+  position: relative;
+  right: 78px;
+}
+
+.margin-laptop {
+  position: relative;
+  right: 54px;
+}
+
+.responsive-links-1 {
+  position: relative;
+  right: 50px;
+}
+.margin-responsive {
+  margin-top: 12px;
+}
+.margin-left-icon {
+  margin-left: 8px;
+}
+
+.offcanvas-end {
+  background-color: #222224f0;
+}
+
+/* RESPONSIVE EL AUTOCOMPLETADO */
+@media screen and (min-width: 300px) and (max-width: 461px) {
+  .responsive-autocomplete {
+    width: 30% !important;
+  }
+  .margin-responsive {
+    margin-top: 0px;
+  }
+}
+
+@media screen and (min-width: 460px) and (max-width: 539px) {
+  .responsive-autocomplete {
+    width: 38% !important;
+  }
+  .margin-responsive {
+    margin-top: 0px;
+  }
+}
+
+@media screen and (min-width: 540px) and (max-width: 819px) {
+  .responsive-autocomplete {
+    width: 47% !important;
+  }
+  .margin-responsive {
+    margin-top: 0px;
+  }
+}
+
+@media screen and (min-width: 820px) and (max-width: 1109px) {
+  .responsive-autocomplete {
+    width: 54% !important;
+  }
+  .margin-responsive {
+    margin-top: 12px;
+  }
+}
+
+@media screen and (min-width: 1100px) and (max-width: 1199px) {
+  .responsive-autocomplete {
+    width: 60% !important;
+  }
+  .margin-responsive {
+    margin-top: 0px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1290px) {
+  .responsive-autocomplete {
+    width: 67% !important;
+  }
+  .margin-responsive {
+    margin-top: 0px;
+  }
+  .navbar-light .navbar-nav .nav-link {
+    color: #000;
+    font-size: 0.855rem;
+  }
+  .responsive-links {
+    margin-top: 8px;
+    margin-left: -10px;
+    padding: 0;
+  }
+  .responsive-links-1 {
+    margin-top: 8px;
+    margin-left: 3px;
+  }
+  .mover-icono-deseos {
+    padding: 0px;
+    position: relative;
+    right: 50px;
+  }
+  .mover-icono-user {
+    padding: 0px;
+    position: relative;
+    right: 80px;
+  }
+  .margin-laptop {
+    margin-top: 9px;
+  }
+  .carrito-items{
+    position: relative;
+    right: 65px;
+  }
+  .form-select {
+    font-size: 0.815rem;
+    font-weight: 400;
+  }
+}
+@media screen and (min-width: 1291px) and (max-width: 1560px) {
+  .responsive-autocomplete {
+    width: 67% !important;
+  }
+  .margin-responsive {
+    margin-top: 0px;
+  }
+}
+
+@media screen and (min-width: 1475px) and (max-width: 1560px) {
+  .margin-responsive {
+    margin-top: 12px;
+  }
+}
+@media screen and (min-width: 1800px) and (max-width: 2200px) {
+  .navbar-light .navbar-nav .nav-link {
+    color: #000;
+    font-size: 16px;
+  }
+  .responsive-links {
+    margin-top: 8px;
+    margin-left: -8px;
+    padding: 0;
+  }
+  .mover-icono-user{
+    right: 70px;
+  }
+  .responsive-links-1 {
+    margin-top: 8px;
+    margin-left: 3px;
+  }
+}
