@@ -49,6 +49,9 @@ export class SectionCarouselComponent implements OnInit {
       this.arrayCarouselImg = res;
     });
   }
+  irAlLink(link: string) {
+    this.router.navigateByUrl(link);
+  }
   //IR A OTODOS LOS PRODUCTOS
   verProductos(url: any) {
     this.router.navigateByUrl(`${UrlFront.Menu.menu}${url}`);

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CarritoItemsService } from '../index/menu-index/menu/services/carrito-items.service';
 import { BaseFormPagar } from './formulario-pagar/models/BaseFormPagar';
@@ -10,7 +10,7 @@ import { PagarServices } from './services/Pagar.service';
   templateUrl: './pagar.component.html',
   styleUrls: ['./pagar.component.css'],
 })
-export class PagarComponent implements OnInit {
+export class PagarComponent implements OnInit, OnDestroy {
   arrayProductsList: any = [];
   totalAPagar: any = 0;
   arrayPagoProducts: any = [];
@@ -20,13 +20,15 @@ export class PagarComponent implements OnInit {
     private apiServi: CarritoItemsService,
     public formB: BaseFormPagar,
     private apiPagar: PagarServices,
-    private router: Router,
     private pagarOCarrito: PagarOCarritoPost
   ) {}
-
   ngOnInit(): void {
     this.getAllProducts();
     this.sumaTotalYSubtotal();
+  }
+
+  ngOnDestroy(): void {
+    this.contador = 0;
   }
   //TODOS LOS PRODUCTOS
   getAllProducts() {
