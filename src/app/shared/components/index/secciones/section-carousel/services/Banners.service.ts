@@ -12,7 +12,7 @@ export class BannersServices {
   //GET BANNERS USERS
   getBannersUSers(variable: string, movil: string): Observable<any> {
     return this.http.get<any>(
-      ` ${urlApiAzure.UrlApi}${urlApiAzure.bannersIndex}${variable}`
+      ` ${urlApiAzure.UrlApi}${urlApiAzure.bannersIndex}${variable}${movil}`
     );
   }
 }

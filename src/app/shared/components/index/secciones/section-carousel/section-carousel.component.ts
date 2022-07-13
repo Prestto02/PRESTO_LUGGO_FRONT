@@ -40,8 +40,8 @@ export class SectionCarouselComponent implements OnInit {
   getBannersOfUser() {
     //LOGEADO NO LOGEADO
     this.idUser
-      ? this.getBanner('isSingIn=true', 'movil=false')
-      : this.getBanner('false', 'movil=false');
+      ? this.getBanner('isSingIn=true', '&isMovil=false')
+      : this.getBanner('false', '&isMovil=false');
   }
   //BANNERS PARA LOS USUARIOS SEGUN LOGEADO
   getBanner(variable: string, movil: string) {
@@ -50,7 +50,7 @@ export class SectionCarouselComponent implements OnInit {
     });
   }
   irAlLink(link: string) {
-    this.router.navigateByUrl(link);
+    if (link.length > 0) this.router.navigateByUrl(link);
   }
   //IR A OTODOS LOS PRODUCTOS
   verProductos(url: any) {
