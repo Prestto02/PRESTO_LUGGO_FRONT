@@ -39,9 +39,7 @@ export class SectionCarouselTelephoneComponent implements OnInit {
     this.bannerServi
       .getBannersUSers(variable, movil)
       .subscribe((res: carouselTelephone[]) => {
-        console.log(res);
         this.listCarouse = res;
-        console.log(this.listCarouse);
       });
   }
 }
