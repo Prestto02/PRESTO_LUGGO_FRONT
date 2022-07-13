@@ -15,7 +15,7 @@ export class CarouselSharedComponent implements OnInit {
   @Input() carouselComponents: ImgCarousel[] = [];
   @Input() indicators = true;
   @Input() autoSide = false; // IF CONTINUE AUTOMATIC SLIDE
-  @Input() slideInterval = 7000; //DEFAULT 3 SECONDS
+  @Input() slideInterval = 5000; //DEFAULT 3 SECONDS
   selectedIndex = 0;
   constructor() {}
 

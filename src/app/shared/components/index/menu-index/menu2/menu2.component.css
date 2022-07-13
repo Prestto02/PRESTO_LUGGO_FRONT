@@ -14,6 +14,13 @@ body {
 .color-link {
   color: #ff4401;
 }
+
+.position-button {
+  position: absolute;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: flex-end;
+}
 .text-parrafo {
   font-size: 18px;
   color: #ffe7c7;
@@ -89,7 +96,11 @@ body {
     font-size: 18px;
   }
 }
-
+@media screen and (max-width:680px) {
+  .position-button{
+    right: 12px;
+  }
+}
 @media screen and (min-width: 1200px) and (max-width: 1290px) {
   .navbar-light .navbar-nav .nav-link {
     color: #000;

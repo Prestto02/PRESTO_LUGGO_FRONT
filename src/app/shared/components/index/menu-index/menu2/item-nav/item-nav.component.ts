@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UrlFront } from 'src/app/shared/routes/RoutesFront';
 import { arrayListItemsMenu } from '../LisItemsMenu';
@@ -9,6 +9,10 @@ import { arrayListItemsMenu } from '../LisItemsMenu';
   styleUrls: ['./item-nav.component.css'],
 })
 export class ItemNavComponent implements OnInit {
+  @Input('white') white: string | null = null;
+  @Input('width') width: number | null = null;
+  @Input('heigth') heigth: number | null = null;
+  @Input('tamano') tamano: string | null = null;
   arrayList = arrayListItemsMenu;
   constructor(private router: Router) {}
 

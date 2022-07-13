@@ -16,6 +16,8 @@ import { ItemNavComponent } from '../menu2/item-nav/item-nav.component';
 import { UsuarioIdentificComponent } from '../menu2/usuario-identific/usuario-identific.component';
 import { InputIncreaseDiminishComponent } from '../../../input-increase-diminish/input-increase-diminish.component';
 import { MenuUsersComponent } from '../menu/menu-users/menu-users.component';
+import { CarritoIconsComponent } from '../menu/carrito-icons/carrito-icons.component';
+import { MenuTelephoneComponent } from '../menu-telephone/menu-telephone.component';
 @NgModule({
   declarations: [
     MenuIndexComponent, //MENU INDEX COMPONENTS
@@ -29,6 +31,8 @@ import { MenuUsersComponent } from '../menu/menu-users/menu-users.component';
     AutocompletadoProductosComponent, //AUTO COMPLETADO
     InputIncreaseDiminishComponent,
     MenuUsersComponent,
+    CarritoIconsComponent,
+    MenuTelephoneComponent,
   ],
   imports: [CommonModule, ReactiveFormsModule, HttpClientModule],
   providers: [
@@ -41,6 +45,7 @@ import { MenuUsersComponent } from '../menu/menu-users/menu-users.component';
     MenuIndexComponent,
     MenuComponent,
     Menu2Component,
+    MenuTelephoneComponent,
     InputIncreaseDiminishComponent,
   ],
 })

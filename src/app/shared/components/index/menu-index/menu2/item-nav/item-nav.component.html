@@ -2,15 +2,18 @@
   <li class="nav-item" title="Menú">
     <a class="nav-link abrir" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button"
       aria-controls="offcanvasExample" title="Menú">
-      <svg width="25" height="24" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M1.17517 11H15.1655" stroke="#353535" stroke-width="2" stroke-linecap="round"
+      <svg [attr.width]="width?width:25" [attr.height]="heigth?heigth:24" [attr.viewBox]="tamano?tamano:'0 0 20 19'"
+        fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M1.17517 11H15.1655" [attr.stroke]="white?white:'#353535'" stroke-width="2" stroke-linecap="round"
           stroke-linejoin="round" />
-        <path d="M1.17517 6H15.1655" stroke="#353535" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-        <path d="M1.17517 1H15.1655" stroke="#353535" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M1.17517 6H15.1655" [attr.stroke]="white?white:'#353535'" stroke-width="2" stroke-linecap="round"
+          stroke-linejoin="round" />
+        <path d="M1.17517 1H15.1655" [attr.stroke]="white?white:'#353535'" stroke-width="2" stroke-linecap="round"
+          stroke-linejoin="round" />
       </svg>
     </a>
   </li>
-<!--   <li [class]="i>0?'nav-item':'nav-item px-xxl-5 px-xl-5 mx-xl-2 mx-xxl-0'" *ngFor="let listItems of arrayList;let i=index;">
+  <!--   <li [class]="i>0?'nav-item':'nav-item px-xxl-5 px-xl-5 mx-xl-2 mx-xxl-0'" *ngFor="let listItems of arrayList;let i=index;">
     <a [class]="i>0?'nav-link font-item abrir':'nav-link font-item abrir px-xl-5 px-xxl-5'" aria-current="page"
       (click)="irAlLink(listItems.link)">{{listItems.name}}</a>
   </li> -->
@@ -33,4 +36,3 @@
     </svg>
     Ver todos los <b>PRODUCTOS</b></a>
 </div> -->
-

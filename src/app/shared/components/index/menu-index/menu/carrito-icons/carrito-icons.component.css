@@ -1,0 +1,22 @@
+.cursor-item {
+  cursor: pointer;
+}
+.carrito-items {
+  position: relative;
+  right: 78px;
+}
+
+.color-article {
+  background-color: #ea2313;
+  color: #fff;
+}
+span {
+  color: #000;
+}
+
+@media screen and (max-width: 1290px) {
+  .carrito-items {
+    position: relative;
+    right: 65px;
+  }
+}

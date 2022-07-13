@@ -11,7 +11,6 @@ import { SharedProductosModule } from '../../shared-products/module/shared-produ
 import { IndexComponent } from '../index.component';
 import { ErrorsExtensionsModule } from '../../errors/errors-module.module';
 import { SeccionesModule } from '../secciones/module/secciones.module';
-
 @NgModule({
   declarations: [IndexComponent],
   imports: [

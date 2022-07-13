@@ -1,4 +1,5 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-white" aria-label="Primary Main">
+<nav class="navbar navbar-expand-lg navbar-light bg-white d-none d-sm-none d-md-block d-xl-block d-xxl-block"
+  aria-label="Primary Main">
   <div class="container-fluid">
     <a class="navbar-brand cursor-item margin-left-icon" (click)="menuIndex()">
       <svg width="104" height="63" viewBox="0 0 211 63" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -50,7 +51,7 @@
               <ng-container *ngIf="emailUsuario; else noIdentificado">
                 <div data-bs-toggle="offcanvas" data-bs-target="#offcanvasRightUsers"
                   aria-controls="offcanvasRightUsers"
-                  class="col-md-2 col-sm-2 col-xl-1 col-xxl-1 col-2 d-md-none d-xl-block d-xxl-block d-block d-sm-block mover-icono-user">
+                  class="col-md-2 col-sm-2 col-xl-1 col-xxl-1 bg-white col-2 d-md-none d-xl-block d-xxl-block d-block d-sm-block mover-icono-user">
                   <svg type="button" width="28" height="70" viewBox="0 0 21 22" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" clip-rule="evenodd"
@@ -71,7 +72,7 @@
               </ng-container>
               <ng-template #noIdentificado>
                 <div
-                  class="col-md-2 col-sm-2 col-xl-1 col-xxl-1 col-2  d-md-none d-xl-block d-xxl-block d-block d-sm-block mover-icono-user">
+                  class="col-md-2 col-sm-2 col-xl-1 col-xxl-1 bg-white col-2 d-md-none d-xl-block d-xxl-block d-block d-sm-block mover-icono-user">
                   <svg type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRightLogin"
                     aria-controls="offcanvasRightLogin" width="28" height="70" viewBox="0 0 21 22" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
@@ -84,7 +85,7 @@
                   </svg>
                 </div>
                 <div
-                  class="col-md-12 col-sm-8 col-7 col-xl-10 col-xxl-9 text-start responsive-links d-block d-sm-block d-xxl-block d-xl-block d-md-block">
+                  class="col-md-12 col-sm-8 col-7 col-xl-10 col-xxl-10 text-start responsive-links d-block d-sm-block d-xxl-block d-xl-block d-md-block">
                   <a class="nav-link cursor-item mt-auto margin-laptop" data-bs-toggle="offcanvas"
                     data-bs-target="#offcanvasRightLogin" aria-controls="offcanvasRight">
                     Hola, Ingresa <b>Mi cuenta</b>
@@ -95,10 +96,10 @@
             </div>
 
           </li>
-          <li class="navbar-nav mt-xl-1">
+          <li class="navbar-nav mt-xl-1 mt-xxl-0">
             <div class="row">
               <div
-                class="col-md-2 col-sm-2 col-xl-1 col-xxl-1 col-2 mt-3 d-md-none d-xl-block d-xxl-block d-block d-sm-block mover-icono-deseos">
+                class="col-md-2 col-sm-2 col-xl-1 bg-white col-xxl-1 col-2 mt-3 d-md-none d-xl-block d-xxl-block d-block d-sm-block mover-icono-deseos">
                 <svg type="button" (click)="irListaDeseos()" width="29" height="29" viewBox="0 0 29 29" fill="none"
                   xmlns="http://www.w3.org/2000/svg">
                   <path
@@ -107,31 +108,13 @@
                 </svg>
               </div>
               <div
-                class="col-md-12 col-sm-8 col-8 col-xl-9 col-xxl-8 text-start responsive-links-1 d-block d-sm-block d-xxl-block d-xl-block d-md-block">
+                class="col-md-12 col-sm-8 col-8 col-xl-9 col-xxl-9 text-start responsive-links-1 d-block d-sm-block d-xxl-block d-xl-block d-md-block">
                 <a class="nav-link cursor-item" (click)="irListaDeseos();">Lista de <b>Deseos</b></a>
               </div>
             </div>
           </li>
           <li class="navbar-nav">
-            <a class="nav-link cursor-item carrito-items" data-bs-toggle="offcanvas"
-              data-bs-target="#offcanvasRightCarrito" aria-controls="offcanvasRightCarrito"><span>
-                <svg data-bs-toggle="offcanvas" ata-bs-toggle="offcanvas" aria-controls="offcanvasRightCarrito"
-                  data-bs-target="#offcanvasRightCarrito" aria-controls="offcanvasRightCarrito" width="30" height="55"
-                  viewBox="0 0 30 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M2.08856 0.5C1.26013 0.5 0.588562 1.17157 0.588562 2C0.588562 2.82843 1.26013 3.5 2.08856 3.5V0.5ZM5.23498 3.38151L6.66865 2.94038L5.23498 3.38151ZM9.82749 18.3072L8.39382 18.7483L9.82749 18.3072ZM24.3244 18.3929L22.9126 17.8861V17.8861L24.3244 18.3929ZM27.8921 8.45436L29.3039 8.96116L27.8921 8.45436ZM12.9739 3.02696C12.1455 3.02696 11.4739 3.69853 11.4739 4.52696C11.4739 5.35538 12.1455 6.02696 12.9739 6.02696V3.02696ZM2.08856 3.5H3.36447V0.5H2.08856V3.5ZM3.80131 3.82264L8.39382 18.7483L11.2612 17.866L6.66865 2.94038L3.80131 3.82264ZM11.698 21.1887H22.4825V18.1887H11.698V21.1887ZM25.7362 18.8997L29.3039 8.96116L26.4803 7.94756L22.9126 17.8861L25.7362 18.8997ZM25.1291 3.02696H12.9739V6.02696H25.1291V3.02696ZM29.3039 8.96116C30.3413 6.07132 28.1995 3.02696 25.1291 3.02696V6.02696C26.1229 6.02696 26.816 7.01227 26.4803 7.94756L29.3039 8.96116ZM22.4825 21.1887C23.9414 21.1887 25.2433 20.2728 25.7362 18.8997L22.9126 17.8861C22.8475 18.0676 22.6753 18.1887 22.4825 18.1887V21.1887ZM8.39382 18.7483C8.84015 20.1989 10.1803 21.1887 11.698 21.1887V18.1887C11.4974 18.1887 11.3202 18.0578 11.2612 17.866L8.39382 18.7483ZM3.36447 3.5C3.56512 3.5 3.7423 3.63086 3.80131 3.82264L6.66865 2.94038C6.22232 1.48983 4.88213 0.5 3.36447 0.5V3.5Z"
-                    fill="#282828" />
-                  <circle cx="12.0694" cy="24.6852" r="2.31481" fill="#282828" />
-                  <circle cx="22.2546" cy="24.6852" r="2.31481" fill="#282828" />
-                </svg>
-                <span class="position-absolute start-10 mt-2 translate-middle badge rounded-pill color-article">
-                  {{totalCarrito}}
-                </span>
-                <span class="position-absolute bottom-0 mt-2 translate-middle-y">
-                  <b>Carrito</b>
-                </span>
-              </span>
-            </a>
+            <app-carrito-icons></app-carrito-icons>
           </li>
         </ul>
       </div>
@@ -146,11 +129,11 @@
 <!-----------OFF CANVAS DE CARRITO------------->
 <app-carrito-items class="offcanvas offcanvas-end text-white color-canvas" data-bs-scroll="true" tabindex="-1"
   id="offcanvasRightCarrito" aria-labelledby="offcanvasRightCarritoLabel">
-  <ng-content class="text-center"> </ng-content>
 </app-carrito-items>
 
-
 <app-menu2></app-menu2>
+
+<!------PERFIL DE USUARIO OFF CANVAS------>
 <ng-container *ngIf="emailUsuario;">
   <app-menu-users class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRightUsers"
     aria-labelledby="offcanvasRightLabelUsers"></app-menu-users>

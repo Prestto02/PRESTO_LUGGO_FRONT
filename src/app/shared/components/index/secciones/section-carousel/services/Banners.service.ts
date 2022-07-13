@@ -10,7 +10,7 @@ export class BannersServices {
   constructor(private http: HttpClient) {}
 
   //GET BANNERS USERS
-  getBannersUSers(variable: string): Observable<any> {
+  getBannersUSers(variable: string, movil: string): Observable<any> {
     return this.http.get<any>(
       ` ${urlApiAzure.UrlApi}${urlApiAzure.bannersIndex}${variable}`
     );

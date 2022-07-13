@@ -19,22 +19,14 @@ export class MenuComponent implements OnInit {
   id: any;
   constructor(
     private router: Router,
-    private apiForm: CarritoItemsService, //FORMULARIO CATEGORIAS
     private tokenUser: TokenService //TOKEN SERVICES
   ) {}
 
   ngOnInit(): void {
-    this.totalItemsCarrito(); //TOTAL DE ITEMS DEL CARRITO
     this.idUsuario = this.tokenUser.getTokenId(); //OBTENGO EL ID DEL USUARIO
     this.emailUsuario = this.tokenUser.getTokenEmail(); //OBTENGO EL EMAIL DEL USUARIO
   }
-
-  //TOTAL ITEMS CARRITO
-  totalItemsCarrito() {
-    this.apiForm.productsLengthtotal.subscribe((res) => {
-      this.totalCarrito = res;
-    });
-  }
+  //MENU INDEX
   menuIndex() {
     this.router.navigateByUrl(`${UrlFront.Menu.menu}/${UrlFront.Menu.index}`);
   }

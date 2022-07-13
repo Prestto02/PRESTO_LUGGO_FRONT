@@ -26,7 +26,7 @@ export class PagarOCarritoPost {
     const element = <HTMLElement>document.querySelector('#modal-body-server');
     element.insertAdjacentHTML(
       'beforeend',
-      `<iframe srcdoc='${res.data}' style="height: 500px;" height='500px' width='100%' id='iframeServer'></iframe>`
+      `<iframe srcdoc="${res.data}" style="height: 500px;" height='500px' width='100%' id='iframeServer'></iframe>`
     );
     this.estilosIframe();
   }

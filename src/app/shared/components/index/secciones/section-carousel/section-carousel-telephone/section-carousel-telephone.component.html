@@ -1,0 +1,17 @@
+<div class="carousel-container">
+  <div id="carouselExampleSlidesOnly" class="carousel slide w-100" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div [class]="i===1?'carousel-item  active':'carousel-item'" *ngFor="let carousel of listCarouse; let i = index;">
+        <img [src]="carousel.img" class="d-block w-100" [alt]="carousel.id">
+      </div>
+    </div>
+  </div>
+  <div class="list-items-absolute">
+    <div class="card-items" *ngFor="let list of listCard">
+      <div class="img-overlay">
+        <img class="img-cards" [src]="list.img" alt="img1" />
+        <p class="text-img">{{list.text}}</p>
+      </div>
+    </div>
+  </div>
+</div>

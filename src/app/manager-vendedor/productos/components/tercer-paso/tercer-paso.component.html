@@ -13,9 +13,10 @@
       <ul class="nav">
         <li class="nav-item" *ngFor="let pasoTres of arrayTercerPaso;">
           <a class="{{pasoTres.disabled?'nav-link active text-dark':'nav-link text-dark'}}" aria-current="page"
-            (click)="ocultarSecciones(pasoTres.id);">{{pasoTres.nombre}}</a>
+            (click)="ocultarSecciones(pasoTres.id);">{{pasoTres.nombre}} </a>
         </li>
       </ul>
+      <hr>
     </div>
     <!------CONFIGURACION DE LOS ATRIBUTOS DE LOS PRODUCTOS-------->
     <app-configuracion-atributos class="row" [hidden]="arrayTercerPaso[1].disabled"></app-configuracion-atributos>

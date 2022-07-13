@@ -38,7 +38,7 @@
           <div class="col-xxl-4 col-xl-4 col-md-4 col-sm-12 col-12 mb-3 position-relative">
             <div class="row">
               <!-----MENSAJES DE AYUDA------>
-              <app-mensajes-ayuda [class]="'col-xxl-3 col-xl-3'" [Label]="'Color'"
+              <app-mensajes-ayuda [class]="'col-xxl-3 col-xl-3'" [Label]="'Color *'"
                 [mensaje]="'Puedes escoger uno o varios colores para el producto.'"></app-mensajes-ayuda>
             </div>
             <ng-container formGroupName="Color_articulo">
@@ -81,7 +81,7 @@
             <div class="col-xxl-4 col-xl-4 col-md-4 col-sm-12 col-12 mb-3 position-relative">
               <div class="row">
                 <!-----MENSAJES DE AYUDA------>
-                <app-mensajes-ayuda [class]="'col-xxl-6 col-xl-6'" [Label]="'Material'"
+                <app-mensajes-ayuda [class]="'col-xxl-6 col-xl-6'" [Label]="'Material *'"
                   [mensaje]="'Describe el material que mas se acople a tu producto.'"></app-mensajes-ayuda>
                 <div class="col-xxl-9 col-xl-9">
                   <textarea type="text" class="form-control" formControlName="nombre_material"
@@ -100,7 +100,7 @@
           <!----ESTADO---->
           <div class="col-xxl-4 col-xl-4 col-md-4 col-sm-12 col-12 mb-3 position-relative">
             <div class="row">
-              <app-mensajes-ayuda [class]="'col-xxl-3 col-xl-4'" [Label]="'Estado'"
+              <app-mensajes-ayuda [class]="'col-xxl-3 col-xl-4'" [Label]="'Estado *'"
                 [mensaje]="'Escoja el estado del producto si se encuentra usado, usado como nuevo, usado semi nuevo, etc.'">
               </app-mensajes-ayuda>
             </div>
@@ -108,7 +108,7 @@
               <select class="form-select w-xxl-50 w-xl-50 w-100 w-sm-100 w-md-100" aria-label="Default select example"
                 formControlName="estado_producto"
                 [class.is-invalid]="formB.formAtributos.get('estado_producto')?.touched && formB.formAtributos.get('estado_producto')?.invalid">
-                <option selected value="">Seleccion</option>
+                <option selected value="">Seleccióne</option>
                 <option value="0">Nuevo</option>
                 <option value="1">Reparado</option>
                 <option value="2">Usado</option>
@@ -123,7 +123,7 @@
           <ng-container formGroupName="Peso">
             <div class="col-xxl-4 col-xl-4 col-md-4 col-sm-12 col-12 mb-3 position-relative">
               <div class="row">
-                <app-mensajes-ayuda [class]="'col-xxl-3 col-xl-4'" [Label]="'Peso'"
+                <app-mensajes-ayuda [class]="'col-xxl-3 col-xl-4'" [Label]="'Peso *'"
                   [mensaje]="'Puedes poner el peso a tu eleccion nosotros la transformamos por ti.'">
                 </app-mensajes-ayuda>
               </div>
@@ -152,7 +152,7 @@
           <!---MODELO---->
           <div class="col-xxl-4 col-xl-4 col-md-4 col-sm-12 col-12 mb-2 position-relative">
             <div class="row">
-              <app-mensajes-ayuda [class]="'col-xl-4 col-xxl-4 '" [Label]="'Modelo'"
+              <app-mensajes-ayuda [class]="'col-xl-4 col-xxl-4 '" [Label]="'Modelo *'"
                 [mensaje]="'Escoja el estado del producto si se encuentra usado, usado como nuevo, usado semi nuevo, etc.'">
               </app-mensajes-ayuda>
             </div>
@@ -169,7 +169,7 @@
           <ng-container formGroupName="Tamaño_articulo">
             <div class="col-xxl-4 col-xl-4 col-md-4 col-sm-12 col-12 mb-2 position-relative">
               <div class="row">
-                <app-mensajes-ayuda [class]="'col-xxl-6 col-xl-6'" [Label]="'Dimensiones'"
+                <app-mensajes-ayuda [class]="'col-xxl-6 col-xl-6'" [Label]="'Dimensiones *'"
                   [mensaje]="'Apoyate con una regla para especificar las dimensiones del producto.'">
                 </app-mensajes-ayuda>
               </div>

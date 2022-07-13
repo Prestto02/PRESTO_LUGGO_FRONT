@@ -11,6 +11,9 @@
   aria-labelledby="offcanvasExampleLabel" data-bs-scroll="true">
   <div class="offcanvas-body sidenav-card">
     <div class="row text-white " id="offcanvasLabel">
+      <div class="position-button">
+        <button type="button" class="btn-close btn-close-white text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
       <!-----CABEZERA Y VERIFICO SI EL USUARIO ESTA LOGGEADO---->
       <ng-container *ngIf="correoUsuario; else notIdentify">
         <div class="col-md-1 col-xl-1 col-xxl-1 col-1 col-sm-1 mt-2">

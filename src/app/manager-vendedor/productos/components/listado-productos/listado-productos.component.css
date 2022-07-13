@@ -33,3 +33,8 @@
   height: 75px;
   overflow: auto;
 }
+
+.position-fixed {
+  position: fixed;
+  top: 90px;
+}

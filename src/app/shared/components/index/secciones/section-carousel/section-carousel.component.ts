@@ -39,11 +39,13 @@ export class SectionCarouselComponent implements OnInit {
   //GET BANNERS OF USERS
   getBannersOfUser() {
     //LOGEADO NO LOGEADO
-    this.idUser ? this.getBanner('isSingIn=true') : this.getBanner('false');
+    this.idUser
+      ? this.getBanner('isSingIn=true', 'movil=false')
+      : this.getBanner('false', 'movil=false');
   }
   //BANNERS PARA LOS USUARIOS SEGUN LOGEADO
-  getBanner(variable: string) {
-    this.bannerServi.getBannersUSers(variable).subscribe((res: any) => {
+  getBanner(variable: string, movil: string) {
+    this.bannerServi.getBannersUSers(variable, movil).subscribe((res: any) => {
       this.arrayCarouselImg = res;
     });
   }

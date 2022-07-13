@@ -31,8 +31,8 @@
                   fill="#AAAAAA" />
               </svg>
               <input type="file" class="form-control position-absolute top-0 h-100 w-100" id="formFile"
-                title="Sube la imágen de tu producto" alife-file-to-base64 (onFileChanged)="getArchive($event)"
-                (change)="getImage($event);" required>
+                title="Sube la imágen de tu producto en formato JPG, PNG, JPEG" alife-file-to-base64
+                (onFileChanged)="getArchive($event)" (change)="getImage($event);" required>
             </div>
             <!-------Formulario--------->
             <div class="col-xl-6 col-xxl-6 col-sm-5 col-12 col-md-8 mx-xxl-3 mx-xl-5">
@@ -44,8 +44,8 @@
                     <div class="form-floating ">
                       <input type="text" class="form-control is-invalid" formControlName="sku" id="floatingSku"
                         [class.is-invalid]="formB.formProducts.get('sku')?.invalid" placeholder="Código"
-                        title="Puedes escribir el código del producto">
-                      <label for="floatingSku">Código</label>
+                        title="Puedes escribir el código o no del producto ej: ABC-1234">
+                      <label for="floatingSku">Código *</label>
                       <app-form-errors-container [forControl]="formB.formProducts.get('sku')">
                         <app-message-error forErrorCode="pattern"
                           customMsg="No se admiten caracteres especiales: </>||¿¿''">
@@ -60,7 +60,7 @@
                         id="floatingNombre"
                         [class.is-invalid]="formB.formProducts.get('nombre_articulo')?.touched && formB.formProducts.get('nombre_articulo')?.invalid"
                         placeholder="Nombre del producto" title="Escribe el nombre de tu producto">
-                      <label for="floatingNombre">Nombre
+                      <label for="floatingNombre">Nombre *
                       </label>
                       <div class="position-absolute bg-white w-100 zIndex list-group" *ngIf="touched">
                         <button type="button" *ngFor="let nameProduct of searchProductName"
@@ -84,9 +84,9 @@
                     (click)="touched=false;">
                     <div class="form-floating">
                       <input type="text" formControlName="marca" class="form-control" id="floatingMarca"
-                        placeholder="Nike" (keyup)="onKeyPres($event);" title="Escoja o busque la marca del producto"
+                        placeholder="Nike" (keyup)="onKeyPres($event);" title="Escoja o escriba la marca del producto"
                         [class.is-invalid]="formB.formProducts.get('marca')?.touched && formB.formProducts.get('marca')?.invalid" />
-                      <label for="floatingMarca">Marca</label>
+                      <label for="floatingMarca">Marca *</label>
                     </div>
                     <div class="list-group mb-3 position-absolute border-truncate" [hidden]="ocultar">
                       <button type="button" class="list-group-item list-group-item-action"
@@ -115,7 +115,7 @@
                         [class.is-invalid]="formB.formProducts.get('descripcion_articulo')?.touched && formB.formProducts.get('descripcion_articulo')?.invalid"
                         placeholder="Detalle del producto" style="height: 100px"
                         title="Describe el producto "></textarea>
-                      <label for="floatingDetalle">Descripción</label>
+                      <label for="floatingDetalle">Descripción *</label>
                       <app-form-errors-container [forControl]="formB.formProducts.get('descripcion_articulo')">
                         <app-message-error forErrorCode="required"></app-message-error>
                         <app-message-error forErrorCode="minlength" customMsg="Debe tener al menos 12 caracteres">
@@ -150,7 +150,7 @@
                         <option value="Apto para todo público">Apto para todo público</option>
                         <option value="Sólo para mayores de 18 años">Sólo para mayores de 18 años</option>
                       </select>
-                      <label for="forRestricciones">Restricciones</label>
+                      <label for="forRestricciones">Restricciones *</label>
                     </div>
                     <app-form-errors-container [forControl]="formB.formProducts.get('Restricciones')">
                       <app-message-error forErrorCode="required"></app-message-error>
@@ -166,7 +166,7 @@
                         <option value="1">Inmediata</option>
                         <option value="2">Bajo pedido</option>
                       </select>
-                      <label for="forDisponibilidad">Disponibilidad</label>
+                      <label for="forDisponibilidad">Disponibilidad *</label>
                     </div>
                     <app-form-errors-container [forControl]="formB.formProducts.get('Disponibilidad')">
                       <app-message-error forErrorCode="required"></app-message-error>
@@ -185,7 +185,7 @@
                         <option value="Si">Si</option>
                         <option value="No">No</option>
                       </select>
-                      <label for="forDisponibilidad">Garantía</label>
+                      <label for="forDisponibilidad">Garantía *</label>
                     </div>
                     <app-form-errors-container [forControl]="formB.formProducts.get('Garantia')">
                       <app-message-error forErrorCode="required"></app-message-error>
@@ -205,7 +205,8 @@
                 </div>
               </form>
             </div>
-            <div class=" modal-footer bg-white fixed-bottom">
+            <!-- modal-footer bg-white fixed-bottom -->
+            <div class=" ">
               <button type="button" class="btn btn-secondary" (click)="irProducto();">Cancelar</button>
               <button class="btn btn-dark collapsed" type="button" data-bs-toggle="collapse"
                 data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo"
@@ -239,7 +240,7 @@
     </div>
   </div>
 </section>
-<!-- <button class="btn btn-primary collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+<button class="btn btn-primary collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo"
   aria-expanded="true" aria-controls="collapseTwo" (click)="addAtributos()">TWO</button>
 <button class="btn btn-primary collapsed" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false"
-  aria-controls="collapseFour" (click)="addAtributos()">THREE</button> -->
+  aria-controls="collapseFour" (click)="addAtributos()">THREE</button>

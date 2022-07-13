@@ -19,3 +19,10 @@
 .cursor {
   cursor: pointer;
 }
+
+.position-button {
+  position: absolute;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: flex-start;
+}

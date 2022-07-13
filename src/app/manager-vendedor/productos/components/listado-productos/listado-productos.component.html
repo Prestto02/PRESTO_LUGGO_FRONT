@@ -1,5 +1,5 @@
 <div class="container-fluid">
-  <div class="row mt-4">
+  <div class="row mt-4 ">
     <div class="col-xl-5 col-xxl-5 col-md-3 col-sm-12 col-12 mt-3">
       <h5>Listado de productos</h5>
     </div>
@@ -81,12 +81,12 @@
         <tbody>
           <ng-container *ngIf="dataProducts && dataProducts.length>0; else notData">
             <tr
-              *ngFor="let product of dataProducts | orderBy:key:reverse | filtroPaginacion:searchProducts | paginate: {itemsPerPage:6,currentPage:p}">
+              *ngFor="let product of dataProducts | orderBy:key:reverse | filtroPaginacion:searchProducts | paginate: {itemsPerPage:5,currentPage:p}">
               <td class="mx-auto"><img loading="lazy" src="{{urlImg}}{{product.imagen}}" alt="product" width="77px"
                   height="66px" class="img-fluid"></td>
               <td>{{product.codigo}}</td>
               <td>{{product.name}}</td>
-              <td>{{product.precio}}</td>
+              <td>{{product.precio | currency:'USD'}}</td>
               <td>{{product.stock}}</td>
               <td>
                 <ul class="heigth-categoria">
