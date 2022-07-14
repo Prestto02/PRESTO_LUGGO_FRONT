@@ -1,4 +1,4 @@
-<div class="container-fluid bg-white text-center mt-3 mb-3">
+<div class="container-fluid bg-white text-center mt-3 mb-3 border-bottom">
   <div class="row">
     <svg width="104" height="63" viewBox="0 0 211 63" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path
@@ -32,7 +32,7 @@
   </div>
 </div>
 
-<div class="container-telephone ">
+<div class="container-telephone">
   <div class="items-list" *ngFor="let list of listItems; let i = index">
     <p (click)="irAlLink(list.link);" [attr.data-bs-toggle]="list.data_bs_toggle"
       [attr.data-bs-target]="list.data_bs_target" [attr.aria-controls]="list.aria_controls">
