@@ -7,6 +7,7 @@ import { DetallesPedidosComponent } from '../lista-pedidos/detalles-pedidos/deta
 import { ListaPedidosComponent } from '../lista-pedidos/lista-pedidos.component';
 import { ManagerVendedorComponent } from '../manager-vendedor.component';
 import { CreateProductsComponent } from '../productos/components/create-products/create-products.component';
+import { EditProductComponent } from '../productos/components/edit-product/edit-product.component';
 import { ProductsComponent } from '../productos/components/products.component';
 
 const routes: Routes = [
@@ -27,6 +28,12 @@ const routes: Routes = [
         path: `${UrlFront.Manager.vendedor}/${UrlFront.Manager.crearProducto}`,
         canActivate: [VendedorGuard],
         component: CreateProductsComponent,
+      },
+      //EDITAR PRODUCTO
+      {
+        path: `${UrlFront.Manager.vendedor}/${UrlFront.Manager.editarProduct}`,
+        canActivate: [VendedorGuard],
+        component: EditProductComponent,
       },
       {
         path: `${UrlFront.Manager.vendedor}/${UrlFront.Manager.dashborad}`,

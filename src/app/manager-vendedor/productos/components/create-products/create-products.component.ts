@@ -18,7 +18,7 @@ import { SearchProductsService } from '../../services/searchProducts.service';
   styleUrls: ['./create-products.component.css'],
 })
 export class CreateProductsComponent implements OnInit {
-  public ruta: any = `${UrlFront.Manager.vendedor}/${UrlFront.Manager.listadoProductos}`;
+  ruta: string = `${UrlFront.Manager.vendedor}/${UrlFront.Manager.listadoProductos}`;
   activar = false;
   categoriasItems: any;
   marcaItems: any = [];

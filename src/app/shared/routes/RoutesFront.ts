@@ -102,6 +102,8 @@ export const UrlFront = {
     detalleListPedidosGet: 'detalle-pedidos',
     detalleListPedidos: 'detalle-pedidos/:id',
     dashborad: 'dashboard',
+    editarProductGet: 'editar-producto',
+    editarProduct: 'editar-producto/:id',
   },
   //LISTA DE PEDIDOS
   listaPedidos: {

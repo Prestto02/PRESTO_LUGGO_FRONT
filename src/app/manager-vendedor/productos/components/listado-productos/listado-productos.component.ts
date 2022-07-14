@@ -45,7 +45,9 @@ export class ListadoProductosComponent implements OnInit {
   }
   //EDITAR PRODUCTOS
   editarProduct(product: any) {
-    console.log(product);
+    this._router.navigateByUrl(
+      `${UrlFront.Manager.managerVendedor}/${UrlFront.Manager.vendedor}/${UrlFront.Manager.editarProductGet}/${product}`
+    );
   }
   //BUSCAR PRODUCTOS
   onSearchProduct(search: any) {

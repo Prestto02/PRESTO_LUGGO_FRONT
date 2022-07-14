@@ -52,6 +52,9 @@ span {
 a{
   font-size: 14.3px;
 }
+.margin-responsive-login{
+  margin-top: 0px;
+}
 /* RESPONSIVE EL AUTOCOMPLETADO */
 @media screen and (min-width: 300px) and (max-width: 461px) {
   .responsive-autocomplete {
