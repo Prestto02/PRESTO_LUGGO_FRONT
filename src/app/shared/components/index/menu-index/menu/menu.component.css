@@ -49,7 +49,9 @@ span {
 .offcanvas-end {
   background-color: #222224f0;
 }
-
+a{
+  font-size: 14.3px;
+}
 /* RESPONSIVE EL AUTOCOMPLETADO */
 @media screen and (min-width: 300px) and (max-width: 461px) {
   .responsive-autocomplete {
@@ -142,6 +144,7 @@ span {
   .margin-responsive {
     margin-top: 0px;
   }
+
 }
 
 @media screen and (min-width: 1475px) and (max-width: 1560px) {

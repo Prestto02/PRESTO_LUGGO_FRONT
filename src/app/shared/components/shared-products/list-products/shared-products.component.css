@@ -71,11 +71,12 @@
 }
 .nombre-tienda {
   position: absolute;
-  margin-top: 5px;
+  margin-top: 9px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   max-width: 108px;
+  font-size: 13px;
 }
 .text {
   font-weight: 600;
