@@ -46,21 +46,17 @@
   min-width: 40%;
   border: 1px solid #fff;
   border-radius: 6px;
+  background-color: white;
   margin-left: 7px;
 }
 .img-cards {
   width: 100%;
-  min-height: 174px;
-  mix-blend-mode: multiply !important;
   border-radius: 6px;
+  background: linear-gradient(180deg, #43434300 29.85%, #1e1e1e) !important;
+  mix-blend-mode: multiply !important;
 }
 .img-overlay {
   position: relative;
-  background: linear-gradient(
-    180deg,
-    rgba(67, 67, 67, 0) 29.85%,
-    #1e1e1e 100%
-  ) !important;
   width: 100%;
   height: auto;
   display: flex;
@@ -72,7 +68,7 @@
 .text-img {
   position: absolute;
   z-index: 9;
-  font-size: 15px;
+  font-size: 13px;
   color: #fff;
 }
 

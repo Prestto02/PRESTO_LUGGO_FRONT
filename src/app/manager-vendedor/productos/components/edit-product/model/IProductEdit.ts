@@ -1,20 +1,25 @@
 //SECCION 1 DE LA EDICION DEL PRODUCTO
 export interface IProductEdit {
-  id_artic: number;
+  multimedia: img;
+  id_product: number;
   sku: string;
   marca: string;
-  descripcion: string;
-  img: string;
+  nombre_articulo: string;
+  descripcion_articulo: string;
   ArticuloTieneCategorias: [Categorias];
-  Etiquetas: [Etiquetas];
+  etiqueta: [Etiquetas];
   Restricciones: string;
   Disponibilidad: string;
   Garantia: string;
-  Condiciones_Garantia: String;
+  Tipo_Garantia: string;
 }
-
+interface img {
+  archivo: string;
+}
 interface Categorias {
   id_categoria_articulo: number;
 }
 
-interface Etiquetas {}
+interface Etiquetas {
+  nombre: string;
+}

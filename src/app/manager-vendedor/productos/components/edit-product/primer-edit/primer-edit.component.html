@@ -1,0 +1,145 @@
+<div class="mt-5 p-4">
+  <form [formGroup]="formB.formEditProducts">
+    <div class="row">
+      <div class="col-xxl-4 col-xl-4 col-md-4 col-sm-12 col-12 border">
+        <img loading="lazy" *ngIf="imgProducts!=''" [src]="imgProducts" class="img-fluid border border-1"
+          alt="Imágen del producto" width="450px" height="450px">
+        <svg *ngIf="imgProducts==''" width="450" height="500" viewBox="0 0 250 250" fill="none"
+          xmlns="http://www.w3.org/2000/svg" class="img-fluid">
+          <rect width="350" height="350" fill="#F3F3F3" />
+          <path
+            d="M159.436 115.161C158.132 115.161 156.88 115.679 155.958 116.602C155.035 117.524 154.517 118.775 154.517 120.08V136.706L147.237 129.426C144.667 126.876 141.192 125.445 137.571 125.445C133.95 125.445 130.476 126.876 127.905 129.426L124.462 132.918L112.263 120.67C109.693 118.12 106.218 116.689 102.597 116.689C98.9763 116.689 95.5021 118.12 92.9315 120.67L85.6514 127.999V100.404C85.6514 99.0994 86.1697 97.8482 87.0922 96.9257C88.0147 96.0033 89.2658 95.485 90.5704 95.485H129.922C131.227 95.485 132.478 94.9668 133.401 94.0443C134.323 93.1218 134.841 91.8706 134.841 90.566C134.841 89.2614 134.323 88.0103 133.401 87.0878C132.478 86.1653 131.227 85.647 129.922 85.647H90.5704C86.6566 85.647 82.9031 87.2018 80.1357 89.9693C77.3682 92.7367 75.8135 96.4902 75.8135 100.404V160.514C75.8264 164.137 77.2713 167.607 79.833 170.169C82.3948 172.731 85.8655 174.176 89.4882 174.189H150.68C152.013 174.178 153.338 173.979 154.616 173.598C157.456 172.802 159.957 171.095 161.734 168.74C163.511 166.386 164.466 163.513 164.454 160.563V120.08C164.454 119.426 164.323 118.778 164.07 118.174C163.817 117.571 163.445 117.024 162.978 116.566C162.511 116.108 161.957 115.748 161.349 115.507C160.741 115.265 160.09 115.148 159.436 115.161ZM90.5704 164.351C89.2658 164.351 88.0147 163.832 87.0922 162.91C86.1697 161.988 85.6514 160.736 85.6514 159.432V141.871L99.8673 127.655C100.586 126.94 101.559 126.539 102.573 126.539C103.587 126.539 104.559 126.94 105.278 127.655L142.023 164.351H90.5704ZM154.517 159.432C154.486 160.384 154.178 161.307 153.632 162.088L131.398 139.756L134.89 136.313C135.243 135.953 135.664 135.667 136.129 135.471C136.593 135.276 137.092 135.176 137.596 135.176C138.1 135.176 138.599 135.276 139.063 135.471C139.528 135.667 139.949 135.953 140.301 136.313L154.517 150.627V159.432ZM169.274 85.647H164.355V80.7281C164.355 79.4235 163.837 78.1723 162.914 77.2498C161.992 76.3273 160.741 75.8091 159.436 75.8091C158.132 75.8091 156.88 76.3273 155.958 77.2498C155.035 78.1723 154.517 79.4235 154.517 80.7281V85.647H149.598C148.294 85.647 147.042 86.1653 146.12 87.0878C145.197 88.0103 144.679 89.2614 144.679 90.566C144.679 91.8706 145.197 93.1218 146.12 94.0443C147.042 94.9668 148.294 95.485 149.598 95.485H154.517V100.404C154.517 101.709 155.035 102.96 155.958 103.882C156.88 104.805 158.132 105.323 159.436 105.323C160.741 105.323 161.992 104.805 162.914 103.882C163.837 102.96 164.355 101.709 164.355 100.404V95.485H169.274C170.579 95.485 171.83 94.9668 172.752 94.0443C173.675 93.1218 174.193 91.8706 174.193 90.566C174.193 89.2614 173.675 88.0103 172.752 87.0878C171.83 86.1653 170.579 85.647 169.274 85.647Z"
+            fill="#AAAAAA" />
+        </svg>
+        <input type="file" class="form-control position-absolute" id="formFile"
+          title="Sube la imágen de tu producto en formato JPG, PNG, JPEG" alife-file-to-base64
+          (onFileChanged)="getArchive($event)" (change)="getImage($event);" required>
+      </div>
+      <div class="col-xxl-8 col-xl-8 col-md-8 col-sm-12 col-12">
+        <div class="row">
+          <!------NOMBRE, MARCA, TIPO PRODUCTO----->
+          <div class="col-xl-3 mb-3 col-xxl-3 col-md-3 col-sm-12 col-4">
+            <div class="form-floating ">
+              <input type="text" class="form-control" formControlName="sku" id="floatingSku" placeholder="Código"
+                title="Puedes escribir el código o no del producto ej: ABC-1234" [attr.disabled]="true">
+              <label for="floatingSku">Código *</label>
+            </div>
+          </div>
+          <!-----BUSCAR NOMBRE DEL PRODUCTO----->
+          <div class="col-xl-6 mb-3 col-xxl-6 col-md-6 col-sm-12 col-8">
+            <div class="form-floating position-relative">
+              <input type="text" class="form-control" formControlName="nombre_articulo" id="floatingNombre"
+                placeholder="Nombre del producto" title="Escribe el nombre de tu producto" [attr.disabled]="true">
+              <label for="floatingNombre">Nombre *
+              </label>
+            </div>
+          </div>
+          <!------MARCA--------->
+          <div class="col-xl-3 mb-3 col-xxl-3 col-md-3 col-sm-12 col-12">
+            <div class="form-floating">
+              <input type="text" formControlName="marca" class="form-control" id="floatingMarca" placeholder="Nike"
+                [attr.disabled]="true" />
+              <label for="floatingMarca">Marca *</label>
+            </div>
+          </div>
+        </div>
+        <!-------DESCRIPCION--------->
+        <div class="row mb-3">
+          <div class="form-floating">
+            <textarea class="form-control is-invalid" id="floatingDetalle" formControlName="descripcion_articulo"
+              [class.is-invalid]="formB.formEditProducts.get('descripcion_articulo')?.touched && formB.formEditProducts.get('descripcion_articulo')?.invalid"
+              placeholder="Detalle del producto" style="height: 100px" title="Describe el producto "></textarea>
+            <label for="floatingDetalle">Descripción *</label>
+            <app-form-errors-container [forControl]="formB.formEditProducts.get('descripcion_articulo')">
+              <app-message-error forErrorCode="required"></app-message-error>
+              <app-message-error forErrorCode="minlength" customMsg="Debe tener al menos 12 caracteres">
+              </app-message-error>
+              <app-message-error forErrorCode="maxlength" customMsg="Debe ser máximo 200 caracteres">
+              </app-message-error>
+              <app-message-error forErrorCode="pattern" customMsg="No se admiten caracteres especiales">
+              </app-message-error>
+            </app-form-errors-container>
+          </div>
+        </div>
+        <!----CATEGORIAS Y ETIQUETAS-->
+        <div class="row mb-3">
+          <!-------APP CATEGORIAS-------->
+          <div class="col-xl-6 col-sm-12 col-md-6 col-xxl-6 col-12 mb-sm-3 mb-3">
+            <app-categorias></app-categorias>
+          </div>
+          <!----------FORM ETIQUETAS----------->
+          <div class="col-xl-6 col-sm-12 col-md-6 col-xxl-6 col-12 position-relative">
+            <app-form-etiquetas></app-form-etiquetas>
+          </div>
+        </div>
+        <!-------RESTRICCIONES Y DISPONIBILIDAD------->
+        <div class="row">
+          <!-------RESTRICCIONES-------->
+          <div class="col-xl-6 col-sm-12 col-md-6 col-xxl-6 col-6">
+            <div class="form-floating mb-3">
+              <select id="forRestricciones" class="form-select" formControlName="Restricciones"
+                title="Selecciona las restricciones del producto"
+                [class.is-invalid]="formB.formEditProducts.get('Restricciones')?.touched && formB.formEditProducts.get('Restricciones')?.invalid">
+                <option value="" selected>Seleccionar</option>
+                <option value="Apto para todo público">Apto para todo público</option>
+                <option value="Sólo para mayores de 18 años">Sólo para mayores de 18 años</option>
+              </select>
+              <label for="forRestricciones">Restricciones *</label>
+            </div>
+            <app-form-errors-container [forControl]="formB.formEditProducts.get('Restricciones')">
+              <app-message-error forErrorCode="required"></app-message-error>
+            </app-form-errors-container>
+          </div>
+          <!----------DISPONIBILIDAD----------->
+          <div class="col-xl-6 col-sm-12 col-md-6 col-xxl-6 col-6 position-relative">
+            <div class="form-floating mb-3">
+              <select id="forDisponibilidad" class="form-select" formControlName="Disponibilidad"
+                title="Busque que tipo de disponibilidad tiene su producto"
+                [class.is-invalid]="formB.formEditProducts.get('Disponibilidad')?.touched && formB.formEditProducts.get('Disponibilidad')?.invalid">
+                <option value="" selected>Seleccionar</option>
+                <option value="1">Inmediata</option>
+                <option value="2">Bajo pedido</option>
+              </select>
+              <label for="forDisponibilidad">Disponibilidad *</label>
+            </div>
+            <app-form-errors-container [forControl]="formB.formEditProducts.get('Disponibilidad')">
+              <app-message-error forErrorCode="required"></app-message-error>
+            </app-form-errors-container>
+          </div>
+        </div>
+        <!-------GARANTIA----->
+        <div class="row">
+          <!-------APP CATEGORIAS-------->
+          <div class="col-xl-6 col-sm-12 col-md-6 col-xxl-6 col-5">
+            <div class="form-floating mb-3">
+              <select id="forDisponibilidad" class="form-select" formControlName="Garantia"
+                (change)="selectGarantia($event)" title="Seleccione si el producto ofrece una garantia"
+                [class.is-invalid]="formB.formEditProducts.get('Garantia')?.touched && formB.formEditProducts.get('Garantia')?.invalid">
+                <option value="" selected>Seleccionar</option>
+                <option value="Si">Si</option>
+                <option value="No">No</option>
+              </select>
+              <label for="forDisponibilidad">Garantía *</label>
+            </div>
+            <app-form-errors-container [forControl]="formB.formEditProducts.get('Garantia')">
+              <app-message-error forErrorCode="required"></app-message-error>
+            </app-form-errors-container>
+          </div>
+          <!----------FORM ETIQUETAS----------->
+          <ng-container *ngIf="ActiveGarantia">
+            <div class="col-xl-6 col-sm-12 col-md-6 col-xxl-6 col-7 position-relative">
+              <div class="form-floating">
+                <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"
+                  placeholder="Describa sus garantías" formControlName="Tipo_Garantia"
+                  title="Describe las garantias que tiene el producto"></textarea>
+                <label for="floatingTextarea">Condiciones de Garantías</label>
+              </div>
+            </div>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+
+{{formB.formEditProducts.value |json}}

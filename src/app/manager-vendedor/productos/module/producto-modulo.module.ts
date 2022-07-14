@@ -28,7 +28,10 @@ import { BaseFormGlobalPrecio } from '../components/configuracion-producto/confi
 import { ConfiguracionProductosTerceraComponent } from '../components/configuracion-productos-tercera/configuracion-productos-tercera.component';
 import { BaseFormAtributosConfig } from '../components/configuracion-productos-tercera/models/BaseFormAtrtibutos';
 import { BaseFormConfigAtributos2 } from '../components/configuracion-producto/configuracion-atributos/models/BaseFormConfigAtributos2';
-import { ProviderEditProduct } from '../components/edit-product/module/edit-product.module';
+import {
+  DeclarationEditProduct,
+  ProviderEditProduct,
+} from '../components/edit-product/module/edit-product.module';
 
 export const ProductoModuleDeclarations = [
   ProductsComponent, //INDEX PRODUCTOS
@@ -47,7 +50,7 @@ export const ProductoModuleDeclarations = [
   FilterMarcaPipe, //FILTER PIPE DE MARCAS
   TercerPasoComponent, //TERCER PASO DEL PRODUCTO
   ConfiguracionProductosTerceraComponent,
-  ProviderEditProduct, //EDITAR LOS PRODUCTOS
+  DeclarationEditProduct, //EDITAR LOS PRODUCTOS
 ];
 export const ProductModuleImport = [
   GMapModule, //MODULE MAP
@@ -69,4 +72,5 @@ export const ProductoModuleProviders = [
   ListadoProductosComponent,
   BaseFormConfigAtributos2, //OPCIONAL ATRIBUTOS 2 PARTE
   BaseFormAtributosConfig, //ATRIBUTOS CONFIGURACION
+  ProviderEditProduct, //BASE FORM EDIT PRODUCT
 ];

@@ -3,8 +3,12 @@
 <app-adn-cerrar-sesion></app-adn-cerrar-sesion>
 <app-seccion-adn [NombreUbicacion]="'Editar Productos'" [ruta]="ruta"></app-seccion-adn>
 
-<section>
-  <p>edit-product works!</p>
+<app-progress-edit [progressArray]="arrayProgress" [widthBarra]="50"></app-progress-edit>
+
+
+<section class="container mt-4 card bg-white rounded">
+  <app-primer-edit [hidden]="arrayProgress[0].disabled"></app-primer-edit>
+  <app-segundo-edit [hidden]="arrayProgress[1].disabled"></app-segundo-edit>
 </section>
 
 

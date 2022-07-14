@@ -118,3 +118,31 @@
   }
 }
 
+@media screen and (max-width: 880px) {
+  .title-h1 {
+    font-size: 20px;
+  }
+  .svg-responsive {
+    width: 127px;
+    position: relative;
+    margin-left: -116px;
+    margin-top: -36px;
+  }
+  .nombre-tienda {
+    font-size: 11px;
+    max-width: 54px;
+
+  }
+  .responsive-icons-cell{
+    display: flex;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .responsive-cell-fold {
+    width: 100%;
+  }
+  .responsive-icons-cell{
+    display: flex;
+  }
+}

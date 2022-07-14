@@ -4,7 +4,7 @@
   -webkit-border-radius: 16px 16px 16px 16px;
   border: 0px solid #000000;
 }
-*{
+* {
   font-family: Cardium B-Medium;
 }
 .btn-color {
@@ -13,7 +13,7 @@
   color: #fff;
   font-size: 14px;
 }
-.btn{
+.btn {
   font-size: 14px;
 }
 .cardium-b {
@@ -44,8 +44,8 @@
 .text-adn {
   color: #ea2313;
 }
-.btn-dark{
-  background-color: #3F3F3F;
+.btn-dark {
+  background-color: #3f3f3f;
 }
 
 /* If the screen size is 601px wide or more, set the font-size of <div> to 80px */
@@ -53,20 +53,17 @@
   .text-footer {
     color: #007bff;
     font-size: 12px;
-    font-family: Cardium B-Medium;
   }
   .text-categorias {
-    font-family: Cardium B-Medium;
     font-size: 12px;
     color: #000;
   }
   .tltle-cards {
-    font-family: Cardium B-Bold;
     font-size: 18px;
   }
   .btn-color {
     background: #007bff;
-    font-family: Cardium B-Medium;
+
     color: #fff;
     font-size: 12.2px;
   }
@@ -75,20 +72,17 @@
   .text-footer {
     color: #007bff;
     font-size: 12px;
-    font-family: Cardium B-Medium;
   }
   .text-categorias {
-    font-family: Cardium B-Medium;
     font-size: 12px;
     color: #000;
   }
   .tltle-cards {
-    font-family: Cardium B-Bold;
     font-size: 16px;
   }
   .btn-color {
     background: #007bff;
-    font-family: Cardium B-Medium;
+
     color: #fff;
     font-size: 11px;
   }
@@ -144,20 +138,17 @@
   .text-footer {
     color: #007bff;
     font-size: 12px;
-    font-family: Cardium B-Medium;
   }
   .text-categorias {
-    font-family: Cardium B-Medium;
     font-size: 12px;
     color: #000;
   }
   .tltle-cards {
-    font-family: Cardium B-Bold;
     font-size: 16px;
   }
   .btn-color {
     background: #007bff;
-    font-family: Cardium B-Medium;
+
     color: #fff;
     font-size: 11px;
   }
@@ -179,11 +170,9 @@
     z-index: 1;
   }
   .textOferta {
-    font-family: Cardium B-Medium;
     font-size: 13px;
   }
   .tittle-cards {
-    font-family: Cardium B-Bold;
     font-size: 18px;
   }
 }
@@ -204,11 +193,9 @@
     z-index: 1;
   }
   .textOferta {
-    font-family: Cardium B-Medium;
     font-size: 13px;
   }
   .tittle-cards {
-    font-family: Cardium B-Bold;
     font-size: 18px;
   }
 }
@@ -229,11 +216,27 @@
     z-index: 1;
   }
   .textOferta {
-    font-family: Cardium B-Medium;
     font-size: 13px;
   }
   .tittle-cards {
-    font-family: Cardium B-Bold;
     font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 880px) {
+  .tltle-cards {
+    font-size: 16px;
+  }
+  .cardium-b {
+    font-size: 13px;
+  }
+  .text-categorias {
+    font-size: 13px;
+  }
+  .btn-dark {
+    font-size: 13px;
+  }
+  .border-responsive {
+    border-radius: 0;
   }
 }

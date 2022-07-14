@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { BaseFormConfigAtributos2 } from '../configuracion-producto/configuracion-atributos/models/BaseFormConfigAtributos2';
 import { ListadoProductosComponent } from '../listado-productos/listado-productos.component';
 import { BaseFormTamanoProducto } from '../logistica-producto/models/BaseFormTamano';
@@ -10,6 +10,7 @@ import { BaseFormLogisticaProducto } from '../logistica-producto/models/BaseForm
   styleUrls: ['./tercer-paso.component.css'],
 })
 export class TercerPasoComponent implements OnInit {
+  @Input('disabled') disabled: boolean = false;
   load: boolean = false;
   arrayTercerPaso = [
     {
