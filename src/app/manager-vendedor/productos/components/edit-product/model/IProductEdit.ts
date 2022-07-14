@@ -5,7 +5,7 @@ export interface IProductEdit {
   marca: string;
   descripcion: string;
   img: string;
-  Categorias: [Categorias];
+  ArticuloTieneCategorias: [Categorias];
   Etiquetas: [Etiquetas];
   Restricciones: string;
   Disponibilidad: string;
@@ -14,8 +14,7 @@ export interface IProductEdit {
 }
 
 interface Categorias {
-  id_categoria: number;
-  nombre: string;
+  id_categoria_articulo: number;
 }
 
 interface Etiquetas {}
