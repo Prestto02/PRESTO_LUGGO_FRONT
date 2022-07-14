@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { BaseFormCategorias } from 'src/app/manager-vendedor/categorias/models/categorias.models';
 import { ValidarYTransformarImagen } from 'src/app/shared/validations/ValidarYTransformarImagen';
@@ -18,16 +18,33 @@ export class PrimerEditComponent implements OnInit {
   constructor(
     public formB: EditFormProducts, //EDIT FORM PRODUCTS
     private Arouter: ActivatedRoute,
-    private imgValidar: ValidarYTransformarImagen //VALIDAR IMAGENES Y TRANSFORMAR
+    private imgValidar: ValidarYTransformarImagen, //VALIDAR IMAGENES Y TRANSFORMAR
+    private formCateogiras: BaseFormCategorias
   ) {
     this.idProduct = this.idProduct = this.Arouter.snapshot.paramMap.get('id');
   }
 
   ngOnInit(): void {
     this.getIdForm();
+    this.getCategorias();
   }
   //OBTENER IMAGEN PARA VERIFICAR EN EL SERVER
   //getAsignIDPRODUCTO FORM
+  getCategorias() {
+/*     const categoriasArray: any = [
+      {
+        id: 8,
+        nombre: 'Moda y Accesorios',
+      },
+      {
+        id: 11,
+        nombre: 'Hogar',
+      },
+    ];
+    categoriasArray.map((res: any) => {
+      this.formCateogiras.addCategoriasEdit(res.id, res.nombre);
+    }); */
+  }
   getIdForm() {
     this.formB.formEditProducts.patchValue({
       id_product: this.idProduct,

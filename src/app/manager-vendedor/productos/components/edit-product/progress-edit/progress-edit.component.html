@@ -5,6 +5,7 @@
   <div class="container-title mt-3 mb-3 p-4 bg-white">
     <div class="number" *ngFor="let list of progressArray, let i =index;" (click)="checkStripper(i);">
       <p class="color-number" [ngClass]="{'actived':!list.disabled}">{{list.text}}</p>
+      <h5 class="text-items"><b>{{list.TextTitle}}</b></h5>
     </div>
   </div>
 

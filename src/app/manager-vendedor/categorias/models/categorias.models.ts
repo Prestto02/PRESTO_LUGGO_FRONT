@@ -29,6 +29,11 @@ export class BaseFormCategorias {
       this.eliminarItems(id);
     }
   }
+  addCategoriasEdit(id: any, nombre: any) {
+    //PREGUNTO SI EXISTE EL EVENTO CHECK: TRUE
+    this.getCategorias.push(new FormControl({ idcategoria_articulo: id }));
+    this.categoriaSeleccionadas.push(nombre);
+  }
   //ELIMINAR ITEMS DE LA CATEGORIA
   eliminarItems(id: any) {
     let index = this.getCategorias.controls.findIndex(

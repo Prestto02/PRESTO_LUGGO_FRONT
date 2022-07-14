@@ -25,9 +25,15 @@ export class CategoriasComponent implements OnInit {
   //OBTENER TODAS LAS CATEGORIAS
   getAllCategorias() {
     this.apiCategoria.getAllCategoriasPadres().subscribe((res) => {
+      console.log(res);
       this.categoriasItems = res;
     });
   }
+/*   getCheckEditCategorias() {
+    this.formB.getCategorias.controls.map((res: any) => {
+
+    });
+  } */
   //SETEAR EL NUEVO ELEMENTO EN EL ARRAY
   onChangeCheckBox(id: any, e: any) {
     this.formB.addCategoriaItems(id, e);
