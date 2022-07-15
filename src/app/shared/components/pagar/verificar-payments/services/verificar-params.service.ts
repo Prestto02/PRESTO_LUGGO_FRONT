@@ -10,9 +10,6 @@ export class VerificarParamsService {
   constructor(private http: HttpClient) {}
 
   getParamsVerifyPayments(token: string): Observable<any> {
-    return this.http.post<any>(
-      `${UrlApi.ApiUrl}${UrlApi.verificador}${token}`,
-      null
-    );
+    return this.http.get<any>(`${UrlApi.ApiUrl}${UrlApi.verificador}${token}`);
   }
 }
