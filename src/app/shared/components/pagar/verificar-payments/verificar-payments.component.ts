@@ -36,14 +36,17 @@ export class VerificarPaymentsComponent implements OnInit {
 
   enviarToken() {
     this.verifyServer.getParamsVerifyPayments(this.token).subscribe((res) => {
-      if (res.code === 200) {
-        this.message = res.message;
-        this.transaccion = res.transaccion;
-      }
-      if (res.code === 400) {
-        this.message = res.message;
-        this.transaccion = res.transaccion;
-      }
+      console.log(res);
+      setTimeout(() => {
+        if (res.code === 200) {
+          this.message = res.message;
+          this.transaccion = res.transaccion;
+        }
+        if (res.code === 400) {
+          this.message = res.message;
+          this.transaccion = res.transaccion;
+        }
+      }, 5000);
     });
   }
   /*   verifyPago() {
