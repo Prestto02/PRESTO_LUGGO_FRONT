@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { RepositorioImg } from 'src/app/shared/helpers/RepositorioImg';
 import { UrlFront } from 'src/app/shared/routes/RoutesFront';
 import { CarritoItemsService } from '../../index/menu-index/menu/services/carrito-items.service';
 import { Message } from './messages/messagesServer';
@@ -12,9 +13,10 @@ import { VerificarParamsService } from './services/verificar-params.service';
 })
 export class VerificarPaymentsComponent implements OnInit {
   urlCheck: any;
-  codigoCheck: any;
+  codigoCheck: number = 0;
   token: string = '';
   message: string = '';
+  imgPayment = `${RepositorioImg.urlRepositorio}/img/IMÁGENES/mensaje-payments/pago-en-proceso.png`;
   constructor(
     private route: Router,
     private apiServiCarrito: CarritoItemsService,
@@ -26,16 +28,22 @@ export class VerificarPaymentsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.verifyPago();
+    //this.verifyPago();
     this.enviarToken();
     this.verifyModal();
   }
+
   enviarToken() {
     this.verifyServer.getParamsVerifyPayments(this.token).subscribe((res) => {
-      console.log(res);
+      if (res.code === 200) {
+        this.message = res.transaccion;
+      }
+      if (res.code === 400) {
+        this.message = res.transaccion;
+      }
     });
   }
-  verifyPago() {
+  /*   verifyPago() {
     //this.decodeBase64();
     if (this.codigoCheck === 'exitoso') {
       this.apiServiCarrito.eliminarTodo();
@@ -43,7 +51,7 @@ export class VerificarPaymentsComponent implements OnInit {
       this.message = Message.aceptado;
     }
     if (this.codigoCheck === 'error') this.message = Message.rechazado;
-  }
+  } */
   irAPedidos() {
     this.route.navigateByUrl(
       `${UrlFront.Manager.managerVendedor}/${UrlFront.Manager.vendedor}/${UrlFront.Manager.listaDePedidos}`
