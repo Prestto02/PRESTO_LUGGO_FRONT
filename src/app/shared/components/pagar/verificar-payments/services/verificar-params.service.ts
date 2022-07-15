@@ -1,16 +1,15 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { UrlApi } from 'src/app/shared/routes/RoutesApi';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class VerificarParamsService {
+  constructor(private http: HttpClient) {}
 
-  constructor(private http:HttpClient) { }
-
-
-/*   getParamsVerifyPayments():Observable<any>{
-    return this.http.get<any>
-  } */
+  getParamsVerifyPayments(token: string): Observable<any> {
+    return this.http.get<any>(`${UrlApi.ApiUrl}${UrlApi.verificador}${token}`);
+  }
 }

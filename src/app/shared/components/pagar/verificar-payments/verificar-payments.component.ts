@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UrlFront } from 'src/app/shared/routes/RoutesFront';
 import { CarritoItemsService } from '../../index/menu-index/menu/services/carrito-items.service';
-import { PagarServices } from '../services/Pagar.service';
 import { Message } from './messages/messagesServer';
+import { VerificarParamsService } from './services/verificar-params.service';
 
 @Component({
   selector: 'app-verificar-payments',
@@ -16,9 +16,9 @@ export class VerificarPaymentsComponent implements OnInit {
   token: string = '';
   message: string = '';
   constructor(
-    private apiServi: PagarServices,
     private route: Router,
-    private apiServiCarrito: CarritoItemsService
+    private apiServiCarrito: CarritoItemsService,
+    private verifyServer: VerificarParamsService
   ) {
     this.urlCheck = this.route.parseUrl(this.route.url);
     this.codigoCheck = this.urlCheck.queryParams['metodo'];
@@ -31,19 +31,18 @@ export class VerificarPaymentsComponent implements OnInit {
     this.enviarToken();
   }
   enviarToken() {
-    const form = {
-      codigoCheck: this.codigoCheck,
-      token: this.token,
-    };
+    this.verifyServer.getParamsVerifyPayments(this.token).subscribe((res) => {
+      console.log(res);
+    });
   }
   verifyPago() {
     //this.decodeBase64();
-    if (this.codigoCheck === 'ACEPTADO') {
+    if (this.codigoCheck === 'exitoso') {
       this.apiServiCarrito.eliminarTodo();
       localStorage.removeItem('carritoItems');
       this.message = Message.aceptado;
     }
-    if (this.codigoCheck === 'RECHAZADO') this.message = Message.rechazado;
+    if (this.codigoCheck === 'error') this.message = Message.rechazado;
   }
   irAPedidos() {
     this.route.navigateByUrl(

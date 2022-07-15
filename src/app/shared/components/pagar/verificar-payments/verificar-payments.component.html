@@ -4,7 +4,7 @@
 <section class="container-fluid mt-3 mb-3">
   <div class="row">
     <div class="col-xl-6 col-xxl-6 col-md-6 col-sm-6 mx-auto">
-      <ng-container *ngIf="codigoCheck==='ACEPTADO'">
+      <ng-container *ngIf="codigoCheck==='exitoso'">
         <div class="card">
           <div class="card-header bg-dark mb-2">
             <h1 class="text-center text-white">{{codigoCheck}}</h1>
@@ -23,7 +23,7 @@
           </div>
         </div>
       </ng-container>
-      <ng-container *ngIf="codigoCheck==='RECHAZADO'">
+      <ng-container *ngIf="codigoCheck==='error'">
         <div class="card">
           <div class="card-header bg-dark mb-2">
             <h1 class="text-center text-white">{{codigoCheck}}</h1>

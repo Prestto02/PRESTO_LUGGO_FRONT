@@ -4,6 +4,7 @@ import { BaseFormCategorias } from 'src/app/manager-vendedor/categorias/models/c
 import { ValidarYTransformarImagen } from 'src/app/shared/validations/ValidarYTransformarImagen';
 import { BaseFormEtiquetas } from '../../create-products/form-etiquetas/models/BaseFormEtiquetas';
 import { EditFormProducts } from '../model/FormEditProduct';
+import { IProductEdit } from '../model/IProductEdit';
 
 @Component({
   selector: 'app-primer-edit',
@@ -19,32 +20,17 @@ export class PrimerEditComponent implements OnInit {
     public formB: EditFormProducts, //EDIT FORM PRODUCTS
     private Arouter: ActivatedRoute,
     private imgValidar: ValidarYTransformarImagen, //VALIDAR IMAGENES Y TRANSFORMAR
-    private formCateogiras: BaseFormCategorias
+    private formCateogiras: BaseFormCategorias,
+    private formEtiquetas: BaseFormEtiquetas
   ) {
     this.idProduct = this.idProduct = this.Arouter.snapshot.paramMap.get('id');
   }
 
   ngOnInit(): void {
     this.getIdForm();
-    this.getCategorias();
+    //this.getCategorias();
   }
-  //OBTENER IMAGEN PARA VERIFICAR EN EL SERVER
-  //getAsignIDPRODUCTO FORM
-  getCategorias() {
-/*     const categoriasArray: any = [
-      {
-        id: 8,
-        nombre: 'Moda y Accesorios',
-      },
-      {
-        id: 11,
-        nombre: 'Hogar',
-      },
-    ];
-    categoriasArray.map((res: any) => {
-      this.formCateogiras.addCategoriasEdit(res.id, res.nombre);
-    }); */
-  }
+
   getIdForm() {
     this.formB.formEditProducts.patchValue({
       id_product: this.idProduct,
@@ -59,18 +45,20 @@ export class PrimerEditComponent implements OnInit {
       this.imgValidar.getArchiveImagen(e); //OBTENGO LO QUE ME ENVIA EL ARREGLO DE LA IMAGEN
     this.imgProducts = imgProducts; //ASIGNO
     this.imagenTransformada = imagenTransformada; //ASIGNO
-    this.asignImgForm();
+    this.asignForm();
   }
 
   //ASIGNARIMG FORM
-  asignImgForm() {
+  asignForm() {
     this.formB.formEditProducts.patchValue({
       multimedia: {
         archivo: this.imagenTransformada,
       },
     });
   }
-
+  submitCheck() {
+    //this.asignForm();
+  }
   //SELECT CHANGE GARANTIA
   selectGarantia(e: any) {
     if (e.target.value === 'Si') {
@@ -80,3 +68,22 @@ export class PrimerEditComponent implements OnInit {
     }
   }
 }
+
+//OBTENER IMAGEN PARA VERIFICAR EN EL SERVER
+//getAsignIDPRODUCTO FORM
+/* getCategorias() {
+     const categoriasArray: any = [
+      {
+        id: 8,
+        nombre: 'Moda y Accesorios',
+      },
+      {
+        id: 11,
+        nombre: 'Hogar',
+      },
+    ];
+    categoriasArray.map((res: any) => {
+      this.formCateogiras.addCategoriasEdit(res.id, res.nombre);
+    });
+  }
+  */

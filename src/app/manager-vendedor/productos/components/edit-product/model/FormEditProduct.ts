@@ -1,10 +1,14 @@
 import { Injectable } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { BaseFormCategorias } from 'src/app/manager-vendedor/categorias/models/categorias.models';
 import { Expresion } from 'src/app/shared/validations/expresionRegular';
 
 @Injectable({ providedIn: 'root' })
 export class EditFormProducts {
-  constructor(private formB: FormBuilder) {}
+  constructor(
+    private formB: FormBuilder,
+    private formCateogiras: BaseFormCategorias
+  ) {}
 
   formEditProducts = this.formB.group({
     multimedia: this.formB.group({
@@ -26,6 +30,12 @@ export class EditFormProducts {
     Restricciones: ['', [Validators.required]],
     Disponibilidad: ['', [Validators.required]],
     Garantia: ['', [Validators.required]],
-    Tipo_Garantia: ['', [Validators.required]],
+    Tipo_Garantia: [
+      '',
+      [
+        Validators.required,
+        Validators.pattern(Expresion.SoloLetrasAcentosEspacios),
+      ],
+    ],
   });
 }

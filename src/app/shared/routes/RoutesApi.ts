@@ -75,4 +75,6 @@ export const UrlApi = {
 
   //LISTADO DE COMPRAS DE LOS CLIENTES
   listadoPedidos: 'api/pedido/mis-compras',
+  //VERIFICAR PAGO
+  verificador: 'verificador?token=',
 };
