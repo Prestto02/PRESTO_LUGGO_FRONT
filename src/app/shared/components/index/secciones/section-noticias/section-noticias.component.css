@@ -42,10 +42,17 @@
   color: #000;
 }
 .text-adn {
+  font-family: Cardium A-Bold;
   color: #ea2313;
 }
 .btn-dark {
   background-color: #3f3f3f;
+}
+.cuenta-check {
+  font-family: Cardium A-SemiBold;
+}
+.tltle-cards {
+  font-family: Cardium A-SemiBold;
 }
 
 /* If the screen size is 601px wide or more, set the font-size of <div> to 80px */
@@ -238,5 +245,8 @@
   }
   .border-responsive {
     border-radius: 0;
+  }
+  .text-color-links {
+    font-size: 13px;
   }
 }

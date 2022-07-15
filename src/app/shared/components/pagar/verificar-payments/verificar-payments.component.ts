@@ -13,7 +13,7 @@ import { Message } from './messages/messagesServer';
 export class VerificarPaymentsComponent implements OnInit {
   urlCheck: any;
   codigoCheck: any;
-  decode64: string = '';
+  token: string = '';
   message: string = '';
   constructor(
     private apiServi: PagarServices,
@@ -21,32 +21,36 @@ export class VerificarPaymentsComponent implements OnInit {
     private apiServiCarrito: CarritoItemsService
   ) {
     this.urlCheck = this.route.parseUrl(this.route.url);
-    this.codigoCheck = this.urlCheck.queryParams['Verificador'];
+    this.codigoCheck = this.urlCheck.queryParams['metodo'];
+    this.token = this.urlCheck.queryParams['token'];
   }
 
   ngOnInit(): void {
+    //console.log(this.codigoCheck, this.token);
     this.verifyPago();
+    this.enviarToken();
   }
-
-  decodeBase64() {
-    this.decode64 = atob(this.codigoCheck);
+  enviarToken() {
+    const form = {
+      codigoCheck: this.codigoCheck,
+      token: this.token,
+    };
   }
-
   verifyPago() {
-    this.decodeBase64();
-    if (this.decode64 === 'ACEPTADO') {
+    //this.decodeBase64();
+    if (this.codigoCheck === 'ACEPTADO') {
       this.apiServiCarrito.eliminarTodo();
       localStorage.removeItem('carritoItems');
       this.message = Message.aceptado;
     }
-    if (this.decode64 === 'RECHAZADO') this.message = Message.rechazado;
+    if (this.codigoCheck === 'RECHAZADO') this.message = Message.rechazado;
   }
   irAPedidos() {
     this.route.navigateByUrl(
       `${UrlFront.Manager.managerVendedor}/${UrlFront.Manager.vendedor}/${UrlFront.Manager.listaDePedidos}`
     );
   }
-  volerInicio() {
+  volverInicio() {
     this.route.navigateByUrl(
       `${UrlFront.Pagar.pagar}/${UrlFront.Pagar.processoPagar}`
     );
