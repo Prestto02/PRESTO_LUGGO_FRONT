@@ -4,3 +4,9 @@
 .btn-link {
   color: #ea2313;
 }
+
+.text-color {
+  color: #ea2313;
+  font-weight: 700;
+  font-size: 20px;
+}

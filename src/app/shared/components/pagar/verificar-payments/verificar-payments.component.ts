@@ -57,5 +57,12 @@ export class VerificarPaymentsComponent implements OnInit {
   verifyModal() {
     const modal = <HTMLElement>document.querySelector('.modal-backdrop');
     modal.style.opacity = '0';
+    modal.style.position = 'relative';
+    modal.style.top = 'none';
+    modal.style.zIndex = 'none';
+    modal.style.zIndex = 'none';
+    modal.style.width = 'none';
+    modal.style.height = 'none';
+    modal.style.background = 'none';
   }
 }
