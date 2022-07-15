@@ -16,8 +16,9 @@ export class ProgressEditComponent implements OnInit {
 
   constructor(private router: Router) {}
 
-  ngOnInit(): void {}
-
+  ngOnInit(): void {
+    this.checkStripper(this.selectedIndex);
+  }
   //STRIPPER CHECK NUMEROS
   checkStripper(i: number) {
     this.selectedIndex = i;
@@ -25,23 +26,22 @@ export class ProgressEditComponent implements OnInit {
       index === i ? (res.disabled = false) : (res.disabled = true);
     });
   }
-  nextCheck() {
-    this.progressArray[0].disabled = true;
-    this.progressArray[1].disabled = false;
-    this.selectedIndex = 1;
+  //NEXT OR RETURN POSITION USER OF ARRAY
+  onNextOrReturn(next: boolean): void {
+    next
+      ? (this.selectedIndex++, this.checkStripper(this.selectedIndex))
+      : (this.selectedIndex--, this.checkStripper(this.selectedIndex));
+    this.checkLengthArray();
   }
-
-  returnCheck() {
-    this.progressArray[0].disabled = false;
-    this.progressArray[1].disabled = true;
-    this.selectedIndex = 0;
-    if (!this.progressArray[0].disabled) {
+  //CHECK LENGTH ARRAY BUTTON
+  checkLengthArray() {
+    if (this.selectedIndex < 0) {
       this.router.navigateByUrl(
         `${UrlFront.Manager.managerVendedor}/${UrlFront.Manager.vendedor}/${UrlFront.Manager.listadoProductos}`
       );
     }
   }
-
+  //GUARDAR FORMULARIO
   submitFormulario() {
     this.router.navigateByUrl(
       `${UrlFront.Manager.managerVendedor}/${UrlFront.Manager.vendedor}/${UrlFront.Manager.listadoProductos}`

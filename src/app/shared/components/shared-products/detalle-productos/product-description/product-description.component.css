@@ -40,3 +40,18 @@
 .form-control {
   border: 1px solid #9f0505;
 }
+
+@media screen and (max-width: 880px) {
+  .subtitle-product{
+    font-size: 15px;
+  }
+  .text-precio {
+    font-size: 20px;
+  }
+  .text-iva {
+    font-size: 13px;
+  }
+  .color-stock {
+    font-size: 13px;
+  }
+}

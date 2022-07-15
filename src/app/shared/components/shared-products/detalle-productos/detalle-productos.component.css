@@ -27,7 +27,6 @@
   background-color: #ea2313;
   color: #fff;
   border: 1px solid #ea2313;
-
 }
 .font-item-right:hover > svg path {
   fill: #fff;
@@ -37,4 +36,10 @@
   width: 73%;
   border-bottom: 1px solid #9c9b9b;
   padding-bottom: 7px;
+}
+
+@media screen and (max-width: 880px) {
+  .style-caracteristicas {
+    width: 90%;
+  }
 }
