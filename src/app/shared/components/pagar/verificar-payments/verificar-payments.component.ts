@@ -39,10 +39,12 @@ export class VerificarPaymentsComponent implements OnInit {
       console.log(res);
       setTimeout(() => {
         if (res.code === 200) {
+          console.log(res);
           this.message = res.message;
           this.transaccion = res.transaccion;
         }
         if (res.code === 400) {
+          console.log(res);
           this.message = res.message;
           this.transaccion = res.transaccion;
         }
