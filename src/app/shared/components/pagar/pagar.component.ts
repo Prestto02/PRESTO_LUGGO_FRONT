@@ -1,5 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { UrlFront } from '../../routes/RoutesFront';
 import { CarritoItemsService } from '../index/menu-index/menu/services/carrito-items.service';
 import { BaseFormPagar } from './formulario-pagar/models/BaseFormPagar';
 import { IFormularioPagar } from './formulario-pagar/models/IPagarForm';
@@ -20,7 +21,8 @@ export class PagarComponent implements OnInit, OnDestroy {
     private apiServi: CarritoItemsService,
     public formB: BaseFormPagar,
     private apiPagar: PagarServices,
-    private pagarOCarrito: PagarOCarritoPost
+    private pagarOCarrito: PagarOCarritoPost,
+    private router: Router
   ) {}
   ngOnInit(): void {
     this.getAllProducts();
@@ -64,4 +66,9 @@ export class PagarComponent implements OnInit, OnDestroy {
       });
     }
   }
+/*   irAOtraPAgina() {
+    this.router.navigateByUrl(
+      `${UrlFront.Pagar.pagar}/${UrlFront.Pagar.verificarPago}?metodo=exitoso&token=YjhlMDdiYjI2MTY1NzI0MTIzOGJhNjNkOGIxMzkyMTg%3D`
+    );
+  } */
 }

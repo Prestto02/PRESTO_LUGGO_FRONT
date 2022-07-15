@@ -54,10 +54,16 @@ export class PrimerEditComponent implements OnInit {
       multimedia: {
         archivo: this.imagenTransformada,
       },
+      ArticuloTieneCategoria: this.formCateogiras.formCategorias.get(
+        'ArticuloTieneCategoria'
+      )?.value,
+      etiqueta: this.formEtiquetas.formEtiquetas.get('etiqueta')?.value,
     });
   }
   submitCheck() {
-    //this.asignForm();
+    this.asignForm();
+    const form: IProductEdit = this.formB.formEditProducts.value;
+    console.log(form);
   }
   //SELECT CHANGE GARANTIA
   selectGarantia(e: any) {

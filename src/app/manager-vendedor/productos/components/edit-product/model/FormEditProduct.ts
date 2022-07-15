@@ -33,5 +33,7 @@ export class EditFormProducts {
         Validators.pattern(Expresion.SoloLetrasAcentosEspacios),
       ],
     ],
+    ArticuloTieneCategoria: [''],
+    etiqueta: [''],
   });
 }

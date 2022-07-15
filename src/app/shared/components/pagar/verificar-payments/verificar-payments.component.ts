@@ -26,9 +26,9 @@ export class VerificarPaymentsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    //console.log(this.codigoCheck, this.token);
     this.verifyPago();
     this.enviarToken();
+    this.verifyModal();
   }
   enviarToken() {
     this.verifyServer.getParamsVerifyPayments(this.token).subscribe((res) => {
@@ -53,5 +53,9 @@ export class VerificarPaymentsComponent implements OnInit {
     this.route.navigateByUrl(
       `${UrlFront.Pagar.pagar}/${UrlFront.Pagar.processoPagar}`
     );
+  }
+  verifyModal() {
+    const modal = <HTMLElement>document.querySelector('.modal-backdrop');
+    modal.style.opacity = '0';
   }
 }
