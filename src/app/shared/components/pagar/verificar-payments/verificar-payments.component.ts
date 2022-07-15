@@ -15,6 +15,7 @@ export class VerificarPaymentsComponent implements OnInit {
   urlCheck: any;
   codigoCheck: number = 0;
   token: string = '';
+  transaccion: string = '';
   message: string = '';
   imgPayment = `${RepositorioImg.urlRepositorio}/img/IMÁGENES/mensaje-payments/pago-en-proceso.png`;
   constructor(
@@ -36,10 +37,12 @@ export class VerificarPaymentsComponent implements OnInit {
   enviarToken() {
     this.verifyServer.getParamsVerifyPayments(this.token).subscribe((res) => {
       if (res.code === 200) {
-        this.message = res.transaccion;
+        this.message = res.message;
+        this.transaccion = res.transaccion;
       }
       if (res.code === 400) {
-        this.message = res.transaccion;
+        this.message = res.message;
+        this.transaccion = res.transaccion;
       }
     });
   }
