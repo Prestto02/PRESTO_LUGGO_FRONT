@@ -1,14 +1,10 @@
 import { Injectable } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import { BaseFormCategorias } from 'src/app/manager-vendedor/categorias/models/categorias.models';
 import { Expresion } from 'src/app/shared/validations/expresionRegular';
 
 @Injectable({ providedIn: 'root' })
 export class EditFormProducts {
-  constructor(
-    private formB: FormBuilder,
-    private formCateogiras: BaseFormCategorias
-  ) {}
+  constructor(private formB: FormBuilder) {}
 
   formEditProducts = this.formB.group({
     multimedia: this.formB.group({
