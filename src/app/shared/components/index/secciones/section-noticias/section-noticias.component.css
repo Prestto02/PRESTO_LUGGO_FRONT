@@ -249,4 +249,7 @@
   .text-color-links {
     font-size: 13px;
   }
+  .version-movil {
+    margin-bottom: 3rem !important;
+  }
 }

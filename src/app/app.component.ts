@@ -15,14 +15,14 @@ export class AppComponent {
     private apiCarrito: CarritoItemsService,
     private apiListDesire: ListaDeseosService
   ) {
-    this.router.events.subscribe((event) => {
+   /*  this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         this.verifyMenuIndex(event);
       }
-    });
+    }); */
   }
 
-  verifyMenuIndex(event: NavigationEnd) {
+/*   verifyMenuIndex(event: NavigationEnd) {
     const element: any = <HTMLElement>(
       document.getElementById('color-container')
     );
@@ -35,7 +35,7 @@ export class AppComponent {
     } else {
       element.style.background = '#fff';
     }
-  }
+  } */
   @HostListener('window:unload', ['$event'])
   unloadHandler(event: any) {
     this.apiCarrito.saveCarsLocalStorage();

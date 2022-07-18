@@ -33,8 +33,6 @@ export class DataFormProducts {
   getCategorias() {
     this.formCategoria.getCategorias.controls.map((res) => {
       this.arrayCategorias.push(res.value);
-      console.log(res.value);
-      console.log(this.arrayCategorias);
     });
   }
   //OBTENGO TODAS LAS ETIQUETAS

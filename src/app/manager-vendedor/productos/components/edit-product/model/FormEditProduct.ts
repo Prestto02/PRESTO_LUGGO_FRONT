@@ -36,4 +36,19 @@ export class EditFormProducts {
     ArticuloTieneCategoria: [''],
     etiqueta: [''],
   });
+
+  setFormValue(product: any) {
+    this.formEditProducts.patchValue({
+      descripcion_articulo: product.descripcion_articulo,
+      Disponibilidad: product.disponibilidad,
+      Garantia: product.garantia,
+      Restricciones: product.restricciones,
+/*       sku: product.sku,
+      marca: product.marca.nombre,
+      nombre_articulo: product.nombre_articulo.nombre, */
+      multimedia: {
+        archivo: product.multimedia.url_multimediaFULHD,
+      },
+    });
+  }
 }

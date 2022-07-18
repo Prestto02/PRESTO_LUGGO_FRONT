@@ -12,6 +12,12 @@ export interface IProductEdit {
   Disponibilidad: string;
   Garantia: string;
   Tipo_Garantia: string;
+  logistica: logistica;
+}
+
+interface logistica {
+  gestion_Envio: string;
+  precio_envio: number;
 }
 interface img {
   archivo: string;

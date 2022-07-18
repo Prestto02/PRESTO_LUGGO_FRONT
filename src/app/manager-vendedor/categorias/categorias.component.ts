@@ -20,6 +20,7 @@ export class CategoriasComponent implements OnInit {
 
   ngOnInit(): void {
     this.getAllCategorias();
+    this.verifyCheckCategoryEdit();
   }
 
   //OBTENER TODAS LAS CATEGORIAS
@@ -29,11 +30,23 @@ export class CategoriasComponent implements OnInit {
       this.categoriasItems = res;
     });
   }
-/*   getCheckEditCategorias() {
-    this.formB.getCategorias.controls.map((res: any) => {
-
-    });
-  } */
+  //VERIFYCO SI EXISTE UN ARRAY PARA HACER EL RECORRIDO
+  verifyCheckCategoryEdit() {
+    setTimeout(() => {
+      if (this.formB.getCategorias.controls.length > 0) {
+        this.formB.getCategorias.controls.map((res: any) => {
+          this.onVerifyCheck(res.value.idcategoria_articulo);
+        });
+      }
+    }, 2000);
+  }
+  //CUANDO SEA EDITAR SETEO A TRUE EL ARREGLO SEGUN LO LLEGADO
+  onVerifyCheck(id: any) {
+    const idI = this.categoriasItems.filter((res: any) => {
+      return res.id === id;
+    }); //PARA CAMBIAR LAS CATEGORIAS SELECTED
+    idI[0].selected = true;
+  }
   //SETEAR EL NUEVO ELEMENTO EN EL ARRAY
   onChangeCheckBox(id: any, e: any) {
     this.formB.addCategoriaItems(id, e);

@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Component, Input, OnInit } from '@angular/core';
 import { BaseFormCategorias } from 'src/app/manager-vendedor/categorias/models/categorias.models';
 import { ValidarYTransformarImagen } from 'src/app/shared/validations/ValidarYTransformarImagen';
 import { BaseFormEtiquetas } from '../../create-products/form-etiquetas/models/BaseFormEtiquetas';
@@ -13,29 +12,28 @@ import { IProductEdit } from '../model/IProductEdit';
 })
 export class PrimerEditComponent implements OnInit {
   imgProducts: string = '';
-  idProduct: any;
+  @Input('idProduct') idProduct: any | null = null;
+  @Input('productEdit') productEdit: any | null = null;
   imagenTransformada: string = '';
   ActiveGarantia: boolean = false;
   constructor(
     public formB: EditFormProducts, //EDIT FORM PRODUCTS
-    private Arouter: ActivatedRoute,
     private imgValidar: ValidarYTransformarImagen, //VALIDAR IMAGENES Y TRANSFORMAR
     private formCateogiras: BaseFormCategorias,
     private formEtiquetas: BaseFormEtiquetas
-  ) {
-    this.idProduct = this.idProduct = this.Arouter.snapshot.paramMap.get('id');
-  }
+  ) {}
 
   ngOnInit(): void {
     this.getIdForm();
-    //this.getCategorias();
+    this.setFormProduct();
   }
-
+  //SETEANDO ID EN EL FORMULARIO
   getIdForm() {
     this.formB.formEditProducts.patchValue({
       id_product: this.idProduct,
     });
   }
+
   getImage(e: any) {
     this.imgValidar.getImageVerifyServer(e); //VERIFICO EN EL SERVER LA IMAGEN
   }
@@ -63,7 +61,6 @@ export class PrimerEditComponent implements OnInit {
   submitCheck() {
     this.asignForm();
     const form: IProductEdit = this.formB.formEditProducts.value;
-    console.log(form);
   }
   //SELECT CHANGE GARANTIA
   selectGarantia(e: any) {
@@ -72,6 +69,21 @@ export class PrimerEditComponent implements OnInit {
     } else if (e.target.value === 'No' || e.target.value === '') {
       this.ActiveGarantia = false;
     }
+  }
+  //GET CATEGORIAS
+  setFormProduct() {
+    setTimeout(() => {
+      this.getFormData();
+      this.getCategorias();
+    }, 2000);
+  }
+  getCategorias() {
+    this.productEdit.articuloTieneCategoria.map((res: any) => {
+      this.formCateogiras.addCategoriasEdit(res.id, res.name);
+    });
+  }
+  getFormData() {
+    this.formB.setFormValue(this.productEdit);
   }
 }
 
