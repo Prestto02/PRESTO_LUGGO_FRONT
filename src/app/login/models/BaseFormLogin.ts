@@ -39,6 +39,7 @@ export class BaseFormLogin {
       '',
       [Validators.required, Validators.minLength(8), Validators.maxLength(30)],
     ],
+    checkUser: [false],
   });
   //BUSAR USUARIO
   buscarUser = this.formB.group({

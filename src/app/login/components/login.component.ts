@@ -29,11 +29,13 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
     this.position.getPositionUser(); //OBTENGO LA POSICION DEL USUARIO
+    this.obtenerUserRegister();
   }
   //SUBMIT LOGIN
   submit() {
     this.errorLogin = false; //SETEO EN FALSO
     this.load = false;
+    this.guardarSesion();
     const users = this.formB.getFormLogin(
       this.position.latitud,
       this.position.longitud
@@ -50,5 +52,29 @@ export class LoginComponent implements OnInit {
     this.router.navigateByUrl(
       `${UrlFront.Login.login}/${UrlFront.Login.buscarusuario}`
     );
+  }
+  //SI HAY USUARIO Y PASS GUARDADO EN EL LOCALSTORAGE COMPLETARLO
+  obtenerUserRegister() {
+    const user = localStorage.getItem('user');
+    const pass = localStorage.getItem('pass');
+    if (user && pass) {
+      const { descPass, descUser } = this.apiLogin.getDescrypData(user, pass);
+      this.formB.loginUser.patchValue({
+        email: descUser,
+        contrasena: descPass,
+        checkUser: true,
+      });
+    }
+  }
+  //GUARDAR LA SESION DE RECORDARME
+  guardarSesion() {
+    const checked = this.formB.loginUser.get('checkUser')?.value;
+    const user = this.formB.loginUser.get('email')?.value;
+    const pass = this.formB.loginUser.get('contrasena')?.value;
+    if (checked) {
+      this.apiLogin.getDataLocalStorage(user, pass);
+    } else {
+      this.apiLogin.removeLocalStorage();
+    }
   }
 }

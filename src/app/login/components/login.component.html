@@ -28,6 +28,12 @@
               </div>
               <app-password-visible [login]="false" [formB]="formB.loginUser" [password]="'contrasena'">
               </app-password-visible>
+              <div class="form-check mt-3 mb-3">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" formControlName="checkUser">
+                <label class="form-check-label" for="flexCheckDefault">
+                  Recuérdame
+                </label>
+              </div>
               <a (click)="cambiarContrasena();" class="btn-link link-text">Olvidaste tu contraseña?</a>
               <!------BUTTON SUBMIT------>
               <app-buttons-load [formB]="formB.loginUser" [valueButton]="'Iniciar sesión'" [load]="load">

@@ -44,7 +44,9 @@ export class ListadoProductosComponent implements OnInit {
   //PARA ELIMINAR EL PRODUCTO
   eliminarProduct(id: any) {
     if (confirm(`Se eliminara el producto con id: ${id}`)) {
-      this.apiProducts.eliminarProducto(id);
+      this.apiProducts.eliminarProducto(id).subscribe((res: any) => {
+        this.getAllProducts();
+      });
     }
   }
   //EDITAR PRODUCTOS

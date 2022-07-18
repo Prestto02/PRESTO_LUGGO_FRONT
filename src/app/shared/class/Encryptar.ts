@@ -42,4 +42,28 @@ export class EncryptService {
       return this.descIdUser;
     }
   }
+  //ENCRYPDATA USER
+  encrypDataLogin(user: any, pass: any) {
+    const encUser = CryptoJS.AES.encrypt(
+      `${user}`,
+      'userLocalStorageLogin'
+    ).toString();
+    const encryPass = CryptoJS.AES.encrypt(
+      `${pass}`,
+      'passLocalStorageLogin'
+    ).toString();
+    return { encUser, encryPass };
+  }
+  //DESCRYPT DATA LOGIN
+  desCryptDataLogin(encUser: any, encPass: any) {
+    const descUser: string = CryptoJS.AES.decrypt(
+      encUser.trim(),
+      'userLocalStorageLogin'
+    ).toString(CryptoJS.enc.Utf8);
+    const descPass: string = CryptoJS.AES.decrypt(
+      encPass.trim(),
+      'passLocalStorageLogin'
+    ).toString(CryptoJS.enc.Utf8);
+    return { descUser, descPass };
+  }
 }
