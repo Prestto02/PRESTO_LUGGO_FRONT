@@ -3,7 +3,6 @@ import { Router } from '@angular/router';
 import { RepositorioImg } from 'src/app/shared/helpers/RepositorioImg';
 import { UrlFront } from 'src/app/shared/routes/RoutesFront';
 import { CarritoItemsService } from '../../index/menu-index/menu/services/carrito-items.service';
-import { Message } from './messages/messagesServer';
 import { VerificarParamsService } from './services/verificar-params.service';
 
 @Component({
@@ -20,6 +19,7 @@ export class VerificarPaymentsComponent implements OnInit {
   imgPayment = `${RepositorioImg.urlRepositorio}/img/IMÁGENES/mensaje-payments/pago-en-proceso.png`;
   constructor(
     private route: Router,
+    private apiServiCarrito: CarritoItemsService,
     private verifyServer: VerificarParamsService
   ) {
     this.urlCheck = this.route.parseUrl(this.route.url);
@@ -37,12 +37,12 @@ export class VerificarPaymentsComponent implements OnInit {
   enviarToken() {
     this.verifyServer.getParamsVerifyPayments(this.token).subscribe((res) => {
       if (res.code === 200) {
-        console.log(res);
         this.verifyServer.setMessagePayments(res.mensaje);
         this.transaccion = res.transaccion;
+        this.apiServiCarrito.eliminarTodo();
+        localStorage.removeItem('carritoItems');
       }
       if (res.code === 400) {
-        console.log(res);
         this.verifyServer.setMessagePayments(res.mensaje);
         this.transaccion = res.transaccion;
       }
