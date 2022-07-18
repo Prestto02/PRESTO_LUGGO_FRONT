@@ -26,29 +26,31 @@ export class VerificarPaymentsComponent implements OnInit {
     this.urlCheck = this.route.parseUrl(this.route.url);
     this.codigoCheck = this.urlCheck.queryParams['metodo'];
     this.token = this.urlCheck.queryParams['token'];
+    this.enviarToken();
   }
 
   ngOnInit(): void {
     //this.verifyPago();
-    this.enviarToken();
     this.verifyModal();
+    this.getMessagePayments();
   }
-
+  //TOKEN SERVER PAYMENTS
   enviarToken() {
     this.verifyServer.getParamsVerifyPayments(this.token).subscribe((res) => {
-      console.log(res);
-      setTimeout(() => {
-        if (res.code === 200) {
-          console.log(res);
-          this.message = res.message;
-          this.transaccion = res.transaccion;
-        }
-        if (res.code === 400) {
-          console.log(res);
-          this.message = res.message;
-          this.transaccion = res.transaccion;
-        }
-      }, 5000);
+      if (res.code === 200) {
+        this.verifyServer.setMessagePayments(res.message);
+        this.transaccion = res.transaccion;
+      }
+      if (res.code === 400) {
+        this.verifyServer.setMessagePayments(res.message);
+        this.transaccion = res.transaccion;
+      }
+    });
+  }
+  //GET MESSAGE PAYMENTS
+  getMessagePayments() {
+    this.verifyServer.messageSuccess.subscribe((res) => {
+      this.message = res;
     });
   }
   /*   verifyPago() {
