@@ -38,12 +38,14 @@ export class VerificarPaymentsComponent implements OnInit {
     this.verifyServer.getParamsVerifyPayments(this.token).subscribe((res) => {
       if (res.code === 200) {
         console.log(res);
-        this.verifyServer.setMessagePayments(res.message);
+        this.message = res.mensaje;
+        //this.verifyServer.setMessagePayments(res.mensaje);
         this.transaccion = res.transaccion;
       }
       if (res.code === 400) {
         console.log(res);
-        this.verifyServer.setMessagePayments(res.message);
+        this.message = res.mensaje;
+       // this.verifyServer.setMessagePayments(res.mensaje);
         this.transaccion = res.transaccion;
       }
     });
