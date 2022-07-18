@@ -20,17 +20,16 @@ export class VerificarPaymentsComponent implements OnInit {
   imgPayment = `${RepositorioImg.urlRepositorio}/img/IMÁGENES/mensaje-payments/pago-en-proceso.png`;
   constructor(
     private route: Router,
-    private apiServiCarrito: CarritoItemsService,
     private verifyServer: VerificarParamsService
   ) {
     this.urlCheck = this.route.parseUrl(this.route.url);
     this.codigoCheck = this.urlCheck.queryParams['metodo'];
     this.token = this.urlCheck.queryParams['token'];
-    this.enviarToken();
   }
 
   ngOnInit(): void {
     //this.verifyPago();
+    this.enviarToken();
     this.verifyModal();
     this.getMessagePayments();
   }
@@ -38,10 +37,12 @@ export class VerificarPaymentsComponent implements OnInit {
   enviarToken() {
     this.verifyServer.getParamsVerifyPayments(this.token).subscribe((res) => {
       if (res.code === 200) {
+        console.log(res);
         this.verifyServer.setMessagePayments(res.message);
         this.transaccion = res.transaccion;
       }
       if (res.code === 400) {
+        console.log(res);
         this.verifyServer.setMessagePayments(res.message);
         this.transaccion = res.transaccion;
       }

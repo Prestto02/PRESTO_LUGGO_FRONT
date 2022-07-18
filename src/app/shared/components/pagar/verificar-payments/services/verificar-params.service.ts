@@ -16,6 +16,6 @@ export class VerificarParamsService {
   }
   //MESSAGE PAYMENTS
   setMessagePayments(message: string) {
-    this.messagePayment.next('');
+    this.messagePayment.next(message);
   }
 }
