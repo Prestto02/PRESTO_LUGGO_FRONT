@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { BaseFormCategorias } from 'src/app/manager-vendedor/categorias/models/categorias.models';
+import { RepositorioImg } from 'src/app/shared/helpers/RepositorioImg';
 import { ValidarYTransformarImagen } from 'src/app/shared/validations/ValidarYTransformarImagen';
 import { BaseFormEtiquetas } from '../../create-products/form-etiquetas/models/BaseFormEtiquetas';
 import { EditFormProducts } from '../model/FormEditProduct';
@@ -33,7 +34,9 @@ export class PrimerEditComponent implements OnInit {
       id_product: this.idProduct,
     });
   }
-
+  getImageEdit() {
+    this.imgProducts = `${RepositorioImg.urlRepositorio}${this.productEdit.multimedia.url_multimediaFULHD}`;
+  }
   getImage(e: any) {
     this.imgValidar.getImageVerifyServer(e); //VERIFICO EN EL SERVER LA IMAGEN
   }
@@ -50,7 +53,9 @@ export class PrimerEditComponent implements OnInit {
   asignForm() {
     this.formB.formEditProducts.patchValue({
       multimedia: {
-        archivo: this.imagenTransformada,
+        archivo: this.imagenTransformada
+          ? this.imagenTransformada
+          : this.productEdit.multimedia.archivo,
       },
       ArticuloTieneCategoria: this.formCateogiras.formCategorias.get(
         'ArticuloTieneCategoria'
@@ -58,9 +63,17 @@ export class PrimerEditComponent implements OnInit {
       etiqueta: this.formEtiquetas.formEtiquetas.get('etiqueta')?.value,
     });
   }
+  //SUBMIT CHECK
   submitCheck() {
     this.asignForm();
     const form: IProductEdit = this.formB.formEditProducts.value;
+    console.log(form);
+  }
+  //VERIFY GARANTIA DE USUARIO
+  selectTrueGarantia() {
+    const dato = this.formB.formEditProducts.get('Garantia')?.value;
+    if (dato === 'Si') this.ActiveGarantia = true;
+    if (dato === 'No' || dato === '') this.ActiveGarantia = false;
   }
   //SELECT CHANGE GARANTIA
   selectGarantia(e: any) {
@@ -73,35 +86,27 @@ export class PrimerEditComponent implements OnInit {
   //GET CATEGORIAS
   setFormProduct() {
     setTimeout(() => {
+      this.getImageEdit();
       this.getFormData();
       this.getCategorias();
-    }, 2000);
+      this.getEtiquetas();
+      this.selectTrueGarantia();
+    }, 1000);
   }
+  //SETEAR CATEGORIAS EN EL ARREGLO
   getCategorias() {
     this.productEdit.articuloTieneCategoria.map((res: any) => {
       this.formCateogiras.addCategoriasEdit(res.id, res.name);
     });
   }
+  //SETEAR ETIQUETAS EN EL ARREGLo
+  getEtiquetas() {
+    this.productEdit.etiquetas.map((res: any) => {
+      this.formEtiquetas.addEtiquetas(res.nombre);
+    });
+  }
+  //SETEAR LOS PRODUCTOS EDITABLE AL FORMULARIO
   getFormData() {
     this.formB.setFormValue(this.productEdit);
   }
 }
-
-//OBTENER IMAGEN PARA VERIFICAR EN EL SERVER
-//getAsignIDPRODUCTO FORM
-/* getCategorias() {
-     const categoriasArray: any = [
-      {
-        id: 8,
-        nombre: 'Moda y Accesorios',
-      },
-      {
-        id: 11,
-        nombre: 'Hogar',
-      },
-    ];
-    categoriasArray.map((res: any) => {
-      this.formCateogiras.addCategoriasEdit(res.id, res.nombre);
-    });
-  }
-  */

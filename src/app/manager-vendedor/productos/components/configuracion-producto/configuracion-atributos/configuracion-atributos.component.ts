@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { BaseFormConfigProducts } from '../models/BaseFormCongifProduct';
 import { BaseFormConfigAtributos } from './models/BaseFormConfigAtributos';
 import { BaseFormConfigAtributos2 } from './models/BaseFormConfigAtributos2';
@@ -10,6 +10,7 @@ import { BaseFormGlobalPrecio } from './models/BasePrecioGlobal';
   styleUrls: ['./configuracion-atributos.component.css'],
 })
 export class ConfiguracionAtributosComponent implements OnInit {
+  @Input('productEdit') productEdit: any | null = null;
   resultIva: any = '';
   resultIC: any = '';
   Total: any = 0;
@@ -20,7 +21,9 @@ export class ConfiguracionAtributosComponent implements OnInit {
     public formAtributosDos: BaseFormConfigAtributos2
   ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.editProductSet();
+  }
   //ELIMINAR LOS ITEMS DEL ARRAY FORM
   removeItemsChecked(i: any) {
     this.formAtributos.removeItems(i); //ELIMINO DEL TODO DEL ARREGLO
@@ -36,29 +39,49 @@ export class ConfiguracionAtributosComponent implements OnInit {
       });
     });
   }
-
   //CALCULO DEL IVA
   checkIva(e: any) {
     if (e.target.checked) {
-      const datos: any =
-        this.formAtributosDos.formAtributosDos.get('PrecioGlobal')?.value;
-      this.resultIva = datos * 0.12;
-      this.Total = datos * 1.12 + this.resultIC;
+      this.verifyCheckIvaEdit();
     } else {
       this.Total = this.Total - this.resultIva;
       this.resultIva = '';
     }
   }
+  //VERIFY CHECK EDIT CALCULATE
+  verifyCheckIvaEdit() {
+    const datos: any =
+      this.formAtributosDos.formAtributosDos.get('PrecioGlobal')?.value;
+    this.resultIva = datos * 0.12;
+    this.Total = datos * 1.12 + this.resultIC;
+  }
+  //VERIFY CHECK EDIT CALCULATE
+  verifyCheckIceEdit() {
+    const datos: any =
+      this.formAtributosDos.formAtributosDos.get('PrecioGlobal')?.value;
+    this.resultIC = datos * 0.15;
+    this.Total = datos * 1.15 + this.resultIva;
+  }
   //CALCULO DE ICE
   checkIce(e: any) {
     if (e.target.checked) {
-      const datos: any =
-        this.formAtributosDos.formAtributosDos.get('PrecioGlobal')?.value;
-      this.resultIC = datos * 0.15;
-      this.Total = datos * 1.15 + this.resultIva;
+      this.verifyCheckIceEdit();
     } else {
       this.Total = this.Total - this.resultIC;
       this.resultIC = '';
     }
+  }
+  editProductSet() {
+    setTimeout(() => {
+      if (this.productEdit) {
+        this.setProduct();
+        this.verifyCheckIvaEdit();
+        this.verifyCheckIceEdit();
+      }
+    }, 2000);
+  }
+
+  setProduct() {
+    this.formAtributosDos.setFormEdit(this.productEdit);
   }
 }

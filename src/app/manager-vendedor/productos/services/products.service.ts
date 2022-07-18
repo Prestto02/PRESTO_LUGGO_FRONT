@@ -66,6 +66,10 @@ export class ProductsService {
   addProductAdn(obj: any) {
     this.ListProductAdn.next(obj);
   }
+  //ELIMINAR PRODUCTO
+  eliminarProducto(id: any) {
+    return this.http.delete<any>(`${UrlApi.ApiUrl}${UrlApi.articulos}/${id}`);
+  }
   //DESUSCRIBIRSE
   unSuscribeObservable() {
     this.dataScrollProduct = [];

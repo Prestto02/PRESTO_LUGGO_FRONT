@@ -1,10 +1,10 @@
 export const UrlApi = {
   /* CALIDAD
-  PRODUCCION: https://puerttoapi.puertto.com
+  PRODUCCION: https://puerttoapi.puertto.com/
   https://puerttoapi.azurewebsites.net/
-  CALIDAD: https://ecovitali.presttoapp.net/Puertto/Calidad/Api
+  CALIDAD: https://ecovitali.presttoapp.net/Puertto/Calidad/Api/
   */
-  ApiUrl: 'https://ecovitali.presttoapp.net/Puertto/Calidad/Api',
+  ApiUrl: 'https://puerttoapi.puertto.com/',
   //PERSONAS
   getPersonaId: 'api/usuario',
   persona: 'api/persona',
@@ -53,6 +53,7 @@ export const UrlApi = {
   listProductsUsers: 'api/ADN/Mis-productos',
   //EDITAR PRODUCTOS
   editProductGet: 'api/articulo/edit/',
+  editFormProductPut:'api/articulo/edit',
   //CARRITO, BUSCAR PRODUCTO,
   traerProductosCarrito: 'api/Articulo/listado',
   buscarProductos: 'api/Articulo/producto/',

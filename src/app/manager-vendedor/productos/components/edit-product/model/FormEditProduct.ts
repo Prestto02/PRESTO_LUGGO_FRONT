@@ -41,14 +41,15 @@ export class EditFormProducts {
     this.formEditProducts.patchValue({
       descripcion_articulo: product.descripcion_articulo,
       Disponibilidad: product.disponibilidad,
-      Garantia: product.garantia,
       Restricciones: product.restricciones,
-/*       sku: product.sku,
-      marca: product.marca.nombre,
-      nombre_articulo: product.nombre_articulo.nombre, */
+      sku: product.sku,
+      marca: product.marca_Articulo.nombre_marca,
+      nombre_articulo: product.nombre_articulo,
       multimedia: {
-        archivo: product.multimedia.url_multimediaFULHD,
+        archivo: product.multimedia.archivo,
       },
+      Garantia: product.garantia_validacion,
+      Tipo_Garantia: product.garantia,
     });
   }
 }

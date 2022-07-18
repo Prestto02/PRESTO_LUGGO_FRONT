@@ -49,7 +49,7 @@ export class DataFormProducts {
   }
   //GET UBICACION
   getUbicacion() {
-/*     this.formUbicacion.ubicacionProducto.controls.map((res) => {
+    /*     this.formUbicacion.ubicacionProducto.controls.map((res) => {
       this.arrayUbicacion.push(res.value);
     }); */
     //OBTENGO EL TAMANO DEL PRODUCTO PARTE 3 LOGISTICA
@@ -89,7 +89,7 @@ export class DataFormProducts {
       this.formProduct.formProducts.get('Disponibilidad')?.value;
     const restricciones =
       this.formProduct.formProducts.get('Restricciones')?.value;
-
+    const Id_articulo = this.formProduct.formProducts.get('id_product')?.value;
     return {
       descripcion,
       marca,
@@ -100,12 +100,13 @@ export class DataFormProducts {
       garantia,
       disponibilidad,
       restricciones,
+      Id_articulo,
     };
   }
   //PARA HACER EL POST A LA API
 
   getDataFormProducts(longitud: any, latitud: any) {
-   // this.getCategorias();
+    // this.getCategorias();
     //this.getEtiquetas();
     const dimensiones = this.getUbicacion();
     const {
@@ -118,8 +119,10 @@ export class DataFormProducts {
       garantia,
       disponibilidad,
       restricciones,
+      Id_articulo,
     } = this.getProducts();
     return {
+      Id_articulo: Id_articulo,
       id_vendedor: this.token.getTokenId(),
       id_nombre_articulo: id_nombre_articulo,
       descripcion_articulo: descripcion,
@@ -130,7 +133,9 @@ export class DataFormProducts {
       Disponibilidad: disponibilidad,
       Garantia: garantia,
       etiquetas: this.formEtiquetas.formEtiquetas.get('etiqueta')?.value,
-      articuloTieneCategoria: this.formCategoria.formCategorias.get('ArticuloTieneCategoria')?.value,
+      articuloTieneCategoria: this.formCategoria.formCategorias.get(
+        'ArticuloTieneCategoria'
+      )?.value,
       multimedia: {
         archivo: archivo,
       },
@@ -152,7 +157,8 @@ export class DataFormProducts {
           this.formTamano.formTamanoProducto.get('GestionEnvio')?.value,
         precio_envio: this.formTamano.formTamanoProducto.get('Precio')?.value,
         dimensiones,
-        ubicacion: this.formUbicacion.formLogistica.get('ubicacionProducto')?.value,
+        ubicacion:
+          this.formUbicacion.formLogistica.get('ubicacionProducto')?.value,
       },
       longitud: longitud,
       latitud: latitud,

@@ -25,4 +25,15 @@ export class BaseFormConfigAtributos2 {
   limpiarFormulario() {
     this.formAtributosDos.reset();
   }
+  setFormEdit(formEdit: any) {
+    formEdit.detalleArticulo.map((res: any) => {
+      this.formAtributosDos.patchValue({
+        Stock_General: res.stockItems,
+        Stock_Minimo: res.stockMinimo,
+        PrecioGlobal: res.precioPorVariacion,
+        Iva: res.impuesto_Iva,
+        Ice: res.impuesto_Ice,
+      });
+    });
+  }
 }

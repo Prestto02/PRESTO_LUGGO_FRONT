@@ -11,6 +11,7 @@ import { BaseFormLogisticaProducto } from '../logistica-producto/models/BaseForm
 })
 export class TercerPasoComponent implements OnInit {
   @Input('disabled') disabled: boolean = false;
+  @Input('productEdit') productEdit: any | null = null;
   load: boolean = false;
   arrayTercerPaso = [
     {

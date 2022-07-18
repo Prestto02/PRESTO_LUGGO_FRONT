@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { PositionUser } from 'src/app/shared/class/PositionUser';
 import { RepositorioImg } from 'src/app/shared/helpers/RepositorioImg';
 import { UrlFront } from 'src/app/shared/routes/RoutesFront';
 import { DataFormProducts } from '../../helpers/DataFormProducts';
 import { ProductsService } from '../../services/products.service';
+import { EditProductService } from '../edit-product/service/edit-product.service';
 
 @Component({
   selector: 'app-listado-productos',
@@ -18,8 +19,10 @@ export class ListadoProductosComponent implements OnInit {
     private apiProducts: ProductsService, //PRODUCTS SERVIES
     private _router: Router,
     private dataForm: DataFormProducts,
-    private position: PositionUser //POSITION USUARIO
+    private position: PositionUser, //POSITION USUARIO
+    private apiEditProduct: EditProductService
   ) {}
+
   dataProducts: any; //ARRAY DE LOS PRODUCTOS
   key: string = 'id'; //ORRDER BY
   reverse: boolean = false; //ORDER BY
@@ -40,8 +43,9 @@ export class ListadoProductosComponent implements OnInit {
   }
   //PARA ELIMINAR EL PRODUCTO
   eliminarProduct(id: any) {
-    if (confirm(`Se eliminara el producto con id: ${id}`))
-      console.log('eliminado');
+    if (confirm(`Se eliminara el producto con id: ${id}`)) {
+      this.apiProducts.eliminarProducto(id);
+    }
   }
   //EDITAR PRODUCTOS
   editarProduct(product: any) {
@@ -63,8 +67,8 @@ export class ListadoProductosComponent implements OnInit {
       `${UrlFront.Manager.managerVendedor}/${UrlFront.Manager.vendedor}/${UrlFront.Manager.crearProducto}`
     );
   }
-  //GUARDAR EL PRODUCTO
-  guardarProduct() {
+  //GUARDAR PRODUCTO POST
+  postProductProduct() {
     const form = this.dataForm.getDataFormProducts(
       this.position.longitud,
       this.position.latitud
@@ -81,5 +85,33 @@ export class ListadoProductosComponent implements OnInit {
     this._router.navigateByUrl(
       `${UrlFront.Manager.managerVendedor}/${UrlFront.Manager.vendedor}/${UrlFront.Manager.listadoProductos}`
     );
+  }
+
+  putProduct() {
+    const form = this.dataForm.getDataFormProducts(
+      this.position.longitud,
+      this.position.latitud
+    );
+    this.apiEditProduct.editProduct(form, form.Id_articulo).subscribe(
+      (res) => {
+        this.getAllProducts();
+        this.dataForm.limpiarTodoForm();
+        console.log(res);
+      },
+      (err) => {
+        this.dataForm.limpiarTodoForm();
+      }
+    );
+    this._router.navigateByUrl(
+      `${UrlFront.Manager.managerVendedor}/${UrlFront.Manager.vendedor}/${UrlFront.Manager.listadoProductos}`
+    );
+  }
+  //GUARDAR EL PRODUCTO
+  guardarProduct(id?: boolean) {
+    if (id) {
+      this.putProduct();
+    } else {
+      this.postProductProduct();
+    }
   }
 }

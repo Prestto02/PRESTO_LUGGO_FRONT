@@ -10,8 +10,8 @@
       <div class="row border rounded">
         <div class="col-xl-12 col-xxl-12 col-sm-12 col-md-12 mb-2 py-3">
           <div class="form-check">
-            <input class="form-check-input" value="P" type="radio" name="envioAdn" id="envioAdn1" checked
-              (click)="abrirPuerto($event);">
+            <input class="form-check-input" value="P" type="radio" name="envioAdn" id="envioAdn1"
+              (click)="abrirPuerto($event);" [attr.checked]="puertoEnvio">
             <label class="form-check-label" for="envioAdn1">
               Puertto va a enviar este artículo (Envío gestionado por Puertto)
             </label>
@@ -21,7 +21,7 @@
         <div class="col-xl-12 col-xxl-12 col-sm-12 col-md-12 mb-3 py-3">
           <div class="form-check">
             <input class="form-check-input" value="A" type="radio" name="envioAdn" id="envioAdn"
-              (click)="abrirArticulo($event);">
+              [attr.checked]="adnEnvio" (click)="abrirArticulo($event);">
             <label class="form-check-label" for="envioAdn">
               Yo mismo voy a enviar este artículo (Envío gestionado por ADN)
             </label>

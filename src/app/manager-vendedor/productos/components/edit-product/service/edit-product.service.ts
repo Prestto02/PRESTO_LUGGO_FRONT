@@ -12,4 +12,11 @@ export class EditProductService {
   getProductEditId(id: number): Observable<any> {
     return this.http.get<any>(`${UrlApi.ApiUrl}${UrlApi.editProductGet}${id}`);
   }
+
+  editProduct(form: any, id: any): Observable<any> {
+    return this.http.put<any>(
+      `${UrlApi.ApiUrl}${UrlApi.articulos}/${id}`,
+      form
+    );
+  }
 }

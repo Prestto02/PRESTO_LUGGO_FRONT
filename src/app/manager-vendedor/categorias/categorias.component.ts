@@ -38,7 +38,7 @@ export class CategoriasComponent implements OnInit {
           this.onVerifyCheck(res.value.idcategoria_articulo);
         });
       }
-    }, 2000);
+    }, 1000);
   }
   //CUANDO SEA EDITAR SETEO A TRUE EL ARREGLO SEGUN LO LLEGADO
   onVerifyCheck(id: any) {

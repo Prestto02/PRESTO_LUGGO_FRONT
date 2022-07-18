@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { PositionUser } from 'src/app/shared/class/PositionUser';
 import { ListadoProductosComponent } from '../listado-productos/listado-productos.component';
 import { BaseFormTamanoProducto } from './models/BaseFormTamano';
@@ -11,6 +11,7 @@ declare var google: any;
   styleUrls: ['./logistica-producto.component.css'],
 })
 export class LogisticaProductoComponent implements OnInit {
+  @Input('productEdit') productEdit: any | null = null;
   options: any;
 
   overlays: any = [];
@@ -40,6 +41,8 @@ export class LogisticaProductoComponent implements OnInit {
     //this.initOverlays();
     this.infoWindow = new google.maps.InfoWindow();
   }
+
+
   //AGREGAR EL NUEVA UBICACION Y ABRIR EL MODAL
   handleMapClick(event: any) {
     this.dialogVisible = true;

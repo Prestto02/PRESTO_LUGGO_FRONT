@@ -56,8 +56,8 @@
     <hr>
   </div>
   <!------CONFIGURACION DE LOS ATRIBUTOS DE LOS PRODUCTOS-------->
-  <app-configuracion-atributos class="row" [hidden]="arrayTercerPaso[1].disabled"></app-configuracion-atributos>
+  <app-configuracion-atributos class="row" [hidden]="arrayTercerPaso[1].disabled" [productEdit]="productEdit"></app-configuracion-atributos>
   <!------CONFIGURACION DE LA LOGISTICA DEL PRODUCTO-------->
 
-  <app-logistica-producto [hidden]="arrayTercerPaso[0].disabled"></app-logistica-producto>
+  <app-logistica-producto [hidden]="arrayTercerPaso[0].disabled"  [productEdit]="productEdit"></app-logistica-producto>
 </ng-template>
