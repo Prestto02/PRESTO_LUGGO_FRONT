@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { InterceptorsProviders } from './shared/services/module/module-interceptors.module';
 import { ToastConfig } from './shared/Toasts/ToastsConfig';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+/* import { HashLocationStrategy, LocationStrategy } from '@angular/common'; */
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -17,7 +17,7 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
     ToastConfig,
   ],
   providers: [
-    { provide: LocationStrategy, useClass: HashLocationStrategy },
+    /* { provide: LocationStrategy, useClass: HashLocationStrategy }, */
     InterceptorsProviders,
   ],
   bootstrap: [AppComponent],
