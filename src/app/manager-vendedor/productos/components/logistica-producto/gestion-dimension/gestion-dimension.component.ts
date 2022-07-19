@@ -8,13 +8,14 @@ import { BaseFormTamanoProducto } from '../models/BaseFormTamano';
 })
 export class GestionDimensionComponent implements OnInit {
   @Input('productEdit') productEdit: any | null = null;
-  puertoEnvio: boolean = true;
+  puertoEnvio: boolean = false;
   adnEnvio: boolean = false;
 
   constructor(public formTamano: BaseFormTamanoProducto) {}
 
   ngOnInit(): void {
     this.getDataForm();
+    this.verifyPuerttoOrAdn();
   }
   abrirPuerto(e: any) {
     this.formTamano.formTamanoProducto.patchValue({
