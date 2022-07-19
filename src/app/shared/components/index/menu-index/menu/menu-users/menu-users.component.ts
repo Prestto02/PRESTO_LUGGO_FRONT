@@ -44,11 +44,13 @@ export class MenuUsersComponent implements OnInit {
   }
 
   irARuta(link: string) {
-    this.linkVender
-      ? this.route.navigateByUrl(link)
-      : this.route.navigateByUrl(`${link}/${this.idCliente}`);
+    this.centerClient
+      ? this.route.navigateByUrl(`${link}/${this.idCliente}`)
+      : this.route.navigateByUrl(`${link}`);
   }
-
+  irARegistrarAdn(link: string) {
+    this.route.navigateByUrl(`${link}`);
+  }
   cerrarSesion() {
     this.Token.removeToken();
     this.apiLogin.cerrarSesionBackend();
@@ -60,7 +62,6 @@ export class MenuUsersComponent implements OnInit {
     this.irAlPerfilUsuario();
     if (this.rolTipoUsuario === '1') {
       this.centerClient = `${UrlFront.Cliente.cliente}/${UrlFront.Cliente.miCuenta}`;
-
       this.arrayCliente = ItemsClientMenuOffCanvas;
     }
     if (this.rolTipoUsuario === '2') {
