@@ -1,0 +1,36 @@
+<div class="col-xl-12 col-sm-12 col-md-12 col-xxl-12 mb-3 mt-3 p-2">
+  <h4 class="mt-3 mb-3">Ubicación de la entrega del producto</h4>
+  <!------GOOGLE MAP SITIE------->
+  <p-gmap #gmap [style]="{'width':'100%','height':'320px', 'margin-bottom': '1em'}" [options]="options"
+    [overlays]="overlays" (onMapClick)="handleMapClick($event)" (onOverlayClick)="handleOverlayClick($event)"
+    (onOverlayDragEnd)="handleDragEnd($event)"></p-gmap>
+  <button type="button" pButton label="Limpiar" icon="pi pi-times" (click)="clear()"
+    style="margin-right:.25em"></button>
+  <button type="button" pButton label="+ Acercar" icon="pi pi-plus" (click)="zoomIn(gmap.getMap())"
+    style="margin-right:.25em"></button>
+  <button type="button" pButton label="- Alejar" icon="pi pi-minus" (click)="zoomOut(gmap.getMap())"></button>
+</div>
+<!--------MODAL PARA AGREGAR LA NUEVA UBICACION------------->
+<p-dialog showEffect="fade" [(visible)]="dialogVisible" header="Nueva ubicación" [style]="{width: '300px'}">
+  <div class="grid p-fluid" *ngIf="selectedPosition">
+    <div class="mb-3">
+      <label for="Descripcion" class="form-label">Dirección</label>
+      <input type="text" class="form-control" id="Descripcion" (change)="eventTarget($event);">
+    </div>
+
+    <div class="mb-3">
+      <label for="Latitud" class="form-label">Latitud</label>
+      <input type="text" class="form-control" id="Latitud" [value]="selectedPosition.lat()" disabled>
+    </div>
+
+    <div class="mb-3">
+      <label for="Longitud" class="form-label">Longitud</label>
+      <input type="text" class="form-control" id="Longitud" [value]="selectedPosition.lng()" disabled>
+    </div>
+  </div>
+  <ng-template pTemplate="footer">
+    <div>
+      <button type="button" pButton label="Agregar Ubicación" (click)="addMarker()"></button>
+    </div>
+  </ng-template>
+</p-dialog>

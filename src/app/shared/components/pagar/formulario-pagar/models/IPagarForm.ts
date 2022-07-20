@@ -7,7 +7,11 @@ export interface IFormularioPagar {
   correo: string;
   direccion_entrega: string;
 }
-
+export interface IFormularioUbicacion {
+  latitud: number;
+  longitud: number;
+  nombre_ubicacion: string;
+}
 export interface detalle_venta {
   cantidad: string;
   Id_detalle_articulo: string;

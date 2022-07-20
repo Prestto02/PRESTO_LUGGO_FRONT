@@ -10,16 +10,20 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { VerificarPaymentsComponent } from '../verificar-payments/verificar-payments.component';
 
 import { ErrorsExtensionsModule } from '../../errors/errors-module.module';
+import { UbicacionProductComponent } from '../formulario-pagar/ubicacion-product/ubicacion-product.component';
+import { ImportsUbicacion } from '../formulario-pagar/ubicacion-product/ubicacion-mapa.module';
 
 @NgModule({
   declarations: [
     PagarComponent,
     FormularioPagarComponent,
     VerificarPaymentsComponent,
+    UbicacionProductComponent,
   ],
   imports: [
     CommonModule,
     PagarRoutingModule,
+    ImportsUbicacion,
     ReactiveFormsModule,
     MenuIndexModule,
     ErrorsExtensionsModule,
