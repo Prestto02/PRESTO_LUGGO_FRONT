@@ -1,3 +1,4 @@
+import { CuentasSobreTiComponent } from '../cuentas-sobre-ti/cuentas-sobre-ti.component';
 import { DataFormAdn } from '../helpers/DataFormAdnUsers';
 import { BaseFormAdnUsers } from '../models/BaseFormAdnUser';
 import { BaseFormNegocioAdn } from '../models/BaseFormNegocio';
@@ -20,12 +21,13 @@ export const DeclarationAdnUser = [
   PositionStripperComponent,
   SobreTuNegocioComponent,
   TusPagosComponent,
-  TerminarRegistroComponent,
   TerminosCondicionesComponent,
   ButtonFixedComponent,
   MensajesApoyoComponent,
   FilterPaisPipe,
+  CuentasSobreTiComponent,
   FilterCiudadPipe,
+  TerminarRegistroComponent,
   FilterBancosPipe,
 ];
 

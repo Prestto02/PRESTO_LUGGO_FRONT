@@ -175,8 +175,9 @@ export class DataFormProducts {
         {
           stockMinimo:
             this.attributosConfig2.formAtributosDos.get('Stock_Minimo')?.value,
-          stockItems:
-            this.attributosConfig2.formAtributosDos.get('Stock_General')?.value,
+          stockItems: parseInt(
+            this.attributosConfig2.formAtributosDos.get('Stock_General')?.value
+          ),
           precioPorVariacion:
             this.attributosConfig2.formAtributosDos.get('PrecioGlobal')?.value,
           Iva: this.attributosConfig2.formAtributosDos.get('Iva')?.value,
@@ -232,8 +233,9 @@ export class DataFormProducts {
         {
           stockMinimo:
             this.attributosConfig2.formAtributosDos.get('Stock_Minimo')?.value,
-          stockItems:
-            this.attributosConfig2.formAtributosDos.get('Stock_General')?.value,
+          stockItems: parseInt(
+            this.attributosConfig2.formAtributosDos.get('Stock_General')?.value
+          ),
           precioPorVariacion:
             this.attributosConfig2.formAtributosDos.get('PrecioGlobal')?.value,
           Iva: this.attributosConfig2.formAtributosDos.get('Iva')?.value,

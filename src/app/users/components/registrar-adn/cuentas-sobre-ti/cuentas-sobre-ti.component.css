@@ -1,0 +1,35 @@
+* {
+  font-family: Cardium B-Medium;
+  background: #fff;
+}
+
+.estilo-text {
+  font-weight: 600;
+  font-size: 28px;
+}
+
+.estilo-subtitle {
+  font-weight: 300;
+  font-size: 20px;
+  margin-top: -13px;
+}
+
+.btn-estilos {
+  background: #0075ff;
+  color: #fff;
+}
+.btn-estilos:hover {
+  background: #0567d6;
+  color: #fff;
+}
+input::placeholder {
+  color: rgba(0, 0, 0, 0.178);
+}
+
+div.is-invalid {
+  border: 1px solid #dc3545;
+  border-radius: 6px;
+}
+.input-border{
+  border-left: 0px;
+}
