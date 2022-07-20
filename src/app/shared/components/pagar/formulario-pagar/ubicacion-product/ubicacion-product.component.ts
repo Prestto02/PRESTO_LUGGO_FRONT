@@ -45,6 +45,12 @@ export class UbicacionProductComponent implements OnInit {
   eventTarget(e: any) {
     this.markerTitle = e.target.value;
   }
+
+  onChangeDrag(e: any) {
+    if (e.target.checked) this.draggable = true;
+    else this.draggable = false;
+  }
+
   closeModal() {
     this.dialogVisible = false;
   }
