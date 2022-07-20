@@ -1,5 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { RepositorioImg } from '../../helpers/RepositorioImg';
 import { UrlFront } from '../../routes/RoutesFront';
 import { CarritoItemsService } from '../index/menu-index/menu/services/carrito-items.service';
 import { BaseFormPagar } from './formulario-pagar/models/BaseFormPagar';
@@ -12,6 +13,7 @@ import { PagarServices } from './services/Pagar.service';
   styleUrls: ['./pagar.component.css'],
 })
 export class PagarComponent implements OnInit, OnDestroy {
+  urlRepositorio: string = `${RepositorioImg.urlRepositorio}`;
   arrayProductsList: any = [];
   totalAPagar: any = 0;
   arrayPagoProducts: any = [];
@@ -66,7 +68,7 @@ export class PagarComponent implements OnInit, OnDestroy {
       });
     }
   }
-/*   irAOtraPAgina() {
+  /*   irAOtraPAgina() {
     this.router.navigateByUrl(
       `${UrlFront.Pagar.pagar}/${UrlFront.Pagar.verificarPago}?metodo=exitoso&token=YjhlMDdiYjI2MTY1NzI0MTIzOGJhNjNkOGIxMzkyMTg%3D`
     );

@@ -1,55 +1,64 @@
 <app-menu-index></app-menu-index>
 
 <section class="container-fluid mt-3 py-3">
-  <div class="row">
-    <h5 class="detalle-compra mb-3"><b>Detalle de la compra</b></h5>
-    <hr>
+  <div class="row mb-3">
+    <h5 class="detalle-compra mb-3 text-xxl-start "><b>Detalle de la compra</b></h5>
+    <hr class="d-xxl-none d-xl-none d-md-none d-block d-sm-block">
   </div>
   <div class="row">
-    <p class="datos-factura">Datos de la Factura</p>
-    <p class="llenar-datos">Llena todos los datos</p>
+    <div class="col-sm-12 col-12 col-xxl-3 col-xl-3">
+      <p class="datos-factura text-xxl-start text-xl-start">Datos de la Factura</p>
+    </div>
+    <div class="col-12 col-sm-12 col-xxl-3 col-xl-3">
+      <p class="llenar-datos text-xxl-start text-xl-start">Llena todos los datos</p>
+    </div>
+    <div class="bg-colors col-xxl-6 col-xl-6 col-md-6 text-center d-none d-sm-none d-xl-block d-xxl-block d-md-block">
+      <h5 class="datos-factura ">Tu Orden</h5>
+      <p class="llenar-datos">Resumen de tu Pedido</p>
+    </div>
   </div>
 </section>
 
 <section class="container-fluid mb-3">
   <div class="row">
-    <app-formulario-pagar class="col-xl-5 col-xxl-5 col-12 col-sm-12 mx-auto py-xl-3 py-xxl-3 py-0 mt-3">
+    <app-formulario-pagar class="col-xl-6 col-xxl-6 col-md-6 col-12 col-sm-12 py-0 mt-3">
     </app-formulario-pagar>
-    <div class="col-xl-5 col-xxl-5 col-sm-12 col-12 col-md-6 mx-auto py-3 mt-3">
-      <h5 class="datos-factura">Tu Orden</h5>
-      <p class="llenar-datos">Resumen de tu Pedido</p>
-      <div class="card">
-        <div class="row fixed-sticky-top bg-white border-bottom">
-          <div class="col-xxl-4 col-xl-4 mt-3">
-            <h5 class="text text-center">Producto</h5>
-          </div>
-          <div class="col-xxl-4 col-xl-4  mt-3">
-            <h5 class="text text-center">Cantidad</h5>
-          </div>
-          <div class="col-xxl-4 col-xl-4 mt-3">
-            <h5 class="text text-center">Total</h5>
-          </div>
-        </div>
-
+    <div class="col-xl-4 col-xxl-4 col-sm-12 col-12 col-md-5 mx-auto py-0 mt-3">
+      <h5 class="datos-factura d-block d-sm-block d-xl-none d-xxl-none d-md-none">Tu Orden</h5>
+      <p class="llenar-datos d-block d-sm-block d-xl-none d-xxl-none d-md-none">Resumen de tu Pedido</p>
+      <div class="card px-2">
         <ng-container *ngIf="arrayProductsList.length>0; else notData">
-          <div class="row" *ngFor="let product of arrayProductsList">
-            <div class="col-xxl-4 col-xl-4 mt-3">
-              <p class="text-center">{{product.name}}</p>
+          <div class="row mt-3" *ngFor="let product of arrayProductsList">
+            <div class="col-sm-3 col-3 d-flex justify-content-center align-items-center">
+              <img [src]="urlRepositorio+product.imagen" class="img-fluid" [alt]="arrayPagoProducts.id_artic" />
             </div>
-            <div class="col-xxl-4 col-xl-4 mt-3">
-              <p class="text-center">{{product.item}}</p>
+            <div class="col-6 col-sm-6">
+              <h6 class="nombre-producto mt-3">{{product.name}}</h6>
+              <span class="product-item">{{product.item}} und.</span>
+              <p class="envio-gratis">Envio Gratis</p>
             </div>
-            <div class="col-xxl-4 col-xl-4 mt-3">
-              <p class="text-center"><b>{{product.subtotal===0? product.precio : product.subtotal | currency:'USD'}}</b>
-              </p>
+            <div class="col-3 col-sm-3">
+              <ng-container *ngIf="!product.subtotal else existSubtotal">
+                <p class="subtotal text-center mt-3"><b>{{ product.precio | currency:'USD'}}</b> </p>
+              </ng-container>
+              <ng-template #existSubtotal>
+                <p class="subtotal text-center mt-3"><b>{{ product.subtotal | currency:'USD'}}</b> </p>
+              </ng-template>
+              <p class="envio-gratis text-center mt-4">$0</p>
             </div>
           </div>
-          <div class="row fixed-sticky-bottom border-top">
-            <div class="col-xxl-6 col-xl-6 col-sm-12 col-12 col-md-6 py-3 mt-3">
-              <p class="text fs-6"><b>Total:</b></p>
+          <hr>
+          <div class="row">
+            <div class="col-xxl-6 col-xl-6 col-sm-5 col-5 col-md-6 py-3 mt-3">
+              <p class="total-pagar"><b>Total a pagar</b></p>
             </div>
-            <div class="col-xxl-6 col-xl-6 col-sm-12 col-12 col-md-6 text-end py-3 mt-3">
-              <p class="text fs-6"><b>{{totalAPagar | currency:'USD'}}</b></p>
+            <div class="col-xxl-6 col-xl-6 col-sm-7 col-7 col-md-6 text-end py-3 mt-3">
+              <p class="subtotal"><b>{{totalAPagar | currency:'USD'}}</b></p>
+            </div>
+            <div class="col-xxl-12 col-sm-12 col-12 col-md-12 col-12 col-xl-12 px-4 py-3 mt-3">
+              <button type="button" (click)="submitPagar(formB.formPagar.value)"
+                [disabled]="formB.formPagar.invalid || arrayProductsList.length<=0" class="btn btn-dark btn-lg w-100"
+                data-bs-toggle="modal" data-bs-target="#exampleModal">Finalizar Pedido</button>
             </div>
           </div>
         </ng-container>
@@ -61,11 +70,11 @@
   </div>
 
 </section>
-<section class="modal-footer">
+<!-- <section class="modal-footer">
   <button type="button" (click)="submitPagar(formB.formPagar.value)"
     [disabled]="formB.formPagar.invalid || arrayProductsList.length<=0" class="btn btn-dark" data-bs-toggle="modal"
-    data-bs-target="#exampleModal">Continuar</button>
-</section>
+    data-bs-target="#exampleModal">Finalizar Pedido</button>
+</section> -->
 <!-- SECCION TARJETAS -->
 
 <section class="container-fluid" id="paymentNext">

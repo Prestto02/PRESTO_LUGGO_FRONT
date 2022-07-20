@@ -4,15 +4,17 @@
 
 .direccion-envio {
   font-family: Cardium A-Medium;
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 600;
 }
 .ubicacion-mapa {
   font-family: Cardium A-Medium;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 400;
 }
-
+.bg-colors {
+  background-color: #f8f8f8;
+}
 @media screen and (max-width: 880px) {
   .direccion-envio {
     text-align: center;
