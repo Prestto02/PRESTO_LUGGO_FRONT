@@ -25,7 +25,6 @@ export class PrimerEditComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.getIdForm();
     this.setFormProduct();
   }
   //SETEANDO ID EN EL FORMULARIO
@@ -64,11 +63,10 @@ export class PrimerEditComponent implements OnInit {
     });
   }
   //SUBMIT CHECK
-  submitCheck() {
+  /*   submitCheck() {
     this.asignForm();
     const form: IProductEdit = this.formB.formEditProducts.value;
-    console.log(form);
-  }
+  } */
   //VERIFY GARANTIA DE USUARIO
   selectTrueGarantia() {
     const dato = this.formB.formEditProducts.get('Garantia')?.value;
@@ -86,7 +84,9 @@ export class PrimerEditComponent implements OnInit {
   //GET CATEGORIAS
   setFormProduct() {
     setTimeout(() => {
+      this.getIdForm();
       this.getImageEdit();
+      this.asignForm();
       this.getFormData();
       this.getCategorias();
       this.getEtiquetas();

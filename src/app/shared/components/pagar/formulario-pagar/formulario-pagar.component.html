@@ -1,13 +1,8 @@
 <div class="card">
-  <div class="row">
-    <div class="col-xxl-12 col-xl-12 col-sm-12 col-md-12 col-12 py-3 mt-3">
-      <h5 class="mx-2">Dato de la factura</h5>
-      <hr>
-    </div>
-  </div>
   <form [formGroup]="formB.formPagar">
     <div class="row mx-auto">
-      <div class="col-xxl-6 col-xl-6 col-sm-6 col-12 col-md-6 mb-3 py-3">
+      <!-- NOMBRES COMPLETOS -->
+      <div class="col-xxl-6 col-xl-6 col-sm-6 col-12 col-md-6 mt-3 mb-2 mb-xxl-3 mb-xl-3 py-xxl-3 py-xl-3 py-3">
         <label for="formControlNombre" class="form-label">Nombres</label>
         <input type="text" class="form-control" id="formControlNombre" formControlName="Nombres"
           placeholder="Nombres Completos">
@@ -16,8 +11,8 @@
           <app-message-error forErrorCode="pattern" customMsg="Debe tener solo letras"></app-message-error>
         </app-form-errors-container>
       </div>
-
-      <div class="col-xxl-6 col-xl-6 col-sm-6 col-12 col-md-6 mb-3 py-3">
+      <!-- APELLIDOS -->
+      <div class="col-xxl-6 col-xl-6 col-sm-6 col-12 col-md-6mb-2 mb-xxl-3 mb-xl-3 py-xxl-3 py-xl-3 py-3">
         <label for="formControlApellidos" class="form-label">Apellidos</label>
         <input type="text" class="form-control" id="formControlApellidos" formControlName="Apellidos"
           placeholder="Apellidos Completos">
@@ -26,8 +21,18 @@
           <app-message-error forErrorCode="pattern" customMsg="Debe tener solo letras"></app-message-error>
         </app-form-errors-container>
       </div>
-
-      <div class="col-xxl-6 col-xl-6 col-sm-6 col-12 col-md-6 mb-3 py-3">
+      <!-- CORREO ELECTRONICO -->
+      <div class="col-xxl-6 col-xl-6 col-sm-6 col-12 col-md-6 mb-2 mb-xxl-3 mb-xl-3 py-xxl-3 py-xl-3 py-3">
+        <label for="formControlCorreo" class="form-label">Correo</label>
+        <input type="email" class="form-control" id="formControlCorreo" formControlName="correo"
+          placeholder="example@example.com">
+        <app-form-errors-container [forControl]="formB.formPagar.get('correo')">
+          <app-message-error forErrorCode="required"></app-message-error>
+          <app-message-error forErrorCode="email"></app-message-error>
+        </app-form-errors-container>
+      </div>
+      <!-- CELULAR -->
+      <div class="col-xxl-6 col-xl-6 col-sm-6 col-12 col-md-6 mb-2 mb-xxl-3 mb-xl-3 py-xxl-3 py-xl-3 py-3">
         <label for="formControlCelular" class="form-label">Celular</label>
         <div class="input-group">
           <select class="form-select" aria-label="Default select example" formControlName="code_phone">
@@ -45,8 +50,8 @@
           </app-form-errors-container>
         </div>
       </div>
-
-      <div class="col-xxl-6 col-xl-6 col-sm-6 col-12 col-md-6 mb-3 py-3">
+      <!-- CEDULA -->
+      <div class="col-xxl-6 col-xl-6 col-sm-6 col-12 col-md-6 mb-2 mb-xxl-3 mb-xl-3 py-xxl-3 py-xl-3 py-3">
         <label for="formControlIdentificacion" class="form-label">Cédula</label>
         <input type="text" maxlength="10" class="form-control" id="formControlIdentificacion"
           formControlName="identificacion" placeholder="0999999999">
@@ -54,21 +59,10 @@
           <app-message-error forErrorCode="required"></app-message-error>
           <app-message-error forErrorCode="pattern" customMsg="Debe tener solo números"></app-message-error>
           <app-message-error forErrorCode="minlength" customMsg="Máximo 10 caracteres"></app-message-error>
-
         </app-form-errors-container>
       </div>
-
-      <div class="col-xxl-6 col-xl-6 col-sm-6 col-12 col-md-6 mb-3 py-3">
-        <label for="formControlCorreo" class="form-label">Correo</label>
-        <input type="email" class="form-control" id="formControlCorreo" formControlName="correo"
-          placeholder="example@example.com">
-        <app-form-errors-container [forControl]="formB.formPagar.get('correo')">
-          <app-message-error forErrorCode="required"></app-message-error>
-          <app-message-error forErrorCode="email"></app-message-error>
-        </app-form-errors-container>
-      </div>
-
-      <div class="col-xxl-6 col-xl-6 col-sm-6 col-12 col-md-6 mb-3 py-3">
+      <!-- DIRECCION -->
+      <div class="col-xxl-6 col-xl-6 col-sm-6 col-12 col-md-6 mb-2 mb-xxl-3 mb-xl-3 py-xxl-3 py-xl-3 py-3">
         <label for="formControlDireccion" class="form-label">Dirección</label>
         <input type="text" class="form-control" id="formControlDireccion" formControlName="direccion_entrega"
           placeholder="Dirección">
@@ -81,6 +75,8 @@
     </div>
   </form>
 </div>
+<h4 class="direccion-envio mt-3">Dirección de Envío</h4>
+<p class="ubicacion-mapa">Ubícala en el mapa</p>
 <div class="card mt-5">
   <app-ubicacion-product></app-ubicacion-product>
 </div>

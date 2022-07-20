@@ -90,7 +90,7 @@ export class ListadoProductosComponent implements OnInit {
   }
 
   putProduct() {
-    const form = this.dataForm.getDataFormProducts(
+    const form = this.dataForm.getEditFormProducts(
       this.position.longitud,
       this.position.latitud
     );

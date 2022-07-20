@@ -28,7 +28,6 @@ export class BaseFormTamanoProducto {
   }
 
   setFormEditProduct(formEdit: any) {
-    console.log(formEdit.logistica);
     if (formEdit.logistica.gestion_Envio === 'A') {
       this.formTamanoProducto.patchValue({
         GestionEnvio: formEdit.logistica.gestion_Envio,

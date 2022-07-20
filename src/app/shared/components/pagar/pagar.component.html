@@ -1,17 +1,23 @@
 <app-menu-index></app-menu-index>
 
 <section class="container-fluid mt-3 py-3">
-  <div class="col-xxl-12 col-xl-12 col-sm-12 col-md-12 col-12">
-    <h5><b>Detalle de la compra</b></h5>
+  <div class="row">
+    <h5 class="detalle-compra mb-3"><b>Detalle de la compra</b></h5>
+    <hr>
+  </div>
+  <div class="row">
+    <p class="datos-factura">Datos de la Factura</p>
+    <p class="llenar-datos">Llena todos los datos</p>
   </div>
 </section>
 
 <section class="container-fluid mb-3">
   <div class="row">
-    <div class="col-xl-5 col-xxl-5 mx-auto py-3 mt-3">
-      <app-formulario-pagar></app-formulario-pagar>
-    </div>
+    <app-formulario-pagar class="col-xl-5 col-xxl-5 col-12 col-sm-12 mx-auto py-xl-3 py-xxl-3 py-0 mt-3">
+    </app-formulario-pagar>
     <div class="col-xl-5 col-xxl-5 col-sm-12 col-12 col-md-6 mx-auto py-3 mt-3">
+      <h5 class="datos-factura">Tu Orden</h5>
+      <p class="llenar-datos">Resumen de tu Pedido</p>
       <div class="card">
         <div class="row fixed-sticky-top bg-white border-bottom">
           <div class="col-xxl-4 col-xl-4 mt-3">
