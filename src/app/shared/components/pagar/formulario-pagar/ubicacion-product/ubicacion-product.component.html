@@ -53,8 +53,9 @@
     </div>
   </div>
   <ng-template pTemplate="footer">
-    <div>
-      <button type="button" pButton label="Agregar Ubicación" (click)="addMarker()"></button>
+    <div class="col-xl-12 col-xxl-12 col-sm-12 col-md-12 col-12">
+      <button type="button" class="btn btn-secondary" (click)="closeModal()">Cancelar</button>
+      <button type="button" class="btn btn-dark" (click)="addMarker()">Agregar</button>
     </div>
   </ng-template>
 </p-dialog>

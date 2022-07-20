@@ -45,6 +45,9 @@ export class UbicacionProductComponent implements OnInit {
   eventTarget(e: any) {
     this.markerTitle = e.target.value;
   }
+  closeModal() {
+    this.dialogVisible = false;
+  }
 
   handleOverlayClick(event: any) {
     let isMarker = event.overlay.getTitle != undefined;
