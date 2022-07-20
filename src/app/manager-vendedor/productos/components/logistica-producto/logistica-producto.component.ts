@@ -40,8 +40,8 @@ export class LogisticaProductoComponent implements OnInit {
     };
     //this.initOverlays();
     this.infoWindow = new google.maps.InfoWindow();
+    this.setFormData();
   }
-
 
   //AGREGAR EL NUEVA UBICACION Y ABRIR EL MODAL
   handleMapClick(event: any) {
@@ -156,7 +156,31 @@ export class LogisticaProductoComponent implements OnInit {
       ];
     }
   } */
-
+  setFormData() {
+    setTimeout(() => {
+      this.setUbicacionArray();
+    }, 1000);
+  }
+  //SETEAR UBICACIONES ENCONTRADAS
+  setUbicacionArray() {
+    this.productEdit.logistica.ubicacion.map((res: any) => {
+      this.formUbicacion.addUbicacionProducto(
+        res.descripcionUbicacion,
+        res.longitudArticulo,
+        res.latitudArticulo
+      );
+      this.overlays.push(
+        new google.maps.Marker({
+          position: {
+            lat: res.latitudArticulo,
+            lng: res.longitudArticulo,
+          },
+          title: res.descripcionUbicacion,
+          draggable: this.draggable,
+        })
+      );
+    });
+  }
   zoomIn(map: any) {
     map.setZoom(map.getZoom() + 1);
   }
@@ -166,6 +190,7 @@ export class LogisticaProductoComponent implements OnInit {
   }
 
   clear() {
+    this.formUbicacion.limpiarForm();
     this.overlays = [];
   }
 }
