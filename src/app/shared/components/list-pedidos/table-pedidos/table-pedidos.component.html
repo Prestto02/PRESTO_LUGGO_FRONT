@@ -1,0 +1,19 @@
+<table class="table">
+  <thead class="table-light">
+    <tr>
+      <th scope="col" class="text-tamano">{{HeaderTable.id_venta}}</th>
+      <th scope="col" class="text-tamano">{{HeaderTable.fecha_venta}}</th>
+      <th scope="col" class="text-tamano">{{HeaderTable.Valor_Total}}</th>
+      <th scope="col" class="text-tamano">{{HeaderTable.estado}}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let ventas of arrayTable" class="btn-hover mb-2" (click)="verDetalles(ventas.id_venta)"
+      data-bs-toggle="modal" data-bs-target="#exampleModal">
+      <th scope="row">{{ventas.id_venta}}</th>
+      <td>{{ventas.fecha_venta}}</td>
+      <td>{{ventas.Valor_Total}}</td>
+      <td class="badge bg-primary">{{ventas.estado}}</td>
+    </tr>
+  </tbody>
+</table>

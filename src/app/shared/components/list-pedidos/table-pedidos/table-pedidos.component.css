@@ -1,0 +1,16 @@
+* {
+  font-family: Cardium A-Medium;
+}
+.btn-hover {
+  cursor: pointer;
+}
+.btn-hover:hover {
+  background-color: rgb(233, 233, 233);
+}
+
+@media screen and (max-width: 880px) {
+  .text-tamano {
+    font-size: 12px;
+    font-weight: 600;
+  }
+}

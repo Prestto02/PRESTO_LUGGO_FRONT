@@ -5,9 +5,10 @@ import { ItemPedidosComponent } from '../item-pedidos/item-pedidos.component';
 import { ListaPedidosRoutingModule } from './List-pedidos-routing.module';
 import { MenuIndexModule } from '../../index/menu-index/module/menu-index.module';
 import { FooterIndexModule } from '../../index/footer-index/module/footer-index.module';
+import { TablePedidosComponent } from '../table-pedidos/table-pedidos.component';
 
 @NgModule({
-  declarations: [ListPedidosComponent, ItemPedidosComponent],
+  declarations: [ListPedidosComponent, ItemPedidosComponent, TablePedidosComponent],
   imports: [
     CommonModule,
     ListaPedidosRoutingModule,
