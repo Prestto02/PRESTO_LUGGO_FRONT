@@ -1,0 +1,11 @@
+.text-title {
+  font-family: Cardium A-Medium;
+  font-size: 24px;
+  color: #ea2313;
+}
+
+@media screen and (max-width: 880px) {
+  .text-title {
+    text-align: center;
+  }
+}

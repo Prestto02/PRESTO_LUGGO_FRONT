@@ -53,7 +53,7 @@ export const UrlApi = {
   listProductsUsers: 'api/ADN/Mis-productos',
   //EDITAR PRODUCTOS
   editProductGet: 'api/articulo/edit/',
-  editFormProductPut:'api/articulo/edit',
+  editFormProductPut: 'api/articulo/edit',
   //CARRITO, BUSCAR PRODUCTO,
   traerProductosCarrito: 'api/Articulo/listado',
   buscarProductos: 'api/Articulo/producto/',
@@ -78,6 +78,7 @@ export const UrlApi = {
   pagarUser: 'api/Venta',
 
   //LISTADO DE COMPRAS DE LOS CLIENTES
+  ventaListaPedido: 'api/pedido/ventas',
   listadoPedidos: 'api/pedido/mis-compras',
   //VERIFICAR PAGO
   verificador: 'api/Payment/verificador?token=',

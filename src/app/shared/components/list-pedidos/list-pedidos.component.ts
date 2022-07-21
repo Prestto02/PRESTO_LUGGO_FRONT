@@ -8,19 +8,7 @@ import { ClientListPedidosService } from './services/client-list-pedidos.service
   styleUrls: ['./list-pedidos.component.css'],
 })
 export class ListPedidosComponent implements OnInit {
-  listPedidos: ListPedidosUsers[] = [];
-  constructor(private apiListPedidos: ClientListPedidosService) {}
+  constructor() {}
 
-  ngOnInit(): void {
-    this.getPedidosClient();
-  }
-  //OBTENTER TODOS LOS PEDIDOS DE LOS CLIENTES
-  getPedidosClient() {
-    this.apiListPedidos
-      .getPedidosUsers()
-      .subscribe((res: ListPedidosUsers[]) => {
-        console.log(res);
-        this.listPedidos = res;
-      });
-  }
+  ngOnInit(): void {}
 }

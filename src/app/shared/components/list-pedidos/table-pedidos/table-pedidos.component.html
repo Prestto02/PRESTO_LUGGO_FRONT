@@ -1,19 +1,38 @@
-<table class="table">
-  <thead class="table-light">
-    <tr>
-      <th scope="col" class="text-tamano">{{HeaderTable.id_venta}}</th>
-      <th scope="col" class="text-tamano">{{HeaderTable.fecha_venta}}</th>
-      <th scope="col" class="text-tamano">{{HeaderTable.Valor_Total}}</th>
-      <th scope="col" class="text-tamano">{{HeaderTable.estado}}</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let ventas of arrayTable" class="btn-hover mb-2" (click)="verDetalles(ventas.id_venta)"
-      data-bs-toggle="modal" data-bs-target="#exampleModal">
-      <th scope="row">{{ventas.id_venta}}</th>
-      <td>{{ventas.fecha_venta}}</td>
-      <td>{{ventas.Valor_Total}}</td>
-      <td class="badge bg-primary">{{ventas.estado}}</td>
-    </tr>
-  </tbody>
-</table>
+<ng-container *ngIf="arrayTable.length>0 else notData">
+  <div class="table-responsive">
+    <table class="table">
+      <thead class="table-light">
+        <tr>
+          <th scope="col" class="text-tamano">{{HeaderTable.id_venta}}</th>
+          <th scope="col" class="text-tamano">{{HeaderTable.fecha_venta}}</th>
+          <th scope="col" class="text-tamano">{{HeaderTable.Valor_Total}}</th>
+          <th scope="col" class="text-tamano">{{HeaderTable.estado}}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let ventas of arrayTable | paginate: {itemsPerPage:8,currentPage:p}" class="btn-hover"
+          (click)="getPedidosClient(ventas.id_venta)" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          <th scope="row" class="mb-3 mt-3">{{ventas.id_venta}}</th>
+          <td class="mb-3 mt-3">{{ventas.fecha_venta}}</td>
+          <td class="mb-3 mt-3">{{ventas.Valor_Total | currency:'USD'}}</td>
+          <td class="mb-3 mt-2">
+            <span appColorBadge [colorBadgeState]="ventas.estado" class="badge">{{ventas.estado}}</span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <!-- PAGINATION  -->
+  <div class="d-flex flex-row-reverse bd-highlight">
+    <pagination-controls (pageChange)="p=$event" previousLabel="Anterior" nextLabel="Siguiente" [autoHide]="true"
+      [responsive]="true" screenReaderPaginationLabel="Pagination">
+    </pagination-controls>
+  </div>
+</ng-container>
+
+<!-- NO EXISTE DATOS -->
+<ng-template #notData>
+  <h5 class="text-center">No hay lista de pedidos aún</h5>
+</ng-template>
+<!-- MODAL PARA EL LISTADO DE PEDIDOS -->
+<app-item-pedidos [listPedidos]="listPedidos"></app-item-pedidos>

@@ -7,10 +7,15 @@
 .btn-hover:hover {
   background-color: rgb(233, 233, 233);
 }
-
+.badge {
+  font-family: Cardium A-Regular;
+}
 @media screen and (max-width: 880px) {
-  .text-tamano {
+  * {
     font-size: 12px;
+  }
+  .text-tamano {
+    font-size: 13px;
     font-weight: 600;
   }
 }

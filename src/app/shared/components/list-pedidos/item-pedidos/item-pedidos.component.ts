@@ -8,11 +8,21 @@ import { ListPedidosUsers } from '../models/ListPedidos.models';
   styleUrls: ['./item-pedidos.component.css'],
 })
 export class ItemPedidosComponent implements OnInit {
-  @Input('listPedidos') listPedidos: ListPedidosUsers[] | null = null;
+  @Input('listPedidos') listPedidos: ListPedidosUsers[] = [];
   imgIcons = `${RepositorioImg.urlRepositorio}`;
   imgIconsTienda = `${RepositorioImg.urlRepositorio}img/IMÁGENES/img-iconos/shop.png`;
-
+  itemsProducts: number = 0;
+  totalProducts: number = 0;
   constructor() {}
-
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.getTotalItemsProducts();
+  }
+  getTotalItemsProducts(): void {
+    this.totalProducts = this.listPedidos.length;
+    this.listPedidos?.map((listPedidos) => {
+      listPedidos.detalle_venta.map((res) => {
+        this.itemsProducts = res.item + this.itemsProducts;
+      });
+    });
+  }
 }

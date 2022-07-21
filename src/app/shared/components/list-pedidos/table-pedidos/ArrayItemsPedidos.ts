@@ -29,6 +29,42 @@ export const ArrayItemsPedidos: TablePedidos[] = [
     Valor_Total: 100.22,
     estado: 'Aprobado',
   },
+  {
+    id_venta: 5,
+    fecha_venta: '09/04/2022',
+    Valor_Total: 10.1,
+    estado: 'Aprobado',
+  },
+  {
+    id_venta: 6,
+    fecha_venta: '09/04/2022',
+    Valor_Total: 33.22,
+    estado: 'En espera',
+  },
+  {
+    id_venta: 7,
+    fecha_venta: '09/04/2022',
+    Valor_Total: 41.3,
+    estado: 'Aprobado',
+  },
+  {
+    id_venta: 8,
+    fecha_venta: '09/04/2022',
+    Valor_Total: 192.0,
+    estado: 'Cancelado',
+  },
+  {
+    id_venta: 9,
+    fecha_venta: '09/04/2022',
+    Valor_Total: 1110.1,
+    estado: 'Pendiente',
+  },
+  {
+    id_venta: 10,
+    fecha_venta: '09/04/2022',
+    Valor_Total: 921.21,
+    estado: 'Aprobado',
+  },
 ];
 
 export interface HeaderTablePedido {
