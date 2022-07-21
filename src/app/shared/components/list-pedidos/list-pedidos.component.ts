@@ -19,6 +19,7 @@ export class ListPedidosComponent implements OnInit {
     this.apiListPedidos
       .getPedidosUsers()
       .subscribe((res: ListPedidosUsers[]) => {
+        console.log(res);
         this.listPedidos = res;
       });
   }

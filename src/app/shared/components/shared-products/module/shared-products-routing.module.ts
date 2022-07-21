@@ -15,7 +15,7 @@ const routes: Routes = [
         component: IndexProductsComponent,
       },
       {
-        path: UrlFront.ListaDeseos.listaDeseos, //RUTA LISTA DE DESEOS
+        path: UrlFront.ListaDeseos.listaDeDesosGet, //RUTA LISTA DE DESEOS
         component: ListaDeseosComponent,
       },
       {

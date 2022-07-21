@@ -1,0 +1,63 @@
+* {
+  font-family: Cardium A-Medium;
+}
+.codigo-venta {
+  font-size: 24px;
+  font-weight: 600;
+}
+.id_venta {
+  color: #ea2313;
+}
+.tienda {
+  color: #9f0505;
+  margin-left: 1em;
+}
+.img-tamano {
+  margin-bottom: 1em;
+}
+.flex-box {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+}
+.flex-box-total-pagar {
+  display: flex;
+  justify-content: space-around;
+}
+.nombre-tienda {
+  margin-top: 1em;
+}
+.list-items {
+  font-weight: 600;
+  font-size: 14px;
+  color: #282828;
+}
+.total-pagar {
+  font-size: 18px;
+  font-weight: 700;
+  color: #9f0505;
+}
+.subtotal-producto {
+  font-size: 16px;
+  font-weight: 700;
+  color: #9f0505;
+}
+.total-pagado {
+  font-size: 18px;
+  font-weight: 700;
+}
+@media screen and (max-width: 880px) {
+  .codigo-venta {
+    font-size: 20px;
+  }
+  .list-items {
+    font-size: 12px;
+  }
+  .total-pagar {
+    font-size: 16px;
+  }
+  .subtotal-producto {
+    font-size: 14px;
+  }
+}

@@ -53,7 +53,7 @@
         <div class="input-group mb-3">
           <span class="input-group-text" id="precio-global">$</span>
           <input type="text" class="form-control" placeholder="12,00" aria-label="Precio Global"
-            aria-describedby="precio-global" formControlName="PrecioGlobal"
+            aria-describedby="precio-global" formControlName="PrecioGlobal" (keypress)="changePrecioG($event)"
             [class.is-invalid]="formAtributosDos.formAtributosDos.get('PrecioGlobal')?.invalid && formAtributosDos.formAtributosDos.get('PrecioGlobal')?.touched">
           <!--           <button class="btn btn-sm btn-primary" (click)="agregarPrecioGlobal();" type="button" id="button-addon2"
             title="Se agregara el precio a todos las variaciones">+</button> -->

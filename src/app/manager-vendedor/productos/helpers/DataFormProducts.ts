@@ -164,6 +164,8 @@ export class DataFormProducts {
       Restricciones: restricciones,
       Disponibilidad: disponibilidad,
       Garantia: garantia,
+      Iva: this.attributosConfig2.formAtributosDos.get('Iva')?.value,
+      Ice: this.attributosConfig2.formAtributosDos.get('Ice')?.value,
       etiquetas: this.formEtiquetas.formEtiquetas.get('etiqueta')?.value,
       articuloTieneCategoria: this.formCategoria.formCategorias.get(
         'ArticuloTieneCategoria'
@@ -180,8 +182,7 @@ export class DataFormProducts {
           ),
           precioPorVariacion:
             this.attributosConfig2.formAtributosDos.get('PrecioGlobal')?.value,
-          Iva: this.attributosConfig2.formAtributosDos.get('Iva')?.value,
-          Ice: this.attributosConfig2.formAtributosDos.get('Ice')?.value,
+
           Atributes: this.atributoConfig.formAtributos.value,
         },
       ],
@@ -222,6 +223,8 @@ export class DataFormProducts {
       Restricciones: restricciones,
       Disponibilidad: disponibilidad,
       Garantia: garantia,
+      Iva: this.attributosConfig2.formAtributosDos.get('Iva')?.value,
+      Ice: this.attributosConfig2.formAtributosDos.get('Ice')?.value,
       etiquetas: this.formEtiquetas.formEtiquetas.get('etiqueta')?.value,
       articuloTieneCategoria: this.formCategoria.formCategorias.get(
         'ArticuloTieneCategoria'
@@ -238,8 +241,6 @@ export class DataFormProducts {
           ),
           precioPorVariacion:
             this.attributosConfig2.formAtributosDos.get('PrecioGlobal')?.value,
-          Iva: this.attributosConfig2.formAtributosDos.get('Iva')?.value,
-          Ice: this.attributosConfig2.formAtributosDos.get('Ice')?.value,
           Atributes: this.atributoConfig.formAtributos.value,
         },
       ],

@@ -32,8 +32,12 @@ export class MenuComponent implements OnInit {
   }
   //LISTA DE DESEO
   irListaDeseos() {
-    this.router.navigateByUrl(
-      `${UrlFront.Menu.menu}/${UrlFront.ListaDeseos.listaDeseos}`
-    );
+    this.idUsuario
+      ? this.router.navigateByUrl(
+          `${UrlFront.Menu.menu}/${UrlFront.ListaDeseos.listaDeseos}/${this.idUsuario}`
+        )
+      : this.router.navigateByUrl(
+          `${UrlFront.Menu.menu}/${UrlFront.ListaDeseos.listaDeseos}/usuario`
+        );
   }
 }

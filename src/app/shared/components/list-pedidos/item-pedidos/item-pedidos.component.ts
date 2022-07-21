@@ -10,6 +10,7 @@ import { ListPedidosUsers } from '../models/ListPedidos.models';
 export class ItemPedidosComponent implements OnInit {
   @Input('listPedidos') listPedidos: ListPedidosUsers[] | null = null;
   imgIcons = `${RepositorioImg.urlRepositorio}`;
+  imgIconsTienda = `${RepositorioImg.urlRepositorio}img/IMÁGENES/img-iconos/shop.png`;
 
   constructor() {}
 

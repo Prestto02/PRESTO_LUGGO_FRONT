@@ -10,7 +10,7 @@ const routes: Routes = [
     path: '',
     children: [
       {
-        path: UrlFront.Cliente.miCuenta,
+        path: UrlFront.Cliente.clienteCuenta,
         canActivate: [ClienteGuard],
         component: MiCuentaComponent,
       },

@@ -1,20 +1,69 @@
-<div class="col-xl-12">
-  <div class="row mx-3">
-    <ng-container *ngIf="listPedidos">
-      <div class="col-xxl-12 col-xl-12" *ngFor="let list of listPedidos">
-        <p>codigo de la venta: {{list.id_venta}}</p>
-        <p>total a pagar:{{list.Total}}</p>
-        <ng-container *ngFor="let listDetalle of list.detalle_venta">
-          <img [src]="imgIcons+listDetalle.img" width="200px" height="200px" />
-          <p>id detalle venta:{{listDetalle.id_detalle_venta}}</p>
-          <p>nombre producto:{{listDetalle.nombre_producto}}</p>
-          <p> nombre tienda: {{listDetalle.nombre_tienda}}</p>
-          <p>cantidad comprada:{{listDetalle.item}}</p>
-          <p>iva:{{listDetalle.iva?'IVa aplica':''}}</p>
-          <p>Subtotal del producto: {{listDetalle.sub_Total_producto}}</p>
-          <p class="badge badge-primary">estado del pedido:{{listDetalle.estado_pedido}}</p>
-        </ng-container>
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Launch demo modal
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Detalle de la orden</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-    </ng-container>
+      <div class="modal-body">
+        <div class="col-xxl-12 col-xl-12 col-md-12 col-sm-12 col-12">
+          <div class="row">
+            <ng-container *ngIf="listPedidos">
+              <div class="col-xxl-12 col-xl-12 col-md-12 col-sm-12 col-12" *ngFor="let list of listPedidos">
+                <p class="codigo-venta text-center mt-3">Pedido Nº <b class="id_venta">{{list.id_venta}}</b></p>
+                <div class="row">
+                  <ng-container *ngFor="let listDetalle of list.detalle_venta">
+                    <div class="col-xl-4 col-xxl-4 col-md-4 col-sm-3 col-3">
+                      <img [src]="imgIcons+listDetalle.img" class="img-fluid" [alt]="list.id_venta" />
+                    </div>
+                    <div class="col-xl-5 col-xxl-5 col-md-5 col-sm-6 col-6 flex-box">
+                      <p class="">{{listDetalle.nombre_producto}}</p>
+                      <p class="list-items">{{listDetalle.item}} und.
+                        <span class="tienda"> <img [src]="imgIconsTienda" class="img-fluid img-tamano" /><span
+                            class="nombre-tienda">{{listDetalle.nombre_tienda}}</span></span>
+                      </p>
+                      <p class="">Envío Gratis</p>
+                    </div>
+                    <div class="col-xxl-3 col-xl-3 col-md-3 col-sm-3 col-3 flex-box">
+                      <p class="subtotal-producto text-center">{{listDetalle.sub_Total_producto | currency:'USD'}}</p>
+                      <p class="mt-5 text-center">$0</p>
+                    </div>
+                    <!--                   <p>iva:{{listDetalle.iva?'IVa aplica':''}}</p> -->
+                    <p class="badge badge-primary">{{listDetalle.estado_pedido}}</p>
+                  </ng-container>
+                </div>
+                <!--                 <div class="row">
+                  <div class="col-xl-4 col-xxl-4 col-md-4 col-sm-4 col-4">
+                    <p>Total Pagado:</p>
+                  </div>
+                  <div class="col-xl-4 col-xxl-4 col-md-4 col-sm-4 col-4">
+                    <p class="total-pagar">{{list.total | currency:'USD'}}</p>
+                  </div>
+                </div> -->
+                <hr>
+              </div>
+              <div class="row flex-box-total-pagar">
+                <div class="col-xl-5 col-xxl-5 col-md-5 col-sm-5 col-5">
+                  <p class="text-start total-pagado">Total Pagado:</p>
+                </div>
+                <div class="col-xl-5 col-xxl-5 col-md-5 col-sm-4 col-4">
+                  <p class="total-pagar text-end">{{209 | currency:'USD'}}</p>
+                </div>
+              </div>
+            </ng-container>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Aceptar</button>
+      </div>
+    </div>
   </div>
 </div>

@@ -62,6 +62,12 @@ export class ConfiguracionAtributosComponent implements OnInit {
     this.resultIC = datos * 0.15;
     this.Total = datos * 1.15 + this.resultIva;
   }
+  changePrecioG(e: any) {
+    const iva = this.formAtributosDos.formAtributosDos.get('Iva')?.value;
+    const ice = this.formAtributos.formConfigAtributos.get('Ice')?.value;
+    if (iva) this.verifyCheckIvaEdit();
+    if (ice) this.verifyCheckIceEdit();
+  }
   //CALCULO DE ICE
   checkIce(e: any) {
     if (e.target.checked) {

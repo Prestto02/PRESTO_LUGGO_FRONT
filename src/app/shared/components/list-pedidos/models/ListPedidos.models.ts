@@ -1,6 +1,6 @@
 export interface ListPedidosUsers {
   id_venta: number;
-  Total: string;
+  total: number;
   detalle_venta: [DetalleVenta];
 }
 
@@ -12,6 +12,6 @@ export interface DetalleVenta {
   nombre_tienda: string;
   item: number;
   iva: string;
-  sub_Total_producto: string;
+  sub_Total_producto: number;
   estado_pedido: string;
 }

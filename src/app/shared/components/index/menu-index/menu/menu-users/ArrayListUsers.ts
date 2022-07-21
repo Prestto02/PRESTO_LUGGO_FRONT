@@ -36,7 +36,7 @@ export const ItemsClientMenuOffCanvas: MenuClient[] = [
     title: 'Mi Lista de Deseos',
     icons: `${RepositorioImg.urlRepositorio}img/IMÁGENES/icons-users-perfil/mi-lista-deseos.png`,
     subtitle: 'Mira tu lista de deseos.',
-    link: `${UrlFront.Cliente.cliente}/${UrlFront.Cliente.miCuenta}`,
+    link: `${UrlFront.Menu.menu}/${UrlFront.ListaDeseos.listaDeseos}`,
   },
   {
     id: 6,

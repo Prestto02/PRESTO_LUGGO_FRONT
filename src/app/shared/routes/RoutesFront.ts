@@ -10,6 +10,7 @@ export const UrlFront = {
   Cliente: {
     cliente: 'cliente',
     miCuenta: 'cuenta-cliente',
+    clienteCuenta: 'cuenta-cliente/:id',
     perfilCliente: 'perfil-cliente',
     faceClientId: 'perfil-cliente/:id',
   },
@@ -87,6 +88,7 @@ export const UrlFront = {
   //LISTA DE DESEOS
   ListaDeseos: {
     listaDeseos: 'lista-de-deseos',
+    listaDeDesosGet: 'lista-de-deseos/:id',
   },
   //COMPARAR PRODUCTOS
   CompararProductos: {
