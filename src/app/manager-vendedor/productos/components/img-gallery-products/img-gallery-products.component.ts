@@ -37,11 +37,12 @@ export class ImgGalleryProductsComponent implements OnInit, OnDestroy {
   obtenerImagenesEdit(): void {
     this.detalleArticulo.detalleArticulo[0].multimedia.map(
       (res: any, i: number) => {
+        console.log(res);
         this.formGallery.addGalleryProducts(
           res.archivo,
           i,
-          res.Id_repositorio,
-          res.url_multimediaFULHD
+          res.url_multimediaFULHD,
+          res.id_repositorio
         );
       }
     );

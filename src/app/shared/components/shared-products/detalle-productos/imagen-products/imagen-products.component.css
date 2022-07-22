@@ -19,24 +19,6 @@ body {
 .d-flex {
   height: 29rem;
 }
-.lens {
-  width: 100px;
-  height: 100px;
-  position: absolute;
-  top: 0;
-  left: 0;
-
-  background-color: rgba(255, 255, 255, 0.6);
-}
-
-.result {
-  position: absolute;
-  left: calc(100% + 50px);
-  top: 30px;
-  width: 300px;
-  height: 300px;
-  background-repeat: no-repeat;
-}
 
 .flex-box-items {
   display: flex;
@@ -66,15 +48,26 @@ body {
 .button svg path:hover {
   fill: #ea2313;
 }
-@media screen and (max-width) {
+
+@media screen and (max-width: 880px) {
   .image {
-    margin-left: 25px;
+    height: 20rem;
   }
   .img-fluid-responsive {
-    max-width: 50px;
-    height: 20rem;
+    max-width: 55px;
   }
   .d-flex {
     height: 20rem;
+  }
+  .flex-box-items-movil {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+  }
+}
+@media screen and (max-width: 300px) {
+  .img-fluid-responsive {
+    max-width: 40px;
   }
 }
