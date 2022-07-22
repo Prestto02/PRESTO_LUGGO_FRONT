@@ -7,6 +7,7 @@ import { BaseFormGlobalPrecio } from '../components/configuracion-producto/confi
 import { BaseFormAtributosConfig } from '../components/configuracion-productos-tercera/models/BaseFormAtrtibutos';
 import { BaseFormEtiquetas } from '../components/create-products/form-etiquetas/models/BaseFormEtiquetas';
 import { EditFormProducts } from '../components/edit-product/model/FormEditProduct';
+import { ImgGalleryForm } from '../components/img-gallery-products/models/ImgGallery';
 import { BaseFormTamanoProducto } from '../components/logistica-producto/models/BaseFormTamano';
 import { BaseFormLogisticaProducto } from '../components/logistica-producto/models/BaseFormubicacion';
 import { BaseFormProducts } from '../models/BaseformProduct';
@@ -29,7 +30,8 @@ export class DataFormProducts {
     private baseGlobalPrecio: BaseFormGlobalPrecio,
     private atributoConfig: BaseFormAtributosConfig,
     private attributosConfig2: BaseFormConfigAtributos2,
-    private token: TokenService
+    private token: TokenService,
+    private gallery: ImgGalleryForm
   ) {}
   //OBTENGO TODAS LAS CATEGORIAS
   getCategorias() {
@@ -184,6 +186,7 @@ export class DataFormProducts {
             this.attributosConfig2.formAtributosDos.get('PrecioGlobal')?.value,
 
           Atributes: this.atributoConfig.formAtributos.value,
+          multimedia: this.gallery.formGallery.get('multimedia')?.value,
         },
       ],
       logistica: {
@@ -242,6 +245,7 @@ export class DataFormProducts {
           precioPorVariacion:
             this.attributosConfig2.formAtributosDos.get('PrecioGlobal')?.value,
           Atributes: this.atributoConfig.formAtributos.value,
+          multimedia: this.gallery.formGallery.get('multimedia')?.value,
         },
       ],
       logistica: {
@@ -271,5 +275,6 @@ export class DataFormProducts {
     this.attributosConfig2.limpiarFormulario();
     this.formTamano.limpiarForm();
     this.formUbicacion.limpiarForm();
+    this.gallery.limpiarFormulario();
   }
 }

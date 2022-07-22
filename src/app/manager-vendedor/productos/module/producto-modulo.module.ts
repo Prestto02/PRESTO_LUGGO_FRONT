@@ -32,6 +32,8 @@ import {
   DeclarationEditProduct,
   ProviderEditProduct,
 } from '../components/edit-product/module/edit-product.module';
+import { ImgGalleryProductsComponent } from '../components/img-gallery-products/img-gallery-products.component';
+import { ImgGalleryForm } from '../components/img-gallery-products/models/ImgGallery';
 
 export const ProductoModuleDeclarations = [
   ProductsComponent, //INDEX PRODUCTOS
@@ -48,6 +50,7 @@ export const ProductoModuleDeclarations = [
   FormEtiquetasComponent, //FORM ETIQUETAS
   GestionDimensionComponent, //GESTION COMPONENTS
   FilterMarcaPipe, //FILTER PIPE DE MARCAS
+  ImgGalleryProductsComponent,
   TercerPasoComponent, //TERCER PASO DEL PRODUCTO
   ConfiguracionProductosTerceraComponent,
   DeclarationEditProduct, //EDITAR LOS PRODUCTOS
@@ -70,6 +73,7 @@ export const ProductoModuleProviders = [
   BaseFormGlobalPrecio,
   BaseFormLogisticaProducto,
   ListadoProductosComponent,
+  ImgGalleryForm,
   BaseFormConfigAtributos2, //OPCIONAL ATRIBUTOS 2 PARTE
   BaseFormAtributosConfig, //ATRIBUTOS CONFIGURACION
   ProviderEditProduct, //BASE FORM EDIT PRODUCT

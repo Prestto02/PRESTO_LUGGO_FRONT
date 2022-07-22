@@ -9,7 +9,7 @@ import { BaseFormTamanoProducto } from '../models/BaseFormTamano';
 export class GestionDimensionComponent implements OnInit {
   @Input('productEdit') productEdit: any | null = null;
   puertoEnvio: boolean = false;
-  adnEnvio: boolean = false;
+  adnEnvio: boolean = true;
 
   constructor(public formTamano: BaseFormTamanoProducto) {}
 
@@ -17,18 +17,18 @@ export class GestionDimensionComponent implements OnInit {
     this.getDataForm();
     this.verifyPuerttoOrAdn();
   }
-  abrirPuerto(e: any) {
+/*   abrirPuerto(e: any) {
     this.formTamano.formTamanoProducto.patchValue({
       GestionEnvio: e.target.value,
     });
     this.puertoEnvio = true;
     this.adnEnvio = false;
-  }
+  } */
   abrirArticulo(e: any) {
     this.formTamano.formTamanoProducto.patchValue({
       GestionEnvio: e.target.value,
     });
-    this.puertoEnvio = false;
+    /* this.puertoEnvio = false; */
     this.adnEnvio = true;
   }
   //VERIFICO ADN O PUERTTO
