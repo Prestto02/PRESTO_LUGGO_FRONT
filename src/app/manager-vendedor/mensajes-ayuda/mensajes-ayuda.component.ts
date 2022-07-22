@@ -13,4 +13,10 @@ export class MensajesAyudaComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
+  activarCheckBoolen() {
+    this.activarCheck = true;
+    setTimeout(() => {
+      this.activarCheck = false;
+    }, 7000);
+  }
 }

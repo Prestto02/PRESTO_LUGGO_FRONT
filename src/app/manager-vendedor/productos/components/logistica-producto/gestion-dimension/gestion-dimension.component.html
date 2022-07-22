@@ -132,27 +132,37 @@
       <div class="col-xl-5 col-xxl-5 col-sm-12 col-12 col-md-5 mx-auto">
         <div class="row">
           <!-------PRECIO POR COBRAR EL ENVIO-------->
-          <div class="col-xl-5 col-xxl-5 col-sm-12 col-12 col-md-4 mb-3 mt-4">
-            <label class="form-label mt-1">Precio del Envío</label>
-          </div>
-          <div class="col-xl-4 col-xxl-4 col-sm-12 col-12 col-md-4 mb-3 mt-4  ">
-            <div class="input-group mb-3">
-              <span class="input-group-text" id="basic-addon1">$</span>
-              <input type="text" class="form-control" placeholder="$12,00" aria-label="Username"
-                formControlName="Precio" aria-describedby="basic-addon1">
+          <div class="col-xxl-12 col-xl-12 col-md-12 col-sm-12 col-12">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"
+                formControlName="envio_gratis" (change)="envio_gratisCheck($event)">
+              <label class="form-check-label" for="flexCheckDefault">
+                Envío gratis
+              </label>
             </div>
-            <app-form-errors-container [forControl]="formTamano.formTamanoProducto.get('Precio')">
-              <app-message-error forErrorCode="required"></app-message-error>
-              <app-message-error forErrorCode="pattern" customMsg="Solo numeros ej:12,00">
-              </app-message-error>
-            </app-form-errors-container>
           </div>
+          <ng-container *ngIf="adnEnvio">
+            <div class="col-xl-5 col-xxl-5 col-sm-12 col-12 col-md-4 mb-3 mt-4">
+              <label class="form-label mt-1">Precio del Envío</label>
+            </div>
+            <div class="col-xl-4 col-xxl-4 col-sm-12 col-12 col-md-4 mb-3 mt-4  ">
+              <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">$</span>
+                <input type="text" class="form-control" placeholder="$12,00" aria-label="Username"
+                  formControlName="Precio" aria-describedby="basic-addon1">
+              </div>
+              <app-form-errors-container [forControl]="formTamano.formTamanoProducto.get('Precio')">
+                <app-message-error forErrorCode="required"></app-message-error>
+                <app-message-error forErrorCode="pattern" customMsg="Solo numeros ej:12,00">
+                </app-message-error>
+              </app-form-errors-container>
+            </div>
+          </ng-container>
         </div>
       </div>
       <div class="col-xl-2 col-xxl-2 col-sm-12 col-12 col-md-3 bg-light d-flex align-self-center text-design border">
         <p class="text-tamano">Establezca cuánto va a cobrar por el envío del producto</p>
       </div>
     </ng-container>
-
   </div>
 </form>

@@ -194,6 +194,8 @@ export class DataFormProducts {
           this.formTamano.formTamanoProducto.get('GestionEnvio')?.value,
         precio_envio: this.formTamano.formTamanoProducto.get('Precio')?.value,
         dimensiones,
+        envio_gratis:
+        this.formTamano.formTamanoProducto.get('envio_gratis')?.value,
         ubicacion:
           this.formUbicacion.formLogistica.get('ubicacionProducto')?.value,
       },
@@ -253,6 +255,8 @@ export class DataFormProducts {
           this.formTamano.formTamanoProducto.get('GestionEnvio')?.value,
         precio_envio: this.formTamano.formTamanoProducto.get('Precio')?.value,
         dimensiones,
+        envio_gratis:
+          this.formTamano.formTamanoProducto.get('envio_gratis')?.value,
         ubicacion:
           this.formUbicacion.formLogistica.get('ubicacionProducto')?.value,
       },

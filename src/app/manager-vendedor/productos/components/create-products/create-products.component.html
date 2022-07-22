@@ -22,8 +22,8 @@
             <!-------IMAGEN DESTACADA------>
             <div class="col-xl-4 col-xxl-4 col-sm-7 col-12 col-md-4 mx-xxl-5 mx-xl-4 mx-sm-auto position-relative mb-5">
               <div class="row">
-                <app-img-gallery-products class="col-xxl-3 col-xxl-3"></app-img-gallery-products>
-                <div class="col-xxl-9 col-xl-9">
+                <app-img-gallery-products class="col-xxl-3 col-xl-3 col-md-2 col-sm-4 col-4"></app-img-gallery-products>
+                <div class="col-xxl-9 col-xl-9 col-md-9 col-sm-8 col-8">
                   <img loading="lazy" *ngIf="imgProducts!=''" [src]="imgProducts" class="img-fluid border border-1"
                     alt="Imágen del producto" width="500px" height="500px">
                   <svg *ngIf="imgProducts==''" width="500" height="550" viewBox="0 0 250 250" fill="none"
@@ -210,8 +210,8 @@
                 </div>
               </form>
             </div>
-            <!-- modal-footer bg-white fixed-bottom -->
-            <div class="">
+            <!-- modal-footer bg-white fixed-bottom-->
+            <div class="modal-footer bg-white fixed-bottom">
               <button type="button" class="btn btn-secondary" (click)="irProducto();">Cancelar</button>
               <button class="btn btn-dark collapsed" type="button" data-bs-toggle="collapse"
                 data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo"
@@ -245,9 +245,9 @@
     </div>
   </div>
 </section>
-<button class="btn btn-primary collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+<!-- <button class="btn btn-primary collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo"
   aria-expanded="true" aria-controls="collapseTwo" (click)="addAtributos()">TWO</button>
   <button class="btn btn-primary collapsed" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false"
-  aria-controls="collapseFour" (click)="addAtributos()">THREE</button>
+  aria-controls="collapseFour" (click)="addAtributos()">THREE</button> -->
 
 <app-footer-index></app-footer-index>

@@ -17,7 +17,7 @@ export class GestionDimensionComponent implements OnInit {
     this.getDataForm();
     this.verifyPuerttoOrAdn();
   }
-/*   abrirPuerto(e: any) {
+  /*   abrirPuerto(e: any) {
     this.formTamano.formTamanoProducto.patchValue({
       GestionEnvio: e.target.value,
     });
@@ -31,6 +31,13 @@ export class GestionDimensionComponent implements OnInit {
     /* this.puertoEnvio = false; */
     this.adnEnvio = true;
   }
+  //ENVIO CHECK GRATIS(){
+  envio_gratisCheck(e: any) {
+    const value = this.formTamano.formTamanoProducto.get('envio_gratis')?.value;
+    if (value) this.adnEnvio = false;
+    else this.adnEnvio = true;
+  }
+
   //VERIFICO ADN O PUERTTO
   verifyPuerttoOrAdn() {
     const dato = this.formTamano.formTamanoProducto.get('GestionEnvio')?.value;
