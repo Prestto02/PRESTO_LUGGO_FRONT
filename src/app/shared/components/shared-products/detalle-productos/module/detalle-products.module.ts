@@ -4,6 +4,7 @@ import { ButtonAddOrListComponent } from '../button-add-or-list/button-add-or-li
 import { DetalleProductosComponent } from '../detalle-productos.component';
 import { InputProductsComponents } from '../product-description/input-products/input-products.component';
 import { ProductDescriptionComponent } from '../product-description/product-description.component';
+import { GalleriaModule } from 'primeng/galleria';
 
 export const DetalleProductDecalarations = [
   DetalleProductosComponent,
@@ -13,3 +14,5 @@ export const DetalleProductDecalarations = [
   ButtonAddOrListComponent, //ADD OR LIST COMPONENT
   SeparedComaColorBg,
 ];
+
+export const DetalleProductModule = [GalleriaModule];

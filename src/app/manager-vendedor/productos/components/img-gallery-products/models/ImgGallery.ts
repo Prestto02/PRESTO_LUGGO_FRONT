@@ -35,6 +35,13 @@ export class ImgGalleryForm {
       archivo: archivo,
     });
   }
+  limpiarFormularioString() {
+    this.galleryProducts.controls.map((res) => {
+      res.patchValue({
+        img: '',
+      });
+    });
+  }
   limpiarFormulario() {
     this.formGallery.reset();
   }

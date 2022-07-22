@@ -1,4 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  AfterContentInit,
+  AfterViewInit,
+  Component,
+  Input,
+  OnDestroy,
+  OnInit,
+} from '@angular/core';
 import { ValidarYTransformarImagen } from 'src/app/shared/validations/ValidarYTransformarImagen';
 import { ImgGalleryForm } from './models/ImgGallery';
 
@@ -7,16 +14,37 @@ import { ImgGalleryForm } from './models/ImgGallery';
   templateUrl: './img-gallery-products.component.html',
   styleUrls: ['./img-gallery-products.component.css'],
 })
-export class ImgGalleryProductsComponent implements OnInit {
+export class ImgGalleryProductsComponent implements OnInit, OnDestroy {
+  @Input('detalleArticulo') detalleArticulo: any | null = null;
   imgProducts: string = '';
   imagenTransformada: string = '';
   constructor(
     public formGallery: ImgGalleryForm,
     private imgValidar: ValidarYTransformarImagen //VALIDAR IMAGENES Y TRANSFORMAR
   ) {}
+  ngOnInit(): void {
+    this.formGallery.limpiarFormularioString();
+    this.setImgArray();
+  }
+  ngOnDestroy(): void {}
 
-  ngOnInit(): void {}
-
+  setImgArray(): void {
+    setTimeout(() => {
+      this.obtenerImagenesEdit();
+    }, 1000);
+  }
+  //SETEANDO NUEVAS IMAGENES GUARDADAS
+  obtenerImagenesEdit(): void {
+    this.detalleArticulo.detalleArticulo[0].multimedia.map(
+      (res: any, i: number) => {
+        this.formGallery.addGalleryProducts(
+          res.archivo,
+          i,
+          res.url_multimediaFULHD
+        );
+      }
+    );
+  }
   //OBTENER IMAGEN PARA VERIFICAR EN EL SERVER
   getImage(e: any) {
     this.imgValidar.getImageVerifyServer(e); //VERIFICO EN EL SERVER LA IMAGEN

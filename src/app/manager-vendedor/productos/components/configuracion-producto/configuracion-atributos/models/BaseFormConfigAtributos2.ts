@@ -18,7 +18,7 @@ export class BaseFormConfigAtributos2 {
       '',
       [Validators.required, Validators.pattern(Expresion.DolarYCentavo)],
     ],
-    Iva: [false],
+    Iva: [true],
     Ice: [false],
   });
 

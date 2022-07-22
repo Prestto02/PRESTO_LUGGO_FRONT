@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-xxl-4 col-xl-4 col-md-4 col-sm-12 col-12">
         <div class="row">
-          <app-img-gallery-products class="col-xl-3 col-xxl-3"></app-img-gallery-products>
+          <app-img-gallery-products class="col-xl-3 col-xxl-3" [detalleArticulo]="productEdit"></app-img-gallery-products>
           <div class="col-xxl-9 col-xl-9">
             <img loading="lazy" *ngIf="imgProducts!=''" [src]="imgProducts" class="img-fluid border border-1"
               alt="Imágen del producto" width="450px" height="450px">

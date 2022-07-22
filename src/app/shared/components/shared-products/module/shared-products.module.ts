@@ -21,7 +21,10 @@ import { SharedProductsRoutingModule } from './shared-products-routing.module';
 import { ImagenProductsComponent } from '../detalle-productos/imagen-products/imagen-products.component';
 import { NgxImgZoomModule } from 'ngx-img-zoom';
 import { IconsCarsDesireComponent } from '../list-products/icons-cars-desire/icons-cars-desire.component';
-import { DetalleProductDecalarations } from '../detalle-productos/module/detalle-products.module';
+import {
+  DetalleProductDecalarations,
+  DetalleProductModule,
+} from '../detalle-productos/module/detalle-products.module';
 import { NotFund404Component } from '../../not-fund404/not-fund404.component';
 
 @NgModule({
@@ -47,6 +50,7 @@ import { NotFund404Component } from '../../not-fund404/not-fund404.component';
     SharedProductsRoutingModule,
     NgxImgZoomModule,
     SeccionesModule,
+    DetalleProductModule,
     FooterIndexModule,
     MenuIndexModule,
   ],

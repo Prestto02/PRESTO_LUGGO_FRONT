@@ -87,6 +87,8 @@ export class DataFormProducts {
     const sku = this.formProduct.formProducts.get('sku')?.value;
     const id_nombre_articulo =
       this.formProduct.formProducts.get('id_nombre_articulo')?.value;
+    const nombre_articulo =
+      this.formProduct.formProducts.get('nombre_articulo')?.value;
     const archivo = this.formProduct.formProducts.get('archivo')?.value;
     const garantia = this.formProduct.formProducts.get('Tipo_Garantia')?.value;
     const disponibilidad =
@@ -102,6 +104,7 @@ export class DataFormProducts {
       id_nombre_articulo,
       archivo,
       garantia,
+      nombre_articulo,
       disponibilidad,
       restricciones,
       Id_articulo,
@@ -153,12 +156,16 @@ export class DataFormProducts {
       garantia,
       disponibilidad,
       restricciones,
+      nombre_articulo,
       Id_articulo,
     } = this.getProducts();
     return {
       Id_articulo: Id_articulo,
       id_vendedor: this.token.getTokenId(),
       id_nombre_articulo: id_nombre_articulo,
+      nombre_Articulo: {
+        nombre_articulo: nombre_articulo,
+      },
       descripcion_articulo: descripcion,
       sku: sku,
       caracteristicas: caracteristicas,
@@ -195,7 +202,7 @@ export class DataFormProducts {
         precio_envio: this.formTamano.formTamanoProducto.get('Precio')?.value,
         dimensiones,
         envio_gratis:
-        this.formTamano.formTamanoProducto.get('envio_gratis')?.value,
+          this.formTamano.formTamanoProducto.get('envio_gratis')?.value,
         ubicacion:
           this.formUbicacion.formLogistica.get('ubicacionProducto')?.value,
       },
