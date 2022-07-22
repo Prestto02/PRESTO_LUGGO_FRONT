@@ -40,6 +40,7 @@ export class ImgGalleryProductsComponent implements OnInit, OnDestroy {
         this.formGallery.addGalleryProducts(
           res.archivo,
           i,
+          res.Id_repositorio,
           res.url_multimediaFULHD
         );
       }
