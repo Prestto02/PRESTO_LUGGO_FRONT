@@ -1,8 +1,8 @@
-<div class="container-fluid d-none d-sm-none d-xxl-block d-xl-block d-md-block">
+<!-- <div class="container-fluid d-none d-sm-none d-xxl-block d-xl-block d-md-block">
   <div class="row">
-    <div class="col-xl-2 col-xxl-2 col-md-2 col-sm-2 col-2 ">
+    <div class="col-xl-2 col-xxl-2 col-md-2 col-sm-2 col-2 "> -->
       <!-- VERSION ESCRITORIO -->
-      <div class="flex-box-items">
+     <!--  <div class="flex-box-items">
         <p title="Subir" (click)="upItems();" class="button">
           <svg width="26" height="15" viewBox="0 0 26 15" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
@@ -20,21 +20,27 @@
           </svg>
         </p>
       </div>
-    </div>
+    </div> -->
     <!-- IMAGEN -->
-    <div class="col-xxl-10 col-xl-10 col-md-10 col-sm-10 col-12">
-      <img class="image" [src]="imagenArray" class="image" />
+    <div class="container-fluid">
+      <div class="row">
+
+        <div class="col-xxl-10 col-xl-10 col-md-10 col-sm-10 col-12 mx-2">
+          <img class="image" [src]="imgGrande+imagenArray" alt="imageproducto" />
+        </div>
+      </div>
     </div>
-  </div>
-</div>
+ <!--      </div>
+    </div> -->
 
 <!-- VERSION MOVIL -->
 
-<div class="col-xxl-10 col-xl-10 col-md-10 col-sm-10 col-12 d-block d-sm-block d-xxl-none d-xl-none d-md-none">
+<!-- <div class="col-xxl-10 col-xl-10 col-md-10 col-sm-10 col-12 d-block d-sm-block d-xxl-none d-xl-none d-md-none">
   <img class="image" [src]="imagenArray" class="image" />
-</div>
+</div> -->
 <!-- VERSION MOVIL -->
-<div class="flex-box-items-movil d-xxl-none d-xl-none d-md-none">
+<!-- <div class="flex-box-items-movil d-xxl-none d-xl-none d-md-none">
   <img class="img-fluid-responsive mt-2 mb-3 " [ngClass]="{'active':selectedIndex===i }"
     *ngFor="let img of images; let i = index" (click)="cambiarImg(i);" [src]="img.previewImageSrc" />
 </div>
+ -->
