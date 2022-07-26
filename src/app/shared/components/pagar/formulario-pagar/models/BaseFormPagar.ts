@@ -45,6 +45,8 @@ export class BaseFormPagar {
       ],
     ],
     correo: ['', [Validators.required, Validators.email]],
+    id_ubicacion: [0, [Validators.required]],
+    nombreUbicacion: ['', [Validators.required]],
   });
 
   limpiarFormulario() {

@@ -12,7 +12,8 @@
         </app-form-errors-container>
       </div>
       <!-- APELLIDOS -->
-      <div class="col-xxl-6 col-xl-6 col-sm-6 col-12 col-md-6 mt-xl-3 mt-xxl-3 mb-2 mb-xxl-3 mb-xl-3 py-xxl-3 py-xl-3 py-3">
+      <div
+        class="col-xxl-6 col-xl-6 col-sm-6 col-12 col-md-6 mt-xl-3 mt-xxl-3 mb-2 mb-xxl-3 mb-xl-3 py-xxl-3 py-xl-3 py-3">
         <label for="formControlApellidos" class="form-label">Apellidos</label>
         <input type="text" class="form-control" id="formControlApellidos" formControlName="Apellidos"
           placeholder="Apellidos Completos">
@@ -79,10 +80,10 @@
   <div class="col-xxl-4 col-xl-5 col-md-5 col-sm-12 col-12 mt-xl-4 mt-xxl-4 mt-sm-4 mt-4">
     <h4 class="direccion-envio">Dirección de Envío</h4>
   </div>
-  <div class="col-xxl-3 col-xl-5 col-md-5 col-sm-12 col-12 mt-xl-4 mt-xxl-4 mt-md-4">
-    <p class="ubicacion-mapa">Ubícala en el mapa</p>
+  <div class="col-xxl-7 col-xl-8 col-md-9 col-sm-12 col-12 mt-xl-4 mt-xxl-4 mt-md-4">
+    <p class="ubicacion-mapa">Escoge tus ubicaciones</p>
   </div>
 </div>
 <div class="card mt-3">
-  <app-ubicacion-product></app-ubicacion-product>
+  <app-ubicacion-product [formGroup]="formB.formPagar"></app-ubicacion-product>
 </div>

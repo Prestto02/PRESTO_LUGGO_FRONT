@@ -6,3 +6,57 @@
   background-color: #fff;
   border: 0;
 }
+
+.clickAqui {
+  font-weight: 700;
+  color: #ea2313;
+}
+.mensaje-ayuda {
+  color: rgba(0, 0, 0, 0.466);
+}
+.borders-input {
+  border-right: 0;
+}
+
+.border-button {
+  border: 1px solid #0003;
+  border-left: 0;
+}
+
+.list-group {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  border: 1px solid #0000003d;
+  border-top: 0;
+}
+.noActive {
+  display: none;
+}
+.active {
+  padding-top: 5px;
+}
+.showList {
+  display: block;
+  border-bottom: 1px solid #00000021;
+  cursor: pointer;
+  padding: 5px;
+}
+.showList:hover {
+  background-color: #16161608;
+}
+.hiddenList {
+  display: none;
+}
+
+.nameDireccion {
+  padding: 12px;
+}
+
+.cursor{
+  cursor: pointer;
+}
+
+.color-direccion{
+  color: #ea2313;
+}

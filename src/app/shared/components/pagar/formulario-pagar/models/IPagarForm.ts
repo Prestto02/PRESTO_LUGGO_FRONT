@@ -6,6 +6,7 @@ export interface IFormularioPagar {
   identificacion: string;
   correo: string;
   direccion_entrega: string;
+  id_ubicacion: number;
 }
 export interface IFormularioUbicacion {
   latitud: number;

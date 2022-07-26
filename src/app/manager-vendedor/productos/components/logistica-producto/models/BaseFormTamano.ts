@@ -29,11 +29,12 @@ export class BaseFormTamanoProducto {
   }
 
   setFormEditProduct(formEdit: any) {
-    if (formEdit.logistica.gestion_Envio === 'A') {
-      this.formTamanoProducto.patchValue({
-        GestionEnvio: formEdit.logistica.gestion_Envio,
-        Precio: formEdit.logistica.precio_envio,
-      });
+    console.log(formEdit);
+    this.formTamanoProducto.patchValue({
+      GestionEnvio: formEdit.logistica.gestion_Envio,
+      Precio: formEdit.logistica.precio_envio,
+    });
+    /* if (formEdit.logistica.gestion_Envio === 'A') {
     } else if (formEdit.logistica.gestion_Envio === 'P') {
       this.formTamanoProducto.patchValue({
         Longitud_x: formEdit.logistica.Longitud_x,
@@ -42,6 +43,6 @@ export class BaseFormTamanoProducto {
         Peso: formEdit.logistica.Peso,
         TiempoDespacho: formEdit.logistica.TiempoDespacho,
       });
-    }
+    } */
   }
 }

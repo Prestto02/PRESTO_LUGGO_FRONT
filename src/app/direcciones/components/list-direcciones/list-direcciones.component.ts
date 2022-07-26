@@ -11,6 +11,10 @@ export class ListDireccionesComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
-  editar(): void {}
-  eliminar(): void {}
+  editar(id: number): void {
+    console.log(id);
+  }
+  eliminar(id: number): void {
+    console.log(id);
+  }
 }

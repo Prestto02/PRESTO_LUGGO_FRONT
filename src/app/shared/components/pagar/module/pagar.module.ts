@@ -11,7 +11,7 @@ import { VerificarPaymentsComponent } from '../verificar-payments/verificar-paym
 
 import { ErrorsExtensionsModule } from '../../errors/errors-module.module';
 import { UbicacionProductComponent } from '../formulario-pagar/ubicacion-product/ubicacion-product.component';
-import { ImportsUbicacion } from '../formulario-pagar/ubicacion-product/ubicacion-mapa.module';
+import { FilterubicacionPipe } from '../formulario-pagar/ubicacion-product/pipe/filterubicacion.pipe';
 
 @NgModule({
   declarations: [
@@ -19,11 +19,11 @@ import { ImportsUbicacion } from '../formulario-pagar/ubicacion-product/ubicacio
     FormularioPagarComponent,
     VerificarPaymentsComponent,
     UbicacionProductComponent,
+    FilterubicacionPipe,
   ],
   imports: [
     CommonModule,
     PagarRoutingModule,
-    ImportsUbicacion,
     ReactiveFormsModule,
     MenuIndexModule,
     ErrorsExtensionsModule,
