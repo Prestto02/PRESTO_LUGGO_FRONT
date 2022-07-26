@@ -29,7 +29,7 @@ export const ItemsClientMenu: MenuClient[] = [
     title: 'Direcciones',
     icons: `${RepositorioImg.urlRepositorio}img/IMÁGENES/Portal-Usuario-Comprador/mis-direcciones.png`,
     subtitle: 'Agrega, edita o elimina tus direcciones.',
-    link: `${UrlFront.Cliente.cliente}/${UrlFront.Cliente.miCuenta}`,
+    link: `${UrlFront.Direcciones.moduloDireccion}/${UrlFront.Direcciones.direcciones}`,
   },
   {
     id: 5,

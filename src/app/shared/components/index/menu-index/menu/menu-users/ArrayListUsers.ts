@@ -29,7 +29,7 @@ export const ItemsClientMenuOffCanvas: MenuClient[] = [
     title: 'Direcciones',
     icons: `${RepositorioImg.urlRepositorio}img/IMÁGENES/icons-users-perfil/mis-direcciones.png`,
     subtitle: 'Agrega, edita o elimina tus direcciones.',
-    link: `${UrlFront.Cliente.cliente}/${UrlFront.Cliente.miCuenta}`,
+    link: `${UrlFront.Direcciones.moduloDireccion}/${UrlFront.Direcciones.direcciones}`,
   },
   {
     id: 5,
@@ -68,5 +68,12 @@ export const ItemsAdnMenuOffCanvas: MenuClient[] = [
     icons: `${RepositorioImg.urlRepositorio}img/IMÁGENES/icons-users-perfil/billeteraAdn.png`,
     subtitle: 'Revisa el estado de tus pedidos online.',
     link: `${UrlFront.Manager.managerVendedor}/${UrlFront.Manager.vendedor}`,
+  },
+  {
+    id: 4,
+    title: 'Direcciones',
+    icons: `${RepositorioImg.urlRepositorio}img/IMÁGENES/icons-users-perfil/mis-direcciones.png`,
+    subtitle: 'Agrega, edita o elimina tus direcciones.',
+    link: `${UrlFront.Direcciones.moduloDireccion}/${UrlFront.Direcciones.direcciones}`,
   },
 ];

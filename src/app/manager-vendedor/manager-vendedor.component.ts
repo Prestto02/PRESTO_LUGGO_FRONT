@@ -15,12 +15,16 @@ export class ManagerVendedorComponent implements OnInit {
   imgBilletera = `${RepositorioImg.urlRepositorio}img/IMÁGENES/billeteraAdn.png`;
   imgContenedorCarrito = `${RepositorioImg.urlRepositorio}img/IMÁGENES/contenedorCarritoAdn.png`;
   imgListContent = `${RepositorioImg.urlRepositorio}img/IMÁGENES/list-content-adn.png`;
+  imgDirecciones = `${RepositorioImg.urlRepositorio}img/IMÁGENES/Portal-Usuario-Comprador/mis-direcciones.png`;
+
   bannerAdn: string = `${RepositorioImg.urlRepositorio}img/IMÁGENES/banners-usuarios/central-adn.png`;
   email: any;
+  idUser: any;
   constructor(private _router: Router, private token: TokenService) {}
 
   ngOnInit(): void {
     this.email = this.token.getTokenEmail();
+    this.idUser = this.token.getTokenId();
   }
 
   irAlModuloCatalogo() {
@@ -39,5 +43,10 @@ export class ManagerVendedorComponent implements OnInit {
   }
   irAPagos() {
     this._router.navigateByUrl('**');
+  }
+  irADireccion(): void {
+    this._router.navigateByUrl(
+      `${UrlFront.Direcciones.moduloDireccion}/${UrlFront.Direcciones.direcciones}/${this.idUser}`
+    );
   }
 }

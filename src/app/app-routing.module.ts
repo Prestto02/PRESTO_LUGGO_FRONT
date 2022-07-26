@@ -136,6 +136,14 @@ const routes: Routes = [
         './shared/components/list-pedidos/module/list-pedidos.module'
       ).then((m) => m.ListPedidosModule),
   },
+  //LISTADO DE DIRECCION
+  {
+    path: UrlFront.Direcciones.moduloDireccion,
+    loadChildren: () =>
+      import('./direcciones/module/direcciones.module').then(
+        (m) => m.DireccionesModule
+      ),
+  },
 
   //REDIRECCIONAR EN MENU DIRECTO
   {

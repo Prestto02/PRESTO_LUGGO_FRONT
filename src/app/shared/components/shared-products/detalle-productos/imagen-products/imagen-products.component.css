@@ -48,7 +48,7 @@ body {
 .button svg path:hover {
   fill: #ea2313;
 }
-
+/* MOVIL RESPONSIVE */
 @media screen and (max-width: 880px) {
   .image {
     height: 20rem;
@@ -66,8 +66,12 @@ body {
     justify-content: space-between;
   }
 }
+/* GALAXY FOLD */
 @media screen and (max-width: 300px) {
   .img-fluid-responsive {
     max-width: 40px;
+  }
+  .image {
+    height: 15rem;
   }
 }

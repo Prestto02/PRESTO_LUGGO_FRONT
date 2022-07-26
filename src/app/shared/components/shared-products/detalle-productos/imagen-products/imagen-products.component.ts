@@ -9,9 +9,9 @@ import { ImageArray, ImagesGallery } from './ArrayImagenes';
 })
 export class ImagenProductsComponent implements OnInit {
   @Input('imagenArray') imagenArray: string = '';
-  imgGrande = RepositorioImg.urlRepositorio;
-  images: ImagesGallery[] = ImageArray;
-  selectedIndex: number = 0;
+  imgGrande = RepositorioImg.urlRepositorio; //URL REPOSITORIO
+  images: ImagesGallery[] = ImageArray; //ARRAY DE IMAGENES
+  selectedIndex: number = 0; //SELECTED INDEX
 
   constructor() {}
 

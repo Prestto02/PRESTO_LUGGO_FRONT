@@ -1,0 +1,26 @@
+* {
+  font-family: Cardium A-Medium;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #000;
+}
+
+.subtitle {
+  font-size: 18px;
+  font-weight: 500;
+  color: #000;
+}
+
+.celular {
+  font-size: 18px;
+  font-weight: 600;
+  color: #ea2313;
+}
+
+.flex-box{
+  display: flex;
+  justify-content: space-around;
+}

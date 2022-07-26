@@ -169,17 +169,44 @@ export class LogisticaProductoComponent implements OnInit {
         res.longitudArticulo,
         res.latitudArticulo
       );
+      this.actualizarEditUbicacion(res);
       this.overlays.push(
         new google.maps.Marker({
           position: {
-            lat: res.latitudArticulo,
-            lng: res.longitudArticulo,
+            lat: parseFloat(res.latitudArticulo),
+            lng: parseFloat(res.longitudArticulo),
           },
           title: res.descripcionUbicacion,
           draggable: this.draggable,
         })
       );
     });
+  }
+  actualizarEditUbicacion(res: any) {
+    new google.maps.Polygon({
+      paths: [
+        {
+          lat: parseFloat(res.latitudArticulo),
+          lng: parseFloat(res.longitudArticulo),
+        },
+      ],
+      strokeOpacity: 0.5,
+      strokeWeight: 1,
+      fillColor: '#1976D2',
+      fillOpacity: 0.35,
+    }),
+      new google.maps.Polyline({
+        path: [
+          {
+            lat: parseFloat(res.latitudArticulo),
+            lng: parseFloat(res.longitudArticulo),
+          },
+        ],
+        geodesic: true,
+        strokeColor: '#FF0000',
+        strokeOpacity: 0.5,
+        strokeWeight: 2,
+      });
   }
   zoomIn(map: any) {
     map.setZoom(map.getZoom() + 1);

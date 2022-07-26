@@ -1,0 +1,17 @@
+<app-menu-index></app-menu-index>
+
+<app-cabezera-central [NombreUbicacion]="'Direcciones'" [ruta]="ruta" [cliente]="cliente"></app-cabezera-central>
+<section class="container">
+  <div class="row">
+    <div class="col-xxl-6 col-xl-6 col-md-6 col-sm-12 col-12 mx-auto">
+      <h4 class="mb-3 mt-3">Registra tus direcciones</h4>
+      <app-mapa></app-mapa>
+    </div>
+  </div>
+  <div class="row">
+    <h4 class="mb-3 mt-3">Tu lista de direcciones</h4>
+    <app-list-direcciones class="row"></app-list-direcciones>
+  </div>
+</section>
+
+<app-footer-index></app-footer-index>

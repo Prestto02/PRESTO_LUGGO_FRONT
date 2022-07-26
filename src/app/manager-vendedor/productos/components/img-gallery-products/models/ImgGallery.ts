@@ -34,11 +34,18 @@ export class ImgGalleryForm {
   }
 
   addGalleryProducts(archivo: string, i: number, img: any, id?: number) {
-    this.galleryProducts.controls[i].patchValue({
-      img: img,
-      archivo: archivo,
-      Id_repositorio: id,
-    });
+    if (id) {
+      this.galleryProducts.controls[i].patchValue({
+        img: img,
+        archivo: archivo,
+        Id_repositorio: id,
+      });
+    } else {
+      this.galleryProducts.controls[i].patchValue({
+        img: img,
+        archivo: archivo,
+      });
+    }
   }
   limpiarFormularioString() {
     this.galleryProducts.controls.map((res) => {

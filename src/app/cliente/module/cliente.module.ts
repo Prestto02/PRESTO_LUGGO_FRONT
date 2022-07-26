@@ -14,6 +14,7 @@ import { MiCuentaComponent } from '../components/mi-cuenta/mi-cuenta.component';
 import { ListItemsCuentaComponent } from '../components/list-items-cuenta/list-items-cuenta.component';
 import { ClienteCerrarSesionComponent } from '../components/cliente-cerrar-sesion/cliente-cerrar-sesion.component';
 import { ListPedidosModule } from 'src/app/shared/components/list-pedidos/module/list-pedidos.module';
+import { DireccionesModule } from 'src/app/direcciones/module/direcciones.module';
 
 @NgModule({
   declarations: [
