@@ -5,15 +5,15 @@ import { Direcciones } from '../models/ArrayDirecciones';
   name: 'filterubicacion',
 })
 export class FilterubicacionPipe implements PipeTransform {
-  transform(value: Direcciones[], arg: any): any {
-    if (arg === '' || arg.length < 2) return value; //PREGUNTO SI ES VACIO O TIENE MENOS 2 CARACTERES NO HACER NADA
-    const resultPost: any = [];
-    value.map((res: Direcciones) => {
-      //RECORRO EL ARRAY Y BUSCO
-      if (res.nombre.toLowerCase().indexOf(arg.toLowerCase()) > -1) {
-        resultPost.push(res);
-      }
-    });
-    return resultPost;
+  transform(value: Direcciones[], searchDireccion: string): Direcciones[] {
+    if (searchDireccion === '' || searchDireccion.length < 2) return value; //PREGUNTO SI ES VACIO O TIENE MENOS 2 CARACTERES NO HACER NADA
+    //BUSCAR POR FILTRO
+    const filterDireccion = value.filter(
+      (res: Direcciones) =>
+        res.nombre.toLowerCase().indexOf(searchDireccion.toLowerCase()) !==
+          -1 ||
+        res.calle.toLowerCase().indexOf(searchDireccion.toLowerCase()) !== -1
+    );
+    return filterDireccion;
   }
 }
