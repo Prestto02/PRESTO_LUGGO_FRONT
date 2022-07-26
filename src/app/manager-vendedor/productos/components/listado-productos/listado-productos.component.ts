@@ -94,11 +94,12 @@ export class ListadoProductosComponent implements OnInit {
       this.position.longitud,
       this.position.latitud
     );
+    console.log(form);
     this.apiEditProduct.editProduct(form, form.Id_articulo).subscribe(
       (res) => {
+        console.log(form);
         this.getAllProducts();
         this.dataForm.limpiarTodoForm();
-        console.log(res);
       },
       (err) => {
         this.dataForm.limpiarTodoForm();

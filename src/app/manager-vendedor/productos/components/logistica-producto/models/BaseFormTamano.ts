@@ -29,7 +29,6 @@ export class BaseFormTamanoProducto {
   }
 
   setFormEditProduct(formEdit: any) {
-    console.log(formEdit);
     this.formTamanoProducto.patchValue({
       GestionEnvio: formEdit.logistica.gestion_Envio,
       Precio: formEdit.logistica.precio_envio,
