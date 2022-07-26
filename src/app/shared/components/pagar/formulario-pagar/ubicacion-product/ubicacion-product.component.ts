@@ -43,11 +43,6 @@ export class UbicacionProductComponent implements OnInit {
   abrirMenuKey(): void {
     this.habilitar = true;
   }
-  /* CERRAR MENU CUANDO SE ENCUENTRE FUERA DEL COMPONENTE */
-  cerrarMenu(): void {
-    console.log('fuera');
-    this.habilitar = false;
-  }
   /* ABRIR EL MENU A TRAVES DEL DESPEGABLE */
   abrirMenu(): void {
     this.habilitar = !this.habilitar;

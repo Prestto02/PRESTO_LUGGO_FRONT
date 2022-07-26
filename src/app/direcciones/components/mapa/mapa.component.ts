@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
+import { ModalDialog } from '../services/ModalDialogDireccion.service';
 declare var google: any;
 
 @Component({
   selector: 'app-mapa',
   templateUrl: './mapa.component.html',
-  styleUrls: ['./mapa.component.css']
+  styleUrls: ['./mapa.component.css'],
 })
 export class MapaComponent implements OnInit {
-
   counter: number = 0;
 
   options: any;
@@ -26,7 +26,7 @@ export class MapaComponent implements OnInit {
 
   latitud: any;
   longitud: any;
-  constructor() {}
+  constructor(private modal: ModalDialog) {}
 
   ngOnInit(): void {
     this.options = {
@@ -39,10 +39,14 @@ export class MapaComponent implements OnInit {
 
   //AGREGAR EL NUEVA UBICACION Y ABRIR EL MODAL
   handleMapClick(event: any) {
-    this.dialogVisible = true;
+    this.setModalDialog(true);
     this.selectedPosition = event.latLng;
   }
-
+  //SET MODAL DIALOG
+  setModalDialog(type: boolean): void {
+    this.modal.setStateModal(type);
+    this.dialogVisible = this.modal.getStateModal();
+  }
   eventTarget(e: any) {
     this.markerTitle = e.target.value;
   }
@@ -95,7 +99,7 @@ export class MapaComponent implements OnInit {
     );
     this.addUbicacionProducto(); //AGREGAR NUEVA UBICACION DEL PRODUCTOS
     this.markerTitle = null;
-    this.dialogVisible = false;
+    this.setModalDialog(false);
   }
   //AGREGAR UBICACION DE PRODUCTOS
   addUbicacionProducto() {}
@@ -112,5 +116,4 @@ export class MapaComponent implements OnInit {
   clear() {
     this.overlays = [];
   }
-
 }
