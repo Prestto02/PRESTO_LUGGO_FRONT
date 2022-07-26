@@ -1,12 +1,13 @@
-<ng-container [formGroup]="formGroup">
-  <div class="col-xxl-10 col-xl-10 col-md-10 col-sm-10 col-10 mx-2 mt-3 mb-3">
+<!-- <ng-container [formGroup]="formGroup">
+  <div class="col-xxl-10 col-xl-10 col-md-10 col-sm-12 col-11 mx-xl-2 mx-xxl-2 mx-md-2 mt-3 mb-3 mx-3"
+    (mouseleave)="cerrarMenu();">
     <span class="mensaje-ayuda">Escoge la direccion para enviarte tu compra, si no tienes registrado
       tus direcciones, haz
-      click <span class="clickAqui cursor" (click)="irADireccion()">aquí.</span></span>
+      click <span class="clickAqui cursor" (click)="irADireccion()">aquí.</span></span> -->
     <!-- GRUPO FORMULARIO PARA BUSCAR -->
-    <div class="input-group mt-3">
+   <!--  <div class="input-group mt-3">
       <input type="text" class="form-control borders-input" aria-label="Text input with dropdown button"
-        formControlName="nombreUbicacion" (focus)="abrirMenuKey();" (blur)="cerrarLista()" (change)="buscadorUbicaciones($event)"
+        formControlName="nombreUbicacion" (focus)="abrirMenuKey();" (change)="buscadorUbicaciones($event)"
         placeholder="Busca tus direcciones">
       <span (click)="abrirMenu()" class="border-button cursor"><svg width="20" height="40" viewBox="0 0 12 5"
           fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -18,10 +19,10 @@
     <div class="list-group mb-3" [ngClass]="habilitar?'active':'noActive'">
       <div *ngFor="let list of arrayDirecciones | filterubicacion:formGroup.get('nombreUbicacion')?.value"
         [ngClass]="habilitar?'showList':'hiddenList'" (click)="agregarDireccion(list.id_direccion,list.nombre)">
-        <span class="nameDireccion">{{list.nombre}}</span>
+        <p class="text-nombre-direccion text-truncate" [title]="list.calle">{{list.nombre}} - {{list.calle}}</p>
       </div>
       <span class="showList cursor" (click)="irADireccion()"><span class="nameDireccion color-direccion">Agregar nueva
           ubicación</span></span>
     </div>
   </div>
-</ng-container>
+</ng-container> -->

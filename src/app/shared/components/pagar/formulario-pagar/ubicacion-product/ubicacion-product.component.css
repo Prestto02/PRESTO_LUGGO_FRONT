@@ -53,10 +53,24 @@
   padding: 12px;
 }
 
-.cursor{
+.cursor {
   cursor: pointer;
 }
 
-.color-direccion{
+.color-direccion {
   color: #ea2313;
+}
+.text-nombre-direccion {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+@media screen and (max-width: 880px) {
+  .text-nombre-direccion {
+    font-size: 12px;
+  }
+  .mensaje-ayuda {
+    font-size: 13px;
+    padding: 1px;
+  }
 }
