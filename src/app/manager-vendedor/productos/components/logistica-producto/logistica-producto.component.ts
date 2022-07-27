@@ -163,24 +163,26 @@ export class LogisticaProductoComponent implements OnInit {
   }
   //SETEAR UBICACIONES ENCONTRADAS
   setUbicacionArray() {
-    this.productEdit.logistica.ubicacion.map((res: any) => {
-      this.formUbicacion.addUbicacionProducto(
-        res.descripcionUbicacion,
-        res.longitudArticulo,
-        res.latitudArticulo
-      );
-      this.actualizarEditUbicacion(res);
-      this.overlays.push(
-        new google.maps.Marker({
-          position: {
-            lat: parseFloat(res.latitudArticulo),
-            lng: parseFloat(res.longitudArticulo),
-          },
-          title: res.descripcionUbicacion,
-          draggable: this.draggable,
-        })
-      );
-    });
+    if (this.productEdit) {
+      this.productEdit.logistica.ubicacion.map((res: any) => {
+        this.formUbicacion.addUbicacionProducto(
+          res.descripcionUbicacion,
+          res.longitudArticulo,
+          res.latitudArticulo
+        );
+        this.actualizarEditUbicacion(res);
+        this.overlays.push(
+          new google.maps.Marker({
+            position: {
+              lat: parseFloat(res.latitudArticulo),
+              lng: parseFloat(res.longitudArticulo),
+            },
+            title: res.descripcionUbicacion,
+            draggable: this.draggable,
+          })
+        );
+      });
+    }
   }
   actualizarEditUbicacion(res: any) {
     new google.maps.Polygon({

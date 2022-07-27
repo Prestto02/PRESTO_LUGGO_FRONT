@@ -8,8 +8,8 @@ import { Component, Input, OnInit } from '@angular/core';
 export class PasswordVisibleComponent implements OnInit {
   @Input('formB') formB: any | null = null;
   @Input('password') passwordName: any | null = null;
-  @Input('class') class: any | null = null;
-  @Input('classTwo') classTwo: any | null = null;
+  @Input('class') class: string | null = null;
+  @Input('classTwo') classTwo: string | null = null;
   @Input('login') login: boolean = true;
   sugerencias: boolean = false;
   password: boolean = false;

@@ -11,10 +11,9 @@ import { TokenService } from '../../services/token.service';
   styleUrls: ['./registrar.component.css'],
 })
 export class RegistrarComponent implements OnInit {
-  error = false; //ERORES
-  load = false; //LOAD
-  sugerencias = false; //SUGERENCIAS
-  public rutaLogin = `${UrlFront.Login.login}/${UrlFront.Login.iniciarSesion}`;
+  error: boolean = false; //ERORES
+  load: boolean = false; //LOAD
+  rutaLogin: string = `${UrlFront.Login.login}/${UrlFront.Login.iniciarSesion}`;
   constructor(
     public formB: BaseFormLogin,
     private router: Router,
@@ -28,13 +27,6 @@ export class RegistrarComponent implements OnInit {
       this.router.navigateByUrl(`${UrlFront.Menu.menu}/${UrlFront.Menu.index}`);
     }
     this.position.getPositionUser(); //POSICION DEL USUARIO
-  }
-  //MOUSE CLICK EVENT
-  mouseClickEvent() {
-    this.sugerencias = true; //PARA PRESENTAR LAS SUGERENCIAS
-  }
-  perdioElFocus() {
-    this.sugerencias = false; //PARA OCULTAR LAS SUGERENCIAS
   }
   //SUBMIT DATA API
   submit() {

@@ -4,21 +4,22 @@ import { MessageFrontEndService } from 'src/app/shared/Toasts/services/message-f
 import { errorFront as message } from 'src/app/shared/dictonary/MessageErrorFront';
 import { HttpClient } from '@angular/common/http';
 import { UrlApi } from 'src/app/shared/routes/RoutesApi';
+import { ProductListApi } from '../../models/ProducstList';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ListaDeseosService {
-  private ListaDeseosItem = new BehaviorSubject<Array<any>>([]); //CREO El behaviorSUBJECT
+  private ListaDeseosItem = new BehaviorSubject<Array<ProductListApi>>([]); //CREO El behaviorSUBJECT
   listaDeseos = this.ListaDeseosItem.asObservable(); //OBTENGO EL BEHAVIORSUBJECT
-  addListaDeseosProdut: Array<any> = []; //ARREGLO DE CARRITO DE PRODUCTOS
+  addListaDeseosProdut: Array<ProductListApi> = []; //ARREGLO DE CARRITO DE PRODUCTOS
   constructor(
     private messageFront: MessageFrontEndService,
     private http: HttpClient
   ) {}
 
   //AGREGAR LOS PRODUCTOS SCROLL INFINITO
-  addListaDeseos(dataObj: any) {
+  addListaDeseos(dataObj: ProductListApi) {
     if (this.verifyCarrito(dataObj).length > 0) {
       //SI EXISTE EN EL ARREGLO EL MISMO PRODUCTO NO AGREGARLO
       /*       this.messageFront.getInfoMessage(
@@ -34,6 +35,7 @@ export class ListaDeseosService {
       ); //OK SE AGREGO EL PRODUCTO */
     }
   }
+  /* COLECCION DE LISTA DE DESEOS POR USUARIO */
   getAllColeccion(id: any): Observable<any> {
     return this.http.get<any>(`${UrlApi.ApiUrl}${UrlApi.traerColeccion}${id}`);
   }
@@ -52,12 +54,12 @@ export class ListaDeseosService {
     );
   }
   //TRAER COLECCION POR ID
-  getColeccionId(id: any): Observable<any> {
-    return this.http.get<any>(
+  getColeccionId(id: any): Observable<ProductListApi> {
+    return this.http.get<ProductListApi>(
       `${UrlApi.ApiUrl}${UrlApi.traerColeccionPorId}${id}`
     );
   }
-
+  /* QUITARLO DE LA LISTA DE DESEOS */
   eliminarListaDeseos(id: any) {
     const data = this.addListaDeseosProdut.findIndex(
       (res) => res.id_artic === id

@@ -1,7 +1,7 @@
 <!-----CATEGORIA---->
-<!-- {{formB.formCategorias.value | json }} -->
 <ng-container [formGroup]="formB.formCategorias">
   <div class="col-xl-12 col-xxl-12 col-sm-12 col-md-12 col-12 position-relative">
+
     <div class="input-group">
       <input type="text" class="form-control border-input" formControlName="nameCategoria"
         placeholder="Buscar categorias *" aria-label="Recipient's username" id="floatingCategorias"
@@ -9,23 +9,22 @@
       <app-form-errors-container [forControl]="formB.formCategorias.get('ArticuloTieneCategoria')">
         <app-message-error forErrorCode="required" customMsg="Al menos escoja una categoría"></app-message-error>
       </app-form-errors-container>
-
     </div>
 
     <ng-container *ngIf="categoriaFocus">
       <div class="border bg-white w-100 position-absolute border-truncate mb-5"
-        [class.border-pequeno]="(categoriasItems | FilterCategorias:formB.formCategorias.get('nameCategoria')?.value)?.length <=2">
+        [class.border-pequeno]="(categoriasItems | FilterCategorias:formB.formCategorias.get('nameCategoria')?.value).length <=2">
         <div class="form-check border-bottom mx-2 py-2"
           *ngFor=" let categorias of categoriasItems | FilterCategorias:formB.formCategorias.get('nameCategoria')?.value">
-          <input class="form-check-input" type="checkbox" [id]="categorias.id" [checked]="categorias.selected"
-            (change)="onChangeCheckBox(categorias.id,$event)" [value]="categorias.name">
+          <input appCheckCategory [listCategory]="categoriasItems" [idCategory]="categorias.id" class="form-check-input"
+            type="checkbox" [id]="categorias.id" [checked]="categorias.selected" [value]="categorias.name">
           <label class="form-check-label" [for]="categorias.id">
             {{categorias.name}}
           </label>
         </div>
         <!-----SI NO HAY ESA CATEGORIA------>
         <div class="form-check border-bottom mx-auto py-2"
-          *ngIf="(categoriasItems | FilterCategorias:formB.formCategorias.get('nameCategoria')?.value)?.length <= 0">
+          *ngIf="(categoriasItems | FilterCategorias:formB.formCategorias.get('nameCategoria')?.value).length <= 0">
           <p>No existe esa categoria</p>
         </div>
       </div>

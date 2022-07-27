@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { UrlApi } from 'src/app/shared/routes/RoutesApi';
+import { ListCategoryApi } from '../../categorias/models/ListCategory';
 
 @Injectable({
   providedIn: 'root',
@@ -20,7 +21,9 @@ export class CategoriasService {
     );
   }
   //TRAER TODAS LAS CATEGORIAS PADRES
-  getAllCategoriasPadres():Observable<any>{
-    return this.http.get<any>(`${UrlApi.ApiUrl}${UrlApi.categoriasPadres}`);
+  getListCategorias(): Observable<ListCategoryApi[]> {
+    return this.http.get<ListCategoryApi[]>(
+      `${UrlApi.ApiUrl}${UrlApi.categoriasPadres}`
+    );
   }
 }

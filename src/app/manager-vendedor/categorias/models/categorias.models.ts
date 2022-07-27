@@ -5,9 +5,13 @@ import {
   FormControl,
   Validators,
 } from '@angular/forms';
+/* CATEOGORIA SELECCIONADA  */
+interface CategorySelect {
+  name: string;
+}
 @Injectable({ providedIn: 'root' })
 export class BaseFormCategorias {
-  categoriaSeleccionadas: any = [];
+  categoriaSeleccionadas: CategorySelect[] = [];
   constructor(private formB: FormBuilder) {}
 
   //FORMULARIO
@@ -29,6 +33,7 @@ export class BaseFormCategorias {
       this.eliminarItems(id);
     }
   }
+  /* AGREGANDO LA CATEGORIA CUANDO SEA EDITADO */
   addCategoriasEdit(id: any, nombre: any) {
     //PREGUNTO SI EXISTE EL EVENTO CHECK: TRUE
     this.getCategorias.push(new FormControl({ idcategoria_articulo: id }));

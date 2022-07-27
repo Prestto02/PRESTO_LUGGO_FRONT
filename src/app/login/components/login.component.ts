@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { RolUserService } from 'src/app/guards/services/rol-user.service';
 import { PositionUser } from 'src/app/shared/class/PositionUser';
-import { UrlApi } from 'src/app/shared/routes/RoutesApi';
 import { UrlFront } from 'src/app/shared/routes/RoutesFront';
 import { BaseFormLogin } from '../models/BaseFormLogin';
 import { LoginService } from '../services/login.service';
@@ -14,10 +13,9 @@ import { TokenService } from '../services/token.service';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
-  public errorLogin = false;
-  load = false;
-  public urlapi = UrlApi; //API
-  public rutaRegistrar = `${UrlFront.Login.login}/${UrlFront.Login.postRegister}`;
+  errorLogin: boolean = false;
+  load: boolean = false;
+  rutaRegistrar: string = `${UrlFront.Login.login}/${UrlFront.Login.postRegister}`;
   constructor(
     public formB: BaseFormLogin, //fORM REACTIVE
     private router: Router, //ROUTES

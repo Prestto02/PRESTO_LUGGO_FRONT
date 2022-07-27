@@ -14,29 +14,36 @@ import {
   ProductoModuleDeclarations,
   ProductoModuleProviders,
 } from '../productos/module/producto-modulo.module';
+/* CATEOGRY */
+import {
+  DeclarationsCategory,
+  ExportCategory,
+  ProviderCategory,
+} from '../categorias/module/Category.module';
+/* LIST PEDIDOS ADN */
+import {
+  ListaPedidosDeclarations,
+  ListPedidosProviders,
+} from '../lista-pedidos/module/Lista-Pedidos.module';
 import { DashBoardModuloDeclarations } from '../dashboard/module/dashboard-modulo.module';
 /**********        COMPONENTES      ********** */
 import { ManagerVendedorRoutingModule } from './manger-vendedor-routing.module';
 import { MenuVendedorComponent } from '../menu-vendedor/menu-vendedor.component';
 import { ManagerVendedorComponent } from '../manager-vendedor.component';
-import { CategoriasComponent } from '../categorias/categorias.component';
 import { SideBarIzquierdaComponent } from '../menu-vendedor/side-bar-izquierda/side-bar-izquierda.component';
 /**********EXTENSIONES UTILES ERROES; MODELO; PIPE*********** */
 import { ErrorsExtensionsModule } from 'src/app/shared/components/errors/errors-module.module';
-import { BaseFormCategorias } from '../categorias/models/categorias.models';
-import { FilterCategorias } from '../categorias/pipes/FilterCategorias.pipe';
 import { FiltroPaginacionPipe } from '../productos/components/listado-productos/pipe/filtro-paginacion.pipe';
 import { IndexMenuModule } from 'src/app/shared/components/index/module/index-menu.module';
-import { ListaPedidosProviders } from '../lista-pedidos/module/Lista-Pedidos.module';
 import { MenuIndexModule } from 'src/app/shared/components/index/menu-index/module/menu-index.module';
 import { AdnCerrarSesionComponent } from '../adn-cerrar-sesion/adn-cerrar-sesion.component';
 import { SeccionAdnComponent } from '../seccion-adn/seccion-adn.component';
 import { MensajesAyudaComponent } from '../mensajes-ayuda/mensajes-ayuda.component';
+
 @NgModule({
   declarations: [
     ManagerVendedorComponent, //INDEX MANAGER
-    CategoriasComponent, //CATEGORIAS
-    FilterCategorias, //PIPES CATEGORIAS
+    DeclarationsCategory,
     ProductoModuleDeclarations, //PRODUCTO MODULO DECLARATIONS
     MenuVendedorComponent,
     FiltroPaginacionPipe, //FILTRO PAGINACION PIPE
@@ -45,7 +52,7 @@ import { MensajesAyudaComponent } from '../mensajes-ayuda/mensajes-ayuda.compone
     AdnCerrarSesionComponent, //ADN CERRAR SESION
     SeccionAdnComponent, //SECCION ADN PARA SABER EN QUE MODULO SE ENCUENTRA UBICADO
     MensajesAyudaComponent, // MENSAJES AYUDA COMPONENTS
-    ListaPedidosProviders,
+    ListaPedidosDeclarations,
   ],
   imports: [
     ManagerVendedorRoutingModule, //MANAGER ROUTING
@@ -63,10 +70,11 @@ import { MensajesAyudaComponent } from '../mensajes-ayuda/mensajes-ayuda.compone
     OrderModule, //ORDER MODULE
     MenuIndexModule, //MENU INDEX
   ],
-  exports: [CategoriasComponent],
+  exports: [ExportCategory],
   providers: [
     ProductoModuleProviders, //MODULE PROVIDERS PRODUCTOS
-    BaseFormCategorias,
+    ProviderCategory,
+    ListPedidosProviders,
   ],
 })
 export class ManagerVendedorModule {}

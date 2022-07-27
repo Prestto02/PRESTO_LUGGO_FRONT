@@ -194,7 +194,7 @@
         </ng-container>
       </div>
       <!-----SI EL PIPE DE FILTRADO ES MENOR A 0-------->
-      <ng-container *ngIf="(dataListDeseos | filter:filterPost)?.length <= 0 && dataListDeseos.length>0">
+      <ng-container *ngIf="(dataListDeseos | filter:filterPost).length <= 0 && dataListDeseos.length>0">
         <div class="text-center mt-4">
           <h4 class="text-center mt-4">No hay ese producto en la lista</h4>
         </div>

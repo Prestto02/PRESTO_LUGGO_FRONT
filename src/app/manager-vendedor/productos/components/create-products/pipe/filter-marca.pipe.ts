@@ -5,9 +5,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class FilterMarcaPipe implements PipeTransform {
   transform(marcaItems: any, searchMarcas: string): any {
-    if (!marcaItems || !searchMarcas) {
-      return marcaItems;
-    }
+    if (!marcaItems || !searchMarcas) return marcaItems;
     return marcaItems.filter(
       (marcas: any) =>
         marcas.nombre_marca

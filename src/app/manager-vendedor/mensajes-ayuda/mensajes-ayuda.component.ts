@@ -6,9 +6,9 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./mensajes-ayuda.component.css'],
 })
 export class MensajesAyudaComponent implements OnInit {
-  @Input('mensaje') mensaje: any | null = null;
-  @Input('class') class: any | null = null;
-  @Input('Label') label: any | null = null;
+  @Input('mensaje') mensaje: string | null = null;
+  @Input('class') class: string | null = null;
+  @Input('Label') label: string | null = null;
   activarCheck: boolean = false;
   constructor() {}
 

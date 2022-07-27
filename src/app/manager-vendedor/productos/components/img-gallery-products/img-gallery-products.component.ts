@@ -35,16 +35,18 @@ export class ImgGalleryProductsComponent implements OnInit, OnDestroy {
   }
   //SETEANDO NUEVAS IMAGENES GUARDADAS
   obtenerImagenesEdit(): void {
-    this.detalleArticulo.detalleArticulo[0].multimedia.map(
-      (res: any, i: number) => {
-        this.formGallery.addGalleryProducts(
-          res.archivo,
-          i,
-          res.url_multimediaFULHD,
-          res.id_repositorio
-        );
-      }
-    );
+    if (this.detalleArticulo) {
+      this.detalleArticulo.detalleArticulo[0].multimedia.map(
+        (res: any, i: number) => {
+          this.formGallery.addGalleryProducts(
+            res.archivo,
+            i,
+            res.url_multimediaFULHD,
+            res.id_repositorio
+          );
+        }
+      );
+    }
   }
   //OBTENER IMAGEN PARA VERIFICAR EN EL SERVER
   getImage(e: any) {

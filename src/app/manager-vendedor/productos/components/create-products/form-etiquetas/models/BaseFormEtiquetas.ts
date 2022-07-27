@@ -30,7 +30,7 @@ export class BaseFormEtiquetas {
     this.etiquetas.push(etiquetaForm);
   }
   //REMOVE ITEMS ETIQUETAS
-  removeItemsEtiqueta(i: any) {
+  removeItemsEtiqueta(i: number) {
     this.etiquetas.removeAt(i);
   }
   //GET ERRORES FORM
