@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { ModalDialog } from '../services/ModalDialogDireccion.service';
+import { Component, Input, OnInit } from '@angular/core';
 declare var google: any;
 
 @Component({
@@ -26,7 +25,7 @@ export class MapaComponent implements OnInit {
 
   latitud: any;
   longitud: any;
-  constructor(private modal: ModalDialog) {}
+  constructor() {}
 
   ngOnInit(): void {
     this.options = {
@@ -36,16 +35,10 @@ export class MapaComponent implements OnInit {
     //this.initOverlays();
     this.infoWindow = new google.maps.InfoWindow();
   }
-
   //AGREGAR EL NUEVA UBICACION Y ABRIR EL MODAL
   handleMapClick(event: any) {
-    this.setModalDialog(true);
+    this.dialogVisible = true;
     this.selectedPosition = event.latLng;
-  }
-  //SET MODAL DIALOG
-  setModalDialog(type: boolean): void {
-    this.modal.setStateModal(type);
-    this.dialogVisible = this.modal.getStateModal();
   }
   eventTarget(e: any) {
     this.markerTitle = e.target.value;
@@ -99,7 +92,7 @@ export class MapaComponent implements OnInit {
     );
     this.addUbicacionProducto(); //AGREGAR NUEVA UBICACION DEL PRODUCTOS
     this.markerTitle = null;
-    this.setModalDialog(false);
+    this.dialogVisible = true;
   }
   //AGREGAR UBICACION DE PRODUCTOS
   addUbicacionProducto() {}

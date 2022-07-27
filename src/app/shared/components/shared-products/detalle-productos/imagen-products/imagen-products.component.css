@@ -15,11 +15,15 @@ body {
 .image {
   max-width: 100%;
   height: 27rem;
+  filter: brightness(1);
+  mix-blend-mode: multiply;
 }
 
-.image-alone{
+.image-alone {
   width: 100%;
   height: auto;
+  filter: brightness(1.0);
+  mix-blend-mode: multiply;
 }
 .d-flex {
   height: 29rem;
@@ -42,6 +46,8 @@ body {
   cursor: pointer;
   max-width: 45px;
   height: auto;
+  filter: brightness(1.0);
+  mix-blend-mode: multiply;
 }
 
 .button {

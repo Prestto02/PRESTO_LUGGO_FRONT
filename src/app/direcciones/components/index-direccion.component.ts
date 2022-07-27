@@ -14,6 +14,7 @@ export class IndexDireccionComponent implements OnInit {
   rolTipoUsuario: string = '';
   rolTipo: any;
   idUsuario: any;
+  draggableModal: boolean = false;
   constructor(
     private token: TokenService,
     private encrypServi: EncryptService
@@ -24,7 +25,7 @@ export class IndexDireccionComponent implements OnInit {
   ngOnInit(): void {
     this.verifyRolUsuario();
   }
-
+  /* VERIFOCAR ROL DE USUARIO */
   verifyRolUsuario() {
     this.irAlPerfilUsuario();
     if (this.rolTipoUsuario === '1') {

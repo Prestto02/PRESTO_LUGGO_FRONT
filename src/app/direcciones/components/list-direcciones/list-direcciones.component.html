@@ -28,3 +28,40 @@
 <ng-template #notData>
   <p class="text-center">Aún no tienes registros de tus direcciones</p>
 </ng-template>
+
+
+
+<!--------MODAL PARA AGREGAR LA NUEVA UBICACION------------->
+<p-dialog showEffect="fade" [(visible)]="dialogVisible" header="Editar ubicación" [style]="{width: '300px'}">
+  <div class="grid p-fluid" > <!-- *ngIf="selectedPosition" -->
+    <!-- DIRECCION -->
+    <div class="mb-3">
+      <label for="Descripcion" class="form-label">Dirección</label>
+      <input type="text" class="form-control" id="Descripcion">
+    </div>
+    <!-- TELEFONO -->
+    <div class="mb-3">
+      <label for="Descripcion" class="form-label">Celular</label>
+      <input type="text" maxlength="10" class="form-control" id="Descripcion">
+    </div>
+
+    <div class="mb-3">
+      <label for="Latitud" class="form-label">Latitud</label>
+      <input type="text" class="form-control" id="Latitud" [value]="'2.3021541'" disabled>
+    </div>
+
+    <div class="mb-3">
+      <label for="Longitud" class="form-label">Longitud</label>
+      <input type="text" class="form-control" id="Longitud" [value]="'-70.254120'" disabled>
+    </div>
+
+
+  </div>
+
+  <ng-template pTemplate="footer">
+    <div class="col-xl-12 col-xxl-12 col-sm-12 col-md-12 col-12">
+      <button type="button" class="btn btn-secondary" (click)="closeModal()">Cancelar</button>
+      <button type="button" class="btn btn-dark" (click)="editMarket()">Agregar</button>
+    </div>
+  </ng-template>
+</p-dialog>

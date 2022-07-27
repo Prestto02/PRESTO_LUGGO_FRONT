@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ArrayDireccion, Direcciones } from '../../models/Direcciones.models';
-import { ModalDialog } from '../services/ModalDialogDireccion.service';
 
 @Component({
   selector: 'app-list-direcciones',
@@ -9,16 +8,20 @@ import { ModalDialog } from '../services/ModalDialogDireccion.service';
 })
 export class ListDireccionesComponent implements OnInit {
   direccionesArray: Direcciones[] = ArrayDireccion;
-  constructor(private modal: ModalDialog) {}
+  dialogVisible: boolean = false;
+  constructor() {}
 
   ngOnInit(): void {}
   //EDITAR
   editar(id: number): void {
-    this.setModalDialog(true);
+    this.dialogVisible = true;
+    //this.setModalDialog(true);
   }
+  closeModal(): void {
+    this.dialogVisible = false;
+  }
+  editMarket(): void {
 
-  setModalDialog(type: boolean): void {
-    this.modal.setStateModal(type);
   }
   //ELIMINAR
   eliminar(id: number): void {
