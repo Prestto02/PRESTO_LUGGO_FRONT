@@ -4,7 +4,7 @@ export const UrlApi = {
   https://puerttoapi.azurewebsites.net/
   CALIDAD: https://ecovitali.presttoapp.net/Puertto/Calidad/Api/
   */
-  ApiUrl: 'https://puerttoapi.puertto.com/',
+  ApiUrl: 'https://ecovitali.presttoapp.net/Puertto/Calidad/Api/',
   //PERSONAS
   getPersonaId: 'api/usuario',
   persona: 'api/persona',

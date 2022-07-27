@@ -14,6 +14,7 @@ export class CarritoListComponent implements OnInit {
   productoItems: any;
   idUser: any;
   totalPagarCarrito: any = 0;
+  envioTotal: number = 0;
   constructor(
     private apiServi: CarritoItemsService,
     private router: Router,
@@ -37,6 +38,7 @@ export class CarritoListComponent implements OnInit {
   getSubtotalPagar() {
     this.productoItems.map((res: any) => {
       res.subtotal = res.item * res.precio;
+      this.envioTotal += res.precio_envio;
     });
   }
   //IR A BUSCAR MAS PRODUCTOS

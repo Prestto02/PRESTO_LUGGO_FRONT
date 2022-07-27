@@ -35,7 +35,7 @@
             <div class="col-6 col-sm-6">
               <h6 class="nombre-producto mt-3">{{product.name}}</h6>
               <span class="product-item">{{product.item}} und.</span>
-              <p class="envio-gratis">Envio Gratis</p>
+              <p class="envio-gratis">Envio</p>
             </div>
             <div class="col-3 col-sm-3">
               <ng-container *ngIf="!product.subtotal else existSubtotal">
@@ -44,7 +44,7 @@
               <ng-template #existSubtotal>
                 <p class="subtotal text-center mt-3"><b>{{ product.subtotal | currency:'USD'}}</b> </p>
               </ng-template>
-              <p class="envio-gratis text-center mt-4">$0</p>
+              <p class="envio-gratis text-center mt-4">{{product.precio_envio | currency:'USD'}}</p>
             </div>
           </div>
           <hr>

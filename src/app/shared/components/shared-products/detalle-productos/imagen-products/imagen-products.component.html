@@ -1,45 +1,56 @@
-<!-- <div class="container-fluid d-none d-sm-none d-xxl-block d-xl-block d-md-block">
-  <div class="row">
-    <div class="col-xl-2 col-xxl-2 col-md-2 col-sm-2 col-2 "> -->
-<!-- VERSION ESCRITORIO -->
-<!--       <div class="flex-box-items">
-      <!-- VERSION ESCRITORIO -->
-<!--  <div class="flex-box-items">
-        <p title="Subir" (click)="upItems();" class="button">
-          <svg width="20" height="15" viewBox="0 0 26 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M0.93934 11.9393C0.353553 12.5251 0.353553 13.4749 0.93934 14.0607C1.52512 14.6464 2.47487 14.6464 3.06066 14.0607L0.93934 11.9393ZM13 2L14.0607 0.939339C13.7794 0.658035 13.3978 0.5 13 0.5C12.6022 0.5 12.2206 0.658035 11.9393 0.939339L13 2ZM22.9393 14.0607C23.5251 14.6464 24.4749 14.6464 25.0607 14.0607C25.6464 13.4749 25.6464 12.5251 25.0607 11.9393L22.9393 14.0607ZM3.06066 14.0607L14.0607 3.06066L11.9393 0.939339L0.93934 11.9393L3.06066 14.0607ZM11.9393 3.06066L22.9393 14.0607L25.0607 11.9393L14.0607 0.939339L11.9393 3.06066Z"
-              fill="#282828" />
-          </svg>
-        </p>
-        <img class="img-fluid-responsive mt-2 mb-3 " [ngClass]="{'active':selectedIndex===i }"
-          *ngFor="let img of images; let i = index" (click)="cambiarImg(i);" [src]="img.previewImageSrc" />
-        <p title="Bajar" class="mt-2 button" (click)="downItems()">
-          <svg width="20" height="15" viewBox="0 0 26 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M25.0607 3.06066C25.6464 2.47487 25.6464 1.52513 25.0607 0.939339C24.4749 0.353553 23.5251 0.353553 22.9393 0.93934L25.0607 3.06066ZM13 13L11.9393 14.0607C12.2206 14.342 12.6022 14.5 13 14.5C13.3978 14.5 13.7794 14.342 14.0607 14.0607L13 13ZM3.06066 0.93934C2.47487 0.353553 1.52513 0.353553 0.93934 0.939339C0.353554 1.52513 0.353554 2.47487 0.93934 3.06066L3.06066 0.93934ZM22.9393 0.93934L11.9393 11.9393L14.0607 14.0607L25.0607 3.06066L22.9393 0.93934ZM14.0607 11.9393L3.06066 0.93934L0.93934 3.06066L11.9393 14.0607L14.0607 11.9393Z"
-              fill="#282828" />
-          </svg>
-        </p>
+<ng-container *ngIf="multimedia.length>1 else notGallery">
+  <div class="container-fluid d-none d-sm-none d-xxl-block d-xl-block d-md-block">
+    <div class="row">
+      <div class="col-xl-2 col-xxl-2 col-md-2 col-sm-2 col-2 ">
+        <!-- VERSION ESCRITORIO -->
+        <div class="flex-box-items">
+          <!-- VERSION ESCRITORIO -->
+          <div class="flex-box-items">
+            <button title="Subir" (click)="upItems();" class="button">
+              <svg width="20" height="15" viewBox="0 0 26 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M0.93934 11.9393C0.353553 12.5251 0.353553 13.4749 0.93934 14.0607C1.52512 14.6464 2.47487 14.6464 3.06066 14.0607L0.93934 11.9393ZM13 2L14.0607 0.939339C13.7794 0.658035 13.3978 0.5 13 0.5C12.6022 0.5 12.2206 0.658035 11.9393 0.939339L13 2ZM22.9393 14.0607C23.5251 14.6464 24.4749 14.6464 25.0607 14.0607C25.6464 13.4749 25.6464 12.5251 25.0607 11.9393L22.9393 14.0607ZM3.06066 14.0607L14.0607 3.06066L11.9393 0.939339L0.93934 11.9393L3.06066 14.0607ZM11.9393 3.06066L22.9393 14.0607L25.0607 11.9393L14.0607 0.939339L11.9393 3.06066Z"
+                  fill="#282828" />
+              </svg>
+            </button>
+            <img class="img-fluid-responsive mt-2 mb-3 " [ngClass]="{'active':selectedIndex===i }"
+              *ngFor="let img of multimedia; let i = index" (click)="cambiarImg(i);"
+              [src]="imgRuta+img.url_multimediaFULHD" />
+            <button title="Bajar" class="mt-2 button" (click)="downItems()">
+              <svg width="20" height="15" viewBox="0 0 26 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M25.0607 3.06066C25.6464 2.47487 25.6464 1.52513 25.0607 0.939339C24.4749 0.353553 23.5251 0.353553 22.9393 0.93934L25.0607 3.06066ZM13 13L11.9393 14.0607C12.2206 14.342 12.6022 14.5 13 14.5C13.3978 14.5 13.7794 14.342 14.0607 14.0607L13 13ZM3.06066 0.93934C2.47487 0.353553 1.52513 0.353553 0.93934 0.939339C0.353554 1.52513 0.353554 2.47487 0.93934 3.06066L3.06066 0.93934ZM22.9393 0.93934L11.9393 11.9393L14.0607 14.0607L25.0607 3.06066L22.9393 0.93934ZM14.0607 11.9393L3.06066 0.93934L0.93934 3.06066L11.9393 14.0607L14.0607 11.9393Z"
+                  fill="#282828" />
+              </svg>
+            </button>
+          </div>
+        </div>
       </div>
-    </div> -->
-<!-- IMAGEN -->
-<div class="container-fluid ">
-  <div class="row">
-    <div class="col-xxl-10 col-xl-10 col-md-10 col-sm-10 col-12 mx-xxl-5 mx-xl-3">
-      <img class="image" [src]="imgGrande+imagenArray" class="image" />
+      <!-- IMAGEN RESULT ARRAY -->
+      <div class="col-xxl-10 col-xl-10 col-md-10 col-sm-10 col-12 d-flex justify-content-center">
+        <img class="image" [src]="imgRuta+imagenArray" class="image" />
+      </div>
     </div>
   </div>
-</div>
 
-<!-- VERSION MOVIL -->
-
-<!-- <div class="col-xxl-10 col-xl-10 col-md-10 col-sm-10 col-12 d-block d-sm-block d-xxl-none d-xl-none d-md-none">
-  <img class="image" [src]="imagenArray" class="image" />
-</div> -->
-<!-- VERSION MOVIL -->
-<!-- <div class="flex-box-items-movil d-xxl-none d-xl-none d-md-none">
-  <img class="img-fluid-responsive mt-2 mb-3 " [ngClass]="{'active':selectedIndex===i }"
-    *ngFor="let img of images; let i = index" (click)="cambiarImg(i);" [src]="img.previewImageSrc" />
-</div>
- -->
+  <!-- VERSION MOVIL -->
+  <div
+    class="col-xxl-10 col-xl-10 col-md-10 col-sm-10 col-12 d-block d-sm-block d-xxl-none d-xl-none d-md-none  d-flex justify-content-center">
+    <img class="image" [src]="imgRuta+imagenArray" class="image" />
+  </div>
+  <!-- VERSION MOVIL -->
+  <div class="flex-box-items-movil d-xxl-none d-xl-none d-md-none">
+    <img class="img-fluid-responsive mt-2 mb-3 " [ngClass]="{'active':selectedIndex===i }"
+      *ngFor="let img of multimedia; let i = index" (click)="cambiarImg(i);" [src]="imgRuta+img.url_multimediaFULHD" />
+  </div>
+</ng-container>
+<!-- IMAGEN -->
+<ng-template #notGallery>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xxl-10 col-xl-10 col-md-10 col-sm-10 col-12 d-flex justify-content-end border p-1">
+        <img class="image" [src]="imgRuta+imagenArray" class="image-alone" />
+      </div>
+    </div>
+  </div>
+</ng-template>

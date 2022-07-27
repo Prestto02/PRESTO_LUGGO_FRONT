@@ -16,6 +16,11 @@ body {
   max-width: 100%;
   height: 27rem;
 }
+
+.image-alone{
+  width: 100%;
+  height: auto;
+}
 .d-flex {
   height: 29rem;
 }
@@ -35,12 +40,14 @@ body {
 
 .img-fluid-responsive {
   cursor: pointer;
-  max-width: 80px;
+  max-width: 45px;
   height: auto;
 }
 
 .button {
   cursor: pointer;
+  background-color: none;
+  border: 0;
 }
 .button:hover svg path {
   fill: #ea2313;

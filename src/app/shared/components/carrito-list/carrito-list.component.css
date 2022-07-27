@@ -18,6 +18,10 @@
   color: #9f0505;
 }
 
+.text-sugerencia{
+  color: rgba(0, 0, 0, 0.219);
+  font-size: 12px;
+}
 
 .container-productos::-webkit-scrollbar {
   width: 8px; /* Tamaño del scroll en vertical */
