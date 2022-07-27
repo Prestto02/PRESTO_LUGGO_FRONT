@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 import { TokenService } from 'src/app/login/services/token.service';
 import { RepositorioImg } from 'src/app/shared/helpers/RepositorioImg';
 import { UrlFront } from 'src/app/shared/routes/RoutesFront';
+import { BannersModels } from './models/BannersModels';
+import { CardsModel } from './models/CardsModels';
 import { BannersServices } from './services/Banners.service';
 import { CardsService } from './services/Cards.service';
 
@@ -12,8 +14,8 @@ import { CardsService } from './services/Cards.service';
   styleUrls: ['./section-carousel.component.css'],
 })
 export class SectionCarouselComponent implements OnInit {
-  arrayCarouselImg: any = [];
-  arrayCardImg: any = [];
+  arrayCarouselImg: BannersModels[] = [];
+  arrayCardImg: CardsModel[] = [];
   rutaImg = `${RepositorioImg.urlRepositorio}`;
   idUser: any;
   constructor(
@@ -32,7 +34,7 @@ export class SectionCarouselComponent implements OnInit {
   //TRAER TODAS LAS TARJETAS DE LOS PRODUCTOS
   getCardsProducts() {
     //EL UNO ES PARA LOS PRIMEROS CARDS
-    this.cardsServi.getCardsById(1).subscribe((res: any) => {
+    this.cardsServi.getCardsById(1).subscribe((res: CardsModel[]) => {
       this.arrayCardImg = res;
     });
   }
@@ -45,9 +47,11 @@ export class SectionCarouselComponent implements OnInit {
   }
   //BANNERS PARA LOS USUARIOS SEGUN LOGEADO
   getBanner(variable: string, movil: string) {
-    this.bannerServi.getBannersUSers(variable, movil).subscribe((res: any) => {
-      this.arrayCarouselImg = res;
-    });
+    this.bannerServi
+      .getBannersUSers(variable, movil)
+      .subscribe((res: BannersModels[]) => {
+        this.arrayCarouselImg = res;
+      });
   }
   irAlLink(link: string) {
     if (link.length > 0) this.router.navigateByUrl(link);

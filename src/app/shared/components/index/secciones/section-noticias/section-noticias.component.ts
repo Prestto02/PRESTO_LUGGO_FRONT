@@ -5,6 +5,7 @@ import { UrlApi } from 'src/app/shared/routes/RoutesApi';
 import { UrlFront } from 'src/app/shared/routes/RoutesFront';
 import { userCheck } from './arrayCheckUser';
 import { arrayTiendas } from './arrayTiendas';
+import { ModelsCards } from './modelsCards';
 
 @Component({
   selector: 'app-section-noticias',
@@ -17,14 +18,7 @@ export class SectionNoticiasComponent implements OnInit {
   userCheck = userCheck;
   registerCheck: boolean = false;
 
-  /* CARDS */
-  atrasPng = `${RepositorioImg.urlRepositorio}img/IM%C3%81GENES/Cards-section-2/atras.png`;
-  cardIcons1 = `${RepositorioImg.urlRepositorio}img/IM%C3%81GENES/Cards-section-2/tecnologia.png`;
-  cardIcons2 = `${RepositorioImg.urlRepositorio}img/IM%C3%81GENES/Cards-section-2/linea blanca.png`;
-  cardIcons3 = `${RepositorioImg.urlRepositorio}img/IM%C3%81GENES/Cards-section-2/herramientas.png`;
-  cardIconsFacebook = `${RepositorioImg.urlRepositorio}img/IM%C3%81GENES/Cards-section-2/Facebook - Original.png`;
-  cardIconsGoogle = `${RepositorioImg.urlRepositorio}img/IM%C3%81GENES/Cards-section-2/Google - Original.png`;
-  cardIconsMicrosoft = `${RepositorioImg.urlRepositorio}img/IM%C3%81GENES/Cards-section-2/Microsoft.png`;
+  cards = ModelsCards;
   constructor(private router: Router) {}
 
   ngOnInit(): void {}

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { TokenService } from 'src/app/login/services/token.service';
+import { ListCategoryApi } from 'src/app/manager-vendedor/categorias/models/ListCategory';
 import { CategoriasService } from 'src/app/manager-vendedor/productos/services/categorias.service';
 import { UrlFront } from 'src/app/shared/routes/RoutesFront';
 import { arrayListMasVendidos } from './LisItemsMenu';
@@ -10,9 +11,9 @@ import { arrayListMasVendidos } from './LisItemsMenu';
   styleUrls: ['./menu2.component.css'],
 })
 export class Menu2Component implements OnInit {
-  categoriasItems: any = [];
+  categoriasItems: ListCategoryApi[] = [];
   ocultarMenu: boolean = false;
-  subCategorias: any = [];
+  subCategorias: ListCategoryApi[] = [];
   nombreCategoria = '';
   correoUsuario: any;
   arrayLisVendidos = arrayListMasVendidos; //LIST LOS MAS VENDIDOS
@@ -28,12 +29,12 @@ export class Menu2Component implements OnInit {
   }
   //TODAS LAS CATEGORIAS
   getAllCategorias() {
-    this.apiCategoria.getAllCategorias().subscribe((res) => {
+    this.apiCategoria.getAllCategorias().subscribe((res: ListCategoryApi[]) => {
       this.categoriasItems = res;
     });
   }
   //ABRIR SUBMENU
-  AbrirSubMenu(index: any) {
+  AbrirSubMenu(index: ListCategoryApi) {
     this.ocultarMenu = true;
     this.obtenerIndexMenu(index);
   }
@@ -42,11 +43,13 @@ export class Menu2Component implements OnInit {
     this.subCategorias = [];
   }
   //OBTENGO POSICION DEL ARRAY
-  obtenerIndexMenu(index: any) {
+  obtenerIndexMenu(index: ListCategoryApi) {
     this.nombreCategoria = index.name; //ASIGNO EL NOMBRE PADRE DE LA CATEGORIA
-    this.apiCategoria.getIdCategoriaHijo(index.id).subscribe((res) => {
-      this.subCategorias = res;
-    });
+    this.apiCategoria
+      .getIdCategoriaHijo(index.id)
+      .subscribe((res: ListCategoryApi[]) => {
+        this.subCategorias = res;
+      });
   }
   //IR A MI PERFIL
   irAMiPerfil() {

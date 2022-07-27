@@ -1,6 +1,10 @@
 import { RepositorioImg } from 'src/app/shared/helpers/RepositorioImg';
-
-export const arrayServicios = [
+export interface ServiciosImg {
+  id: number;
+  name: string;
+  img: string;
+}
+export const arrayServicios: ServiciosImg[] = [
   {
     id: 1,
     name: 'Envíos a todo el Ecuador',
@@ -11,7 +15,7 @@ export const arrayServicios = [
     name: 'Aceptamos todas las tarjetas',
     img: `${RepositorioImg.urlRepositorio}img/IMÁGENES/section-servicios/tarjetas.png`,
   },
-/*   {
+  /*   {
     id: 3,
     name: 'Llama y compra al (04) 600 5454',
     img: `${RepositorioImg.urlRepositorio}img/IMÁGENES/section-servicios/llamadas.png`,

@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ListCategoryApi } from 'src/app/manager-vendedor/categorias/models/ListCategory';
 import { CategoriasService } from 'src/app/manager-vendedor/productos/services/categorias.service';
 
 @Component({
@@ -7,15 +8,18 @@ import { CategoriasService } from 'src/app/manager-vendedor/productos/services/c
   styleUrls: ['./sub-menu-categorias.component.css'],
 })
 export class SubMenuCategoriasComponent implements OnInit {
-  @Input('ItemsSubCategoria') subCategoriaItems: any | null = null;
+  @Input('ItemsSubCategoria') subCategoriaItems: ListCategoryApi[] | null =
+    null;
   constructor(private apiCategorias: CategoriasService) {}
 
   ngOnInit(): void {}
 
   getHijosCategorias(id: any) {
-    this.apiCategorias.getIdCategoriaHijo(id).subscribe((res) => {
-      //this.subCategoriaItems = null;
-      this.subCategoriaItems = res;
-    });
+    this.apiCategorias
+      .getIdCategoriaHijo(id)
+      .subscribe((res: ListCategoryApi[]) => {
+        //this.subCategoriaItems = null;
+        this.subCategoriaItems = res;
+      });
   }
 }

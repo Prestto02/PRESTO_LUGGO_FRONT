@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { arrayServicios } from './arrayServicios';
+import { arrayServicios, ServiciosImg } from './arrayServicios';
 
 @Component({
   selector: 'app-section-servicios',
@@ -7,7 +7,7 @@ import { arrayServicios } from './arrayServicios';
   styleUrls: ['./section-servicios.component.css'],
 })
 export class SectionServiciosComponent implements OnInit {
-  arrayServicios = arrayServicios;
+  arrayServicios: ServiciosImg[] = arrayServicios;
   constructor() {}
 
   ngOnInit(): void {}

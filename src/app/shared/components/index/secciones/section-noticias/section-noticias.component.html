@@ -9,7 +9,7 @@
             <div class="card-body">
               <div class="row mx-xxl-auto">
                 <div class="col-xxl-12 col-xl-12 col-sm-12 col-md-12 col-12 cursor" (click)="registerUser();">
-                  <img [src]="atrasPng" alt="atras" />
+                  <img [src]="cards.atrasPng" alt="atras" />
                 </div>
                 <div class="col-xxl-6 col-xl-6 col-sm-6 col-md-6 col-6" *ngFor="let list of userCheck">
                   <div class="row mx-xxl-auto">
@@ -41,10 +41,10 @@
                 </div>
                 <div class="col-md-4 col-4 col-xl-5 col-xxl-5 col-sm-5 mt-1 text-center mb-3">
                   <a [href]="urlGoogle+'/Google'" class="mx-1">
-                    <img loading="lazy" [src]="cardIconsGoogle" alt="Icon google" />
+                    <img loading="lazy" [src]="cards.cardIconsGoogle" alt="Icon google" />
                   </a>
                   <a [href]="urlGoogle+'/Google'" class="mx-1">
-                    <img loading="lazy" [src]="cardIconsFacebook" alt="Icon Facebook" />
+                    <img loading="lazy" [src]="cards.cardIconsFacebook" alt="Icon Facebook" />
                   </a>
                   <!--                 <a href="" class="mx-1">
                   <img loading="lazy" [src]="cardIconsMicrosoft" alt="Icon Microsoft" />
@@ -69,15 +69,15 @@
                 <p (click)="irProductos('todos')" class="text-color-links">Ver todo</p>
               </div>
               <div class="col-md-4 col-4 col-sm-4 col-xl-4 col-xxl-4 text-center mt-xxl-3 mt-xl-2 mt-md-4">
-                <img loading="lazy" [src]="cardIcons1" class="img-fluid" alt="Tecnologia" />
+                <img loading="lazy" [src]="cards.cardIcons1" class="img-fluid" alt="Tecnologia" />
                 <p class="text-center text-categorias mt-3">Tecnología</p>
               </div>
               <div class="col-md-4 col-4 col-sm-4 col-xl-4 col-xxl-4 text-center mt-xxl-3 mt-xl-2 mt-md-4">
-                <img loading="lazy" [src]="cardIcons2" class="img-fluid" alt="linea blanca" />
+                <img loading="lazy" [src]="cards.cardIcons2" class="img-fluid" alt="linea blanca" />
                 <p class="text-center text-categorias mt-3">Línea Blanca</p>
               </div>
               <div class="col-md-4 col-4 col-sm-4 col-xl-4 col-xxl-4 text-center mt-xxl-3 mt-xl-2 mt-md-4">
-                <img loading="lazy" [src]="cardIcons3" class="img-fluid" alt="Herramientas" />
+                <img loading="lazy" [src]="cards.cardIcons3" class="img-fluid" alt="Herramientas" />
                 <p class="text-center text-categorias mt-3">Herramientas</p>
               </div>
             </div>

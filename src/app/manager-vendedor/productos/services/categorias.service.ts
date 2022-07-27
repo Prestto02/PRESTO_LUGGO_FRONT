@@ -11,12 +11,14 @@ export class CategoriasService {
   constructor(private http: HttpClient) {}
 
   //TRAIGO TODAS LAS CATEGORIAS
-  getAllCategorias(): Observable<any> {
-    return this.http.get<any>(`${UrlApi.ApiUrl}${UrlApi.categorias}`);
+  getAllCategorias(): Observable<ListCategoryApi[]> {
+    return this.http.get<ListCategoryApi[]>(
+      `${UrlApi.ApiUrl}${UrlApi.categorias}`
+    );
   }
   //TRAIGO EL ID DE LA CATEGORIA
-  getIdCategoriaHijo(id: any): Observable<any> {
-    return this.http.get<any>(
+  getIdCategoriaHijo(id: any): Observable<ListCategoryApi[]> {
+    return this.http.get<ListCategoryApi[]>(
       `${UrlApi.ApiUrl}${UrlApi.categoriasrHijos}${id}`
     );
   }

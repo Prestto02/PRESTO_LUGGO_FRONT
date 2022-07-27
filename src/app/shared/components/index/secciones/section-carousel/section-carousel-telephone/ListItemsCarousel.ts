@@ -11,25 +11,6 @@ export interface cardTelephone {
   url: string;
   text: string;
 }
-
-/* export const itemCarouse: carouselTelephone[] = [
-  {
-    id: 1,
-    url: `${RepositorioImg.urlRepositorio}img/IMÁGENES/img-celular-responsive/b-cocina.png`,
-    link: '',
-  },
-  {
-    id: 2,
-    url: `${RepositorioImg.urlRepositorio}img/IMÁGENES/img-celular-responsive/b-cocina.png`,
-    link: '',
-  },
-  {
-    id: 3,
-    url: `${RepositorioImg.urlRepositorio}img/IMÁGENES/img-celular-responsive/b-cocina.png`,
-    link: '',
-  },
-]; */
-
 export const itemCards: cardTelephone[] = [
   {
     id: 1,
