@@ -29,7 +29,7 @@ export class ListadoProductosComponent implements OnInit {
   p: number = 1; //PAGINACION EN 1
   searchProducts = '';
   load = false;
-
+  date = new Date();
   ngOnInit(): void {
     this.position.getPositionUser();
     this.getAllProducts();
@@ -64,7 +64,7 @@ export class ListadoProductosComponent implements OnInit {
     this.searchProducts = search;
   }
   //SORT ORDER BY
-  sort(key: any) {
+  sort(key: string) {
     this.key = key;
     this.reverse = !this.reverse;
   }
