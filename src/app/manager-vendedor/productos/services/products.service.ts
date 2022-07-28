@@ -9,8 +9,6 @@ import { UrlApi } from '../../../shared/routes/RoutesApi';
 export class ProductsService {
   private productDataSource = new BehaviorSubject<Array<any>>([]); //CREO El behaviorSUBJECT
   productDataPagination = this.productDataSource.asObservable(); //OBTENGO EL BEHAVIORSUBJECT
-  private ListProductAdn = new BehaviorSubject<Array<any>>([]);
-  listProductAdn = this.ListProductAdn.asObservable(); //OBTENGO EL BEHAVIORSUBJECT
   //CONSTRUCTOR
   dataScrollProduct: Array<any> = []; //PARA GUARDAR EN UN ARRAY LO QUE PIDA DE LA PAGINACION DE LA API
   constructor(private http: HttpClient) {}
@@ -61,10 +59,6 @@ export class ProductsService {
       (res: any) => (hash[res.id_artic] ? false : (hash[res.id_artic] = true)) //PARA QUITAR LOS PRODUCTOS REPETIDOS
     );
     this.productDataSource.next(this.dataScrollProduct);
-  }
-  //AGREGAR NUEVOS PRODUCTOS AL ADN
-  addProductAdn(obj: any) {
-    this.ListProductAdn.next(obj);
   }
   //ELIMINAR PRODUCTO
   eliminarProducto(id: any) {

@@ -9,6 +9,7 @@ export class FilterCategorias implements PipeTransform {
     listCategory: ListCategoryApi[],
     search: string
   ): ListCategoryApi[] {
+    if (search === '' || !search) return listCategory;
     if (!listCategory) return [];
     const filterCategory = listCategory.filter(
       (categoria: ListCategoryApi) =>

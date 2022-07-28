@@ -28,16 +28,15 @@ export class ListadoProductosComponent implements OnInit {
   reverse: boolean = false; //ORDER BY
   p: number = 1; //PAGINACION EN 1
   searchProducts = '';
+
   ngOnInit(): void {
     this.position.getPositionUser();
     this.getAllProducts();
   }
+
   //OBTENER TODOS LOS PRODUCTOS
   getAllProducts() {
     this.apiProducts.getDataProductos().subscribe((res) => {
-      this.apiProducts.addProductAdn(res);
-    });
-    this.apiProducts.listProductAdn.subscribe((res) => {
       this.dataProducts = res;
     });
   }
@@ -75,18 +74,14 @@ export class ListadoProductosComponent implements OnInit {
       this.position.longitud,
       this.position.latitud
     );
-    this.apiProducts.postDataArticulo(form).subscribe(
-      (res) => {
-        this.getAllProducts();
-        this.dataForm.limpiarTodoForm();
-      },
-      (err) => {
-        this.dataForm.limpiarTodoForm();
-      }
-    );
-    this._router.navigateByUrl(
-      `${UrlFront.Manager.managerVendedor}/${UrlFront.Manager.vendedor}/${UrlFront.Manager.listadoProductos}`
-    );
+    this.apiProducts.postDataArticulo(form).subscribe((res) => {
+      this.getAllProducts();
+    });
+    this.dataForm.limpiarTodoForm();
+    window.location.href = `${UrlFront.Manager.managerVendedor}/${UrlFront.Manager.vendedor}/${UrlFront.Manager.listadoProductos}`;
+    /*     this._router.navigateByUrl(
+
+    ); */
   }
 
   putProduct() {
@@ -94,18 +89,11 @@ export class ListadoProductosComponent implements OnInit {
       this.position.longitud,
       this.position.latitud
     );
-    this.apiEditProduct.editProduct(form, form.Id_articulo).subscribe(
-      (res) => {
-        this.getAllProducts();
-        this.dataForm.limpiarTodoForm();
-      },
-      (err) => {
-        this.dataForm.limpiarTodoForm();
-      }
-    );
-    this._router.navigateByUrl(
-      `${UrlFront.Manager.managerVendedor}/${UrlFront.Manager.vendedor}/${UrlFront.Manager.listadoProductos}`
-    );
+    this.apiEditProduct.editProduct(form, form.Id_articulo).subscribe((res) => {
+      this.getAllProducts();
+    });
+    this.dataForm.limpiarTodoForm();
+    window.location.href = `${UrlFront.Manager.managerVendedor}/${UrlFront.Manager.vendedor}/${UrlFront.Manager.listadoProductos}`;
   }
   //GUARDAR EL PRODUCTO
   guardarProduct(id?: boolean) {
