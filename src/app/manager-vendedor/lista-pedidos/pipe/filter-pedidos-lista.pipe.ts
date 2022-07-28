@@ -6,6 +6,7 @@ import { ListPedidosAdn } from '../models/ListPedidosAdn';
 })
 export class FilterPedidosListaPipe implements PipeTransform {
   transform(listOrders: ListPedidosAdn[], search: string): ListPedidosAdn[] {
+    if (search == '' || !search) return listOrders;
     if (!listOrders) return [];
     const filterListPedidos = listOrders.filter(
       (pedidos: ListPedidosAdn) =>

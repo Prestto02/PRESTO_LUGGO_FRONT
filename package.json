@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build --prod --aot --outputHashing=all",
     "build : devCalidad": "ng build --prod --aot --outputHashing=all --base-href /Puertto/Calidad/Site/",
     "build : prod": "ng build --prod --base-href --aot --outputHashing=all /Puertto/Site/",
     "watch": "ng build --watch --deploy-url / --base-href / --configuration=development",

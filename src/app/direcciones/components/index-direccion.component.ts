@@ -14,7 +14,6 @@ export class IndexDireccionComponent implements OnInit {
   rolTipoUsuario: string = '';
   rolTipo: any;
   idUsuario: any;
-  draggableModal: boolean = false;
   constructor(
     private token: TokenService,
     private encrypServi: EncryptService

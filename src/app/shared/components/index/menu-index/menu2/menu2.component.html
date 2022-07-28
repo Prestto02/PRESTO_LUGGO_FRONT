@@ -12,7 +12,8 @@
   <div class="offcanvas-body sidenav-card">
     <div class="row text-white " id="offcanvasLabel">
       <div class="position-button">
-        <button type="button" class="btn-close btn-close-white text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        <button type="button" class="btn-close btn-close-white text-reset" data-bs-dismiss="offcanvas"
+          aria-label="Close"></button>
       </div>
       <!-----CABEZERA Y VERIFICO SI EL USUARIO ESTA LOGGEADO---->
       <ng-container *ngIf="correoUsuario; else notIdentify">
@@ -56,7 +57,7 @@
       </div>
       <!----SECCION 1---->
       <ng-container *ngIf="!ocultarMenu">
-        <div class="col-md-12 col-xl-12 col-xxl-12 col-sm-12 col-12 mb-1">
+        <!--         <div class="col-md-12 col-xl-12 col-xxl-12 col-sm-12 col-12 mb-1">
           <h4 class="text-parrafo">Tendencias</h4>
         </div>
         <div class="col-md-12 col-xl-12 col-xxl-12 col-sm-12 col-12 cursor-item" *ngFor="let list of arrayLisVendidos">
@@ -64,7 +65,7 @@
         </div>
         <div class="col-md-12 col-xl-12 col-xxl-12 col-sm-12 col-12">
           <hr>
-        </div>
+        </div> -->
         <!----SECCION 2---->
         <div class="col-md-12 col-xl-12 col-xxl-12 col-sm-12 col-12">
           <h4 class="text-parrafo">Busca Por Categorías</h4>
