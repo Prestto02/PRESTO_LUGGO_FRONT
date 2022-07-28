@@ -17,6 +17,7 @@ export class PrimerEditComponent implements OnInit {
   @Input('productEdit') productEdit: any | null = null;
   imagenTransformada: string = '';
   ActiveGarantia: boolean = false;
+  date = new Date();
   constructor(
     public formB: EditFormProducts, //EDIT FORM PRODUCTS
     private imgValidar: ValidarYTransformarImagen, //VALIDAR IMAGENES Y TRANSFORMAR
@@ -34,7 +35,7 @@ export class PrimerEditComponent implements OnInit {
     });
   }
   getImageEdit() {
-    this.imgProducts = `${RepositorioImg.urlRepositorio}${this.productEdit.multimedia.url_multimediaFULHD}`;
+    this.imgProducts = `${RepositorioImg.urlRepositorio}${this.productEdit.multimedia.url_multimediaFULHD}?${this.date}`;
   }
   getImage(e: any) {
     this.imgValidar.getImageVerifyServer(e); //VERIFICO EN EL SERVER LA IMAGEN

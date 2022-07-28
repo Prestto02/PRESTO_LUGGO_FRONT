@@ -18,6 +18,7 @@ export class ImgGalleryProductsComponent implements OnInit, OnDestroy {
   @Input('detalleArticulo') detalleArticulo: any | null = null;
   imgProducts: string = '';
   imagenTransformada: string = '';
+  date = new Date();
   constructor(
     public formGallery: ImgGalleryForm,
     private imgValidar: ValidarYTransformarImagen //VALIDAR IMAGENES Y TRANSFORMAR
@@ -41,7 +42,7 @@ export class ImgGalleryProductsComponent implements OnInit, OnDestroy {
           this.formGallery.addGalleryProducts(
             res.archivo,
             i,
-            res.url_multimediaFULHD,
+            res.url_multimediaFULHD + '?' + this.date,
             res.id_repositorio
           );
         }
