@@ -28,6 +28,7 @@ export class ListadoProductosComponent implements OnInit {
   reverse: boolean = false; //ORDER BY
   p: number = 1; //PAGINACION EN 1
   searchProducts = '';
+  load = false;
 
   ngOnInit(): void {
     this.position.getPositionUser();
@@ -36,9 +37,13 @@ export class ListadoProductosComponent implements OnInit {
 
   //OBTENER TODOS LOS PRODUCTOS
   getAllProducts() {
-    this.apiProducts.getDataProductos().subscribe((res) => {
-      this.dataProducts = res;
-    });
+    this.load = true;
+    setTimeout(() => {
+      this.apiProducts.getDataProductos().subscribe((res) => {
+        this.dataProducts = res;
+      });
+      this.load = false;
+    }, 2500);
   }
   //PARA ELIMINAR EL PRODUCTO
   eliminarProduct(id: any) {
@@ -78,10 +83,9 @@ export class ListadoProductosComponent implements OnInit {
       this.getAllProducts();
     });
     this.dataForm.limpiarTodoForm();
-    window.location.href = `${UrlFront.Manager.managerVendedor}/${UrlFront.Manager.vendedor}/${UrlFront.Manager.listadoProductos}`;
-    /*     this._router.navigateByUrl(
-
-    ); */
+    this._router.navigateByUrl(
+      `${UrlFront.Manager.managerVendedor}/${UrlFront.Manager.vendedor}/${UrlFront.Manager.listadoProductos}`
+    );
   }
 
   putProduct() {
@@ -93,7 +97,9 @@ export class ListadoProductosComponent implements OnInit {
       this.getAllProducts();
     });
     this.dataForm.limpiarTodoForm();
-    window.location.href = `${UrlFront.Manager.managerVendedor}/${UrlFront.Manager.vendedor}/${UrlFront.Manager.listadoProductos}`;
+    this._router.navigateByUrl(
+      `${UrlFront.Manager.managerVendedor}/${UrlFront.Manager.vendedor}/${UrlFront.Manager.listadoProductos}`
+    );
   }
   //GUARDAR EL PRODUCTO
   guardarProduct(id?: boolean) {

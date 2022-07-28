@@ -4,7 +4,8 @@ import { Pipe, PipeTransform } from '@angular/core';
   name: 'filtroPaginacion',
 })
 export class FiltroPaginacionPipe implements PipeTransform {
-  transform(productos: any, searchProducts: any): any {
+  transform(productos: any, searchProducts: string): any {
+    if (searchProducts === '' || !searchProducts) return productos;
     if (!productos) return []; //RETURNO VACIO EL ARREGLO SI NO EXISTE PRODUCTOS
     const filterProducts = productos.filter(
       //BUSCO LOS PRODUCTOS

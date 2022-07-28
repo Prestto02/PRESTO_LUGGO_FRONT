@@ -38,3 +38,7 @@
   position: fixed;
   top: 90px;
 }
+
+.heigth-categoria::-webkit-scrollbar {
+  display: none;
+}
