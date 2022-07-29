@@ -1,4 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { PositionUser } from 'src/app/shared/class/PositionUser';
+import { FormDireccion } from '../../models/BaseFormDireccion';
+import { Direcciones } from '../../models/Direcciones.models';
+import { ListDireccionesComponent } from '../list-direcciones/list-direcciones.component';
+import { DireccionUsersService } from '../services/direccion-users.service';
 declare var google: any;
 
 @Component({
@@ -25,20 +30,35 @@ export class MapaComponent implements OnInit {
 
   latitud: any;
   longitud: any;
-  constructor() {}
-
+  constructor(
+    public formB: FormDireccion,
+    private api: DireccionUsersService,
+    private position: PositionUser,
+    private component: ListDireccionesComponent
+  ) {}
   ngOnInit(): void {
     this.options = {
       center: { lat: -2.1604033, lng: -79.9304523 }, //LATITUD Y LONGITUD PARA QUE SALGA EN EL MAPA
       zoom: 12,
     };
     //this.initOverlays();
+    this.position.getPositionUser();
     this.infoWindow = new google.maps.InfoWindow();
   }
   //AGREGAR EL NUEVA UBICACION Y ABRIR EL MODAL
   handleMapClick(event: any) {
     this.dialogVisible = true;
     this.selectedPosition = event.latLng;
+    this.setLatitudLongitud();
+  }
+  /* SETEAR DIRECTAMENTE LA LATITUD Y LONGITUD */
+  setLatitudLongitud(): void {
+    this.formB.formDireccion.patchValue({
+      latitud_direccion: this.selectedPosition.lat(),
+      longitud_direccion: this.selectedPosition.lng(),
+      latitud: this.position.latitud,
+      longitud: this.position.longitud,
+    });
   }
   eventTarget(e: any) {
     this.markerTitle = e.target.value;
@@ -61,21 +81,9 @@ export class MapaComponent implements OnInit {
       this.infoWindow.setContent('' + title + '');
       this.infoWindow.open(event.map, event.overlay);
       event.map.setCenter(event.overlay.getPosition());
-      /*
-        this.messageService.add({
-          severity: 'info',
-          summary: 'Marker Selected',
-          detail: title,
-        }); */
-    } else {
-      /*       this.messageService.add({
-          severity: 'info',
-          summary: 'Shape Selected',
-          detail: '',
-        }); */
     }
   }
-
+  /* AGREGAR LA NUEVA UBICACION */
   addMarker() {
     if (this.overlays.length > 0) {
       this.overlays.pop();
@@ -92,10 +100,16 @@ export class MapaComponent implements OnInit {
     );
     this.addUbicacionProducto(); //AGREGAR NUEVA UBICACION DEL PRODUCTOS
     this.markerTitle = null;
-    this.dialogVisible = true;
+    this.dialogVisible = false;
   }
   //AGREGAR UBICACION DE PRODUCTOS
-  addUbicacionProducto() {}
+  addUbicacionProducto() {
+    const form = this.formB.formDireccion.value;
+    this.api.postDireccion(form).subscribe((res: any) => {
+      this.formB.limpiarFormulario();
+      this.component.getAllDirecciones();
+    });
+  }
 
   handleDragEnd(event: any) {}
   zoomIn(map: any) {

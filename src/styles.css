@@ -58,14 +58,15 @@ html::-webkit-scrollbar-thumb {
   background: #ea2313;
   border-radius: 4px;
 }
-/* .newColorDanger.toast-error {
-  background-color: #c4b31c;
-} */
+.newColorDanger.toast-success {
+  background-color: #ffffff;
+  color: black;
+  background-image: url(https://www.tooltyp.com/wp-content/uploads/2014/10/1900x920-8-beneficios-de-usar-imagenes-en-nuestros-sitios-web.jpg);
+}
 
-/* .modificColor.toast-success .toast-title {
+.newColorDanger.toast-success .toast-title {
   color: black;
 }
-.modificColor.toast-success .toast-message {
+.newColorDanger.toast-success .toast-message {
   color: black;
 }
- */

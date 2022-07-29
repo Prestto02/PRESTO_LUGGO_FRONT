@@ -1,6 +1,11 @@
 import { UrlFront } from 'src/app/shared/routes/RoutesFront';
 //MENU 2 PARA LA LISTA DE MENU ITEMS
-export const arrayListItemsMenu = [
+export interface ListeMenu {
+  id: number;
+  name: string;
+  link: string;
+}
+export const arrayListItemsMenu: ReadonlyArray<ListeMenu> = [
   {
     id: 1,
     name: 'Atención al cliente',
@@ -13,7 +18,7 @@ export const arrayListItemsMenu = [
   },
 ];
 //ARRAY LA LISTA DE LOS MAS VENDEDIDOS DEL OFF CANVAS MENU
-export const arrayListMasVendidos = [
+export const arrayListMasVendidos: ReadonlyArray<ListeMenu> = [
   {
     id: 1,
     name: 'Lo más vendido',
@@ -31,7 +36,7 @@ export const arrayListMasVendidos = [
   },
 ];
 //ARRAY PARA LA VALIDACION SI EXISTE O NO USUARIO
-export const arrayListIdentifyUser = [
+export const arrayListIdentifyUser: ReadonlyArray<ListeMenu> = [
   {
     id: 1,
     name: 'Mi cuenta',
@@ -49,7 +54,7 @@ export const arrayListIdentifyUser = [
   },
 ];
 //ARRAY PARA LOS USUARIOS QUE NO HAN SIDO IDENTIFICADO
-export const arrayListNotIdenfityUser = [
+export const arrayListNotIdenfityUser: ReadonlyArray<ListeMenu> = [
   {
     id: 1,
     name: 'Iniciar Sesión',

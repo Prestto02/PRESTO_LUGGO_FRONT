@@ -35,36 +35,53 @@
   </button>
 </div>
 <!--------MODAL PARA AGREGAR LA NUEVA UBICACION------------->
-<p-dialog showEffect="fade" [(visible)]="dialogVisible" header="Nueva ubicación" [style]="{width: '300px'}">
-  <div class="grid p-fluid" *ngIf="selectedPosition">
-    <!-- DIRECCION -->
-    <div class="mb-3">
-      <label for="Descripcion" class="form-label">Dirección</label>
-      <input type="text" class="form-control" id="Descripcion" (change)="eventTarget($event);">
-    </div>
-    <!-- TELEFONO -->
-    <div class="mb-3">
-      <label for="Descripcion" class="form-label">Celular</label>
-      <input type="text" maxlength="10" class="form-control" id="Descripcion" (change)="eventTarget($event);">
+<ng-container [formGroup]="formB.formDireccion">
+  <p-dialog showEffect="fade" [(visible)]="dialogVisible" header="Nueva ubicación" [style]="{width: '300px'}">
+    <div class="grid p-fluid" *ngIf="selectedPosition">
+      <!-- DIRECCION -->
+      <div class="mb-3">
+        <label for="Descripcion" class="form-label">Descripción</label>
+        <input type="text" class="form-control" id="Descripcion" (change)="eventTarget($event);"
+          formControlName="descripcion" />
+        <app-form-errors-container [forControl]="formB.formDireccion.get('descripcion')">
+          <app-message-error forErrorCode="required"></app-message-error>
+          <app-message-error forErrorCode="pattern" [customMsg]="'No se admite caracteres especiales ej:</>'">
+          </app-message-error>
+        </app-form-errors-container>
+      </div>
+      <!-- TELEFONO -->
+      <div class="mb-3">
+        <label for="celular" class="form-label">Celular</label>
+        <input type="text" maxlength="10" class="form-control" id="celular" (change)="eventTarget($event);"
+          formControlName="telefono" />
+        <app-form-errors-container [forControl]="formB.formDireccion.get('telefono')">
+          <app-message-error forErrorCode="required"></app-message-error>
+          <app-message-error forErrorCode="minLength" [customMsg]="'Minimo 5 caracteres'"></app-message-error>
+          <app-message-error forErrorCode="maxlength" [customMsg]="'Máximo 200 caracteres'"></app-message-error>
+          <app-message-error forErrorCode="pattern" [customMsg]="'Solo se acepta números'">
+          </app-message-error>
+        </app-form-errors-container>
+      </div>
+
+      <div class="mb-3">
+        <label for="Latitud" class="form-label">Latitud</label>
+        <input type="text" class="form-control" id="Latitud" [attr.disabled]="true"
+          formControlName="latitud_direccion" />
+      </div>
+
+      <div class="mb-3">
+        <label for="Longitud" class="form-label">Longitud</label>
+        <input type="text" class="form-control" id="Longitud" [attr.disabled]="true"
+          formControlName="longitud_direccion" />
+      </div>
     </div>
 
-    <div class="mb-3">
-      <label for="Latitud" class="form-label">Latitud</label>
-      <input type="text" class="form-control" id="Latitud" [value]="selectedPosition.lat()" disabled>
-    </div>
-
-    <div class="mb-3">
-      <label for="Longitud" class="form-label">Longitud</label>
-      <input type="text" class="form-control" id="Longitud" [value]="selectedPosition.lng()" disabled>
-    </div>
-
-
-  </div>
-
-  <ng-template pTemplate="footer">
-    <div class="col-xl-12 col-xxl-12 col-sm-12 col-md-12 col-12">
-      <button type="button" class="btn btn-secondary" (click)="closeModal()">Cancelar</button>
-      <button type="button" class="btn btn-dark" (click)="addMarker()">Agregar</button>
-    </div>
-  </ng-template>
-</p-dialog>
+    <ng-template pTemplate="footer">
+      <div class="col-xl-12 col-xxl-12 col-sm-12 col-md-12 col-12">
+        <button type="button" class="btn btn-secondary" (click)="closeModal()">Cancelar</button>
+        <button type="button" class="btn btn-dark" [disabled]="formB.formDireccion.invalid"
+          (click)="addMarker()">Agregar</button>
+      </div>
+    </ng-template>
+  </p-dialog>
+</ng-container>

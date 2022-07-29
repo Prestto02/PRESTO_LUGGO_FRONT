@@ -32,21 +32,24 @@ export class CarritoItemsService {
     return this.http.get<any>(`${UrlApi.ApiUrl}${UrlApi.buscarProductos}${id}`); //BUSCAR EL PRODUCTO A LA API
   }
   //AGREGAR LOS PRODUCTOS SCROLL INFINITO
-  addProductCarrito(dataObj: any) {
+  addProductCarrito(dataObj: any, messageServi?: boolean) {
     if (this.verifyCarrito(dataObj).length > 0) {
       //SI EXISTE EN EL ARREGLO EL MISMO PRODUCTO NO AGREGARLO
-      this.messageFront.getInfoMessage(
+      /*       this.messageFront.getInfoMessage(
         message.Info.title,
         message.Info.dobleProducto
-      ); //MENSAJE DE ERROR
+      ); */
+      //MENSAJE DE ERROR
     } else {
       this.addCarritoProduct.push({ ...dataObj }); //GUARDO EL OBJETO EN EN ARREGLO
       this.productCarritoItem.next(this.addCarritoProduct); //GUARDO EN EL OBSERVABLE EL ARREGLO ASIGNADO
       this.obtenerTamañoDelCarrito(); //OBTENGO EL TAMAÑO DEL ARREGLO addCarritoProduct LENGTH
-      /*       this.messageFront.getSuccessMessage(
-        message.Success.title,
-        message.Success.productoAgregado
-      ); //OK SE AGREGO EL PRODUCTO */
+      if (!messageServi) {
+        this.messageFront.getSuccessMessage(
+          message.Success.title,
+          message.Success.productoAgregado
+        ); //OK SE AGREGO EL PRODUCTO
+      }
     }
   }
   //VERFICO EL CARRITO EN EL LOCAL STORAGE
@@ -55,7 +58,7 @@ export class CarritoItemsService {
     const data = JSON.parse(itemsCars); //TRANSFORMANDO LO QUE TENGO EN EL LOCAL STORAGE
     if (data) {
       data.map((res: any) => {
-        this.addProductCarrito(res); //REOCORRO Y INSERTO EN EL ARRAY
+        this.addProductCarrito(res, true); //REOCORRO Y INSERTO EN EL ARRAY
       });
     }
   }

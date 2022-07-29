@@ -18,6 +18,7 @@ import { InputIncreaseDiminishComponent } from '../../../input-increase-diminish
 import { MenuUsersComponent } from '../menu/menu-users/menu-users.component';
 import { CarritoIconsComponent } from '../menu/carrito-icons/carrito-icons.component';
 import { MenuTelephoneComponent } from '../menu-telephone/menu-telephone.component';
+import { IdentifyUsersDirective } from '../menu2/directive/identify-users.directive';
 @NgModule({
   declarations: [
     MenuIndexComponent, //MENU INDEX COMPONENTS
@@ -33,6 +34,7 @@ import { MenuTelephoneComponent } from '../menu-telephone/menu-telephone.compone
     MenuUsersComponent,
     CarritoIconsComponent,
     MenuTelephoneComponent,
+    IdentifyUsersDirective, //DIRECTIVE IDENTIFY USERS
   ],
   imports: [CommonModule, ReactiveFormsModule, HttpClientModule],
   providers: [

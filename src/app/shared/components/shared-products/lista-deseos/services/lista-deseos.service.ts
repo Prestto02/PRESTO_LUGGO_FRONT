@@ -19,7 +19,7 @@ export class ListaDeseosService {
   ) {}
 
   //AGREGAR LOS PRODUCTOS SCROLL INFINITO
-  addListaDeseos(dataObj: ProductListApi) {
+  addListaDeseos(dataObj: ProductListApi, messageValor?: boolean) {
     if (this.verifyCarrito(dataObj).length > 0) {
       //SI EXISTE EN EL ARREGLO EL MISMO PRODUCTO NO AGREGARLO
       /*       this.messageFront.getInfoMessage(
@@ -29,10 +29,12 @@ export class ListaDeseosService {
     } else {
       this.addListaDeseosProdut.push({ ...dataObj }); //GUARDO EL OBJETO EN EN ARREGLO
       this.ListaDeseosItem.next(this.addListaDeseosProdut); //GUARDO EN EL OBSERVABLE EL ARREGLO ASIGNADO
-      /*       this.messageFront.getSuccessMessage(
-        message.Success.title,
-        message.Success.productoAgregado
-      ); //OK SE AGREGO EL PRODUCTO */
+      if (!messageValor) {
+        this.messageFront.getSuccessMessage(
+          message.Success.title,
+          message.Success.productoAgregado
+        ); //OK SE AGREGO EL PRODUCTO
+      }
     }
   }
   /* COLECCION DE LISTA DE DESEOS POR USUARIO */
@@ -72,7 +74,7 @@ export class ListaDeseosService {
     const data = JSON.parse(itemsList); //TRANSFORMANDO LO QUE TENGO EN EL LOCAL STORAGE
     if (data) {
       data.map((res: any) => {
-        this.addListaDeseos(res); //REOCORRO Y INSERTO EN EL ARRAY
+        this.addListaDeseos(res, true); //REOCORRO Y INSERTO EN EL ARRAY
       });
     }
   }

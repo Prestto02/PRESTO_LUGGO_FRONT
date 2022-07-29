@@ -1,22 +1,20 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { UrlFront } from 'src/app/shared/routes/RoutesFront';
-import { arrayListItemsMenu } from '../LisItemsMenu';
+import { arrayListItemsMenu, ListeMenu } from '../LisItemsMenu';
 
 @Component({
   selector: 'app-item-nav',
   templateUrl: './item-nav.component.html',
   styleUrls: ['./item-nav.component.css'],
 })
-export class ItemNavComponent implements OnInit {
+export class ItemNavComponent {
   @Input('white') white: string | null = null;
   @Input('width') width: number | null = null;
   @Input('heigth') heigth: number | null = null;
   @Input('tamano') tamano: string | null = null;
-  arrayList = arrayListItemsMenu;
+  arrayList: ReadonlyArray<ListeMenu> = arrayListItemsMenu;
   constructor(private router: Router) {}
-
-  ngOnInit(): void {}
 
   irAlLink(link: any) {
     this.router.navigateByUrl(link);

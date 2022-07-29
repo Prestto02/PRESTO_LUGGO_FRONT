@@ -8,8 +8,8 @@ import { CategoriasService } from 'src/app/manager-vendedor/productos/services/c
   styleUrls: ['./sub-menu-categorias.component.css'],
 })
 export class SubMenuCategoriasComponent implements OnInit {
-  @Input('ItemsSubCategoria') subCategoriaItems: ListCategoryApi[] | null =
-    null;
+  @Input('ItemsSubCategoria')
+  subCategoriaItems: ReadonlyArray<ListCategoryApi> | null = null;
   constructor(private apiCategorias: CategoriasService) {}
 
   ngOnInit(): void {}
@@ -17,7 +17,7 @@ export class SubMenuCategoriasComponent implements OnInit {
   getHijosCategorias(id: any) {
     this.apiCategorias
       .getIdCategoriaHijo(id)
-      .subscribe((res: ListCategoryApi[]) => {
+      .subscribe((res: ReadonlyArray<ListCategoryApi>) => {
         //this.subCategoriaItems = null;
         this.subCategoriaItems = res;
       });

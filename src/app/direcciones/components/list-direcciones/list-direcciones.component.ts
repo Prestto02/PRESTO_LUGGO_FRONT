@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormDireccion } from '../../models/BaseFormDireccion';
 import { ArrayDireccion, Direcciones } from '../../models/Direcciones.models';
+import { DireccionUsersService } from '../services/direccion-users.service';
 
 @Component({
   selector: 'app-list-direcciones',
@@ -7,27 +9,50 @@ import { ArrayDireccion, Direcciones } from '../../models/Direcciones.models';
   styleUrls: ['./list-direcciones.component.css'],
 })
 export class ListDireccionesComponent implements OnInit {
-  direccionesArray: Direcciones[] = ArrayDireccion;
+  direccionesArray: ReadonlyArray<Direcciones> = [];
   dialogVisible: boolean = false;
-  constructor() {}
+  constructor(
+    public formB: FormDireccion,
+    private api: DireccionUsersService
+  ) {}
 
-  ngOnInit(): void {}
-  //EDITAR
-  editar(id: number): void {
-    this.dialogVisible = true;
-    //this.setModalDialog(true);
+  ngOnInit(): void {
+    this.getAllDirecciones();
   }
+  /* TRAER TODAS LAS DIRECCIONES */
+  getAllDirecciones(): void {
+    /* PETICION AL API PARA LAS DIRECCIONES */
+    this.api.getAllDireccionUser().subscribe((res: Direcciones[]) => {
+      this.api.setArrayUbicaciones(res);
+    });
+    /* ME SUSCRIBO AL OBSERVABLE CREADO NUEVO */
+    this.api.ubicacionesArray$.subscribe((res: Direcciones[]) => {
+      this.direccionesArray = res;
+    });
+  }
+  //EDITAR
+  consultGetDireccionId(id: string): void {
+    this.api.getUserDireccion(id).subscribe((res: Direcciones) => {
+      console.log(res);
+      this.formB.formDireccion.patchValue({ ...res });
+    });
+    this.dialogVisible = true;
+  }
+  /* CERRAR MODAL */
   closeModal(): void {
     this.dialogVisible = false;
   }
+  /* EDITAR USUARIO */
   editMarket(): void {
-
+    const form = this.formB.formDireccion.value;
+    this.api.putDireccion(form).subscribe((res: any) => {
+      console.log(res);
+    });
   }
   //ELIMINAR
-  eliminar(id: number): void {
-    const direccion = this.direccionesArray.findIndex(
-      (res: Direcciones) => res.id === id
-    );
-    this.direccionesArray.splice(direccion, 1);
+  eliminarDireccion(id: string): void {
+    this.api.delete(id).subscribe((res: any) => {
+      console.log(res);
+    });
   }
 }
