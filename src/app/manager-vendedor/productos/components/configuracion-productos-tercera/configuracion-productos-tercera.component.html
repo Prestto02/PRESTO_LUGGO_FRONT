@@ -174,15 +174,15 @@
                 </app-mensajes-ayuda>
               </div>
               <div class="row">
-                <!--largo---->
+                <!----alto---->
                 <div class="col-xl-4 col-xxl-4 col-md-6 mb-3 col-sm-12 col-12">
-                  <div class="input-group">
-                    <input type="text" class="form-control input-estilo" id="largo" placeholder="largo"
-                      aria-label="largo" aria-describedby="basic-largo" formControlName="Longitud_x"
-                      [class.is-invalid]="formB.formAtributos.get('Tamaño_articulo.Longitud_x')?.touched &&formB.formAtributos.get('Tamaño_articulo.Longitud_x')?.invalid">
-                    <span class="input-group-text span-estilo" id="basic-largo">cm</span>
+                  <div class="input-group ">
+                    <input type="text" class="form-control input-estilo" id="alto" placeholder="alto" aria-label="alto"
+                      aria-describedby="basic-alto" formControlName="Longitud_z"
+                      [class.is-invalid]="formB.formAtributos.get('Tamaño_articulo.Longitud_z')?.touched &&formB.formAtributos.get('Tamaño_articulo.Longitud_z')?.invalid">
+                    <span class="input-group-text span-estilo" id="basic-alto">cm</span>
                   </div>
-                  <app-form-errors-container [forControl]="formB.formAtributos.get('Tamaño_articulo.Longitud_x')">
+                  <app-form-errors-container [forControl]="formB.formAtributos.get('Tamaño_articulo.Longitud_z')">
                     <app-message-error forErrorCode="required" customMsg="Es requerido"></app-message-error>
                     <app-message-error forErrorCode="pattern" customMsg="Solo numeros ej 12.0 o 12"></app-message-error>
                   </app-form-errors-container>
@@ -200,15 +200,15 @@
                     <app-message-error forErrorCode="pattern" customMsg="Solo numeros ej 12.0 o 12"></app-message-error>
                   </app-form-errors-container>
                 </div>
-                <!----alto---->
+                <!--largo---->
                 <div class="col-xl-4 col-xxl-4 col-md-6 mb-3 col-sm-12 col-12">
-                  <div class="input-group ">
-                    <input type="text" class="form-control input-estilo" id="alto" placeholder="alto" aria-label="alto"
-                      aria-describedby="basic-alto" formControlName="Longitud_z"
-                      [class.is-invalid]="formB.formAtributos.get('Tamaño_articulo.Longitud_z')?.touched &&formB.formAtributos.get('Tamaño_articulo.Longitud_z')?.invalid">
-                    <span class="input-group-text span-estilo" id="basic-alto">cm</span>
+                  <div class="input-group">
+                    <input type="text" class="form-control input-estilo" id="largo" placeholder="largo"
+                      aria-label="largo" aria-describedby="basic-largo" formControlName="Longitud_x"
+                      [class.is-invalid]="formB.formAtributos.get('Tamaño_articulo.Longitud_x')?.touched &&formB.formAtributos.get('Tamaño_articulo.Longitud_x')?.invalid">
+                    <span class="input-group-text span-estilo" id="basic-largo">cm</span>
                   </div>
-                  <app-form-errors-container [forControl]="formB.formAtributos.get('Tamaño_articulo.Longitud_z')">
+                  <app-form-errors-container [forControl]="formB.formAtributos.get('Tamaño_articulo.Longitud_x')">
                     <app-message-error forErrorCode="required" customMsg="Es requerido"></app-message-error>
                     <app-message-error forErrorCode="pattern" customMsg="Solo numeros ej 12.0 o 12"></app-message-error>
                   </app-form-errors-container>
