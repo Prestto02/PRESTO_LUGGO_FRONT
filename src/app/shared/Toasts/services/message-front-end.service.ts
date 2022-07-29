@@ -9,8 +9,13 @@ export class MessageFrontEndService {
   //SUCCESS
   getSuccessMessage(title: any, message: any) {
     //PARA MODIFICAR LOS COLORES DEL TOAST
-    this.toastr.success(message, title, {
+    this.toastr.success(title, message, {
       toastClass: 'newColorDanger ngx-toastr',
+    });
+  }
+  getSuccessMessageCarrito(title: any, message: any) {
+    this.toastr.success(title, message, {
+      toastClass: 'newColorCars ngx-toastr',
     });
   }
   //WARNING

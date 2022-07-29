@@ -30,10 +30,7 @@ export class ListaDeseosService {
       this.addListaDeseosProdut.push({ ...dataObj }); //GUARDO EL OBJETO EN EN ARREGLO
       this.ListaDeseosItem.next(this.addListaDeseosProdut); //GUARDO EN EL OBSERVABLE EL ARREGLO ASIGNADO
       if (!messageValor) {
-        this.messageFront.getSuccessMessage(
-          message.Success.title,
-          message.Success.productoAgregado
-        ); //OK SE AGREGO EL PRODUCTO
+        this.messageFront.getSuccessMessage('', 'Guardado en favoritos'); //OK SE AGREGO EL PRODUCTO
       }
     }
   }
@@ -67,6 +64,8 @@ export class ListaDeseosService {
       (res) => res.id_artic === id
     );
     this.addListaDeseosProdut.splice(data, 1); //ELIMINO LA COINCIDENCIA QUE ENCONTRO
+    /* ELIMINADO DE FAVORITO */
+    this.messageFront.getSuccessMessage('', 'Eliminado de favorito');
   }
   //VERFICO EL LISTA EN EL LOCAL STORAGE
   verifyListLocalStorage() {

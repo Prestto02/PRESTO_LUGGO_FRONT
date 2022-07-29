@@ -59,14 +59,17 @@ html::-webkit-scrollbar-thumb {
   border-radius: 4px;
 }
 .newColorDanger.toast-success {
-  background-color: #ffffff;
-  color: black;
-  background-image: url(https://www.tooltyp.com/wp-content/uploads/2014/10/1900x920-8-beneficios-de-usar-imagenes-en-nuestros-sitios-web.jpg);
+  background-color: #282828;
+  color: white;
+  background-image: url(https://ecovitali.presttoapp.net/Puertto/Calidad/Repositorio/img/IMÁGENES/gif/wishlist-list2.gif);
 }
-
+/* COLOR DEL TOAST TITULO */
 .newColorDanger.toast-success .toast-title {
-  color: black;
+  color: white;
 }
 .newColorDanger.toast-success .toast-message {
-  color: black;
+  font-family: Cardium B-SemiBold;
+  font-weight: 600;
+  font-size: 18px;
+  color: white;
 }

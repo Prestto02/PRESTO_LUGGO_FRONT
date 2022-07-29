@@ -45,10 +45,7 @@ export class CarritoItemsService {
       this.productCarritoItem.next(this.addCarritoProduct); //GUARDO EN EL OBSERVABLE EL ARREGLO ASIGNADO
       this.obtenerTamañoDelCarrito(); //OBTENGO EL TAMAÑO DEL ARREGLO addCarritoProduct LENGTH
       if (!messageServi) {
-        this.messageFront.getSuccessMessage(
-          message.Success.title,
-          message.Success.productoAgregado
-        ); //OK SE AGREGO EL PRODUCTO
+        this.messageFront.getSuccessMessageCarrito('', 'Guardado al carrito'); //OK SE AGREGO EL PRODUCTO
       }
     }
   }
