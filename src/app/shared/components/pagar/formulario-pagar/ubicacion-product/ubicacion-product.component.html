@@ -6,8 +6,8 @@
     <!-- GRUPO FORMULARIO PARA BUSCAR -->
     <div class="input-group mt-3">
       <input type="text" class="form-control borders-input" aria-label="Text input with dropdown button"
-        formControlName="nombreUbicacion" (focus)="abrirMenuKey();"
-        placeholder="Busca tus direcciones" [title]="formGroup.get('nombreUbicacion')?.value">
+        formControlName="nombreUbicacion" (focus)="abrirMenuKey();" placeholder="Busca tus direcciones"
+        [title]="formGroup.get('nombreUbicacion')?.value">
       <span (click)="abrirMenu()" class="border-button cursor"><svg width="20" height="40" viewBox="0 0 12 5"
           fill="none" xmlns="http://www.w3.org/2000/svg">
           <path
@@ -19,7 +19,7 @@
       <!-- RECORRIENDO EL ARRAY DE DIRECCIONES -->
       <div *ngFor="let list of arrayDirecciones | filterubicacion:formGroup.get('nombreUbicacion')?.value"
         [ngClass]="habilitar?'showList':'hiddenList'" (click)="agregarDireccion(list)">
-        <p class="text-nombre-direccion text-truncate" [title]="list.calle">{{list.nombre}} - {{list.calle}}</p>
+        <p class="text-nombre-direccion text-truncate" [title]="list.descripcion">&nbsp;{{list.descripcion}} - {{list.direccion}}</p>
       </div>
       <!-- SI NO HAY DIRECCION -->
       <ng-container

@@ -1,7 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { PositionUser } from 'src/app/shared/class/PositionUser';
-import { Direcciones } from '../../models/Direcciones.models';
 import { FormDireccion } from '../../models/BaseFormDireccion';
+
 import { ListDireccionesComponent } from '../list-direcciones/list-direcciones.component';
 import { DireccionUsersService } from '../services/direccion-users.service';
 
@@ -105,6 +105,7 @@ export class MapaComponent implements OnInit {
   //AGREGAR UBICACION DE PRODUCTOS
   addUbicacionProducto(): void {
     const form = this.formB.formDireccion.value;
+    console.log(form);
     this.api.postDireccion(form).subscribe((res: any) => {
       this.formB.limpiarFormulario();
       this.component.getAllDirecciones();

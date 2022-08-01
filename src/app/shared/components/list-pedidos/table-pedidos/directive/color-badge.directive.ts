@@ -19,22 +19,13 @@ export class ColorBadgeDirective implements AfterViewInit {
   }
   //ASIGNANDO EL COLOR SEGUN EL ESTADO
   getStateColorBadge(): void {
-    if (
-      this.colorBadgeState === 'Pagado' ||
-      this.colorBadgeState === 'Aprobado'
-    ) {
+    if (this.colorBadgeState === 'Pagado') {
       this.render2.addClass(this.elementBadge, 'bg-success');
     }
-    if (
-      this.colorBadgeState === 'Pendiente' ||
-      this.colorBadgeState === 'En espera'
-    ) {
+    if (this.colorBadgeState === 'Pendiente') {
       this.render2.addClass(this.elementBadge, 'bg-warning');
     }
-    if (
-      this.colorBadgeState === 'Cancelado' ||
-      this.colorBadgeState === 'No aprobado'
-    ) {
+    if (this.colorBadgeState === 'Cancelado') {
       this.render2.addClass(this.elementBadge, 'bg-danger');
     }
   }

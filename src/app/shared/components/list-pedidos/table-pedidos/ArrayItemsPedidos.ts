@@ -21,31 +21,31 @@ export const ArrayItemsPedidos: TablePedidos[] = [
     id_venta: 3,
     fecha_venta: '22/11/2022',
     Valor_Total: 121.88,
-    estado: 'No aprobado',
+    estado: 'Cancelado',
   },
   {
     id_venta: 4,
     fecha_venta: '09/04/2022',
     Valor_Total: 100.22,
-    estado: 'Aprobado',
+    estado: 'Pagado',
   },
   {
     id_venta: 5,
     fecha_venta: '09/04/2022',
     Valor_Total: 10.1,
-    estado: 'Aprobado',
+    estado: 'Pagado',
   },
   {
     id_venta: 6,
     fecha_venta: '09/04/2022',
     Valor_Total: 33.22,
-    estado: 'En espera',
+    estado: 'Pendiente',
   },
   {
     id_venta: 7,
     fecha_venta: '09/04/2022',
     Valor_Total: 41.3,
-    estado: 'Aprobado',
+    estado: 'Pagado',
   },
   {
     id_venta: 8,
@@ -63,7 +63,7 @@ export const ArrayItemsPedidos: TablePedidos[] = [
     id_venta: 10,
     fecha_venta: '09/04/2022',
     Valor_Total: 921.21,
-    estado: 'Aprobado',
+    estado: 'Pagado',
   },
 ];
 
@@ -76,9 +76,9 @@ export interface HeaderTablePedido {
 }
 
 export const HeaderItemsTable: HeaderTablePedido = {
-  id_venta: 'Nº Venta',
+  id_venta: 'Nº Orden',
   fecha_venta: 'Fecha',
   Valor_Total: 'Valor Pagado',
-  estado: 'Estado',
+  estado: 'Estado de Orden',
   opciones: 'Opciones',
 };

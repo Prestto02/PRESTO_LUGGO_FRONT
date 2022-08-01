@@ -1,9 +1,10 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { DireccionUsersService } from 'src/app/direcciones/components/services/direccion-users.service';
 import { TokenService } from 'src/app/login/services/token.service';
 import { UrlFront } from 'src/app/shared/routes/RoutesFront';
 import { BaseFormPagar } from '../models/BaseFormPagar';
-import { ArrayDirecciones, Direcciones } from './models/ArrayDirecciones';
+import { Direcciones } from '../../../../../direcciones/models/Direcciones.models';
 
 @Component({
   selector: 'app-ubicacion-product',
@@ -12,19 +13,28 @@ import { ArrayDirecciones, Direcciones } from './models/ArrayDirecciones';
 })
 export class UbicacionProductComponent implements OnInit {
   @Input('formGroup') formGroup: any | null = null;
-  arrayDirecciones: Direcciones[] = ArrayDirecciones;
+  arrayDirecciones: Direcciones[] = [];
   idClient: any;
   habilitar: boolean = false;
   constructor(
     private router: Router,
     private token: TokenService,
-    public formB: BaseFormPagar
+    public formB: BaseFormPagar,
+    private apiDireccion: DireccionUsersService
   ) {
     this.idClient = this.token.getTokenId();
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.consultarDireccionesUser();
+  }
   /* ENVIAR AL MODULO DE DIRECCIONES */
+  consultarDireccionesUser(): void {
+    this.apiDireccion.getAllDireccionUser().subscribe((res: Direcciones[]) => {
+      this.arrayDirecciones = res;
+    });
+  }
+  /* DIRECCIONES */
   irADireccion(): void {
     this.router.navigateByUrl(
       `${UrlFront.Direcciones.moduloDireccion}/${UrlFront.Direcciones.direcciones}/${this.idClient}`
@@ -34,7 +44,7 @@ export class UbicacionProductComponent implements OnInit {
   agregarDireccion(direccion: Direcciones): void {
     this.formB.formPagar.patchValue({
       id_ubicacion: direccion.id_direccion,
-      nombreUbicacion: `${direccion.nombre}`,
+      nombreUbicacion: `${direccion.descripcion}`,
     });
     this.habilitar = false;
   }
