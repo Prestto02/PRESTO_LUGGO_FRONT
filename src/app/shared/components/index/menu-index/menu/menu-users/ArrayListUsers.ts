@@ -57,7 +57,7 @@ export const ItemsAdnMenuOffCanvas: MenuClient[] = [
   },
   {
     id: 2,
-    title: 'Mis Pedidos',
+    title: 'Mis Ventas',
     icons: `${RepositorioImg.urlRepositorio}img/IMÁGENES/icons-users-perfil/mi-perfil.png`,
     subtitle: 'Revisa el estado de tus pedidos online.',
     link: `${UrlFront.Manager.managerVendedor}/${UrlFront.Manager.vendedor}/${UrlFront.Manager.listaDePedidos}`,

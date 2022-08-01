@@ -33,9 +33,7 @@ export class ListDireccionesComponent implements OnInit {
   }
   //EDITAR
   consultGetDireccionId(id: string): void {
-    console.log(id);
     this.api.getUserDireccion(id).subscribe((res: Direcciones) => {
-      console.log(res);
       this.formB.formDireccion.patchValue({ ...res });
     });
     this.dialogVisible = true;
@@ -48,14 +46,16 @@ export class ListDireccionesComponent implements OnInit {
   editMarket(): void {
     const form = this.formB.formDireccion.value;
     this.api.putDireccion(form).subscribe((res: any) => {
-      console.log(res);
+      this.getAllDirecciones();
+      this.closeModal();
     });
     this.formB.limpiarFormulario();
   }
   //ELIMINAR
   eliminarDireccion(id: string): void {
-    this.api.delete(id).subscribe((res: any) => {
-      console.log(res);
-    });
+    if (confirm('Estas seguro de eliminar?'))
+      this.api.delete(id).subscribe((res: any) => {
+        this.getAllDirecciones();
+      });
   }
 }
