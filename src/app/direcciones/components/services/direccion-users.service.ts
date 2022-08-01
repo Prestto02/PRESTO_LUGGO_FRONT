@@ -8,6 +8,7 @@ import { Direcciones } from '../../models/Direcciones.models';
   providedIn: 'root',
 })
 export class DireccionUsersService {
+  /* ARRAY OBSERVABLE */
   private arrayUbicaciones = new BehaviorSubject<Direcciones[]>([]);
   ubicacionesArray$ = this.arrayUbicaciones.asObservable();
   constructor(private http: HttpClient) {}
@@ -22,7 +23,7 @@ export class DireccionUsersService {
       `${UrlApi.ApiUrl}${UrlApi.direcciones}`
     );
   }
-  /* TRAER DIRECCION PARA ACTUALIZAR */
+  /* TRAER UNA DIRECCION PARA ACTUALIZAR */
   getUserDireccion(id_direccion: string): Observable<Direcciones> {
     return this.http.get<Direcciones>(
       `${UrlApi.ApiUrl}${UrlApi.direcciones}/${id_direccion}`

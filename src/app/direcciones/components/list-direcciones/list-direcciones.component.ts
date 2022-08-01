@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormDireccion } from '../../models/BaseFormDireccion';
-import { ArrayDireccion, Direcciones } from '../../models/Direcciones.models';
+import { Direcciones } from '../../models/Direcciones.models';
 import { DireccionUsersService } from '../services/direccion-users.service';
 
 @Component({
@@ -28,10 +28,12 @@ export class ListDireccionesComponent implements OnInit {
     /* ME SUSCRIBO AL OBSERVABLE CREADO NUEVO */
     this.api.ubicacionesArray$.subscribe((res: Direcciones[]) => {
       this.direccionesArray = res;
+      console.log(this.direccionesArray);
     });
   }
   //EDITAR
   consultGetDireccionId(id: string): void {
+    console.log(id);
     this.api.getUserDireccion(id).subscribe((res: Direcciones) => {
       console.log(res);
       this.formB.formDireccion.patchValue({ ...res });
@@ -48,6 +50,7 @@ export class ListDireccionesComponent implements OnInit {
     this.api.putDireccion(form).subscribe((res: any) => {
       console.log(res);
     });
+    this.formB.limpiarFormulario();
   }
   //ELIMINAR
   eliminarDireccion(id: string): void {

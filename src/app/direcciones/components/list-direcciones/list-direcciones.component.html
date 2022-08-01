@@ -31,7 +31,7 @@
 
 <!--------MODAL PARA AGREGAR LA NUEVA UBICACION------------->
 <ng-container [formGroup]="formB.formDireccion">
-  <p-dialog showEffect="fade" [(visible)]="dialogVisible" header="Nueva ubicación" [style]="{width: '300px'}">
+  <p-dialog showEffect="fade" [(visible)]="dialogVisible" header="Editar ubicación" [style]="{width: '300px'}">
     <div class="grid p-fluid">
       <!-- DIRECCION -->
       <div class="mb-3">
@@ -73,7 +73,7 @@
       <div class="col-xl-12 col-xxl-12 col-sm-12 col-md-12 col-12">
         <button type="button" class="btn btn-secondary" (click)="closeModal()">Cancelar</button>
         <button type="button" class="btn btn-dark" (click)="editMarket()"
-          [disabled]="formB.formDireccion.invalid">Agregar</button>
+          [disabled]="formB.formDireccion.invalid">Editar</button>
       </div>
     </ng-template>
   </p-dialog>

@@ -1,9 +1,10 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { PositionUser } from 'src/app/shared/class/PositionUser';
-import { FormDireccion } from '../../models/BaseFormDireccion';
 import { Direcciones } from '../../models/Direcciones.models';
+import { FormDireccion } from '../../models/BaseFormDireccion';
 import { ListDireccionesComponent } from '../list-direcciones/list-direcciones.component';
 import { DireccionUsersService } from '../services/direccion-users.service';
+
 declare var google: any;
 
 @Component({
@@ -75,7 +76,6 @@ export class MapaComponent implements OnInit {
 
   handleOverlayClick(event: any) {
     let isMarker = event.overlay.getTitle != undefined;
-
     if (isMarker) {
       let title = event.overlay.getTitle();
       this.infoWindow.setContent('' + title + '');
@@ -103,7 +103,7 @@ export class MapaComponent implements OnInit {
     this.dialogVisible = false;
   }
   //AGREGAR UBICACION DE PRODUCTOS
-  addUbicacionProducto() {
+  addUbicacionProducto(): void {
     const form = this.formB.formDireccion.value;
     this.api.postDireccion(form).subscribe((res: any) => {
       this.formB.limpiarFormulario();
