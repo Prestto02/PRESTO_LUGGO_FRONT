@@ -5,9 +5,9 @@ import { UrlFront } from 'src/app/shared/routes/RoutesFront';
 export const ItemsClientMenuOffCanvas: MenuClient[] = [
   {
     id: 1,
-    title: 'Mis Pedidos',
+    title: 'Mis Compras',
     icons: `${RepositorioImg.urlRepositorio}img/IMÁGENES/icons-users-perfil/mis-pedidos.png`,
-    subtitle: 'Crea tu catálogo de productos o servicios.',
+    subtitle: 'Verifica el historial de tus compras',
     link: `${UrlFront.listaPedidos.lista}/${UrlFront.listaPedidos.listado}`,
   },
   {
@@ -62,18 +62,25 @@ export const ItemsAdnMenuOffCanvas: MenuClient[] = [
     subtitle: 'Revisa el estado de tus pedidos online.',
     link: `${UrlFront.Manager.managerVendedor}/${UrlFront.Manager.vendedor}/${UrlFront.Manager.listaDePedidos}`,
   },
-  {
+  /*   {
     id: 3,
     title: 'Pagos',
     icons: `${RepositorioImg.urlRepositorio}img/IMÁGENES/icons-users-perfil/billeteraAdn.png`,
     subtitle: 'Revisa el estado de tus pedidos online.',
     link: `${UrlFront.Manager.managerVendedor}/${UrlFront.Manager.vendedor}`,
-  },
+  }, */
   {
-    id: 4,
+    id: 3,
     title: 'Direcciones',
     icons: `${RepositorioImg.urlRepositorio}img/IMÁGENES/icons-users-perfil/mis-direcciones.png`,
     subtitle: 'Agrega, edita o elimina tus direcciones.',
     link: `${UrlFront.Direcciones.moduloDireccion}/${UrlFront.Direcciones.direcciones}`,
+  },
+  {
+    id: 4,
+    title: 'Mis compras',
+    icons: `${RepositorioImg.urlRepositorio}img/IMÁGENES/icons-users-perfil/mis-direcciones.png`,
+    subtitle: 'Verifica el historial de tus compras.',
+    link: `${UrlFront.listaPedidos.lista}/${UrlFront.listaPedidos.listado}`,
   },
 ];

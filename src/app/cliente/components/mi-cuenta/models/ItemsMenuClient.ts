@@ -5,9 +5,9 @@ import { MenuClient } from './MenuClients.interface';
 export const ItemsClientMenu: MenuClient[] = [
   {
     id: 1,
-    title: 'Mis Pedidos',
+    title: 'Mis Compras',
     icons: `${RepositorioImg.urlRepositorio}img/IMÁGENES/list-content-adn.png`,
-    subtitle: 'Crea tu catálogo de productos o servicios.',
+    subtitle: 'Verifica el historial de tus compras.',
     link: `${UrlFront.listaPedidos.lista}/${UrlFront.listaPedidos.listado}`,
   },
   {
