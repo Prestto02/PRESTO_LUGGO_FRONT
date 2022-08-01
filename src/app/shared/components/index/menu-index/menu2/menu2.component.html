@@ -26,13 +26,13 @@
               fill="#7E869E" fill-opacity="0.25" stroke="white" stroke-width="2" stroke-linecap="round" />
           </svg>
         </div>
-        <div class="col-md-11 col-xl-11 col-xxl-11 col-11 col-sm-11" appIdentifyUsers [identyUser]="correoUsuario">
-          <div class="row">
+        <div class="col-md-11 col-xl-11 col-xxl-11 col-11 col-sm-11">
+          <div class="row" appIdentifyUsers [identyUser]="correoUsuario">
             <div class="col-xxl-7 col-xl-7 col-md-7 col-sm-7 col-7 mt-2 text-start">
-              <b>Mi puertto</b>
+              <b id="miPuertto"></b>
             </div>
             <div class="col-md-4 mt-2 col-xl-4 col-xxl-4 col-sm-4 col-4">
-              <a class="btn-link link-info cursor-item" (click)="irAMiPerfil()">Mi cuenta</a>
+              <a class="btn-link link-info cursor-item" (click)="irAMiPerfil()" id="miCuenta"></a>
             </div>
           </div>
         </div>
