@@ -20,6 +20,5 @@ export class IdentifyUsersDirective implements AfterViewInit {
 
   userIdentifyCheck(): void {
     this.rendered2.parentNode(this.el.nativeElement);
-    /* console.log(this.el.nativeElement); */
   }
 }

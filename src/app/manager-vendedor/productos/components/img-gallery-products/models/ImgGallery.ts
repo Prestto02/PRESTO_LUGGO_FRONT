@@ -54,6 +54,12 @@ export class ImgGalleryForm {
       });
     });
   }
+  removeItems(i: number) {
+    this.galleryProducts.controls[i].patchValue({
+      img: '',
+      archivo: '',
+    });
+  }
   limpiarFormulario() {
     this.formGallery.reset();
   }

@@ -94,7 +94,7 @@ export class MapaComponent implements OnInit {
           lat: this.selectedPosition.lat(),
           lng: this.selectedPosition.lng(),
         },
-        title: this.markerTitle,
+        title: this.formB.formDireccion.get('descripcion')?.value,
         draggable: this.draggable,
       })
     );

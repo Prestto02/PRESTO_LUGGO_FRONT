@@ -11,6 +11,7 @@ import { DireccionUsersService } from '../services/direccion-users.service';
 export class ListDireccionesComponent implements OnInit {
   direccionesArray: ReadonlyArray<Direcciones> = [];
   dialogVisible: boolean = false;
+  dialogVisibleDelete: boolean = false;
   constructor(
     public formB: FormDireccion,
     private api: DireccionUsersService
@@ -50,11 +51,23 @@ export class ListDireccionesComponent implements OnInit {
     });
     this.formB.limpiarFormulario();
   }
-  //ELIMINAR
-  eliminarDireccion(id: string): void {
-    if (confirm('Estas seguro de eliminar?'))
-      this.api.delete(id).subscribe((res: any) => {
-        this.getAllDirecciones();
-      });
+  /* CERRAR MODAL DE ELIMINAR */
+  cerrarModalDelete(): void {
+    this.dialogVisibleDelete = false;
+  }
+  /* MODAL ABIERTO PARA ELIMINAR */
+  modalDelete(id: string): void {
+    this.dialogVisibleDelete = true;
+    this.formB.formDireccion.patchValue({
+      id_direccion: id,
+    });
+  }
+  /* ELIMINAR */
+  eliminarDireccion(): void {
+    const id = this.formB.formDireccion.get('id_direccion')?.value;
+    this.api.delete(id).subscribe((res: any) => {
+      this.getAllDirecciones();
+    });
+    this.cerrarModalDelete();
   }
 }

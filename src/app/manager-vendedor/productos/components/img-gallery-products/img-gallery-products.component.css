@@ -34,3 +34,8 @@
   top: 3px;
   height: 75px;
 }
+
+.eliminar-imagen {
+  left: 62px;
+  cursor: pointer;
+}
