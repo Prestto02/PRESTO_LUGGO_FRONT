@@ -11,7 +11,7 @@ import { ArrayListPedidos, ListPedidosAdn } from './models/ListPedidosAdn';
 })
 export class ListaPedidosComponent {
   ruta: string = `${UrlFront.Manager.vendedor}`;
-
+  p: number = 1;
   arrayListaPedidos: ListPedidosAdn[] = ArrayListPedidos;
   constructor(private router: Router, public formB: FormSearchProducts) {}
 

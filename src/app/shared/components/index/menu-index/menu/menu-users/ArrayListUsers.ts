@@ -79,7 +79,7 @@ export const ItemsAdnMenuOffCanvas: MenuClient[] = [
   {
     id: 4,
     title: 'Mis compras',
-    icons: `${RepositorioImg.urlRepositorio}img/IMÁGENES/icons-users-perfil/mis-direcciones.png`,
+    icons: `${RepositorioImg.urlRepositorio}img/IMÁGENES/icons-users-perfil/mis-pedidos.png`,
     subtitle: 'Verifica el historial de tus compras.',
     link: `${UrlFront.listaPedidos.lista}/${UrlFront.listaPedidos.listado}`,
   },

@@ -6,7 +6,10 @@
 
 <section class="container mb-3 mt-auto py-3">
   <div class="row">
-    <div class="col-xl-7 col-xxl-7 col-sm-12 col-12 col-md-7 mt-4">
+    <div class="col-xxl-5 col-xl-5 col-md-5 col-sm-4 col-4 mt-4">
+      <h5 class="text-danger-pedidos">Mis pedidos</h5>
+    </div>
+    <div class="col-xl-7 col-xxl-7 col-sm-8 col-8 col-md-7 mt-4">
       <div class="input-group mb-3">
         <div class="input-group-prepend">
         </div>
@@ -17,44 +20,40 @@
         </ng-container>
       </div>
     </div>
-    <div class="col-xl-8 col-xxl-8 col-sm-12 col-12 col-md-5 mb-3">
-      <span>Total de ordenes: {{arrayListaPedidos.length}}</span>
+  </div>
+  <!-- TABLA LIST -->
+  <div class="row">
+    <div class="table-responsive bg-white mt-3 mb-3 rounded ">
+      <table class="table table-hover table-striped table-borderless">
+        <thead>
+          <tr>
+            <th scope="col" class="text-center espacio">N° Orden</th>
+            <th scope="col" class="text-center espacio">Fecha</th>
+            <th scope="col" class="text-center espacio">Valor Pagado</th>
+            <th scope="col" class="text-center espacio">Realizado por</th>
+            <th scope="col" class="text-start espacio">Estado de Orden</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr
+            *ngFor="let pedidos of arrayListaPedidos | filterPedidosLista:formB.formSearch.get('buscador')?.value | paginate: {itemsPerPage:8,currentPage:p};"
+            (click)="buscarDetallePedido(pedidos.id);" class="cursor">
+            <th scope="row" class="text-center espacio"><b>{{pedidos.NumeroOrden}}</b></th>
+            <td class="text-center espacio">{{pedidos.Fecha | date: 'M-d-yyyy, h:mm a' }}</td>
+            <td class="text-center espacio"><b>{{pedidos.Total | currency:'USD'}}</b></td>
+            <td class="text-center espacio">{{pedidos.Orden}}</td>
+            <td class="espacio"><span appStateBadge [estado]="pedidos.Estado" class="badge">{{pedidos.Estado}}</span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
-    <hr>
-    <div class="col-xl-12 col-xxl-12 col-sm-12 col-12 col-md-12 cursor"
-      *ngFor="let pedidos of arrayListaPedidos | filterPedidosLista:formB.formSearch.get('buscador')?.value"
-      (click)="buscarDetallePedido(pedidos.id);">
-      <div class="row mx-auto hover-tables">
-        <div class="col-xl-9 col-xxl-9 col-md-9 col-9 col-sm-9 py-2">
-          <span>
-            <span appStateBadge [estado]="pedidos.Estado" class="badge rounded-circle"
-              style="width: 1rem; height: 1rem;">&nbsp;</span>
-            Pedido:
-            <b>{{pedidos.NumeroOrden}}</b>
-          </span>
-        </div>
-        <div class="col-xl-3 col-xxl-3 col-md-3 col-sm-3 col-3">
-          <span class="text-bajo">{{pedidos.Fecha | date: 'M-d-yyyy, h:mm a' }}</span>
-        </div>
-
-        <div class="col-xl-9 col-xxl-9 col-md-9 col-sm-9 col-9 py-2">
-          <span>Estado: <span appStateBadge [estado]="pedidos.Estado" class="badge rounded-circle"
-              style="width: 1rem; height: 1rem;">&nbsp;</span>
-          </span>
-        </div>
-        <div class="col-xl-3 col-xxl-3 col-md-3 col-sm-3 col-3">
-          <span>Total: <b>{{pedidos.Total | currency:'USD'}}</b></span>
-        </div>
-        <div class="col-xl-9 col-xxl-9 col-md-9 col-sm-9 col-9 py-2">
-          <span class="text-bajo">Realizado por: {{pedidos.Orden}}</span>
-        </div>
-        <div class="col-xl-3 col-xxl-3 col-md-3 col-sm-3 col-3">
-          <span class="text-bajo">{{pedidos.items}} producto(s)</span>
-        </div>
-      </div>
-      <hr>
+    <!-- PAGINATION  -->
+    <div class="d-flex flex-row-reverse bd-highlight">
+      <pagination-controls (pageChange)="p=$event" previousLabel="Anterior" nextLabel="Siguiente" [autoHide]="true"
+        [responsive]="true" screenReaderPaginationLabel="Pagination">
+      </pagination-controls>
     </div>
   </div>
 </section>
-
 <app-footer-index></app-footer-index>
