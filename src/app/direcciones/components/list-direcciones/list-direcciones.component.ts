@@ -28,7 +28,6 @@ export class ListDireccionesComponent implements OnInit {
     /* ME SUSCRIBO AL OBSERVABLE CREADO NUEVO */
     this.api.ubicacionesArray$.subscribe((res: Direcciones[]) => {
       this.direccionesArray = res;
-      console.log(this.direccionesArray);
     });
   }
   //EDITAR

@@ -105,7 +105,6 @@ export class MapaComponent implements OnInit {
   //AGREGAR UBICACION DE PRODUCTOS
   addUbicacionProducto(): void {
     const form = this.formB.formDireccion.value;
-    console.log(form);
     this.api.postDireccion(form).subscribe((res: any) => {
       this.formB.limpiarFormulario();
       this.component.getAllDirecciones();
