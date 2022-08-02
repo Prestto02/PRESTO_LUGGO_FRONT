@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { Direcciones } from '../models/ArrayDirecciones';
+import { Direcciones } from '../../../../../../direcciones/models/Direcciones.models';
 
 @Pipe({
   name: 'filterubicacion',
@@ -10,9 +10,10 @@ export class FilterubicacionPipe implements PipeTransform {
     //BUSCAR POR FILTRO
     const filterDireccion = value.filter(
       (res: Direcciones) =>
-        res.nombre.toLowerCase().indexOf(searchDireccion.toLowerCase()) !==
-          -1 ||
-        res.calle.toLowerCase().indexOf(searchDireccion.toLowerCase()) !== -1
+        res.descripcion.toLowerCase().indexOf(searchDireccion.toLowerCase()) !==
+          -1 /* ||
+        res.direccion?.toLowerCase().indexOf(searchDireccion.toLowerCase()) !==
+          -1 */
     );
     return filterDireccion;
   }

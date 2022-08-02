@@ -31,6 +31,7 @@ export class DetalleProductosComponent implements OnInit {
   //BUSCO EL PRODUCTO PARA TRAER TODO SU DETALLE
   getProductById() {
     this.apiProduct.getByDetailsProductsId(this.idProduct).subscribe((res) => {
+      console.log(res);
       this.productoObjeto = res;
     });
   }

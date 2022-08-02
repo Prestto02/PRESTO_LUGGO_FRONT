@@ -19,13 +19,13 @@ export class StateBadgeDirective implements AfterViewInit {
   }
   //ASIGNANDO EL COLOR SEGUN EL ESTADO
   getStateColorBadge(): void {
-    if (this.estado === 'Terminado') {
+    if (this.estado === 'Pagado') {
       this.render2.addClass(this.elementBadge, 'bg-success');
     }
-    if (this.estado === 'En proceso' || this.estado === 'En espera') {
+    if (this.estado === 'Pendiente') {
       this.render2.addClass(this.elementBadge, 'bg-warning');
     }
-    if (this.estado === 'No procesada' || this.estado === 'Cancelado') {
+    if (this.estado === 'Cancelado') {
       this.render2.addClass(this.elementBadge, 'bg-danger');
     }
   }

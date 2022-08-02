@@ -1,8 +1,14 @@
 <!------MENU ----->
 <header class="fixed-top">
-  <app-menu class="sticky-top"></app-menu>
+  <app-menu class="sticky-top" *ngIf="width>680"></app-menu>
 </header>
-<br/> <br><br> <br>
-<app-menu-telephone class="d-block d-sm-block d-md-none d-xl-none d-xxl-none"></app-menu-telephone>
-<!-- <app-menu2 class="container-fluid bg-white"></app-menu2> -->
+<!-- <br />--><br><br> <br>
+<div (window:resize)="onResize()">
+  <app-menu-telephone *ngIf="width<680" class="d-block d-sm-block d-md-none d-xl-none d-xxl-none">
+  </app-menu-telephone>
+</div>
+<!--  -->
+
+<!-- <app-menu2 class=" container-fluid bg-white">
+  </app-menu2> -->
 <!--------MENU---------->

@@ -65,4 +65,7 @@ export class ImgGalleryProductsComponent implements OnInit, OnDestroy {
       this.imgProducts
     );
   }
+  eliminarImagen(i: number): void {
+    this.formGallery.removeItems(i);
+  }
 }

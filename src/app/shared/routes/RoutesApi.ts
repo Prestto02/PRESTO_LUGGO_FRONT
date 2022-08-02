@@ -82,4 +82,6 @@ export const UrlApi = {
   listadoPedidos: 'api/pedido/mis-compras',
   //VERIFICAR PAGO
   verificador: 'api/Payment/verificador?token=',
+  //BUSCAR DIRECCIONES
+  direcciones: 'api/DireccionPersona',
 };

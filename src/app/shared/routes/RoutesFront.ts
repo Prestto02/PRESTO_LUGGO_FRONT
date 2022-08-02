@@ -113,9 +113,15 @@ export const UrlFront = {
     listado: 'lista-pedidos',
     getListado: 'lista-pedidos/:id',
   },
+  /* MODULO DE DIRECCIONES */
   Direcciones: {
     moduloDireccion: 'modulo-direccion',
     direcciones: 'direccion',
     direccionesId: 'direccion/:id',
+  },
+  /* TERMINOS Y CONDICIONES */
+  TerminoCondiciones: {
+    Termino: 'modulo-condiciones',
+    terminoCondiciones: 'termino-condiciones',
   },
 };

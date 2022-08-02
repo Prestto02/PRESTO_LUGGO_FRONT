@@ -38,8 +38,10 @@ export class ManagerVendedorComponent implements OnInit {
     );
   }
 
-  irAPrecios() {
-    this._router.navigateByUrl('**');
+  irACompras() {
+    this._router.navigateByUrl(
+      `${UrlFront.listaPedidos.lista}/${UrlFront.listaPedidos.listado}/${this.idUser}`
+    );
   }
   irAPagos() {
     this._router.navigateByUrl('**');

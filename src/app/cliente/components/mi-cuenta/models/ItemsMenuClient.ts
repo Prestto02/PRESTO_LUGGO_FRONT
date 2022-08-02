@@ -3,20 +3,20 @@ import { UrlFront } from 'src/app/shared/routes/RoutesFront';
 import { MenuClient } from './MenuClients.interface';
 
 export const ItemsClientMenu: MenuClient[] = [
-  {
+/*   {
     id: 1,
-    title: 'Mis Pedidos',
+    title: 'Mis Compras',
     icons: `${RepositorioImg.urlRepositorio}img/IMÁGENES/list-content-adn.png`,
-    subtitle: 'Crea tu catálogo de productos o servicios.',
+    subtitle: 'Verifica el historial de tus compras.',
     link: `${UrlFront.listaPedidos.lista}/${UrlFront.listaPedidos.listado}`,
-  },
-  {
+  }, */
+/*   {
     id: 2,
     title: 'Mis pagos',
     icons: `${RepositorioImg.urlRepositorio}img/IMÁGENES/billeteraAdn.png`,
     subtitle: 'Agrega y edita tus métodos de pagos.',
     link: `${UrlFront.Cliente.cliente}/${UrlFront.Cliente.miCuenta}`,
-  },
+  }, */
   {
     id: 3,
     title: 'Mi perfil',
@@ -38,11 +38,11 @@ export const ItemsClientMenu: MenuClient[] = [
     subtitle: 'Mira tu lista de deseos.',
     link: `${UrlFront.Cliente.cliente}/${UrlFront.Cliente.miCuenta}`,
   },
-  {
+/*   {
     id: 6,
     title: 'Seguridad',
     icons: `${RepositorioImg.urlRepositorio}img/IMÁGENES/Portal-Usuario-Comprador/seguridad.png`,
     subtitle: 'Edita tus datos de acceso a Puertto.',
     link: `${UrlFront.Cliente.cliente}/${UrlFront.Cliente.miCuenta}`,
-  },
+  }, */
 ];

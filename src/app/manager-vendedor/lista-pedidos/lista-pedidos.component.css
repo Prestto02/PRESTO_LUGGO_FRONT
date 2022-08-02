@@ -1,13 +1,36 @@
 * {
   font-family: Cardium B-Light;
 }
-.cursor{
+.cursor {
   cursor: pointer;
 }
-.hover-tables:hover{
+.hover-tables:hover {
   background-color: rgb(0 0 0 / 4%);
   cursor: pointer;
 }
-.text-bajo{
+.text-bajo {
   color: rgba(0, 0, 0, 0.315);
+}
+.text-danger-pedidos {
+  font-family: Cardium A-Medium;
+  font-size: 22px;
+  color: #ea2313;
+  font-weight: 700;
+}
+
+.espacio {
+  padding: 12px;
+}
+
+
+@media screen and (max-width:680px){
+  .text-danger-pedidos{
+    font-size: 16.8px;
+  }
+  .espacio{
+    font-size: 12px;
+  }
+  input::placeholder{
+    font-size: 12px;
+  }
 }

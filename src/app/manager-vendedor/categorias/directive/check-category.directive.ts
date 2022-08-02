@@ -12,6 +12,7 @@ export class CheckCategoryDirective {
   /* EVENTO CHANGE PARA CAMBIAR EL ESTADO DEL SELECT DE CATEGORIAS */
   @HostListener('change', ['$event']) onChange(event: any) {
     this.formB.addCategoriaItems(this.idCategory, event);
+
     const idI = this.listCategory.filter((res: ListCategoryApi) => {
       return res.id === this.idCategory;
     }); //PARA CAMBIAR LAS CATEGORIAS SELECTED

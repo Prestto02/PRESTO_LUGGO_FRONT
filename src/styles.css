@@ -58,14 +58,18 @@ html::-webkit-scrollbar-thumb {
   background: #ea2313;
   border-radius: 4px;
 }
-/* .newColorDanger.toast-error {
-  background-color: #c4b31c;
-} */
-
-/* .modificColor.toast-success .toast-title {
-  color: black;
+.newColorDanger.toast-success {
+  background-color: #282828;
+  color: white;
+  background-image: url(https://ecovitali.presttoapp.net/Puertto/Calidad/Repositorio/img/IMÁGENES/gif/wishlist-list2.gif);
 }
-.modificColor.toast-success .toast-message {
-  color: black;
+/* COLOR DEL TOAST TITULO */
+.newColorDanger.toast-success .toast-title {
+  color: white;
 }
- */
+.newColorDanger.toast-success .toast-message {
+  font-family: Cardium B-SemiBold;
+  font-weight: 600;
+  font-size: 18px;
+  color: white;
+}

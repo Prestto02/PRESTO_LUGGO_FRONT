@@ -12,7 +12,7 @@ export const ArrayListPedidos: ListPedidosAdn[] = [
   {
     id: 1,
     NumeroOrden: 4,
-    Estado: 'En proceso',
+    Estado: 'Pendiente',
     Total: 122,
     Fecha: '10-02-2022 03:08',
     Orden: 'Jhon Montenegro',
@@ -21,7 +21,7 @@ export const ArrayListPedidos: ListPedidosAdn[] = [
   {
     id: 2,
     NumeroOrden: 5,
-    Estado: 'Terminado',
+    Estado: 'Pagado',
     Total: 125.0,
     Fecha: '11-06-2022 08:15',
     Orden: 'Carlos Montúfar',
@@ -30,7 +30,7 @@ export const ArrayListPedidos: ListPedidosAdn[] = [
   {
     id: 3,
     NumeroOrden: 6,
-    Estado: 'En proceso',
+    Estado: 'Pendiente',
     Total: 323.0,
     Fecha: '10-10-2022 10:30',
     Orden: 'Juan Pincuya',
@@ -39,7 +39,7 @@ export const ArrayListPedidos: ListPedidosAdn[] = [
   {
     id: 4,
     NumeroOrden: 7,
-    Estado: 'En espera',
+    Estado: 'Pendiente',
     Total: 695.0,
     Orden: 'Karla Montenegro',
     Fecha: '10-09-2022 14:21',
@@ -48,7 +48,7 @@ export const ArrayListPedidos: ListPedidosAdn[] = [
   {
     id: 5,
     NumeroOrden: 8,
-    Estado: 'Terminado',
+    Estado: 'Pagado',
     Total: 854.0,
     Fecha: '11-07-2022 17:00',
     Orden: 'Maria Muriela',
@@ -57,7 +57,7 @@ export const ArrayListPedidos: ListPedidosAdn[] = [
   {
     id: 6,
     NumeroOrden: 9,
-    Estado: 'En proceso',
+    Estado: 'Cancelado',
     Total: 765.0,
     Fecha: '10-02-2022 22:43',
     Orden: 'Martha Muñoz',
@@ -66,7 +66,7 @@ export const ArrayListPedidos: ListPedidosAdn[] = [
   {
     id: 7,
     NumeroOrden: 10,
-    Estado: 'En espera',
+    Estado: 'Pendiente',
     Total: 1278.0,
     Fecha: '10-02-2022 11:19',
     Orden: 'Maria del Carmen Soledispa Quimis',
@@ -75,7 +75,7 @@ export const ArrayListPedidos: ListPedidosAdn[] = [
   {
     id: 8,
     NumeroOrden: 11,
-    Estado: 'Terminado',
+    Estado: 'Pagado',
     Total: 521.0,
     Orden: 'Pablo Gonzala',
     Fecha: '10-12-2022 13:09',
@@ -84,7 +84,7 @@ export const ArrayListPedidos: ListPedidosAdn[] = [
   {
     id: 9,
     NumeroOrden: 12,
-    Estado: 'En proceso',
+    Estado: 'Cancelado',
     Total: 12.0,
     Orden: 'Jhon Monterrey',
     Fecha: '10-02-2022 19:44',
@@ -93,7 +93,7 @@ export const ArrayListPedidos: ListPedidosAdn[] = [
   {
     id: 10,
     NumeroOrden: 13,
-    Estado: 'En espera',
+    Estado: 'Pagado',
     Total: 52.0,
     Orden: 'Mario Pillosalas',
     Fecha: '04-25-2022 06:06',
@@ -102,7 +102,7 @@ export const ArrayListPedidos: ListPedidosAdn[] = [
   {
     id: 10,
     NumeroOrden: 13,
-    Estado: 'No procesada',
+    Estado: 'Cancelado',
     Total: 522.0,
     Orden: 'Pedro Lupa',
     Fecha: '08-15-2022 18:06',

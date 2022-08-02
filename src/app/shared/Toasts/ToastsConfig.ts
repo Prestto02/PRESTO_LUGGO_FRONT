@@ -5,10 +5,10 @@ export const ToastConfig = [
   ToastrModule.forRoot({
     timeOut: 3000,
     preventDuplicates: true,
-    positionClass: 'toast-bottom-right',
+    positionClass: 'toast-bottom-center',
     progressBar: false,
     /*    progressAnimation: 'increasing', */
-    closeButton: true,
+    closeButton: false,
   }),
   ToastContainerModule,
 ];
