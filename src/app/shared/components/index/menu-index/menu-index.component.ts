@@ -9,11 +9,13 @@ export class MenuIndexComponent implements OnInit {
   width: number = 0;
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.onResize();
+  }
 
   /* DETECTAR EL TAMAÑO DE LA PANTALLA PARA PODER LLAMAR A LA VERSION TELEFONO */
   @HostListener('window:resize', ['$event'])
-  resizeTamano(e: any) {
-    this.width = e.target.innerWidth;
+  onResize() {
+    this.width = window.innerWidth;
   }
 }
