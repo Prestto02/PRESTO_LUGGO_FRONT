@@ -17,6 +17,7 @@ export const ItemsClientMenuOffCanvas: MenuClient[] = [
     subtitle: 'Agrega y edita tus métodos de pagos.',
     link: `${UrlFront.Cliente.cliente}/${UrlFront.Cliente.miCuenta}`,
   }, */
+  //hola
   {
     id: 3,
     title: 'Mi perfil',
