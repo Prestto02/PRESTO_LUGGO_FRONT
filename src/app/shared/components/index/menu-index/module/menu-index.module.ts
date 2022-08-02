@@ -19,6 +19,7 @@ import { MenuUsersComponent } from '../menu/menu-users/menu-users.component';
 import { CarritoIconsComponent } from '../menu/carrito-icons/carrito-icons.component';
 import { MenuTelephoneComponent } from '../menu-telephone/menu-telephone.component';
 import { IdentifyUsersDirective } from '../menu2/directive/identify-users.directive';
+
 @NgModule({
   declarations: [
     MenuIndexComponent, //MENU INDEX COMPONENTS

@@ -3,7 +3,7 @@ import { RepositorioImg } from 'src/app/shared/helpers/RepositorioImg';
 import { UrlFront } from 'src/app/shared/routes/RoutesFront';
 
 export const ItemsClientMenuOffCanvas: MenuClient[] = [
-  {
+/*   {
     id: 1,
     title: 'Mis Compras',
     icons: `${RepositorioImg.urlRepositorio}img/IMÁGENES/icons-users-perfil/mis-pedidos.png`,
@@ -16,7 +16,7 @@ export const ItemsClientMenuOffCanvas: MenuClient[] = [
     icons: `${RepositorioImg.urlRepositorio}img/IMÁGENES/icons-users-perfil/billeteraAdn.png`,
     subtitle: 'Agrega y edita tus métodos de pagos.',
     link: `${UrlFront.Cliente.cliente}/${UrlFront.Cliente.miCuenta}`,
-  },
+  }, */
   {
     id: 3,
     title: 'Mi perfil',
@@ -38,13 +38,13 @@ export const ItemsClientMenuOffCanvas: MenuClient[] = [
     subtitle: 'Mira tu lista de deseos.',
     link: `${UrlFront.Menu.menu}/${UrlFront.ListaDeseos.listaDeseos}`,
   },
-  {
+/*   {
     id: 6,
     title: 'Seguridad',
     icons: `${RepositorioImg.urlRepositorio}img/IMÁGENES/icons-users-perfil/seguridad.png`,
     subtitle: 'Edita tus datos de acceso a Puertto.',
     link: `${UrlFront.Cliente.cliente}/${UrlFront.Cliente.miCuenta}`,
-  },
+  }, */
 ];
 
 export const ItemsAdnMenuOffCanvas: MenuClient[] = [
@@ -55,13 +55,13 @@ export const ItemsAdnMenuOffCanvas: MenuClient[] = [
     subtitle: 'Crea tu catálogo de productos o servicios.',
     link: `${UrlFront.Manager.managerVendedor}/${UrlFront.Manager.vendedor}/${UrlFront.Manager.listadoProductos}`,
   },
-  {
+/*   {
     id: 2,
     title: 'Mis Ventas',
     icons: `${RepositorioImg.urlRepositorio}img/IMÁGENES/icons-users-perfil/mi-perfil.png`,
     subtitle: 'Revisa el estado de tus pedidos online.',
     link: `${UrlFront.Manager.managerVendedor}/${UrlFront.Manager.vendedor}/${UrlFront.Manager.listaDePedidos}`,
-  },
+  }, */
   /*   {
     id: 3,
     title: 'Pagos',
@@ -76,11 +76,11 @@ export const ItemsAdnMenuOffCanvas: MenuClient[] = [
     subtitle: 'Agrega, edita o elimina tus direcciones.',
     link: `${UrlFront.Direcciones.moduloDireccion}/${UrlFront.Direcciones.direcciones}`,
   },
-  {
+/*   {
     id: 4,
     title: 'Mis compras',
     icons: `${RepositorioImg.urlRepositorio}img/IMÁGENES/icons-users-perfil/mis-pedidos.png`,
     subtitle: 'Verifica el historial de tus compras.',
     link: `${UrlFront.listaPedidos.lista}/${UrlFront.listaPedidos.listado}`,
-  },
+  }, */
 ];

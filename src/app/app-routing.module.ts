@@ -144,6 +144,14 @@ const routes: Routes = [
         (m) => m.DireccionesModule
       ),
   },
+  /* TERMINOS Y CONDICIONES */
+  {
+    path: UrlFront.TerminoCondiciones.Termino,
+    loadChildren: () =>
+      import(
+        './shared/components/terminos-condiciones/module/termino-condiciones.module'
+      ).then((m) => m.TerminoCondicionesModule),
+  },
 
   //REDIRECCIONAR EN MENU DIRECTO
   {

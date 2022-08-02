@@ -20,6 +20,7 @@ export class TerminosCondicionesComponent implements OnInit, OnDestroy {
   disabledScroll: boolean = true;
   dataTerms: string = '';
   load: boolean = false;
+  irLink: string = `${UrlFront.TerminoCondiciones.Termino}/${UrlFront.TerminoCondiciones.terminoCondiciones}`;
   constructor(
     public formAdn: BaseFormAdnUsers,
     public formNegocioAdn: BaseFormNegocioAdn,
