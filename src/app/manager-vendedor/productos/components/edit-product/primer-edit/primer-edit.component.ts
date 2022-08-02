@@ -92,7 +92,7 @@ export class PrimerEditComponent implements OnInit {
       this.getCategorias();
       this.getEtiquetas();
       this.selectTrueGarantia();
-    }, 2000);
+    }, 5000);
   }
   //SETEAR CATEGORIAS EN EL ARREGLO
   getCategorias() {
