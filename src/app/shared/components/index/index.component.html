@@ -3,7 +3,7 @@
   <app-menu></app-menu>
 </header>
 <br><br><br>
-<app-menu-telephone class="d-block d-sm-block d-md-none d-xl-none d-xxl-none"></app-menu-telephone>
+<app-menu-telephone *ngIf="width>680" class="d-block d-sm-block d-md-none d-xl-none d-xxl-none"></app-menu-telephone>
 <!-- <app-menu2></app-menu2> -->
 <!----SECCIONES---->
 <app-secciones></app-secciones>

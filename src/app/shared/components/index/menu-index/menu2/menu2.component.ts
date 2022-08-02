@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { TokenService } from 'src/app/login/services/token.service';
 import { ListCategoryApi } from 'src/app/manager-vendedor/categorias/models/ListCategory';
 import { CategoriasService } from 'src/app/manager-vendedor/productos/services/categorias.service';
-import { UrlFront } from 'src/app/shared/routes/RoutesFront';
+
 import { arrayListMasVendidos, ListeMenu } from './LisItemsMenu';
 @Component({
   selector: 'app-menu2',
@@ -18,7 +17,6 @@ export class Menu2Component implements OnInit {
   correoUsuario: any;
   arrayLisVendidos: ReadonlyArray<ListeMenu> = arrayListMasVendidos; //LIST LOS MAS VENDIDOS
   constructor(
-    private router: Router,
     private apiCategoria: CategoriasService, //SERVICE CATEGORIA
     private tokenUser: TokenService //TOKEN SERVICES
   ) {
@@ -53,18 +51,5 @@ export class Menu2Component implements OnInit {
       .subscribe((res: ReadonlyArray<ListCategoryApi>) => {
         this.subCategorias = res;
       });
-  }
-  //IR A MI PERFIL
-  irAMiPerfil() {
-    /*   this.router.navigate([
-      `${UrlFront.Users.users}/${UrlFront.Users.}/`,
-      this.idUsuario,
-    ]);  */
-  }
-  //IR A REGISTRARME
-  registrarme() {
-    this.router.navigateByUrl(
-      `${UrlFront.Login.login}/${UrlFront.Login.postRegister}`
-    ); //REGISTRAR AL USUARIO
   }
 }

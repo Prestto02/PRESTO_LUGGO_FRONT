@@ -25,6 +25,7 @@ export class MenuTelephoneComponent implements OnInit {
     this.verifyEmailUser();
     this.totalItemsCarrito();
   }
+  /* VERIFICAR EL EMAIL DEL USUARIO */
   verifyEmailUser() {
     if (this.emailUsuario) {
       this.listItems[1].data_bs_target = '#offcanvasRightUsers';

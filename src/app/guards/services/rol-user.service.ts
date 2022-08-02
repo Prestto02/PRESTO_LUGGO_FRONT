@@ -19,12 +19,20 @@ export class RolUserService {
   getLocalStorageRol() {
     return localStorage.getItem('dataUsuarioItems');
   }
-
+  /* SETEAR EL ROL DE USUARIO */
   setDataRolUser(rol: any) {
     const data = this.verifyRolUser(rol);
     const rolCifrado = this.encryp.encrypOrDesrypRol(data, 'Encriptar'); //ENCRIPTO EL ROL DE USUARIO
     this.setDataLocalStorage(rolCifrado);
     this.rolUser.next(this.getLocalStorageRol());
+  }
+  /*  */
+  desCryptRolUser(): any {
+    const rolDescry = this.encryp.encrypOrDesrypRol(
+      this.getLocalStorageRol(),
+      'Desencriptar'
+    );
+    return rolDescry;
   }
   //VERIFICO EL TIPO DE ROL DE USUARIO SEGUN SU NUMERO
   verificarTipoRol(numero: any) {
