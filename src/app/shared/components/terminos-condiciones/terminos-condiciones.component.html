@@ -4,7 +4,7 @@
 <section>
   <h1>Términos y condiciones</h1>
 </section>
-<section class="container-fluid mt-3 tamano-container">
+<section class="container mt-3 tamano-container">
   <div class="row position-relative">
     <div class="col-xxl-4 col-xl-4 col-md-5 d-none d-sm-none d-md-block d-xl-block d-xxl-block">
       <div class="columnas-items">
@@ -26,10 +26,11 @@
       </div>
     </div>
     <!-- SCROLL SPY  -->
-    <div class="col-xl-8 col-xxl-8 col-md-7 col-sm-12 col-12">
+    <div class="col-xl-6 col-xxl-6 col-md-6 col-sm-12 col-12 p-0">
       <div id="parentDiv" scrollSpy [spiedTags]="['DIV']" (sectionChange)="onSectionChange($event)">
         <div id="section1">
           <h2 style="margin:0">Section 1</h2>
+          <span class="justify-text">
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestias itaque velit possimus quia id aspernatur
           maxime temporibus facilis aut dolores debitis rem natus, nihil quidem deleniti dicta vitae repellat
           repellendus.
@@ -58,7 +59,7 @@
           voluptate enim. Placeat, culpa?
           Atque, dolores minima, sapiente nobis asperiores facilis veniam maiores aperiam molestiae at labore
           accusamus delectus hic facere quod aut quaerat exercitationem dolorum maxime libero a dolor sequi porro
-          ipsa. Modi.
+          ipsa. Modi.</span>
         </div>
         <div id="seccion1_1">
           <h2 style="margin:0">Section 1.1</h2>
@@ -254,6 +255,7 @@
         </div>
       </div>
     </div>
+    <div class="col-xl-1 col-xxl-1 col-md-1"></div>
   </div>
   <br><br>
 </section>

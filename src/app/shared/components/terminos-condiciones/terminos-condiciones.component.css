@@ -5,7 +5,7 @@ p {
   font-family: Lato;
 }
 .columnas-items {
-  position: sticky;
+  position: fixed;
   /*   top: 120px; */
   transition: 0.3s;
 }
@@ -21,7 +21,8 @@ p {
 #parentDiv {
   height: 600px;
   overflow-y: scroll;
-  position: sticky;
+  position: fixed;
+  width: 50%;
   /*   top: 120px; */
   transition: 0.3s;
 }
@@ -34,4 +35,8 @@ p {
 
 ul {
   list-style: none;
+}
+
+.justify-text{
+  text-align: justify;
 }

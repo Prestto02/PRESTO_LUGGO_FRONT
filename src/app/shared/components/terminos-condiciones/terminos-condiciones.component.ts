@@ -30,12 +30,14 @@ export class TerminosCondicionesComponent {
     const data = (yOffset || scrollTop) > this.scrollHeigth; //SI ES MAYOR A 700PX HAGO EL SCROLL INFINITO
     const fixedTop = <HTMLElement>this.document.querySelector('.columnas-items');
     const seccion= <HTMLElement>this.document.querySelector('#parentDiv');
-/*     if (!data) { // SI ES NEGATIVO LE AGREGO EL FIXED
+    if (!data) { // SI ES NEGATIVO LE AGREGO EL FIXED
       seccion.style.position='fixed';
       fixedTop.style.position = 'fixed';
+       seccion.style.width='50%';
     }else{
       seccion.style.position='relative';
       fixedTop.style.position = 'relative';
-    } */
+       seccion.style.width='130%';
+    }
   }
 }
