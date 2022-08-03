@@ -11,8 +11,8 @@ import {
   selector: '[scrollSpy]',
 })
 export class TerminosCondicionesDirective {
-  @Input() spiedTags: any;
-  @Output() sectionChange = new EventEmitter<string>();
+  @Input() public spiedTags: any = [];
+  @Output() public sectionChange = new EventEmitter<string>();
   private currentSection: string = '';
 
   constructor(private _el: ElementRef) {}
@@ -25,9 +25,7 @@ export class TerminosCondicionesDirective {
     const parentOffset = event.target.offsetTop;
     for (let i = 0; i < children.length; i++) {
       const element = children[i];
-      if (
-        this.spiedTags.some((spiedTag: any) => spiedTag === element.tagName)
-      ) {
+      if (this.spiedTags.some((spiedTag:any) => spiedTag === element.tagName)) {
         if (element.offsetTop - parentOffset <= scrollTop) {
           currentSection = element.id;
         }

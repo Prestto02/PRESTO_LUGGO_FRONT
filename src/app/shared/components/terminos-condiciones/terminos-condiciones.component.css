@@ -1,42 +1,18 @@
 * {
   font-family: Cardium B-Medium;
 }
-p {
-  font-family: Lato;
-}
-.columnas-items {
-  position: fixed;
-  /*   top: 120px; */
-  transition: 0.3s;
-}
+
 .current-section {
   background-color: #ea2313;
   color: #fff;
-  padding: 12px;
   border-radius: 6px;
+  padding: 12px;
 }
-.tamano-container {
-  height: 650px;
-}
+
 #parentDiv {
   height: 600px;
   overflow-y: scroll;
-  position: fixed;
-  width: 50%;
-  /*   top: 120px; */
-  transition: 0.3s;
 }
 #parentDiv::-webkit-scrollbar {
   display: none;
-}
-.cursor {
-  cursor: pointer;
-}
-
-ul {
-  list-style: none;
-}
-
-.justify-text{
-  text-align: justify;
 }
