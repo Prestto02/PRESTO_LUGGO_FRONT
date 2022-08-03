@@ -3,8 +3,10 @@ import {
   AfterViewInit,
   Component,
   Input,
+  OnChanges,
   OnDestroy,
   OnInit,
+  SimpleChanges,
 } from '@angular/core';
 import { ValidarYTransformarImagen } from 'src/app/shared/validations/ValidarYTransformarImagen';
 import { ImgGalleryForm } from './models/ImgGallery';
@@ -14,7 +16,9 @@ import { ImgGalleryForm } from './models/ImgGallery';
   templateUrl: './img-gallery-products.component.html',
   styleUrls: ['./img-gallery-products.component.css'],
 })
-export class ImgGalleryProductsComponent implements OnInit, OnDestroy {
+export class ImgGalleryProductsComponent
+  implements OnInit, OnDestroy, OnChanges
+{
   @Input('detalleArticulo') detalleArticulo: any | null = null;
   imgProducts: string = '';
   imagenTransformada: string = '';
@@ -23,16 +27,23 @@ export class ImgGalleryProductsComponent implements OnInit, OnDestroy {
     public formGallery: ImgGalleryForm,
     private imgValidar: ValidarYTransformarImagen //VALIDAR IMAGENES Y TRANSFORMAR
   ) {}
+  ngOnChanges(changes: SimpleChanges): void {
+    if (
+      changes.detalleArticulo.currentValue !=
+      changes.detalleArticulo.previousValue
+    ) {
+      this.detalleArticulo = changes.detalleArticulo.currentValue;
+      this.setImgArray();
+    }
+  }
   ngOnInit(): void {
     this.formGallery.limpiarFormularioString();
-    this.setImgArray();
+    // this.setImgArray();
   }
   ngOnDestroy(): void {}
 
   setImgArray(): void {
-    setTimeout(() => {
-      this.obtenerImagenesEdit();
-    }, 1000);
+    this.obtenerImagenesEdit();
   }
   //SETEANDO NUEVAS IMAGENES GUARDADAS
   obtenerImagenesEdit(): void {

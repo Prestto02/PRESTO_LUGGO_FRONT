@@ -1,4 +1,10 @@
-import { Component, Input, OnInit } from '@angular/core';
+import {
+  Component,
+  Input,
+  OnChanges,
+  OnInit,
+  SimpleChanges,
+} from '@angular/core';
 import { BaseFormCategorias } from 'src/app/manager-vendedor/categorias/models/categorias.models';
 import { RepositorioImg } from 'src/app/shared/helpers/RepositorioImg';
 import { ValidarYTransformarImagen } from 'src/app/shared/validations/ValidarYTransformarImagen';
@@ -11,7 +17,7 @@ import { IProductEdit } from '../model/IProductEdit';
   templateUrl: './primer-edit.component.html',
   styleUrls: ['./primer-edit.component.css'],
 })
-export class PrimerEditComponent implements OnInit {
+export class PrimerEditComponent implements OnInit, OnChanges {
   imgProducts: string = '';
   @Input('idProduct') idProduct: any | null = null;
   @Input('productEdit') productEdit: any | null = null;
@@ -24,9 +30,15 @@ export class PrimerEditComponent implements OnInit {
     private formCateogiras: BaseFormCategorias,
     private formEtiquetas: BaseFormEtiquetas
   ) {}
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes.productEdit.currentValue != changes.productEdit.previousValue) {
+      this.productEdit = changes.productEdit.currentValue;
+      this.setFormProduct();
+    }
+  }
 
   ngOnInit(): void {
-    this.setFormProduct();
+    //this.setFormProduct();
   }
   //SETEANDO ID EN EL FORMULARIO
   getIdForm() {
@@ -84,15 +96,13 @@ export class PrimerEditComponent implements OnInit {
   }
   //GET CATEGORIAS
   setFormProduct() {
-    setTimeout(() => {
-      this.getIdForm();
-      this.getImageEdit();
-      this.asignForm();
-      this.getFormData();
-      this.getCategorias();
-      this.getEtiquetas();
-      this.selectTrueGarantia();
-    }, 1000);
+    this.getIdForm();
+    this.getImageEdit();
+    this.asignForm();
+    this.getFormData();
+    this.getCategorias();
+    this.getEtiquetas();
+    this.selectTrueGarantia();
   }
   //SETEAR CATEGORIAS EN EL ARREGLO
   getCategorias() {

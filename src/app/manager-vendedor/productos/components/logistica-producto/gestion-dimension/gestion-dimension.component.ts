@@ -1,4 +1,10 @@
-import { Component, Input, OnInit } from '@angular/core';
+import {
+  Component,
+  Input,
+  OnChanges,
+  OnInit,
+  SimpleChanges,
+} from '@angular/core';
 import { BaseFormTamanoProducto } from '../models/BaseFormTamano';
 
 @Component({
@@ -6,16 +12,24 @@ import { BaseFormTamanoProducto } from '../models/BaseFormTamano';
   templateUrl: './gestion-dimension.component.html',
   styleUrls: ['./gestion-dimension.component.css'],
 })
-export class GestionDimensionComponent implements OnInit {
+export class GestionDimensionComponent implements OnInit, OnChanges {
   @Input('productEdit') productEdit: any | null = null;
   puertoEnvio: boolean = false;
   adnEnvio: boolean = true;
 
   constructor(public formTamano: BaseFormTamanoProducto) {}
 
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes.productEdit.currentValue != changes.productEdit.previousValue) {
+      this.productEdit = changes.productEdit.currentValue;
+      this.getDataForm();
+      this.verifyPuerttoOrAdn();
+    }
+  }
+
   ngOnInit(): void {
-    this.getDataForm();
-    this.verifyPuerttoOrAdn();
+    // this.getDataForm();
+    //this.verifyPuerttoOrAdn();
   }
   /*   abrirPuerto(e: any) {
     this.formTamano.formTamanoProducto.patchValue({
@@ -50,12 +64,10 @@ export class GestionDimensionComponent implements OnInit {
     }
   }
   getDataForm() {
-    setTimeout(() => {
-      if (this.productEdit) {
-        this.setFormDataProductEdit();
-        this.verifyPuerttoOrAdn();
-      }
-    }, 1000);
+    if (this.productEdit) {
+      this.setFormDataProductEdit();
+      this.verifyPuerttoOrAdn();
+    }
   }
 
   setFormDataProductEdit() {
