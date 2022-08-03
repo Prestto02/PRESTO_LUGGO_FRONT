@@ -77,11 +77,11 @@ export const ItemsAdnMenuOffCanvas: MenuClient[] = [
     subtitle: 'Agrega, edita o elimina tus direcciones.',
     link: `${UrlFront.Direcciones.moduloDireccion}/${UrlFront.Direcciones.direcciones}`,
   },
-/*   {
+  {
     id: 4,
     title: 'Mis compras',
     icons: `${RepositorioImg.urlRepositorio}img/IMÁGENES/icons-users-perfil/mis-pedidos.png`,
     subtitle: 'Verifica el historial de tus compras.',
     link: `${UrlFront.listaPedidos.lista}/${UrlFront.listaPedidos.listado}`,
-  }, */
+  },
 ];

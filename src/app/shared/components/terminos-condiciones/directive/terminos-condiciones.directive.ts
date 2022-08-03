@@ -11,13 +11,13 @@ import {
   selector: '[scrollSpy]',
 })
 export class TerminosCondicionesDirective {
-  @Input() public spiedTags: any = [];
+/*   @Input() public spiedTags: any = [];
   @Output() public sectionChange = new EventEmitter<string>();
-  private currentSection: string = '';
+  private currentSection: string = ''; */
 
-  constructor(private _el: ElementRef) {}
+  constructor(/* private _el: ElementRef */) {}
 
-  @HostListener('scroll', ['$event'])
+/*   @HostListener('scroll', ['$event'])
   onScroll(event: any) {
     let currentSection: string = '';
     const children = this._el.nativeElement.children;
@@ -35,5 +35,5 @@ export class TerminosCondicionesDirective {
       this.currentSection = currentSection;
       this.sectionChange.emit(this.currentSection);
     }
-  }
+  } */
 }

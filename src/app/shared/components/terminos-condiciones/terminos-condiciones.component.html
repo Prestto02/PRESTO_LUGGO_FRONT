@@ -1,158 +1,304 @@
 <app-menu-index></app-menu-index>
-<section class="mt-5">
-  <h1>Términos y condiciones</h1>
+<section class="p-0">
+  <img [src]="urlBanners" alt="banners-img" class="img-fluid">
 </section>
+
 <section class="container">
-  <div class="row ">
-    <div class="col-4">
-      <div (click)="scrollTo('section1')" [ngClass]="{ 'current-section': currentSection === 'section1' }">Section 1
-      </div>
-      <div (click)="scrollTo('section2')" [ngClass]="{ 'current-section': currentSection === 'section2' }">Section 2
-      </div>
-      <div (click)="scrollTo('section3')" [ngClass]="{ 'current-section': currentSection === 'section3' }">Section 3
-      </div>
-      <div (click)="scrollTo('section4')" [ngClass]="{ 'current-section': currentSection === 'section4' }">Section 4
-      </div>
-    </div>
-    <div class="col-8">
-      <div id="parentDiv" scrollSpy [spiedTags]="['DIV']" (sectionChange)="onSectionChange($event)">
-        <div id="section1">
-          <h2 style="margin:0">Section 1</h2>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error, temporibus? Quas beatae tempore natus! Aut
-          hic
-          maiores vero eius voluptas quis officia dolor rerum deleniti, amet animi vel deserunt nostrum!
-          Veritatis deserunt neque omnis. Voluptatibus reprehenderit id modi perferendis recusandae architecto quae,
-          magnam
-          minus illum aut dolorem optio? Eligendi accusantium quis repellat hic autem, officiis minus totam animi
-          cupiditate
-          dolorem.
-          Animi quam eaque facere adipisci at nihil dolor illo aliquid consectetur est sint rem tempore vero incidunt
-          doloremque ipsam ea consequatur consequuntur perspiciatis, earum beatae suscipit cumque numquam repudiandae?
-          Quisquam.
-          Odit pariatur recusandae necessitatibus? Nisi impedit natus, velit enim culpa adipisci nulla deleniti tempora
-          iusto fuga excepturi esse architecto corporis nesciunt minima autem molestias ullam labore, repudiandae
-          dolore,
-          aut ab?
-          A soluta doloribus reiciendis ut. Maiores facere exercitationem inventore doloribus molestiae alias quas
-          placeat
-          hic, eveniet debitis possimus iusto dignissimos eius ea repudiandae quaerat id aliquid neque impedit labore a.
-          Corrupti esse doloremque ipsam ea in ut, nam quidem optio provident nobis expedita sed modi culpa autem veniam
-          accusantium quam. Voluptate quia, ipsam ullam ipsum possimus hic quas impedit perferendis!
-          Officia, quia! Sit, cumque architecto voluptas, exercitationem maxime rerum possimus consequatur soluta
-          reprehenderit aperiam placeat minima eius dolore vitae at. Laboriosam non, repudiandae illum dolore eaque
-          laudantium obcaecati ut a.
-          Placeat doloribus quasi aut consectetur? Dolores architecto aspernatur atque ipsa consequatur, temporibus
-          veritatis id voluptate asperiores aut laboriosam quidem ullam magni ut expedita perferendis recusandae,
-          excepturi
-          officiis ex. Natus, ducimus.
-        </div>
-        <div id="section2">
-          <h1>Section 2</h1>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error, temporibus? Quas beatae tempore natus! Aut
-          hic
-          maiores vero eius voluptas quis officia dolor rerum deleniti, amet animi vel deserunt nostrum!
-          Veritatis deserunt neque omnis. Voluptatibus reprehenderit id modi perferendis recusandae architecto quae,
-          magnam
-          minus illum aut dolorem optio? Eligendi accusantium quis repellat hic autem, officiis minus totam animi
-          cupiditate
-          dolorem.
-          Animi quam eaque facere adipisci at nihil dolor illo aliquid consectetur est sint rem tempore vero incidunt
-          doloremque ipsam ea consequatur consequuntur perspiciatis, earum beatae suscipit cumque numquam repudiandae?
-          Quisquam.
-          Odit pariatur recusandae necessitatibus? Nisi impedit natus, velit enim culpa adipisci nulla deleniti tempora
-          iusto fuga excepturi esse architecto corporis nesciunt minima autem molestias ullam labore, repudiandae
-          dolore,
-          aut ab?
-          A soluta doloribus reiciendis ut. Maiores facere exercitationem inventore doloribus molestiae alias quas
-          placeat
-          hic, eveniet debitis possimus iusto dignissimos eius ea repudiandae quaerat id aliquid neque impedit labore a.
-          Corrupti esse doloremque ipsam ea in ut, nam quidem optio provident nobis expedita sed modi culpa autem veniam
-          accusantium quam. Voluptate quia, ipsam ullam ipsum possimus hic quas impedit perferendis!
-          Officia, quia! Sit, cumque architecto voluptas, exercitationem maxime rerum possimus consequatur soluta
-          reprehenderit aperiam placeat minima eius dolore vitae at. Laboriosam non, repudiandae illum dolore eaque
-          laudantium obcaecati ut a.
-          Placeat doloribus quasi aut consectetur? Dolores architecto aspernatur atque ipsa consequatur, temporibus
-          veritatis id voluptate asperiores aut laboriosam quidem ullam magni ut expedita perferendis recusandae,
-          excepturi
-          officiis ex. Natus, ducimus.
-        </div>
-        <div id="section3">
-          <h1>Section 3</h1>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error, temporibus? Quas beatae tempore natus! Aut
-          hic
-          maiores vero eius voluptas quis officia dolor rerum deleniti, amet animi vel deserunt nostrum!
-          Veritatis deserunt neque omnis. Voluptatibus reprehenderit id modi perferendis recusandae architecto quae,
-          magnam
-          minus illum aut dolorem optio? Eligendi accusantium quis repellat hic autem, officiis minus totam animi
-          cupiditate
-          dolorem.
-          Animi quam eaque facere adipisci at nihil dolor illo aliquid consectetur est sint rem tempore vero incidunt
-          doloremque ipsam ea consequatur consequuntur perspiciatis, earum beatae suscipit cumque numquam repudiandae?
-          Quisquam.
-          Odit pariatur recusandae necessitatibus? Nisi impedit natus, velit enim culpa adipisci nulla deleniti tempora
-          iusto fuga excepturi esse architecto corporis nesciunt minima autem molestias ullam labore, repudiandae
-          dolore,
-          aut ab?
-          A soluta doloribus reiciendis ut. Maiores facere exercitationem inventore doloribus molestiae alias quas
-          placeat
-          hic, eveniet debitis possimus iusto dignissimos eius ea repudiandae quaerat id aliquid neque impedit labore a.
-          Corrupti esse doloremque ipsam ea in ut, nam quidem optio provident nobis expedita sed modi culpa autem veniam
-          accusantium quam. Voluptate quia, ipsam ullam ipsum possimus hic quas impedit perferendis!
-          Officia, quia! Sit, cumque architecto voluptas, exercitationem maxime rerum possimus consequatur soluta
-          reprehenderit aperiam placeat minima eius dolore vitae at. Laboriosam non, repudiandae illum dolore eaque
-          laudantium obcaecati ut a.
-          Placeat doloribus quasi aut consectetur? Dolores architecto aspernatur atque ipsa consequatur, temporibus
-          veritatis id voluptate asperiores aut laboriosam quidem ullam magni ut expedita perferendis recusandae,
-          excepturi
-          officiis ex. Natus, ducimus.
-        </div>
-        <div id="section4">
-          <h1>Section 4</h1>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error, temporibus? Quas beatae tempore natus! Aut
-          hic
-          maiores vero eius voluptas quis officia dolor rerum deleniti, amet animi vel deserunt nostrum!
-          Veritatis deserunt neque omnis. Voluptatibus reprehenderit id modi perferendis recusandae architecto quae,
-          magnam
-          minus illum aut dolorem optio? Eligendi accusantium quis repellat hic autem, officiis minus totam animi
-          cupiditate
-          dolorem.
-          Animi quam eaque facere adipisci at nihil dolor illo aliquid consectetur est sint rem tempore vero incidunt
-          doloremque ipsam ea consequatur consequuntur perspiciatis, earum beatae suscipit cumque numquam repudiandae?
-          Quisquam.
-          Odit pariatur recusandae necessitatibus? Nisi impedit natus, velit enim culpa adipisci nulla deleniti tempora
-          iusto fuga excepturi esse architecto corporis nesciunt minima autem molestias ullam labore, repudiandae
-          dolore,
-          aut ab?
-          A soluta doloribus reiciendis ut. Maiores facere exercitationem inventore doloribus molestiae alias quas
-          placeat
-          hic, eveniet debitis possimus iusto dignissimos eius ea repudiandae quaerat id aliquid neque impedit labore a.
-          Corrupti esse doloremque ipsam ea in ut, nam quidem optio provident nobis expedita sed modi culpa autem veniam
-          accusantium quam. Voluptate quia, ipsam ullam ipsum possimus hic quas impedit perferendis!
-          Officia, quia! Sit, cumque architecto voluptas, exercitationem maxime rerum possimus consequatur soluta
-          reprehenderit aperiam placeat minima eius dolore vitae at. Laboriosam non, repudiandae illum dolore eaque
-          laudantium obcaecati ut a.
-          Placeat doloribus quasi aut consectetur? Dolores architecto aspernatur atque ipsa consequatur, temporibus
-          veritatis id voluptate asperiores aut laboriosam quidem ullam magni ut expedita perferendis recusandae,
-          excepturi
-          officiis ex. Natus, ducimus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis deleniti
-          aspernatur eveniet, consequuntur voluptas culpa dolorum repudiandae accusantium tempore voluptatum corporis
-          reprehenderit distinctio dolore animi sed, ipsa perferendis? Voluptate, sapiente?
-          Beatae molestiae dolores sit consequuntur sed ut corrupti debitis inventore cumque at, id, facilis eligendi ab
-          natus. Architecto a itaque ducimus dolores quas corrupti, fuga mollitia esse quaerat deserunt excepturi.
-          Corporis dolorum recusandae iste voluptatibus! Eum est non asperiores reprehenderit excepturi modi beatae
-          quibusdam consequatur harum, quaerat labore ipsum voluptatibus nostrum quia error debitis iure distinctio
-          nesciunt consectetur sapiente perspiciatis!
-          Soluta veritatis ullam quasi optio voluptate impedit quo tempore consectetur quas, sint iusto amet, odio,
-          fugiat quibusdam. Magnam, magni nobis necessitatibus aut consequuntur quidem dolore sunt nam. Fuga, iure
-          dolore.
-        </div>
-      </div>
-    </div>
+  <div class="row bg-white rounded mt-3">
+    <h1 class="text-title">INTRODUCCIÓN</h1>
+    <p class="text-parrafo">Bienvenido a Puertto, una plataforma de servicios digitales vinculados principalmente al
+      comercio electrónico
+      mediante portales o páginas web y aplicaciones de equipos móviles, que cuenta con un conjunto de servicios de
+      negocio opcionales que incluyen Vender en Puertto, Logística de Puertto, Anuncios y publicidad y demás; en Puertto
+      ofrecemos una gama de servicios, paquetes y productos, pero que para acceder a ellos es importante y prioritario
+      acordar las presentes Condiciones, así como otras especificadas por cada uno según lo determinemos o salvo que se
+      especifique lo contrario.
+    </p>
+    <p class="text-parrafo">
+      Este Acuerdo presenta los términos y condiciones que regulan la autorización de uso e interacción en la
+      plataforma
+      web de Puertto que otorga el Operador a los usuarios y ADN, para que ingresen a la plataforma virtual de Puertto
+      y
+      sus filiales, publiquen, oferten y vendan productos y/o servicios, usen e interaccionen con los servicios de
+      logística y proyectos de mercadeo y publicidad que ofrecemos, usando la pasarela de pagos de Puertto y sus
+      derivados como estimemos sea más apropiado para Puertto, el cliente y el ADN, en las operaciones y transacciones
+      donde se celebren los Acuerdos de CVE de forma directa o indirecta con respecto a la plataforma de comercio
+      electrónica de la página de Puertto.</p>
+    <h1 class="text-title">1. TÉRMINOS Y CONDICIONES GENERALES DEL ACUERDO </h1>
+    <p class="text-parrafo">Los términos y condiciones generales del Acuerdo te brindan conocimiento sobre el alcance de
+      uso de los servicios que ofrece Puertto, y constituye un Acuerdo entre usted o la empresa a la que usted
+      representa y Puertto, al registrarse o utilizar los servicios de Puertto, usted acepta las condiciones del
+      presente Acuerdo, incluidas las condiciones de servicio y las políticas de Puertto para cada servicio en el que se
+      registre o que utilice en relación con una página de Puertto en concreto. En caso de conflicto entre las
+      condiciones del presentes Acuerdo, políticas y otros similares o equivalentes, prevalecerán las Condiciones
+      Generales de Acuerdo entre las partes sobre las políticas de la empresa.</p>
+    <h3 class="text-subtitle">1.1. Inscripción</h3>
+    <p class="text-parrafo">
+      La inscripción de un usuario a los servicios de Puertto se considera terminado una vez se haya completado el
+      proceso de registro de uno o más servicios. Al aceptar los términos de este Acuerdo usted declara que ha elegido
+      por su propio criterio y consideración los servicios seleccionados por usted, sin influencia de declaraciones
+      verbales o escritas efectuadas por empleados de Puertto o de cualquier asociado al grupo.
+    </p>
+    <p class="text-parrafo">El uso de los servicios de Puertto se limita a las partes que puedan formalizar contratos de
+      forma legítima
+      conforme a la ley aplicable, las personas menores de edad no pueden firmar el presente Acuerdo a menos que
+      adjunten carta de autorización por parte de sus padres o apoderados.</p>
+    <p class="text-parrafo">
+      Para fines de procesar el Acuerdo y documentación complementaria de forma eficiente dentro del marco legal, usted
+      debe proporcionarnos, sus datos personales en caso de ser una persona natural, en caso de ser una persona
+      jurídica, el nombre de la persona jurídica que representa, junto a su nombre comercial o nombre de fantasía,
+      dirección(es), número de teléfono vigente y dirección de correo electrónico para comunicarnos con usted, los datos
+      personales de la persona natural que lo representa, así como, cualquier otra información que podamos solicitar.
+      Todos los datos proporcionados, incluyendo información personal de los usuarios de Puertto serán tratados de
+      acuerdo con nuestro Aviso de Privacidad, de igual manera detallamos el uso y trato de "cookies" y otros
+      identificadores únicos serán tratados de acuerdo con el Aviso de Privacidad.</p>
+    <h3 class="text-subtitle">1.2. Pagos y transferencias</h3>
+    <p class="text-parrafo">Las tarifas de los servicios de Puertto se detallan en las Condiciones del servicio y en las
+      Políticas de la
+      empresa en los casos que apliquen paquetes, programas o planes de servicio, usted es responsable de todos los
+      gastos en que incurra en relación con el presente Acuerdo, salvo que el presente Acuerdo o las Condiciones de
+      servicio aplicables establezcan lo contrario. Para utilizar los servicios a los que se refiere este Acuerdo, usted
+      de forma preferente debe proporcionarnos información de una “Tarjeta de Crédito” (TC) válida y aceptada por
+      Puertto y agilizar los pagos de comisiones y gastos fijos en los casos de ventas, y/o suscripciones que usted
+      genere a través de Puertto o con Puertto respectivamente, de otra manera y de forma complementaria deberá contar
+      con una(s) “Cuenta(s) Bancaria(s)” (CB) a su nombre y habilitada(s) para la recepción de transferencias que
+      podamos hacerle a usted para la cancelación de los valores asociados a sus ventas en la página de Puertto, menos
+      los valores de los pagos que usted nos deba por su gestión comercial con nosotros por el uso de los servicios de
+      Puertto, las condiciones de aceptación tanto de la TC o la CB podrán ser modificadas o interrumpidas por nosotros
+      en cualquier momento y sin previo aviso. Para fines de trazabilidad y seguridad, usted utilizará un nombre
+      autorizado en relación con el servicio de Puertto, en caso de cambios, actualizará la información anteriormente
+      señalada cuando sea necesario para garantizar que es veraz, exacta, completa y válida en todo momento.
+    </p>
+    <p class="text-parrafo">
+      Usted autoriza a Puertto a solicitar y acuerda facilitar la documentación que acredita su autorización cuando le
+      sea solicitada, con el objetivo de comprobar su información, incluyendo la información actualizada, para obtener
+      información financiera y crediticia sobre usted en un momento determinado, usted también autoriza a Puertto para
+      obtener autorizaciones de crédito del emisor de su TC y a cargar en su TC o CB, cualquier monto que usted nos
+      deba, como pago de comisiones, tarifas fijas pactadas, suscripciones, reembolsos u otros motivos. Los pagos que se
+      le efectúen serán a su CB, por medio de una red bancaria o de la forma que nosotros especifiquemos, además,
+      podríamos solicitar que nos pague otras cantidades para garantizar el cumplimiento de sus obligaciones derivadas
+      de este Acuerdo y mitigar riesgos asociados, si llegamos a la conclusión de que sus acciones y/o su desempeño
+      pueden causar el riesgo de devoluciones, reembolsos, reclamos, controversias, violaciones a nuestros términos o
+      políticas u otros riesgos para Puertto o terceros, en ese caso podremos, a nuestra entera discreción, retener
+      cualquier pago que debamos efectuarle por el tiempo que determinemos persistan los riesgos potenciales o
+      evidenciables relacionados con Puertto o terceras partes, por cualquier cantidad que nosotros determinemos que nos
+      debe, nosotros podremos, (a) cargarlos a su TC o cualquier otro instrumento de pago que usted nos proporcione; (b)
+      compensar los montos que nos deba en la forma de reembolso o de otra manera, con los pagos que podamos efectuarle
+      o con los montos que pudiéramos deberle; (c) facturarle los montos que nos deba, en cuyo caso usted pagará los
+      montos facturados una vez que los haya recibido; (d) revertir cualquier crédito a su TC o CB; o (e) cobrar dicho
+      pago o reembolso a usted por cualquier otro medio legítimo. Si determinamos que su cuenta o cualquier otra cuenta
+      que usted haya operado se ha utilizado para participar en cualquier actividad engañosa, fraudulenta o ilegal,
+      incluyendo la venta de productos falsificados, o reiteradamente violar nuestras Pólizas del Programa, podremos, a
+      nuestra entera discreción, retener cualquier pago permanentemente para usted. Salvo que se disponga lo contrario,
+      todos los montos contemplados en el presente Acuerdo estarán expresados y se exhibirán en dólares norteamericanos,
+      salvo que por condiciones especiales se deba optar por otra moneda local y todos los pagos contemplados en el
+      presente Acuerdo se efectuarán en la divisa local, por otra parte, Puertto puede decidir si exhibir y vender
+      determinados productos con las monedas electrónicas que disponga Puertto, además, estas cantidades pueden ser
+      reembolsables o no reembolsables en el modo que así lo determinemos y el incumplimiento de los términos de este
+      Acuerdo, incluyendo todas las políticas aplicables, podría dar como resultado en la confiscación sin perjuicio a
+      Puertto a sus aliados de negocios.
+    </p>
+    <p class="text-parrafo">
+      Como medida de seguridad y sin estar obligados, podremos, imponer límites de transacción a algunos o todos los
+      clientes y ADN vendedores, relacionados con el valor de cualquier transacción o desembolso, el valor acumulado de
+      todas las transacciones o desembolsos durante un periodo de tiempo o el número de transacciones por día u otro
+      periodo de tiempo. No seremos responsables ante usted si, (a) no procedemos con una transacción o desembolso que
+      superaría cualquier límite establecido por nosotros por razones de seguridad o si (b) permitimos que un cliente se
+      retire de una transacción debido a que una página o servicio de Puertto no esté disponible tras el inicio de una
+      transacción.
+    </p>
+    <p class="text-parrafo">
+      Todos los pagos que se hagan a Puertto con TC son procesados por nuestra pasarela y botón de pagos,
+      indistintamente si quien pague es el cliente, el ADN, ADO o cualquier otra forma de usuario que interactúe con
+      Puertto, y podremos en los casos que se determine por el operador, cargarles los valores relativos a los
+      impuestos, tarifas de la pasarela de pagos y demás cuando lo consideremos necesario.
+    </p>
+    <h3 class="text-subtitle">1.3. Periodo de validez y terminación</h3>
+    <p class="text-parrafo">
+      El periodo de validez del presente Acuerdo comenzará en la fecha que se de el cumplimiento y del registro aprobado
+      por Puertto, y continuará hasta que nosotros o usted lo de por terminado; usted puede en cualquier momento
+      terminar el presente Acuerdo y uso de cualquier servicio entregado por Puertto después de notificarnos a través de
+      Atención ADN, Correo electrónico, el Formulario de Contacto o medios similares, y que Puertto confirme la
+      recepción de dicho comunicado donde se detalla la aceptación, siempre que no existieran valores pendientes de
+      parte suya a Puertto; nosotros podemos terminar el acuerdo y uso de cualquier servicio entregado por Puertto por
+      conveniencia con un aviso con 30 días de anticipación, así como podemos suspender o terminar su uso de cualquier
+      servicio de Puertto inmediatamente si determinamos que, (a) usted ha violado sustancialmente el Acuerdo y no ha
+      podido subsanarlo dentro de los 7 días posteriores a la Notificación de subsanación, a menos que su incumplimiento
+      nos exponga a una responsabilidad frente a un tercero, en cuyo caso nosotros tenemos derecho a reducir, o
+      eliminar, el periodo de subsanación mencionado anteriormente a nuestra discreción razonable; (b) su cuenta fue o
+      ha sido identificada por nuestros controles, utilizada para actividades engañosas, fraudulentas o ilegales, o; (c)
+      su uso de los servicios de Puertto ha perjudicado a otros ADN vendedores, clientes o legítimos intereses de
+      Puertto, o nuestros controles identifican que podría hacerlo, en cuyo caso, los comunicados relativos a la
+      terminación del Acuerdo por parte de Puertto serán notificados de inmediato en Central ADN, por Correo electrónico
+      o medios similares, enviándosela a usted individualmente y reportado en Atención ADN, indicando el motivo y las
+      opciones para reclamar, excepto en los casos en que tengamos motivos para creer que el suministro de esta
+      información obstaculizará la investigación o la prevención de actividades engañosas, fraudulentas o ilegales, o le
+      permitirá eludir nuestras salvaguardias. Cualquier suspensión durará hasta que proporcione una evidencia
+      satisfactoria de que ha subsanado su causa y aplicado los cambios necesarios, excepto en el caso de suspensión
+      basada en los apartados (b) o (c) del presente punto, según los cuales podemos terminar o no restablecer el
+      Acuerdo considerando el daño o la actividad inicialmente engañosa, fraudulenta o ilegal. Tras la terminación de
+      este Acuerdo, todos los derechos y obligaciones de las partes de conformidad con el presente Acuerdo terminarán
+      inmediatamente, salvo que (d) usted seguirá siendo responsable del cumplimiento de todas sus obligaciones en
+      relación con las transacciones realizadas antes de la terminación de este Acuerdo y de cualquier responsabilidad
+      que se haya acumulado antes o como resultado de dicha terminación, así como en lo dispuesto en los puntos, uno,
+      dos (1.2); uno, tres (1.3); uno, cuatro (1.4); uno, cinco (1.5); uno, seis (1.6); uno, siete (1.7); uno, diez
+      (1.10); uno, trece (1.13); uno, catorce (1.14); seis (6); siete (7); ocho (8), y; nueve (9) de estas que
+      sobreviven y persisten.
+    </p>
+    <p class="text-parrafo">
+      Ante la terminación de las relaciones comerciales entre el ADN y Puertto, independientemente del origen de este
+      evento, se da como incluido la terminación de los servicios contratados de SLP, SIP, SAP u otros que pudieren
+      existir en el futuro, sin embargo, la terminación del acuerdo solo puede referirse a los servicios SLP, SIP, SAP u
+      otros que pudieren existir en el futuro, de tal manera se procederá en función de las condiciones y acuerdos entre
+      las partes a devolver o deshacernos de las unidades de productos registrados en relación con la página de Puertto
+      como establece en el presente documento en el punto tres, tres (3.3). En caso que nuestro asociado de negocios no
+      nos indique la devolución o cualquier otra acción relativa a el manejo de estos como desechos en un plazo máximo
+      de treinta días o el plazo que especifique en las políticas del programa contratado, el mismo que no puede ser
+      mayor a treinta (30) días o como se especifique en nuestras políticas aplicables, a la terminación de los
+      servicios contratados de SLP, SIP, SAP u otros que pudieren existir en el futuro, todos los derechos y
+      obligaciones de las partes en relación al punto tres (3) de este acuerdo se extinguirán, salvo aquellos derechos y
+      obligaciones de las partes en virtud de los puntos uno, tres (1.3); tres, uno (3.1); tres, dos, uno (3.2.1); tres,
+      dos, dos (3.2.2); tres, dos, tres (3.2.3); tres, dos, cinco (3.2.5); tres, tres (3.3); tres, cuatro (3.4); tres,
+      cinco (3.5); seis (6); siete (7) ; ocho (8), y; nueve (9) de estas que sobreviven y persisten.
+    </p>
+    <h3 class="text-subtitle">1.4. De los derechos y licencias</h3>
+    <p class="text-parrafo">Usted nos concede un derecho y licencia, no exclusivos, libres de cualquier responsabilidad
+      financiera y de aplicación de forma global y en cualquier parte del planeta, durante la vigencia de sus derechos
+      de propiedad intelectual, originales y derivados para usar la totalidad de su material para otros productos o
+      servicios de Puertto, así como, para conceder sublicencias de los derechos anteriores a nuestras filiales,
+      sociedades de nuestro grupo, operador y a otros operadores de las propiedades asociadas de Puertto; sin embargo,
+      no alteraremos la forma de ninguna de sus marcas comerciales que usted nos haya proporcionado, salvo, el cambio de
+      tamaño de las marcas comerciales en la medida en que sea necesario para su presentación, pero siempre que las
+      proporciones relativas de dichas marcas permanezcan iguales, y cumpliremos con su petición de retirarlas de
+      algunos de sus usos específicos en caso de que usted no sea capaz de hacerlo mediante las herramientas estándar a
+      su disposición en la página de Puertto o los servicios aplicables; y siempre que nada de lo dispuesto en el
+      presente Acuerdo altere o nos impida ejercer nuestro derecho a utilizar su material sin su consentimiento, en la
+      medida en que dicho uso esté permitido sin la necesidad de contar con una licencia suya o de sociedades de su
+      grupo empresarial o asociado, de conformidad con la ley aplicable, por ejemplo, un uso razonable de conformidad
+      con la ley de derechos de autor, uso como referencia de conformidad con el derecho de marcas o una licencia válida
+      de un tercero.
+    </p>
+    <p class="text-parrafo">
+      Usted acepta y acuerda que Puertto tiene el derecho y entera discreción sobre el manejo del contenido, apariencia,
+      diseño, funcionalidad y todos los aspectos de los servicios de Puertto, incluyendo el rediseño, modificación,
+      eliminación o restricción del acceso a cualquiera de ellos.
+    </p>
+    <h3 class="text-subtitle">1.5. Manifiesto entre las partes</h3>
+    <p class="text-parrafo">Cada una de las partes manifiesta y garantiza que, (a) si es una persona natural, se
+      encuentra en la capacidad de facturar o acción equivalente dentro del marco de la ley, y ejecutar las acciones
+      comerciales que se lleven a cabo en Puertto y se encuentra al corriente de los pagos que le corresponden
+      legalmente de conformidad con el marco legal ecuatoriano o donde se comercializa el producto, de la misma manera
+      declara si es una empresa, ha sido debidamente constituida, su existencia es legítima y se encuentra al corriente
+      de los pagos que le corresponden legalmente de conformidad con el marco legal ecuatoriano o donde se comercializa
+      el producto; (b) tiene todo el derecho, poder y autoridad para suscribir el presente Acuerdo, llevar a cabo las
+      obligaciones previstas en él y conceder los derechos, licencias y autorizaciones que conceda de conformidad con el
+      mismo; (c) cualquier información facilitada o suministrada por cada parte o cualquiera de las sociedades de su
+      grupo, es precisa, completa y veraz, y actualizará dicha información inmediatamente tan pronto como sea necesario
+      para asegurar que permanece precisa, completa y veraz; (d) Las partes participantes de este Acuerdo no están
+      sujetos a sanciones ni están incluidos en ninguna lista de personas y entidades prohibidas o restringidas a nivel
+      nacional o internacional, ya sea por cualquier país reconocido por Ecuador u organismos internacionales oficiales
+      reconocidos de la misma manera, ni son propiedad o están controladas por ninguna persona o entidad ajena a quien
+      declara en este documento, y; (e) cada parte y todos sus subcontratistas, agentes y proveedores cumplirán con las
+      leyes aplicables nacionales e internacionales en la medida que aplique la apertura de mercados internacionales a
+      la hora de desempeñar sus obligaciones y ejercer sus derechos de conformidad con el presente Acuerdo.</p>
+    <h3 class="text-subtitle">1.6. Indemnización </h3>
+    <h3 class="text-subtitle">1.6.1. Sus obligaciones de indemnización</h3>
+    <p class="text-parrafo">Usted exime y acuerda indemnizar, defender y exonerar de toda responsabilidad a Puertto y su
+      equipo humano, por las reclamaciones de terceros por pérdidas, daños, acuerdos, costes, gastos u otras
+      obligaciones,
+      incluyendo, aunque no exclusivamente, los honorarios de abogados de todos los reclamos que surjan de o en relación
+      con, (a) su incumplimiento de las leyes aplicables; (b) sus productos, incluyendo la oferta, la venta, la gestión
+      logística, excepto los que hayan sido gestionados mediante el “Servicio Integral de Puertto” (SIP), la
+      cancelación,
+      el reembolso, la devolución o el ajuste de los mismos y cualquier lesión personal, muerte o daños a la propiedad
+      relacionados con los mismos; (c) sus impuestos y tasas o su recaudación, pago o falta de recaudación por pago de
+      sus
+      Impuestos o tasas, o el incumplimiento de las obligaciones fiscales, o; (d) el incumplimiento actual o presunto,
+      basado en indicios concretos de cualquier manifestación efectuada.</p>
+    <h3 class="text-subtitle">1.6.2. Obligaciones de indemnización de Puertto</h3>
+    <p class="text-parrafo">
+      Puertto defenderá, indemnizará a usted y a sus empleados, funcionarios y directores contra cualquier reclamo de
+      terceros que surja de o esté relacionada con, (a) el incumplimiento por parte de Puertto de las leyes aplicables,
+      o;
+      (b) alegaciones de que la operación de una tienda de Puertto infringe o se apropia indebidamente de los derechos
+      de
+      propiedad intelectual de terceros.
+    </p>
+    <h3 class="text-subtitle">1.6.3. Procedimiento</h3>
+    <p class="text-parrafo">En caso de que algún reclamo indemnizable pudiera afectarnos negativamente, podremos, en la
+      medida en que lo permita la ley aplicable, intervenir voluntariamente en los procedimientos, lo cual será por
+      nuestra cuenta y gasto. Ninguna de las partes podrá consentir a que se dicte sentencia o se llegue a un acuerdo
+      sobre algún reclamo indemnizable sin el consentimiento previo por escrito de la otra parte, el cual no podrá ser
+      retenido injustificadamente; salvo que una de las partes podrá resolver cualquier reclamo que esté dirigido
+      exclusivamente a esa parte y que la afecte de manera exclusiva.</p>
+    <h3 class="text-subtitle">1.7. Limitación de responsabilidad</h3>
+    <p class="text-parrafo">Puertto y su equipo humano no serán responsables, ya sea por contrato, garantía o agravio,
+      incluyendo
+      negligencia,
+      responsabilidad del producto u otra teoría de responsabilidad, o de otro modo, ante usted o cualquier otra persona
+      por el costo de cubrir, recuperar o reembolsar cualquier inversión realizada por usted o sus afiliados en relación
+      con este acuerdo o por cualquier pérdida de beneficios, ingresos, negocios o datos, o por daños consecuentes o
+      punitivos que surjan de o en relación con este Acuerdo, incluyendo daños a la vida, al cuerpo o a la salud,
+      incluso
+      si Puertto ha sido advertido de la posibilidad de dichos costos, daños y/o perjuicios, además, nuestra
+      responsabilidad total bajo o en relación con este Acuerdo o las transacciones contempladas en el presente, no
+      excederá en ningún momento la cantidad total pagada por usted a Puertto durante los seis meses anteriores en
+      relación con el servicio que ha proporcionado lugar a dicho reclamo.
+    </p>
+    <p class="text-parrafo">
+      Todas las páginas de Puertto, los sitos web asociados y servicios de Puertto, su contenido, programas de cómputo o
+      software, funciones, materiales e información disponible o proporcionada en relación con los servicios se
+      proporcionan en el estado en que se encuentran, y usted como usuario de dichos servicios, utilizará las páginas de
+      Puertto, los servicios, y Central ADN, bajo su propia decisión y riesgo, excepto por lo establecido en el punto
+      siete (7) del presente Acuerdo; hasta el alcance máximo permitido por la ley nacional del Ecuador, nosotros y
+      nuestras filiales no nos hacemos responsables de, (a) cualquier declaración o garantía relacionada con el presente
+      Acuerdo, los servicios o las transacciones contempladas en el mismo , incluyendo garantías comerciales implícitas,
+      adecuación a un fin particular o no infracción; (b) las garantías implícitas que surjan de la logística, el
+      desempeño o de las actividades comerciales en general, y; (c) cualquier obligación, responsabilidad, derecho,
+      reclamo o indemnizaciones por responsabilidades extracontractuales, ya sean atribuibles o no a una negligencia por
+      nuestra parte. No garantizamos que las funciones contenidas en las páginas y los servicios de Puertto cumplirán
+      con
+      sus requisitos o que estarán disponibles o funcionarán oportunamente, de forma segura, sin interrupciones y/o
+      errores, y no nos responsabilizamos de las interrupciones del servicio, incluyendo sin limitación, a fallas en el
+      sistema u otras interrupciones que pudieran afectar a la recepción, procesamiento, aceptación, finalización o
+      acuerdo de cualquier transacción.
+    </p>
+    <p class="text-parrafo">
+      Ya que Puertto solo es un agente de venta y comisionista de los productos que se ofrecen en las tiendas de Puertto
+      ya sean virtuales o físicas, no participa en operaciones entre clientes y vendedores u otras transacciones salvo
+      las
+      de facilitar la venta, y coordinar el despacho y la entrega de los productos y servicios que se comercialicen a
+      través de Puertto entre los participantes, en caso de surgir una controversia entre uno o más participantes, cada
+      uno de ellos exime a Puertto y su equipo humano de reclamos, demandas y daños, tanto reales o consecuenciales de
+      cualquier tipo y naturaleza, conocidos y desconocidos, sospechados e insospechados, divulgados y no divulgados,
+      que
+      hayan de surgir de dicha controversia o que estén relacionados con la misma.
+    </p>
+    <h3 class="text-subtitle">1.8. Seguro</h3>
+    <p class="text-parrafo">
+      Si hace uso de los servicios de Puertto en relación a la logística, almacenamiento o cualquier otro similar en los
+      que tengamos el control físico sobre sus productos, y su valor supera el umbral de seguro aplicable usted correrá
+      con los gastos correspondientes, y mantendrá un seguro de responsabilidad civil a terceros a beneficio de Puertto,
+      que tenga como mínimo los límites de seguro por incidente/totales para cubrir la responsabilidad causada por o
+      relacionada con sus productos o la operación de su negocio en relación con Puertto, incluyendo la responsabilidad
+      de productos y las lesiones corporales, cuyas pólizas nombrarán a Puertto y sus cesionarios asegurados
+      adicionales. Si así se lo solicitamos, usted nos proporcionará certificados de seguros probando la cobertura
+      necesaria según este apartado, a la siguiente dirección que se describe en Manejo de riesgos o en Contáctenos en
+      Puertto.
+    </p>
+    <h3 class="text-subtitle">1.9. Precios, facturación y aspectos fiscales</h3>
+    <p class="text-parrafo">
+      Si hace uso de los servicios de Puertto en relación a la logística, almacenamiento o cualquier otro similar en los
+      que tengamos el control físico sobre sus productos, y su valor supera el umbral de seguro aplicable usted correrá
+      con los gastos correspondientes, y mantendrá un seguro de responsabilidad civil a terceros a beneficio de Puertto,
+      que tenga como mínimo los límites de seguro por incidente/totales para cubrir la responsabilidad causada por o
+      relacionada con sus productos o la operación de su negocio en relación con Puertto, incluyendo la responsabilidad
+      de productos y las lesiones corporales, cuyas pólizas nombrarán a Puertto y sus cesionarios asegurados
+      adicionales. Si así se lo solicitamos, usted nos proporcionará certificados de seguros probando la cobertura
+      necesaria según este apartado, a la siguiente dirección que se describe en Manejo de riesgos o en Contáctenos en
+      Puertto.
+    </p>
   </div>
-
-
-
-
 </section>
 
 

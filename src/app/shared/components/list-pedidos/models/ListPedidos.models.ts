@@ -1,9 +1,9 @@
 export interface ListPedidosUsers {
   id_venta: number;
   total: number;
-  total_items:number;
-  total_products:number;
-  detalle_venta: [DetalleVenta];
+  total_items: number;
+  total_products: number;
+  detalle_venta: ReadonlyArray<DetalleVenta>;
 }
 
 export interface DetalleVenta {

@@ -8,6 +8,7 @@ import { FooterIndexModule } from '../../index/footer-index/module/footer-index.
 import { TablePedidosComponent } from '../table-pedidos/table-pedidos.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { ColorBadgeDirective } from '../table-pedidos/directive/color-badge.directive';
+import { PlantillaAdnClientComponent } from '../plantilla-adn-client/plantilla-adn-client.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { ColorBadgeDirective } from '../table-pedidos/directive/color-badge.dire
     ItemPedidosComponent,
     TablePedidosComponent,
     ColorBadgeDirective,
+    PlantillaAdnClientComponent,
   ],
   imports: [
     CommonModule,

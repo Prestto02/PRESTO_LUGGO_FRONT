@@ -2,120 +2,26 @@
   <app-menu-index></app-menu-index>
 </header>
 <section class="container-fluid p-0">
-  <img [src]="bannerAdn" alt="banners" class="img-responsive" />
+  <img loading="lazy" [src]="bannerAdn" alt="banners" class="img-responsive" />
 </section>
 <app-adn-cerrar-sesion></app-adn-cerrar-sesion>
 <section class="container py-3 mt-3">
   <div class="row ">
-    <div class="col-xxl-12 col-xl-12">
-      <div class="row">
-        <div class="col-xl-10 col-xxl-10">
-          <div class="row">
-            <div class="col-xl-12 col-xxl-12 col-sm-12 col-md-12 col-12 mt-3 mb-3">
-              <h6>Hola <b>{{email?email:'Demo Adn'}}</b></h6>
-            </div>
-            <!--             <div
-              class="col-xl-12 col-xxl-12 col-sm-10 col-md-10 col-10 mt-3 mb-3 text-center mx-auto color-bg position-relative">
-              <img [src]="imagenPuerto" class="img-fluid mx-auto mt-2" alt="imagen puerto">
-              <svg class="position-absolute bottom-0 end-0 cursor-items" width="21" height="21" viewBox="0 0 21 21"
-                fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M19 10.9999C18.7348 10.9999 18.4804 11.1053 18.2929 11.2928C18.1054 11.4804 18 11.7347 18 11.9999V17.9999C18 18.2652 17.8946 18.5195 17.7071 18.707C17.5196 18.8946 17.2652 18.9999 17 18.9999H3C2.73478 18.9999 2.48043 18.8946 2.29289 18.707C2.10536 18.5195 2 18.2652 2 17.9999V3.99994C2 3.73472 2.10536 3.48037 2.29289 3.29283C2.48043 3.1053 2.73478 2.99994 3 2.99994H9C9.26522 2.99994 9.51957 2.89458 9.70711 2.70705C9.89464 2.51951 10 2.26516 10 1.99994C10 1.73472 9.89464 1.48037 9.70711 1.29283C9.51957 1.1053 9.26522 0.999939 9 0.999939H3C2.20435 0.999939 1.44129 1.31601 0.87868 1.87862C0.316071 2.44123 0 3.20429 0 3.99994V17.9999C0 18.7956 0.316071 19.5587 0.87868 20.1213C1.44129 20.6839 2.20435 20.9999 3 20.9999H17C17.7956 20.9999 18.5587 20.6839 19.1213 20.1213C19.6839 19.5587 20 18.7956 20 17.9999V11.9999C20 11.7347 19.8946 11.4804 19.7071 11.2928C19.5196 11.1053 19.2652 10.9999 19 10.9999ZM4 11.7599V15.9999C4 16.2652 4.10536 16.5195 4.29289 16.707C4.48043 16.8946 4.73478 16.9999 5 16.9999H9.24C9.37161 17.0007 9.50207 16.9755 9.62391 16.9257C9.74574 16.8759 9.85656 16.8026 9.95 16.7099L16.87 9.77994L19.71 6.99994C19.8037 6.90698 19.8781 6.79637 19.9289 6.67452C19.9797 6.55266 20.0058 6.42195 20.0058 6.28994C20.0058 6.15793 19.9797 6.02722 19.9289 5.90536C19.8781 5.7835 19.8037 5.6729 19.71 5.57994L15.47 1.28994C15.377 1.19621 15.2664 1.12182 15.1446 1.07105C15.0227 1.02028 14.892 0.994141 14.76 0.994141C14.628 0.994141 14.4973 1.02028 14.3754 1.07105C14.2536 1.12182 14.143 1.19621 14.05 1.28994L11.23 4.11994L4.29 11.0499C4.19732 11.1434 4.12399 11.2542 4.07423 11.376C4.02446 11.4979 3.99924 11.6283 4 11.7599ZM14.76 3.40994L17.59 6.23994L16.17 7.65994L13.34 4.82994L14.76 3.40994ZM6 12.1699L11.93 6.23994L14.76 9.06994L8.83 14.9999H6V12.1699Z"
-                  fill="#4B4B4B" />
-              </svg>
-            </div>
-            <div class="col-xl-12 col-xxl-12 col-sm-12 col-md-12 col-12 mt-3 mb-3 mx-auto">
-              <p class="text-center">Un lugar seguro donde comprar.</p>
-            </div> -->
-          </div>
-        </div>
-      </div>
+    <div class="col-xl-10 col-xxl-10">
+      <h6>Hola <b>{{email?email:'Demo Adn'}}</b></h6>
     </div>
-
-    <div class="col-xxl-12 col-xl-12">
+  </div>
+  <div class="row mx-xl-auto">
+    <div
+      class="col-xxl-3 col-xl-3 col-md-3 col-sm-11 col-11 card mb-5 py-2 cursor-items mx-xxl-5 mx-xl-4 mx-md-4 mx-auto"
+      *ngFor="let list of arrayList" (click)="irLink(list.link,list.title)">
       <div class="row">
-
-        <div class="col-xl-3 col-xxl-3 card mb-5 py-2 cursor-items" (click)="irAlModuloCatalogo();">
-          <div class="row">
-            <div class="col-xl-5 col-xxl-5 mb-5 mt-5">
-              <img [src]="imgListContent" alt="iamgen etiqueta" />
-            </div>
-            <div class="col-xl-7 col-xxl-7 mt-5 py-2">
-              <h6>Mis Productos</h6>
-              <p class="text-subtitle">Crea tu catálogo de productos o servicios.</p>
-            </div>
-          </div>
+        <div class="col-xl-5 col-xxl-5 col-md-5 col-sm-5 col-5 mb-xxl-5 mb-xl-5 mt-xl-5 mt-xxl-5 mt-4">
+          <img loadin="lazy" [src]="list.icons" alt="iamgen etiqueta" class="img-fluid" />
         </div>
-
-        <div class="col-xl-1 col-xxl-1"></div>
-
-<!--         <div class="col-xl-3 col-xxl-3 card mb-5 py-2 cursor-items" (click)="irAPedidos();">
-          <div class="row">
-            <div class="col-xl-5 col-xxl-5 mb-5 mt-5">
-              <img [src]="imgContenedorCarrito" alt="imagen billetera" />
-            </div>
-            <div class="col-xl-7 col-xxl-7 mt-5 py-2">
-              <h6>Mis pedidos</h6>
-              <p class="text-subtitle"> Revisa el estado de tus pedidos online.</p>
-            </div>
-          </div>
-        </div>
- -->
-        <div class="col-xl-1 col-xxl-1"></div>
-
-        <!--         <div class="col-xl-5 col-xxl-5 card py-2 cursor-items" (click)="irACompras();">
-          <div class="row">
-            <div class="col-xl-5 col-xxl-5 mb-5 mt-5">
-              <img [src]="imgEtiqueta" alt="imagen etiqueta" />
-            </div>
-            <div class="col-xl-7 col-xxl-7 mt-5 py-2">
-              <h6>Mis Compras</h6>
-              <p class="text-subtitle"> Verifica el historial de tus compras.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-xl-1 col-xxl-1"></div> -->
-        <!-- MIS PAGOS -->
-        <!--         <div class="col-xl-3 col-xxl-3 mb-5 card py-2 cursor-items" (click)="irAPagos();">
-          <div class="row">
-            <div class="col-xl-5 col-xxl-5 mb-5 mt-5">
-              <img [src]="imgBilletera" alt="imagen billetera" />
-            </div>
-            <div class="col-xl-7 col-xxl-7 mt-5 py-2">
-              <h6>Pagos</h6>
-              <p class="text-subtitle"> Revisa tus pagos y transferencias online.</p>
-            </div>
-          </div>
-        </div> -->
-        <!-- MIS COMPRAS -->
-<!--         <div class="col-xl-3 col-xxl-3 mb-5 card py-2 cursor-items" (click)="irACompras();">
-          <div class="row">
-            <div class="col-xl-5 col-xxl-5 mb-5 mt-5">
-              <img [src]="imgBilletera" alt="imagen billetera" />
-            </div>
-            <div class="col-xl-7 col-xxl-7 mt-5 py-2">
-              <h6>Mis Compras</h6>
-              <p class="text-subtitle"> Verifica el historial de tus compras.</p>
-            </div>
-          </div>
-        </div> -->
-
-
-        <!-- ESPACIO -->
-        <div class="col-xl-1 col-xxl-1"></div>
-
-        <!-- DIRECCIONES -->
-        <div class="col-xl-3 col-xxl-3 mb-5 card py-2 cursor-items" (click)="irADireccion();">
-          <div class="row">
-            <div class="col-xl-5 col-xxl-5 mb-5 mt-5">
-              <img [src]="imgDirecciones" alt="imagen direccion" />
-            </div>
-            <div class="col-xl-7 col-xxl-7 mt-5 py-2">
-              <h6>Direcciones</h6>
-              <p class="text-subtitle">Agrega, edita o elimina tus direcciones.</p>
-            </div>
-          </div>
+        <div class="col-xl-7 col-xxl-7 col-md-7 col-sm-7 col-7 mt-xl-5 mt-xxl-5 py-xl-2 py-xxl-2 py-3 mt-3">
+          <h6>{{list.title}}</h6>
+          <p class="text-subtitle">{{list.subtitle}}</p>
         </div>
       </div>
     </div>
