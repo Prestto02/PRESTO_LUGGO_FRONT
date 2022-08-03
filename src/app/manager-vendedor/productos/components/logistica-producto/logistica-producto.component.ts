@@ -1,4 +1,10 @@
-import { Component, Input, OnInit } from '@angular/core';
+import {
+  Component,
+  Input,
+  OnChanges,
+  OnInit,
+  SimpleChanges,
+} from '@angular/core';
 import { PositionUser } from 'src/app/shared/class/PositionUser';
 import { ListadoProductosComponent } from '../listado-productos/listado-productos.component';
 import { BaseFormTamanoProducto } from './models/BaseFormTamano';
@@ -10,7 +16,7 @@ declare var google: any;
   templateUrl: './logistica-producto.component.html',
   styleUrls: ['./logistica-producto.component.css'],
 })
-export class LogisticaProductoComponent implements OnInit {
+export class LogisticaProductoComponent implements OnInit, OnChanges {
   @Input('productEdit') productEdit: any | null = null;
   options: any;
 
@@ -31,6 +37,13 @@ export class LogisticaProductoComponent implements OnInit {
     private position: PositionUser, //POSITION USUARIO
     public formTamano: BaseFormTamanoProducto
   ) {}
+  /* ON CHANGES DE  */
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes.productEdit.currentValue != changes.productEdit.previousValue) {
+      this.productEdit = changes.productEdit.currentValue;
+      this.setFormData();
+    }
+  }
 
   ngOnInit() {
     this.position.getPositionUser();
@@ -40,7 +53,7 @@ export class LogisticaProductoComponent implements OnInit {
     };
     //this.initOverlays();
     this.infoWindow = new google.maps.InfoWindow();
-    this.setFormData();
+    // this.setFormData();
   }
 
   //AGREGAR EL NUEVA UBICACION Y ABRIR EL MODAL

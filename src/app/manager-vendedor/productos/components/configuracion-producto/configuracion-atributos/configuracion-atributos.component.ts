@@ -1,4 +1,10 @@
-import { Component, Input, OnInit } from '@angular/core';
+import {
+  Component,
+  Input,
+  OnChanges,
+  OnInit,
+  SimpleChanges,
+} from '@angular/core';
 import { BaseFormConfigProducts } from '../models/BaseFormCongifProduct';
 import { BaseFormConfigAtributos } from './models/BaseFormConfigAtributos';
 import { BaseFormConfigAtributos2 } from './models/BaseFormConfigAtributos2';
@@ -9,7 +15,7 @@ import { BaseFormGlobalPrecio } from './models/BasePrecioGlobal';
   templateUrl: './configuracion-atributos.component.html',
   styleUrls: ['./configuracion-atributos.component.css'],
 })
-export class ConfiguracionAtributosComponent implements OnInit {
+export class ConfiguracionAtributosComponent implements OnInit, OnChanges {
   @Input('productEdit') productEdit: any | null = null;
   resultIva: any = '';
   resultIC: any = '';
@@ -20,9 +26,16 @@ export class ConfiguracionAtributosComponent implements OnInit {
     public formGlobalPrecio: BaseFormGlobalPrecio,
     public formAtributosDos: BaseFormConfigAtributos2
   ) {}
+  /* ON CHANGES DE PARA LA ESPERA DE ATRIBUTOS */
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes.productEdit.currentValue != changes.productEdit.previousValue) {
+      this.productEdit = changes.productEdit.currentValue;
+      this.editProductSet();
+    }
+  }
 
   ngOnInit(): void {
-    this.editProductSet();
+    //this.editProductSet();
   }
   //ELIMINAR LOS ITEMS DEL ARRAY FORM
   removeItemsChecked(i: any) {
