@@ -36,7 +36,7 @@ export const ItemsClientMenu: MenuClient[] = [
     title: 'Mis Favoritos',
     icons: `${RepositorioImg.urlRepositorio}img/IMÁGENES/Portal-Usuario-Comprador/favoritos.png`,
     subtitle: 'Mira tu lista de deseos.',
-    link: `${UrlFront.Cliente.cliente}/${UrlFront.Cliente.miCuenta}`,
+    link: `${UrlFront.Menu.menu}/${UrlFront.ListaDeseos.listaDeseos}`,
   },
 /*   {
     id: 6,

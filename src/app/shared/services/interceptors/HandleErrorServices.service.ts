@@ -1,10 +1,19 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
+import { LoginService } from 'src/app/login/services/login.service';
+import { TokenService } from 'src/app/login/services/token.service';
+import { UrlFront } from '../../routes/RoutesFront';
 import { MessageFrontEndService } from '../../Toasts/services/message-front-end.service';
 
 @Injectable({ providedIn: 'root' })
 export class HandleErrorServices {
-  constructor(private toaster: MessageFrontEndService) {}
+  constructor(
+    private toaster: MessageFrontEndService,
+    private route: Router,
+    private Token: TokenService,
+    private apiLogin: LoginService
+  ) {}
 
   public handleError(err: HttpErrorResponse) {
     let errorMessage: string; //ENVIAR EL MENSAJE AL TOAST
@@ -16,6 +25,11 @@ export class HandleErrorServices {
       ) {
         case 401:
           errorMessage = `${err.error}`;
+          this.Token.removeToken();
+          this.apiLogin.cerrarSesionBackend();
+          this.route.navigateByUrl(
+            `${UrlFront.Login.login}/${UrlFront.Login.iniciarSesion}`
+          );
           break;
         case 400:
           errorMessage = `${err.error}`;
