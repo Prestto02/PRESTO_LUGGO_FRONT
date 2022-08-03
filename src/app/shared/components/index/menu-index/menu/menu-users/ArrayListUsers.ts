@@ -3,14 +3,14 @@ import { RepositorioImg } from 'src/app/shared/helpers/RepositorioImg';
 import { UrlFront } from 'src/app/shared/routes/RoutesFront';
 
 export const ItemsClientMenuOffCanvas: MenuClient[] = [
-/*   {
+  {
     id: 1,
     title: 'Mis Compras',
     icons: `${RepositorioImg.urlRepositorio}img/IMÁGENES/icons-users-perfil/mis-pedidos.png`,
     subtitle: 'Verifica el historial de tus compras',
     link: `${UrlFront.listaPedidos.lista}/${UrlFront.listaPedidos.listado}`,
   },
-  {
+/*   {
     id: 2,
     title: 'Mis pagos',
     icons: `${RepositorioImg.urlRepositorio}img/IMÁGENES/icons-users-perfil/billeteraAdn.png`,
@@ -56,13 +56,13 @@ export const ItemsAdnMenuOffCanvas: MenuClient[] = [
     subtitle: 'Crea tu catálogo de productos o servicios.',
     link: `${UrlFront.Manager.managerVendedor}/${UrlFront.Manager.vendedor}/${UrlFront.Manager.listadoProductos}`,
   },
-/*   {
+  {
     id: 2,
     title: 'Mis Ventas',
     icons: `${RepositorioImg.urlRepositorio}img/IMÁGENES/icons-users-perfil/mi-perfil.png`,
     subtitle: 'Revisa el estado de tus pedidos online.',
     link: `${UrlFront.Manager.managerVendedor}/${UrlFront.Manager.vendedor}/${UrlFront.Manager.listaDePedidos}`,
-  }, */
+  },
   /*   {
     id: 3,
     title: 'Pagos',
