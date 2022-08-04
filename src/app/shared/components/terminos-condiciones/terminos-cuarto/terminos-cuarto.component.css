@@ -1,37 +1,19 @@
 * {
   font-family: Cardium B-Medium;
   -youbkit-touch-callout: none; /*iOS Safari*/
-  -youbkit-user-select: none; /* Chrome 6.0+, Safari 3.1+, Edge y Opera 15+ */
-  -moz-user-select: none; /*Firefox*/
-  -ms-user-select: none; /* IE 10+ y Edge */
-  user-select: none; /* Versión sin prefijo,
+  -youbkit-user-select: none;   /* Chrome 6.0+, Safari 3.1+, Edge y Opera 15+ */
+  -moz-user-select: none;    /*Firefox*/
+  -ms-user-select: none;        /* IE 10+ y Edge */
+  user-select: none;            /* Versión sin prefijo,
                               actualmente compatible con Chrome y Opera */
 }
-/*
-.current-section {
-  background-color: #ea2313;
-  color: #fff;
-  border-radius: 6px;
-  padding: 12px;
-}
-.title {
-  font-weight: 700;
-  color: #000;
-}
-#parentDiv {
-  height: 600px;
-  overflow-y: scroll;
-}
-#parentDiv::-webkit-scrollbar {
-  display: none;
-}
- */
-
 .text-title {
   font-weight: 700;
   font-size: 24px;
   text-align: center;
   padding: 20px 0px;
+  width: 74%;
+  margin: auto;
 }
 
 .text-parrafo {

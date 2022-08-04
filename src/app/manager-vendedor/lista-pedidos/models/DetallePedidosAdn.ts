@@ -6,7 +6,7 @@ export interface DetallePedidosAdn {
   items: number;
   TipoPago: string;
   DatosClientes: DatosCliente;
-  DatosProductos: DatosProductos[];
+  DatosProductos: ReadonlyArray<DatosProductos>;
 }
 /* CLIENTE MODELS */
 interface DatosCliente {
@@ -28,7 +28,7 @@ interface DatosProductos {
   img: string;
 }
 /* DETALLE DE PEDIDOS */
-export const ArrayDetallePedidos: DetallePedidosAdn[] = [
+export const ArrayDetallePedidos: ReadonlyArray<DetallePedidosAdn> = [
   {
     idPedido: 1,
     order: 4,

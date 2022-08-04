@@ -4,7 +4,7 @@ export interface TablePedidos {
   Valor_Total: number;
   estado: string;
 }
-export const ArrayItemsPedidos: TablePedidos[] = [
+export const ArrayItemsPedidos: ReadonlyArray<TablePedidos> = [
   {
     id_venta: 1,
     fecha_venta: '12/08/2022',
@@ -75,7 +75,7 @@ export interface HeaderTablePedido {
   opciones: string;
 }
 
-export const HeaderItemsTable: HeaderTablePedido = {
+export const HeaderItemsTable: Readonly<HeaderTablePedido> = {
   id_venta: 'Nº Orden',
   fecha_venta: 'Fecha',
   Valor_Total: 'Valor Pagado',

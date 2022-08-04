@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { RolUserService } from 'src/app/guards/services/rol-user.service';
 import { TokenService } from 'src/app/login/services/token.service';
-import { EncryptService } from '../../class/Encryptar';
 import { UrlFront } from '../../routes/RoutesFront';
-import { ListPedidosUsers } from './models/ListPedidos.models';
-import { ClientListPedidosService } from './services/client-list-pedidos.service';
 
 @Component({
   selector: 'app-list-pedidos',
@@ -16,16 +14,14 @@ export class ListPedidosComponent implements OnInit {
   rolTipoUsuario: string = '';
   rolTipo: any;
   idUsuario: any;
-  constructor(
-    private token: TokenService,
-    private encrypServi: EncryptService
-  ) {
+  constructor(private token: TokenService, private typeRol: RolUserService) {
     this.idUsuario = this.token.getTokenId();
   }
 
   ngOnInit(): void {
     this.verifyRolUsuario();
   }
+
   verifyRolUsuario() {
     this.irAlPerfilUsuario();
     if (this.rolTipoUsuario === '1') {
@@ -39,14 +35,7 @@ export class ListPedidosComponent implements OnInit {
   }
   //IR AL PERFIL DE USUARIO
   irAlPerfilUsuario() {
-    this.rolTipo = localStorage.getItem('dataUsuarioItems');
-    if (this.rolTipo) {
-      this.rolTipo = this.encrypServi.encrypOrDesrypRol(
-        this.rolTipo,
-        'Desencriptar'
-      ); //DESENCRIPTAR
-      this.rolTipoUsuario = this.rolTipo;
-      //this.authServi.verificarTipoRol(this.rolTipo); //PARA IR A LA RUTA SEGUN EL ROL
-    }
+    this.rolTipo = this.typeRol.desCryptRolUser();
+    this.rolTipoUsuario = this.rolTipo;
   }
 }

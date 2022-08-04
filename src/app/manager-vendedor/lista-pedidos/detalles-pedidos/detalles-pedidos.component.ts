@@ -13,7 +13,7 @@ import {
 })
 export class DetallesPedidosComponent implements OnInit {
   ruta: string = `${UrlFront.Manager.vendedor}/${UrlFront.Manager.listaDePedidos}`;
-  arrayDetallePedido: DetallePedidosAdn[] = ArrayDetallePedidos;
+  arrayDetallePedido = ArrayDetallePedidos;
   pedidosMapeado: any; //PARA GUARDAR EL NUEVO ARREGLO SEGUN BUSCADO EN LA LISTA DE PEDIDOS DETALLES
   id: any;
   constructor(private router: ActivatedRoute) {
