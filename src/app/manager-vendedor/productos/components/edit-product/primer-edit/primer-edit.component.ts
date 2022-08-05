@@ -30,7 +30,6 @@ export class PrimerEditComponent implements OnInit, OnChanges {
     private formCateogiras: BaseFormCategorias,
     private formEtiquetas: BaseFormEtiquetas
   ) {}
-  /* EVENTO PARA NG ON CHANGES */
   ngOnChanges(changes: SimpleChanges): void {
     if (changes.productEdit.currentValue != changes.productEdit.previousValue) {
       this.productEdit = changes.productEdit.currentValue;
@@ -39,7 +38,7 @@ export class PrimerEditComponent implements OnInit, OnChanges {
   }
 
   ngOnInit(): void {
-    // this.setFormProduct();
+    //this.setFormProduct();
   }
   //SETEANDO ID EN EL FORMULARIO
   getIdForm() {

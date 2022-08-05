@@ -27,7 +27,6 @@ export class ImgGalleryProductsComponent
     public formGallery: ImgGalleryForm,
     private imgValidar: ValidarYTransformarImagen //VALIDAR IMAGENES Y TRANSFORMAR
   ) {}
-
   ngOnChanges(changes: SimpleChanges): void {
     if (
       changes.detalleArticulo.currentValue !=
@@ -39,7 +38,7 @@ export class ImgGalleryProductsComponent
   }
   ngOnInit(): void {
     this.formGallery.limpiarFormularioString();
-    //this.setImgArray();
+    // this.setImgArray();
   }
   ngOnDestroy(): void {}
 

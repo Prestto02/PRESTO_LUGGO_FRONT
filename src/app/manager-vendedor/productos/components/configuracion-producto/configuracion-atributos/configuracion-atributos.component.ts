@@ -26,7 +26,6 @@ export class ConfiguracionAtributosComponent implements OnInit, OnChanges {
     public formGlobalPrecio: BaseFormGlobalPrecio,
     public formAtributosDos: BaseFormConfigAtributos2
   ) {}
-  /* ON CHANGES DE PARA LA ESPERA DE ATRIBUTOS */
   ngOnChanges(changes: SimpleChanges): void {
     if (changes.productEdit.currentValue != changes.productEdit.previousValue) {
       this.productEdit = changes.productEdit.currentValue;
@@ -35,7 +34,7 @@ export class ConfiguracionAtributosComponent implements OnInit, OnChanges {
   }
 
   ngOnInit(): void {
-    //this.editProductSet();
+    // this.editProductSet();
   }
   //ELIMINAR LOS ITEMS DEL ARRAY FORM
   removeItemsChecked(i: any) {
@@ -91,13 +90,11 @@ export class ConfiguracionAtributosComponent implements OnInit, OnChanges {
     }
   }
   editProductSet() {
-    setTimeout(() => {
-      if (this.productEdit) {
-        this.setProduct();
-        this.verifyCheckIvaEdit();
-        this.verifyCheckIceEdit();
-      }
-    }, 2000);
+    if (this.productEdit) {
+      this.setProduct();
+      this.verifyCheckIvaEdit();
+      this.verifyCheckIceEdit();
+    }
   }
 
   setProduct() {

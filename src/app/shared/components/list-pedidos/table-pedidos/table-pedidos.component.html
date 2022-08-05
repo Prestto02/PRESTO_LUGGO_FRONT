@@ -1,20 +1,28 @@
+<div class="col-xxl-12 col-xl-12 col-md-4 col-sm-12 col-12 d-flex justify-content-end">
+  <div class="mb-3 col-xl-4" [formGroup]="formBuy.formSearch">
+    <input type="text" class="form-control" id="exampleFormControlInput1" formControlName="searchProduct"
+      placeholder="Buscar por N° Orden, fecha, estado, valor">
+  </div>
+</div>
 <ng-container *ngIf="arrayTable.length>0 else notData">
   <div class="table-responsive rounded bg-white mb-3 mt-3">
     <table class="table table-striped table-hover table-borderless">
       <thead class="bg-white">
         <tr class="text-center">
           <th scope="col" class="text-tamano espacios">{{HeaderTable.id_venta}}</th>
-          <th scope="col" class="text-tamano espacios">{{HeaderTable.fecha_venta}}</th>
+          <th scope="col" class="text-tamano espacios">{{HeaderTable.fecha_venta }}</th>
           <th scope="col" class="text-tamano espacios">{{HeaderTable.Valor_Total}}</th>
           <th scope="col" class="text-tamano espacios">{{HeaderTable.estado}}</th>
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let ventas of arrayTable | paginate: {itemsPerPage:8,currentPage:p}" class="text-center"
-          (click)="getPedidosClient(ventas.id_venta)" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        <tr
+          *ngFor="let ventas of arrayTable | searchBuy:formBuy.formSearch.get('searchProduct')?.value | paginate: {itemsPerPage:8,currentPage:p};"
+          class="text-center" (click)="getPedidosClient(ventas.id_venta)" data-bs-toggle="modal"
+          data-bs-target="#exampleModal">
           <th scope="row" class="mb-3 mt-3 espacios btn-hover">{{ventas.id_venta}}</th>
-          <td class="mb-3 mt-3 espacios btn-hover">{{ventas.fecha_venta}}</td>
-          <td class="mb-3 mt-3 espacios btn-hover">{{ventas.Valor_Total | currency:'USD'}}</td>
+          <td class="mb-3 mt-3 espacios btn-hover">{{ventas.fecha_venta | date: 'M-d-yyyy, h:mm:ss a'}}</td>
+          <td class="mb-3 mt-3 espacios btn-hover">{{ventas.valor_Total | currency:'USD'}}</td>
           <td class="mb-3 mt-2 espacios btn-hover">
             <span appColorBadge [colorBadgeState]="ventas.estado" class="badge btn-hover">{{ventas.estado}}</span>
           </td>
@@ -35,4 +43,4 @@
   <h5 class="text-center">No hay lista de pedidos aún</h5>
 </ng-template>
 <!-- MODAL PARA EL LISTADO DE PEDIDOS -->
-<app-item-pedidos [listPedidos]="listPedidos"></app-item-pedidos>
+<app-item-pedidos [listPedidos]="listDetallesPedidos"></app-item-pedidos>

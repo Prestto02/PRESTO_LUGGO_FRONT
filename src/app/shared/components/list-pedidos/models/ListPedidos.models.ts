@@ -1,9 +1,9 @@
-export interface ListPedidosUsers {
+export interface ListBuyUsers {
   id_venta: number;
   total: number;
-  total_items:number;
-  total_products:number;
-  detalle_venta: [DetalleVenta];
+  total_items: number;
+  total_products: number;
+  detalle_venta: ReadonlyArray<DetalleVenta>;
 }
 
 export interface DetalleVenta {
@@ -14,6 +14,7 @@ export interface DetalleVenta {
   nombre_tienda: string;
   item: number;
   iva: string;
+  valor_envio: number;
   sub_Total_producto: number;
   estado_pedido: string;
 }

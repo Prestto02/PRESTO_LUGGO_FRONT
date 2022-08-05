@@ -3,13 +3,13 @@ import { UrlFront } from 'src/app/shared/routes/RoutesFront';
 import { MenuClient } from './MenuClients.interface';
 
 export const ItemsClientMenu: MenuClient[] = [
-/*   {
+  {
     id: 1,
     title: 'Mis Compras',
     icons: `${RepositorioImg.urlRepositorio}img/IMÁGENES/list-content-adn.png`,
     subtitle: 'Verifica el historial de tus compras.',
     link: `${UrlFront.listaPedidos.lista}/${UrlFront.listaPedidos.listado}`,
-  }, */
+  },
 /*   {
     id: 2,
     title: 'Mis pagos',
@@ -36,7 +36,7 @@ export const ItemsClientMenu: MenuClient[] = [
     title: 'Mis Favoritos',
     icons: `${RepositorioImg.urlRepositorio}img/IMÁGENES/Portal-Usuario-Comprador/favoritos.png`,
     subtitle: 'Mira tu lista de deseos.',
-    link: `${UrlFront.Cliente.cliente}/${UrlFront.Cliente.miCuenta}`,
+    link: `${UrlFront.Menu.menu}/${UrlFront.ListaDeseos.listaDeseos}`,
   },
 /*   {
     id: 6,

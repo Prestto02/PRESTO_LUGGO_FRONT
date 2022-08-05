@@ -27,9 +27,17 @@ export class GestionDimensionComponent implements OnInit, OnChanges {
     }
   }
 
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes.productEdit.currentValue != changes.productEdit.previousValue) {
+      this.productEdit = changes.productEdit.currentValue;
+      this.getDataForm();
+      this.verifyPuerttoOrAdn();
+    }
+  }
+
   ngOnInit(): void {
-    this.getDataForm();
-    this.verifyPuerttoOrAdn();
+    // this.getDataForm();
+    //this.verifyPuerttoOrAdn();
   }
   /*   abrirPuerto(e: any) {
     this.formTamano.formTamanoProducto.patchValue({
@@ -64,12 +72,10 @@ export class GestionDimensionComponent implements OnInit, OnChanges {
     }
   }
   getDataForm() {
-    setTimeout(() => {
-      if (this.productEdit) {
-        this.setFormDataProductEdit();
-        this.verifyPuerttoOrAdn();
-      }
-    }, 1000);
+    if (this.productEdit) {
+      this.setFormDataProductEdit();
+      this.verifyPuerttoOrAdn();
+    }
   }
 
   setFormDataProductEdit() {

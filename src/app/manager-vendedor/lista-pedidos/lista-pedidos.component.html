@@ -16,7 +16,6 @@
         <ng-container [formGroup]="formB.formSearch">
           <input type="text" class="form-control" placeholder="Buscar por n° de orden,fecha, realizado por"
             aria-label="Username" aria-describedby="filtrar-pedidos" formControlName="buscador">
-      <!--     <button class="input-group-text" id="filtrar-pedidos">Buscar</button> -->
         </ng-container>
       </div>
     </div>
@@ -37,12 +36,12 @@
         <tbody>
           <tr
             *ngFor="let pedidos of arrayListaPedidos | filterPedidosLista:formB.formSearch.get('buscador')?.value | paginate: {itemsPerPage:8,currentPage:p};"
-            (click)="buscarDetallePedido(pedidos.id);" class="cursor">
-            <th scope="row" class="text-center espacio"><b>{{pedidos.NumeroOrden}}</b></th>
-            <td class="text-center espacio">{{pedidos.Fecha | date: 'M-d-yyyy, h:mm a' }}</td>
-            <td class="text-center espacio"><b>{{pedidos.Total | currency:'USD'}}</b></td>
-            <td class="text-center espacio">{{pedidos.Orden}}</td>
-            <td class="espacio"><span appStateBadge [estado]="pedidos.Estado" class="badge">{{pedidos.Estado}}</span>
+            (click)="buscarDetallePedido(pedidos.numeroOrden);" class="cursor">
+            <th scope="row" class="text-center espacio"><b>#{{pedidos.numeroOrden}}</b></th>
+            <td class="text-center espacio">{{pedidos.fecha | date: 'M-d-yyyy, h:mm a' }}</td>
+            <td class="text-center espacio"><b>{{pedidos.total | currency:'USD'}}</b></td>
+            <td class="text-center espacio">{{pedidos.orden_cliente}}</td>
+            <td class="espacio"><span appStateBadge [estado]="pedidos.estado" class="badge">{{pedidos.estado}}</span>
             </td>
           </tr>
         </tbody>

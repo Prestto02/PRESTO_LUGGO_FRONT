@@ -8,6 +8,10 @@ import { FooterIndexModule } from '../../index/footer-index/module/footer-index.
 import { TablePedidosComponent } from '../table-pedidos/table-pedidos.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { ColorBadgeDirective } from '../table-pedidos/directive/color-badge.directive';
+import { PlantillaAdnClientComponent } from '../plantilla-adn-client/plantilla-adn-client.component';
+import { SearchBuyPipe } from '../table-pedidos/pipe/search-buy.pipe';
+import { ReactiveFormsModule } from '@angular/forms';
+import { FormSearchBuy } from '../models/FormSearchBuy';
 
 @NgModule({
   declarations: [
@@ -15,13 +19,17 @@ import { ColorBadgeDirective } from '../table-pedidos/directive/color-badge.dire
     ItemPedidosComponent,
     TablePedidosComponent,
     ColorBadgeDirective,
+    PlantillaAdnClientComponent,
+    SearchBuyPipe,
   ],
   imports: [
     CommonModule,
     ListaPedidosRoutingModule,
     NgxPaginationModule,
+    ReactiveFormsModule,
     MenuIndexModule,
     FooterIndexModule,
   ],
+  providers: [FormSearchBuy],
 })
 export class ListPedidosModule {}

@@ -1,12 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ListPedidosUsers } from '../models/ListPedidos.models';
+import { FormSearchBuy } from '../models/FormSearchBuy';
+import { ListBuyUsers } from '../models/ListPedidos.models';
 import { ClientListPedidosService } from '../services/client-list-pedidos.service';
-import {
-  ArrayItemsPedidos,
-  HeaderItemsTable,
-  HeaderTablePedido,
-  TablePedidos,
-} from './ArrayItemsPedidos';
+import { HeaderItemsTable, TableBuy } from './ArrayItemsPedidos';
 
 @Component({
   selector: 'app-table-pedidos',
@@ -14,26 +10,33 @@ import {
   styleUrls: ['./table-pedidos.component.css'],
 })
 export class TablePedidosComponent implements OnInit {
-  HeaderTable: HeaderTablePedido = HeaderItemsTable;
-  arrayTable: TablePedidos[] = ArrayItemsPedidos;
-  listPedidos: ListPedidosUsers[] = [];
+  HeaderTable = HeaderItemsTable;
+  arrayTable: ReadonlyArray<TableBuy> = [];
+  listDetallesPedidos: any;
   p: number = 1; //PAGINACION EN 1
-  constructor(private apiVenta: ClientListPedidosService) {}
+  constructor(
+    private apiVenta: ClientListPedidosService,
+    public formBuy: FormSearchBuy
+  ) {}
 
   ngOnInit(): void {
-    //this.getVentasUsers();
+    this.getVentasUsers();
   }
   //GET VENTAS USERS
   getVentasUsers() {
-    this.apiVenta.getVentasUsers().subscribe((res: TablePedidos[]) => {
-      this.arrayTable = res;
-    });
+    this.apiVenta
+      .getVentasUsers()
+      .subscribe((res: ReadonlyArray<TableBuy>) => {
+        this.arrayTable = res;
+      });
   }
 
   //OBTENTER TODOS LOS PEDIDOS DE LOS CLIENTES
   getPedidosClient(id: number) {
-    this.apiVenta.getPedidosUsers(id).subscribe((res: ListPedidosUsers[]) => {
-      this.listPedidos = res;
-    });
+    this.apiVenta
+      .getPedidosUsers(id)
+      .subscribe((res: Readonly<ListBuyUsers>) => {
+        this.listDetallesPedidos = res;
+      });
   }
 }

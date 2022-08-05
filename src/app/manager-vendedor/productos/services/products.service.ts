@@ -9,6 +9,8 @@ import { UrlApi } from '../../../shared/routes/RoutesApi';
 export class ProductsService {
   private productDataSource = new BehaviorSubject<Array<any>>([]); //CREO El behaviorSUBJECT
   productDataPagination = this.productDataSource.asObservable(); //OBTENGO EL BEHAVIORSUBJECT
+  private productListAdn = new BehaviorSubject<Array<any>>([]);
+  productDataADn = this.productListAdn.asObservable();
   //CONSTRUCTOR
   dataScrollProduct: Array<any> = []; //PARA GUARDAR EN UN ARRAY LO QUE PIDA DE LA PAGINACION DE LA API
   constructor(private http: HttpClient) {}
@@ -68,5 +70,10 @@ export class ProductsService {
   unSuscribeObservable() {
     this.dataScrollProduct = [];
     this.productDataSource.next(this.dataScrollProduct);
+  }
+
+  //PRODUCT LIST ADN
+  setProductListAdn(product: any) {
+    this.productListAdn.next(product);
   }
 }

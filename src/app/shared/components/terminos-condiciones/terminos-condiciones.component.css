@@ -1,37 +1,55 @@
 * {
   font-family: Cardium B-Medium;
+  -youbkit-touch-callout: none; /*iOS Safari*/
+  -youbkit-user-select: none; /* Chrome 6.0+, Safari 3.1+, Edge y Opera 15+ */
+  -moz-user-select: none; /*Firefox*/
+  -ms-user-select: none; /* IE 10+ y Edge */
+  user-select: none; /* Versión sin prefijo,
+                              actualmente compatible con Chrome y Opera */
 }
-p {
-  font-family: Lato;
-}
-.columnas-items {
-  position: sticky;
-  /*   top: 120px; */
-  transition: 0.3s;
-}
+/*
 .current-section {
   background-color: #ea2313;
   color: #fff;
-  padding: 12px;
   border-radius: 6px;
+  padding: 12px;
 }
-.tamano-container {
-  height: 650px;
+.title {
+  font-weight: 700;
+  color: #000;
 }
 #parentDiv {
   height: 600px;
   overflow-y: scroll;
-  position: sticky;
-  /*   top: 120px; */
-  transition: 0.3s;
 }
 #parentDiv::-webkit-scrollbar {
   display: none;
 }
-.cursor {
-  cursor: pointer;
+ */
+
+.text-title {
+  font-weight: 700;
+  font-size: 24px;
+  text-align: center;
+  padding: 20px 0px;
 }
 
-ul {
-  list-style: none;
+.text-parrafo {
+  font-family: Cardium B-Regular;
+  font-weight: 400;
+  font-size: 16px;
+  width: 80%;
+  text-align: justify;
+  margin: auto;
+  padding-bottom: 20px;
+}
+
+.text-subtitle {
+  font-weight: 700;
+  font-size: 20px;
+  font-weight: 400;
+  width: 80%;
+  margin: auto;
+  padding-bottom: 20px;
+  text-align: start;
 }

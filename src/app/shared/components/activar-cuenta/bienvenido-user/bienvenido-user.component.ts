@@ -17,7 +17,7 @@ export class BienvenidoUserComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.enviarCodigo();  //ENVIO EL CODIGO AL SERVIDOR PARA VERIFICAR
+    this.enviarCodigo(); //ENVIO EL CODIGO AL SERVIDOR PARA VERIFICAR
   }
   //REVISAR EL CODIGO DE VALIDACIoN Del USUARIO
   enviarCodigo() {
@@ -25,11 +25,8 @@ export class BienvenidoUserComponent implements OnInit {
       codigo_activacion: this.codigoCheck,
     }; //HAGO EL JSON PARA EL CODIGO
     this.apiCheck.postCheckRegister(codigo).subscribe(
-      (res) => {
-        console.log('success', res);
-      },
+      (res) => {},
       (err) => {
-        console.log(err);
         this.route.navigateByUrl(
           `${UrlFront.Login.login}/${UrlFront.Login.iniciarSesion}`
         );

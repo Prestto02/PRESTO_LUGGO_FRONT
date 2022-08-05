@@ -14,7 +14,7 @@ export const ArrayTerminos: ReadonlyArray<TerminosCondiciones> = [
   {
     id: 1,
     nombre: 'Seccion 1',
-    identify: 'section1',
+    identify: 'seccion1',
     items: [
       {
         id: 1,
@@ -36,7 +36,7 @@ export const ArrayTerminos: ReadonlyArray<TerminosCondiciones> = [
   {
     id: 2,
     nombre: 'Seccion 2',
-    identify: 'section2',
+    identify: 'seccion2',
     items: [
       {
         id: 1,
@@ -58,7 +58,7 @@ export const ArrayTerminos: ReadonlyArray<TerminosCondiciones> = [
   {
     id: 3,
     nombre: 'Seccion 3',
-    identify: 'section3',
+    identify: 'seccion3',
     items: [
       {
         id: 1,

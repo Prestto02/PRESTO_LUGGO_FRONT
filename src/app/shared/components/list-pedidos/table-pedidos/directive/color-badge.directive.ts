@@ -14,6 +14,7 @@ export class ColorBadgeDirective implements AfterViewInit {
 
   constructor(private render2: Renderer2, private elementRef: ElementRef) {}
   elementBadge: ElementRef = this.elementRef.nativeElement;
+
   ngAfterViewInit(): void {
     this.getStateColorBadge();
   }
