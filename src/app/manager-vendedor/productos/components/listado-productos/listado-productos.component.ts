@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { PositionUser } from 'src/app/shared/class/PositionUser';
 import { RepositorioImg } from 'src/app/shared/helpers/RepositorioImg';
@@ -15,6 +15,7 @@ import { EditProductService } from '../edit-product/service/edit-product.service
 export class ListadoProductosComponent implements OnInit {
   public urlImg = RepositorioImg.urlRepositorio;
   img2 = `${RepositorioImg.urlRepositorio}img/IMÁGENES/audifonos_sony.jpeg`;
+  dialogVisibleDelete: boolean = false;
   constructor(
     private apiProducts: ProductsService, //PRODUCTS SERVIES
     private _router: Router,
@@ -30,28 +31,41 @@ export class ListadoProductosComponent implements OnInit {
   searchProducts = '';
   load = false;
   date = new Date();
+  idProducto: any;
   ngOnInit(): void {
     this.position.getPositionUser();
     this.getAllProducts();
   }
-
   //OBTENER TODOS LOS PRODUCTOS
   getAllProducts() {
     this.load = true;
     setTimeout(() => {
       this.apiProducts.getDataProductos().subscribe((res) => {
         this.dataProducts = res;
+
+        /*       this.apiProducts.setProductListAdn(res); */
       });
-      this.load = false;
-    }, 2500);
+    }, 2000);
+    /*   this.apiProducts.productDataADn.subscribe((res) => {
+      this.dataProducts = res;
+    }); */
+    this.load = false;
   }
-  //PARA ELIMINAR EL PRODUCTO
-  eliminarProduct(id: any) {
-    if (confirm(`Se eliminara el producto con id: ${id}`)) {
-      this.apiProducts.eliminarProducto(id).subscribe((res: any) => {
-        this.getAllProducts();
-      });
-    }
+
+  /* CERRAR MODAL */
+  cerrarModalDelete(): void {
+    this.dialogVisibleDelete = false;
+  }
+  eliminarDireccion(): void {
+    this.apiProducts.eliminarProducto(this.idProducto).subscribe((res: any) => {
+      this.getAllProducts();
+    });
+    this.cerrarModalDelete();
+  }
+  /* ABRIR MODAL */
+  abrirModalEliminar(id: any): void {
+    this.idProducto = id;
+    this.dialogVisibleDelete = true;
   }
   //EDITAR PRODUCTOS
   editarProduct(product: any) {
@@ -93,6 +107,7 @@ export class ListadoProductosComponent implements OnInit {
       this.position.longitud,
       this.position.latitud
     );
+
     this.apiEditProduct.editProduct(form, form.Id_articulo).subscribe((res) => {
       this.getAllProducts();
     });

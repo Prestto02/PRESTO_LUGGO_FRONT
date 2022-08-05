@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { TokenService } from 'src/app/login/services/token.service';
+import { PositionUser } from 'src/app/shared/class/PositionUser';
 import { AddCarsOrListDesire } from 'src/app/shared/helpers/AddCarsOrListDesire';
 import { IFormularioPagar } from '../formulario-pagar/models/IPagarForm';
 
@@ -9,7 +10,8 @@ export class PagarOCarritoPost {
   idUser: any;
   constructor(
     private addCars: AddCarsOrListDesire,
-    private token: TokenService
+    private token: TokenService,
+    private positionUser: PositionUser
   ) {
     this.idUser = this.token.getTokenId();
   }
@@ -33,6 +35,7 @@ export class PagarOCarritoPost {
   //PAGAR SUBMIT
   pagarSubmit(form: IFormularioPagar, arrayProductsList: any) {
     this.arrayPagoProducts = [];
+    this.positionUser.getPositionUser();
     arrayProductsList.map((res: any) => {
       this.arrayPagoProducts.push({
         cantidad: res.item,
@@ -43,6 +46,8 @@ export class PagarOCarritoPost {
     const formPayments: any = {
       ...form,
       detalle_Venta: this.arrayPagoProducts,
+      latitud: this.positionUser.latitud,
+      longitud: this.positionUser.longitud,
     };
     return formPayments;
   }

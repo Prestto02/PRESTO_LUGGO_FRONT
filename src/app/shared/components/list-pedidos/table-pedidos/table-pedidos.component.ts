@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { FormSearchBuy } from '../models/FormSearchBuy';
 import { ListPedidosUsers } from '../models/ListPedidos.models';
 import { ClientListPedidosService } from '../services/client-list-pedidos.service';
 import {
   ArrayItemsPedidos,
   HeaderItemsTable,
-  HeaderTablePedido,
   TablePedidos,
 } from './ArrayItemsPedidos';
 
@@ -15,10 +15,13 @@ import {
 })
 export class TablePedidosComponent implements OnInit {
   HeaderTable = HeaderItemsTable;
-  arrayTable = ArrayItemsPedidos;
+  arrayTable: ReadonlyArray<TablePedidos> = ArrayItemsPedidos;
   listDetallesPedidos: ReadonlyArray<ListPedidosUsers> = [];
   p: number = 1; //PAGINACION EN 1
-  constructor(private apiVenta: ClientListPedidosService) {}
+  constructor(
+    private apiVenta: ClientListPedidosService,
+    public formBuy: FormSearchBuy
+  ) {}
 
   ngOnInit(): void {
     //this.getVentasUsers();

@@ -19,7 +19,7 @@ export class ClientListPedidosService {
 
   getVentasUsers(): Observable<TablePedidos[]> {
     return this.http.get<TablePedidos[]>(
-      `${UrlApi.ApiUrl}${UrlApi.ventaListaPedido}`
+      `${UrlApi.ApiUrl}${UrlApi.listadoPedidos}`
     );
   }
 }

@@ -4,7 +4,7 @@ export interface TablePedidos {
   Valor_Total: number;
   estado: string;
 }
-export const ArrayItemsPedidos: ReadonlyArray<TablePedidos> = [
+export const ArrayItemsPedidos: TablePedidos[] = [
   {
     id_venta: 1,
     fecha_venta: '12/08/2022',
@@ -21,7 +21,7 @@ export const ArrayItemsPedidos: ReadonlyArray<TablePedidos> = [
     id_venta: 3,
     fecha_venta: '22/11/2022',
     Valor_Total: 121.88,
-    estado: 'Cancelado',
+    estado: 'Rechazado',
   },
   {
     id_venta: 4,
@@ -51,7 +51,7 @@ export const ArrayItemsPedidos: ReadonlyArray<TablePedidos> = [
     id_venta: 8,
     fecha_venta: '09/04/2022',
     Valor_Total: 192.0,
-    estado: 'Cancelado',
+    estado: 'Rechazado',
   },
   {
     id_venta: 9,

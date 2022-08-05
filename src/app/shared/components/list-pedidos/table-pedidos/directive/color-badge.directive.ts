@@ -26,7 +26,7 @@ export class ColorBadgeDirective implements AfterViewInit {
     if (this.colorBadgeState === 'Pendiente') {
       this.render2.addClass(this.elementBadge, 'bg-warning');
     }
-    if (this.colorBadgeState === 'Cancelado') {
+    if (this.colorBadgeState === 'Rechazado') {
       this.render2.addClass(this.elementBadge, 'bg-danger');
     }
   }
