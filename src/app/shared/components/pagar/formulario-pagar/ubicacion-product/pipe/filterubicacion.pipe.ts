@@ -6,7 +6,7 @@ import { Direcciones } from '../../../../../../direcciones/models/Direcciones.mo
 })
 export class FilterubicacionPipe implements PipeTransform {
   transform(value: Direcciones[], searchDireccion: string): Direcciones[] {
-    if (searchDireccion === '' || searchDireccion.length < 2) return value; //PREGUNTO SI ES VACIO O TIENE MENOS 2 CARACTERES NO HACER NADA
+    if (searchDireccion == '' || searchDireccion.length < 2 || !searchDireccion) return value; //PREGUNTO SI ES VACIO O TIENE MENOS 2 CARACTERES NO HACER NADA
     //BUSCAR POR FILTRO
     const filterDireccion = value.filter(
       (res: Direcciones) =>
