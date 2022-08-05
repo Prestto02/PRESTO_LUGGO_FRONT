@@ -1,4 +1,4 @@
-export interface ListPedidosUsers {
+export interface ListBuyUsers {
   id_venta: number;
   total: number;
   total_items: number;
@@ -14,6 +14,7 @@ export interface DetalleVenta {
   nombre_tienda: string;
   item: number;
   iva: string;
+  valor_envio: number;
   sub_Total_producto: number;
   estado_pedido: string;
 }

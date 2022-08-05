@@ -47,6 +47,17 @@
   font-size: 18px;
   font-weight: 700;
 }
+.img-fluid-content{
+  max-width: 60%;
+  height: auto;
+}
+.modal-body-scroll{
+  height: 450px;
+  overflow: auto;
+}
+.modal-body-scroll::-webkit-scrollbar{
+  display: none;
+}
 @media screen and (max-width: 880px) {
   .codigo-venta {
     font-size: 20px;

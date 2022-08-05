@@ -1,12 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormSearchBuy } from '../models/FormSearchBuy';
-import { ListPedidosUsers } from '../models/ListPedidos.models';
+import { ListBuyUsers } from '../models/ListPedidos.models';
 import { ClientListPedidosService } from '../services/client-list-pedidos.service';
-import {
-  ArrayItemsPedidos,
-  HeaderItemsTable,
-  TablePedidos,
-} from './ArrayItemsPedidos';
+import { HeaderItemsTable, TableBuy } from './ArrayItemsPedidos';
 
 @Component({
   selector: 'app-table-pedidos',
@@ -15,8 +11,8 @@ import {
 })
 export class TablePedidosComponent implements OnInit {
   HeaderTable = HeaderItemsTable;
-  arrayTable: ReadonlyArray<TablePedidos> = ArrayItemsPedidos;
-  listDetallesPedidos: ReadonlyArray<ListPedidosUsers> = [];
+  arrayTable: ReadonlyArray<TableBuy> = [];
+  listDetallesPedidos: any;
   p: number = 1; //PAGINACION EN 1
   constructor(
     private apiVenta: ClientListPedidosService,
@@ -24,13 +20,13 @@ export class TablePedidosComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    //this.getVentasUsers();
+    this.getVentasUsers();
   }
   //GET VENTAS USERS
   getVentasUsers() {
     this.apiVenta
       .getVentasUsers()
-      .subscribe((res: ReadonlyArray<TablePedidos>) => {
+      .subscribe((res: ReadonlyArray<TableBuy>) => {
         this.arrayTable = res;
       });
   }
@@ -39,7 +35,7 @@ export class TablePedidosComponent implements OnInit {
   getPedidosClient(id: number) {
     this.apiVenta
       .getPedidosUsers(id)
-      .subscribe((res: ReadonlyArray<ListPedidosUsers>) => {
+      .subscribe((res: Readonly<ListBuyUsers>) => {
         this.listDetallesPedidos = res;
       });
   }

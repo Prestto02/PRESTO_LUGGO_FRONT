@@ -1,24 +1,25 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { TablePedidos } from '../ArrayItemsPedidos';
+import { TableBuy } from '../ArrayItemsPedidos';
 
 @Pipe({
   name: 'searchBuy',
 })
 export class SearchBuyPipe implements PipeTransform {
   transform(
-    compras: ReadonlyArray<TablePedidos>,
+    compras: ReadonlyArray<TableBuy>,
     search: string
-  ): ReadonlyArray<TablePedidos> {
+  ): ReadonlyArray<TableBuy> {
     if (search === '' || !search) return compras;
     if (!compras) return [];
     return compras.filter(
-      (res: Readonly<TablePedidos>) =>
+      (res: Readonly<TableBuy>) =>
+        res.id_venta.toString().indexOf(search.toString()) !== -1 || //POR ORDEN
         res.estado
           .toString()
           .toLocaleLowerCase()
           .indexOf(search.toLocaleLowerCase()) !== -1 || //BUSCAR POR ESTADO DEL PRODUCTO
         res.fecha_venta.toString().indexOf(search.toString()) !== -1 || //FECHA
-        res.Valor_Total.toString().indexOf(search.toString()) !== -1 //VALOR TOTAL
+        res.valor_Total.toString().indexOf(search.toString()) !== -1 //VALOR TOTAL
     );
   }
 }

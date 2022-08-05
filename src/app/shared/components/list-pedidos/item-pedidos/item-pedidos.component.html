@@ -4,19 +4,22 @@
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Detalle de la orden</h5>
-        <p>{{totalProducts}}&nbsp;productos,{{itemsProducts}}&nbsp;ítems</p>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="modal-body">
+      <div class="modal-body modal-body-scroll">
         <div class="col-xxl-12 col-xl-12 col-md-12 col-sm-12 col-12">
           <div class="row">
-            <ng-container *ngIf="listPedidos">
-              <div class="col-xxl-12 col-xl-12 col-md-12 col-sm-12 col-12" *ngFor="let list of listPedidos">
-                <p class="codigo-venta text-center mt-3">Pedido Nº <b class="id_venta">{{list.id_venta}}</b></p>
+            <ng-container *ngIf="listBuyDetails">
+              <div class="col-xxl-12 col-xl-12 col-md-12 col-sm-12 col-12">
+                <p class="codigo-venta text-center mt-3">Pedido Nº <b class="id_venta">{{listBuyDetails.id_venta}}</b>
+                </p>
+                <p class="text-center mb-3">
+                  {{listBuyDetails?.total_products}}&nbsp;productos,{{listBuyDetails?.total_items}}&nbsp;ítems</p>
                 <div class="row">
-                  <ng-container *ngFor="let listDetalle of list.detalle_venta">
-                    <div class="col-xl-4 col-xxl-4 col-md-4 col-sm-3 col-3">
-                      <img [src]="imgIcons+listDetalle.img" class="img-fluid" [alt]="list.id_venta" />
+                  <ng-container *ngFor="let listDetalle of listBuyDetails.detalle_venta">
+                    <div class="col-xl-4 col-xxl-4 col-md-4 col-sm-3 col-3 d-flex justify-content-center p-3">
+                      <img [src]="imgIcons+listDetalle.img" class="img-fluid-content"
+                        [alt]="listDetalle.id_detalle_venta" />
                     </div>
                     <div class="col-xl-5 col-xxl-5 col-md-5 col-sm-6 col-6 flex-box">
                       <p class="">{{listDetalle.nombre_producto}}</p>
@@ -28,10 +31,11 @@
                     </div>
                     <div class="col-xxl-3 col-xl-3 col-md-3 col-sm-3 col-3 flex-box">
                       <p class="subtotal-producto text-center">{{listDetalle.sub_Total_producto | currency:'USD'}}</p>
-                      <p class="mt-5 text-center">$0</p>
+                      <p class="mt-5 text-center">{{listDetalle.valor_envio | currency:'USD'}}</p>
                     </div>
                     <!--                   <p>iva:{{listDetalle.iva?'IVa aplica':''}}</p> -->
-                    <p class="badge badge-primary">{{listDetalle.estado_pedido}}</p>
+                    <p class="badge badge-primary ">{{listDetalle.estado_pedido}}</p>
+                    <hr class="mb-2">
                   </ng-container>
                 </div>
                 <!--                 <div class="row">
@@ -42,18 +46,18 @@
                     <p class="total-pagar">{{list.total | currency:'USD'}}</p>
                   </div>
                 </div> -->
-                <hr>
               </div>
-              <div class="row flex-box-total-pagar">
-                <div class="col-xl-5 col-xxl-5 col-md-5 col-sm-5 col-5">
-                  <p class="text-start total-pagado">Total Pagado:</p>
-                </div>
-                <div class="col-xl-5 col-xxl-5 col-md-5 col-sm-4 col-4">
-                  <p class="total-pagar text-end">{{209 | currency:'USD'}}</p>
-                </div>
-              </div>
+
             </ng-container>
           </div>
+        </div>
+      </div>
+      <div class="row flex-box-total-pagar">
+        <div class="col-xl-5 col-xxl-5 col-md-5 col-sm-5 col-5">
+          <p class="text-start total-pagado">Total Pagado:</p>
+        </div>
+        <div class="col-xl-5 col-xxl-5 col-md-5 col-sm-4 col-4">
+          <p class="total-pagar text-end">{{listBuyDetails?.total | currency:'USD'}}</p>
         </div>
       </div>
       <div class="modal-footer">
