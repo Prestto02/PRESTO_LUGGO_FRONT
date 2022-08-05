@@ -17,13 +17,13 @@ export const ListItemsAdn: ReadonlyArray<MenuClient> = [
     subtitle: 'Revisa el estado de tus pedidos online.',
     link: `${UrlFront.Manager.managerVendedor}/${UrlFront.Manager.vendedor}/${UrlFront.Manager.listaDePedidos}`,
   },
-  {
+/*   {
     id: 3,
     title: 'Pagos',
     icons: `${RepositorioImg.urlRepositorio}img/IMÁGENES/billeteraAdn.png`,
     subtitle: 'Revisa el estado de tus pedidos online.',
     link: `${UrlFront.Manager.managerVendedor}/${UrlFront.Manager.vendedor}`,
-  },
+  }, */
   {
     id: 3,
     title: 'Direcciones',

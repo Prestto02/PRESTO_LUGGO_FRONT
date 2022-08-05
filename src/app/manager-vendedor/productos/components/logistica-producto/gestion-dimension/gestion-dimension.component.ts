@@ -27,14 +27,6 @@ export class GestionDimensionComponent implements OnInit, OnChanges {
     }
   }
 
-  ngOnChanges(changes: SimpleChanges): void {
-    if (changes.productEdit.currentValue != changes.productEdit.previousValue) {
-      this.productEdit = changes.productEdit.currentValue;
-      this.getDataForm();
-      this.verifyPuerttoOrAdn();
-    }
-  }
-
   ngOnInit(): void {
     // this.getDataForm();
     //this.verifyPuerttoOrAdn();
