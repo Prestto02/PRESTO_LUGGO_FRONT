@@ -77,7 +77,7 @@ export const UrlApi = {
 
   pagarUser: 'api/Venta',
   //PEIDDOS DE ADN
-  pedidosAdn: '/api/mis-pedidos/',
+  pedidosAdn: 'api/pedido/mis-pedidos/',
   //LISTADO DE COMPRAS DE LOS CLIENTES
   ventaListaPedido: 'api/pedido/ventas',
   listadoPedidos: 'api/pedido/mis-compras',

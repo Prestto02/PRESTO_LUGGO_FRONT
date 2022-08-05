@@ -1,14 +1,12 @@
 export interface ListPedidosAdn {
-  id: number;
-  NumeroOrden: number;
-  Estado: string;
-  Total: number;
-  Orden: string;
-  Fecha: string;
-  items: number;
+  numeroOrden: number;
+  estado: string;
+  total: number;
+  orden_cliente: string;
+  fecha: string;
 }
 
-export const ArrayListPedidos: ListPedidosAdn[] = [
+/* export const ArrayListPedidos: ListPedidosAdn[] = [
   {
     id: 1,
     NumeroOrden: 4,
@@ -108,4 +106,4 @@ export const ArrayListPedidos: ListPedidosAdn[] = [
     Fecha: '08-15-2022 18:06',
     items: 5,
   },
-];
+]; */

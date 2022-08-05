@@ -10,7 +10,7 @@ import { ListPedidosAdn } from '../models/ListPedidosAdn';
 })
 export class ApiPedidosService {
   constructor(private http: HttpClient) {}
-
+  /* TODOS LOS PEDIDOS DEL ADN */
   getAllPedidosUser(): Observable<ReadonlyArray<ListPedidosAdn>> {
     return this.http.get<ReadonlyArray<ListPedidosAdn>>(
       `${UrlApi.ApiUrl}${UrlApi.pedidosAdn}`
