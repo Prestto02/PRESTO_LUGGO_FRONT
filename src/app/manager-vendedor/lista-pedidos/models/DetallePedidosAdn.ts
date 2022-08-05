@@ -7,6 +7,10 @@ export interface DetallePedidosAdn {
   TipoPago: string;
   DatosClientes: DatosCliente;
   DatosProductos: ReadonlyArray<DatosProductos>;
+  subtotal: number;
+  iva_total: number;
+  delivery: number;
+  total_pagar: number;
 }
 /* CLIENTE MODELS */
 interface DatosCliente {
@@ -29,7 +33,7 @@ interface DatosProductos {
 }
 /* DETALLE DE PEDIDOS */
 export const ArrayDetallePedidos: ReadonlyArray<DetallePedidosAdn> = [
-  {
+  /* {
     idPedido: 1,
     order: 4,
     Total: 122,
@@ -100,5 +104,5 @@ export const ArrayDetallePedidos: ReadonlyArray<DetallePedidosAdn> = [
         img: 'https://ecovitali.presttoapp.net/Puertto/Calidad/Repositorio/img/IMÁGENES/audifonos_sony.jpeg',
       },
     ],
-  },
+  }, */
 ];

@@ -5,7 +5,10 @@ import { ListPedidosAdn } from '../models/ListPedidosAdn';
   name: 'filterPedidosLista',
 })
 export class FilterPedidosListaPipe implements PipeTransform {
-  transform(listOrders: ListPedidosAdn[], search: string): ListPedidosAdn[] {
+  transform(
+    listOrders: ReadonlyArray<ListPedidosAdn>,
+    search: string
+  ): ReadonlyArray<ListPedidosAdn> {
     if (search == '' || !search) return listOrders;
     if (!listOrders) return [];
     const filterListPedidos = listOrders.filter(
