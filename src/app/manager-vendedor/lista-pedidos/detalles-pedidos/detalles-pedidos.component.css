@@ -1,6 +1,55 @@
 * {
-  font-family: Cardium B-Light;
+  font-family: Cardium B-Medium;
+  font-weight: 500;
 }
-.text-bajo{
-  color: rgba(0, 0, 0, 0.315);
+.text-bajo {
+  color: rgba(0, 0, 0, 0.747);
+}
+.text-pedido {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.text-total {
+  color: #ea2313;
+}
+
+.text-title {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.flex-box {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: space-evenly;
+  align-items: baseline;
+}
+
+.totalPagar {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+@media screen and (max-width: 680px) {
+  .totalPagar {
+    font-size: 14px;
+  }
+  .text-title {
+    font-size: 18px;
+  }
+  .text-pedido {
+    font-size: 18px;
+  }
+  * {
+    font-size: 12.5px;
+  }
+}
+@media screen and (max-width: 300px) {
+  img {
+    width: 60px;
+    height: 60px;
+  }
 }

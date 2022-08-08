@@ -18,7 +18,10 @@ export class FilterPedidosListaPipe implements PipeTransform {
           .indexOf(search.toLowerCase()) !== -1 ||
         pedidos.estado.toLowerCase().indexOf(search.toLowerCase()) !== -1 || //ESTADO DE PRODUCTO
         pedidos.orden_cliente.toString().indexOf(search.toString()) !== -1 || //QUIEN HIZO LA ORDEN
-        pedidos.fecha.toString().indexOf(search.toString()) !== -1 //BUSCAR POR FECHA
+        pedidos.fecha
+          .toString()
+          .toLocaleLowerCase()
+          .indexOf(search.toString().toLocaleLowerCase()) !== -1 //BUSCAR POR FECHA
     );
     return filterListPedidos;
   }
