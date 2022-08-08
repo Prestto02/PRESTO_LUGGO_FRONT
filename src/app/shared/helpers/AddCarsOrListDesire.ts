@@ -44,7 +44,6 @@ export class AddCarsOrListDesire {
     //POST CARRITO ITEMS
     this.apiCarritoUser.postCarritoItems(form).subscribe(
       (res) => {
-        console.log(res);
         if (variable)
           this.router.navigateByUrl(
             `${UrlFront.Pagar.pagar}/${UrlFront.Pagar.processoPagar}`
