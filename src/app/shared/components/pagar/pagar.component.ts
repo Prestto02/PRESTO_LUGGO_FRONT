@@ -1,7 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { RepositorioImg } from '../../helpers/RepositorioImg';
-import { UrlFront } from '../../routes/RoutesFront';
 import { CarritoItemsService } from '../index/menu-index/menu/services/carrito-items.service';
 import { BaseFormPagar } from './formulario-pagar/models/BaseFormPagar';
 import { IFormularioPagar } from './formulario-pagar/models/IPagarForm';
@@ -23,8 +21,7 @@ export class PagarComponent implements OnInit, OnDestroy {
     private apiServi: CarritoItemsService,
     public formB: BaseFormPagar,
     private apiPagar: PagarServices,
-    private pagarOCarrito: PagarOCarritoPost,
-    private router: Router
+    private pagarOCarrito: PagarOCarritoPost
   ) {}
   ngOnInit(): void {
     this.getAllProducts();

@@ -35,13 +35,13 @@ export class BaseFormCliente {
         Validators.pattern(Expresion.SoloLetrasAcentosEspacios),
       ],
     ],
-    NombreCompleto: [
+/*     NombreCompleto: [
       '',
       [
         Validators.required,
         Validators.pattern(Expresion.SoloLetrasAcentosEspacios),
       ],
-    ],
+    ], */
     cedula: [
       '',
       [
@@ -51,8 +51,8 @@ export class BaseFormCliente {
         Validators.pattern(Expresion.CedulaTelefono),
       ],
     ],
-    sexo: ['', [Validators.required]],
-    datopersona: this.formB.group({
+    sexo: [0, [Validators.required]],
+    datoperson: this.formB.group({
       direccion1: [
         '',
         [
@@ -62,10 +62,7 @@ export class BaseFormCliente {
       ],
       direccion2: [
         '',
-        [
-          Validators.required,
-          Validators.pattern(Expresion.SoloLetrasAcentosEspacios),
-        ],
+        [Validators.pattern(Expresion.SoloLetrasAcentosEspacios)],
       ],
       celular: [
         '',
@@ -77,7 +74,7 @@ export class BaseFormCliente {
         ],
       ],
       telefono: ['', [Validators.pattern(Expresion.CedulaTelefono)]],
-      fechanacimiento: [''],
+      fechaNacimiento: [''],
     }),
   });
 }

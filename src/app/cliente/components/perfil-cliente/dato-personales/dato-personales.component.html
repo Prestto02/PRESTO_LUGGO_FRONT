@@ -107,7 +107,7 @@
         <label for="sexo" class="form-label fw-bolder label-text">Género</label>
         <select class="form-select" id="sexo" aria-label="Default select example" formControlName="sexo"
           [class.is-invalid]="formB.get('sexo')?.touched && formB.get('sexo')?.invalid">
-          <option value="" selected>Escoja una opción</option>
+          <option value="0" selected>Escoja una opción</option>
           <option value="1">Masculino</option>
           <option value="2">Femenino</option>
           <option value="3">Otros</option>
