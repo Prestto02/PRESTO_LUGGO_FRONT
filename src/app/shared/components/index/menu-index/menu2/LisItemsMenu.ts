@@ -1,4 +1,5 @@
 import { UrlFront } from 'src/app/shared/routes/RoutesFront';
+
 //MENU 2 PARA LA LISTA DE MENU ITEMS
 export interface ListeMenu {
   id: number;
@@ -37,16 +38,16 @@ export const arrayListMasVendidos: ReadonlyArray<ListeMenu> = [
 ];
 //ARRAY PARA LA VALIDACION SI EXISTE O NO USUARIO
 export const arrayListIdentifyUser: ReadonlyArray<ListeMenu> = [
-  {
+ /*  {
     id: 1,
     name: 'Mi cuenta',
-    link: '#',
+    link: '',
   },
   {
     id: 2,
     name: 'Atención al cliente',
-    link: '#',
-  },
+    link: '',
+  }, */
   {
     id: 3,
     name: ' Cerrar Sesión',
