@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { TokenService } from 'src/app/login/services/token.service';
 import { RepositorioImg } from 'src/app/shared/helpers/RepositorioImg';
 import { UrlFront } from 'src/app/shared/routes/RoutesFront';
 import { CarritoItemsService } from '../../index/menu-index/menu/services/carrito-items.service';
@@ -17,14 +18,17 @@ export class VerificarPaymentsComponent implements OnInit {
   transaccion: string = '';
   message: string = '';
   imgPayment = `${RepositorioImg.urlRepositorio}/img/IMÁGENES/mensaje-payments/pago-en-proceso.png`;
+  idUser: any;
   constructor(
     private route: Router,
     private apiServiCarrito: CarritoItemsService,
-    private verifyServer: VerificarParamsService
+    private verifyServer: VerificarParamsService,
+    private apiToken: TokenService
   ) {
     this.urlCheck = this.route.parseUrl(this.route.url);
     this.codigoCheck = this.urlCheck.queryParams['metodo'];
     this.token = this.urlCheck.queryParams['token'];
+    this.idUser = this.apiToken.getTokenId();
   }
 
   ngOnInit(): void {
@@ -65,7 +69,7 @@ export class VerificarPaymentsComponent implements OnInit {
   } */
   irAPedidos() {
     this.route.navigateByUrl(
-      `${UrlFront.Manager.managerVendedor}/${UrlFront.Manager.vendedor}/${UrlFront.Manager.listaDePedidos}`
+      `${UrlFront.listaPedidos.lista}/${UrlFront.listaPedidos.listado}/${this.idUser}`
     );
   }
   volverInicio() {
