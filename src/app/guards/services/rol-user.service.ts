@@ -34,6 +34,7 @@ export class RolUserService {
     );
     return rolDescry;
   }
+
   //VERIFICO EL TIPO DE ROL DE USUARIO SEGUN SU NUMERO
   verificarTipoRol(numero: any) {
     if (numero === '1') {

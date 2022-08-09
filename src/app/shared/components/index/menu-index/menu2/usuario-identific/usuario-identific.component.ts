@@ -26,13 +26,14 @@ export class UsuarioIdentificComponent implements OnInit {
   ngOnInit(): void {}
 
   //VERIFICO QUE LINK ME LLEGA PARA PROCESARLO
-  irLink(link: any) {
+  irLink(link: string) {
     const logout: string = `${UrlFront.Login.login}/${UrlFront.Login.iniciarSesion}`;
     if (link === logout) {
       this.tokenUser.removeToken();
       this.apiLogin.cerrarSesionBackend();
       this.router.navigateByUrl(link);
     }
+
     this.router.navigateByUrl(link);
   }
 }
