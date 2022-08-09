@@ -30,7 +30,7 @@ export class VerificarPaymentsComponent implements OnInit {
   ngOnInit(): void {
     //this.verifyPago();
     this.enviarToken();
-    this.verifyModal();
+    //this.verifyModal();
     this.getMessagePayments();
   }
   //TOKEN SERVER PAYMENTS
@@ -75,13 +75,14 @@ export class VerificarPaymentsComponent implements OnInit {
   }
   verifyModal() {
     const modal = <HTMLElement>document.querySelector('.modal-backdrop');
-    modal.style.opacity = '0';
-    modal.style.position = 'relative';
-    modal.style.top = '0';
-    modal.style.zIndex = '0';
-    modal.style.zIndex = '0';
-    modal.style.width = '0';
-    modal.style.height = '0';
-    modal.style.background = 'none';
+    if (modal) {
+      modal.style.opacity = '0';
+      modal.style.position = 'relative';
+      modal.style.top = '0';
+      modal.style.zIndex = '0';
+      modal.style.width = '0';
+      modal.style.height = '0';
+      modal.style.background = 'none';
+    }
   }
 }
