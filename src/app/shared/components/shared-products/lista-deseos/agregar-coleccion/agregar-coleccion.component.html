@@ -24,15 +24,16 @@
               </app-message-error>
             </app-form-errors-container>
           </div>
-          <div formArrayName="detalle_Lista_deseos">
-            <button type="button" class="btn btn-outline-success mb-2" (click)="addArticulo()">Agregar artículo</button>
+          <div formArrayName="Detalle_Lista_deseos">
+            <button type="button" class="btn btn-secondary mb-2" (click)="addArticulo()">Agregar artículo</button>
             <ng-container *ngFor="let articulos of formB.detalleArticulos.controls; let i=index" [formGroupName]="i">
               <div class="input-group mb-3">
                 <select class="form-select is-invalid input-border" formControlName="id_articulo"
                   aria-label="Default select example"
                   [class.is-invalid]="articulos.get('id_articulo')?.touched && articulos.get('id_articulo')?.invalid">
                   <option value="" selected>Escoja el articulo</option>
-                  <option *ngFor="let productoList of dataListProductos" [value]="productoList.id">{{productoList.name}}
+                  <option *ngFor="let productoList of dataListProductos" [value]="productoList.id_artic">
+                   {{productoList.name}}
                   </option>
                 </select>
                 <button class="btn btn-danger border-button" type="button" id="button-addon1"

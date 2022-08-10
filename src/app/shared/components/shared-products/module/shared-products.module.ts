@@ -10,11 +10,8 @@ import { FooterIndexModule } from '../../index/footer-index/module/footer-index.
 //COMPONENTS
 import { SharedProductsComponent } from '../list-products/shared-products.component';
 import { IndexProductsComponent } from '../index-products.component';
-import { AgregarColeccionComponent } from '../lista-deseos/agregar-coleccion/agregar-coleccion.component';
 import { CompararProductosComponent } from '../comparar-productos/comparar-productos.component';
-import { FilterPipe } from 'src/app/shared/components/shared-products/lista-deseos/pipes/filter.pipe';
 import { BaseFormListaDeseos } from '../lista-deseos/model/BaseFormListaDeseos.model';
-import { ListaDeseosComponent } from '../lista-deseos/lista-deseos.component';
 import { ErrorsExtensionsModule } from '../../errors/errors-module.module';
 import { HttpClientModule } from '@angular/common/http';
 import { SharedProductsRoutingModule } from './shared-products-routing.module';
@@ -26,19 +23,19 @@ import {
   DetalleProductModule,
 } from '../detalle-productos/module/detalle-products.module';
 import { NotFund404Component } from '../../not-fund404/not-fund404.component';
+import { ListDeclarations } from '../lista-deseos/module/ListDeseo.module';
+import { ListItemsDeseosComponent } from '../lista-deseos/list-items-deseos/list-items-deseos.component';
 
 @NgModule({
   declarations: [
     IndexProductsComponent,
     SharedProductsComponent,
-    ListaDeseosComponent,
-    AgregarColeccionComponent,
+    ListDeclarations,
     ImagenProductsComponent, //IMAGEN DEL PRODUCTO
     CompararProductosComponent,
     DetalleProductDecalarations,
     IconsCarsDesireComponent,
     NotFund404Component,
-    FilterPipe,
   ],
   imports: [
     CommonModule,
@@ -54,7 +51,7 @@ import { NotFund404Component } from '../../not-fund404/not-fund404.component';
     FooterIndexModule,
     MenuIndexModule,
   ],
-  providers: [BaseFormListaDeseos],
+  providers: [BaseFormListaDeseos, ListItemsDeseosComponent],
   exports: [SharedProductsComponent, IconsCarsDesireComponent],
 })
 export class SharedProductosModule {}

@@ -1,0 +1,41 @@
+* {
+  font-family: Cardium B-SemiBold;
+}
+
+.precio {
+  font-size: 24px;
+  font-weight: 700;
+  color: #ea2313;
+}
+.cursor {
+  cursor: pointer;
+}
+.d-flex-carrito {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+}
+button {
+  max-width: 80%;
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@media screen and (max-width:880px) {
+  .responsive-movil{
+    display: flex;
+    justify-content: center;
+  }
+  .img-responsive{
+    width: 120px;
+    height: 120px;
+    margin: auto
+  }
+  .precio{
+    font-size: 18px;
+  }
+}

@@ -1,24 +1,32 @@
 import { Injectable } from '@angular/core';
 import { FormArray, FormBuilder, Validators } from '@angular/forms';
+import { Expresion } from 'src/app/shared/validations/expresionRegular';
 
 @Injectable({ providedIn: 'root' })
 export class BaseFormListaDeseos {
   constructor(private formB: FormBuilder) {}
   formListaDeseos = this.formB.group({
-    id_lista: [''],
-    Id_usuario: ['', [Validators.required]],
-    detalle_Lista_deseos: this.formB.array([
+    id_lista: [0],
+    Id_usuario: [0, [Validators.required]],
+    Detalle_Lista_deseos: this.formB.array([
       this.formB.group({
-        id_articulo: ['',],
+        id_articulo: [''],
       }),
     ]),
     nombre: ['', [Validators.required, Validators.minLength(3)]],
     Latitud: [''],
     Longitud: [''],
   });
+  /* BUSCAR PRODCUTO DE LA LISTA DE DESEOS */
+  formSearchDesire = this.formB.group({
+    searchProduct: [
+      '',
+      [Validators.pattern(Expresion.SoloLetrasAcentosEspaciosSinNumeros)],
+    ],
+  });
   //OBTENER EL ARRAY DE DETALLE LISTA DESEOS
   get detalleArticulos() {
-    return this.formListaDeseos.controls['detalle_Lista_deseos'] as FormArray; //OBTENGO EL CONTROL DE LISTA DE DESEOS
+    return this.formListaDeseos.controls['Detalle_Lista_deseos'] as FormArray; //OBTENGO EL CONTROL DE LISTA DE DESEOS
   }
   //AGREGAR DETALLES DEL ARTICULO
   addDetalleArticulos() {
@@ -47,6 +55,7 @@ export class BaseFormListaDeseos {
   }
   //LIMPIAR FORMULARIO
   limpiar() {
+    this.detalleArticulos.clear();
     this.formListaDeseos.reset();
   }
 }

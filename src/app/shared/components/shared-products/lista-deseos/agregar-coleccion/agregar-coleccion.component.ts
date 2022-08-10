@@ -3,6 +3,7 @@ import { TokenService } from 'src/app/login/services/token.service';
 import { PositionUser } from 'src/app/shared/class/PositionUser';
 import { errorFront as message } from 'src/app/shared/dictonary/MessageErrorFront';
 import { MessageFrontEndService } from 'src/app/shared/Toasts/services/message-front-end.service';
+import { ListItemsDeseosComponent } from '../list-items-deseos/list-items-deseos.component';
 import { ListaDeseosComponent } from '../lista-deseos.component';
 import { BaseFormListaDeseos } from '../model/BaseFormListaDeseos.model';
 import { ListaDeseosService } from '../services/lista-deseos.service';
@@ -21,7 +22,7 @@ export class AgregarColeccionComponent implements OnInit {
     private position: PositionUser, //POSICION DEL USUARIO
     private tokenUser: TokenService, //OBTENER EL ID DEL USUARIO
     private serviListaDeseos: ListaDeseosService, //LISTA DE DESEOS
-    private listaDeseosComponent: ListaDeseosComponent, //LISTA DE DESEO COMPONENTE
+    private listItem: ListItemsDeseosComponent, //LISTA DE DESEO COMPONENTE
     private serviMessage: MessageFrontEndService //MENSAJE MESSAGE FRONTEND
   ) {}
 
@@ -62,12 +63,12 @@ export class AgregarColeccionComponent implements OnInit {
     this.serviListaDeseos
       .postListaColeccion(this.formB.formListaDeseos.value)
       .subscribe((res) => {
-        this.serviMessage.getSuccessMessage(
-          message.Success.title,
+        this.serviMessage.getInfoMessage(
+          '',
           message.Success.coleccionRegistrado
         );
         this.formB.limpiar();
-        this.listaDeseosComponent.getColeccionUser();
+        this.listItem.getColeccionUser();
       });
   }
 }
