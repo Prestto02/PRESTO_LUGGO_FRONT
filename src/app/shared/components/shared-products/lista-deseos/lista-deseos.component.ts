@@ -18,10 +18,41 @@ export class ListaDeseosComponent implements OnInit {
   public urlImg = RepositorioImg.urlRepositorio;
   imgEmptyListDeseos = `${RepositorioImg.urlRepositorio}img/IM%C3%81GENES/lista-deseos/empty-wishlist.png`;
   dataListDeseos: ProductListApi[] = []; //OBTENER LA LISTA DE DESEOS
-  filterPost:string = '';
-  filasDeDos:boolean = false;
+  filterPost: string = '';
+  filasDeDos: boolean = false;
   coleccionUsuario: any;
   emailUsuario: any;
+
+  arrayListCheck: any = [
+    {
+      id: 1,
+      name: 'Juegos y Gameplay',
+    },
+    {
+      id: 2,
+      name: 'Ofertas Especiales',
+    },
+    {
+      id: 3,
+      name: 'Cosméticos',
+    },
+    {
+      id: 4,
+      name: 'Peliculas y Juegos',
+    },
+    {
+      id: 5,
+      name: 'Electronica y descuentos',
+    },
+    {
+      id: 6,
+      name: 'Libros y Peliculas',
+    },
+    {
+      id:7,
+      name:'Juegos y procesadores de gama alta y gama baja'
+    }
+  ];
   constructor(
     private apiListDeseos: ListaDeseosService, //LISTADO DESEOS SERVICES
     private addCars: AddCarsOrListDesire,
