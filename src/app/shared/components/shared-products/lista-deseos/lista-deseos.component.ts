@@ -15,6 +15,7 @@ export class ListaDeseosComponent implements OnInit {
   idUser: any;
   arrayListCheck: ReadonlyArray<CollecionUser> = [];
   dataListDeseos: ProductListApi[] = []; //OBTENER LA LISTA DE DESEOS
+  eliminar: boolean = false;
   constructor(
     private tokenServi: TokenService, //TOKEN SERVICES
     public formB: BaseFormListaDeseos,
@@ -42,6 +43,7 @@ export class ListaDeseosComponent implements OnInit {
       .getColeccionId(id_colleciont)
       .subscribe((res: ProductListApi[]) => {
         this.dataListDeseos = res;
+        this.eliminar = true;
       });
   }
   //TRAER TODO LO QUE SE OBTUVO DE LA LISTA DE DESEOS

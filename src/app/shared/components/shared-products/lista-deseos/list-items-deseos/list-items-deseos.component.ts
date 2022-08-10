@@ -19,6 +19,7 @@ import { ListaDeseosService } from '../services/lista-deseos.service';
 })
 export class ListItemsDeseosComponent implements OnChanges {
   @Input('dataListDeseos') dataListDeseos: any = [];
+  @Input('esconderEliminar') esconderEliminar: boolean = false;
   @Input('coleccionDeseo') coleccionDeseo: ReadonlyArray<CollecionUser> = [];
   public urlImg = RepositorioImg.urlRepositorio;
   imgEmptyListDeseos = `${RepositorioImg.urlRepositorio}img/IM%C3%81GENES/lista-deseos/empty-wishlist.png`;
@@ -29,12 +30,18 @@ export class ListItemsDeseosComponent implements OnChanges {
   ) {}
 
   ngOnChanges(changes: SimpleChanges): void {
-    /*   if (
-      changes.coleccionDeseo.currentValue !=
-      changes.coleccionDeseo.previousValue
+    if (
+      changes.coleccionDeseo?.currentValue !=
+      changes.coleccionDeseo?.previousValue
     ) {
       this.coleccionDeseo = changes.coleccionDeseo.currentValue;
-    } */
+    }
+    if (
+      changes.esconderEliminar?.currentValue !=
+      changes.esconderEliminar?.previousValue
+    ) {
+      this.esconderEliminar = changes.esconderEliminar.currentValue;
+    }
   }
   //AGREGAR AL CARRITO
   agregarAlCarrito(id: number) {
@@ -44,6 +51,7 @@ export class ListItemsDeseosComponent implements OnChanges {
   //ELIMINAR DE LA LISTA DE DESEOS
   eliminarListaDeseos(id: number, id_detalle_arcitulo?: number) {
     this.apiListDeseos.eliminarListaDeseos(id); //ELIMINAR DE LA LISTAff
+    console.log(id_detalle_arcitulo);
     if (id_detalle_arcitulo) {
       this.apiListDeseos.deleteListProductCollection(id).subscribe((res) => {
         console.log(res);
