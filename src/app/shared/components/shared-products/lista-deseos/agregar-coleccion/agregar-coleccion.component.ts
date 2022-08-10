@@ -5,6 +5,7 @@ import { errorFront as message } from 'src/app/shared/dictonary/MessageErrorFron
 import { MessageFrontEndService } from 'src/app/shared/Toasts/services/message-front-end.service';
 import { ListaDeseosComponent } from '../lista-deseos.component';
 import { BaseFormListaDeseos } from '../model/BaseFormListaDeseos.model';
+import { ListDesireUser } from '../model/ListDesireUser.models';
 import { ListaDeseosService } from '../services/lista-deseos.service';
 
 @Component({
@@ -21,7 +22,7 @@ export class AgregarColeccionComponent implements OnInit {
     private position: PositionUser, //POSICION DEL USUARIO
     private tokenUser: TokenService, //OBTENER EL ID DEL USUARIO
     private serviListaDeseos: ListaDeseosService, //LISTA DE DESEOS
-    private listaDeseosComponent: ListaDeseosComponent, //LISTA DE DESEO COMPONENTE
+    private listItem: ListaDeseosComponent, //LISTA DE DESEO COMPONENTE
     private serviMessage: MessageFrontEndService //MENSAJE MESSAGE FRONTEND
   ) {}
 
@@ -59,15 +60,12 @@ export class AgregarColeccionComponent implements OnInit {
 
   //GUARDAR LA LISTA DE DESEOS COLECCION
   setValueColeccionLista() {
-    this.serviListaDeseos
-      .postListaColeccion(this.formB.formListaDeseos.value)
-      .subscribe((res) => {
-        this.serviMessage.getSuccessMessage(
-          message.Success.title,
-          message.Success.coleccionRegistrado
-        );
-        this.formB.limpiar();
-        this.listaDeseosComponent.getColeccionUser();
-      });
+    const form: ListDesireUser = this.formB.formListaDeseos.value;
+    this.serviListaDeseos.postListaColeccion(form).subscribe((res) => {
+      console.log(res);
+      this.serviMessage.getInfoMessage('', message.Success.coleccionRegistrado);
+      this.formB.limpiar();
+      this.listItem.getAllListUsers();
+    });
   }
 }

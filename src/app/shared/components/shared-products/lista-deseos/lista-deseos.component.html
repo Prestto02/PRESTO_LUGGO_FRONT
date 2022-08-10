@@ -1,232 +1,14 @@
 <app-menu-index></app-menu-index>
-<section class="container-fluid mx-auto mt-5">
-  <div class="row mx-4">
-    <div class="card mt-3 color-card">
-      <div
-        [class]="emailUsuario?'row mt-3 sticky-xl-top sticky-lg-top sticky-md-top color-cabecera':'row mt-3 sticky-xl-top sticky-lg-top sticky-md-top color-cabecera'">
-        <!-----------AÑADIR COLECCION-------------->
-        <div
-          [class]="emailUsuario?'col-xl-3 col-xxl-3 col-md-6 col-12 col-sm-12 mt-3':'col-xl-9 col-xxl-9 col-md-9 col-12 col-sm-12 mt-3'">
-          <div class="row">
-            <div
-              [class]="emailUsuario?'col-1 col-sm-1 col-xl-1 col-xxl-1 mt-1':'col-xl-1 col-sm-1 col-1 col-xxl-1 mt-1 text-start'">
-              <!--  <svg (click)="filasDeDos=false;" class="pointer" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M2 3L2 21C2 21.2652 2.10536 21.5196 2.29289 21.7071C2.48043 21.8946 2.73478 22 3 22L21 22C21.2652 22 21.5196 21.8946 21.7071 21.7071C21.8946 21.5196 22 21.2652 22 21L22 3C22 2.73478 21.8946 2.48043 21.7071 2.29289C21.5196 2.10536 21.2652 2 21 2L3 2C2.73478 2 2.48043 2.10536 2.29289 2.29289C2.10536 2.48043 2 2.73478 2 3ZM20 16L20 20L4 20L4 16L20 16ZM20 10L20 14L4 14L4 10L20 10ZM20 4L20 8L4 8L4 4L20 4Z"
-                  fill="black" />
-              </svg> -->
-            </div>
-
-            <!--             <div class="ccol-xl-1 col-sm-1 col-1 col-xxl-1 mt-1 mx-2">
-              <svg (click)="filasDeDos=true;" class="pointer" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M10 13H3C2.73478 13 2.48043 13.1054 2.29289 13.2929C2.10536 13.4804 2 13.7348 2 14V21C2 21.2652 2.10536 21.5196 2.29289 21.7071C2.48043 21.8946 2.73478 22 3 22H10C10.2652 22 10.5196 21.8946 10.7071 21.7071C10.8946 21.5196 11 21.2652 11 21V14C11 13.7348 10.8946 13.4804 10.7071 13.2929C10.5196 13.1054 10.2652 13 10 13ZM9 20H4V15H9V20ZM21 2H14C13.7348 2 13.4804 2.10536 13.2929 2.29289C13.1054 2.48043 13 2.73478 13 3V10C13 10.2652 13.1054 10.5196 13.2929 10.7071C13.4804 10.8946 13.7348 11 14 11H21C21.2652 11 21.5196 10.8946 21.7071 10.7071C21.8946 10.5196 22 10.2652 22 10V3C22 2.73478 21.8946 2.48043 21.7071 2.29289C21.5196 2.10536 21.2652 2 21 2ZM20 9H15V4H20V9ZM21 13H14C13.7348 13 13.4804 13.1054 13.2929 13.2929C13.1054 13.4804 13 13.7348 13 14V21C13 21.2652 13.1054 21.5196 13.2929 21.7071C13.4804 21.8946 13.7348 22 14 22H21C21.2652 22 21.5196 21.8946 21.7071 21.7071C21.8946 21.5196 22 21.2652 22 21V14C22 13.7348 21.8946 13.4804 21.7071 13.2929C21.5196 13.1054 21.2652 13 21 13ZM20 20H15V15H20V20ZM10 2H3C2.73478 2 2.48043 2.10536 2.29289 2.29289C2.10536 2.48043 2 2.73478 2 3V10C2 10.2652 2.10536 10.5196 2.29289 10.7071C2.48043 10.8946 2.73478 11 3 11H10C10.2652 11 10.5196 10.8946 10.7071 10.7071C10.8946 10.5196 11 10.2652 11 10V3C11 2.73478 10.8946 2.48043 10.7071 2.29289C10.5196 2.10536 10.2652 2 10 2ZM9 9H4V4H9V9Z"
-                  fill="black" />
-              </svg>
-            </div> -->
-
-            <div class="col-xl-9 col-xxl-7 col-sm-7 col-7 col-md-7" *ngIf="emailUsuario">
-              <h5>Lista de deseos</h5>
-              <!--  <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#AgregarColeccion">
-                <svg width="19" height="17" viewBox="0 0 15 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M11.458 5.79171H7.20801V1.54171C7.20801 1.35385 7.13338 1.17368 7.00054 1.04084C6.8677 0.908002 6.68754 0.833374 6.49967 0.833374C6.31181 0.833374 6.13165 0.908002 5.99881 1.04084C5.86597 1.17368 5.79134 1.35385 5.79134 1.54171V5.79171H1.54134C1.35348 5.79171 1.17331 5.86633 1.04047 5.99917C0.907636 6.13201 0.833008 6.31218 0.833008 6.50004C0.833008 6.6879 0.907636 6.86807 1.04047 7.00091C1.17331 7.13375 1.35348 7.20837 1.54134 7.20837H5.79134V11.4584C5.79134 11.6462 5.86597 11.8264 5.99881 11.9592C6.13165 12.0921 6.31181 12.1667 6.49967 12.1667C6.68754 12.1667 6.8677 12.0921 7.00054 11.9592C7.13338 11.8264 7.20801 11.6462 7.20801 11.4584V7.20837H11.458C11.6459 7.20837 11.826 7.13375 11.9589 7.00091C12.0917 6.86807 12.1663 6.6879 12.1663 6.50004C12.1663 6.31218 12.0917 6.13201 11.9589 5.99917C11.826 5.86633 11.6459 5.79171 11.458 5.79171Z"
-                    fill="#fff" />
-                </svg>
-                Añadir colección
-              </button> -->
-            </div>
-          </div>
-        </div>
-        <!--------BOTONES DE COLECCION DE USUARIOS--------->
-        <ng-container *ngIf="emailUsuario">
-          <div class="col-xl-6 col-xxl-6 col-12 col-sm-6 col-md-6">
-            <div class="row">
-              <div class="col-xl-3 col-xxl-3 col-sm-6 col-6 col-md-6 mt-3" *ngFor="let coleccion of coleccionUsuario">
-                <button class="button-categorias" (click)="obtenerColeccionId(coleccion.id_lista)">
-                  {{coleccion.nombre}}
-                </button>
-              </div>
-            </div>
-          </div>
-        </ng-container>
-        <!------BUSCAR PRODUCTOS--------->
-        <div class="col-xl-3 col-xxl-3 col-12 col-sm-12 col-md-3 mt-3">
-          <div class="input-group">
-            <input type="text" class="form-control input-border" placeholder="Buscar" title="Buscar productos"
-              [(ngModel)]="filterPost" name="filterPost" aria-label="Username" aria-describedby="basic-addon1">
-            <button class="input-group-text border-bottom" title="Buscar productos" id="basic-addon1" type="submit">
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd" clip-rule="evenodd"
-                  d="M0 8.60081C0 3.85071 3.85071 0 8.6008 0C13.3509 0 17.2016 3.85071 17.2016 8.60081C17.2016 13.3509 13.3509 17.2016 8.6008 17.2016C3.85071 17.2016 0 13.3509 0 8.60081ZM8.6008 1.91129C4.90628 1.91129 1.91129 4.90629 1.91129 8.60081C1.91129 12.2953 4.90628 15.2903 8.6008 15.2903C12.2953 15.2903 15.2903 12.2953 15.2903 8.60081C15.2903 4.90628 12.2953 1.91129 8.6008 1.91129Z"
-                  fill="#353535" />
-                <path fill-rule="evenodd" clip-rule="evenodd"
-                  d="M13.6975 13.6975C14.0707 13.3243 15.2744 13.9227 15.6476 14.2959L19.4701 18.1185C19.8433 18.4917 19.8433 19.0968 19.4701 19.47C19.0969 19.8432 18.4918 19.8432 18.1186 19.47L14.2961 15.6474C13.9229 15.2742 13.3243 14.0707 13.6975 13.6975Z"
-                  fill="#353535" />
-              </svg>
-            </button>
-          </div>
-        </div>
-      </div>
-      <hr>
-      <!---------LISTA DE PRODUCTOS---------->
-      <div class='col-xl-12 col-xl-12 col-sm-12 col-md-12 col-12'>
-        <ng-container *ngIf="dataListDeseos.length > 0; else notData">
-          <div class="row mt-3">
-            <div *ngFor="let listaDeseos of dataListDeseos | filter:filterPost"
-              [class]="filasDeDos?'col-xl-6 col-xxl-6 col-sm-12 col-md-6 col-12 transicion':'col-xl-12 col-xl-12 col-sm-12 col-md-12 col-12 transicion'">
-              <div class=" row">
-                <div
-                  [class]="filasDeDos?'col-xl-6 col-xxl-6 col-sm-12 col-md-6 col-12':'col-12 col-md-4 col-sm-12 col-xl-4 col-xxl-4'">
-                  <div class="row">
-                    <div class="col-xl-7 col-xxl-7 col-7 col-sm-7 col-md-7 mx-auto">
-                      <img loading="lazy" src="{{urlImg}}{{listaDeseos.imagen}}" alt="Imagen del producto"
-                        class="img-fluid" width="177px" height="151px">
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-xl-5 col-xxl-5 col-12 col-sm-12 col-md-5">
-                  <div class="row">
-                    <div class="col-xl-12 col-xxl-12 col-sm-12 col-md-12 col-12">
-                      <p> {{listaDeseos.name}}</p>
-                    </div>
-                    <div
-                      [class]="filasDeDos?'col-xl-12 col-xxl-12 col-sm-12 col-md-12 col-12':'col-12 col-md-6 col-xxl-5 col-sm-12 col-xl-6'">
-                      <div class="row">
-                        <!--                         <div class="col-xl-5 col-xxl-5 col-sm-5 col-5 col-md-7">
-                          <svg width="95" height="16" viewBox="0 0 95 16" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path
-                              d="M7.5 1L9.8175 5.60778L15 6.35121L11.25 9.93586L12.135 15L7.5 12.6078L2.865 15L3.75 9.93586L0 6.35121L5.1825 5.60778L7.5 1Z"
-                              fill="#F8B407" />
-                            <path
-                              d="M28 1L30.163 5.60778L35 6.35121L31.5 9.93586L32.326 15L28 12.6078L23.674 15L24.5 9.93586L21 6.35121L25.837 5.60778L28 1Z"
-                              fill="#F8B407" />
-                            <path
-                              d="M48.5 1L50.8175 5.60778L56 6.35121L52.25 9.93586L53.135 15L48.5 12.6078L43.865 15L44.75 9.93586L41 6.35121L46.1825 5.60778L48.5 1Z"
-                              fill="#F8B407" />
-                            <path
-                              d="M86.5 1L88.8175 5.60778L94 6.35121L90.25 9.93586L91.135 15L86.5 12.6078L81.865 15L82.75 9.93586L79 6.35121L84.1825 5.60778L86.5 1Z"
-                              fill="white" stroke="#F8B407" stroke-linecap="round" stroke-linejoin="round" />
-                            <path
-                              d="M67.5 1L69.8175 5.60778L75 6.35121L71.25 9.93586L72.135 15L67.5 12.6078L62.865 15L63.75 9.93586L60 6.35121L65.1825 5.60778L67.5 1Z"
-                              fill="white" stroke="#F8B407" stroke-linecap="round" stroke-linejoin="round" />
-                            <path
-                              d="M67.5 1V5.5V8V9.5V11V12.6078L62.865 15L63.75 9.93586L60 6.35121L65.1825 5.60778L67.5 1Z"
-                              fill="#F8B407" />
-                          </svg>
-                        </div>
-                        <div class="col-xl-3 col-xxl-3 col-sm-3 col-3 col-md-4 mt-1">
-                          <p>4.5</p>
-                        </div> -->
-                      </div>
-                    </div>
-
-                    <div class="col-xl-12 col-xxl-12 col-sm-12 col-12 col-md-12">
-                      <div class="row">
-                        <div
-                          [class]="filasDeDos?'col-xl-12 col-xxl-12 col-sm-12 col-md-12 col-12':'col-12 col-md-6 col-sm-12 col-xxl-4 col-xl-4'">
-                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path
-                              d="M22 7.82001C22.0048 7.75677 22.0048 7.69325 22 7.63001L20 2.63001C19.9219 2.43237 19.7828 2.26475 19.603 2.15147C19.4232 2.03819 19.212 1.98514 19 2.00001H5C4.79972 1.99982 4.604 2.05977 4.43818 2.17209C4.27237 2.28442 4.1441 2.44395 4.07 2.63001L2.07 7.63001C2.06518 7.69325 2.06518 7.75677 2.07 7.82001C2.03677 7.87568 2.01311 7.93652 2 8.00001C2.01113 8.69125 2.20123 9.36781 2.55174 9.96369C2.90226 10.5596 3.40124 11.0544 4 11.4V21C4 21.2652 4.10536 21.5196 4.29289 21.7071C4.48043 21.8947 4.73478 22 5 22H19C19.2652 22 19.5196 21.8947 19.7071 21.7071C19.8946 21.5196 20 21.2652 20 21V11.44C20.6046 11.091 21.1072 10.5898 21.4581 9.98635C21.809 9.38287 21.9958 8.69807 22 8.00001C22.0094 7.94038 22.0094 7.87965 22 7.82001ZM13 20H11V16H13V20ZM18 20H15V15C15 14.7348 14.8946 14.4804 14.7071 14.2929C14.5196 14.1054 14.2652 14 14 14H10C9.73478 14 9.48043 14.1054 9.29289 14.2929C9.10536 14.4804 9 14.7348 9 15V20H6V12C6.56947 11.9968 7.13169 11.872 7.64905 11.634C8.16642 11.3961 8.627 11.0503 9 10.62C9.37537 11.0456 9.83701 11.3865 10.3542 11.62C10.8715 11.8535 11.4325 11.9743 12 11.9743C12.5675 11.9743 13.1285 11.8535 13.6458 11.62C14.163 11.3865 14.6246 11.0456 15 10.62C15.373 11.0503 15.8336 11.3961 16.3509 11.634C16.8683 11.872 17.4305 11.9968 18 12V20ZM18 10C17.4696 10 16.9609 9.7893 16.5858 9.41423C16.2107 9.03915 16 8.53045 16 8.00001C16 7.7348 15.8946 7.48044 15.7071 7.29291C15.5196 7.10537 15.2652 7.00001 15 7.00001C14.7348 7.00001 14.4804 7.10537 14.2929 7.29291C14.1054 7.48044 14 7.7348 14 8.00001C14 8.53045 13.7893 9.03915 13.4142 9.41423C13.0391 9.7893 12.5304 10 12 10C11.4696 10 10.9609 9.7893 10.5858 9.41423C10.2107 9.03915 10 8.53045 10 8.00001C10 7.7348 9.89464 7.48044 9.70711 7.29291C9.51957 7.10537 9.26522 7.00001 9 7.00001C8.73478 7.00001 8.48043 7.10537 8.29289 7.29291C8.10536 7.48044 8 7.7348 8 8.00001C8.00985 8.26266 7.96787 8.52467 7.87646 8.77109C7.78505 9.01751 7.646 9.24351 7.46725 9.43619C7.28849 9.62887 7.07354 9.78446 6.83466 9.89407C6.59578 10.0037 6.33764 10.0652 6.075 10.075C5.54457 10.0949 5.02796 9.90327 4.63882 9.54226C4.44614 9.36351 4.29055 9.14855 4.18094 8.90967C4.07133 8.67079 4.00985 8.41266 4 8.15001L5.68 4.00001H18.32L20 8.15001C19.9621 8.65403 19.7348 9.125 19.3637 9.46822C18.9927 9.81143 18.5054 10.0014 18 10Z"
-                              fill="#0d6efd" />
-                          </svg> {{listaDeseos.nombre_tienda}}
-                        </div>
-                        <!--                         <div class="col-xl-8 col-xxl-8 col-9 col-sm-9 col-md-8">
-                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path
-                              d="M1 12.5V17.5C1 17.7652 1.10536 18.0196 1.29289 18.2071C1.48043 18.3946 1.73478 18.5 2 18.5H3C3 19.2956 3.31607 20.0587 3.87868 20.6213C4.44129 21.1839 5.20435 21.5 6 21.5C6.79565 21.5 7.55871 21.1839 8.12132 20.6213C8.68393 20.0587 9 19.2956 9 18.5H15C15 19.2956 15.3161 20.0587 15.8787 20.6213C16.4413 21.1839 17.2044 21.5 18 21.5C18.7956 21.5 19.5587 21.1839 20.1213 20.6213C20.6839 20.0587 21 19.2956 21 18.5H22C22.2652 18.5 22.5196 18.3946 22.7071 18.2071C22.8946 18.0196 23 17.7652 23 17.5V5.5C23 4.70435 22.6839 3.94129 22.1213 3.37868C21.5587 2.81607 20.7956 2.5 20 2.5H11C10.2044 2.5 9.44129 2.81607 8.87868 3.37868C8.31607 3.94129 8 4.70435 8 5.5V7.5H6C5.53426 7.5 5.07493 7.60844 4.65836 7.81672C4.24179 8.025 3.87944 8.32741 3.6 8.7L1.2 11.9C1.17075 11.9435 1.14722 11.9905 1.13 12.04L1.07 12.15C1.02587 12.2615 1.00216 12.3801 1 12.5ZM17 18.5C17 18.3022 17.0586 18.1089 17.1685 17.9444C17.2784 17.78 17.4346 17.6518 17.6173 17.5761C17.8 17.5004 18.0011 17.4806 18.1951 17.5192C18.3891 17.5578 18.5673 17.653 18.7071 17.7929C18.847 17.9327 18.9422 18.1109 18.9808 18.3049C19.0194 18.4989 18.9996 18.7 18.9239 18.8827C18.8482 19.0654 18.72 19.2216 18.5556 19.3315C18.3911 19.4414 18.1978 19.5 18 19.5C17.7348 19.5 17.4804 19.3946 17.2929 19.2071C17.1054 19.0196 17 18.7652 17 18.5ZM10 5.5C10 5.23478 10.1054 4.98043 10.2929 4.79289C10.4804 4.60536 10.7348 4.5 11 4.5H20C20.2652 4.5 20.5196 4.60536 20.7071 4.79289C20.8946 4.98043 21 5.23478 21 5.5V16.5H20.22C19.9388 16.1906 19.5961 15.9435 19.2138 15.7743C18.8315 15.6052 18.418 15.5178 18 15.5178C17.582 15.5178 17.1685 15.6052 16.7862 15.7743C16.4039 15.9435 16.0612 16.1906 15.78 16.5H10V5.5ZM8 11.5H4L5.2 9.9C5.29315 9.7758 5.41393 9.675 5.55279 9.60557C5.69164 9.53615 5.84475 9.5 6 9.5H8V11.5ZM5 18.5C5 18.3022 5.05865 18.1089 5.16853 17.9444C5.27841 17.78 5.43459 17.6518 5.61732 17.5761C5.80004 17.5004 6.00111 17.4806 6.19509 17.5192C6.38907 17.5578 6.56725 17.653 6.70711 17.7929C6.84696 17.9327 6.9422 18.1109 6.98079 18.3049C7.01937 18.4989 6.99957 18.7 6.92388 18.8827C6.84819 19.0654 6.72002 19.2216 6.55557 19.3315C6.39112 19.4414 6.19778 19.5 6 19.5C5.73478 19.5 5.48043 19.3946 5.29289 19.2071C5.10536 19.0196 5 18.7652 5 18.5ZM3 13.5H8V16.28C7.40983 15.7526 6.63513 15.4797 5.84469 15.5209C5.05425 15.5621 4.31212 15.914 3.78 16.5H3V13.5Z"
-                              fill="#0d6efd" />
-                          </svg>Envio Gratis (Guayauil).
-                        </div> -->
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div
-                  [class]="filasDeDos?'col-xl-12 col-xxl-12 col-sm-12 col-md-12 col-12':'col-12 col-md-3 col-sm-12 col-xl-3 col-xxl-3 mb-5'">
-                  <div class="row">
-                    <div
-                      [class]="filasDeDos?'text-end col-xl-9 col-xl-9 col-9 col-sm-9':'col-12 col-md-7 col-sm-12 col-xl-7 col-xxl-7 text-center'">
-                      <p class="precio"> <b>{{listaDeseos.precio | currency:'USD'}}</b></p>
-                    </div>
-                    <div
-                      [class]="filasDeDos?'col-xl-10 col-10 col-sm-10 col-xxl-10 text-end':'col-9 col-md-9 col-sm-10 col-xl-8 col-xxl-7 text-center'">
-                      <button class="btn btn-primary" (click)="agregarAlCarrito(listaDeseos.id_artic)">Añadir al
-                        carrito</button>
-                    </div>
-                    <div
-                      [class]="filasDeDos?'col-xl-1 col-xxl-1 col-1 col-sm-1 col-md-1 text-center':'col-1 col-md-2 col-sm-1 col-xl-2 col-xxl-2'">
-                      <button class="btn" (click)="eliminarListaDeseos(listaDeseos.id_artic)" title="Eliminar">
-                        <svg width="18" height="20" viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path
-                            d="M7 16C7.26522 16 7.51957 15.8946 7.70711 15.7071C7.89464 15.5196 8 15.2652 8 15V9C8 8.73478 7.89464 8.48043 7.70711 8.29289C7.51957 8.10536 7.26522 8 7 8C6.73478 8 6.48043 8.10536 6.29289 8.29289C6.10536 8.48043 6 8.73478 6 9V15C6 15.2652 6.10536 15.5196 6.29289 15.7071C6.48043 15.8946 6.73478 16 7 16ZM17 4H13V3C13 2.20435 12.6839 1.44129 12.1213 0.87868C11.5587 0.316071 10.7956 0 10 0H8C7.20435 0 6.44129 0.316071 5.87868 0.87868C5.31607 1.44129 5 2.20435 5 3V4H1C0.734784 4 0.48043 4.10536 0.292893 4.29289C0.105357 4.48043 0 4.73478 0 5C0 5.26522 0.105357 5.51957 0.292893 5.70711C0.48043 5.89464 0.734784 6 1 6H2V17C2 17.7956 2.31607 18.5587 2.87868 19.1213C3.44129 19.6839 4.20435 20 5 20H13C13.7956 20 14.5587 19.6839 15.1213 19.1213C15.6839 18.5587 16 17.7956 16 17V6H17C17.2652 6 17.5196 5.89464 17.7071 5.70711C17.8946 5.51957 18 5.26522 18 5C18 4.73478 17.8946 4.48043 17.7071 4.29289C17.5196 4.10536 17.2652 4 17 4ZM7 3C7 2.73478 7.10536 2.48043 7.29289 2.29289C7.48043 2.10536 7.73478 2 8 2H10C10.2652 2 10.5196 2.10536 10.7071 2.29289C10.8946 2.48043 11 2.73478 11 3V4H7V3ZM14 17C14 17.2652 13.8946 17.5196 13.7071 17.7071C13.5196 17.8946 13.2652 18 13 18H5C4.73478 18 4.48043 17.8946 4.29289 17.7071C4.10536 17.5196 4 17.2652 4 17V6H14V17ZM11 16C11.2652 16 11.5196 15.8946 11.7071 15.7071C11.8946 15.5196 12 15.2652 12 15V9C12 8.73478 11.8946 8.48043 11.7071 8.29289C11.5196 8.10536 11.2652 8 11 8C10.7348 8 10.4804 8.10536 10.2929 8.29289C10.1054 8.48043 10 8.73478 10 9V15C10 15.2652 10.1054 15.5196 10.2929 15.7071C10.4804 15.8946 10.7348 16 11 16Z"
-                            fill="black" />
-                        </svg>
-                      </button>
-                    </div>
-                    <!--                     <div *ngIf="emailUsuario"
-                      [class]="filasDeDos?'text-end col-xl-9 col-xxl-9 col-sm-9 col-8 col-md-9 mx-5 pointer dropdown':'col-xl-7 col-sm-12 col-12 col-md-7 col-xxl-7 text-center pointer dropdown'">
-                      <p class="color-text dropdown-toggle" id="dropdownMenuButton1" data-bs-toggle="dropdown"
-                        aria-expanded="false">
-                        Agregar a la colección
-                      </p>
-                      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                        <li><a *ngFor="let coleccion of coleccionUsuario" class="dropdown-item"
-                            (click)="agregarColeccion(listaDeseos.id,coleccion.id_lista)">{{coleccion.nombre}}</a></li>
-                      </ul>
-                    </div> -->
-                  </div>
-                </div>
-              </div>
-              <hr>
-            </div>
-          </div>
-        </ng-container>
-      </div>
-      <!-----SI EL PIPE DE FILTRADO ES MENOR A 0-------->
-      <ng-container *ngIf="(dataListDeseos | filter:filterPost).length <= 0 && dataListDeseos.length>0">
-        <div class="text-center mt-4">
-          <h4 class="text-center mt-4">No hay ese producto en la lista</h4>
-        </div>
-      </ng-container>
-
-      <ng-template #notData>
-        <div class="text-center mt-4">
-          <img loading="lazy" [src]="imgEmptyListDeseos" alt="No hay productos en la lista de deseos">
-          <h4 class="text text-center mt-4"> Aún no hay productos elegidos en la lista de deseos</h4>
-        </div>
-      </ng-template>
-    </div>
-  </div>
-</section>
-<!------------MODAL PARA AGREGAR COLECCION------------->
-<app-agregar-coleccion></app-agregar-coleccion>
-<!--------SECCION DE SERVICIOS---------->
-<section>
-  <app-section-servicios></app-section-servicios>
-</section>
-<!-------SECCION DE FOOTER--------->
-<!-- <footer>
-  <app-footer2></app-footer2>
-</footer> -->
-<app-footer-index></app-footer-index>
-
-
-<!--   <div class="card border-0 rounded">
+<section class="container-fluid mx-auto mt-5 p-4">
+  <div class="card border-0 rounded">
     <div class="row mx-xxl-2 mx-xl-2 mx-md-2 md-sm-2 mx-2 mb-3 mt-4">
-      <div class="col-xxl-2 col-xl-2 col-md-2 col-sm-2 col-2 text-flex">
+      <div
+        [class]="emailUsuario?'col-xxl-2 col-xl-2 col-md-2 col-sm-5 col-5 text-flex':' col-xxl-9 col-xl-9 col-md-9 col-sm-9 col-9'">
         <h5>Lista de deseos</h5>
       </div>
-      <div class="col-xxl-7 col-xl-7 col-md-7 col-sm-7 col-7">
+      <div class="col-xxl-7 col-xl-7 col-md-7 col-sm-7 col-7" *ngIf="emailUsuario">
         <div class="row">
-          <div class="col-xxl-3 col-xl-3 col-md-3 col-sm-9 col-9 mb-3">
+          <div class="col-xxl-3 col-xl-3 col-md-4 col-sm-12 col-12 mb-3 repsonsive-movil">
             <button type="button" class="btn btn-dark btn-tamano" data-bs-toggle="modal"
               data-bs-target="#AgregarColeccion" title="Agregar nueva lista de colección">
               <svg width="15" height="20" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -237,32 +19,53 @@
               Nueva Lista
             </button>
           </div>
-          <div class="col-xxl-3 col-xl-3 col-md-3 col-sm-4 col-4 mb-3" *ngFor="let list of arrayListCheck">
-            <button type="button" class="btn btn-outline-primary" [title]="list.name">
-              {{list.name}}
+          <div
+            class="col-xxl-3 col-xl-3 col-md-4 col-sm-6 col-6 mb-3 d-xxl-block d-xl-block d-md-block d-sm-none d-none"
+            *ngFor="let list of arrayListCheck">
+            <button type="button" class="btn btn-color" [title]="list.nombre"
+              (click)="buscarIdCollection(list.id_lista)">
+              {{list.nombre}}
             </button>
           </div>
         </div>
       </div>
+      <!-- RESPONSIVE MOVIL -->
+      <div class="d-xxl-none d-xl-none d-md-none d-sm-block d-block col-sm-4 col-4 mb-3"
+        *ngFor="let list of arrayListCheck">
+        <button type="button" class="btn btn-color" [title]="list.nombre" (click)="buscarIdCollection(list.id_lista)">
+          {{list.nombre}}
+        </button>
+      </div>
       <ng-container>
-        <div class="col-xxl-3 col-xl-3 col-md-3 col-sm-3 col-3">
-          <div class="input-group">
-            <input type="text" class="form-control input-border" placeholder="Buscar" title="Buscar productos"
-              [(ngModel)]="filterPost" name="filterPost" aria-label="Username" aria-describedby="basic-addon1">
-            <span class="input-group-text border-bottom" title="Buscar productos" id="basic-addon1" type="submit">
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd" clip-rule="evenodd"
-                  d="M0 8.60081C0 3.85071 3.85071 0 8.6008 0C13.3509 0 17.2016 3.85071 17.2016 8.60081C17.2016 13.3509 13.3509 17.2016 8.6008 17.2016C3.85071 17.2016 0 13.3509 0 8.60081ZM8.6008 1.91129C4.90628 1.91129 1.91129 4.90629 1.91129 8.60081C1.91129 12.2953 4.90628 15.2903 8.6008 15.2903C12.2953 15.2903 15.2903 12.2953 15.2903 8.60081C15.2903 4.90628 12.2953 1.91129 8.6008 1.91129Z"
-                  fill="#353535" />
-                <path fill-rule="evenodd" clip-rule="evenodd"
-                  d="M13.6975 13.6975C14.0707 13.3243 15.2744 13.9227 15.6476 14.2959L19.4701 18.1185C19.8433 18.4917 19.8433 19.0968 19.4701 19.47C19.0969 19.8432 18.4918 19.8432 18.1186 19.47L14.2961 15.6474C13.9229 15.2742 13.3243 14.0707 13.6975 13.6975Z"
-                  fill="#353535" />
-              </svg>
-            </span>
-          </div>
+        <div class="col-xxl-3 col-xl-3 col-md-3 col-sm-12 col-12 text-end">
+          <ng-container [formGroup]="formB.formSearchDesire">
+            <div class="input-group">
+              <input type="text" class="form-control input-border" placeholder="Buscar" title="Buscar productos"
+                formControlName="searchProduct" name="filterPost" aria-label="Username" aria-describedby="basic-addon1">
+              <span class="input-group-text" title="Buscar productos" id="basic-addon1">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M0 8.60081C0 3.85071 3.85071 0 8.6008 0C13.3509 0 17.2016 3.85071 17.2016 8.60081C17.2016 13.3509 13.3509 17.2016 8.6008 17.2016C3.85071 17.2016 0 13.3509 0 8.60081ZM8.6008 1.91129C4.90628 1.91129 1.91129 4.90629 1.91129 8.60081C1.91129 12.2953 4.90628 15.2903 8.6008 15.2903C12.2953 15.2903 15.2903 12.2953 15.2903 8.60081C15.2903 4.90628 12.2953 1.91129 8.6008 1.91129Z"
+                    fill="#353535" />
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M13.6975 13.6975C14.0707 13.3243 15.2744 13.9227 15.6476 14.2959L19.4701 18.1185C19.8433 18.4917 19.8433 19.0968 19.4701 19.47C19.0969 19.8432 18.4918 19.8432 18.1186 19.47L14.2961 15.6474C13.9229 15.2742 13.3243 14.0707 13.6975 13.6975Z"
+                    fill="#353535" />
+                </svg>
+              </span>
+            </div>
+          </ng-container>
         </div>
       </ng-container>
     </div>
     <hr>
-    <div class="row mx-xxl-2 mx-xl-2 mx-md-2 md-sm-2 mx-2 mb-3 mt-4"></div>
-  </div> -->
+    <app-list-items-deseos [dataListDeseos]="dataListDeseos" [coleccionDeseo]="arrayListCheck" [esconderEliminar]="eliminar"></app-list-items-deseos>
+  </div>
+</section>
+<!------------MODAL PARA AGREGAR COLECCION------------->
+<app-agregar-coleccion></app-agregar-coleccion>
+<!--------SECCION DE SERVICIOS---------->
+<section>
+  <app-section-servicios></app-section-servicios>
+</section>
+<!-------SECCION DE FOOTER--------->
+<app-footer-index></app-footer-index>

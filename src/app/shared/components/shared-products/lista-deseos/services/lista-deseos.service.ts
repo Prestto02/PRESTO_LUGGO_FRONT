@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { MessageFrontEndService } from 'src/app/shared/Toasts/services/message-front-end.service';
-import { errorFront as message } from 'src/app/shared/dictonary/MessageErrorFront';
 import { HttpClient } from '@angular/common/http';
 import { UrlApi } from 'src/app/shared/routes/RoutesApi';
 import { ProductListApi } from '../../models/ProducstList';
+import { CollecionUser, ListDesireUser } from '../model/ListDesireUser.models';
 
 @Injectable({
   providedIn: 'root',
@@ -19,7 +19,7 @@ export class ListaDeseosService {
   ) {}
 
   //AGREGAR LOS PRODUCTOS SCROLL INFINITO
-  addListaDeseos(dataObj: ProductListApi, messageValor?: boolean) {
+  addListaDeseos(dataObj: ProductListApi, messageValor?: boolean): void {
     if (this.verifyCarrito(dataObj).length > 0) {
       //SI EXISTE EN EL ARREGLO EL MISMO PRODUCTO NO AGREGARLO
       /*       this.messageFront.getInfoMessage(
@@ -35,11 +35,13 @@ export class ListaDeseosService {
     }
   }
   /* COLECCION DE LISTA DE DESEOS POR USUARIO */
-  getAllColeccion(id: any): Observable<any> {
-    return this.http.get<any>(`${UrlApi.ApiUrl}${UrlApi.traerColeccion}${id}`);
+  getAllColeccion(id: any): Observable<ReadonlyArray<CollecionUser>> {
+    return this.http.get<ReadonlyArray<CollecionUser>>(
+      `${UrlApi.ApiUrl}${UrlApi.traerColeccion}${id}`
+    );
   }
   //AGREGAR NUEVA COLECCION
-  postListaColeccion(form: any): Observable<any> {
+  postListaColeccion(form: ListDesireUser): Observable<any> {
     return this.http.post<any>(
       `${UrlApi.ApiUrl}${UrlApi.coleccionListaDeseos}`,
       form
@@ -52,9 +54,15 @@ export class ListaDeseosService {
       form
     );
   }
+  /* DELETE COLLECION PRODUCT */
+  deleteListProductCollection(id_detalle_artic: number): Observable<any> {
+    return this.http.delete<any>(
+      `${UrlApi.ApiUrl}${UrlApi.putColeccionListaDeseos}/${id_detalle_artic}`
+    );
+  }
   //TRAER COLECCION POR ID
-  getColeccionId(id: any): Observable<ProductListApi> {
-    return this.http.get<ProductListApi>(
+  getColeccionId(id: any): Observable<ProductListApi[]> {
+    return this.http.get<ProductListApi[]>(
       `${UrlApi.ApiUrl}${UrlApi.traerColeccionPorId}${id}`
     );
   }
