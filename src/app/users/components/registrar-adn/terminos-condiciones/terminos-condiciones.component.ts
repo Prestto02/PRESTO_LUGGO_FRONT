@@ -66,10 +66,7 @@ export class TerminosCondicionesComponent implements OnInit, OnDestroy {
     );
     this.apiAdn.postUserAdn(form).subscribe((res) => {
       this.load = true;
-      this.toatsMessage.getSuccessMessage(
-        'Exito',
-        'Se agrego con exito al usuario'
-      );
+      this.toatsMessage.getInfoMessage('', 'Se agrego con exito al usuario');
       this.router.navigate([
         `/${UrlFront.ActivarCuenta.cuenta}/${UrlFront.ActivarCuenta.mensajeAlCorreo}`,
         form.user,
