@@ -31,11 +31,12 @@ export class ListaDeseosComponent implements OnInit {
   }
   /* TRAIGO TODA LA COLECCIONES DE USUARIOS */
   getAllListUsers(): void {
-    this.apiList
-      .getAllColeccion(this.idUser)
-      .subscribe((res: ReadonlyArray<CollecionUser>) => {
-        this.arrayListCheck = res;
-      });
+    if (this.idUser)
+      this.apiList
+        .getAllColeccion(this.idUser)
+        .subscribe((res: ReadonlyArray<CollecionUser>) => {
+          this.arrayListCheck = res;
+        });
   }
   /* TRAER LISTA DE DESOS POR USUAIRO */
   buscarIdCollection(id_colleciont: number): void {
