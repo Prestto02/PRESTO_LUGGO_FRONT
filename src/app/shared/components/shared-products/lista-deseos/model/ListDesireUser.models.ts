@@ -8,5 +8,11 @@ export interface ListDesireUser {
 }
 
 interface Detalle_Lista_deseos {
-  id_articulo: number;
+  id_detalle_list: number;
+  id_detalle_articulo: number;
+}
+
+export interface CollecionUser {
+  id_lista: number;
+  nombre: string;
 }

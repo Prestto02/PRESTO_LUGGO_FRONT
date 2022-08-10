@@ -28,9 +28,9 @@
             <button type="button" class="btn btn-secondary mb-2" (click)="addArticulo()">Agregar artículo</button>
             <ng-container *ngFor="let articulos of formB.detalleArticulos.controls; let i=index" [formGroupName]="i">
               <div class="input-group mb-3">
-                <select class="form-select is-invalid input-border" formControlName="id_articulo"
+                <select class="form-select is-invalid input-border" formControlName="id_detalle_articulo"
                   aria-label="Default select example"
-                  [class.is-invalid]="articulos.get('id_articulo')?.touched && articulos.get('id_articulo')?.invalid">
+                  [class.is-invalid]="articulos.get('id_detalle_articulo')?.touched && articulos.get('id_detalle_articulo')?.invalid">
                   <option value="" selected>Escoja el articulo</option>
                   <option *ngFor="let productoList of dataListProductos" [value]="productoList.id_artic">
                    {{productoList.name}}
@@ -40,12 +40,12 @@
                   aria-label="Example text with button addon" aria-describedby="button-addon1"
                   (click)="removeArticulo(i)">x</button>
               </div>
-              <app-form-errors-container [forControl]="articulos.get('id_articulo')">
+              <app-form-errors-container [forControl]="articulos.get('id_detalle_articulo')">
                 <app-message-error forErrorCode="required"></app-message-error>
               </app-form-errors-container>
             </ng-container>
           </div>
-          <app-buttons-load [formB]="formB.formListaDeseos" [valueButton]="'Guardar'" [load]="load"></app-buttons-load>
+          <app-buttons-load [formB]="formB.formListaDeseos" [valueButton]="'Guardar'" [load]="load" data-bs-dismiss="modal" aria-label="Close"></app-buttons-load>
         </form>
       </div>
     </div>

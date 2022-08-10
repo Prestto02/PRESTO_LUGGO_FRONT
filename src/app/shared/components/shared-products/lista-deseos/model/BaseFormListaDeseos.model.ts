@@ -10,7 +10,7 @@ export class BaseFormListaDeseos {
     Id_usuario: [0, [Validators.required]],
     Detalle_Lista_deseos: this.formB.array([
       this.formB.group({
-        id_articulo: [''],
+        id_detalle_articulo: [''],
       }),
     ]),
     nombre: ['', [Validators.required, Validators.minLength(3)]],
@@ -32,7 +32,7 @@ export class BaseFormListaDeseos {
   addDetalleArticulos() {
     this.detalleArticulos.push(
       this.formB.group({
-        id_articulo: ['', [Validators.required]],
+        id_detalle_articulo: ['', [Validators.required]],
       })
     );
   }
