@@ -15,7 +15,7 @@
             <input type="text" class="form-control is-invalid" formControlName="nombre" id="floatingNombre"
               [class.is-invalid]="formB.formListaDeseos.get('nombre')?.touched && formB.formListaDeseos.get('nombre')?.invalid"
               placeholder="Nombre del producto">
-            <label for="floatingNombre">Nombre</label>
+            <label for="floatingNombre">Nombre de la colección</label>
             <app-form-errors-container [forControl]="formB.formListaDeseos.get('nombre')">
               <app-message-error forErrorCode="required"></app-message-error>
               <app-message-error forErrorCode="minlength" customMsg="Debe tener al menos 3 caracteres">
@@ -25,7 +25,7 @@
             </app-form-errors-container>
           </div>
           <div formArrayName="Detalle_Lista_deseos">
-            <button type="button" class="btn btn-secondary mb-2" (click)="addArticulo()">Agregar artículo</button>
+            <button type="button" class="btn btn-add mb-2" (click)="addArticulo()">Agregar artículo</button>
             <ng-container *ngFor="let articulos of formB.detalleArticulos.controls; let i=index" [formGroupName]="i">
               <div class="input-group mb-3">
                 <select class="form-select is-invalid input-border" formControlName="id_detalle_articulo"

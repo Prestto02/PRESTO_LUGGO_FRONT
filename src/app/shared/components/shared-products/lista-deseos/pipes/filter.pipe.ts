@@ -9,9 +9,11 @@ export class FilterPipe implements PipeTransform {
   transform(listDeseo: ProductListApi[], search: string): ProductListApi[] {
     if (search === '' || search.length < 2) return listDeseo; //PREGUNTO SI ES VACIO O TIENE MENOS 2 CARACTERES NO HACER NADA
     const resultPost = listDeseo.filter(
-      (res: ProductListApi) =>
-        res.name.toLowerCase().indexOf(search.toLowerCase()) !== -1
+      (res: ProductListApi) => this.getDataTransform(res.name, search) !== -1
     );
     return resultPost;
+  }
+  getDataTransform(data: string, search: string): number {
+    return data.toLowerCase().indexOf(search.toLowerCase());
   }
 }
