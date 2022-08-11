@@ -19,7 +19,7 @@ export class ListaDeseosComponent implements OnInit {
   constructor(
     private tokenServi: TokenService, //TOKEN SERVICES
     public formB: BaseFormListaDeseos,
-    private apiList: ListaDeseosService
+    private apiList: ListaDeseosService,
   ) {
     this.emailUsuario = this.tokenServi.getTokenEmail();
     this.idUser = this.tokenServi.getTokenId();

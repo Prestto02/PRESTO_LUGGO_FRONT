@@ -43,7 +43,6 @@ export class MapaComponent implements OnInit {
       zoom: 12,
     };
     //this.initOverlays();
-    this.position.getPositionUser();
     this.infoWindow = new google.maps.InfoWindow();
   }
   //AGREGAR EL NUEVA UBICACION Y ABRIR EL MODAL

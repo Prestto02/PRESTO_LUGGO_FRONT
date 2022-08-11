@@ -1,8 +1,10 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 import { PosicionService } from '../services/posicion.service';
 
 @Injectable({ providedIn: 'root' })
 export class PositionUser {
+
   public latitud: any;
   public longitud: any;
   constructor(private serviPosition: PosicionService) {}
@@ -17,5 +19,7 @@ export class PositionUser {
         console.log(err);
       }
     );
+
   }
+
 }

@@ -7,8 +7,7 @@
       <h4>{{listProduct.name}}</h4>
       <p>{{listProduct.descripcion_articulo}}</p>
       <p>{{listProduct.precio | currency:'USD'}} <span class="text-dark iva">
-          {{listProduct.iva_porcentaje?'IVA incluido':''}}
-          {{listProduct.ice_porcentaje?'ICE incluido':''}}</span></p>
+          {{listProduct.iva_porcentaje?'IVA incluido':''}}</span></p>
       <!----NOMBRE TIENDA STORE---->
       <img [src]="imgIcons" class="img-fluid" [alt]="listProduct.nombre_tienda" />
       <span class="nombre-tienda">{{listProduct.nombre_tienda}}</span>
@@ -18,8 +17,7 @@
       <h4 class="title text-sm-center text-center">{{listProduct.name}}</h4>
       <p class="subtitle-descripcion">{{listProduct.descripcion_articulo}}</p>
       <p class="list-precio">{{listProduct.precio | currency:'USD'}} <span class="text-dark iva mx-2 mx-sm-2">
-          {{listProduct.iva_porcentaje?'IVA incluido':''}}
-          {{listProduct.ice_porcentaje?'ICE incluido':''}}</span>
+          {{listProduct.iva_porcentaje?'IVA incluido':''}}</span>
         <!----NOMBRE TIENDA STORE---->
         <img [src]="imgIcons" class="img-fluid img-icons mx-2 mx-sm-2" [alt]="listProduct.nombre_tienda" />
         <span class="nombre-tienda">{{listProduct.nombre_tienda}}</span>
