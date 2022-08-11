@@ -24,10 +24,13 @@ export class ColorBadgeDirective implements AfterViewInit {
       this.render2.addClass(this.elementBadge, 'bg-success');
     }
     if (this.colorBadgeState === 'Pendiente') {
-      this.render2.addClass(this.elementBadge, 'bg-warning');
+      this.render2.addClass(this.elementBadge, 'bg-info');
     }
     if (this.colorBadgeState === 'Cancelado') {
       this.render2.addClass(this.elementBadge, 'bg-danger');
+    }
+    if (this.colorBadgeState === 'Anulado') {
+      this.render2.addClass(this.elementBadge, 'bg-warning');
     }
   }
 }
