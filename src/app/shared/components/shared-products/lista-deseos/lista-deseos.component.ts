@@ -55,7 +55,7 @@ export class ListaDeseosComponent implements OnInit {
   }
   /* TODAS LA LISTA DE DESEOS DEL PRODUCTO */
   getProductsAllList(): void {
-    this.apiList.getAllList().subscribe((res: ProductListApi[]) => {
+    this.apiList.getAllListDesire().subscribe((res: ProductListApi[]) => {
       this.dataListDeseos = res;
     });
   }

@@ -41,7 +41,7 @@ export class ListaDeseosService {
     );
   }
   /* TODAS LAS LISTA DEL PRODUCTOS */
-  getAllList(): Observable<ProductListApi[]> {
+  getAllListDesire(): Observable<ProductListApi[]> {
     return this.http.get<ProductListApi[]>(
       `${UrlApi.ApiUrl}${UrlApi.misDetallesLista}`
     );

@@ -49,7 +49,7 @@ export const UrlApi = {
   traerColeccion: 'api/ListaDeseos/',
   putColeccionListaDeseos: 'api/detalle_lista',
   traerColeccionPorId: 'api/detalle_lista/',
-  misDetallesLista: 'api/mis_detalles_listas',
+  misDetallesLista: 'api/detalle_lista/mis_detalles_listas',
   //LISTADOS DE PRODUCTOS
   listProductsUsers: 'api/ADN/Mis-productos',
   //EDITAR PRODUCTOS
