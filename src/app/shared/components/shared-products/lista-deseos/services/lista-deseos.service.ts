@@ -40,6 +40,12 @@ export class ListaDeseosService {
       `${UrlApi.ApiUrl}${UrlApi.traerColeccion}${id}`
     );
   }
+  /* TODAS LAS LISTA DEL PRODUCTOS */
+  getAllList(): Observable<ProductListApi[]> {
+    return this.http.get<ProductListApi[]>(
+      `${UrlApi.ApiUrl}${UrlApi.misDetallesLista}`
+    );
+  }
   //AGREGAR NUEVA COLECCION
   postListaColeccion(form: ListDesireUser): Observable<any> {
     return this.http.post<any>(

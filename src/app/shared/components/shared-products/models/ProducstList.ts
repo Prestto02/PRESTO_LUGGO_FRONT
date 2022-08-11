@@ -15,4 +15,5 @@ export interface ProductListApi {
   stock: number;
   stock_min: number;
   subtotal: number;
+  id_detalle_lista: number;
 }

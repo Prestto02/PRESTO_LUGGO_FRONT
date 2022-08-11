@@ -15,7 +15,7 @@ export class ListaDeseosComponent implements OnInit {
   idUser: any;
   arrayListCheck: ReadonlyArray<CollecionUser> = [];
   dataListDeseos: ProductListApi[] = []; //OBTENER LA LISTA DE DESEOS
-  eliminar: boolean = false;
+  id_list: number = 0;
   constructor(
     private tokenServi: TokenService, //TOKEN SERVICES
     public formB: BaseFormListaDeseos,
@@ -39,18 +39,24 @@ export class ListaDeseosComponent implements OnInit {
         });
   }
   /* TRAER LISTA DE DESOS POR USUAIRO */
-  buscarIdCollection(id_colleciont: number): void {
+  buscarIdCollection(id_collection: number): void {
     this.apiList
-      .getColeccionId(id_colleciont)
+      .getColeccionId(id_collection)
       .subscribe((res: ProductListApi[]) => {
         this.dataListDeseos = res;
-        this.eliminar = true;
+        this.id_list = id_collection;
       });
   }
   //TRAER TODO LO QUE SE OBTUVO DE LA LISTA DE DESEOS
   getDataListDeseos(): void {
     this.apiList.listaDeseos.subscribe((res: ProductListApi[]) => {
       this.dataListDeseos = res; //ASIGNO LO DATOS A MI DATA LISTDESEOS
+    });
+  }
+  /* TODAS LA LISTA DE DESEOS DEL PRODUCTO */
+  getProductsAllList(): void {
+    this.apiList.getAllList().subscribe((res: ProductListApi[]) => {
+      this.dataListDeseos = res;
     });
   }
 }

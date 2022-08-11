@@ -1,7 +1,11 @@
-.border-button{
+.border-button {
   border-left: 1px;
   color: white;
 }
 .input-border {
   border-right: 0px;
+}
+.btn-add {
+  background-color: #ea2313;
+  color: #fff;
 }
