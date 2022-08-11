@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
+import { TokenService } from 'src/app/login/services/token.service';
 import { EncryptService } from 'src/app/shared/class/Encryptar';
 import { UrlFront } from 'src/app/shared/routes/RoutesFront';
 
@@ -11,7 +12,11 @@ export class RolUserService {
   private rolUser = new BehaviorSubject<any>('');
   rolUser$ = this.rolUser.asObservable();
 
-  constructor(private route: Router, private encryp: EncryptService) {}
+  constructor(
+    private route: Router,
+    private encryp: EncryptService,
+    private tokenServi: TokenService
+  ) {}
   //SETEO EL ROL DEL USUARIO
   setDataLocalStorage(data: any) {
     localStorage.setItem('dataUsuarioItems', `${data}`);
@@ -39,12 +44,16 @@ export class RolUserService {
   verificarTipoRol(numero: any) {
     if (numero === '1') {
       this.route.navigateByUrl(
-        `${UrlFront.Cliente.cliente}/${UrlFront.Cliente.miCuenta}`
+        `${UrlFront.Cliente.cliente}/${
+          UrlFront.Cliente.miCuenta
+        }/${this.tokenServi.getTokenId()}`
       );
     }
     if (numero === '2') {
       this.route.navigateByUrl(
-        `${UrlFront.Manager.managerVendedor}/${UrlFront.Manager.vendedor}`
+        `${UrlFront.Manager.managerVendedor}/${
+          UrlFront.Manager.vendedor
+        }/${this.tokenServi.getTokenId()}`
       );
     }
     /* this.route.navigateByUrl(`${UrlFront.Menu.menu}/${UrlFront.Menu.index}`); */
