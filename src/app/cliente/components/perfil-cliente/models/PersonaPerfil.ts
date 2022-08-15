@@ -6,7 +6,7 @@ export interface IUsers {
   apellido1: string;
   apellido2: string;
   cedula: string;
-  datoperson?: {
+  datoperson: {
     direccion1: string;
     direccion2?: string;
     celular: string;
@@ -23,7 +23,7 @@ export const PerfilPersonaSecciones = [
     title: 'Datos Personales',
     disabled: false,
   },
-/*   {
+  /*   {
     id: 2,
     title: 'Información Adicional',
     disabled: true,
