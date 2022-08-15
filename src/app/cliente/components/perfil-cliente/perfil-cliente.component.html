@@ -22,7 +22,8 @@
         <hr>
         <ng-container [formGroup]="formB.formCliente">
           <app-dato-personales [formB]="formB.formCliente" [hidden]="perfilPersona[0].disabled"></app-dato-personales>
-          <app-informacion-adicional [formB]="formB.formCliente" [hidden]="perfilPersona[1].disabled">
+          <!-- [hidden]="perfilPersona[1].disabled" -->
+          <app-informacion-adicional [formB]="formB.formCliente">
           </app-informacion-adicional>
           <hr>
           <div class="col-xl-12 col-xxl-12 text-end mx-2 mt-3 mb-4">

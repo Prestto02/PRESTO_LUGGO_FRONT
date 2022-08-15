@@ -23,8 +23,9 @@ export class ClienteCerrarSesionComponent implements OnInit {
   }
 
   regresarMenuADn() {
+    const id = this.tokenUser.getTokenId();
     this.router.navigateByUrl(
-      `${UrlFront.Cliente.cliente}/${UrlFront.Cliente.miCuenta}`
+      `${UrlFront.Cliente.cliente}/${UrlFront.Cliente.miCuenta}/${id}`
     );
   }
   cerrarSesion() {
@@ -32,7 +33,7 @@ export class ClienteCerrarSesionComponent implements OnInit {
     this.router.navigateByUrl(
       `${UrlFront.Login.login}/${UrlFront.Login.iniciarSesion}`
     );
-    this.apiLogin.cerrarSesionBackend().subscribe((res)=>{
+    this.apiLogin.cerrarSesionBackend().subscribe((res) => {
       console.log(res);
     });
   }

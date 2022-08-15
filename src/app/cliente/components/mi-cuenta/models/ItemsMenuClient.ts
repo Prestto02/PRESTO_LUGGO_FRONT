@@ -19,7 +19,7 @@ export const ItemsClientMenu: MenuClient[] = [
   }, */
   {
     id: 3,
-    title: 'Mi perfil',
+    title: 'Mis Datos',
     icons: `${RepositorioImg.urlRepositorio}img/IMÁGENES/Portal-Usuario-Comprador/mi-perfil.png`,
     subtitle: 'Actualiza tus datos personales.',
     link: `${UrlFront.Cliente.cliente}/${UrlFront.Cliente.perfilCliente}`,

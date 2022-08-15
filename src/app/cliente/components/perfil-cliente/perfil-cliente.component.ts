@@ -55,6 +55,7 @@ export class PerfilClienteComponent implements OnInit {
     form.longitud = this.position.longitud;
     this.apiServi.putDataPersona(form).subscribe((res: any) => {
       this.apiMessage.getInfoMessage('', 'Se actualizaron sus datos');
+      this.router.navigateByUrl(`${UrlFront.Menu.menu}/${UrlFront.Menu.index}`);
     });
   }
   /* REGRESAR AL MODULO MI CUENTA */

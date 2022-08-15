@@ -20,7 +20,7 @@ export const ItemsClientMenuOffCanvas: MenuClient[] = [
   //hola
   {
     id: 3,
-    title: 'Mi perfil',
+    title: 'Mis Datos',
     icons: `${RepositorioImg.urlRepositorio}img/IMÁGENES/icons-users-perfil/mi-perfil.png`,
     subtitle: 'Actualiza tus datos personales.',
     link: `${UrlFront.Cliente.cliente}/${UrlFront.Cliente.perfilCliente}`,
