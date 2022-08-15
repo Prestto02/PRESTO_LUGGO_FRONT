@@ -14,13 +14,7 @@ export class BaseFormCliente {
         Validators.pattern(Expresion.SoloLetrasAcentosEspacios),
       ],
     ],
-    nombre2: [
-      '',
-      [
-        Validators.required,
-        Validators.pattern(Expresion.SoloLetrasAcentosEspacios),
-      ],
-    ],
+    nombre2: ['', [Validators.pattern(Expresion.SoloLetrasAcentosEspacios)]],
     apellido1: [
       '',
       [
@@ -35,7 +29,7 @@ export class BaseFormCliente {
         Validators.pattern(Expresion.SoloLetrasAcentosEspacios),
       ],
     ],
-/*     NombreCompleto: [
+    /*     NombreCompleto: [
       '',
       [
         Validators.required,
@@ -55,10 +49,7 @@ export class BaseFormCliente {
     datoperson: this.formB.group({
       direccion1: [
         '',
-        [
-          Validators.required,
-          Validators.pattern(Expresion.SoloLetrasAcentosEspacios),
-        ],
+        [Validators.pattern(Expresion.SoloLetrasAcentosEspacios)],
       ],
       direccion2: [
         '',

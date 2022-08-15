@@ -1,3 +1,4 @@
+import { DatePipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { PositionUser } from 'src/app/shared/class/PositionUser';
@@ -44,6 +45,7 @@ export class PerfilClienteComponent implements OnInit {
   }
   /* TRAER EL DATO DEL USUARIO */
   getDataUsers() {
+    /* 2015-02-07 */
     this.apiServi.getDataUserId().subscribe((res: IUsers) => {
       this.formB.formCliente.setValue({ ...res });
     });

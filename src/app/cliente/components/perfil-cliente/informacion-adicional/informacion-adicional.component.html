@@ -4,7 +4,7 @@
       <div class="row">
 
         <!----- PRIMERA DIRECCION ------->
-        <div class="col-xxl-6 col-xl-6 col-md-6 col-sm-6 col-6 mb-3">
+        <!--         <div class="col-xxl-6 col-xl-6 col-md-6 col-sm-6 col-6 mb-3">
           <label for="direccion1" class="form-label fw-bolder label-text">Primera Dirección</label>
           <div class="input-group mb-3">
             <input type="text" id="direccion1" class="form-control input-border" placeholder="Primera dirección"
@@ -16,10 +16,10 @@
             <app-message-error forErrorCode="pattern" [customMsg]="'No se acepta caracteres especiales [^$%&{}|<>#]'">
             </app-message-error>
           </app-form-errors-container>
-        </div>
+        </div> -->
 
         <!----- SEGUNDA DIRECCION ------>
-        <div class="col-xxl-6 col-xl-6 col-md-6 col-sm-6 col-6 mb-3">
+        <!--         <div class="col-xxl-6 col-xl-6 col-md-6 col-sm-6 col-6 mb-3">
           <label for="direccion2" class="form-label fw-bolder label-text">Segunda Dirección</label>
           <div class="input-group mb-3">
             <input type="text" id="direccion2" class="form-control input-border" placeholder="Segunda dirección"
@@ -32,16 +32,16 @@
             </app-message-error>
           </app-form-errors-container>
         </div>
-
+ -->
         <!-- CELULAR -->
         <div class="col-xxl-6 col-xl-6 col-md-6 col-sm-6 col-6 mb-3">
           <label for="celular" class="form-label fw-bolder label-text">Celular</label>
           <div class="input-group mb-3">
             <input type="text" id="celular" maxlength="10" class="form-control input-border" placeholder="0999999999"
               aria-label="Username" aria-describedby="basic-addon1" formControlName="celular"
-              [class.is-invalid]="formB.get('datopersona.celular')?.touched && formB.get('datopersona.celular')?.invalid">
+              [class.is-invalid]="formB.get('datoperson.celular')?.touched && formB.get('datoperson.celular')?.invalid">
           </div>
-          <app-form-errors-container [forControl]="formB.get('datopersona.celular')">
+          <app-form-errors-container [forControl]="formB.get('datoperson.celular')">
             <app-message-error forErrorCode="required"></app-message-error>
             <app-message-error forErrorCode="minlength" [customMsg]="'Debe tener 10 dígitos'"></app-message-error>
             <app-message-error forErrorCode="pattern" [customMsg]="'Solo acepta números'"></app-message-error>
@@ -52,11 +52,11 @@
         <div class="col-xxl-6 col-xl-6 col-md-6 col-sm-6 col-6 mb-3">
           <label for="telefono" class="form-label fw-bolder label-text">Teléfono</label>
           <div class="input-group mb-3">
-            <input type="text" id="telefono" maxlength="9" class="form-control input-border" placeholder="0999999999"
+            <input type="text" id="telefono" maxlength="9" class="form-control input-border" placeholder="02999999"
               aria-label="Username" aria-describedby="basic-addon1" formControlName="telefono"
-              [class.is-invalid]="formB.get('datopersona.telefono')?.touched && formB.get('datopersona.telefono')?.invalid">
+              [class.is-invalid]="formB.get('datoperson.telefono')?.touched && formB.get('datoperson.telefono')?.invalid">
           </div>
-          <app-form-errors-container [forControl]="formB.get('datopersona.telefono')">
+          <app-form-errors-container [forControl]="formB.get('datoperson.telefono')">
             <app-message-error forErrorCode="required"></app-message-error>
             <app-message-error forErrorCode="pattern" [customMsg]="'Solo acepta números'"></app-message-error>
           </app-form-errors-container>
@@ -66,11 +66,11 @@
         <div class="col-xxl-6 col-xl-6 col-md-6 col-sm-6 col-6 mb-3">
           <label for="fecahNacimiento" class="form-label fw-bolder label-text">Fecha de nacimiento</label>
           <div class="input-group mb-3">
-            <input type="date" id="fecahNacimiento" class="form-control input-border" placeholder="12-02-1998"
-              aria-label="Username" aria-describedby="basic-addon1" formControlName="fechaNacimiento"
-              [class.is-invalid]="formB.get('datopersona.fechaNacimiento')?.touched && formB.get('datopersona.fechaNacimiento')?.invalid">
+            <input type="date" id="fecahNacimiento" class="form-control input-border" aria-label="Username"
+              aria-describedby="basic-addon1" formControlName="fechaNacimiento"
+              [class.is-invalid]="formB.get('datoperson.fechaNacimiento')?.touched && formB.get('datoperson.fechaNacimiento')?.invalid">
           </div>
-          <app-form-errors-container [forControl]="formB.get('datopersona.fechaNacimiento')">
+          <app-form-errors-container [forControl]="formB.get('datoperson.fechaNacimiento')">
             <app-message-error forErrorCode="required"></app-message-error>
           </app-form-errors-container>
         </div>
