@@ -1,6 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ListCategoryApi } from 'src/app/manager-vendedor/categorias/models/ListCategory';
+import { Router } from '@angular/router';
+import { SubListCategoryApi } from 'src/app/manager-vendedor/categorias/models/ListCategory';
 import { CategoriasService } from 'src/app/manager-vendedor/productos/services/categorias.service';
+import { UrlFront } from 'src/app/shared/routes/RoutesFront';
 
 @Component({
   selector: 'app-sub-menu-categorias',
@@ -9,17 +11,30 @@ import { CategoriasService } from 'src/app/manager-vendedor/productos/services/c
 })
 export class SubMenuCategoriasComponent implements OnInit {
   @Input('ItemsSubCategoria')
-  subCategoriaItems: ReadonlyArray<ListCategoryApi> | null = null;
-  constructor(private apiCategorias: CategoriasService) {}
+  subCategoriaItems: ReadonlyArray<SubListCategoryApi> | null = null;
+  urlCategory: string = '';
+  constructor(
+    private apiCategorias: CategoriasService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {}
 
-  getHijosCategorias(id: any) {
+  getHijosCategorias(id: any, url: string) {
+    this.urlCategory = url;
     this.apiCategorias
       .getIdCategoriaHijo(id)
-      .subscribe((res: ReadonlyArray<ListCategoryApi>) => {
-        //this.subCategoriaItems = null;
+      .subscribe((res: ReadonlyArray<SubListCategoryApi>) => {
         this.subCategoriaItems = res;
+        if (this.subCategoriaItems.length === 0) {
+          this.irBuscar();
+        }
       });
+  }
+
+  irBuscar() {
+    this.router.navigateByUrl(
+      `${UrlFront.Menu.menu}/${UrlFront.Menu.buscarGet}/${this.urlCategory}`
+    );
   }
 }

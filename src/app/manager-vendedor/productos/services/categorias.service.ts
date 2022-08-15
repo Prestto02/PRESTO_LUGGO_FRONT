@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { UrlApi } from 'src/app/shared/routes/RoutesApi';
-import { ListCategoryApi } from '../../categorias/models/ListCategory';
+import { ListCategoryApi, SubListCategoryApi } from '../../categorias/models/ListCategory';
 
 @Injectable({
   providedIn: 'root',
@@ -17,8 +17,8 @@ export class CategoriasService {
     );
   }
   //TRAIGO EL ID DE LA CATEGORIA
-  getIdCategoriaHijo(id: any): Observable<ListCategoryApi[]> {
-    return this.http.get<ListCategoryApi[]>(
+  getIdCategoriaHijo(id: any): Observable<SubListCategoryApi[]> {
+    return this.http.get<SubListCategoryApi[]>(
       `${UrlApi.ApiUrl}${UrlApi.categoriasrHijos}${id}`
     );
   }
