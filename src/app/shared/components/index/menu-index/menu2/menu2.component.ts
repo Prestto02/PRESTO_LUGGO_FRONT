@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { TokenService } from 'src/app/login/services/token.service';
-import { ListCategoryApi } from 'src/app/manager-vendedor/categorias/models/ListCategory';
+import {
+  ListCategoryApi,
+  SubListCategoryApi,
+} from 'src/app/manager-vendedor/categorias/models/ListCategory';
 import { CategoriasService } from 'src/app/manager-vendedor/productos/services/categorias.service';
 
 import { arrayListMasVendidos, ListeMenu } from './LisItemsMenu';
@@ -12,7 +15,7 @@ import { arrayListMasVendidos, ListeMenu } from './LisItemsMenu';
 export class Menu2Component implements OnInit {
   categoriasItems: ReadonlyArray<ListCategoryApi> = [];
   ocultarMenu: boolean = false;
-  subCategorias: ReadonlyArray<ListCategoryApi> = [];
+  subCategorias: ReadonlyArray<SubListCategoryApi> = [];
   nombreCategoria = '';
   correoUsuario: any;
   arrayLisVendidos: ReadonlyArray<ListeMenu> = arrayListMasVendidos; //LIST LOS MAS VENDIDOS
@@ -48,7 +51,7 @@ export class Menu2Component implements OnInit {
     this.nombreCategoria = index.name; //ASIGNO EL NOMBRE PADRE DE LA CATEGORIA
     this.apiCategoria
       .getIdCategoriaHijo(index.id)
-      .subscribe((res: ReadonlyArray<ListCategoryApi>) => {
+      .subscribe((res: ReadonlyArray<SubListCategoryApi>) => {
         this.subCategorias = res;
       });
   }
