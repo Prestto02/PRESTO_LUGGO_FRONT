@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { MenuClient } from 'src/app/cliente/components/mi-cuenta/models/MenuClients.interface';
+import { IUsers } from 'src/app/cliente/components/perfil-cliente/models/PersonaPerfil';
+import { UsersService } from 'src/app/cliente/services/users.service';
 import { RolUserService } from 'src/app/guards/services/rol-user.service';
 import { LoginService } from 'src/app/login/services/login.service';
 import { TokenService } from 'src/app/login/services/token.service';
@@ -33,7 +35,8 @@ export class MenuUsersComponent implements OnInit {
     private route: Router,
     private Token: TokenService,
     private apiLogin: LoginService,
-    private authServi: RolUserService,
+   /*  private authServi: RolUserService, */
+    private apiServi: UsersService,
     private encrypServi: EncryptService
   ) {
     this.idCliente = this.Token.getTokenId();
@@ -42,12 +45,18 @@ export class MenuUsersComponent implements OnInit {
   ngOnInit(): void {
     this.irAlPerfilUsuario();
     this.verifyRolUsuario();
+    this.traerNombre();
   }
 
   irARuta(link: string) {
     this.centerClient
       ? this.route.navigateByUrl(`${link}/${this.idCliente}`)
       : this.route.navigateByUrl(`${link}`);
+  }
+  traerNombre(): void {
+    this.apiServi.getDataUserId().subscribe((res: IUsers) => {
+      this.name = res.nombre1;
+    });
   }
   irARegistrarAdn(link: string) {
     this.route.navigateByUrl(`${link}`);

@@ -23,9 +23,9 @@ export const PerfilPersonaSecciones = [
     title: 'Datos Personales',
     disabled: false,
   },
-  {
+/*   {
     id: 2,
     title: 'Información Adicional',
     disabled: true,
-  },
+  }, */
 ];
