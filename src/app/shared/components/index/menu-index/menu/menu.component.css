@@ -28,8 +28,6 @@ span {
   color: #000;
 }
 
-
-
 .margin-laptop {
   position: relative;
   right: 54px;
@@ -49,10 +47,10 @@ span {
 .offcanvas-end {
   background-color: #222224f0;
 }
-a{
+a {
   font-size: 14.3px;
 }
-.margin-responsive-login{
+.margin-responsive-login {
   margin-top: 0px;
 }
 /* RESPONSIVE EL AUTOCOMPLETADO */
@@ -132,7 +130,7 @@ a{
     right: 80px;
   }
   .margin-laptop {
-    margin-top: 9px;
+    margin-top: 2px;
   }
 
   .form-select {
@@ -147,7 +145,6 @@ a{
   .margin-responsive {
     margin-top: 0px;
   }
-
 }
 
 @media screen and (min-width: 1475px) and (max-width: 1560px) {
@@ -165,7 +162,7 @@ a{
     margin-left: -8px;
     padding: 0;
   }
-  .mover-icono-user{
+  .mover-icono-user {
     right: 70px;
   }
   .responsive-links-1 {
