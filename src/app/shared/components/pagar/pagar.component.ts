@@ -60,7 +60,6 @@ export class PagarComponent implements OnInit, OnDestroy {
         this.arrayProductsList
       );
       this.apiPagar.postPagoUser(formPayments).subscribe((res: any) => {
-        console.log(res.data);
         this.htmlServer = res.data;
         this.pagarOCarrito.injectDomIFrame(res);
       });
