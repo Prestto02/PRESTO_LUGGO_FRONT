@@ -38,7 +38,7 @@
             *ngFor="let pedidos of arrayListaPedidos | filterPedidosLista:formB.formSearch.get('buscador')?.value | paginate: {itemsPerPage:8,currentPage:p};"
             (click)="buscarDetallePedido(pedidos.numeroOrden);" class="cursor">
             <th scope="row" class="text-center espacio"><b>#{{pedidos.numeroOrden}}</b></th>
-            <td class="text-center espacio">{{pedidos.fecha | date: 'M-d-yyyy, h:mm a' }}</td>
+            <td class="text-center espacio">{{pedidos.fecha | date: 'd-M-yyyy, h:mm:ss a' }}</td>
             <td class="text-center espacio"><b>{{pedidos.total | currency:'USD'}}</b></td>
             <td class="text-center espacio">{{pedidos.orden_cliente}}</td>
             <td class="espacio"><span appStateBadge [estado]="pedidos.estado" class="badge">{{pedidos.estado}}</span>
