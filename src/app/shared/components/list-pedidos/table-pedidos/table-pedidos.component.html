@@ -21,7 +21,7 @@
           class="text-center" (click)="getPedidosClient(ventas.id_venta)" data-bs-toggle="modal"
           data-bs-target="#exampleModal">
           <th scope="row" class="mb-3 mt-3 espacios btn-hover">{{ventas.id_venta}}</th>
-          <td class="mb-3 mt-3 espacios btn-hover">{{ventas.fecha_venta | date: 'M-d-yyyy, h:mm:ss a'}}</td>
+          <td class="mb-3 mt-3 espacios btn-hover">{{ventas.fecha_venta | date: 'd-M-yyyy, h:mm:ss a'}}</td>
           <td class="mb-3 mt-3 espacios btn-hover">{{ventas.valor_Total | currency:'USD'}}</td>
           <td class="mb-3 mt-2 espacios btn-hover">
             <span appColorBadge [colorBadgeState]="ventas.estado" class="badge btn-hover">{{ventas.estado}}</span>
