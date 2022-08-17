@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
-import { AbstractControl, FormBuilder, Validators } from '@angular/forms';
+import { AbstractControl, UntypedFormBuilder, Validators } from '@angular/forms';
 import { of } from 'rxjs';
 import { Expresion } from 'src/app/shared/validations/expresionRegular';
 import { SearchProductsService } from '../services/searchProducts.service';
 @Injectable({ providedIn: 'root' })
 export class BaseFormProducts {
   constructor(
-    private formB: FormBuilder,
+    private formB: UntypedFormBuilder,
     private apiServi: SearchProductsService
   ) {}
   //FORM PRODUCTOS

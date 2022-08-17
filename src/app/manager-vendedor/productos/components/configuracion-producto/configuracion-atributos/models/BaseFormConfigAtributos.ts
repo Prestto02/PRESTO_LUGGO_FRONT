@@ -1,19 +1,19 @@
 import { Injectable } from '@angular/core';
-import { FormArray, FormBuilder, Validators } from '@angular/forms';
+import { UntypedFormArray, UntypedFormBuilder, Validators } from '@angular/forms';
 import { Expresion } from 'src/app/shared/validations/expresionRegular';
 @Injectable({ providedIn: 'root' })
 export class BaseFormConfigAtributos {
-  constructor(private formB: FormBuilder) {}
+  constructor(private formB: UntypedFormBuilder) {}
   //FORM CONFIG ATRIBUTOS
   formConfigAtributos = this.formB.group({
     atributosVariacion: this.formB.array([], [Validators.required]),
   });
   //TRANSFORMAR EN UN ARRAY LOS COLORES
   get atributosVariacion() {
-    return this.formConfigAtributos.controls['atributosVariacion'] as FormArray;
+    return this.formConfigAtributos.controls['atributosVariacion'] as UntypedFormArray;
   }
   get multimediAtributos() {
-    return this.formConfigAtributos.controls['multimedia'] as FormArray;
+    return this.formConfigAtributos.controls['multimedia'] as UntypedFormArray;
   }
   //AÑADIR MAS ATRIBUTOS DE VARIACIONES
   addAtributosVariacion(
@@ -54,7 +54,7 @@ export class BaseFormConfigAtributos {
       imgProductsIcons: [imgProduct, [Validators.required]], */
       archivo: [imgTransfor, [Validators.required]],
     });
-    (this.atributosVariacion.at(i).get('multimedia') as FormArray).push(
+    (this.atributosVariacion.at(i).get('multimedia') as UntypedFormArray).push(
       imgArray
     ); //OBTENGO LA POSICION DEL ARRAY Y LE HAGO EL PUSH
   }

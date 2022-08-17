@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
-import { FormArray, FormBuilder, Validators } from '@angular/forms';
+import { UntypedFormArray, UntypedFormBuilder, Validators } from '@angular/forms';
 import { Expresion } from 'src/app/shared/validations/expresionRegular';
 @Injectable({ providedIn: 'root' })
 export class BaseFormConfigProducts {
-  constructor(private formB: FormBuilder) {}
+  constructor(private formB: UntypedFormBuilder) {}
   formConfigProduct = this.formB.group({
     nombreVariacion: [''],
     Atributos: this.formB.array([
@@ -32,7 +32,7 @@ export class BaseFormConfigProducts {
   });
   //TRANSFORMAR EN UN ARRAY LOS ATRIBUTOS
   get atributos() {
-    return this.formConfigProduct.controls['Atributos'] as FormArray;
+    return this.formConfigProduct.controls['Atributos'] as UntypedFormArray;
   }
   //AGREGO EL NUEVO ATRBUTO SELECCIONADO
   addAtributos(nombre: any, id: any, url: any) {

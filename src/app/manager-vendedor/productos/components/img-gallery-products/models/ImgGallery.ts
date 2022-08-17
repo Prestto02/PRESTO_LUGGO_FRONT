@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import { FormArray, FormBuilder } from '@angular/forms';
+import { UntypedFormArray, UntypedFormBuilder } from '@angular/forms';
 @Injectable({ providedIn: 'root' })
 export class ImgGalleryForm {
-  constructor(private formB: FormBuilder) {}
+  constructor(private formB: UntypedFormBuilder) {}
 
   formGallery = this.formB.group({
     multimedia: this.formB.array([
@@ -30,7 +30,7 @@ export class ImgGalleryForm {
   });
 
   get galleryProducts() {
-    return this.formGallery.controls['multimedia'] as FormArray;
+    return this.formGallery.controls['multimedia'] as UntypedFormArray;
   }
 
   addGalleryProducts(archivo: string, i: number, img: any, id?: number) {

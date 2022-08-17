@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { UntypedFormBuilder, Validators } from '@angular/forms';
 import { Expresion } from 'src/app/shared/validations/expresionRegular';
 @Injectable({ providedIn: 'root' })
 export class BaseFormPagar {
-  constructor(private formB: FormBuilder) {}
+  constructor(private formB: UntypedFormBuilder) {}
 
   formPagar = this.formB.group({
     Nombres: [
