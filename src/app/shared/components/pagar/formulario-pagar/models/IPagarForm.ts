@@ -12,6 +12,7 @@ export interface IFormularioUbicacion {
   latitud: number;
   longitud: number;
   nombre_ubicacion: string;
+  /* DATA */
 }
 export interface detalle_venta {
   cantidad: string;
