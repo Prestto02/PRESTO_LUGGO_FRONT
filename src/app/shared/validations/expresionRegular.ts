@@ -11,4 +11,5 @@ export const Expresion = {
   DimensionConDecimales: /^[0-9]+([.][0-9]+)?$/,
   DimensionConComa: /^[0-9]+([.][0-9]+)?$/,
   TiempoDescpacho: /^[0-9]+$/,
+  DatoAdicional: /^[0-9]+$/,
 };
