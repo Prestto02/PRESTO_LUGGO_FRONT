@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
-import { FormArray, FormBuilder, Validators } from '@angular/forms';
+import { UntypedFormArray, UntypedFormBuilder, Validators } from '@angular/forms';
 import { Expresion } from 'src/app/shared/validations/expresionRegular';
 
 @Injectable({ providedIn: 'root' })
 export class BaseFormListaDeseos {
-  constructor(private formB: FormBuilder) {}
+  constructor(private formB: UntypedFormBuilder) {}
   formListaDeseos = this.formB.group({
     id_lista: [0],
     Id_usuario: [0, [Validators.required]],
@@ -26,7 +26,7 @@ export class BaseFormListaDeseos {
   });
   //OBTENER EL ARRAY DE DETALLE LISTA DESEOS
   get detalleArticulos() {
-    return this.formListaDeseos.controls['Detalle_Lista_deseos'] as FormArray; //OBTENGO EL CONTROL DE LISTA DE DESEOS
+    return this.formListaDeseos.controls['Detalle_Lista_deseos'] as UntypedFormArray; //OBTENGO EL CONTROL DE LISTA DE DESEOS
   }
   //AGREGAR DETALLES DEL ARTICULO
   addDetalleArticulos() {

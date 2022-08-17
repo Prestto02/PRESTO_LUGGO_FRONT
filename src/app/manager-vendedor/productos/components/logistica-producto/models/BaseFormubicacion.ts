@@ -1,16 +1,16 @@
 import { Injectable } from '@angular/core';
-import { FormArray, FormBuilder, Validators } from '@angular/forms';
+import { UntypedFormArray, UntypedFormBuilder, Validators } from '@angular/forms';
 
 @Injectable({ providedIn: 'root' })
 export class BaseFormLogisticaProducto {
-  constructor(private formB: FormBuilder) {}
+  constructor(private formB: UntypedFormBuilder) {}
   formLogistica = this.formB.group({
     descripcion: [''],
     ubicacionProducto: this.formB.array([], [Validators.required]),
   });
 
   get ubicacionProducto() {
-    return this.formLogistica.controls['ubicacionProducto'] as FormArray;
+    return this.formLogistica.controls['ubicacionProducto'] as UntypedFormArray;
   }
   //AGREGAR NUEVA UBICACION DEL PRODUCTO
   addUbicacionProducto(descripcion: any, lt: any, lg: any) {

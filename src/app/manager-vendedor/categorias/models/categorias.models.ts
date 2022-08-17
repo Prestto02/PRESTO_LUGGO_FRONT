@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import {
-  FormArray,
-  FormBuilder,
-  FormControl,
+  UntypedFormArray,
+  UntypedFormBuilder,
+  UntypedFormControl,
   Validators,
 } from '@angular/forms';
 /* CATEOGORIA SELECCIONADA  */
@@ -12,7 +12,7 @@ interface CategorySelect {
 @Injectable({ providedIn: 'root' })
 export class BaseFormCategorias {
   categoriaSeleccionadas: CategorySelect[] = [];
-  constructor(private formB: FormBuilder) {}
+  constructor(private formB: UntypedFormBuilder) {}
 
   //FORMULARIO
   formCategorias = this.formB.group({
@@ -21,13 +21,13 @@ export class BaseFormCategorias {
   });
   //OBTENER EL ARRAY DE LA CATEGORIAS
   get getCategorias() {
-    return <FormArray>this.formCategorias.controls.ArticuloTieneCategoria;
+    return <UntypedFormArray>this.formCategorias.controls.ArticuloTieneCategoria;
   }
   //AGREGAR AL ARRAY PARA LA NUEVA CATEGORIA
   addCategoriaItems(id: any, e: any) {
     if (e.target.checked) {
       //PREGUNTO SI EXISTE EL EVENTO CHECK: TRUE
-      this.getCategorias.push(new FormControl({ idcategoria_articulo: id }));
+      this.getCategorias.push(new UntypedFormControl({ idcategoria_articulo: id }));
       this.categoriaSeleccionadas.push(e.target.value);
     } else {
       this.eliminarItems(id);
@@ -36,7 +36,7 @@ export class BaseFormCategorias {
   /* AGREGANDO LA CATEGORIA CUANDO SEA EDITADO */
   addCategoriasEdit(id: any, nombre: any) {
     //PREGUNTO SI EXISTE EL EVENTO CHECK: TRUE
-    this.getCategorias.push(new FormControl({ idcategoria_articulo: id }));
+    this.getCategorias.push(new UntypedFormControl({ idcategoria_articulo: id }));
     this.categoriaSeleccionadas.push(nombre);
   }
   //ELIMINAR ITEMS DE LA CATEGORIA

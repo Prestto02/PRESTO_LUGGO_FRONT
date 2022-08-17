@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
-import { FormArray, FormBuilder, Validators } from '@angular/forms';
+import { UntypedFormArray, UntypedFormBuilder, Validators } from '@angular/forms';
 import { Expresion } from 'src/app/shared/validations/expresionRegular';
 @Injectable({ providedIn: 'root' })
 export class BaseFormAtributosConfig {
-  constructor(private formB: FormBuilder) {}
+  constructor(private formB: UntypedFormBuilder) {}
 
   formAtributos = this.formB.group({
     Color_articulo: this.formB.group({
@@ -57,7 +57,7 @@ export class BaseFormAtributosConfig {
   });
   //TRANSFORMAR EL COLOR EN ARREGLO
   get colors() {
-    return this.formAtributos.controls['Color_articulo'] as FormArray;
+    return this.formAtributos.controls['Color_articulo'] as UntypedFormArray;
   }
   //AGREGAR NUEVOS COLORES
   addColores(id: any, nombre: any) {

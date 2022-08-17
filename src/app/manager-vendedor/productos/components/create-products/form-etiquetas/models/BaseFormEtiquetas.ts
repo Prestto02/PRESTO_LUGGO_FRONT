@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
-import { FormArray, FormBuilder, Validators } from '@angular/forms';
+import { UntypedFormArray, UntypedFormBuilder, Validators } from '@angular/forms';
 import { Expresion } from 'src/app/shared/validations/expresionRegular';
 
 @Injectable({ providedIn: 'root' })
 export class BaseFormEtiquetas {
-  constructor(private formB: FormBuilder) {}
+  constructor(private formB: UntypedFormBuilder) {}
   formEtiquetas = this.formB.group({
     etiquetaForm: [
       '',
@@ -14,7 +14,7 @@ export class BaseFormEtiquetas {
   });
   //TRANSFORMAR EN UN ARRAY LOS TAMANO
   get etiquetas() {
-    return this.formEtiquetas.controls['etiqueta'] as FormArray;
+    return this.formEtiquetas.controls['etiqueta'] as UntypedFormArray;
   }
   //AÑADIR MAS TAMANO
   addEtiquetas(data: any) {

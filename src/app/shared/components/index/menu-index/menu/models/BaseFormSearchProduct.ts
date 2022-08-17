@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
-import { AbstractControl, FormBuilder } from '@angular/forms';
+import { AbstractControl, UntypedFormBuilder } from '@angular/forms';
 import { BuscadorProductosService } from '../services/buscador-productos.service';
 @Injectable({ providedIn: 'root' })
 export class BaseFormSearchProducts {
   constructor(
-    private formB: FormBuilder,
+    private formB: UntypedFormBuilder,
     private apiServi: BuscadorProductosService
   ) {}
   //BUSCAR PRODUCTOS
