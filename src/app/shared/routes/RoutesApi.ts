@@ -8,7 +8,7 @@ export const UrlApi = {
   //PERSONAS
   getPersonaId: 'api/usuario',
   persona: 'api/persona',
-
+  data: 'asdasd',
   //LOGIN, BUSCAR PERSONA, RESTABLECER CONTRASEÑA, CODIGO De ACTIVACION
   buscarUsuario: 'api/usuario/cambiar',
   passwordReset: 'api/usuario/cambiar_contraseña',
