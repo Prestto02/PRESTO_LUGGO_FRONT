@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { TokenService } from 'src/app/login/services/token.service';
 import {
   ListCategoryApi,
   SubListCategoryApi,
 } from 'src/app/manager-vendedor/categorias/models/ListCategory';
 import { CategoriasService } from 'src/app/manager-vendedor/productos/services/categorias.service';
+import { UrlFront } from 'src/app/shared/routes/RoutesFront';
 
 import { arrayListMasVendidos, ListeMenu } from './LisItemsMenu';
 @Component({
@@ -21,7 +23,8 @@ export class Menu2Component implements OnInit {
   arrayLisVendidos: ReadonlyArray<ListeMenu> = arrayListMasVendidos; //LIST LOS MAS VENDIDOS
   constructor(
     private apiCategoria: CategoriasService, //SERVICE CATEGORIA
-    private tokenUser: TokenService //TOKEN SERVICES
+    private tokenUser: TokenService, //TOKEN SERVICES
+    private route: Router
   ) {
     this.correoUsuario = this.tokenUser.getTokenEmail(); //OBTENGO EL EMAIL
   }
@@ -53,6 +56,14 @@ export class Menu2Component implements OnInit {
       .getIdCategoriaHijo(index.id)
       .subscribe((res: ReadonlyArray<SubListCategoryApi>) => {
         this.subCategorias = res;
+        if (this.subCategorias.length === 0) {
+          this.irBuscar();
+        }
       });
+  }
+  irBuscar() {
+    this.route.navigateByUrl(
+      `${UrlFront.Menu.menu}/${UrlFront.Menu.buscarGet}/${this.nombreCategoria}`
+    );
   }
 }
