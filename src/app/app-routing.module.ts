@@ -48,7 +48,7 @@ const routes: Routes = [
         './shared/components/carrito-list/module/carrito-list.module'
       ).then((m) => m.CarritoListModule),
   },
-  //PAGAR EL CARRITO LAZY LOADING
+  //PAGAR EL CARRITO MODULE LAZY LOADING
   {
     path: UrlFront.Pagar.pagar,
     loadChildren: () =>
