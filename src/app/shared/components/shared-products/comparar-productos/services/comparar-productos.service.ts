@@ -22,7 +22,7 @@ export class CompararProductosService {
     } else {
       this.addListProduct.push({ ...dataObj }); //GUARDO EL OBJETO EN EN ARREGLO
       this.ListCProductos.next(this.addListProduct); //GUARDO EN EL OBSERVABLE EL ARREGLO ASIGNADO
-      this.messageFront.getSuccessMessage(
+      this.messageFront.getSuccessMessageListDesire(
         message.Success.title,
         message.Success.productoAgregado
       ); //OK SE AGREGO EL PRODUCTO

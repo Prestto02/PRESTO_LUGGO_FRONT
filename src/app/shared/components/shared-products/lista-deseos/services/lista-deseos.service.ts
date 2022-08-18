@@ -30,7 +30,7 @@ export class ListaDeseosService {
       this.addListaDeseosProdut.push({ ...dataObj }); //GUARDO EL OBJETO EN EN ARREGLO
       this.ListaDeseosItem.next(this.addListaDeseosProdut); //GUARDO EN EL OBSERVABLE EL ARREGLO ASIGNADO
       if (!messageValor) {
-        this.messageFront.getSuccessMessage('', 'Guardado en favoritos'); //OK SE AGREGO EL PRODUCTO
+        this.messageFront.getSuccessMessageListDesire('', 'Guardado en favoritos'); //OK SE AGREGO EL PRODUCTO
       }
     }
   }
@@ -79,7 +79,7 @@ export class ListaDeseosService {
     );
     this.addListaDeseosProdut.splice(data, 1); //ELIMINO LA COINCIDENCIA QUE ENCONTRO
     /* ELIMINADO DE FAVORITO */
-    this.messageFront.getSuccessMessage('', 'Eliminado de favorito');
+    this.messageFront.getSuccessMessageListDesire('', 'Eliminado de favorito');
   }
   //VERFICO EL LISTA EN EL LOCAL STORAGE
   verifyListLocalStorage() {

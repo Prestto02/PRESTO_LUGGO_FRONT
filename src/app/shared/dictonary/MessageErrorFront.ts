@@ -13,7 +13,7 @@ export const errorFront = {
     imagenes: 'La imagen debe ser en formato jpg, jpeg, png',
   },
   Info: {
-    title: 'Información',
+    title: 'Mensaje Informativo',
     dobleProducto: 'Ya se agrego este producto',
   },
 };
