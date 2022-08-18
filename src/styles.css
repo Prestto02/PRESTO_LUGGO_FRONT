@@ -48,7 +48,7 @@ html {
   background: #f1f3f6;
   overflow-x: hidden;
 }
-body{
+body {
   background-color: #f1f3f6;
 }
 
@@ -61,7 +61,7 @@ html::-webkit-scrollbar-thumb {
   background: #ea2313;
   border-radius: 4px;
 }
-.newColorDanger.toast-success {
+.newColorListDerise.toast-success {
   background-color: #282828;
   color: white;
   background-image: url(https://ecovitali.presttoapp.net/Puertto/Calidad/Repositorio/img/IMÁGENES/gif/wishlist-list2.gif);
@@ -75,4 +75,89 @@ html::-webkit-scrollbar-thumb {
   font-weight: 600;
   font-size: 18px;
   color: white;
+}
+
+/* newColorCars */
+.newColorCars.toast-success {
+  background-color: #e6f8f1;
+  border-left: 6px solid #3db089;
+  color: #3db089;
+  background-image: url(https://ecovitali.presttoapp.net/Puertto/Calidad/Repositorio/img/IMÁGENES/gif/exito.png);
+}
+
+.newColorCars button {
+  color: #3db089;
+}
+.newColorCars.toast-success .toast-title {
+  color: #3db089;
+  font-weight: 700;
+}
+.newColorCars.toast-success .toast-message {
+  font-family: Cardium B-SemiBold;
+  font-weight: 600;
+  font-size: 13px;
+  color: #3db089;
+}
+
+.newColorInfo.toast-info {
+  background-color: #e9ebfd;
+  border-left: 6px solid #797ffb;
+  color: #797ffb;
+  background-image: url(https://ecovitali.presttoapp.net/Puertto/Calidad/Repositorio/img/IMÁGENES/gif/informacion.png);
+}
+
+.newColorInfo button {
+  color: #797ffb;
+}
+.newColorInfo.toast-info .toast-title {
+  color: #797ffb;
+  font-weight: 700;
+}
+.newColorInfo.toast-info .toast-message {
+  font-family: Cardium B-SemiBold;
+  font-weight: 600;
+  font-size: 13px;
+  color: #797ffb;
+}
+
+.newColorDanger.toast-error {
+  background-color: #fde8e8;
+  border-left: 6px solid #fd6a6d;
+  color: #fde8e8;
+  background-image: url(https://ecovitali.presttoapp.net/Puertto/Calidad/Repositorio/img/IMÁGENES/gif/error.png);
+}
+
+.newColorDanger button {
+  color: #fd6a6d;
+}
+.newColorDanger.toast-error .toast-title {
+  color: #fd6a6d;
+  font-weight: 700;
+}
+.newColorDanger.toast-error .toast-message {
+  font-family: Cardium B-SemiBold;
+  font-weight: 600;
+  font-size: 13px;
+  color: #fd6a6d;
+}
+
+.newColorWarning.toast-warning {
+  background-color: #fff3e6;
+  border-left: 6px solid #d09547;
+  color: #fff3e6;
+  background-image: url(https://ecovitali.presttoapp.net/Puertto/Calidad/Repositorio/img/IMÁGENES/gif/advertencia.png);
+}
+
+.newColorWarning button {
+  color: #d09547;
+}
+.newColorWarning.toast-warning .toast-title {
+  color: #d09547;
+  font-weight: 700;
+}
+.newColorWarning.toast-warning .toast-message {
+  font-family: Cardium B-SemiBold;
+  font-weight: 600;
+  font-size: 13px;
+  color: #d09547;
 }

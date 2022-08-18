@@ -57,7 +57,7 @@ export class ListItemsDeseosComponent implements OnChanges {
     this.apiListDeseos
       .deleteListProductCollection(id_detalle_lista)
       .subscribe((res) => {
-        this.message.getInfoMessage('', 'Se elimino');
+        this.message.getInfoMessage('Mensaje Informativo', 'Se elimino');
         this.getCollectionId();
       });
   }
@@ -74,7 +74,7 @@ export class ListItemsDeseosComponent implements OnChanges {
   ) {
     const form = { id_lista, id_detalle_articulo };
     this.apiListDeseos.putListaColeccion(form).subscribe((res) => {
-      this.message.getInfoMessage('', `Se agregro a la lista ${nombre}`);
+      this.message.getInfoMessage('Mensaje Informativo', `Se agregro a la lista ${nombre}`);
     });
   }
 }
