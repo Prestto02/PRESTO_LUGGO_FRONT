@@ -52,7 +52,7 @@
       <div class="col-xl-5 col-xxl-5 col-md-3 col-sm-6 col-12">
         <div class="input-group mb-3">
           <span class="input-group-text" id="precio-global">$</span>
-          <input type="text" class="form-control" placeholder="12,00" aria-label="Precio Global"
+          <input type="text" class="form-control" placeholder="12.00" aria-label="Precio Global"
             aria-describedby="precio-global" formControlName="PrecioGlobal" (keypress)="changePrecioG($event)"
             [class.is-invalid]="formAtributosDos.formAtributosDos.get('PrecioGlobal')?.invalid && formAtributosDos.formAtributosDos.get('PrecioGlobal')?.touched">
           <!--           <button class="btn btn-sm btn-primary" (click)="agregarPrecioGlobal();" type="button" id="button-addon2"
@@ -60,7 +60,7 @@
         </div>
         <app-form-errors-container [forControl]="formAtributosDos.formAtributosDos.get('PrecioGlobal')">
           <app-message-error forErrorCode="required" customMsg="Este campo es requerido"></app-message-error>
-          <app-message-error forErrorCode="pattern" customMsg="Solo números ej: 12,00"></app-message-error>
+          <app-message-error forErrorCode="pattern" customMsg="Solo números ej: 12.00"></app-message-error>
         </app-form-errors-container>
       </div>
     </div>
