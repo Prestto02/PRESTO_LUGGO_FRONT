@@ -5,6 +5,7 @@ export interface Direcciones {
   telefono: string;
   latitud_direccion?: number;
   longitud_direccion?: number;
+  referencia: string;
   latitud?: string;
   longitud?: string;
 }

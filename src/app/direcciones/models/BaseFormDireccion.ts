@@ -21,6 +21,13 @@ export class FormDireccion {
       '',
       [Validators.required, Validators.pattern(Expresion.CedulaTelefono)],
     ],
+    referencia: [
+      '',
+      [
+        Validators.required,
+        Validators.pattern(Expresion.SoloLetrasAcentosEspacios),
+      ],
+    ],
     latitud_direccion: [0, [Validators.required]],
     longitud_direccion: [0, [Validators.required]],
     latitud: [],
