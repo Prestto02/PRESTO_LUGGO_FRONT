@@ -64,6 +64,18 @@
       </div>
 
       <div class="mb-3">
+        <label for="referencia" class="form-label">Referencia</label>
+        <input type="text" maxlength="10" class="form-control" id="referencia" formControlName="referencia" />
+        <app-form-errors-container [forControl]="formB.formDireccion.get('referencia')">
+          <app-message-error forErrorCode="required"></app-message-error>
+          <app-message-error forErrorCode="minLength" [customMsg]="'Minimo 5 caracteres'"></app-message-error>
+          <app-message-error forErrorCode="maxlength" [customMsg]="'Máximo 200 caracteres'"></app-message-error>
+          <app-message-error forErrorCode="pattern" [customMsg]="'Solo se acepta letras, no caracteres especiales'">
+          </app-message-error>
+        </app-form-errors-container>
+      </div>
+
+      <div class="mb-3">
         <label for="Latitud" class="form-label">Latitud</label>
         <input type="text" class="form-control" id="Latitud" [attr.disabled]="true"
           formControlName="latitud_direccion" />
