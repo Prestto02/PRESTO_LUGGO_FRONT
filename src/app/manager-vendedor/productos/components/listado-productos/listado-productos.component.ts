@@ -45,7 +45,7 @@ export class ListadoProductosComponent implements OnInit {
 
         /*       this.apiProducts.setProductListAdn(res); */
       });
-    }, 2000);
+    }, 4000);
     /*   this.apiProducts.productDataADn.subscribe((res) => {
       this.dataProducts = res;
     }); */
