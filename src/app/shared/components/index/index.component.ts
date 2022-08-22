@@ -14,7 +14,6 @@ export class IndexComponent implements OnInit {
     this.nombre = this._route.snapshot.paramMap.get('nombre');
     this.categoria = this._route.snapshot.paramMap.get('categoria');
   }
-
   ngOnInit(): void {}
   /* DETECTAR EL TAMAÑO DE LA PANTALLA PARA PODER LLAMAR A LA VERSION TELEFONO */
   /*   @HostListener('window:resize', ['$event'])
