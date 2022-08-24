@@ -4,7 +4,7 @@ import { FormDireccion } from '../../models/BaseFormDireccion';
 
 import { ListDireccionesComponent } from '../list-direcciones/list-direcciones.component';
 import { DireccionUsersService } from '../services/direccion-users.service';
-
+import { Direcciones } from '../../models/Direcciones.models';
 declare var google: any;
 
 @Component({
@@ -31,6 +31,7 @@ export class MapaComponent implements OnInit {
 
   latitud: any;
   longitud: any;
+  arrayDireccionMap: Direcciones[] = [];
   constructor(
     public formB: FormDireccion,
     private api: DireccionUsersService,
@@ -44,6 +45,28 @@ export class MapaComponent implements OnInit {
     };
     //this.initOverlays();
     this.infoWindow = new google.maps.InfoWindow();
+    this.getDataCoordenada();
+  }
+
+  getDataCoordenada(): void {
+    this.api.getAllDireccionUser().subscribe((res: Direcciones[]) => {
+      this.arrayDireccionMap = res;
+      /* DIRECCIONES ARRAY MAP */
+      if (this.arrayDireccionMap.length > 0) {
+        this.arrayDireccionMap.map((res: Direcciones) => {
+          this.overlays.push(
+            new google.maps.Marker({
+              position: {
+                lat: res.latitud_direccion,
+                lng: res.longitud_direccion,
+              },
+              title: res.descripcion,
+              draggable: this.draggable,
+            })
+          );
+        });
+      }
+    });
   }
   //AGREGAR EL NUEVA UBICACION Y ABRIR EL MODAL
   handleMapClick(event: any) {
