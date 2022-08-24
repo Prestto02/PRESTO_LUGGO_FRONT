@@ -18,6 +18,7 @@ interface DatosCliente {
   email: string;
   tipos_Pago?: string;
   direccion: string;
+  referencia: string;
   telefono: string;
   pais?: string;
 }
