@@ -158,6 +158,7 @@
             </div>
             <div class="w-75">
               <input type="text" class="form-control" id="floatingModelo" placeholder="Modelo" formControlName="modelo"
+              maxlength="15"
                 [class.is-invalid]="formB.formAtributos.get('modelo')?.invalid && formB.formAtributos.get('modelo')?.touched">
             </div>
             <app-form-errors-container [forControl]="formB.formAtributos.get('modelo')">
