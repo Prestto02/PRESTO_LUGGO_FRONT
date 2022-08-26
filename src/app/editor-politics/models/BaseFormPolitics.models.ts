@@ -7,7 +7,7 @@ export class BaseFormPolitics {
   constructor(private formB: FormBuilder) {}
 
   formPolitics = this.formB.group({
-    id: ['', [Validators.pattern(Expresion.CedulaTelefono)]],
+    ID: ['', [Validators.pattern(Expresion.CedulaTelefono)]],
     DocumentName: [
       '',
       [
@@ -24,6 +24,7 @@ export class BaseFormPolitics {
       0,
       [Validators.required, Validators.pattern(Expresion.CedulaTelefono)],
     ],
+    IdDocument: [0, [Validators.required]],
   });
 
   limpiarFormulario() {

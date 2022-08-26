@@ -1,3 +1,19 @@
 <app-menu-index></app-menu-index>
-<p>politicas works!</p>
+
+<div class="container-fluid mt-5">
+  <div class="row">
+    <div class="col-xxl-3 col-xl-3 col-md-3 col-sm-12 col-12">
+      <ul class="list-group">
+        <li class="list-group-item" (click)="buscarDocument()">POLITICAS DE TOMAR</li>
+        <li class="list-group-item">A second item</li>
+        <li class="list-group-item">A third item</li>
+        <li class="list-group-item">A fourth item</li>
+        <li class="list-group-item">And a fifth one</li>
+      </ul>
+    </div>
+    <div class="col-xxl-9 col-xl-9 col-md-9 col-sm-9 col-12">
+      <app-visualizar-document [visualizarPDF]="pdfURL"></app-visualizar-document>
+    </div>
+  </div>
+</div>
 <app-footer-index></app-footer-index>

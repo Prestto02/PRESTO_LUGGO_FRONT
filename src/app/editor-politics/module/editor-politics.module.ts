@@ -11,6 +11,7 @@ import { BaseFormPolitics } from '../models/BaseFormPolitics.models';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { VisuallyPoliticsComponent } from '../visually-politics/visually-politics.component';
 import { ErrorsExtensionsModule } from 'src/app/shared/components/errors/errors-module.module';
+import { PdfViewerModule } from 'ng2-pdf-viewer';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { ErrorsExtensionsModule } from 'src/app/shared/components/errors/errors-
     EditorPoliticsRoutingModule,
     ReactiveFormsModule,
     NgxPaginationModule,
+    PdfViewerModule, //LECTOR DE PDF MODULE
     MenuIndexModule,
     FooterIndexModule,
     ErrorsExtensionsModule,

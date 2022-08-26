@@ -25,8 +25,9 @@
     </tr>
   </thead>
   <tbody>
+    <!--   -->
     <tr *ngFor="let politics of dataPolitics | searchPolitics:search | paginate: {itemsPerPage:8,currentPage:p}">
-      <td>{{politics.id}}</td>
+      <td>{{politics.ID}}</td>
       <td>{{politics.DocumentName}}</td>
       <td>{{politics.DocumentVS}}</td>
       <td>{{politics.Permises}}</td>

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { UrlFront } from '../shared/routes/RoutesFront';
 import { BaseFormPolitics } from './models/BaseFormPolitics.models';
 import { IPolitics } from './models/IPolitics.models';
 import { PoliticsEditService } from './service/politics-edit.service';
@@ -12,6 +14,7 @@ export class EditorPoliticsComponent implements OnInit {
   arrayPolitics: Array<IPolitics> = [];
   constructor(
     private apiServi: PoliticsEditService,
+    private route: Router,
     public formB: BaseFormPolitics
   ) {}
 
@@ -26,5 +29,11 @@ export class EditorPoliticsComponent implements OnInit {
 
   postDataForm() {
     console.log(this.formB.formPolitics.value);
+  }
+
+  rutaVisualizar() {
+    this.route.navigateByUrl(
+      `${UrlFront.PoliticasEdicion.ModulePolitics}/${UrlFront.PoliticasEdicion.visualizarPoliticsGet}/1`
+    );
   }
 }

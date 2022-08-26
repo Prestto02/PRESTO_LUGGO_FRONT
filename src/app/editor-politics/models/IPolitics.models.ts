@@ -1,10 +1,11 @@
 export interface IPolitics {
-  id: number;
+  ID: number;
   DocumentName: string;
   DocumentVS: string;
   DocumentLink: string;
   Routefile: string;
   Permises: number;
+  IdDocument: number;
 }
 
 interface PoliticsHeader {

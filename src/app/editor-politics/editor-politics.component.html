@@ -38,11 +38,25 @@
               </app-form-errors-container>
             </div>
 
+
+            <div class="mb-3">
+              <label for="IdDocument" class="form-label">¿Que politica pertenece?</label>
+              <select class="form-select" aria-label="Default select example" formControlName="IdDocument">
+                <option selected value="0">Escoja una opción</option>
+                <option value="1">POLITICA GENERAL</option>
+                <option value="2">POLITICA DE COOKIES</option>
+                <option value="3">POLITICA DE CAMBIOS</option>
+              </select>
+              <app-form-errors-container [forControl]="formB.formPolitics.get('IdDocument')">
+                <app-message-error forErrorCode="required" [customMsg]="'Este campo es requerido'"></app-message-error>
+              </app-form-errors-container>
+            </div>
+
             <div class="mb-3">
               <label for="DocumentLink" class="form-label">Nombre del Documento</label>
               <input type="file" class="form-control" id="DocumentLink" formControlName="DocumentLink" />
               <app-form-errors-container [forControl]="formB.formPolitics.get('DocumentLink')">
-                <app-message-error forErrorCode="required"></app-message-error>
+                <app-message-error forErrorCode="required" [customMsg]="'Este campo es requerido'"></app-message-error>
               </app-form-errors-container>
             </div>
 
@@ -55,10 +69,7 @@
                 <option value="3">Todos</option>
               </select>
               <app-form-errors-container [forControl]="formB.formPolitics.get('Permises')">
-                <app-message-error forErrorCode="required"></app-message-error>
-                <app-message-error forErrorCode="pattern"
-                  [customMsg]="'Solo se acepta letras, no caracteres especiales'">
-                </app-message-error>
+                <app-message-error forErrorCode="required" [customMsg]="'Este campo es requerido'"></app-message-error>
               </app-form-errors-container>
             </div>
 
@@ -72,4 +83,5 @@
     </div>
   </div>
 </div>
+<button (click)="rutaVisualizar()">ir VIsualizar</button>
 <app-footer-index></app-footer-index>
