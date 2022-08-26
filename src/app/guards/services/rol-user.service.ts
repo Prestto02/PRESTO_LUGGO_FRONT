@@ -56,6 +56,11 @@ export class RolUserService {
         }/${this.tokenServi.getTokenId()}`
       );
     }
+    if (numero === '3') {
+      this.route.navigateByUrl(
+        `${UrlFront.PoliticasEdicion.politics}/${UrlFront.PoliticasEdicion.ModulePolitics}`
+      );
+    }
     /* this.route.navigateByUrl(`${UrlFront.Menu.menu}/${UrlFront.Menu.index}`); */
   }
   //VERIFICO EL ROL DEL USUARIO
@@ -73,7 +78,7 @@ export class RolUserService {
         );
         return 2;
       }
-      case 'Administrador': {
+      case 'Editor': {
         this.route.navigateByUrl(
           `${UrlFront.Menu.menu}/${UrlFront.Menu.index}`
         );

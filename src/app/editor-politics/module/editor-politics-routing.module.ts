@@ -1,15 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { EditorGuard } from 'src/app/guards/editor.guard';
 import { UrlFront } from 'src/app/shared/routes/RoutesFront';
-import { PoliticasComponent } from '../politicas.component';
-
+import { EditorPoliticsComponent } from '../editor-politics.component';
 const routes: Routes = [
   {
     path: '',
     children: [
       {
-        path: UrlFront.Politicas.politicasPuertto, //RUTA CARRITO
-        component: PoliticasComponent,
+        path: UrlFront.PoliticasEdicion.politics,
+       /*  canActivate: [EditorGuard], */
+        component: EditorPoliticsComponent,
       },
     ],
   },
@@ -19,4 +20,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class PoliticasRoutingModule {}
+export class EditorPoliticsRoutingModule {}

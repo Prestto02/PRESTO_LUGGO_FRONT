@@ -72,7 +72,11 @@ export const UrlFront = {
   //POLITICAS
   Politicas: {
     politicas: 'politicas',
-    politicasLuggo: 'politicas-general',
+    politicasPuertto: 'politicas-general',
+  },
+  PoliticasEdicion: {
+    ModulePolitics: 'module-politicas',
+    politics: 'politicas',
   },
   //COMUNIDAD
   Comunidad: {

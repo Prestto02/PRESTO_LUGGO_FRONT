@@ -36,7 +36,7 @@ export class Footer2Component implements OnInit {
   }
   irAPoliticas() {
     this._route.navigateByUrl(
-      `${UrlFront.Politicas.politicas}/${UrlFront.Politicas.politicasLuggo}`
+      `${UrlFront.Politicas.politicas}/${UrlFront.Politicas.politicasPuertto}`
     );
   }
 }

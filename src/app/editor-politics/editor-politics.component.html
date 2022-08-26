@@ -1,0 +1,75 @@
+<app-menu-index></app-menu-index>
+<h3 class="text-center mt-5 mb-3">Subida de archivos de politicas de Puertto</h3>
+<div class="container bg-white rounded">
+  <div class="row">
+    <app-list-politics [dataPolitics]="arrayPolitics"></app-list-politics>
+  </div>
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Registrar </h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form [formGroup]="formB.formPolitics">
+            <div class="mb-3">
+              <input type="hidden" formControlName="id" />
+            </div>
+            <div class="mb-3">
+              <label for="DocumentName" class="form-label">Nombre del Documento</label>
+              <input type="text" class="form-control" id="DocumentName" formControlName="DocumentName" />
+              <app-form-errors-container [forControl]="formB.formPolitics.get('DocumentName')">
+                <app-message-error forErrorCode="required"></app-message-error>
+                <app-message-error forErrorCode="pattern"
+                  [customMsg]="'Solo se acepta letras, no caracteres especiales'">
+                </app-message-error>
+              </app-form-errors-container>
+            </div>
+
+            <div class="mb-3">
+              <label for="DocumentVS" class="form-label">Versión</label>
+              <input type="text" class="form-control" id="DocumentVS" formControlName="DocumentVS" />
+              <app-form-errors-container [forControl]="formB.formPolitics.get('DocumentVS')">
+                <app-message-error forErrorCode="required"></app-message-error>
+                <app-message-error forErrorCode="pattern" [customMsg]="'Solo se acepta números'">
+                </app-message-error>
+              </app-form-errors-container>
+            </div>
+
+            <div class="mb-3">
+              <label for="DocumentLink" class="form-label">Nombre del Documento</label>
+              <input type="file" class="form-control" id="DocumentLink" formControlName="DocumentLink" />
+              <app-form-errors-container [forControl]="formB.formPolitics.get('DocumentLink')">
+                <app-message-error forErrorCode="required"></app-message-error>
+              </app-form-errors-container>
+            </div>
+
+            <div class="mb-3">
+              <label for="Permises" class="form-label">¿Quién puede ver el documento?</label>
+              <select class="form-select" aria-label="Default select example" formControlName="Permises">
+                <option selected value="0">Escoja una opción</option>
+                <option value="1">Usuarios</option>
+                <option value="2">Adn</option>
+                <option value="3">Todos</option>
+              </select>
+              <app-form-errors-container [forControl]="formB.formPolitics.get('Permises')">
+                <app-message-error forErrorCode="required"></app-message-error>
+                <app-message-error forErrorCode="pattern"
+                  [customMsg]="'Solo se acepta letras, no caracteres especiales'">
+                </app-message-error>
+              </app-form-errors-container>
+            </div>
+
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+              <button type="button" class="btn btn-dark">Guardar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer-index></app-footer-index>
