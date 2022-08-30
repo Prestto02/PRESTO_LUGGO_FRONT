@@ -57,10 +57,21 @@ export class ProductsService {
   addProductPagination(dataObj: any) {
     let hash: any = {};
     this.dataScrollProduct.push(...dataObj);
-    this.dataScrollProduct = this.dataScrollProduct.filter(
-      (res: any) => (hash[res.id_artic] ? false : (hash[res.id_artic] = true)) //PARA QUITAR LOS PRODUCTOS REPETIDOS
-    );
     this.productDataSource.next(this.dataScrollProduct);
+    /*     this.dataScrollProduct = this.dataScrollProduct.filter((res: any) =>
+      hash[res.id_artic] ? false : (hash[res.id_artic] = true)
+    );*/ //PARA QUITAR LOS PRODUCTOS REPETIDOS
+    /*     const data = this.dataScrollProduct.map((res: any) => {
+      if (res.articulos) {
+        return res.articulos.filter((dataObj: any) => {
+          return hash[dataObj.id_artic]
+            ? false
+            : (hash[dataObj.id_artic] = true);
+        });
+      }
+    });
+    const ObjetoData = data.filter((item) => item.length > 0);
+    console.log(ObjetoData); */
   }
   //ELIMINAR PRODUCTO
   eliminarProducto(id: any) {

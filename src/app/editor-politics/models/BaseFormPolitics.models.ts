@@ -17,14 +17,14 @@ export class BaseFormPolitics {
     ],
     DocumentVS: [
       '',
-      [Validators.required, Validators.pattern(Expresion.CedulaTelefono)],
+      [Validators.required, Validators.pattern(Expresion.SoloNumeros)],
     ],
     DocumentLink: ['', [Validators.required]],
     Permises: [
       0,
       [Validators.required, Validators.pattern(Expresion.CedulaTelefono)],
     ],
-    IdDocument: [0, [Validators.required]],
+    IdDocument: ['', [Validators.required]],
   });
 
   limpiarFormulario() {

@@ -15,6 +15,7 @@ const routes: Routes = [
       },
       {
         path: UrlFront.PoliticasEdicion.visualizarPolitics,
+        /* canActivate:[EditorGuard], */
         component: VisuallyPoliticsComponent,
       },
     ],

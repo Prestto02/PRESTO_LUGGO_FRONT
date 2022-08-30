@@ -15,7 +15,7 @@
         <div class="modal-body">
           <form [formGroup]="formB.formPolitics">
             <div class="mb-3">
-              <input type="hidden" formControlName="id" />
+              <input type="hidden" formControlName="ID" />
             </div>
             <div class="mb-3">
               <label for="DocumentName" class="form-label">Nombre del Documento</label>
@@ -42,7 +42,7 @@
             <div class="mb-3">
               <label for="IdDocument" class="form-label">¿Que politica pertenece?</label>
               <select class="form-select" aria-label="Default select example" formControlName="IdDocument">
-                <option selected value="0">Escoja una opción</option>
+                <option value="0" selected>Escoja una opción</option>
                 <option value="1">POLITICA GENERAL</option>
                 <option value="2">POLITICA DE COOKIES</option>
                 <option value="3">POLITICA DE CAMBIOS</option>
@@ -72,10 +72,10 @@
                 <app-message-error forErrorCode="required" [customMsg]="'Este campo es requerido'"></app-message-error>
               </app-form-errors-container>
             </div>
-
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-              <button type="button" class="btn btn-dark">Guardar</button>
+              <button type="button" [disabled]="formB.formPolitics.invalid" class="btn btn-dark" data-bs-dismiss="modal"
+                (click)="postDataForm()">Guardar</button>
             </div>
           </form>
         </div>
@@ -83,5 +83,6 @@
     </div>
   </div>
 </div>
-<button (click)="rutaVisualizar()">ir VIsualizar</button>
+<app-levels-folder></app-levels-folder>
+
 <app-footer-index></app-footer-index>

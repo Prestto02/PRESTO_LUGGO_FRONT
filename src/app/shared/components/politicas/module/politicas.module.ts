@@ -6,7 +6,6 @@ import { FooterIndexModule } from '../../index/footer-index/module/footer-index.
 import { PoliticasRoutingModule } from './politicas-routing.module';
 import { VisualizarDocumentComponent } from '../visualizar-document/visualizar-document.component';
 import { PdfViewerModule } from 'ng2-pdf-viewer';
-
 @NgModule({
   declarations: [PoliticasComponent, VisualizarDocumentComponent],
   imports: [

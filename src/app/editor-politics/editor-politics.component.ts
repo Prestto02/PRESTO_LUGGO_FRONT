@@ -29,6 +29,7 @@ export class EditorPoliticsComponent implements OnInit {
 
   postDataForm() {
     console.log(this.formB.formPolitics.value);
+    this.formB.limpiarFormulario();
   }
 
   rutaVisualizar() {

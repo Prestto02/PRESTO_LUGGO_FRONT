@@ -1,0 +1,29 @@
+<!-- Modal -->
+<div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel1">Agregar Carpeta</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <h5>Escoger la carpeta</h5>
+        <form>
+          <p-treeSelect [(ngModel)]="selectedNode" [options]="nodes" placeholder="Seleccione la carpeta" (click)="mostrarDatos()">
+          </p-treeSelect>
+          <div class="mb-3">
+            <label for="NameFolder" class="form-label">Nombre del Documento</label>
+            <input type="text" class="form-control" id="NameFolder" formControlName="NameFolder" />
+            <!--   <app-form-errors-container [forControl]="">
+            <app-message-error forErrorCode="required"></app-message-error>
+            <app-message-error forErrorCode="pattern" [customMsg]="'Solo se acepta letras, no caracteres especiales'">
+            </app-message-error>
+          </app-form-errors-container> -->
+          </div>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Guardar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
