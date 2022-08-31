@@ -104,6 +104,8 @@ export class LevelsFolderComponent implements OnInit {
       ],
     }, */
   ];
+  editForm: boolean = false;
+  buttonEditDelete: boolean = false;
   selectedNode: any;
   constructor(
     public formB: BaseFormFolders,
@@ -120,18 +122,35 @@ export class LevelsFolderComponent implements OnInit {
     });
   }
   mostrarDatos(): void {
-    if (this.selectedNode)
-      this.formB.formFolder.patchValue({
-        id_FolderDocument: this.selectedNode.data,
-      });
+    if (this.selectedNode) this.buttonEditDelete = true;
   }
 
+  saveOrEdit(): void {
+    if (this.formB.formFolder.get('id_FolderDocument')?.value) {
+      //ACTUALIZAR
+      console.log('actualizar');
+      this.limpiarFormulario();
+    } else {
+      //GUARDAR
+      console.log('guardar');
+      this.limpiarFormulario();
+    }
+  }
   editFolder(): void {
+    this.editForm = true;
     this.formB.formFolder.patchValue({
+      id_FolderDocument: this.selectedNode.data,
       nameFolder: this.selectedNode.label,
     });
     console.log(this.formB.formFolder.value);
+    //this.limpiarFormulario();
   }
 
   deleteFolder(): void {}
+
+  limpiarFormulario(): void {
+    this.editForm = false;
+    this.buttonEditDelete = false;
+    this.formB.limpiarFormulario();
+  }
 }
