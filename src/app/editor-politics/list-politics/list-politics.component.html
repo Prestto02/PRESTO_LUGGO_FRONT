@@ -1,0 +1,50 @@
+<!-- Button trigger modal -->
+<div class="col-xxl-12 col-xl-12 col-md-12 col-sm-12 col-12 mt-3 mb-3 text-end">
+  <button type="button" class="btn btn-danger mx-3" data-bs-toggle="modal" data-bs-target="#exampleModal1">
+    Agregar Nivel
+  </button>
+  <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Agregar Archivo
+  </button>
+</div>
+
+<div class="container d-flex justify-content-center">
+  <div class="col-xxl-4 col-xl-4 col-md-4 col-4 col-sm-4 mt-3 mb-3">
+    <div class="input-group">
+      <input type="text" class="form-control" placeholder="Buscar nombre del documento">
+    </div>
+  </div>
+</div>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">{{politicsHeaders.id}}</th>
+      <th scope="col">{{politicsHeaders.DocumentName}}</th>
+      <th scope="col">{{politicsHeaders.DocumentVS}}</th>
+      <th scope="col">{{politicsHeaders.Permises}}</th>
+      <th scope="col">{{politicsHeaders.opciones}}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!--   -->
+    <tr *ngFor="let politics of dataPolitics | searchPolitics:search | paginate: {itemsPerPage:8,currentPage:p}">
+      <td>{{politics.ID}}</td>
+      <td>{{politics.DocumentName}}</td>
+      <td>{{politics.DocumentVS}}</td>
+      <td>{{politics.Permises}}</td>
+      <td>
+        <a href="">Edit</a>
+        <a href="">Delete</a>
+        <a href="">Visually</a>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<div class="d-flex flex-row-reverse bd-highlight">
+  <pagination-controls (pageChange)="p=$event" previousLabel="Atras" nextLabel="Siguiente" [autoHide]="true"
+    [responsive]="true" screenReaderPaginationLabel="Pagination">
+  </pagination-controls>
+</div>
+
+

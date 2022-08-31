@@ -1,0 +1,10 @@
+.pdf-viewer {
+  display: flex;
+  height: 800px;
+}
+
+:host ::ng-deep .ng2-pdf-viewer-container::-webkit-scrollbar {
+  width: 8px; /* Tamaño del scroll en vertical */
+  height: 8px; /* Tamaño del scroll en horizontal */
+  display: none !important; /* Ocultar scroll */
+}

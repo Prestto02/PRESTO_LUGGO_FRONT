@@ -85,4 +85,6 @@ export const UrlApi = {
   verificador: 'api/Payment/verificador?token=',
   //BUSCAR DIRECCIONES
   direcciones: 'api/DireccionPersona',
+
+  modulePolitics: 'api/',
 };

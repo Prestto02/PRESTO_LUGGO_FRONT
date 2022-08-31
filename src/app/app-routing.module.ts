@@ -88,6 +88,14 @@ const routes: Routes = [
         (m) => m.PoliticasModule
       ),
   },
+  //MODULE DE POLITICS LAZY LOADING
+  {
+    path: UrlFront.PoliticasEdicion.ModulePolitics,
+    loadChildren: () =>
+      import('./editor-politics/module/editor-politics.module').then(
+        (m) => m.EditorPoliticsModule
+      ),
+  },
   //COMUNIDAD LAZY LOADING
   {
     path: UrlFront.Comunidad.comunidad,

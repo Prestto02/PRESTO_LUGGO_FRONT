@@ -8,7 +8,7 @@ const routes: Routes = [
     path: '',
     children: [
       {
-        path: UrlFront.Politicas.politicasLuggo, //RUTA CARRITO
+        path: UrlFront.Politicas.politicasPuertto, //RUTA CARRITO
         component: PoliticasComponent,
       },
     ],
