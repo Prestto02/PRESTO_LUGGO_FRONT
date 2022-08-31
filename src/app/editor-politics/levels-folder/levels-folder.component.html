@@ -9,20 +9,24 @@
       <div class="modal-body">
         <h5>Escoger la carpeta</h5>
         <form>
-          <p-treeSelect [(ngModel)]="selectedNode" [options]="nodes" placeholder="Seleccione la carpeta" (click)="mostrarDatos()">
+          <p-treeSelect [options]="nodes" placeholder="Seleccione la carpeta" (click)="mostrarDatos()">
           </p-treeSelect>
           <div class="mb-3">
             <label for="NameFolder" class="form-label">Nombre del Documento</label>
-            <input type="text" class="form-control" id="NameFolder" formControlName="NameFolder" />
+            <input type="text" class="form-control" id="NameFolder" />
             <!--   <app-form-errors-container [forControl]="">
             <app-message-error forErrorCode="required"></app-message-error>
             <app-message-error forErrorCode="pattern" [customMsg]="'Solo se acepta letras, no caracteres especiales'">
             </app-message-error>
           </app-form-errors-container> -->
           </div>
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-          <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Guardar</button>
         </form>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Editar</button>
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Eliminar</button>
+          <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Guardar</button>
+        </div>
       </div>
     </div>
   </div>

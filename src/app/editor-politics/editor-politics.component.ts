@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { PositionUser } from '../shared/class/PositionUser';
 import { UrlFront } from '../shared/routes/RoutesFront';
 import { BaseFormPolitics } from './models/BaseFormPolitics.models';
 import { IPolitics } from './models/IPolitics.models';
@@ -15,24 +16,36 @@ export class EditorPoliticsComponent implements OnInit {
   constructor(
     private apiServi: PoliticsEditService,
     private route: Router,
-    public formB: BaseFormPolitics
-  ) {}
+    public formB: BaseFormPolitics,
+    private position: PositionUser
+  ) {
+  }
 
   ngOnInit(): void {
+   // this.position.getPositionUser();
     //this.getAllPolitics();
   }
-  getAllPolitics() {
+
+  setPositionUser(): void {
+    this.formB.formPolitics.patchValue({
+      latitud: this.position.latitud,
+      longitud: this.position.longitud,
+    });
+  }
+
+  getAllPolitics(): void {
     this.apiServi.getAllPolitics().subscribe((res: Array<IPolitics>) => {
       this.arrayPolitics = res;
     });
   }
 
-  postDataForm() {
+  postDataForm(): void {
+   // this.setPositionUser();
     console.log(this.formB.formPolitics.value);
     this.formB.limpiarFormulario();
   }
 
-  rutaVisualizar() {
+  rutaVisualizar(): void {
     this.route.navigateByUrl(
       `${UrlFront.PoliticasEdicion.ModulePolitics}/${UrlFront.PoliticasEdicion.visualizarPoliticsGet}/1`
     );

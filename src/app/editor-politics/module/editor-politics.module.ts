@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ListPoliticsComponent } from '../list-politics/list-politics.component';
 import { EditorPoliticsComponent } from '../editor-politics.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { EditorPoliticsRoutingModule } from './editor-politics-routing.module';
 import { SearchPoliticsPipe } from '../pipe/search-politics.pipe';
 import { MenuIndexModule } from 'src/app/shared/components/index/menu-index/module/menu-index.module';
@@ -24,7 +24,6 @@ import { TreeSelectModule } from 'primeng/treeselect';
   ],
   imports: [
     CommonModule,
-    FormsModule,
     EditorPoliticsRoutingModule,
     ReactiveFormsModule,
     NgxPaginationModule,

@@ -25,6 +25,8 @@ export class BaseFormPolitics {
       [Validators.required, Validators.pattern(Expresion.CedulaTelefono)],
     ],
     IdDocument: ['', [Validators.required]],
+    latitud: [0],
+    longitud: [0],
   });
 
   limpiarFormulario() {

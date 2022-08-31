@@ -6,6 +6,8 @@ export interface IPolitics {
   Routefile: string;
   Permises: number;
   IdDocument: number;
+  latitud: number;
+  longitud: number;
 }
 
 interface PoliticsHeader {
