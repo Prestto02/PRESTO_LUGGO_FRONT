@@ -5,7 +5,7 @@ import { PoliticsEditService } from '../../../editor-politics/service/politics-e
   selector: 'app-politicas',
   templateUrl: './politicas.component.html',
   styleUrls: ['./politicas.component.css'],
-})
+}) //POLITICS MODELS
 export class PoliticasComponent implements OnInit {
   arrayDocuments: ReadonlyArray<IPolitics> = [];
   pdfURL: string = '';
