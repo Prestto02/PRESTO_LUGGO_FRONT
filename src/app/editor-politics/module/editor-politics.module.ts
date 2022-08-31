@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ListPoliticsComponent } from '../list-politics/list-politics.component';
 import { EditorPoliticsComponent } from '../editor-politics.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EditorPoliticsRoutingModule } from './editor-politics-routing.module';
 import { SearchPoliticsPipe } from '../pipe/search-politics.pipe';
 import { MenuIndexModule } from 'src/app/shared/components/index/menu-index/module/menu-index.module';
@@ -14,6 +14,7 @@ import { ErrorsExtensionsModule } from 'src/app/shared/components/errors/errors-
 import { PdfViewerModule } from 'ng2-pdf-viewer';
 import { LevelsFolderComponent } from '../levels-folder/levels-folder.component';
 import { TreeSelectModule } from 'primeng/treeselect';
+import { BaseFormFolders } from '../models/BaseFormFolder.models';
 @NgModule({
   declarations: [
     EditorPoliticsComponent,
@@ -26,6 +27,7 @@ import { TreeSelectModule } from 'primeng/treeselect';
     CommonModule,
     EditorPoliticsRoutingModule,
     ReactiveFormsModule,
+    FormsModule,
     NgxPaginationModule,
     PdfViewerModule, //LECTOR DE PDF MODULE
     MenuIndexModule,
@@ -33,6 +35,6 @@ import { TreeSelectModule } from 'primeng/treeselect';
     FooterIndexModule,
     ErrorsExtensionsModule,
   ],
-  providers: [BaseFormPolitics],
+  providers: [BaseFormPolitics, BaseFormFolders],
 })
 export class EditorPoliticsModule {}

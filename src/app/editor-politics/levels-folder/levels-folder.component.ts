@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { BaseFormFolders } from '../models/BaseFormFolder.models';
+import { PoliticsEditService } from '../service/politics-edit.service';
 
 @Component({
   selector: 'app-levels-folder',
@@ -7,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LevelsFolderComponent implements OnInit {
   nodes: any = [
-    {
+    /*    {
       label: 'Documents',
       data: 'Documents Folder',
       expandedIcon: 'pi pi-folder-open',
@@ -100,13 +102,36 @@ export class LevelsFolderComponent implements OnInit {
           ],
         },
       ],
-    },
+    }, */
   ];
   selectedNode: any;
-  constructor() {}
+  constructor(
+    public formB: BaseFormFolders,
+    private folderServi: PoliticsEditService
+  ) {}
 
-  ngOnInit() {}
-  mostrarDatos(): void {
-    console.log(this.selectedNode.label);
+  ngOnInit() {
+    this.getDataFolders();
   }
+
+  getDataFolders(): void {
+    this.folderServi.getFoldersPolitics().subscribe((res: any) => {
+      this.nodes = res;
+    });
+  }
+  mostrarDatos(): void {
+    if (this.selectedNode)
+      this.formB.formFolder.patchValue({
+        id_FolderDocument: this.selectedNode.data,
+      });
+  }
+
+  editFolder(): void {
+    this.formB.formFolder.patchValue({
+      nameFolder: this.selectedNode.label,
+    });
+    console.log(this.formB.formFolder.value);
+  }
+
+  deleteFolder(): void {}
 }

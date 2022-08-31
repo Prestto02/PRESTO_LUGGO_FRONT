@@ -8,14 +8,24 @@ import { UrlApi } from 'src/app/shared/routes/RoutesApi';
   providedIn: 'root',
 })
 export class PoliticsEditService {
+  url: string =
+    'https://ecovitali.presttoapp.net/Puertto/Microservices/Library/api/Folder';
   constructor(private http: HttpClient) {}
 
+  getFoldersPolitics(): Observable<any> {
+    return this.http.get<any>(this.url);
+  }
   getAllPolitics(): Observable<Array<IPolitics>> {
-    return this.http.get<Array<IPolitics>>(`${UrlApi.ApiUrl}${UrlApi.modulePolitics}`);
+    return this.http.get<Array<IPolitics>>(
+      `${UrlApi.ApiUrl}${UrlApi.modulePolitics}`
+    );
   }
 
   postPolitics(form: IPolitics): Observable<any> {
-    return this.http.post<any>(`${UrlApi.ApiUrl}${UrlApi.modulePolitics}`, form);
+    return this.http.post<any>(
+      `${UrlApi.ApiUrl}${UrlApi.modulePolitics}`,
+      form
+    );
   }
 
   putPolitics(form: IPolitics): Observable<any> {
