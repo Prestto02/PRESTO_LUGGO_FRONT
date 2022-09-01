@@ -17,6 +17,14 @@
   font-weight: 400;
   font-size: 16px;
 }
+
+.text-procesando{
+  font-size: 14px;
+  font-weight: 600;
+}
+.text-mensajes{
+  font-size: 12px;
+}
 .card {
   /* height: 375px; */
   overflow-y: auto;

@@ -4,14 +4,15 @@
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel1">Agregar Carpeta</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+          (click)="limpiarFormulario();"></button>
       </div>
       <div class="modal-body">
         <h5>Escoger la carpeta</h5>
         <p-treeSelect [(ngModel)]="selectedNode" [options]="nodes" placeholder="Seleccione la carpeta"
           (click)="mostrarDatos()">
         </p-treeSelect>
-        <ng-container *ngIf="formB.formFolder.get('id_FolderDocument')?.value!==''">
+        <ng-container *ngIf="buttonEditDelete">
           <button type="button" class="btn" (click)="editFolder()">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path
@@ -40,8 +41,10 @@
           </div>
         </form>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-          <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Guardar</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+            (click)="limpiarFormulario()">Cerrar</button>
+          <button type="button" [class]="editForm?'btn btn-warning':'btn btn-dark'" data-bs-dismiss="modal"
+            (click)="saveOrEdit()">{{editForm?'Editar':'Guardar'}}</button>
         </div>
       </div>
     </div>

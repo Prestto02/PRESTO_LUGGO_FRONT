@@ -27,6 +27,8 @@ export class ItemsProductsVerify {
     this.totalAPagar = 0;
     this.productsListCars.map((res: any) => {
       const subtotal = res.precio * res.item;
+ /*      const iva = subtotal * 1.12;
+      const totalEnvio = iva + res.precio_envio; */
       this.totalAPagar = this.totalAPagar + subtotal; //REALIZO LA SUMA SEGUN LOS PRODUCTOS EN EL ARREGLO OBSERVABLE
     });
     this.apiServi.totalAPAgarObservable(this.totalAPagar); //CAMBIO EL ESTADO DEL OBSERVABLE

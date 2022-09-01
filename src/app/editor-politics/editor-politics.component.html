@@ -14,9 +14,11 @@
         </div>
         <div class="modal-body">
           <form [formGroup]="formB.formPolitics">
+
             <div class="mb-3">
               <input type="hidden" formControlName="ID" />
             </div>
+
             <div class="mb-3">
               <label for="DocumentName" class="form-label">Nombre del Documento</label>
               <input type="text" class="form-control" id="DocumentName" formControlName="DocumentName" />
@@ -38,7 +40,6 @@
               </app-form-errors-container>
             </div>
 
-
             <div class="mb-3">
               <label for="IdDocument" class="form-label">¿Que politica pertenece?</label>
               <select class="form-select" aria-label="Default select example" formControlName="IdDocument">
@@ -53,7 +54,7 @@
             </div>
 
             <div class="mb-3">
-              <label for="DocumentLink" class="form-label">Nombre del Documento</label>
+              <label for="DocumentLink" class="form-label">Archivo formato PDF</label>
               <input type="file" class="form-control" id="DocumentLink" formControlName="DocumentLink" />
               <app-form-errors-container [forControl]="formB.formPolitics.get('DocumentLink')">
                 <app-message-error forErrorCode="required" [customMsg]="'Este campo es requerido'"></app-message-error>
@@ -72,10 +73,10 @@
                 <app-message-error forErrorCode="required" [customMsg]="'Este campo es requerido'"></app-message-error>
               </app-form-errors-container>
             </div>
+
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-              <!--  -->
-              <button type="submit" [disabled]="formB.formPolitics.invalid" class="btn btn-dark"
+              <button type="button" [disabled]="formB.formPolitics.invalid" class="btn btn-dark" data-bs-dismiss="modal"
                 (click)="postDataForm()">Guardar</button>
             </div>
           </form>
@@ -84,6 +85,7 @@
     </div>
   </div>
 </div>
+
 <app-levels-folder></app-levels-folder>
 
 <app-footer-index></app-footer-index>
