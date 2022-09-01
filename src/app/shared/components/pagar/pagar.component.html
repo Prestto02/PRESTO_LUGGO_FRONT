@@ -35,8 +35,7 @@
             <div class="col-6 col-sm-6">
               <h6 class="nombre-producto mt-3">{{product.name}}</h6>
               <span class="product-item">{{product.item}} und.</span>
-              <p class="envio-gratis">Envío<br><span style="font-size: 10px;">No te calculamos el envio, ya que eso se
-                  encarga el ADN</span></p>
+
             </div>
             <div class="col-3 col-sm-3">
               <ng-container *ngIf="!product.subtotal else existSubtotal">
@@ -52,6 +51,8 @@
           <div class="row">
             <div class="col-xxl-6 col-xl-6 col-sm-5 col-5 col-md-6 py-3 mt-3">
               <p class="total-pagar"><b>Total a pagar</b></p>
+              <p class="envio-gratis" style="font-size: 10px;">* Puertto no te calcula el valor del envío, el ADN se
+                encargará cuando te entregue el producto.</p>
             </div>
             <div class="col-xxl-6 col-xl-6 col-sm-7 col-7 col-md-6 text-end py-3 mt-3">
               <p class="subtotal"><b>{{totalAPagar | currency:'USD'}}</b></p>
@@ -120,7 +121,8 @@
           <ng-container *ngIf="!htmlServer">
             <h4 class="text-center mt-3 mb-3 text-procesando">Estamos verificando tu información, para una experiencia
               más segura.</h4>
-            <p class=" text-center text-mensajes">Todos tus pagos en Puertto serán corrientes, si quieres diferir tu pago ponte en
+            <p class=" text-center text-mensajes">Todos tus pagos en Puertto serán corrientes, si quieres diferir tu
+              pago ponte en
               contacto con tu agencia
               bancaria.</p>
           </ng-container>
