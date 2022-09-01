@@ -78,11 +78,15 @@
                 <div class="row">
                   <p class="col-xl-5 mt-2 col-xxl-5 col-md-5 col-sm-5 col-5" style="font-size: 18px;"
                     *ngIf="product.subtotal>0 else precio">
-                    {{product.subtotal | currency: 'USD'}}
+                    {{product.subtotal | currency: 'USD'}}<br>
+                    <span style="font-size:10px;">+ Envio {{product.precio_envio | currency: 'USD'}}</span>
                   </p>
                   <ng-template #precio>
                     <p class="col-xl-5 col-xxl-5 col-md-5 col-sm-5 col-5 mt-2 text-start" style="font-size: 18px;">
                       {{product.precio | currency: 'USD'}}
+                    </p>
+                    <p class="col-xl-5 col-xxl-5 col-md-5 col-sm-5 col-5 mt-2 text-start" style="font-size: 10px;">
+                      {{product.precio_envio | currency: 'USD'}}
                     </p>
                   </ng-template>
                   <div class="col-xl-7 col-xxl-7 col-md-7 col-sm-7 col-7 text-end">
