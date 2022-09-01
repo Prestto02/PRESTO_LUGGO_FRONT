@@ -5,7 +5,7 @@ import {
   OnChanges,
   SimpleChanges,
 } from '@angular/core';
-import { IPolitics, PoliticsHeaderTable } from '../models/IPolitics.models';
+import { IPolitics, IPoliticsData, PoliticsHeaderTable } from '../models/IPolitics.models';
 PoliticsHeaderTable;
 @Component({
   selector: 'app-list-politics',
@@ -14,7 +14,7 @@ PoliticsHeaderTable;
 })
 export class ListPoliticsComponent implements OnInit, OnChanges {
   politicsHeaders = PoliticsHeaderTable;
-  @Input('dataPolitics') dataPolitics: Array<IPolitics> = [];
+  @Input('dataPolitics') dataPolitics: Array<IPoliticsData> = [];
   search: string = '';
   p: number = 1;
 

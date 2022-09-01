@@ -11,6 +11,7 @@ export const errorFront = {
   Warning: {
     title: 'Advertencia',
     imagenes: 'La imagen debe ser en formato jpg, jpeg, png',
+    pdf: 'El archivo debe ser en formato PDF',
   },
   Info: {
     title: 'Mensaje Informativo',

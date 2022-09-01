@@ -16,9 +16,9 @@ export class PoliticasComponent implements OnInit {
   }
 
   getDataDocuments(): void {
-    this.api.getAllPolitics().subscribe((res: ReadonlyArray<IPolitics>) => {
+/*     this.api.getAllPolitics().subscribe((res: ReadonlyArray<IPolitics>) => {
       this.arrayDocuments = res;
-    });
+    }); */
   }
 
   buscarDocument(): void {

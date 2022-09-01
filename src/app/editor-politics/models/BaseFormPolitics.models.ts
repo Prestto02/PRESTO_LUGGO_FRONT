@@ -18,9 +18,9 @@ export class BaseFormPolitics {
     DocumentVS: ['', [Validators.required]],
     DocumentLink: ['', [Validators.required]],
     Permises: ['', [Validators.required]],
-    IdDocument: ['', [Validators.required]],
-    latitud: [12],
-    longitud: [12],
+    DocHeredate: ['', [Validators.required]],
+    latitud: [0],
+    longitud: [0],
   });
 
   limpiarFormulario() {

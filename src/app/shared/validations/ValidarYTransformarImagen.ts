@@ -9,7 +9,7 @@ export class ValidarYTransformarImagen {
   imagenTransformada = '';
   constructor(
     private messageFront: MessageFrontEndService, //MENSAJES DE ERRORES
-    private apiProducts: ProductsService, //SERVICES PRODUCTOS
+    private apiProducts: ProductsService //SERVICES PRODUCTOS
   ) {}
 
   getArchiveImagen(e: any): any {
@@ -34,12 +34,33 @@ export class ValidarYTransformarImagen {
       ); //MENSAJE TOAST
     }
   }
+  //GET ARCHIVE PDF
+  getArchivePDF(e: any): any {
+    const buscar = ',';
+    if (e[0].type === 'application/pdf') {
+      //VALIDO SI LA IMAGEN ES DE ESE FORMATO
+      this.imgProducts = e[0].base64; //OBTENGO DEL ARRAY LA BASE 64
+      const index = this.imgProducts.indexOf(buscar); //BUSCO LA , DEL BASE 64
+      this.imagenTransformada = this.imgProducts.slice(index + 1); //ENCONTRADO LA POSICION DE LA , ENViARLA A LA API
+      return {
+        imgProducts: this.imgProducts,
+        imagenTransformada: this.imagenTransformada,
+      }; //RETORNO EL OBJETO PARA IMG PRODUCTOS Y LA IMAGEN TRANSFORMADA
+    } else {
+      this.imagenTransformada = '';
+      this.messageFront.getWarningMessage(
+        message.Warning.title,
+        message.Warning.pdf
+      ); //MENSAJE TOAST
+      return { imagenTransformada: this.imagenTransformada };
+    }
+  }
   getImageVerifyServer(e: any) {
     const file = e.target.files[0]; //LA POSICION TARGET DE LA IMAGEN
     const formData = new FormData(); //CREO EL FORM DATA PARA ENVIARLO AL SERVIDOR
     formData.append('files', file); //ASIGNO A LA VARIABLE FILES LO QUE TENGO EN EL TARGET
     //VALIDACION BACKEND
-   /*  this.apiProducts.postVerifyImg(formData).subscribe(
+    /*  this.apiProducts.postVerifyImg(formData).subscribe(
       //HAGO LA PETICION
       (res) => {
         return res;

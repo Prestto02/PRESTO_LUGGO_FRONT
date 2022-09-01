@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import { IPolitics } from '../models/IPolitics.models';
+import { IPolitics, IPoliticsData } from '../models/IPolitics.models';
 import { UrlApi } from 'src/app/shared/routes/RoutesApi';
 
 @Injectable({
@@ -16,18 +16,16 @@ export class PoliticsEditService {
     return this.http.get<any>(this.url + 'Folder');
   }
 
-
-  getAllPolitics(): Observable<Array<IPolitics>> {
-    return this.http.get<Array<IPolitics>>(
-      `${UrlApi.ApiUrl}${UrlApi.modulePolitics}`
-    );
+  getFoldersAll(): Observable<any> {
+    return this.http.get<any>(this.url + 'DocumentFolder');
   }
 
-  postPolitics(form: IPolitics): Observable<any> {
-    return this.http.post<any>(
-      `${UrlApi.ApiUrl}${UrlApi.modulePolitics}`,
-      form
-    );
+  getAllPolitics(): Observable<Array<IPoliticsData>> {
+    return this.http.get<Array<IPoliticsData>>(this.url + 'Library');
+  }
+
+  postPolitics(form: any): Observable<any> {
+    return this.http.post<any>(this.url + 'Library', form);
   }
 
   putPolitics(form: IPolitics): Observable<any> {

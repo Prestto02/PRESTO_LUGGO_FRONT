@@ -13,6 +13,18 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
+
+          <div class="mb-3">
+            <label for="DocHeredate" class="form-label">¿Que politica pertenece?</label>
+            <br>
+            <p-dropdown [options]="folders" [(ngModel)]="selectedCountry" optionLabel="name" [filter]="true" filterBy="name" [showClear]="true"
+              placeholder="Seleccione la ruta" (click)="cargarNuevoDocument()">
+            </p-dropdown>
+            <app-form-errors-container [forControl]="formB.formPolitics.get('DocHeredate')">
+              <app-message-error forErrorCode="required" [customMsg]="'Este campo es requerido'"></app-message-error>
+            </app-form-errors-container>
+          </div>
+
           <form [formGroup]="formB.formPolitics">
 
             <div class="mb-3">
@@ -28,6 +40,7 @@
                   [customMsg]="'Solo se acepta letras, no caracteres especiales'">
                 </app-message-error>
               </app-form-errors-container>
+
             </div>
 
             <div class="mb-3">
@@ -40,22 +53,11 @@
               </app-form-errors-container>
             </div>
 
-            <div class="mb-3">
-              <label for="IdDocument" class="form-label">¿Que politica pertenece?</label>
-              <select class="form-select" aria-label="Default select example" formControlName="IdDocument">
-                <option value="0" selected>Escoja una opción</option>
-                <option value="1">POLITICA GENERAL</option>
-                <option value="2">POLITICA DE COOKIES</option>
-                <option value="3">POLITICA DE CAMBIOS</option>
-              </select>
-              <app-form-errors-container [forControl]="formB.formPolitics.get('IdDocument')">
-                <app-message-error forErrorCode="required" [customMsg]="'Este campo es requerido'"></app-message-error>
-              </app-form-errors-container>
-            </div>
 
             <div class="mb-3">
               <label for="DocumentLink" class="form-label">Archivo formato PDF</label>
-              <input type="file" class="form-control" id="DocumentLink" formControlName="DocumentLink" />
+              <input type="file" class="form-control" id="DocumentLink" alife-file-to-base64
+              (onFileChanged)="getArchiveImagen($event)" required />
               <app-form-errors-container [forControl]="formB.formPolitics.get('DocumentLink')">
                 <app-message-error forErrorCode="required" [customMsg]="'Este campo es requerido'"></app-message-error>
               </app-form-errors-container>

@@ -1,13 +1,23 @@
 export interface IPolitics {
-  ID: number;
+  ID?: number;
   DocumentName: string;
   DocumentVS: string;
   DocumentLink: string;
-  Routefile: string;
+  Routefile?: string;
   Permises: number;
-  IdDocument: number;
+  DocHeredate: number;
   latitud: number;
   longitud: number;
+}
+
+export interface IPoliticsData {
+  id?: number;
+  documentName: string;
+  documentVS: string;
+  documentLink: string;
+  routefile?: string;
+  permises: number;
+  docHeredate: number;
 }
 
 interface PoliticsHeader {

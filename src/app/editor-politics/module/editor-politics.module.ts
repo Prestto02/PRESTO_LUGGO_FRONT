@@ -15,6 +15,8 @@ import { PdfViewerModule } from 'ng2-pdf-viewer';
 import { LevelsFolderComponent } from '../levels-folder/levels-folder.component';
 import { TreeSelectModule } from 'primeng/treeselect';
 import { BaseFormFolders } from '../models/BaseFormFolder.models';
+import {DropdownModule} from 'primeng/dropdown';
+import { AlifeFileToBase64Module } from 'alife-file-to-base64';
 @NgModule({
   declarations: [
     EditorPoliticsComponent,
@@ -29,8 +31,10 @@ import { BaseFormFolders } from '../models/BaseFormFolder.models';
     ReactiveFormsModule,
     FormsModule,
     NgxPaginationModule,
+    AlifeFileToBase64Module,
     PdfViewerModule, //LECTOR DE PDF MODULE
     MenuIndexModule,
+    DropdownModule,
     TreeSelectModule, //TREE SELECT MODULE
     FooterIndexModule,
     ErrorsExtensionsModule,
