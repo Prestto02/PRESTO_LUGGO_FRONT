@@ -39,6 +39,8 @@ export class CarritoItemsComponent implements OnInit {
     this.totalAPagar = 0;
     this.productoItems.map((res: any) => {
       const subtotal = res.precio * res.item;
+      /* const iva = subtotal * 1.12; */
+      /*       const totalEnvio = res.precio_envio + iva; */
       this.totalAPagar = this.totalAPagar + subtotal;
     });
     this.apiServi.totalAPAgarObservable(this.totalAPagar); //CAMBIO EL ESTADO DEL OBSERVABLE

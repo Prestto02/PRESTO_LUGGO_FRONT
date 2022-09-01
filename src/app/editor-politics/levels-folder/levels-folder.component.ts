@@ -122,7 +122,13 @@ export class LevelsFolderComponent implements OnInit {
     });
   }
   mostrarDatos(): void {
-    if (this.selectedNode) this.buttonEditDelete = true;
+    if (this.selectedNode) {
+      this.buttonEditDelete = true;
+      this.editForm = false;
+      this.formB.formFolder.patchValue({
+        nameFolder: '',
+      });
+    }
   }
 
   saveOrEdit(): void {
