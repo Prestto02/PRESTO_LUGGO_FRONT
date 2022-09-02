@@ -12,6 +12,7 @@ export class LevelsFolderComponent implements OnInit {
   editForm: boolean = false;
   buttonEditDelete: boolean = false;
   selectedNode: any;
+  dialogVisibleDelete: boolean = false;
   constructor(
     public formB: BaseFormFolders,
     private folderServi: PoliticsEditService
@@ -79,14 +80,20 @@ export class LevelsFolderComponent implements OnInit {
   }
 
   deleteFolder(): void {
+    this.dialogVisibleDelete = true;
+  }
+  eliminarPoliticsDialog(): void {
     this.folderServi
       .deleteFolder(this.selectedNode.data)
       .subscribe((res: any) => {
         this.limpiarFormulario();
         this.getDataFolders();
+        this.dialogVisibleDelete = false;
       });
   }
-
+  cerrarModalDelete(): void {
+    this.dialogVisibleDelete = false;
+  }
   limpiarFormulario(): void {
     this.editForm = false;
     this.buttonEditDelete = false;
