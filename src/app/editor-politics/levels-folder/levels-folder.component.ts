@@ -26,42 +26,71 @@ export class LevelsFolderComponent implements OnInit {
       this.nodes = res;
     });
   }
+
   mostrarDatos(): void {
     if (this.selectedNode) {
       this.buttonEditDelete = true;
       this.editForm = false;
       this.formB.formFolder.patchValue({
+        id_FolderDocument: this.selectedNode.data,
         nameFolder: '',
       });
     }
   }
 
   saveOrEdit(): void {
+    if (this.editForm) {
+      this.folderServi
+        .putEditFolder(this.formB.formFolder.value)
+        .subscribe((res: any) => {
+          this.limpiarFormulario();
+          this.getDataFolders();
+        });
+      return;
+    }
     if (this.formB.formFolder.get('id_FolderDocument')?.value) {
-      //ACTUALIZAR
-      console.log('actualizar');
-      this.limpiarFormulario();
+      //GUARDAR
+      this.folderServi
+        .postFolder(this.formB.formFolder.value)
+        .subscribe((res: any) => {
+          this.limpiarFormulario();
+          this.getDataFolders();
+        });
+      return;
     } else {
       //GUARDAR
-      console.log('guardar');
-      this.limpiarFormulario();
+      this.folderServi
+        .postFolder(this.formB.formFolder.value)
+        .subscribe((res: any) => {
+          this.limpiarFormulario();
+          this.getDataFolders();
+        });
+      return;
     }
   }
+  //EDIT FOLDER
   editFolder(): void {
     this.editForm = true;
     this.formB.formFolder.patchValue({
       id_FolderDocument: this.selectedNode.data,
       nameFolder: this.selectedNode.label,
     });
-    console.log(this.formB.formFolder.value);
     //this.limpiarFormulario();
   }
 
-  deleteFolder(): void {}
+  deleteFolder(): void {
+    this.folderServi
+      .deleteFolder(this.selectedNode.data)
+      .subscribe((res: any) => {
+        this.limpiarFormulario();
+        this.getDataFolders();
+      });
+  }
 
   limpiarFormulario(): void {
     this.editForm = false;
     this.buttonEditDelete = false;
+    this.selectedNode = '';
     this.formB.limpiarFormulario();
   }
 }
