@@ -1,11 +1,11 @@
 export interface IPolitics {
-  ID?: number;
-  DocumentName: string;
-  DocumentVS: string;
-  DocumentLink: string;
-  Routefile?: string;
-  Permises: number;
-  DocHeredate: number;
+  id?: number;
+  documentName: string;
+  documentVS: string;
+  documentLink: string;
+  routefile?: string;
+  permises: number;
+  docHeredate: number;
   latitud: number;
   longitud: number;
 }
@@ -15,7 +15,7 @@ export interface IPoliticsData {
   documentName: string;
   documentVS: string;
   documentLink: string;
-  routefile?: string;
+  routefile: string;
   permises: number;
   docHeredate: number;
 }

@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, OnInit, OnChanges } from '@angular/core';
+import { id } from '@swimlane/ngx-charts';
 import { PositionUser } from '../shared/class/PositionUser';
-import { UrlFront } from '../shared/routes/RoutesFront';
 import { ValidarYTransformarImagen } from '../shared/validations/ValidarYTransformarImagen';
 import { BaseFormPolitics } from './models/BaseFormPolitics.models';
 import { IPolitics, IPoliticsData } from './models/IPolitics.models';
@@ -28,9 +27,9 @@ export class EditorPoliticsComponent implements OnInit {
     this.getAllFolders();
     this.getAllPolitics();
   }
-
   getAllFolders(): void {
     this.apiServi.getFoldersAll().subscribe((res: any) => {
+      console.log(res);
       this.folders = res;
     });
   }
@@ -45,11 +44,11 @@ export class EditorPoliticsComponent implements OnInit {
   cargarNuevoDocument(): void {
     if (!this.selectedCountry) {
       this.formB.formPolitics.patchValue({
-        DocHeredate: '',
+        docHeredate: '',
       });
     } else {
       this.formB.formPolitics.patchValue({
-        DocHeredate: this.selectedCountry.code,
+        docHeredate: this.selectedCountry.code,
       });
     }
   }
@@ -59,11 +58,11 @@ export class EditorPoliticsComponent implements OnInit {
       this.archivePDF.getArchivePDF(e);
     if (imagenTransformada.length > 0) {
       this.formB.formPolitics.patchValue({
-        DocumentLink: imagenTransformada,
+        documentLink: imagenTransformada,
       });
     } else {
       this.formB.formPolitics.patchValue({
-        DocumentLink: '',
+        documentLink: '',
       });
     }
   }
@@ -76,10 +75,16 @@ export class EditorPoliticsComponent implements OnInit {
 
   postDataForm(): void {
     const form: any = this.formB.formPolitics.value;
-    // this.setPositionUser();
-    this.apiServi.postPolitics(form).subscribe((res) => {
-      this.getAllPolitics();
-    });
-    this.formB.limpiarFormulario();
+    if (form.id) {
+      this.apiServi.putPolitics(form).subscribe((res) => {
+        this.getAllPolitics();
+        this.formB.limpiarFormulario();
+      });
+    } else {
+      this.apiServi.postPolitics(form).subscribe((res) => {
+        this.getAllPolitics();
+        this.formB.limpiarFormulario();
+      });
+    }
   }
 }

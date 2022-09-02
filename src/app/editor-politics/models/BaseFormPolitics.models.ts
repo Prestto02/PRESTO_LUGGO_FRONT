@@ -7,18 +7,18 @@ export class BaseFormPolitics {
   constructor(private formB: FormBuilder) {}
 
   formPolitics = this.formB.group({
-    ID: [''],
-    DocumentName: [
+    id: [''],
+    documentName: [
       '',
       [
         Validators.required,
         Validators.pattern(Expresion.SoloLetrasAcentosEspacios),
       ],
     ],
-    DocumentVS: ['', [Validators.required]],
-    DocumentLink: ['', [Validators.required]],
-    Permises: ['', [Validators.required]],
-    DocHeredate: ['', [Validators.required]],
+    documentVS: ['', [Validators.required]],
+    documentLink: ['', [Validators.required]],
+    permises: ['', [Validators.required]],
+    docHeredate: ['', [Validators.required]],
     latitud: [0],
     longitud: [0],
   });

@@ -23,6 +23,7 @@ export class PoliticsEditService {
   getAllPolitics(): Observable<Array<IPoliticsData>> {
     return this.http.get<Array<IPoliticsData>>(this.url + 'Library');
   }
+
   //TRAIGO TODAS LAS POLITICAS PARA EL BOTON EDITAR
   getPoliticsId(id: any): Observable<any> {
     return this.http.get(this.url + `Library/${id}`);
@@ -33,10 +34,10 @@ export class PoliticsEditService {
   }
 
   putPolitics(form: IPolitics): Observable<any> {
-    return this.http.put<any>(`${UrlApi.ApiUrl}${UrlApi.modulePolitics}`, form);
+    return this.http.put<any>(this.url + `Library`, form);
   }
 
   deteletPolitics(id: number): Observable<any> {
-    return this.http.delete<any>(`${UrlApi.ApiUrl}${UrlApi.modulePolitics}`);
+    return this.http.delete<any>(this.url + `Library/${id}`);
   }
 }

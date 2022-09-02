@@ -30,7 +30,7 @@ export class PermisesUsersDirective implements AfterViewInit {
         this.statePermises('Todos');
         break;
       default:
-        console.log('no existe permisos');
+        this.statePermises('No asigno permisos')
         break;
     }
   }
