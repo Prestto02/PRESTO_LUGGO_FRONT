@@ -27,9 +27,9 @@ export class EditorPoliticsComponent implements OnInit {
     this.getAllFolders();
     this.getAllPolitics();
   }
+
   getAllFolders(): void {
     this.apiServi.getFoldersAll().subscribe((res: any) => {
-      console.log(res);
       this.folders = res;
     });
   }
@@ -42,6 +42,7 @@ export class EditorPoliticsComponent implements OnInit {
   }
 
   cargarNuevoDocument(): void {
+    this.getAllFolders();
     if (!this.selectedCountry) {
       this.formB.formPolitics.patchValue({
         docHeredate: '',
