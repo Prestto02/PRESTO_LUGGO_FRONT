@@ -7,7 +7,7 @@ import { IPoliticsData } from '../models/IPolitics.models';
 export class SearchPoliticsPipe implements PipeTransform {
   transform(
     politicsData: Array<IPoliticsData>,
-    search: string
+    search: any
   ): Array<IPoliticsData> {
     if (search === '' || !search) return politicsData;
     if (politicsData.length < 0) return politicsData;

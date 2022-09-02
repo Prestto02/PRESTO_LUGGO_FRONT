@@ -23,6 +23,10 @@ export class PoliticsEditService {
   getAllPolitics(): Observable<Array<IPoliticsData>> {
     return this.http.get<Array<IPoliticsData>>(this.url + 'Library');
   }
+  //TRAIGO TODAS LAS POLITICAS PARA EL BOTON EDITAR
+  getPoliticsId(id: any): Observable<any> {
+    return this.http.get(this.url + `Library/${id}`);
+  }
 
   postPolitics(form: any): Observable<any> {
     return this.http.post<any>(this.url + 'Library', form);

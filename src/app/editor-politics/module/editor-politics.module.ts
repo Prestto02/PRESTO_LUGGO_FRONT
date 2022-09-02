@@ -15,9 +15,10 @@ import { PdfViewerModule } from 'ng2-pdf-viewer';
 import { LevelsFolderComponent } from '../levels-folder/levels-folder.component';
 import { TreeSelectModule } from 'primeng/treeselect';
 import { BaseFormFolders } from '../models/BaseFormFolder.models';
-import {DropdownModule} from 'primeng/dropdown';
+import { DropdownModule } from 'primeng/dropdown';
 import { AlifeFileToBase64Module } from 'alife-file-to-base64';
 import { PermisesUsersDirective } from '../list-politics/directive/permises-users.directive';
+import { BaseFormSearchPolitics } from '../models/BaseFormSearchPolitics.models';
 @NgModule({
   declarations: [
     EditorPoliticsComponent,
@@ -41,6 +42,6 @@ import { PermisesUsersDirective } from '../list-politics/directive/permises-user
     FooterIndexModule,
     ErrorsExtensionsModule,
   ],
-  providers: [BaseFormPolitics, BaseFormFolders],
+  providers: [BaseFormPolitics, BaseFormFolders, BaseFormSearchPolitics],
 })
 export class EditorPoliticsModule {}

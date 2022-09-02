@@ -19,7 +19,6 @@ export class EditorPoliticsComponent implements OnInit {
   base64PDF: any;
   constructor(
     private apiServi: PoliticsEditService,
-    private route: Router,
     public formB: BaseFormPolitics,
     private position: PositionUser,
     private archivePDF: ValidarYTransformarImagen
@@ -58,7 +57,6 @@ export class EditorPoliticsComponent implements OnInit {
   getArchiveImagen(e: any): void {
     const { imgProducts, imagenTransformada } =
       this.archivePDF.getArchivePDF(e);
-    console.log(imagenTransformada);
     if (imagenTransformada.length > 0) {
       this.formB.formPolitics.patchValue({
         DocumentLink: imagenTransformada,
@@ -80,8 +78,7 @@ export class EditorPoliticsComponent implements OnInit {
     const form: any = this.formB.formPolitics.value;
     // this.setPositionUser();
     this.apiServi.postPolitics(form).subscribe((res) => {
-      console.log(res);
-      //this.getAllPolitics();
+      this.getAllPolitics();
     });
     this.formB.limpiarFormulario();
   }
