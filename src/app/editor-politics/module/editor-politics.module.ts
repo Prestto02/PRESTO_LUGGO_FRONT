@@ -17,6 +17,7 @@ import { TreeSelectModule } from 'primeng/treeselect';
 import { BaseFormFolders } from '../models/BaseFormFolder.models';
 import {DropdownModule} from 'primeng/dropdown';
 import { AlifeFileToBase64Module } from 'alife-file-to-base64';
+import { PermisesUsersDirective } from '../list-politics/directive/permises-users.directive';
 @NgModule({
   declarations: [
     EditorPoliticsComponent,
@@ -24,6 +25,7 @@ import { AlifeFileToBase64Module } from 'alife-file-to-base64';
     SearchPoliticsPipe,
     VisuallyPoliticsComponent,
     LevelsFolderComponent,
+    PermisesUsersDirective,
   ],
   imports: [
     CommonModule,

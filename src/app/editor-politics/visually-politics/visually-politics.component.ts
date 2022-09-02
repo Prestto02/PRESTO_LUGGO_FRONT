@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-visually-politics',
@@ -6,14 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./visually-politics.component.css'],
 })
 export class VisuallyPoliticsComponent implements OnInit {
-  /*   pdfSrc: any = {
-    url: 'https://ecovitali.presttoapp.net/Puertto/Calidad/Repositorio/Documents/Librerias/Documento2.pdf',
-    withCredentials: true,
-  };
- */
-  pdfSrc: string =
-    'https://ecovitali.presttoapp.net/Puertto/Calidad/Repositorio/Documents/Librerias/Documento2.pdf';
-  constructor() {}
+  id: string = '';
+  pdfSrc: string = '';
+  constructor(private actived: ActivatedRoute) {
+    this.id = this.actived.snapshot.params['id'];
+  }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    console.log(this.id);
+  }
 }

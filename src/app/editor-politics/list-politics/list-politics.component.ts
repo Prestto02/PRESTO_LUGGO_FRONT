@@ -5,7 +5,13 @@ import {
   OnChanges,
   SimpleChanges,
 } from '@angular/core';
-import { IPolitics, IPoliticsData, PoliticsHeaderTable } from '../models/IPolitics.models';
+import { Router } from '@angular/router';
+import { UrlFront } from 'src/app/shared/routes/RoutesFront';
+import {
+  IPolitics,
+  IPoliticsData,
+  PoliticsHeaderTable,
+} from '../models/IPolitics.models';
 PoliticsHeaderTable;
 @Component({
   selector: 'app-list-politics',
@@ -18,7 +24,7 @@ export class ListPoliticsComponent implements OnInit, OnChanges {
   search: string = '';
   p: number = 1;
 
-  constructor() {}
+  constructor(private route: Router) {}
 
   ngOnChanges(changes: SimpleChanges): void {
     if (
@@ -29,4 +35,10 @@ export class ListPoliticsComponent implements OnInit, OnChanges {
   }
 
   ngOnInit(): void {}
+
+  irAVisualizar(id?: any): void {
+    this.route.navigateByUrl(
+      `${UrlFront.PoliticasEdicion.ModulePolitics}/${UrlFront.PoliticasEdicion.visualizarPoliticsGet}/${id}`
+    );
+  }
 }

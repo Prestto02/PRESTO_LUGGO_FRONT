@@ -27,7 +27,7 @@ export class EditorPoliticsComponent implements OnInit {
 
   ngOnInit(): void {
     this.getAllFolders();
-     this.getAllPolitics();
+    this.getAllPolitics();
   }
 
   getAllFolders(): void {
@@ -84,11 +84,5 @@ export class EditorPoliticsComponent implements OnInit {
       //this.getAllPolitics();
     });
     this.formB.limpiarFormulario();
-  }
-
-  rutaVisualizar(): void {
-    this.route.navigateByUrl(
-      `${UrlFront.PoliticasEdicion.ModulePolitics}/${UrlFront.PoliticasEdicion.visualizarPoliticsGet}/1`
-    );
   }
 }

@@ -11,7 +11,7 @@ export interface IPolitics {
 }
 
 export interface IPoliticsData {
-  id?: number;
+  id?: string;
   documentName: string;
   documentVS: string;
   documentLink: string;
