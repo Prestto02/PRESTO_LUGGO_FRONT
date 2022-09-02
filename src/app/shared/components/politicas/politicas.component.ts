@@ -44,5 +44,6 @@ export class PoliticasComponent implements OnInit {
     this.router.navigateByUrl(
       `${UrlFront.Politicas.politicas}/${UrlFront.Politicas.politicasPuertto}/${id}`
     );
+    this.getDataDocuments(id);
   }
 }
