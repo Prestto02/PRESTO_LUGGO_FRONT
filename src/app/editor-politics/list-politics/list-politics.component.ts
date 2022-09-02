@@ -18,7 +18,8 @@ export class ListPoliticsComponent implements OnChanges {
   politicsHeaders = PoliticsHeaderTable;
   @Input('dataPolitics') dataPolitics: Array<IPoliticsData> = [];
   p: number = 1;
-
+  dialogVisibleDelete: boolean = false;
+  id: any;
   constructor(
     private route: Router,
     private formB: BaseFormPolitics,
@@ -53,10 +54,20 @@ export class ListPoliticsComponent implements OnChanges {
   }
 
   eliminarPolitics(id: any): void {
-    this.apiServi.deteletPolitics(id).subscribe((res: any) => {
+    this.dialogVisibleDelete = true;
+    this.id = id;
+  }
+
+  eliminarPoliticsDialog(): void {
+    this.apiServi.deteletPolitics(this.id).subscribe((res: any) => {
       this.apiServi.getAllPolitics().subscribe((res: Array<IPoliticsData>) => {
         this.dataPolitics = res;
+        this.dialogVisibleDelete = false;
       });
     });
+  }
+
+  cerrarModalDelete(): void {
+    this.dialogVisibleDelete = false;
   }
 }

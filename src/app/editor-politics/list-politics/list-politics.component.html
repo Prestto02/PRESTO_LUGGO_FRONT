@@ -61,3 +61,11 @@
     [responsive]="true" screenReaderPaginationLabel="Pagination">
   </pagination-controls>
 </div>
+
+
+<!-- MODAL ELIMINAR -->
+<p-dialog showEffect="fade" [(visible)]="dialogVisibleDelete" header="Estás seguro eliminar?"
+  [style]="{width: '300px'}">
+  <button class="btn btn-danger mx-2" (click)="eliminarPoliticsDialog();">Eliminar</button>
+  <button class="btn btn-secondary" (click)="cerrarModalDelete();">Cancelar</button>
+</p-dialog>

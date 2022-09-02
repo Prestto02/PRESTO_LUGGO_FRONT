@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ListPoliticsComponent } from '../list-politics/list-politics.component';
+import { DialogModule } from 'primeng/dialog';
 import { EditorPoliticsComponent } from '../editor-politics.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EditorPoliticsRoutingModule } from './editor-politics-routing.module';
@@ -38,6 +39,7 @@ import { BaseFormSearchPolitics } from '../models/BaseFormSearchPolitics.models'
     PdfViewerModule, //LECTOR DE PDF MODULE
     MenuIndexModule,
     DropdownModule,
+    DialogModule, //DIALOG MODULE
     TreeSelectModule, //TREE SELECT MODULE
     FooterIndexModule,
     ErrorsExtensionsModule,
