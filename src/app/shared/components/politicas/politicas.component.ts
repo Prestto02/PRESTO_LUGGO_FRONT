@@ -1,61 +1,48 @@
 import { Component, OnInit } from '@angular/core';
-import { IPolitics } from 'src/app/editor-politics/models/IPolitics.models';
-import { PoliticsEditService } from '../../../editor-politics/service/politics-edit.service';
+import { ActivatedRoute, Router } from '@angular/router';
+import { RepositorioImg } from '../../helpers/RepositorioImg';
+import { UrlFront } from '../../routes/RoutesFront';
+import { IPoliticsArray } from './models/PoliticsData.models';
+import { PoliticsService } from './services/politics.service';
 @Component({
   selector: 'app-politicas',
   templateUrl: './politicas.component.html',
   styleUrls: ['./politicas.component.css'],
 })
 export class PoliticasComponent implements OnInit {
-  arrayDocuments: ReadonlyArray<IPolitics> = [];
-  arraYFolderAndDocuments: any = {
-    arrayFolders: [
-      {
-        id: '1',
-        name: 'carpeta1',
-      },
-      {
-        id: '2',
-        name: 'carpeta2',
-      },
-      {
-        id: '3',
-        name: 'carpeta3',
-      },
-    ],
-    documentUrl: 'asdasdas/asdjas/asdas.pdf',
-  };
-  pdfURL: string = '';
-  constructor(private api: PoliticsEditService) {}
+  arrayDocuments: any;
+  urlId: any;
+  visualizar: string = RepositorioImg.urlRepositorio;
 
-  ngOnInit(): void {
-    this.getDataDocuments();
+  constructor(
+    private api: PoliticsService,
+    private router: Router,
+    private actived: ActivatedRoute
+  ) {
+    this.urlId = this.actived.snapshot.queryParamMap.get('id');
   }
 
-  getDataDocuments(): void {
-    /*     this.api.getAllPolitics().subscribe((res: ReadonlyArray<IPolitics>) => {
-      this.arrayDocuments = res;
-    }); */
+  ngOnInit(): void {
+    this.getDataDocuments(this.urlId);
+  }
+
+  getDataDocuments(id: any): void {
+    if (id) {
+      this.api.getFoldersIdPolitics(id).subscribe((res: IPoliticsArray) => {
+        this.arrayDocuments = res;
+        console.log(res);
+      });
+    } else {
+      this.api.getFoldersPolitics().subscribe((res: IPoliticsArray) => {
+        console.log(res);
+        this.arrayDocuments = res;
+      });
+    }
   }
 
   buscarDocument(id: any): void {
-    this.arraYFolderAndDocuments={
-      arrayFolders: [
-        {
-          id: '1',
-          name: 'carpeta4',
-        },
-        {
-          id: '2',
-          name: 'carpeta5',
-        },
-        {
-          id: '3',
-          name: 'carpeta6',
-        },
-      ],
-      documentUrl: 'asdasdas/asdjas/pqwieyqwe.pdf',
-    }
-    console.log('hello', id);
+    this.router.navigateByUrl(
+      `${UrlFront.Politicas.politicas}/${UrlFront.Politicas.politicasPuertto}/${id}`
+    );
   }
 }

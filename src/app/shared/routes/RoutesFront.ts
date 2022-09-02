@@ -73,7 +73,7 @@ export const UrlFront = {
   Politicas: {
     politicas: 'politicas',
     politicasPuertto: 'politicas-general',
-    visualizacionDocument: 'visualizarPolitica',
+    visualizacionDocument: 'politicas-general/:id',
   },
   PoliticasEdicion: {
     ModulePolitics: 'module-politicas',

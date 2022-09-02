@@ -11,6 +11,10 @@ const routes: Routes = [
         path: UrlFront.Politicas.politicasPuertto, //RUTA CARRITO
         component: PoliticasComponent,
       },
+      {
+        path: UrlFront.Politicas.visualizacionDocument,
+        component: PoliticasComponent,
+      },
     ],
   },
 ];

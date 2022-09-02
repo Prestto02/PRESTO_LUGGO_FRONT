@@ -1,3 +1,4 @@
-<p>visualizar-document works!</p>
-<pdf-viewer [src]="visualizar" [render-text]="true" [show-all]="true" class="pdf-viewer">
-</pdf-viewer>
+<ng-container *ngIf="visualizarPDF">
+  <pdf-viewer [src]="visualizar+visualizarPDF" [render-text]="true" [show-all]="true" class="pdf-viewer">
+  </pdf-viewer>
+</ng-container>
