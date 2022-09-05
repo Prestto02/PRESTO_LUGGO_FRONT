@@ -29,7 +29,6 @@ export class PoliticasComponent implements OnInit {
     if (id) {
       this.api.getFoldersIdPolitics(id).subscribe((res: IPoliticsArray) => {
         if (res.arrayFoldersPolitics.length > 0) {
-          console.log(res);
           this.arrayDocuments = res;
         } else {
           const idData = this.arrayDocuments.arrayFoldersPolitics.findIndex(
@@ -37,14 +36,12 @@ export class PoliticasComponent implements OnInit {
               return data.id === id;
             }
           );
-          console.log(res);
           this.arrayDocuments.arrayFoldersPolitics[idData].actived = true;
           this.arrayDocuments.documentUrl = res.documentUrl;
         }
       });
     } else {
       this.api.getFoldersPolitics().subscribe((res: IPoliticsArray) => {
-        console.log(res);
         this.arrayDocuments = res;
       });
     }
