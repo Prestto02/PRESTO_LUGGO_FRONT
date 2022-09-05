@@ -1,4 +1,5 @@
 export interface IPoliticsArray {
+  title: string;
   documentUrl: string;
   arrayFoldersPolitics: Array<arrayFoldersPolitics>;
 }

@@ -3,7 +3,8 @@
 <div class="container mt-5">
   <div class="row">
     <div class="col-xxl-3 col-xl-3 col-md-3 col-sm-12 col-12">
-      <ul class="list-group">
+      <ul class="list-group rounded">
+        <li class="list-group-item text-title">{{arrayDocuments?.title}}</li>
         <ng-container *ngIf="arrayDocuments">
           <li *ngFor="let items of arrayDocuments.arrayFoldersPolitics"
             class="list-group-item list-group-item-action cursor" [ngClass]="{'text-primary':items.actived===true}"
