@@ -5,7 +5,8 @@
     <div class="col-xxl-3 col-xl-3 col-md-3 col-sm-12 col-12">
       <ul class="list-group">
         <ng-container *ngIf="arrayDocuments">
-          <li *ngFor="let items of arrayDocuments.arrayFoldersPolitics" class="list-group-item"
+          <li *ngFor="let items of arrayDocuments.arrayFoldersPolitics"
+            class="list-group-item list-group-item-action cursor" [ngClass]="{'text-primary':items.actived===true}"
             (click)="buscarDocument(items.id)">{{items.name}}</li>
         </ng-container>
       </ul>

@@ -17,7 +17,8 @@ import { PoliticsEditService } from '../service/politics-edit.service';
 })
 export class ListPoliticsComponent implements OnChanges {
   politicsHeaders = PoliticsHeaderTable;
-  repository: string = RepositorioImg.urlRepositorio+'img/IMÁGENES/politicas/';
+  repository: string =
+    RepositorioImg.urlRepositorio + 'img/IMÁGENES/politicas/';
   @Input('dataPolitics') dataPolitics: Array<IPoliticsData> = [];
   p: number = 1;
   dialogVisibleDelete: boolean = false;
@@ -50,7 +51,7 @@ export class ListPoliticsComponent implements OnChanges {
         id: res.id,
         documentName: res.documentName,
         documentVS: res.documentVS,
-        documentLink: res.routefile,
+        documentLink: res.archivo,
         permises: res.permises,
         docHeredate: res.docHeredate,
       });

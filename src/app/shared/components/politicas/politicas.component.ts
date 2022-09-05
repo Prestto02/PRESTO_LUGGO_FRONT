@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { RepositorioImg } from '../../helpers/RepositorioImg';
 import { UrlFront } from '../../routes/RoutesFront';
 import { IPoliticsArray } from './models/PoliticsData.models';
@@ -28,8 +28,17 @@ export class PoliticasComponent implements OnInit {
   getDataDocuments(id: any): void {
     if (id) {
       this.api.getFoldersIdPolitics(id).subscribe((res: IPoliticsArray) => {
-        console.log(res);
-        this.arrayDocuments = res;
+        if (res.arrayFoldersPolitics.length > 0) {
+          this.arrayDocuments = res;
+        } else {
+          const idData = this.arrayDocuments.arrayFoldersPolitics.findIndex(
+            (data: any) => {
+              return data.id === id;
+            }
+          );
+          this.arrayDocuments.arrayFoldersPolitics[idData].actived = true;
+          this.arrayDocuments.documentUrl = res.documentUrl;
+        }
       });
     } else {
       this.api.getFoldersPolitics().subscribe((res: IPoliticsArray) => {

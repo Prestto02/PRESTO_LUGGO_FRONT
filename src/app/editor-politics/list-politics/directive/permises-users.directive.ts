@@ -21,10 +21,10 @@ export class PermisesUsersDirective implements AfterViewInit {
   getStatePermises(): void {
     switch (this.permises) {
       case 1:
-        this.statePermises('Adn');
+        this.statePermises('Cliente');
         break;
       case 2:
-        this.statePermises('Cliente');
+        this.statePermises('Adn');
         break;
       case 3:
         this.statePermises('Todos');

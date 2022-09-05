@@ -6,4 +6,5 @@ export interface IPoliticsArray {
 interface arrayFoldersPolitics {
   id: string;
   name: string;
+  actived: boolean;
 }
