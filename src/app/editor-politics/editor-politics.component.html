@@ -57,7 +57,7 @@
             <div class="mb-3">
               <label for="documentLink" class="form-label">Archivo en formato PDF</label>
               <input type="file" class="form-control" id="documentLink" alife-file-to-base64
-                (onFileChanged)="getArchiveImagen($event)" required>
+              (onFileChanged)="getArchiveImagen($event)" required>
               <app-form-errors-container [forControl]="formB.formPolitics.get('documentLink')">
                 <app-message-error forErrorCode="required" [customMsg]="'Este campo es requerido'"></app-message-error>
               </app-form-errors-container>

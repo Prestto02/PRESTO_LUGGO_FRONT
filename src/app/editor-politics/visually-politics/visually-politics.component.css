@@ -8,3 +8,19 @@
   height: 8px; /* Tamaño del scroll en horizontal */
   display: none !important; /* Ocultar scroll */
 }
+
+.text-document {
+  font-size: 20px;
+  font-family: Cardium A-Medium;
+  font-weight: 700;
+}
+
+.text-document{
+  font-size: 16px;
+  font-family: Cardium A-Medium;
+  font-weight: 600;
+}
+
+.cursor{
+  cursor: pointer;
+}
