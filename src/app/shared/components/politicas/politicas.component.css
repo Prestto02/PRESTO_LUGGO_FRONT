@@ -1,5 +1,5 @@
 * {
-  font-family: Cardium A-Medium;
+  font-family: Cardium B-Regular;
 }
 
 .cursor {
@@ -9,4 +9,7 @@
 .text-title {
   font-weight: 600;
   font-size: 16px;
+}
+.text-subtitle {
+  font-size: 12px;
 }

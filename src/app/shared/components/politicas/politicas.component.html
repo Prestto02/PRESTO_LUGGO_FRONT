@@ -8,7 +8,7 @@
         <li class="list-group-item text-title">{{arrayDocuments?.title}}</li>
         <ng-container *ngIf="arrayDocuments">
           <li *ngFor="let items of arrayDocuments.arrayFoldersPolitics"
-            class="list-group-item list-group-item-action cursor" [ngClass]="{'text-primary':items.actived===true}"
+            class="list-group-item list-group-item-action cursor text-subtitle" [ngClass]="{'text-primary':items.actived===true}"
             (click)="buscarDocument(items.id)">{{items.name}}</li>
         </ng-container>
       </ul>

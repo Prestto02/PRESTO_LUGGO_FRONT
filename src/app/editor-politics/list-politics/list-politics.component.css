@@ -1,8 +1,13 @@
-.cursor-pointer{
+.cursor-pointer {
   cursor: pointer;
 }
 
-.btn-danger-delete{
+.btn-danger-delete {
   color: #fff;
-  background-color: #FF1F47;
+  background-color: #ff1f47;
+}
+
+table tbody tr td {
+  font-family: Cardium B-Regular;
+  font-size: 13px;
 }
