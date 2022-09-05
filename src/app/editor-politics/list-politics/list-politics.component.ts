@@ -1,5 +1,6 @@
 import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { Router } from '@angular/router';
+import { RepositorioImg } from 'src/app/shared/helpers/RepositorioImg';
 import { UrlFront } from 'src/app/shared/routes/RoutesFront';
 import { BaseFormPolitics } from '../models/BaseFormPolitics.models';
 import { BaseFormSearchPolitics } from '../models/BaseFormSearchPolitics.models';
@@ -16,6 +17,7 @@ import { PoliticsEditService } from '../service/politics-edit.service';
 })
 export class ListPoliticsComponent implements OnChanges {
   politicsHeaders = PoliticsHeaderTable;
+  repository: string = RepositorioImg.urlRepositorio+'img/IMÁGENES/politicas/';
   @Input('dataPolitics') dataPolitics: Array<IPoliticsData> = [];
   p: number = 1;
   dialogVisibleDelete: boolean = false;
@@ -52,7 +54,7 @@ export class ListPoliticsComponent implements OnChanges {
         permises: res.permises,
         docHeredate: res.docHeredate,
       });
-      this.apiServi.setEditName(res.docHeredate);
+      this.apiServi.setEditName(res.docHeredate); //SETEO EL DOC HEREDATE PARA LA OBSERVABLE
     });
   }
   //SETEO EL ID Y ABRO EL MODAL PARA ELIMINAR LA POLITICA O CARPETA

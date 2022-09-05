@@ -1,7 +1,7 @@
 <app-menu-index></app-menu-index>
-<h3 class="text-center mt-5 mb-3">Subida de archivos de politicas de Puertto</h3>
 <div class="container bg-white rounded">
   <div class="row">
+    <h3 class="text-start mt-5 mb-3">Politicas de Puertto</h3>
     <app-list-politics [dataPolitics]="arrayPolitics"></app-list-politics>
   </div>
   <!-- Modal -->
@@ -15,7 +15,7 @@
         <div class="modal-body">
 
           <div class="mb-3">
-            <label for="DocHeredate" class="form-label">¿Que politica pertenece?</label>
+            <label for="DocHeredate" class="form-label">¿Qué política pertenece?</label>
             <br>
             <p-dropdown [options]="folders" [(ngModel)]="selectedCountry" optionLabel="name" [filter]="true"
               filterBy="name" [showClear]="true" placeholder="Seleccione la ruta" (click)="cargarNuevoDocument()">
@@ -55,9 +55,9 @@
 
 
             <div class="mb-3">
-              <label for="documentLink" class="form-label">Archivo formato PDF</label>
+              <label for="documentLink" class="form-label">Archivo en formato PDF</label>
               <input type="file" class="form-control" id="documentLink" alife-file-to-base64
-                (onFileChanged)="getArchiveImagen($event)" required />
+                (onFileChanged)="getArchiveImagen($event)" required>
               <app-form-errors-container [forControl]="formB.formPolitics.get('documentLink')">
                 <app-message-error forErrorCode="required" [customMsg]="'Este campo es requerido'"></app-message-error>
               </app-form-errors-container>

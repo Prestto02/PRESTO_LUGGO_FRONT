@@ -29,9 +29,9 @@ interface PoliticsHeader {
 }
 
 export const PoliticsHeaderTable: PoliticsHeader = {
-  id: 'Identificador',
-  DocumentName: 'Nombre del documento',
-  DocumentVS: 'Version',
-  Permises: 'Accesible',
+  id: 'Código',
+  DocumentName: 'Documento',
+  DocumentVS: 'Versión',
+  Permises: 'Pueden ver',
   opciones: 'Opciones',
 };
