@@ -13,7 +13,6 @@ export class PoliticasComponent implements OnInit {
   arrayDocuments: any;
   urlId: any;
   visualizar: string = RepositorioImg.urlRepositorio;
-
   constructor(
     private api: PoliticsService,
     private router: Router,
@@ -29,12 +28,11 @@ export class PoliticasComponent implements OnInit {
   getDataDocuments(id: any): void {
     if (id) {
       this.api.getFoldersIdPolitics(id).subscribe((res: IPoliticsArray) => {
-        this.arrayDocuments = res;
         console.log(res);
+        this.arrayDocuments = res;
       });
     } else {
       this.api.getFoldersPolitics().subscribe((res: IPoliticsArray) => {
-        console.log(res);
         this.arrayDocuments = res;
       });
     }

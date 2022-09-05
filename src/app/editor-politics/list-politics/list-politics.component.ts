@@ -26,7 +26,7 @@ export class ListPoliticsComponent implements OnChanges {
     private apiServi: PoliticsEditService,
     public formSearch: BaseFormSearchPolitics
   ) {}
-
+  //SI VIENE ALGO NUEVO EN EL ON CHANGES LO ACTUALIZO
   ngOnChanges(changes: SimpleChanges): void {
     if (
       changes.dataPolitics.currentValue != changes.dataPolitics.previousValue
@@ -34,13 +34,14 @@ export class ListPoliticsComponent implements OnChanges {
       this.dataPolitics = changes.dataPolitics.currentValue;
     }
   }
-
+  //IR A VISUALIZAR LOS DOCUMENTOS CON EL ID
   irAVisualizar(id?: any): void {
     this.route.navigateByUrl(
       `${UrlFront.PoliticasEdicion.ModulePolitics}/${UrlFront.PoliticasEdicion.visualizarPoliticsGet}/${id}`
     );
   }
 
+  //EDITAR POLTICAS
   editarPolitics(id: any): void {
     this.apiServi.getPoliticsId(id).subscribe((res: any) => {
       this.formB.formPolitics.patchValue({
@@ -49,15 +50,22 @@ export class ListPoliticsComponent implements OnChanges {
         documentVS: res.documentVS,
         documentLink: res.routefile,
         permises: res.permises,
+        docHeredate: res.docHeredate,
       });
+      this.apiServi.setEditName(res.docHeredate);
     });
   }
-
+  //SETEO EL ID Y ABRO EL MODAL PARA ELIMINAR LA POLITICA O CARPETA
   eliminarPolitics(id: any): void {
     this.dialogVisibleDelete = true;
     this.id = id;
   }
-
+  //LIMPIO EL FORMULARIO
+  limpiarFormulario(): void {
+    this.apiServi.setEditName('');
+    this.formB.limpiarFormulario();
+  }
+  //ELIMINO LA POLITICA POR COMPLETO
   eliminarPoliticsDialog(): void {
     this.apiServi.deteletPolitics(this.id).subscribe((res: any) => {
       this.apiServi.getAllPolitics().subscribe((res: Array<IPoliticsData>) => {
@@ -66,7 +74,7 @@ export class ListPoliticsComponent implements OnChanges {
       });
     });
   }
-
+  //CIERRO EL MODAL
   cerrarModalDelete(): void {
     this.dialogVisibleDelete = false;
   }

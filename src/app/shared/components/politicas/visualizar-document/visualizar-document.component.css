@@ -1,6 +1,7 @@
 .pdf-viewer {
   display: flex;
   height: 800px;
+  width: 100%;
 }
 
 :host ::ng-deep .ng2-pdf-viewer-container::-webkit-scrollbar {

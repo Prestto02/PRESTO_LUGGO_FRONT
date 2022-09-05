@@ -26,7 +26,6 @@ export class VisuallyPoliticsComponent implements OnInit {
   getDocumentVisually(): void {
     this.apiServi.getPoliticsId(this.id).subscribe((res: IPoliticsData) => {
       this.pdfSrc = res.routefile;
-      console.log(this.urlRepository + this.pdfSrc);
     });
   }
 }

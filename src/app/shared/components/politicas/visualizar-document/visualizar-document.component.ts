@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnChanges, Input, SimpleChanges } from '@angular/core';
 import { RepositorioImg } from 'src/app/shared/helpers/RepositorioImg';
 
 @Component({
@@ -6,10 +6,14 @@ import { RepositorioImg } from 'src/app/shared/helpers/RepositorioImg';
   templateUrl: './visualizar-document.component.html',
   styleUrls: ['./visualizar-document.component.css'],
 })
-export class VisualizarDocumentComponent implements OnInit {
-  @Input('visualizarPDF') visualizarPDF: any = '';
+export class VisualizarDocumentComponent implements OnChanges {
+  @Input('visualizarPDF') visualizarPDF: string = '';
   visualizar: string = RepositorioImg.urlRepositorio;
-  constructor() {}
-
-  ngOnInit(): void {}
+  ngOnChanges(changes: SimpleChanges): void {
+    if (
+      changes.visualizarPDF.currentValue != changes.visualizarPDF.previousValue
+    ) {
+      this.visualizarPDF = changes.visualizarPDF.currentValue;
+    }
+  }
 }

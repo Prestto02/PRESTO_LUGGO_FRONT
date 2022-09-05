@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, BehaviorSubject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { IPolitics, IPoliticsData } from '../models/IPolitics.models';
 
@@ -9,6 +9,9 @@ import { IPolitics, IPoliticsData } from '../models/IPolitics.models';
 export class PoliticsEditService {
   url: string =
     'https://ecovitali.presttoapp.net/Puertto/Microservices/Library/api/';
+
+  private editName = new BehaviorSubject('');
+  editName$ = this.editName.asObservable();
   constructor(private http: HttpClient) {}
   //FOLDERS CRUD
   getFoldersPolitics(): Observable<any> {
@@ -51,5 +54,9 @@ export class PoliticsEditService {
 
   deteletPolitics(id: number): Observable<any> {
     return this.http.delete<any>(this.url + `Library/${id}`);
+  }
+
+  setEditName(edit: string): void {
+    this.editName.next(edit);
   }
 }
