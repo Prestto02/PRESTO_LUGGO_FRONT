@@ -26,14 +26,15 @@ export class PoliticasComponent implements OnInit {
   }
 
   getDataDocuments(id: any): void {
-    if (id === 'todos') {
+    if (id === 'todos') { //TRAER TODOS LOS DOCUMENTOS Y CARPETAS
       this.api.getFoldersPolitics().subscribe((res: IPoliticsArray) => {
         this.arrayDocuments = res;
       });
-    } else {
+    } else { //SI ES OTRO QUE NO SEA TODOS CONSULTO POR ID LOS CARPETAS
       this.api.getFoldersIdPolitics(id).subscribe((res: IPoliticsArray) => {
         if (res.arrayFoldersPolitics.length === 0) {
           this.arrayDocuments.documentUrl = res.documentUrl;
+          this.arrayDocuments.documentName = res.documentName;
           this.searchDocuments(id);
         }
         if (res.arrayFoldersPolitics.length > 0) {
@@ -42,7 +43,7 @@ export class PoliticasComponent implements OnInit {
       });
     }
   }
-
+  //BUSCO LOS DOCUMENTOS Y CAMBIO EL ESTADO
   searchDocuments(id: any): void {
     console.log(id);
     this.arrayDocuments.arrayFoldersPolitics.map((res: any) => {
