@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Params, Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { RepositorioImg } from '../../helpers/RepositorioImg';
 import { UrlFront } from '../../routes/RoutesFront';
 import { IPoliticsArray } from './models/PoliticsData.models';
@@ -18,7 +18,7 @@ export class PoliticasComponent implements OnInit {
     private router: Router,
     private actived: ActivatedRoute
   ) {
-    this.urlId = this.actived.snapshot.queryParamMap.get('id');
+    this.urlId = this.actived.snapshot.paramMap.get('id');
   }
 
   ngOnInit(): void {
@@ -26,27 +26,35 @@ export class PoliticasComponent implements OnInit {
   }
 
   getDataDocuments(id: any): void {
-    if (id) {
-      this.api.getFoldersIdPolitics(id).subscribe((res: IPoliticsArray) => {
-        if (res.arrayFoldersPolitics.length > 0) {
-          this.arrayDocuments = res;
-        } else {
-          const idData = this.arrayDocuments.arrayFoldersPolitics.findIndex(
-            (data: any) => {
-              return data.id === id;
-            }
-          );
-          this.arrayDocuments.arrayFoldersPolitics[idData].actived = true;
-          this.arrayDocuments.documentUrl = res.documentUrl;
-        }
-      });
-    } else {
+    if (id === 'todos') {
       this.api.getFoldersPolitics().subscribe((res: IPoliticsArray) => {
         this.arrayDocuments = res;
+      });
+    } else {
+      this.api.getFoldersIdPolitics(id).subscribe((res: IPoliticsArray) => {
+        if (res.arrayFoldersPolitics.length === 0) {
+          this.arrayDocuments.documentUrl = res.documentUrl;
+          this.searchDocuments(id);
+        }
+        if (res.arrayFoldersPolitics.length > 0) {
+          this.arrayDocuments = res;
+        }
       });
     }
   }
 
+  searchDocuments(id: any): void {
+    console.log(id);
+    this.arrayDocuments.arrayFoldersPolitics.map((res: any) => {
+      if (res.id === id) {
+        res.actived = true;
+      } else {
+        res.actived = false;
+      }
+    });
+  }
+
+  //BUSCAR DOCUMENTOS
   buscarDocument(id: any): void {
     this.router.navigateByUrl(
       `${UrlFront.Politicas.politicas}/${UrlFront.Politicas.politicasPuertto}/${id}`

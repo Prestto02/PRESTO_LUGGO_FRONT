@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, BehaviorSubject } from 'rxjs';
 import { IPoliticsArray } from '../models/PoliticsData.models';
 @Injectable({
   providedIn: 'root',
