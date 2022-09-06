@@ -7,9 +7,11 @@
 }
 
 .text-title {
+  font-family: Cardium A-SemiBold;
   font-weight: 600;
   font-size: 16px;
 }
 .text-subtitle {
+  font-family: Cardium B-Medium;
   font-size: 12px;
 }
