@@ -18,19 +18,24 @@ export class PoliticasComponent implements OnInit {
     private router: Router,
     private actived: ActivatedRoute
   ) {
-    this.urlId = this.actived.snapshot.paramMap.get('id');
+    /* this.urlId = this.actived.snapshot.paramMap.get('id'); */
   }
 
   ngOnInit(): void {
-    this.getDataDocuments(this.urlId);
+    this.actived.params.subscribe((res: any) => {
+      this.urlId = res.id;
+      this.getDataDocuments(this.urlId);
+    });
   }
 
   getDataDocuments(id: any): void {
-    if (id === 'todos') { //TRAER TODOS LOS DOCUMENTOS Y CARPETAS
+    if (id === 'todos') {
+      //TRAER TODOS LOS DOCUMENTOS Y CARPETAS
       this.api.getFoldersPolitics().subscribe((res: IPoliticsArray) => {
         this.arrayDocuments = res;
       });
-    } else { //SI ES OTRO QUE NO SEA TODOS CONSULTO POR ID LOS CARPETAS
+    } else {
+      //SI ES OTRO QUE NO SEA TODOS CONSULTO POR ID LOS CARPETAS
       this.api.getFoldersIdPolitics(id).subscribe((res: IPoliticsArray) => {
         if (res.arrayFoldersPolitics.length === 0) {
           this.arrayDocuments.documentUrl = res.documentUrl;
@@ -45,7 +50,6 @@ export class PoliticasComponent implements OnInit {
   }
   //BUSCO LOS DOCUMENTOS Y CAMBIO EL ESTADO
   searchDocuments(id: any): void {
-    console.log(id);
     this.arrayDocuments.arrayFoldersPolitics.map((res: any) => {
       if (res.id === id) {
         res.actived = true;
