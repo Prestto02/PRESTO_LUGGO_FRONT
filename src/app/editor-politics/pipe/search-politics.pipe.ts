@@ -12,7 +12,7 @@ export class SearchPoliticsPipe implements PipeTransform {
     if (search === '' || !search) return politicsData;
     if (politicsData.length < 0) return politicsData;
     const filterPolitics = politicsData.filter(
-      //BUSCO LOS PRODUCTOS
+      //BUSCO LOS ARCHIVOS
       (product: IPoliticsData) =>
         product.documentName
           .toLowerCase() //DIFEENCIAR ENTRE MAYUSCULA Y MINUSCULA EL NOMBRE DEL PRODUCTO

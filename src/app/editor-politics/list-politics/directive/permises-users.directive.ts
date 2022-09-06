@@ -34,7 +34,7 @@ export class PermisesUsersDirective implements AfterViewInit {
         break;
     }
   }
-
+  //INSERTO LA PROPIEDAD INNTER TEXT SEGUN EL ROL DEL USUARIO
   statePermises(valor: string): void {
     this.render2.setProperty(this.elementPermises, 'innerText', valor);
   }
