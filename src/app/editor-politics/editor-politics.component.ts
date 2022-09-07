@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { PositionUser } from '../shared/class/PositionUser';
 import { ValidarYTransformarImagen } from '../shared/validations/ValidarYTransformarImagen';
 import { BaseFormPolitics } from './models/BaseFormPolitics.models';
@@ -11,6 +11,7 @@ import { PoliticsEditService } from './service/politics-edit.service';
   styleUrls: ['./editor-politics.component.css'],
 })
 export class EditorPoliticsComponent implements OnInit {
+  @ViewChild('myInputField') myInputField: any;
   arrayPolitics: Array<IPoliticsData> = [];
   selectedCountry: any;
   codeEditName: any;
@@ -91,13 +92,19 @@ export class EditorPoliticsComponent implements OnInit {
     if (form.id) {
       this.apiServi.putPolitics(form).subscribe((res) => {
         this.getAllPolitics();
-        this.formB.limpiarFormulario();
+        this.limpiarFormulario();
       });
     } else {
       this.apiServi.postPolitics(form).subscribe((res) => {
         this.getAllPolitics();
-        this.formB.limpiarFormulario();
+        this.limpiarFormulario();
       });
     }
+  }
+
+  limpiarFormulario(): void {
+    this.formB.limpiarFormulario();
+    this.myInputField.nativeElement.value = '';
+    console.log(this.myInputField.nativeElement.files);
   }
 }
