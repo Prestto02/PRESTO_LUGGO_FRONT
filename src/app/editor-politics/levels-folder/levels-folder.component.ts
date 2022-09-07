@@ -50,7 +50,7 @@ export class LevelsFolderComponent implements OnInit {
       return;
     }
     if (this.formB.formFolder.get('id_FolderDocument')?.value) {
-      //GUARDAR
+      //GUARDAR SEGUN EL ID DEL DOCUMENTO
       this.folderServi
         .postFolder(this.formB.formFolder.value)
         .subscribe((res: any) => {
@@ -78,10 +78,11 @@ export class LevelsFolderComponent implements OnInit {
     });
     //this.limpiarFormulario();
   }
-
+  //ELIMINAR CARPETA
   deleteFolder(): void {
     this.dialogVisibleDelete = true;
   }
+  //ELIMINAR EL DIALOGO DE POLITICA
   eliminarPoliticsDialog(): void {
     this.folderServi
       .deleteFolder(this.selectedNode.data)
@@ -91,9 +92,11 @@ export class LevelsFolderComponent implements OnInit {
         this.dialogVisibleDelete = false;
       });
   }
+  //CERRAR MODAL DELETE
   cerrarModalDelete(): void {
     this.dialogVisibleDelete = false;
   }
+  //LIMPIAR FORMULARIO
   limpiarFormulario(): void {
     this.editForm = false;
     this.buttonEditDelete = false;

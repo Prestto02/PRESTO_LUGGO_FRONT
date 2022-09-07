@@ -147,6 +147,7 @@
                     actividades?</label>
                   <input type="date" class="form-control" id="formInicioActividades"
                     formControlName="Inicio_actividades" placeholder="13/12/2022"
+                    [max]="datePicker"
                     [class.is-invalid]="formB.formAdn.get('Inicio_actividades')?.touched && formB.formAdn.get('Inicio_actividades')?.invalid">
                 </div>
                 <app-form-errors-container [forControl]="formB.formAdn.get('Inicio_actividades')">

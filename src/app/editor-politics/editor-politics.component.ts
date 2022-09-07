@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { PositionUser } from '../shared/class/PositionUser';
 import { ValidarYTransformarImagen } from '../shared/validations/ValidarYTransformarImagen';
 import { BaseFormPolitics } from './models/BaseFormPolitics.models';
-import { IPoliticsData } from './models/IPolitics.models';
+import { IFoldersModels, IPoliticsData } from './models/IPolitics.models';
 import { PoliticsEditService } from './service/politics-edit.service';
 
 @Component({
@@ -15,9 +15,7 @@ export class EditorPoliticsComponent implements OnInit {
   arrayPolitics: Array<IPoliticsData> = [];
   selectedCountry: any;
   codeEditName: any;
-  nameEditCode: any;
-  folders: any = [];
-  base64PDF: any;
+  folders: Array<IFoldersModels> = [];
   constructor(
     private apiServi: PoliticsEditService,
     public formB: BaseFormPolitics,
@@ -32,7 +30,7 @@ export class EditorPoliticsComponent implements OnInit {
   }
   //OBTENGO TODAS LAS CARPETAS
   getAllFolders(): void {
-    this.apiServi.getFoldersAll().subscribe((res: any) => {
+    this.apiServi.getFoldersAll().subscribe((res: Array<IFoldersModels>) => {
       this.folders = res;
     });
   }
@@ -105,6 +103,5 @@ export class EditorPoliticsComponent implements OnInit {
   limpiarFormulario(): void {
     this.formB.limpiarFormulario();
     this.myInputField.nativeElement.value = '';
-    console.log(this.myInputField.nativeElement.files);
   }
 }

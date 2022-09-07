@@ -71,10 +71,14 @@ export class ListPoliticsComponent implements OnChanges {
   //ELIMINO LA POLITICA POR COMPLETO
   eliminarPoliticsDialog(): void {
     this.apiServi.deteletPolitics(this.id).subscribe((res: any) => {
-      this.apiServi.getAllPolitics().subscribe((res: Array<IPoliticsData>) => {
-        this.dataPolitics = res;
-        this.dialogVisibleDelete = false;
-      });
+      this.obtenerDataActualizado();
+    });
+  }
+  //OBTENER DATOS ACTUALIZADOS CUANDO ELIMINE UN DATO EL USUARIO
+  obtenerDataActualizado(): void {
+    this.apiServi.getAllPolitics().subscribe((res: Array<IPoliticsData>) => {
+      this.dataPolitics = res;
+      this.dialogVisibleDelete = false;
     });
   }
   //CIERRO EL MODAL

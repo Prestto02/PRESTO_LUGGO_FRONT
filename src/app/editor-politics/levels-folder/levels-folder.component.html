@@ -43,7 +43,7 @@
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
             (click)="limpiarFormulario()">Cerrar</button>
-          <button type="button" [class]="editForm?'btn btn-warning':'btn btn-dark'" data-bs-dismiss="modal"
+          <button type="button" [disabled]="formB.formFolder.invalid" [class]="editForm?'btn btn-warning':'btn btn-dark'" data-bs-dismiss="modal"
             (click)="saveOrEdit()">{{editForm?'Editar':'Guardar'}}</button>
         </div>
       </div>

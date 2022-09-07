@@ -15,9 +15,9 @@ export class SearchPoliticsPipe implements PipeTransform {
       //BUSCO LOS ARCHIVOS
       (product: IPoliticsData) =>
         product.documentName
-          .toLowerCase() //DIFEENCIAR ENTRE MAYUSCULA Y MINUSCULA EL NOMBRE DEL PRODUCTO
+          .toLowerCase() //DIFEENCIAR ENTRE MAYUSCULA Y MINUSCULA EL DOCUMENTO NOMBRE
           .indexOf(search.toLowerCase()) !== -1 ||
-        product.documentVS.toLowerCase().indexOf(search.toLowerCase()) !== //CODIGO DE PRODUCTO
+        product.documentVS.toLowerCase().indexOf(search.toLowerCase()) !== //DOCUMENT VERSION
           -1
     );
     return filterPolitics;

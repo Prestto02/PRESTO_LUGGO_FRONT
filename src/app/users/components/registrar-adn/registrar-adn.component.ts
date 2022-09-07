@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { TokenService } from 'src/app/login/services/token.service';
 import { PositionUser } from 'src/app/shared/class/PositionUser';
-import { UrlFront } from 'src/app/shared/routes/RoutesFront';
 import { BaseFormAdnUsers } from './models/BaseFormAdnUser';
 
 @Component({
@@ -11,6 +10,7 @@ import { BaseFormAdnUsers } from './models/BaseFormAdnUser';
   styleUrls: ['./registrar-adn.component.css'],
 })
 export class RegistrarAdnComponent implements OnInit {
+  datePicker: any;
   constructor(
     public formB: BaseFormAdnUsers, //FORM ADN USERS
     private position: PositionUser, //CLASS POSITION USERS
@@ -19,10 +19,11 @@ export class RegistrarAdnComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-/*     if (this.tokenUser.getTokenEmail() || this.tokenUser.getTokenId()) {
+    /*     if (this.tokenUser.getTokenEmail() || this.tokenUser.getTokenId()) {
       this.router.navigateByUrl(`${UrlFront.Menu.menu}/${UrlFront.Menu.index}`);
     } */
     this.position.getPositionUser();
+    this.obtenerDateActual();
   }
 
   //CHECKED RUC O CEDULA
@@ -46,5 +47,9 @@ export class RegistrarAdnComponent implements OnInit {
       this.formB.removeValidateRuc();
       this.formB.setValidatorsCedulaNombreCompleto();
     }
+  }
+  //OBTENER LA FECHA ACTUAL
+  obtenerDateActual(): void {
+    this.datePicker = new Date().toISOString().split('T')[0];
   }
 }

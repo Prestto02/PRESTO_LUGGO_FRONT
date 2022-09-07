@@ -1,3 +1,9 @@
+//DTO PARA LAS CARPETAS VISUALIZACION EN EL MODAL
+export interface IFoldersModels {
+  name: string;
+  code: string;
+}
+
 export interface IPolitics {
   id?: number;
   documentName: string;

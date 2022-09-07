@@ -22,6 +22,7 @@ export class PoliticasComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    //SUSCRUBE PARA LAS URL DE ID
     this.actived.params.subscribe((res: any) => {
       this.urlId = res.id;
       this.getDataDocuments(this.urlId);
