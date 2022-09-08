@@ -69,6 +69,6 @@ export const arrayListNotIdenfityUser: ReadonlyArray<ListeMenu> = [
   {
     id: 3,
     name: 'Vender con Puertto',
-    link: `${UrlFront.Users.users}/${UrlFront.Users.adnRegistrar}`,
+    link: `${UrlFront.InformativeAdn.informative}/${UrlFront.InformativeAdn.adn}`,
   },
 ];

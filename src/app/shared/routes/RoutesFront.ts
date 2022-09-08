@@ -136,4 +136,8 @@ export const UrlFront = {
     servicios: 'servicios',
     indexServicios: 'servicios-puertto',
   },
+  InformativeAdn: {
+    informative: 'informacion',
+    adn: 'informacion-adn',
+  },
 };

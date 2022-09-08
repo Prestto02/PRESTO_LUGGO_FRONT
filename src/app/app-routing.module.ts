@@ -167,13 +167,20 @@ const routes: Routes = [
         (m) => m.ServiciosPuerttoModule
       ),
   },
-
+  {
+    path: UrlFront.InformativeAdn.informative,
+    loadChildren: () =>
+      import('./informative-adn/module/informative-adn.module').then(
+        (m) => m.InformativeAdnModule
+      ),
+  },
   //REDIRECCIONAR EN MENU DIRECTO
   {
     path: '',
     redirectTo: UrlFront.Menu.menu,
     pathMatch: 'full',
   },
+
   //SI NO ENCUENTRA NINGUNA PAGINA
   //Wild Card Route for 404 request
   { path: '**', pathMatch: 'full', component: NotFund404Component },

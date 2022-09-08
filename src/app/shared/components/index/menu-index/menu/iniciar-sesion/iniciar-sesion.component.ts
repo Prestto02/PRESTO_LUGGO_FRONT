@@ -29,7 +29,7 @@ export class IniciarSesionComponent implements OnInit {
   }
   registrarAdn() {
     this.router.navigateByUrl(
-      `${UrlFront.Users.users}/${UrlFront.Users.adnRegistrar}`
+      `${UrlFront.InformativeAdn.informative}/${UrlFront.InformativeAdn.adn}`
     );
   }
 }
