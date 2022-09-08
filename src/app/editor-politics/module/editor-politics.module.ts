@@ -6,8 +6,6 @@ import { EditorPoliticsComponent } from '../editor-politics.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EditorPoliticsRoutingModule } from './editor-politics-routing.module';
 import { SearchPoliticsPipe } from '../pipe/search-politics.pipe';
-import { MenuIndexModule } from 'src/app/shared/components/index/menu-index/module/menu-index.module';
-import { FooterIndexModule } from 'src/app/shared/components/index/footer-index/module/footer-index.module';
 import { BaseFormPolitics } from '../models/BaseFormPolitics.models';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { VisuallyPoliticsComponent } from '../visually-politics/visually-politics.component';
@@ -37,11 +35,9 @@ import { BaseFormSearchPolitics } from '../models/BaseFormSearchPolitics.models'
     NgxPaginationModule,
     AlifeFileToBase64Module,
     PdfViewerModule, //LECTOR DE PDF MODULE
-    MenuIndexModule,
     DropdownModule,
     DialogModule, //DIALOG MODULE
     TreeSelectModule, //TREE SELECT MODULE
-    FooterIndexModule,
     ErrorsExtensionsModule,
   ],
   providers: [BaseFormPolitics, BaseFormFolders, BaseFormSearchPolitics],

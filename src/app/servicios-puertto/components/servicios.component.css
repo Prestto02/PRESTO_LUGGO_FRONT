@@ -1,4 +1,8 @@
 .scrollspy-example-2{
-  height: 350px;
+  height: 450px;
   overflow: auto;
+}
+.scrollspy-example-2::-webkit-scrollbar{
+  width: 8px;
+  display: none;
 }
