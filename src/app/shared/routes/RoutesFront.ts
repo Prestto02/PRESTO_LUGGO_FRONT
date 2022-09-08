@@ -131,4 +131,9 @@ export const UrlFront = {
     Termino: 'modulo-condiciones',
     terminoCondiciones: 'termino-condiciones',
   },
+  /* SERVICIOS DE PUERTTO */
+  ServiciosPuertto: {
+    servicios: 'servicios',
+    indexServicios: 'servicios-puertto',
+  },
 };

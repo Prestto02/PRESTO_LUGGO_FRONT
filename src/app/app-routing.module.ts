@@ -160,6 +160,13 @@ const routes: Routes = [
         './shared/components/terminos-condiciones/module/termino-condiciones.module'
       ).then((m) => m.TerminoCondicionesModule),
   },
+  {
+    path: UrlFront.ServiciosPuertto.servicios,
+    loadChildren: () =>
+      import('./servicios-puertto/module/servicios-puertto.module').then(
+        (m) => m.ServiciosPuerttoModule
+      ),
+  },
 
   //REDIRECCIONAR EN MENU DIRECTO
   {
