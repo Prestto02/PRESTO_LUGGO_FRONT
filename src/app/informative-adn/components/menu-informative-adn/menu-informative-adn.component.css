@@ -1,0 +1,33 @@
+* {
+  font-family: Cardium B-Medium;
+}
+
+.nav-link {
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 16px;
+}
+.nav-link:hover {
+  color: #ff4401;
+}
+
+.btn-color {
+  background-color: #ff4401;
+  color: #fff;
+}
+.btn-color:hover {
+  background-color: #ff4401;
+  color: #fff;
+}
+
+@media screen and (max-width: 880px) {
+  .nav-link {
+    font-size: 12px;
+  }
+  .btn {
+    font-size: 12px;
+  }
+  svg{
+    width: 80px;
+  }
+}

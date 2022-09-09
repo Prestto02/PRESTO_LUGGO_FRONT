@@ -1,0 +1,55 @@
+.scrollspy-example-2 {
+  height: 450px;
+  overflow: auto;
+}
+.scrollspy-example-2::-webkit-scrollbar {
+  width: 8px;
+  display: none;
+}
+.nav-pills .nav-link {
+  color: #000;
+}
+.nav-pills .nav-link.active {
+  background: none;
+  color: #000;
+}
+.nav-link .active {
+  font-family: Cardium B-Medium;
+  font-size: 21px;
+  font-weight: 800;
+}
+.active {
+  border-radius: 0px;
+  border-left: 3px solid #ff4401;
+}
+
+.title-text {
+  font-size: 44px;
+  font-weight: 800;
+  line-height: 81px;
+}
+
+.subtitle-text {
+  font-family: Cardium B-Medium;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 81px;
+}
+.border {
+  background-color: #ff4401;
+}
+.border-1{
+  background-color: #ff4401;
+}
+.text-parrafo {
+  font-family: Cardium B-Medium;
+  font-weight: 500;
+  font-size: 14px;
+  color: #656565;
+  line-height: 19.38px;
+}
+.subtitle-text-1{
+  font-family: Cardium B-Medium;
+  font-weight: 700;
+  font-size: 32px;
+}

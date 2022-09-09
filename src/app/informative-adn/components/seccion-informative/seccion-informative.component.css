@@ -1,0 +1,27 @@
+.text-orange {
+  font-family: Cardium B-Medium;
+  color: #ff4401;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.text-vender {
+  font-family: Cardium A-Medium;
+  font-weight: 800;
+  font-size: 72px;
+  line-height: 81px;
+}
+
+.text-parrafo {
+  font-family: Cardium B-Medium;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 25px;
+}
+
+.text-parrafo-2{
+  font-family: Cardium B-Medium;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 22px;
+}
