@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { UrlFront } from 'src/app/shared/routes/RoutesFront';
 import { ItemsAdnMenu } from './models/ArrayMenuItems';
 
 @Component({
@@ -8,9 +10,11 @@ import { ItemsAdnMenu } from './models/ArrayMenuItems';
 })
 export class MenuInformativeAdnComponent {
   ItemsAdnMenuInformative = ItemsAdnMenu;
-  constructor() {}
+  constructor(private route: Router) {}
 
-  irRuta(route: string): void {
-    console.log(route);
+  irRuta(): void {
+    this.route.navigateByUrl(
+      `${UrlFront.Users.users}/${UrlFront.Users.adnRegistrar}`
+    );
   }
 }
