@@ -1,11 +1,20 @@
+*{
+  font-family: Cardium B-Medium;
+}
 .scrollspy-example-2 {
-  height: 450px;
+  height: 550px;
   overflow: auto;
 }
 .scrollspy-example-2::-webkit-scrollbar {
   width: 8px;
   display: none;
 }
+.nav-link.text-title.active {
+  font-size: 18px;
+  font-weight: 700;
+  border-left: 0px !important;
+}
+
 .nav-pills .nav-link {
   color: #000;
 }
@@ -18,7 +27,11 @@
   font-size: 21px;
   font-weight: 800;
 }
-.active {
+.nav-link.subitems{
+  border-radius: 0px;
+  border-left: 3px solid #D9D9D9;
+}
+.nav-link.subitems.active {
   border-radius: 0px;
   border-left: 3px solid #ff4401;
 }

@@ -1,3 +1,5 @@
+import { UrlFront } from "src/app/shared/routes/RoutesFront";
+
 export interface MenuItemsADN {
   readonly id: number;
   readonly name: string;
@@ -8,16 +10,16 @@ export const ItemsAdnMenu: ReadonlyArray<MenuItemsADN> = [
   {
     id: 1,
     name: 'Empezar',
-    route: '#container-items',
+    route: `${UrlFront.InformativeAdn.informative}/${UrlFront.InformativeAdn.adn}#container-items`,
   },
   {
     id: 2,
     name: 'Planes y Tarifas',
-    route: '',
+    route: `${UrlFront.InformativeAdn.informative}/${UrlFront.InformativeAdn.adn}`,
   },
   {
     id: 3,
     name: 'Comunidad',
-    route: '',
+    route: `${UrlFront.InformativeAdn.informative}/${UrlFront.InformativeAdn.adn}`,
   },
 ];

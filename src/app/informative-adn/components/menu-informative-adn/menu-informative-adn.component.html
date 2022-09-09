@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg bg-light">
+<nav class="navbar navbar-expand-lg bg-white">
   <div class="container d-flex justify-content-between">
     <a class="navbar-brand">
       <svg class="img-fluid" width="100" height="63" viewBox="0 0 211 50" fill="none"
@@ -29,7 +29,8 @@
           fill="#3F3F3F" />
       </svg>
     </a>
-    <a *ngFor="let items of ItemsAdnMenuInformative" class="nav-link active" aria-current="page">{{items.name}}</a>
+    <a *ngFor="let items of ItemsAdnMenuInformative" class="nav-link active" aria-current="page"
+    [href]="items.route">{{items.name}}</a>
     <button class="btn btn-color" (click)="irRuta()">Registrarse</button>
   </div>
 </nav>

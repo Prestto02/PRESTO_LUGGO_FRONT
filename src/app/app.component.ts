@@ -2,6 +2,7 @@ import { Component, HostListener } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { CarritoItemsService } from './shared/components/index/menu-index/menu/services/carrito-items.service';
 import { ListaDeseosService } from './shared/components/shared-products/lista-deseos/services/lista-deseos.service';
+import { UrlFront } from './shared/routes/RoutesFront';
 
 @Component({
   selector: 'app-root',
@@ -15,25 +16,24 @@ export class AppComponent {
     private apiCarrito: CarritoItemsService,
     private apiListDesire: ListaDeseosService
   ) {
-   /*  this.router.events.subscribe((event) => {
+    /*       this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         this.verifyMenuIndex(event);
       }
     }); */
   }
-
-/*   verifyMenuIndex(event: NavigationEnd) {
+  /*   verifyMenuIndex(event: NavigationEnd) {
     const element: any = <HTMLElement>(
       document.getElementById('color-container')
     );
     if (
-      event.url.match('/Menu/index') ||
-      event.url.match('/manager/vendedor') ||
-      event.url.match('/cliente/cuenta-cliente')
+      event.url.match(
+        `${UrlFront.InformativeAdn.informative}/${UrlFront.InformativeAdn.adn}`
+      )
     ) {
-      element.style.background = '#f1f3f6';
-    } else {
       element.style.background = '#fff';
+    } else {
+      element.style.background = '#f1f3f6';
     }
   } */
   @HostListener('window:unload', ['$event'])
