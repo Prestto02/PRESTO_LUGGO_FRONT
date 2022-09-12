@@ -1,12 +1,12 @@
 .text-orange {
-  font-family: Cardium B-Medium;
+  font-family: Cardium B-SemiBold;
   color: #ff4401;
   font-weight: 700;
   font-size: 16px;
 }
 
 .text-vender {
-  font-family: Cardium A-Medium;
+  font-family: Cardium A-Bold;
   font-weight: 800;
   font-size: 72px;
   line-height: 81px;
@@ -24,6 +24,7 @@
   font-weight: 700;
   font-size: 16px;
   line-height: 22px;
+  cursor: pointer;
 }
 
 .fondo-pantalla {
@@ -32,4 +33,23 @@
   background-image: url("https://ecovitali.presttoapp.net/Puertto/Calidad/Repositorio/img/IMÁGENES/img-informative-adn/fondo-adn-web.png");
   background-repeat: no-repeat;
   background-size: 100% auto;
+  padding-bottom: 5rem;
+}
+
+@media screen and (max-width: 880px) {
+  .fondo-pantalla {
+    background-image: none;
+  }
+  .text-orange {
+    font-size: 14px;
+  }
+  .text-vender {
+  font-size: 50px;
+  }
+  .text-parrafo {
+    font-size: 16px;
+  }
+  .text-parrafo-2 {
+    font-size: 14px;
+  }
 }

@@ -1,28 +1,31 @@
 <div class="container mt-5" id="container-items">
   <div class="row">
-    <div class="col-xxl-4 col-xl-4 col-md-4 d-sm-none d-none d-xxl-block d-xl-block d-md-block">
+    <div class="col-xxl-4 col-xl-4 d-md-none d-sm-none d-none d-xxl-block d-xl-block">
       <nav id="navbar-example3" class="h-100 flex-column align-items-stretch pe-4 border-end">
         <nav class="nav nav-pills flex-column">
           <a class="nav-link text-title active" href="#item-1">Antes de comenzar</a>
           <nav class="nav nav-pills flex-column">
-            <a class="nav-link subitems ms-2 my-1" href="#item-1-1">Selecciona un plan de ventas</a>
-            <a class="nav-link subitems ms-2 my-1" href="#item-1-2">Considera tu estrategia de ventas</a>
-            <a class="nav-link subitems ms-2 my-1" href="#item-1-3">Lanzamiento perfecto</a>
-            <a class="nav-link subitems ms-2 my-1" href="#item-1-4"> Crea una cuenta de vendedor</a>
+            <a class="nav-link subitems ms-2 " href="#item-1-1">Selecciona un plan de ventas</a>
+            <a class="nav-link subitems ms-2 " href="#item-1-2">Considera tu estrategia de ventas</a>
+            <a class="nav-link subitems ms-2 " href="#item-1-3">Lanzamiento perfecto</a>
+            <a class="nav-link subitems ms-2 " href="#item-1-4"> Crea una cuenta de vendedor</a>
           </nav>
           <a class="nav-link text-title" href="#item-2">Agregar Productos</a>
           <nav class="nav nav-pills flex-column">
             <a class="nav-link subitems ms-2 my-1" href="#item-2-1">Crea tu primer producto</a>
+            <a class="nav-link subitems ms-2 my-1" href="#item-2-2">Categoría del Producto</a>
+            <a class="nav-link subitems ms-2 my-1" href="#item-2-3">Detalles del Producto</a>
+            <!--             <a class="nav-link subitems ms-2 my-1" href="#item-2-4">Precio y Logística</a> -->
           </nav>
-<!--           <a class="nav-link" href="#item-3">Atrae a los clientes</a>
-          <nav class="nav nav-pills flex-column">
+          <a class="nav-link" href="#item-3">Atrae a los clientes</a>
+          <!--   <nav class="nav nav-pills flex-column">
             <a class="nav-link ms-2 my-1" href="#item-3-1">Item 3-1</a>
             <a class="nav-link ms-2 my-1" href="#item-3-2">Item 3-2</a>
           </nav> -->
         </nav>
       </nav>
     </div>
-    <div class="col-xxl-8 col-xl-8 col-md-8 col-sm-12 col-12">
+    <div class="col-xxl-8 col-xl-8 col-md-10 col-sm-12 col-12">
       <div data-bs-spy="scroll" data-bs-target="#navbar-example3" data-bs-smooth-scroll="true"
         class="scrollspy-example-2" tabindex="0">
         <div id="item-1">
@@ -30,8 +33,8 @@
         </div>
         <div id="item-1-1" class="mt-3 mb-5">
           <h5 class="subtitle-text">
-            <span class="border">&nbsp;</span>
-            Selecciona un plan de ventas
+            <span class="border px-1"></span>
+            <span class="mx-xxl-3 mx-xl-3 mx-md-2 mx-sm-3 mx-3"> Selecciona un plan de ventas</span>
           </h5>
           <p class="text-parrafo">Con el plan Individual, pagarás $0,99 cada vez que vendas un artículo. El plan de
             ventas Profesional cuesta
@@ -42,13 +45,13 @@
         </div>
         <div id="item-1-2" class="mt-3 mb-5">
           <div class="row">
-            <div class="col-xxl-4 col-xl-4 col-md-4 col-sm-12 col-12 d-flex justify-align-center">
-              <img src="https://fondosmil.com/fondo/17009.jpg" class="img-fluid" alt="">
+            <div class="col-xxl-4 col-xl-4 col-md-4 col-sm-12 col-12 justify-content-img">
+              <img loading="lazy" [src]="urlImg+'/image-1.png'" class="img-fluid" alt="img-1">
             </div>
             <div class="col-xxl-8 col-xl-8 col-md-8 col-xm-12 col-12">
               <h5 class="subtitle-text mb-3">
-                <span class="border mx-1">&nbsp;</span>Considera tu estrategia de
-                ventas
+                <span class="border px-1"></span><span class="mx-xxl-3 mx-xl-3 mx-md-2 mx-sm-3 mx-3">Considera tu estrategia de
+                  ventas</span>
               </h5>
               <p class="text-parrafo mt-3"><b>Los revendedores</b> encuentran productos populares que ya existen y los
                 ofrecen en
@@ -72,7 +75,7 @@
           <div class="row">
             <div class="col-xxl-8 col-xl-8 col-md-8 col-xm-12 col-12">
               <h5 class="subtitle-text mb-3">
-                <span class="border mx-1">&nbsp;</span>Lanzamiento Perfecto
+                <span class="border px-1"></span><span class="mx-3">Lanzamiento Perfecto</span>
               </h5>
               <p class="text-parrafo mt-3">En el caso de los nuevos vendedores de Puertto, los primeros 30 días son
                 especialmente importantes para establecer las prácticas correctas con el fin de acelerar el desempeño
@@ -82,19 +85,20 @@
                 cinco pasos en un plazo tan importante pueden generar ventas más rápido y muchos de los vendedores más
                 exitosos ya lo tienen.</p>
             </div>
-            <div class="col-xxl-4 col-xl-4 col-md-4 col-sm-12 col-12 d-flex justify-align-center">
-              <img src="https://fondosmil.com/fondo/17009.jpg" class="img-fluid" alt="">
+            <div class="col-xxl-4 col-xl-4 col-md-4 col-sm-12 col-12 justify-content-img">
+              <img loading="lazy" [src]="urlImg+'/image-2.png'" class="img-fluid" alt="img-2">
             </div>
           </div>
         </div>
         <div id="item-1-4" class="mt-3 mb-5">
           <div class="row">
-            <div class="col-xxl-4 col-xl-4 col-md-4 col-sm-12 col-12 d-flex justify-align-center">
-              <img src="https://fondosmil.com/fondo/17009.jpg" class="img-fluid" alt="">
+            <div class="col-xxl-4 col-xl-4 col-md-4 col-sm-12 col-12 justify-content-img">
+              <img loading="lazy" [src]="urlImg+'/image-3.png'" class="img-fluid" alt="img-3">
             </div>
             <div class="col-xxl-8 col-xl-8 col-md-8 col-xm-12 col-12">
               <h5 class="subtitle-text-1 mb-3">
-                <span class="border-1 mx-1">&nbsp;</span>Crear una cuenta de vendedor de Puertto
+                <span class="border px-1"></span>
+                <span class="mx-3">Crear una cuenta de vendedor de Puertto</span>
               </h5>
               <p class="text-parrafo mt-3">
                 Puedes usar tu cuenta de cliente para empezar a vender o puedes crear una nueva cuenta de vendedor de
@@ -120,8 +124,8 @@
         </div>
         <div id="item-2-1" class="mt-3 mb-5">
           <h5 class="subtitle-text">
-            <span class="border">&nbsp;</span>
-            Crea tu primer producto
+            <span class="border px-1"></span>
+            <span class="mx-3">Crea tu primer producto</span>
           </h5>
           <p class="text-parrafo mt-3 mb-2">¿Qué puedes vender en Puertto? Depende del producto, categoría y marca.</p>
           <p class="text-parrafo">
@@ -130,6 +134,53 @@
             envías pedidos con Logística de Puertto, asegúrate de revisar la lista específica de restricciones de
             productos de Logística de Puertto.
           </p>
+        </div>
+        <div id="item-2-2" class="mt-3 mb-5">
+          <h5 class="subtitle-text mb-5">
+            <span class="border px-1"></span>
+            <span class="mx-3 mb-3">Categorías del Producto</span>
+          </h5>
+          <table class="table mt-4 table-responsive">
+            <thead>
+              <tr class="text-center">
+                <th class="spacing">Categoría del Producto</th>
+                <th scope="col">Ejemplos del Producto</th>
+                <th scope="col" style="width:21%">Estados Permitidos</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let items of arrayTableInformative" class="text-parrafo">
+                <th class="spacing">{{items.name}}</th>
+                <td>{{items.example}}</td>
+                <td class="text-center" style="width:20%">{{items.state}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div id="item-2-3" class="mt-3 mb-5">
+          <h5 class="subtitle-text mb-4 mt-4">
+            <span class="border px-1"></span>
+            <span class="mx-3">Detalles del listado de productos</span>
+          </h5>
+          <p class="text-parrafo mt-3 mb-3">Para empezar a vender un producto en Amazon, tendrás que crear un listado de
+            productos en Central ADN. Un listado de productos incluye:</p>
+          <ul class="text-parrafo">
+            <li class="mt-3">Un identificador de producto, como GTIN, UPC, ISBN o EAN, si no lo tienes no te preocupes
+              nosotros te
+              asignamos un CAP (Código Asignado de Puertto) automáticamente.</li>
+            <li class="mt-3">
+              Un SKU, que es un identificador del producto que creas para hacer un seguimiento de tu propio inventario
+            </li>
+            <li class="mt-3">
+              Detalles de la oferta, incluidos el precio, estado del producto, cantidad disponible y opciones de envío
+            </li>
+            <li class="mt-3">
+              Detalles del producto, como el nombre, marca, categoría, descripción e imágenes
+            </li>
+            <li class="mt-3">
+              Palabras clave y términos de búsqueda para ayudar a los compradores a encontrar tu producto
+            </li>
+          </ul>
         </div>
       </div>
     </div>

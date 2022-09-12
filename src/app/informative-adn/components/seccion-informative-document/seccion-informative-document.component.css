@@ -1,35 +1,61 @@
-*{
-  font-family: Cardium B-Medium;
+* {
+  font-family: Cardium B-Regular;
 }
+
 .scrollspy-example-2 {
   height: 550px;
   overflow: auto;
 }
+
 .scrollspy-example-2::-webkit-scrollbar {
   width: 8px;
   display: none;
 }
+
 .nav-link.text-title.active {
+  font-family: Cardium B-Bold;
   font-size: 18px;
   font-weight: 700;
   border-left: 0px !important;
 }
 
+.title-text-table {
+  font-family: Cardium B-Bold;
+  font-size: 16px;
+}
+
+.subtitle-text.table {
+  font-family: Cardium B-Medium;
+  font-weight: 500;
+  font-size: 14px;
+}
 .nav-pills .nav-link {
   color: #000;
 }
+
 .nav-pills .nav-link.active {
   background: none;
   color: #000;
 }
+
 .nav-link .active {
   font-family: Cardium B-Medium;
   font-size: 21px;
   font-weight: 800;
 }
-.nav-link.subitems{
+
+.nav-link.subitems {
   border-radius: 0px;
-  border-left: 3px solid #D9D9D9;
+  border-left: 3px solid #d9d9d9;
+}
+th,
+td,
+tr {
+  padding: 17px 0px 20px 30px;
+}
+
+.spacing{
+  width: 32%;
 }
 .nav-link.subitems.active {
   border-radius: 0px;
@@ -37,23 +63,25 @@
 }
 
 .title-text {
+  font-family: Cardium B-Bold;
   font-size: 44px;
   font-weight: 800;
-  line-height: 81px;
 }
 
 .subtitle-text {
   font-family: Cardium B-Medium;
   font-weight: 700;
   font-size: 32px;
-  line-height: 81px;
 }
+
 .border {
   background-color: #ff4401;
 }
-.border-1{
+
+.border-1 {
   background-color: #ff4401;
 }
+
 .text-parrafo {
   font-family: Cardium B-Medium;
   font-weight: 500;
@@ -61,8 +89,17 @@
   color: #656565;
   line-height: 19.38px;
 }
-.subtitle-text-1{
+
+.subtitle-text-1 {
   font-family: Cardium B-Medium;
   font-weight: 700;
   font-size: 32px;
+}
+
+.justify-content-img {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
 }

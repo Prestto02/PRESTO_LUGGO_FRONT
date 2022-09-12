@@ -20,6 +20,14 @@
   font-family: Cardium A-SemiBold;
   src: url(./assets/font/CardiumA-SemiBold.otf) format("truetype");
 }
+@font-face {
+  font-family: Cardium A-Black;
+  src: url(./assets/font/CardiumA-Black.otf) format("truetype");
+}
+@font-face {
+  font-family: Cardium A-ExtraBold;
+  src: url(./assets/font/CardiumA-ExtraBold.otf) format("truetype");
+}
 /*CARDIUM B*/
 @font-face {
   font-family: Cardium B-Bold;
@@ -40,6 +48,14 @@
 @font-face {
   font-family: Cardium B-SemiBold;
   src: url(./assets/font/CardiumB-SemiBold.otf) format("truetype");
+}
+@font-face {
+  font-family: Cardium B-Black;
+  src: url(./assets/font/CardiumB-Black.otf) format("truetype");
+}
+@font-face {
+  font-family: Cardium B-ExtraBold;
+  src: url(./assets/font/CardiumB-ExtraBold.otf) format("truetype");
 }
 
 html {
