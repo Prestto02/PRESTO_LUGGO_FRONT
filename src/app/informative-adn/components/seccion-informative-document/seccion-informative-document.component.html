@@ -32,11 +32,12 @@
           <h4 class="title-text mb-3">Antes de comenzar</h4>
         </div>
         <div id="item-1-1" class="mt-3 mb-5">
-          <h5 class="subtitle-text">
+          <h5 class="subtitle-text mt-3 mb-3">
             <span class="border px-1"></span>
-            <span class="mx-xxl-3 mx-xl-3 mx-md-2 mx-sm-3 mx-3"> Selecciona un plan de ventas</span>
+            <span class="subtitle-text-scroll" class="mx-xxl-3 mx-xl-3 mx-md-2 mx-sm-3 mx-3"> Selecciona un plan de
+              ventas</span>
           </h5>
-          <p class="text-parrafo">Con el plan Individual, pagarás $0,99 cada vez que vendas un artículo. El plan de
+          <p class="text-parrafo mt-3 mb-3">Con el plan Individual, pagarás $0,99 cada vez que vendas un artículo. El plan de
             ventas Profesional cuesta
             $39,99 por mes, independientemente de cuántos artículos vendas. En ambos planes, Puertto también cobra una
             tarifa por referencia por cada venta, que es un porcentaje del total de la transacción y varía según la
@@ -45,15 +46,16 @@
         </div>
         <div id="item-1-2" class="mt-3 mb-5">
           <div class="row">
-            <div class="col-xxl-4 col-xl-4 col-md-4 col-sm-12 col-12 justify-content-img">
+            <div class="col-xxl-4 col-xl-4 col-md-4 col-sm-12 col-12 justify-content-img mt-3 mb-3">
               <img loading="lazy" [src]="urlImg+'/image-1.png'" class="img-fluid" alt="img-1">
             </div>
-            <div class="col-xxl-8 col-xl-8 col-md-8 col-xm-12 col-12">
+            <div class="col-xxl-8 col-xl-8 col-md-8 col-xm-12 col-12 mt-3 mb-3">
               <h5 class="subtitle-text mb-3">
-                <span class="border px-1"></span><span class="mx-xxl-3 mx-xl-3 mx-md-2 mx-sm-3 mx-3">Considera tu estrategia de
+                <span class="border px-1"></span><span class="mx-xxl-3 mx-xl-3 mx-md-2 mx-sm-3 mx-3">Considera tu
+                  estrategia de
                   ventas</span>
               </h5>
-              <p class="text-parrafo mt-3"><b>Los revendedores</b> encuentran productos populares que ya existen y los
+              <p class="text-parrafo"><b>Los revendedores</b> encuentran productos populares que ya existen y los
                 ofrecen en
                 las
                 tiendas de Puertto.</p>
@@ -73,7 +75,10 @@
         </div>
         <div id="item-1-3" class="mt-3 mb-5">
           <div class="row">
-            <div class="col-xxl-8 col-xl-8 col-md-8 col-xm-12 col-12">
+            <div class="col-sm-12 col-12 justify-content-img d-block d-sm-block d-xxl-none d-xl-none d-md-none mt-3 mb-3">
+              <img loading="lazy" [src]="urlImg+'/image-2.png'" class="img-fluid" alt="img-2">
+            </div>
+            <div class="col-xxl-8 col-xl-8 col-md-8 col-xm-12 col-12 mt-3 mb-3">
               <h5 class="subtitle-text mb-3">
                 <span class="border px-1"></span><span class="mx-3">Lanzamiento Perfecto</span>
               </h5>
@@ -85,17 +90,18 @@
                 cinco pasos en un plazo tan importante pueden generar ventas más rápido y muchos de los vendedores más
                 exitosos ya lo tienen.</p>
             </div>
-            <div class="col-xxl-4 col-xl-4 col-md-4 col-sm-12 col-12 justify-content-img">
+            <div
+              class="col-xxl-4 col-xl-4 col-md-4 mt-3 mb-3 justify-content-img d-none d-sm-none d-xxl-block d-xl-block d-md-block">
               <img loading="lazy" [src]="urlImg+'/image-2.png'" class="img-fluid" alt="img-2">
             </div>
           </div>
         </div>
         <div id="item-1-4" class="mt-3 mb-5">
           <div class="row">
-            <div class="col-xxl-4 col-xl-4 col-md-4 col-sm-12 col-12 justify-content-img">
+            <div class="col-xxl-4 col-xl-4 col-md-4 col-sm-12 col-12 justify-content-img mt-3 mb-3">
               <img loading="lazy" [src]="urlImg+'/image-3.png'" class="img-fluid" alt="img-3">
             </div>
-            <div class="col-xxl-8 col-xl-8 col-md-8 col-xm-12 col-12">
+            <div class="col-xxl-8 col-xl-8 col-md-8 col-xm-12 col-12 mt-3 mb-3">
               <h5 class="subtitle-text-1 mb-3">
                 <span class="border px-1"></span>
                 <span class="mx-3">Crear una cuenta de vendedor de Puertto</span>
@@ -135,14 +141,14 @@
             productos de Logística de Puertto.
           </p>
         </div>
-        <div id="item-2-2" class="mt-3 mb-5">
+        <div id="item-2-2" class="mt-3 mb-5 padding-table">
           <h5 class="subtitle-text mb-5">
             <span class="border px-1"></span>
             <span class="mx-3 mb-3">Categorías del Producto</span>
           </h5>
           <table class="table mt-4 table-responsive">
             <thead>
-              <tr class="text-center">
+              <tr class="text-center color-header-table">
                 <th class="spacing">Categoría del Producto</th>
                 <th scope="col">Ejemplos del Producto</th>
                 <th scope="col" style="width:21%">Estados Permitidos</th>
@@ -152,7 +158,7 @@
               <tr *ngFor="let items of arrayTableInformative" class="text-parrafo">
                 <th class="spacing">{{items.name}}</th>
                 <td>{{items.example}}</td>
-                <td class="text-center" style="width:20%">{{items.state}}</td>
+                <td class="text-center" style="width:23%">{{items.state}}</td>
               </tr>
             </tbody>
           </table>

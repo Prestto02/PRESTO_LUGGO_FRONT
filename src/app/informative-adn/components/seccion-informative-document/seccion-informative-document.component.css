@@ -45,8 +45,20 @@
 }
 
 .nav-link.subitems {
+
   border-radius: 0px;
   border-left: 3px solid #d9d9d9;
+}
+.subtitle-text-scroll{
+  font-family: Cardium B-Bold;
+}
+.padding-table{
+  background-color: #FFFBFA;
+  border-radius: 10px;
+  padding: 26px;
+}
+.color-header-table{
+  font-family: Cardium B-SemiBold;
 }
 th,
 td,
@@ -83,7 +95,7 @@ tr {
 }
 
 .text-parrafo {
-  font-family: Cardium B-Medium;
+  font-family: Cardium B-Regular;
   font-weight: 500;
   font-size: 14px;
   color: #656565;
@@ -102,4 +114,12 @@ tr {
   flex-wrap: nowrap;
   justify-content: center;
   align-items: center;
+}
+
+
+@media screen and ( max-width:880px){
+  .scrollspy-example-2{
+    height: auto;
+    overflow: none;
+  }
 }

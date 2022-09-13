@@ -12,7 +12,7 @@ export class MenuInformativeAdnComponent {
   ItemsAdnMenuInformative = ItemsAdnMenu;
   constructor(private route: Router) {}
 
-  irRuta(): void {
+  irRuta(): void { //IR A RUTA SEGUN EL ARRAY ITEMS ADN
     this.route.navigateByUrl(
       `${UrlFront.Users.users}/${UrlFront.Users.adnRegistrar}`
     );

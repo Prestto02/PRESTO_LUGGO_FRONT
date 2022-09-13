@@ -1,18 +1,38 @@
-.footer-color {
-  background-color: #454545;
-  color: aliceblue;
-}
-.btn-color {
-  background-color: #454545;
-  color: #fff;
-  border: 1px solid #fff;
-}
-.btn-color:hover {
-  background-color: #2e2d2d;
-  color: #fff;
-  border: 1px solid #fff;
-}
-
 * {
   font-family: Cardium B-Medium;
+}
+
+.bg-incio-pagina{
+  background-color: #4B4B4B;
+}
+
+
+.text-title{
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.text-subtitle{
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.text-inicio{
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 28.8px;
+}
+
+.bg-inicio{
+  cursor: pointer;
+}
+
+@media screen and ( max-width:880px){
+  .items{
+    font-size: 12px;
+    text-align: center;
+  }
+  .text-subtitle{
+    font-size: 12px;
+  }
 }

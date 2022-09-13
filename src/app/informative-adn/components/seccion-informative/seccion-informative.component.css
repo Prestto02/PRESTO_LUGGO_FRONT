@@ -38,13 +38,15 @@
 
 @media screen and (max-width: 880px) {
   .fondo-pantalla {
-    background-image: none;
+    background-size: cover;
+    padding-bottom: 0;
   }
   .text-orange {
     font-size: 14px;
   }
   .text-vender {
-  font-size: 50px;
+    font-size: 50px;
+    line-height: 51px;
   }
   .text-parrafo {
     font-size: 16px;

@@ -2,9 +2,10 @@
   display: flex;
   justify-content: center;
   margin-top: 50px;
-  background: linear-gradient(13.88deg, #404040 2.48%, #292929 82.17%);
+ /*  background: linear-gradient(13.88deg, #404040 2.48%, #292929 82.17%); */
+ background-color: #fff;
   width: 100%;
-  color: #fff;
+  color: #000;
   flex-direction: column;
 }
 .flex {
@@ -26,7 +27,7 @@
   font-size: 14px;
   letter-spacing: -0.5px;
   text-align: justify;
-  color: #ffffffb5;
+  color: #000;
 }
 h1 {
   font-size: 28px;
