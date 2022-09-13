@@ -12,6 +12,7 @@ import { UrlFront } from '../../../../../routes/RoutesFront';
 export class IniciarSesionComponent implements OnInit {
   public urlGoogle = `${UrlApi.ApiUrl}${UrlApi.loginGoogle}`;
   registroAdn: string = `${RepositorioImg.urlRepositorio}img/IMÁGENES/icons-users-perfil/registro-adn.png`;
+  servicioCliente:string=`${RepositorioImg.urlRepositorio}img/IMÁGENES/icons-users-perfil/Bolt.png`;
   constructor(private router: Router) {}
 
   ngOnInit(): void {}
@@ -29,7 +30,7 @@ export class IniciarSesionComponent implements OnInit {
   }
   registrarAdn() {
     this.router.navigateByUrl(
-      `${UrlFront.InformativeAdn.informative}/${UrlFront.InformativeAdn.adn}`
+      `${UrlFront.ServiciosPuertto.servicios}/${UrlFront.ServiciosPuertto.indexServicios}`
     );
   }
 }

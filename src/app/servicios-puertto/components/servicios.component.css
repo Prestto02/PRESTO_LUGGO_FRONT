@@ -1,8 +1,48 @@
-.scrollspy-example-2{
+* {
+  font-family: Cardium B-Medium;
+}
+
+.scrollspy-example-2 {
   height: 450px;
   overflow: auto;
 }
-.scrollspy-example-2::-webkit-scrollbar{
+
+.text-title {
+  font-size: 28px;
+  font-weight: 500;
+}
+
+.text-subtitle {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.text-subtitle-cards {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.scrollspy-example-2::-webkit-scrollbar {
   width: 8px;
   display: none;
+}
+
+.color-background {
+  background-color: #590101;
+}
+
+.cursor {
+  cursor: pointer;
+}
+
+.margin-left-row {
+  margin-left: 8%;
+}
+@media screen and (max-width: 880px) {
+  .text-subtitle-cards {
+    font-size: 12px;
+  }
+  .margin-left-row {
+    margin-left: 0%;
+  }
 }

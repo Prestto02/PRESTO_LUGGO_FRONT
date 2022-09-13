@@ -26,3 +26,7 @@
   flex-direction: column-reverse;
   align-items: flex-start;
 }
+
+.text-color{
+  color: #FFE7C7;
+}

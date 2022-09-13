@@ -81,7 +81,7 @@ tr {
 }
 
 .subtitle-text {
-  font-family: Cardium B-Medium;
+  font-family: Cardium B-Bold;
   font-weight: 700;
   font-size: 32px;
 }
@@ -121,5 +121,8 @@ tr {
   .scrollspy-example-2{
     height: auto;
     overflow: none;
+  }
+  .padding-table{
+    padding: 0 !important;
   }
 }
