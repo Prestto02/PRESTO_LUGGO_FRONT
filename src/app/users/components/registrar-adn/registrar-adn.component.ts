@@ -29,9 +29,10 @@ export class RegistrarAdnComponent implements OnInit {
   //CHECKED RUC O CEDULA
   checkedRucCedula(e: any) {
     //CONSULTO SI VIENE EL RUC O CEDULA
-    if (e.target.checked && e.target.value === 'Ruc') {
+    if (e.target.checked && e.target.value === 'Ruc') { //SI ES RUC SETEAR A VACIO
       this.formB.formAdn.patchValue({
         CedulaCheck: '',
+        tipo_contribuyente: '',
         Ruc: '',
         Razon_Social: '',
       });

@@ -30,8 +30,13 @@ div.is-invalid {
   border: 1px solid #dc3545;
   border-radius: 6px;
 }
+
 .input-border{
   border-left: 0px;
+}
+
+.form-select.is-invalid{
+  background-repeat: no-repeat;
 }
 
 /* div.is-valid {

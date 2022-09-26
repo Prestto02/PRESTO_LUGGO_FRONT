@@ -42,7 +42,8 @@ export class BaseFormAdnUsers {
           Validators.pattern(Expresion.SoloLetrasAcentosEspacios),
         ],
       ],
-      Inicio_actividades: ['', [Validators.required]],
+      Inicio_actividades: [''],
+      tipo_contribuyente: ['',[Validators.required]],
     },
     { validator: passwordsMustBeEqual }
   );
@@ -74,6 +75,8 @@ export class BaseFormAdnUsers {
         Validators.required,
         Validators.pattern(Expresion.SoloLetrasAcentosEspacios),
       ]);
+    this.formAdn.get('tipo_contribuyente')?.setValidators([Validators.required]);
+    this.updateValidate('tipo_contribuyente');
     this.updateValidate('Ruc');
     this.updateValidate('Razon_Social');
   }
@@ -88,7 +91,9 @@ export class BaseFormAdnUsers {
   removeValidateRuc() {
     this.formAdn.get('Ruc')?.clearValidators();
     this.formAdn.get('Razon_Social')?.clearValidators();
+    this.formAdn.get('tipo_contribuyente')?.clearValidators();
     this.updateValidate('Ruc');
+    this.updateValidate('tipo_contribuyente');
     this.updateValidate('Razon_Social');
   }
   //ACTUALIZAR LOS CAMPOS PERSONALIZADOS DE VALIDACIONES

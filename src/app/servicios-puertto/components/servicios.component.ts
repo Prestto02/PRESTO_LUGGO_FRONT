@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ArrayItems } from './ArrayItems';
-
 @Component({
   selector: 'app-servicios',
   templateUrl: './servicios.component.html',

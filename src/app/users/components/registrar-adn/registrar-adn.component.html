@@ -97,6 +97,20 @@
                     <app-message-error forErrorCode="pattern" customMsg="Debe ser solo numeros o ruc validos">
                     </app-message-error>
                   </app-form-errors-container>
+                  <div class="mb-3">
+                    <label for="tipo_contribuyente" class="form-label fw-bolder">Tipo contribuyente</label>
+                    <select class="form-select" aria-label="Default select example"
+                      [class.is-invalid]="formB.formAdn.get('tipo_contribuyente')?.touched && formB.formAdn.get('tipo_contribuyente')?.invalid"
+                      formControlName="tipo_contribuyente">
+                      <option selected value="">Escoja una opcion</option>
+                      <option value="J">Juridico</option>
+                      <option value="N">Natural</option>
+                      <option value="S">Social</option>
+                    </select>
+                  </div>
+                  <app-form-errors-container [forControl]="formB.formAdn.get('tipo_contribuyente')">
+                    <app-message-error forErrorCode="required"></app-message-error>
+                  </app-form-errors-container>
                 </ng-container>
                 <ng-container *ngIf="formB.formAdn.get('CedulaCheck')?.value">
                   <div class="mb-3">
@@ -131,7 +145,7 @@
                     <label for="formCedula" class="form-label fw-bolder">Cédula</label>
                     <input type="text" class="form-control" id="formCedula"
                       [class.is-invalid]="formB.formAdn.get('Cedula')?.touched && formB.formAdn.get('Cedula')?.invalid"
-                      formControlName="Cedula" placeholder="0999999999">
+                      formControlName="Cedula" placeholder="0999999999" maxlength="10">
                   </div>
                   <app-form-errors-container [forControl]="formB.formAdn.get('Cedula')">
                     <app-message-error forErrorCode="required"></app-message-error>
@@ -146,8 +160,7 @@
                   <label for="formInicioActividades" class="form-label fw-bolder">¿Cuándo iniciaste tus
                     actividades?</label>
                   <input type="date" class="form-control" id="formInicioActividades"
-                    formControlName="Inicio_actividades" placeholder="13/12/2022"
-                    [max]="datePicker"
+                    formControlName="Inicio_actividades" placeholder="13/12/2022" [max]="datePicker"
                     [class.is-invalid]="formB.formAdn.get('Inicio_actividades')?.touched && formB.formAdn.get('Inicio_actividades')?.invalid">
                 </div>
                 <app-form-errors-container [forControl]="formB.formAdn.get('Inicio_actividades')">
